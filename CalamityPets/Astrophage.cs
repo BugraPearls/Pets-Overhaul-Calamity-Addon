@@ -1,4 +1,4 @@
-using CalamityMod.Items.Pets;
+using CalamityMod.Items.Fishing.AstralCatches;
 using PetsOverhaul.Config;
 using PetsOverhaul.Systems;
 using System.Collections.Generic;
@@ -6,9 +6,9 @@ using Terraria;
 using Terraria.Localization;
 using Terraria.ModLoader;
 
-namespace PetsOverhaulCalamityAddon.PetEffects.CalamityMod
+namespace PetsOverhaulCalamityAddon.CalamityPets
 {
-    public sealed class DannyDevitoEffect : PetEffect
+    public sealed class AstrophageEffect : PetEffect
     {
         public override PetClasses PetClassPrimary => PetClasses.None;
         public override void PostUpdateEquips()
@@ -16,11 +16,12 @@ namespace PetsOverhaulCalamityAddon.PetEffects.CalamityMod
 
         }
     }
-    public sealed class TrashmanTrashcanTooltip : GlobalItem
+    public sealed class AstrophageItemTooltip : GlobalItem
     {
+
         public override bool AppliesToEntity(Item entity, bool lateInstantiation)
         {
-            return entity.type == ModContent.ItemType<TrashmanTrashcan>();
+            return entity.type == ModContent.ItemType<AstrophageItem>();
         }
 
         public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
@@ -30,9 +31,9 @@ namespace PetsOverhaulCalamityAddon.PetEffects.CalamityMod
                 return;
             }
 
-            DannyDevitoEffect dannyDevito = Main.LocalPlayer.GetModPlayer<DannyDevitoEffect>();
-            tooltips.Add(new(Mod, "Tooltip0", Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.TrashmanTrashcan")
-                .Replace("<class>", PetColors.ClassText(dannyDevito.PetClassPrimary, dannyDevito.PetClassSecondary))
+            AstrophageEffect astro = Main.LocalPlayer.GetModPlayer<AstrophageEffect>();
+            tooltips.Add(new(Mod, "Tooltip0", Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.Astrophage")
+                .Replace("<class>", PetColors.ClassText(astro.PetClassPrimary, astro.PetClassSecondary))
             ));
         }
     }

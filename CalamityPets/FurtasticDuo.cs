@@ -6,9 +6,9 @@ using Terraria;
 using Terraria.Localization;
 using Terraria.ModLoader;
 
-namespace PetsOverhaulCalamityAddon.PetEffects.CalamityMod
+namespace PetsOverhaulCalamityAddon.CalamityPets
 {
-    public sealed class SupremeCalamitasEffect : PetEffect
+    public sealed class FurtasticDuoEffect : PetEffect
     {
         public override PetClasses PetClassPrimary => PetClasses.None;
         public override void PostUpdateEquips()
@@ -16,11 +16,11 @@ namespace PetsOverhaulCalamityAddon.PetEffects.CalamityMod
 
         }
     }
-    public sealed class BrimstoneJewelTooltip : GlobalItem
+    public sealed class PrimroseKeepsakeTooltip : GlobalItem
     {
         public override bool AppliesToEntity(Item entity, bool lateInstantiation)
         {
-            return entity.type == ModContent.ItemType<BrimstoneJewel>();
+            return entity.type == ModContent.ItemType<PrimroseKeepsake>();
         }
 
         public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
@@ -29,10 +29,10 @@ namespace PetsOverhaulCalamityAddon.PetEffects.CalamityMod
             {
                 return;
             }
-            SupremeCalamitasEffect calamitas = Main.LocalPlayer.GetModPlayer<SupremeCalamitasEffect>();
 
-            tooltips.Add(new(Mod, "Tooltip0", Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.BrimstoneJewel")
-                .Replace("<class>", PetColors.ClassText(calamitas.PetClassPrimary, calamitas.PetClassSecondary))
+            FurtasticDuoEffect duo = Main.LocalPlayer.GetModPlayer<FurtasticDuoEffect>();
+            tooltips.Add(new(Mod, "Tooltip0", Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.PrimroseKeepsake")
+                .Replace("<class>", PetColors.ClassText(duo.PetClassPrimary, duo.PetClassSecondary))
             ));
         }
     }

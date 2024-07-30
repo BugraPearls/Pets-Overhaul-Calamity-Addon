@@ -6,9 +6,9 @@ using Terraria;
 using Terraria.Localization;
 using Terraria.ModLoader;
 
-namespace PetsOverhaulCalamityAddon.PetEffects.CalamityMod
+namespace PetsOverhaulCalamityAddon.CalamityPets
 {
-    public sealed class BrimlingEffect : PetEffect
+    public sealed class FoxEffect : PetEffect
     {
         public override PetClasses PetClassPrimary => PetClasses.None;
         public override void PostUpdateEquips()
@@ -16,11 +16,11 @@ namespace PetsOverhaulCalamityAddon.PetEffects.CalamityMod
 
         }
     }
-    public sealed class CharredRelicTooltip : GlobalItem
+    public sealed class FoxDriveTooltip : GlobalItem
     {
         public override bool AppliesToEntity(Item entity, bool lateInstantiation)
         {
-            return entity.type == ModContent.ItemType<CharredRelic>();
+            return entity.type == ModContent.ItemType<FoxDrive>();
         }
 
         public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
@@ -30,9 +30,9 @@ namespace PetsOverhaulCalamityAddon.PetEffects.CalamityMod
                 return;
             }
 
-            BrimlingEffect brimling = Main.LocalPlayer.GetModPlayer<BrimlingEffect>();
-            tooltips.Add(new(Mod, "Tooltip0", Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.CharredRelic")
-                .Replace("<class>", PetColors.ClassText(brimling.PetClassPrimary, brimling.PetClassSecondary))
+            FoxEffect fox = Main.LocalPlayer.GetModPlayer<FoxEffect>();
+            tooltips.Add(new(Mod, "Tooltip0", Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.FoxDrive")
+                .Replace("<class>", PetColors.ClassText(fox.PetClassPrimary, fox.PetClassSecondary))
             ));
         }
     }

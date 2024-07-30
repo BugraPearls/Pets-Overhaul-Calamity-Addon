@@ -6,9 +6,9 @@ using Terraria;
 using Terraria.Localization;
 using Terraria.ModLoader;
 
-namespace PetsOverhaulCalamityAddon.PetEffects.CalamityMod
+namespace PetsOverhaulCalamityAddon.CalamityPets
 {
-    public sealed class FoxEffect : PetEffect
+    public sealed class ElectricTroublemakerEffect : PetEffect
     {
         public override PetClasses PetClassPrimary => PetClasses.None;
         public override void PostUpdateEquips()
@@ -16,11 +16,12 @@ namespace PetsOverhaulCalamityAddon.PetEffects.CalamityMod
 
         }
     }
-    public sealed class FoxDriveTooltip : GlobalItem
+    public sealed class TheEtomerTooltip : GlobalItem
     {
+
         public override bool AppliesToEntity(Item entity, bool lateInstantiation)
         {
-            return entity.type == ModContent.ItemType<FoxDrive>();
+            return entity.type == ModContent.ItemType<TheEtomer>();
         }
 
         public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
@@ -29,11 +30,11 @@ namespace PetsOverhaulCalamityAddon.PetEffects.CalamityMod
             {
                 return;
             }
+            ElectricTroublemakerEffect rotom = Main.LocalPlayer.GetModPlayer<ElectricTroublemakerEffect>();
 
-            FoxEffect fox = Main.LocalPlayer.GetModPlayer<FoxEffect>();
-            tooltips.Add(new(Mod, "Tooltip0", Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.FoxDrive")
-                .Replace("<class>", PetColors.ClassText(fox.PetClassPrimary, fox.PetClassSecondary))
-            ));
+            tooltips.Add(new(Mod, "Tooltip0", Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.TheEtomer")
+                    .Replace("<class>", PetColors.ClassText(rotom.PetClassPrimary, rotom.PetClassSecondary))
+                ));
         }
     }
 }

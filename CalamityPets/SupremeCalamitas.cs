@@ -6,9 +6,9 @@ using Terraria;
 using Terraria.Localization;
 using Terraria.ModLoader;
 
-namespace PetsOverhaulCalamityAddon.PetEffects.CalamityMod
+namespace PetsOverhaulCalamityAddon.CalamityPets
 {
-    public sealed class BearEffect : PetEffect
+    public sealed class SupremeCalamitasEffect : PetEffect
     {
         public override PetClasses PetClassPrimary => PetClasses.None;
         public override void PostUpdateEquips()
@@ -16,11 +16,11 @@ namespace PetsOverhaulCalamityAddon.PetEffects.CalamityMod
 
         }
     }
-    public sealed class BearsEyeTooltip : GlobalItem
+    public sealed class BrimstoneJewelTooltip : GlobalItem
     {
         public override bool AppliesToEntity(Item entity, bool lateInstantiation)
         {
-            return entity.type == ModContent.ItemType<BearsEye>();
+            return entity.type == ModContent.ItemType<BrimstoneJewel>();
         }
 
         public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
@@ -29,10 +29,10 @@ namespace PetsOverhaulCalamityAddon.PetEffects.CalamityMod
             {
                 return;
             }
+            SupremeCalamitasEffect calamitas = Main.LocalPlayer.GetModPlayer<SupremeCalamitasEffect>();
 
-            BearEffect bear = Main.LocalPlayer.GetModPlayer<BearEffect>();
-            tooltips.Add(new(Mod, "Tooltip0", Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.BearsEye")
-                .Replace("<class>", PetColors.ClassText(bear.PetClassPrimary, bear.PetClassSecondary))
+            tooltips.Add(new(Mod, "Tooltip0", Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.BrimstoneJewel")
+                .Replace("<class>", PetColors.ClassText(calamitas.PetClassPrimary, calamitas.PetClassSecondary))
             ));
         }
     }

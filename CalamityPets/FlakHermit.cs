@@ -6,9 +6,9 @@ using Terraria;
 using Terraria.Localization;
 using Terraria.ModLoader;
 
-namespace PetsOverhaulCalamityAddon.PetEffects.CalamityMod
+namespace PetsOverhaulCalamityAddon.CalamityPets
 {
-    public sealed class LeviEffect : PetEffect
+    public sealed class FlakHermitEffect : PetEffect
     {
         public override PetClasses PetClassPrimary => PetClasses.None;
         public override void PostUpdateEquips()
@@ -16,12 +16,12 @@ namespace PetsOverhaulCalamityAddon.PetEffects.CalamityMod
 
         }
     }
-    public sealed class LeviItemTooltip : GlobalItem
+    public sealed class GeyserShellTooltip : GlobalItem
     {
-        
+
         public override bool AppliesToEntity(Item entity, bool lateInstantiation)
         {
-            return entity.type == ModContent.ItemType<Levi>();
+            return entity.type == ModContent.ItemType<GeyserShell>();
         }
 
         public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
@@ -31,9 +31,9 @@ namespace PetsOverhaulCalamityAddon.PetEffects.CalamityMod
                 return;
             }
 
-            LeviEffect levi = Main.LocalPlayer.GetModPlayer<LeviEffect>();
-            tooltips.Add(new(Mod, "Tooltip0", Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.Levi")
-                .Replace("<class>", PetColors.ClassText(levi.PetClassPrimary, levi.PetClassSecondary))
+            FlakHermitEffect hermit = Main.LocalPlayer.GetModPlayer<FlakHermitEffect>();
+            tooltips.Add(new(Mod, "Tooltip0", Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.GeyserShell")
+                .Replace("<class>", PetColors.ClassText(hermit.PetClassPrimary, hermit.PetClassSecondary))
             ));
         }
     }

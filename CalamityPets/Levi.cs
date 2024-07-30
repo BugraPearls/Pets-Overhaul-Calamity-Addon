@@ -6,9 +6,9 @@ using Terraria;
 using Terraria.Localization;
 using Terraria.ModLoader;
 
-namespace PetsOverhaulCalamityAddon.PetEffects.CalamityMod
+namespace PetsOverhaulCalamityAddon.CalamityPets
 {
-    public sealed class MiniHiveMindEffect : PetEffect
+    public sealed class LeviEffect : PetEffect
     {
         public override PetClasses PetClassPrimary => PetClasses.None;
         public override void PostUpdateEquips()
@@ -16,11 +16,12 @@ namespace PetsOverhaulCalamityAddon.PetEffects.CalamityMod
 
         }
     }
-    public sealed class RottingEyeballTooltip : GlobalItem
+    public sealed class LeviItemTooltip : GlobalItem
     {
+
         public override bool AppliesToEntity(Item entity, bool lateInstantiation)
         {
-            return entity.type == ModContent.ItemType<RottingEyeball>();
+            return entity.type == ModContent.ItemType<Levi>();
         }
 
         public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
@@ -30,12 +31,10 @@ namespace PetsOverhaulCalamityAddon.PetEffects.CalamityMod
                 return;
             }
 
-
-
-            MiniHiveMindEffect hive = Main.LocalPlayer.GetModPlayer<MiniHiveMindEffect>();
-            tooltips.Add(new(Mod, "Tooltip0", Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.RottingEyeball")
-                    .Replace("<class>", PetColors.ClassText(hive.PetClassPrimary, hive.PetClassSecondary))
-                ));
+            LeviEffect levi = Main.LocalPlayer.GetModPlayer<LeviEffect>();
+            tooltips.Add(new(Mod, "Tooltip0", Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.Levi")
+                .Replace("<class>", PetColors.ClassText(levi.PetClassPrimary, levi.PetClassSecondary))
+            ));
         }
     }
 }

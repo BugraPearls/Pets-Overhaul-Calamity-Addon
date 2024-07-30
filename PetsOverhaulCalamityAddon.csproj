@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<!-- Import tModLoader mod properties -->
+	<Import Project="..\tModLoader.targets" />
+
+	<!-- General -->
+	<PropertyGroup>
+		
+	</PropertyGroup>
+	<ItemGroup>
+	  <None Remove="Buffs\TheGrandNourishment.png" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Reference Include="CalamityMod">
+	    <HintPath>..\ModAssemblies\CalamityMod_v2.0.4.3.dll</HintPath>
+	  </Reference>
+	  <Reference Include="PetsOverhaul">
+	    <HintPath>..\ModAssemblies\PetsOverhaul_v2.3.13.1.dll</HintPath>
+	  </Reference>
+	</ItemGroup>
+
+	<!-- References -->
+
+</Project>

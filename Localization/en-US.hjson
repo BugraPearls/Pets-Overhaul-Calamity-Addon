@@ -1,0 +1,135 @@
+Mods: {
+	PetsOverhaulCalamityAddon: {
+		PetTooltips: {
+			ForgottenDragonEgg:
+				'''
+				<class>
+				- 
+				'''
+			Astrophage:
+				'''
+				<class>
+				- 
+				'''
+			BearsEye:
+				'''
+				<class>
+				- 
+				'''
+			CharredRelic:
+				'''
+				<class>
+				- 
+				'''
+			CosmicPlushie:
+				'''
+				<class>
+				- 
+				'''
+			TrashmanTrashcan:
+				'''
+				<class>
+				- 
+				'''
+			TheEtomer:
+				'''
+				<class>
+				- 
+				'''
+			AbyssShellFossil:
+				'''
+				<class>
+				- 
+				'''
+			GeyserShell:
+				'''
+				<class>
+				- 
+				'''
+			FoxDrive:
+				'''
+				<class>
+				- 
+				'''
+			PrimroseKeepsake:
+				'''
+				<class>
+				- 
+				'''
+			RomajedaOrchid:
+				'''
+				<class>
+				- 
+				'''
+			JoyfulHeart:
+				'''
+				<class>
+				- Press Pet Ability Keybind (<keybind>) to spread some Love!
+				 * All enemies and Players in 35 block radius gets Lovestruck for 15 seconds.
+				- All Lovestruck Enemies are slowed by 30% and deal -10 damage.
+				- Is too cute. All players affected by Lovestruck are cute.
+				 * Its hard for enemies to hurt cute players, Players get 8% damage reduction.
+				'''
+			Levi:
+				'''
+				<class>
+				- 
+				'''
+			RottingEyeball:
+				'''
+				<class>
+				- Killing Corrupt enemies accumulates strength.
+				 * Current Corrupt kills: <killCount>
+				'''
+			BloodyVein:
+				'''
+				<class>
+				- Killing Crimson enemies accumulates strength.
+				 * Current Crimson kills: <killCount>
+				'''
+			PineapplePet:
+				'''
+				<class>
+				- Modifies your Food items' Well Fed properties.
+				 * Increases Well Fed stage by +1.
+				 * Duration of Well Fed buffs will be half of base amount.
+				 * Exquisitely Stuffed will become The Grand Nourishment, further improving effects.
+				- Increases benefits of Well Fed buffs by 50% while this Pet is active.
+				'''
+			PlagueCaller:
+				'''
+				<class>
+				- 
+				'''
+			McNuggets:
+				'''
+				<class>
+				- Press Pet Ability Keybind (<keybind>) to use Rebirth Ability. While Reborn, gain following effects:
+				 * You will gain a shield with exact amount of your missing health.
+				 * Gain <dmgRebirth>% damage, <defRebirth> defense and <msRebirth>% movement speed.
+				 * Your attacks inflict Dragonfire for <fireTime> seconds.
+				 * Reborn effects lasts for <rebornDuration> seconds.
+				 * All buff amounts and durations can increase up to 200% depending on the health ability was used at. 
+				 * Effect amplifier is most useful when at or below 20% health.
+				 * You will take damage for exact amount of initial shield after effects wear off, the shield can tank the damage.
+				 * Rebirth ability has a <cooldown> minute cooldown.
+				- If Player dies while ability isn't on cooldown, but wasn't used manually, it will save the player with following:
+				 * Player gains the base effects, with no amplifiers, no shielding but you will be healed to maximum health.
+				 * Player [c/f8baba:will be killed immediately] after the effects wear off.
+				'''
+			BrimstoneJewel:
+				'''
+				<class>
+				- 
+				'''
+			HermitsBoxofOneHundredMedicines:
+				'''
+				<class>
+				- Press Pet Ability Keybind (<keybind>) to consume a medicine.
+				- You will recover 23 + 10% of your maximum health, however;
+				 * This has a 16 second cooldown.
+				 * While on cooldown, multiply all of your damage dealt by 0.89x.
+				'''
+		}
+	}
+}

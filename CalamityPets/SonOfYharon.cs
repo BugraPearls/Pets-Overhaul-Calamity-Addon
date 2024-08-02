@@ -1,4 +1,7 @@
+using CalamityMod.Buffs.Summon;
 using CalamityMod.Items.Pets;
+using CalamityMod.Items.Weapons.Summon;
+using CalamityMod.Projectiles.Summon;
 using PetsOverhaul.Config;
 using PetsOverhaul.Systems;
 using System;
@@ -20,16 +23,15 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         public int rebirthDuration = 600;
         public int rebirthCooldown = 7200;
         public override PetClasses PetClassPrimary => PetClasses.None;
-        public static int PetItemID => ModContent.ItemType<McNuggets>();
         public override void PostUpdateEquips()
         {
 
         }
         public override void ProcessTriggers(TriggersSet triggersSet)
         {
-            if (Pet.PetInUseWithSwapCd(PetItemID) && Keybinds.UsePetAbility.JustPressed)
+            if (Pet.PetInUseWithSwapCd(1) && Keybinds.UsePetAbility.JustPressed)
             {
-                Main.NewText("asdas");
+                Main.NewText("placeholder");
             }
         }
     }
@@ -37,7 +39,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
     {
         public override bool AppliesToEntity(Item entity, bool lateInstantiation)
         {
-            return entity.type == SonOfYharonEffect.PetItemID;
+            return entity.type == ModContent.ItemType<McNuggets>();
         }
 
         public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)

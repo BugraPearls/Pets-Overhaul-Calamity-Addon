@@ -1,5 +1,7 @@
 Mods: {
 	PetsOverhaulCalamityAddon: {
+		Misc.ChaliceOfTheBloodGod: "[c/808080:Bleed effect is disabled if paired with Skeletron Pet.]"
+
 		PetTooltips: {
 			ForgottenDragonEgg:
 				'''

@@ -7,12 +7,13 @@ namespace PetsOverhaulCalamityAddon.Systems
 {
     public class CalamityPetsModPlayer : ModPlayer
     {
+        CalamityPlayer Calamity => Player.GetModPlayer<CalamityPlayer>();
+        GlobalPet Pet => Player.GetModPlayer<GlobalPet>();
         public override void UpdateEquips()
         {
-            CalamityPlayer calamityPlayer = Player.GetModPlayer<CalamityPlayer>();
-            if (Player.miscEquips[0].type == ItemID.SkeletronPetItem && calamityPlayer.chaliceOfTheBloodGod)
+            if (Pet.PetInUseWithSwapCd(ItemID.SkeletronPetItem) && Calamity.chaliceOfTheBloodGod)
             {
-                calamityPlayer.chaliceOfTheBloodGod = false;
+                Calamity.chaliceOfTheBloodGod = false;
             }
         }
     }

@@ -5,6 +5,9 @@ using Terraria.ModLoader;
 
 namespace PetsOverhaulCalamityAddon.Systems
 {
+    /// <summary>
+    /// Class that includes ItemIDs of Pets of Calamity, working with similar purpose of ItemID class.
+    /// </summary>
     public class CalamityPetIDs
     {
         public static int Akato => ModContent.GetInstance<ForgottenDragonEgg>().Type;
@@ -29,6 +32,9 @@ namespace PetsOverhaulCalamityAddon.Systems
         public static int SupremeCalamitas => ModContent.GetInstance<BrimstoneJewel>().Type;
         public static int ThirdSage => ModContent.GetInstance<HermitsBoxofOneHundredMedicines>().Type;
     }
+    /// <summary>
+    /// Class that includes ItemIDs of Light Pets of Calamity, working with similar purpose of ItemID class.
+    /// </summary>
     public class CalamityLightPetIDs
     {
 

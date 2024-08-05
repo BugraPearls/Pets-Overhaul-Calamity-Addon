@@ -20,7 +20,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
     {
         public override bool AppliesToEntity(Item entity, bool lateInstantiation)
         {
-            return entity.type == ModContent.ItemType<FoxDrive>();
+            return entity.type == CalamityPetIDs.Fox;
         }
 
         public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)

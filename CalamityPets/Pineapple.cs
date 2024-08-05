@@ -2,6 +2,7 @@ using PetsOverhaul.Config;
 using PetsOverhaul.Systems;
 using PetsOverhaulCalamityAddon.Buffs;
 using PetsOverhaulCalamityAddon.Systems;
+using System;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
@@ -21,18 +22,38 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         public override PetClasses PetClassPrimary => PetClasses.None;
         public override void PostUpdateEquips()
         {
+            void WellFedAmp(int Defense, float Crit, float Damage, float SummonerKb, float MoveSpd, float MiningSpeed)
+            {
+                Player.statDefense += Defense;
+                Player.GetCritChance<GenericDamageClass>() += Crit;
+                Player.GetDamage<GenericDamageClass>() += Damage;
+                Player.GetKnockback<SummonDamageClass>() += SummonerKb;
+                Player.moveSpeed += MoveSpd;
+                Player.pickSpeed += MiningSpeed;
+            }
+
             if (Player.HasBuff(ModContent.BuffType<TheGrandNourishment>()))
             {
-                Player.statDefense += defense;
-                Player.GetCritChance<GenericDamageClass>() += crit;
-                Player.GetDamage<GenericDamageClass>() += damage;
-                Player.GetKnockback<SummonDamageClass>() += summonerKb;
-                Player.moveSpeed += moveSpd;
-                Player.pickSpeed += miningSpeed;
+                WellFedAmp(defense, crit, damage, summonerKb, moveSpd, miningSpeed);
             }
-            if (Pet.PetInUseWithSwapCd(CalamityPetIDs.Pineapple))
+            if (Pet.PetInUseWithSwapCd(CalamityPetIDs.Pineapple)) //Half of all Well Fed buffs (Calamity Modified values)
             {
-                
+                if (Player.HasBuff(BuffID.WellFed))
+                {
+                    WellFedAmp(1, 1f, 0.025f, 0.25f, 0.025f, 0.025f);
+                }
+                if (Player.HasBuff(BuffID.WellFed2))
+                {
+                    WellFedAmp(2, 1.5f, 0.0375f, 0.375f, 0.0375f, 0.05f);
+                }
+                if (Player.HasBuff(BuffID.WellFed3))
+                {
+                    WellFedAmp(2, 2f, 0.05f, 0.5f, 0.05f, 0.075f);
+                }
+                if (Player.HasBuff(ModContent.BuffType<TheGrandNourishment>()))
+                {
+                    WellFedAmp((int)Math.Ceiling(defense / 2f), crit / 2, damage / 2, summonerKb / 2, moveSpd / 2, miningSpeed / 2);
+                }
             }
         }
         public override void Load()
@@ -65,7 +86,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                         break;
                 }
             }
-            orig(self,buffType,buffTime,quiet, foodHack);
+            orig(self, buffType, buffTime, quiet, foodHack);
         }
     }
     public sealed class PineappleItemTooltip : GlobalItem

@@ -1,5 +1,5 @@
 using CalamityMod.Buffs.Summon;
-using CalamityMod.Items.Pets;
+using PetsOverhaulCalamityAddon.Systems;
 using CalamityMod.Items.Weapons.Summon;
 using CalamityMod.Projectiles.Summon;
 using PetsOverhaul.Config;
@@ -39,7 +39,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
     {
         public override bool AppliesToEntity(Item entity, bool lateInstantiation)
         {
-            return entity.type == ModContent.ItemType<McNuggets>();
+            return entity.type == CalamityPetIDs.SonOfYharon;
         }
 
         public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)

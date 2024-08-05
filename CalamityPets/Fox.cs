@@ -1,4 +1,4 @@
-using CalamityMod.Items.Pets;
+using PetsOverhaulCalamityAddon.Systems;
 using PetsOverhaul.Config;
 using PetsOverhaul.Systems;
 using System.Collections.Generic;

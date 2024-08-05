@@ -30,7 +30,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                 Player.moveSpeed += moveSpd;
                 Player.pickSpeed += miningSpeed;
             }
-            if (Pet.PetInUseWithSwapCd(CalamityIDs.Pineapple))
+            if (Pet.PetInUseWithSwapCd(CalamityPetIDs.Pineapple))
             {
                 
             }
@@ -45,7 +45,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
             int buffType = type;
             int buffTime = timeToAdd;
             PineappleEffect pineapple = self.GetModPlayer<PineappleEffect>();
-            if (pineapple.Pet.PetInUseWithSwapCd(CalamityIDs.Pineapple) && BuffID.Sets.IsWellFed[type])
+            if (pineapple.Pet.PetInUseWithSwapCd(CalamityPetIDs.Pineapple) && BuffID.Sets.IsWellFed[type])
             {
                 switch (type)
                 {
@@ -73,7 +73,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
 
         public override bool AppliesToEntity(Item entity, bool lateInstantiation)
         {
-            return entity.type == CalamityIDs.Pineapple;
+            return entity.type == CalamityPetIDs.Pineapple;
         }
 
         public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)

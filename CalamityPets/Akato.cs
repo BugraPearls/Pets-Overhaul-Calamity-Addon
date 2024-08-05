@@ -1,6 +1,6 @@
-using CalamityMod.Items.Pets;
 using PetsOverhaul.Config;
 using PetsOverhaul.Systems;
+using PetsOverhaulCalamityAddon.Systems;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.Localization;
@@ -20,7 +20,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
     {
         public override bool AppliesToEntity(Item entity, bool lateInstantiation)
         {
-            return entity.type == ModContent.ItemType<ForgottenDragonEgg>();
+            return entity.type == CalamityPetIDs.Akato;
         }
 
         public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)

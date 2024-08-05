@@ -1,4 +1,4 @@
-using CalamityMod.Items.Pets;
+using PetsOverhaulCalamityAddon.Systems;
 using PetsOverhaul.Config;
 using PetsOverhaul.Systems;
 using System.Collections.Generic;
@@ -20,7 +20,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
     {
         public override bool AppliesToEntity(Item entity, bool lateInstantiation)
         {
-            return entity.type == ModContent.ItemType<TrashmanTrashcan>();
+            return entity.type == CalamityPetIDs.DannyDevito;
         }
 
         public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)

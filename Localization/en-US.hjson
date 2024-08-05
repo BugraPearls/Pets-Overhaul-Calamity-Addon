@@ -96,7 +96,7 @@ Mods: {
 				 * Increases Well Fed stage by +1.
 				 * Duration of Well Fed buffs will be half of base amount.
 				 * Exquisitely Stuffed will become The Grand Nourishment, further improving effects.
-				- Increases benefits of Well Fed buffs by 50% while this Pet is active.
+				- Grants an extra 50% of Well Fed benefits while the Pet is active.
 				'''
 			PlagueCaller:
 				'''
@@ -132,6 +132,11 @@ Mods: {
 				 * This has a 16 second cooldown.
 				 * While on cooldown, multiply all of your damage dealt by 0.89x.
 				'''
+		}
+
+		Buffs: {
+			TheGrandNourishmentTooltip: Superior improvements to all stats!
+			TheGrandNourishment.DisplayName: The Grand Nourishment
 		}
 	}
 }

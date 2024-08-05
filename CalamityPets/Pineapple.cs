@@ -93,17 +93,9 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                 self.ClearBuff(BuffID.WellFed2);
                 self.ClearBuff(BuffID.WellFed3);
             }
-            else if (buffType == BuffID.WellFed) 
+            else if ((buffType == BuffID.WellFed || buffType == BuffID.WellFed2 || buffType == BuffID.WellFed3) && self.HasBuff(ModContent.BuffType<TheGrandNourishment>())) 
             {
-                self.ClearBuff(ModContent.BuffType<TheGrandNourishment>());
-            }
-            else if (buffType == BuffID.WellFed2)
-            {
-                self.ClearBuff(ModContent.BuffType<TheGrandNourishment>());
-            }
-            else if (buffType == BuffID.WellFed3)
-            {
-                self.ClearBuff(ModContent.BuffType<TheGrandNourishment>());
+                return;
             }
             orig(self, buffType, buffTime, quiet, foodHack);
         }

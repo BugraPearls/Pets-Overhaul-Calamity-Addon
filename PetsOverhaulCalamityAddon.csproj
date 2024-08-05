@@ -9,6 +9,7 @@
 	</PropertyGroup>
 	<ItemGroup>
 	  <None Remove="Buffs\TheGrandNourishment.png" />
+	  <None Remove="icon.png" />
 	</ItemGroup>
 	<ItemGroup>
 	  <Reference Include="CalamityMod">

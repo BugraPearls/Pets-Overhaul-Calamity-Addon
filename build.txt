@@ -2,3 +2,4 @@ modReferences = PetsOverhaul, CalamityMod
 displayName = Pets Overhaul: Calamity Addon
 author = Pearlie
 version = 0.1.3
+buildIgnore = icon_workshop.png

@@ -29,7 +29,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         }
         public override void ProcessTriggers(TriggersSet triggersSet)
         {
-            if (Pet.PetInUseWithSwapCd(1) && Keybinds.UsePetAbility.JustPressed)
+            if (Pet.PetInUseWithSwapCd(CalamityPetIDs.SonOfYharon) && Keybinds.UsePetAbility.JustPressed)
             {
                 Main.NewText("placeholder");
             }

@@ -1,3 +1,4 @@
+using CalamityMod.NPCs.Yharon;
 using PetsOverhaul.Config;
 using PetsOverhaul.Systems;
 using PetsOverhaulCalamityAddon.Buffs;
@@ -19,7 +20,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         public float summonerKb = 1.25f;
         public float moveSpd = 0.125f;
         public float miningSpeed = 0.2f;
-        public override PetClasses PetClassPrimary => PetClasses.None;
+        public override PetClasses PetClassPrimary => PetClasses.Utility;
         public override void PostUpdateEquips()
         {
             void WellFedAmp(int Defense, float Crit, float Damage, float SummonerKb, float MoveSpd, float MiningSpeed)
@@ -117,6 +118,12 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
             PineappleEffect pineapple = Main.LocalPlayer.GetModPlayer<PineappleEffect>();
             tooltips.Add(new(Mod, "Tooltip0", Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.PineapplePet")
                 .Replace("<class>", PetColors.ClassText(pineapple.PetClassPrimary, pineapple.PetClassSecondary))
+                .Replace("<def>", pineapple.defense.ToString())
+                .Replace("<crit>", Math.Round(pineapple.crit, 2).ToString())
+                .Replace("<dmg>", Math.Round(pineapple.damage* 100, 2).ToString())
+                .Replace("<sumKb>", Math.Round(pineapple.summonerKb, 2).ToString())
+                .Replace("<moveSpd>", Math.Round(pineapple.moveSpd * 100, 2).ToString())
+                .Replace("<miningSpd>", Math.Round(pineapple.miningSpeed * 100, 2).ToString())
             ));
         }
     }

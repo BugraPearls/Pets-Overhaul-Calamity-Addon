@@ -96,6 +96,7 @@ Mods: {
 				 * Increases Well Fed stage by +1.
 				 * Duration of Well Fed buffs will be half of base amount.
 				 * Exquisitely Stuffed will become The Grand Nourishment, further improving effects.
+				 * +<def> Def, <crit>% Crit, <dmg>% Dmg, +<sumKb> Sum. Kb, %<moveSpd> Move Spd, %<miningSpd> Mining Spd
 				 * Any lower tier of Well Fed cannot override The Grand Nourishment.
 				- Grants an extra 50% of Well Fed benefits while the Pet is active.
 				'''
@@ -129,9 +130,9 @@ Mods: {
 				'''
 				<class>
 				- Press Pet Ability Keybind (<keybind>) to consume a medicine.
-				- You will recover 23 + 10% of your maximum health, however;
-				 * This has a 16 second cooldown.
-				 * While on cooldown, multiply all of your damage dealt by 0.89x.
+				- You will recover <flatHeal> + <percHeal>% of your maximum health, however;
+				 * This has a <cooldown> second cooldown.
+				 * While on cooldown, multiply all of your damage dealt by <damageMult>x.
 				'''
 		}
 

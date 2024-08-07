@@ -113,13 +113,13 @@ Mods: {
 				 * Gain <dmgRebirth>% damage, <defRebirth> defense and <msRebirth>% movement speed.
 				 * Your attacks inflict Dragonfire for <fireTime> seconds.
 				 * Reborn effects lasts for <rebornDuration> seconds.
-				 * All buff amounts and durations can increase up to 200% depending on the health ability was used at. 
-				 * Effect amplifier is most useful when at or below 20% health.
+				 * All buff amounts and durations can increase up to 300% depending on the health ability was used at. 
+				 * Effect amplifier is way more useful the lesser health you have, reaching maximum potential at 25% hp.
 				 * You will take damage for exact amount of initial shield after effects wear off, the shield can tank the damage.
 				 * Rebirth ability has a <cooldown> minute cooldown.
 				- If Player dies while ability isn't on cooldown, but wasn't used manually, it will save the player with following:
 				 * Player gains the base effects, with no amplifiers, no shielding but you will be healed to maximum health.
-				 * Player [c/f8baba:will be killed immediately] after the effects wear off.
+				 * Player [c/f8baba:will be killed immediately] after the effects wear off. (Son of Yharon gets too exhausted since he does it for you!)
 				'''
 			BrimstoneJewel:
 				'''

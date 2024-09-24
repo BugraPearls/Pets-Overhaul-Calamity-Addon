@@ -32,7 +32,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
 
             MiniPerforatorEffect perforator = Main.LocalPlayer.GetModPlayer<MiniPerforatorEffect>();
             tooltips.Add(new(Mod, "Tooltip0", Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.BloodyVein")
-                    .Replace("<class>", PetColors.ClassText(perforator.PetClassPrimary, perforator.PetClassSecondary))
+                    .Replace("<class>", PetTextsColors.ClassText(perforator.PetClassPrimary, perforator.PetClassSecondary))
                 ));
         }
     }

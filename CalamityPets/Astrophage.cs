@@ -34,7 +34,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
 
             AstrophageEffect astro = Main.LocalPlayer.GetModPlayer<AstrophageEffect>();
             tooltips.Add(new(Mod, "Tooltip0", Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.Astrophage")
-                .Replace("<class>", PetColors.ClassText(astro.PetClassPrimary, astro.PetClassSecondary))
+                .Replace("<class>", PetTextsColors.ClassText(astro.PetClassPrimary, astro.PetClassSecondary))
             ));
         }
     }

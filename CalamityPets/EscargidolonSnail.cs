@@ -32,7 +32,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
 
             EscargidolonSnailEffect snail = Main.LocalPlayer.GetModPlayer<EscargidolonSnailEffect>();
             tooltips.Add(new(Mod, "Tooltip0", Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.AbyssShellFossil")
-                .Replace("<class>", PetColors.ClassText(snail.PetClassPrimary, snail.PetClassSecondary))
+                .Replace("<class>", PetTextsColors.ClassText(snail.PetClassPrimary, snail.PetClassSecondary))
             ));
         }
     }

@@ -32,7 +32,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
 
             BearEffect bear = Main.LocalPlayer.GetModPlayer<BearEffect>();
             tooltips.Add(new(Mod, "Tooltip0", Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.BearsEye")
-                .Replace("<class>", PetColors.ClassText(bear.PetClassPrimary, bear.PetClassSecondary))
+                .Replace("<class>", PetTextsColors.ClassText(bear.PetClassPrimary, bear.PetClassSecondary))
             ));
         }
     }

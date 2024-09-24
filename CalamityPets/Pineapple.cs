@@ -117,7 +117,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
             }
             PineappleEffect pineapple = Main.LocalPlayer.GetModPlayer<PineappleEffect>();
             tooltips.Add(new(Mod, "Tooltip0", Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.PineapplePet")
-                .Replace("<class>", PetColors.ClassText(pineapple.PetClassPrimary, pineapple.PetClassSecondary))
+                .Replace("<class>", PetTextsColors.ClassText(pineapple.PetClassPrimary, pineapple.PetClassSecondary))
                 .Replace("<def>", pineapple.defense.ToString())
                 .Replace("<crit>", Math.Round(pineapple.crit, 2).ToString())
                 .Replace("<dmg>", Math.Round(pineapple.damage* 100, 2).ToString())

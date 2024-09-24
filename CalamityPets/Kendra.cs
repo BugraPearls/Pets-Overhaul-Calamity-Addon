@@ -33,7 +33,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
 
             KendraEffect kendra = Main.LocalPlayer.GetModPlayer<KendraEffect>();
             tooltips.Add(new(Mod, "Tooltip0", Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.RomajedaOrchid")
-                .Replace("<class>", PetColors.ClassText(kendra.PetClassPrimary, kendra.PetClassSecondary))
+                .Replace("<class>", PetTextsColors.ClassText(kendra.PetClassPrimary, kendra.PetClassSecondary))
             ));
         }
     }

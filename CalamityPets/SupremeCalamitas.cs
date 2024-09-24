@@ -32,7 +32,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
             SupremeCalamitasEffect calamitas = Main.LocalPlayer.GetModPlayer<SupremeCalamitasEffect>();
 
             tooltips.Add(new(Mod, "Tooltip0", Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.BrimstoneJewel")
-                .Replace("<class>", PetColors.ClassText(calamitas.PetClassPrimary, calamitas.PetClassSecondary))
+                .Replace("<class>", PetTextsColors.ClassText(calamitas.PetClassPrimary, calamitas.PetClassSecondary))
             ));
         }
     }

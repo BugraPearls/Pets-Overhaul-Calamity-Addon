@@ -35,7 +35,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
             AkatoEffect akato = Main.LocalPlayer.GetModPlayer<AkatoEffect>();
 
             tooltips.Add(new(Mod, "Tooltip0", Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.ForgottenDragonEgg")
-                        .Replace("<class>", PetColors.ClassText(akato.PetClassPrimary, akato.PetClassSecondary))
+                        .Replace("<class>", PetTextsColors.ClassText(akato.PetClassPrimary, akato.PetClassSecondary))
                     ));
         }
     }

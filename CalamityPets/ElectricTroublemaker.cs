@@ -33,7 +33,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
             ElectricTroublemakerEffect rotom = Main.LocalPlayer.GetModPlayer<ElectricTroublemakerEffect>();
 
             tooltips.Add(new(Mod, "Tooltip0", Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.TheEtomer")
-                    .Replace("<class>", PetColors.ClassText(rotom.PetClassPrimary, rotom.PetClassSecondary))
+                    .Replace("<class>", PetTextsColors.ClassText(rotom.PetClassPrimary, rotom.PetClassSecondary))
                 ));
         }
     }

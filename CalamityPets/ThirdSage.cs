@@ -9,6 +9,7 @@ using Terraria.GameInput;
 using System;
 using Terraria.ID;
 using Terraria.Audio;
+using PetsOverhaul;
 
 namespace PetsOverhaulCalamityAddon.CalamityPets
 {
@@ -35,10 +36,11 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         }
         public override void ProcessTriggers(TriggersSet triggersSet)
         {
-            if (Pet.timer <= 0 && Pet.PetInUseWithSwapCd(CalamityPetIDs.ThirdSage) && Keybinds.UsePetAbility.JustPressed)
+            if (Pet.AbilityPressCheck() && Pet.PetInUseWithSwapCd(CalamityPetIDs.ThirdSage))
             {
-                SoundEngine.PlaySound(SoundID.Item2 with { Pitch = -0.5f, PitchVariance = 0.4f },Player.position);
-                Pet.PetRecovery(Player.statLifeMax2, percHealing, flatHealing, respectLifeStealCap: false);
+                if (ModContent.GetInstance<Personalization>().AbilitySoundDisabled == false)
+                    SoundEngine.PlaySound(SoundID.Item2 with { Pitch = -0.5f, PitchVariance = 0.4f }, Player.position);
+                Pet.PetRecovery(Player.statLifeMax2, percHealing, flatHealing, isLifesteal: false);
                 Pet.timer = Pet.timerMax;
             }
         }
@@ -59,8 +61,8 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
             ThirdSageEffect sage = Main.LocalPlayer.GetModPlayer<ThirdSageEffect>();
 
             tooltips.Add(new(Mod, "Tooltip0", Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.HermitsBoxofOneHundredMedicines")
-                    .Replace("<keybind>", Keybinds.UsePetAbility.GetAssignedKeys(GlobalPet.PlayerInputMode).Count > 0 ? Keybinds.UsePetAbility.GetAssignedKeys(GlobalPet.PlayerInputMode)[0] : $"[c/{Colors.RarityTrash.Hex3()}:{Language.GetTextValue("Mods.PetsOverhaul.KeybindMissing")}]")
-                    .Replace("<class>", PetColors.ClassText(sage.PetClassPrimary, sage.PetClassSecondary))
+                    .Replace("<keybind>", PetTextsColors.KeybindText(Keybinds.UsePetAbility))
+                    .Replace("<class>", PetTextsColors.ClassText(sage.PetClassPrimary, sage.PetClassSecondary))
                     .Replace("<flatHeal>", sage.flatHealing.ToString())
                     .Replace("<percHeal>", Math.Round(sage.percHealing * 100, 2).ToString())
                     .Replace("<cooldown>", Math.Round(sage.cooldown / 60f, 2).ToString())

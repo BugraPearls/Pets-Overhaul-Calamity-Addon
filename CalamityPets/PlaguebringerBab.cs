@@ -32,7 +32,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
 
             PlaguebringerBabEffect plague = Main.LocalPlayer.GetModPlayer<PlaguebringerBabEffect>();
             tooltips.Add(new(Mod, "Tooltip0", Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.PlagueCaller")
-                .Replace("<class>", PetColors.ClassText(plague.PetClassPrimary, plague.PetClassSecondary))
+                .Replace("<class>", PetTextsColors.ClassText(plague.PetClassPrimary, plague.PetClassSecondary))
             ));
         }
     }

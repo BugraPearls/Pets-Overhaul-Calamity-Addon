@@ -33,7 +33,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
 
             LeviEffect levi = Main.LocalPlayer.GetModPlayer<LeviEffect>();
             tooltips.Add(new(Mod, "Tooltip0", Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.Levi")
-                .Replace("<class>", PetColors.ClassText(levi.PetClassPrimary, levi.PetClassSecondary))
+                .Replace("<class>", PetTextsColors.ClassText(levi.PetClassPrimary, levi.PetClassSecondary))
             ));
         }
     }

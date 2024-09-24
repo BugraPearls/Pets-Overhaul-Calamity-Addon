@@ -33,7 +33,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
 
             LadSharkEffect shark = Main.LocalPlayer.GetModPlayer<LadSharkEffect>();
             tooltips.Add(new(Mod, "Tooltip0", Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.JoyfulHeart")
-                .Replace("<class>", PetColors.ClassText(shark.PetClassPrimary, shark.PetClassSecondary))
+                .Replace("<class>", PetTextsColors.ClassText(shark.PetClassPrimary, shark.PetClassSecondary))
             ));
         }
     }

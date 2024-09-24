@@ -51,8 +51,14 @@ Mods: {
 			FoxDrive:
 				'''
 				<class>
-				- 
+				- Press Pet Ability Keybind (<keybind>) to override over (cleanse) ALL the debuffs on you.
+				 * Doing so succesfully causes an overload, you cannot use anything for next
+				 <baseCurse> base seconds + <perCurse> second per debuff cleansed.
+				 * This includes semi-debuffs. (debuffs that has both upsides and downsides!)
+				 * Has a <cooldown> second cooldown.
+				 * Essentially applies cursed debuff, though it ignores immunities.
 				'''
+			FoxCleansedText: "Debuffs Cleansed: "
 			PrimroseKeepsake:
 				'''
 				<class>

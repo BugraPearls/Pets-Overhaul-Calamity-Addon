@@ -33,7 +33,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
 
             FlakHermitEffect hermit = Main.LocalPlayer.GetModPlayer<FlakHermitEffect>();
             tooltips.Add(new(Mod, "Tooltip0", Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.GeyserShell")
-                .Replace("<class>", PetColors.ClassText(hermit.PetClassPrimary, hermit.PetClassSecondary))
+                .Replace("<class>", PetTextsColors.ClassText(hermit.PetClassPrimary, hermit.PetClassSecondary))
             ));
         }
     }

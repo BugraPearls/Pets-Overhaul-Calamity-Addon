@@ -123,7 +123,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         }
         public override void ProcessTriggers(TriggersSet triggersSet)
         {
-            if (Keybinds.UsePetAbility.JustPressed && Pet.PetInUseWithSwapCd(CalamityPetIDs.SonOfYharon) && Pet.timer <= 0)
+            if (Pet.AbilityPressCheck() && Pet.PetInUseWithSwapCd(CalamityPetIDs.SonOfYharon))
             {
                 if (ModContent.GetInstance<Personalization>().AbilitySoundDisabled == false)
                 {
@@ -153,7 +153,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                     SoundEngine.PlaySound(new SoundStyle("CalamityMod/Sounds/Custom/Yharon/YharonRoarShort") with { PitchVariance = 0.3f }, Player.position);
                 }
                 PopupText.NewText(new AdvancedPopupRequest() with { Text = "Son of Yharon is delaying your death!", DurationInFrames = 150, Velocity = new Vector2(0, -10), Color = new Color(209, 107, 75) }, Player.position);
-                Pet.PetRecovery(Player.statLifeMax2, 1f, respectLifeStealCap: false);
+                Pet.PetRecovery(Player.statLifeMax2, 1f, isLifesteal: false);
                 deadTimer = rebirthDuration;
                 Pet.timer = Pet.timerMax;
                 return false;
@@ -177,8 +177,8 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
             }
             SonOfYharonEffect yharon = Main.LocalPlayer.GetModPlayer<SonOfYharonEffect>();
             tooltips.Add(new(Mod, "Tooltip0", Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.McNuggets")
-                .Replace("<class>", PetColors.ClassText(yharon.PetClassPrimary, yharon.PetClassSecondary))
-                        .Replace("<keybind>", Keybinds.UsePetAbility.GetAssignedKeys(GlobalPet.PlayerInputMode).Count > 0 ? Keybinds.UsePetAbility.GetAssignedKeys(GlobalPet.PlayerInputMode)[0] : $"[c/{Colors.RarityTrash.Hex3()}:{Language.GetTextValue("Mods.PetsOverhaul.KeybindMissing")}]")
+                .Replace("<class>", PetTextsColors.ClassText(yharon.PetClassPrimary, yharon.PetClassSecondary))
+                        .Replace("<keybind>", PetTextsColors.KeybindText(Keybinds.UsePetAbility))
                         .Replace("<dmgRebirth>", Math.Round(yharon.dmgRebirth * 100, 2).ToString())
                         .Replace("<defRebirth>", yharon.defRebirth.ToString())
                         .Replace("<msRebirth>", Math.Round(yharon.msRebirth * 100, 2).ToString())

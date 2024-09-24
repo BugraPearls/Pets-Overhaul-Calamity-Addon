@@ -34,7 +34,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
 
             MiniHiveMindEffect hive = Main.LocalPlayer.GetModPlayer<MiniHiveMindEffect>();
             tooltips.Add(new(Mod, "Tooltip0", Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.RottingEyeball")
-                    .Replace("<class>", PetColors.ClassText(hive.PetClassPrimary, hive.PetClassSecondary))
+                    .Replace("<class>", PetTextsColors.ClassText(hive.PetClassPrimary, hive.PetClassSecondary))
                 ));
         }
     }

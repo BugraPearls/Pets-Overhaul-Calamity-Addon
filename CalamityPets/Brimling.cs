@@ -32,7 +32,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
 
             BrimlingEffect brimling = Main.LocalPlayer.GetModPlayer<BrimlingEffect>();
             tooltips.Add(new(Mod, "Tooltip0", Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.CharredRelic")
-                .Replace("<class>", PetColors.ClassText(brimling.PetClassPrimary, brimling.PetClassSecondary))
+                .Replace("<class>", PetTextsColors.ClassText(brimling.PetClassPrimary, brimling.PetClassSecondary))
             ));
         }
     }

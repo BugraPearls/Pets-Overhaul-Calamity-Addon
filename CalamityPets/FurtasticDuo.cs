@@ -32,7 +32,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
 
             FurtasticDuoEffect duo = Main.LocalPlayer.GetModPlayer<FurtasticDuoEffect>();
             tooltips.Add(new(Mod, "Tooltip0", Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.PrimroseKeepsake")
-                .Replace("<class>", PetColors.ClassText(duo.PetClassPrimary, duo.PetClassSecondary))
+                .Replace("<class>", PetTextsColors.ClassText(duo.PetClassPrimary, duo.PetClassSecondary))
             ));
         }
     }

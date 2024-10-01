@@ -2,6 +2,46 @@ Mods: {
 	PetsOverhaulCalamityAddon: {
 		Misc.ChaliceOfTheBloodGod: "[c/808080:Bleed effect is disabled if Skeletron Pet's DoT is active.]"
 
+		LightPetTooltips: {
+			RustedJingleBell:
+				'''
+				Increases your maximum breathing time under water
+				by <breathe> seconds and Pet Ability Haste by <haste> seconds.
+				Bonus Breathe Time: <breatheLine>
+				Pet Ability Haste: <hasteLine>
+				'''
+			ThiefsDime:
+				'''
+				Increases coins dropped by non-boss enemies by <coin>
+				Increases Rouge damage by <rouge>.
+				Extra Coins: <coinLine>
+				Rouge Damage: <rougeLine>
+				'''
+			SuspiciousLookingNOU:
+				'''
+				69
+				420
+				'''
+			LittleLight: ""
+			StrangeOrb:
+				'''
+				Increases fishing power by <power>, fishing fortune by <fortune>
+				and increases movement speed by <moveSpd> if submerged in a liquid.
+				Fishing Power: <powerLine>
+				Fishing Fortune: <fortuneLine>
+				Move Speed in Liquids: <moveSpdLine>
+				'''
+			RadiatingCrystal:
+				'''
+				Increases critical chance by <crit>
+				and mining fortune by <fortune>
+				Crit Chance: <critLine>
+				Mining Fortune: <fortuneLine>
+				'''
+			EnchantedButterfly: "Increases "
+			ChromaticOrb: ""
+		}
+
 		PetTooltips: {
 			ForgottenDragonEgg:
 				'''

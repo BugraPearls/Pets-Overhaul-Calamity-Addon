@@ -1,4 +1,5 @@
 ﻿using CalamityMod.Items.Fishing.AstralCatches;
+using CalamityMod.Items.Fishing.SunkenSeaCatches;
 using CalamityMod.Items.Pets;
 using CalamityMod.Projectiles.Typeless;
 using Terraria.ModLoader;
@@ -37,6 +38,13 @@ namespace PetsOverhaulCalamityAddon.Systems
     /// </summary>
     public class CalamityLightPetIDs
     {
-
+        public static int BabyGhostBell => ModContent.GetInstance<RustedJingleBell>().Type;
+        public static int Goldie => ModContent.GetInstance<ThiefsDime>().Type;
+        public static int Lilorde => ModContent.GetInstance<SuspiciousLookingNOU>().Type;
+        public static int LittleLight => ModContent.GetInstance<LittleLight>().Type;
+        public static int OceanSpirit => ModContent.GetInstance<StrangeOrb>().Type;
+        public static int Radiator => ModContent.GetInstance<RadiatingCrystal>().Type;
+        public static int Sparks => ModContent.GetInstance<EnchantedButterfly>().Type;
+        public static int Yuu => ModContent.GetInstance<ChromaticOrb>().Type;
     }
 }

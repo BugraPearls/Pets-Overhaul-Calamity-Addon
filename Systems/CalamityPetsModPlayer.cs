@@ -1,5 +1,7 @@
 ﻿using CalamityMod.CalPlayer;
+using PetsOverhaul.PetEffects;
 using PetsOverhaul.Systems;
+using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 

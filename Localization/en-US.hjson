@@ -7,7 +7,7 @@ Mods: {
 				'''
 				Increases your maximum breathing time under water
 				by <breathe> seconds and Pet Ability Haste by <haste> seconds.
-				Bonus Breathe Time: <breatheLine>
+				Bonus Breathe Seconds: <breatheLine>
 				Pet Ability Haste: <hasteLine>
 				'''
 			ThiefsDime:
@@ -91,10 +91,11 @@ Mods: {
 			FoxDrive:
 				'''
 				<class>
-				- Press Pet Ability Keybind (<keybind>) to override over (cleanse) ALL the debuffs on you.
+				- Press Pet Ability Keybind (<keybind>) to format (cleanse) ALL the debuffs on you.
 				 * Doing so succesfully causes an overload, you cannot use anything for next
 				 <baseCurse> base seconds + <perCurse> second per debuff cleansed.
 				 * This includes semi-debuffs. (debuffs that has both upsides and downsides!)
+				 * Cleanse does not remove Potion and Mana Sickness.
 				 * Has a <cooldown> second cooldown.
 				 * Essentially applies cursed debuff, though it ignores immunities.
 				'''
@@ -177,7 +178,7 @@ Mods: {
 				<class>
 				- Press Pet Ability Keybind (<keybind>) to consume a medicine.
 				- You will recover <flatHeal> + <percHeal>% of your maximum health, however;
-				 * This has a <cooldown> second cooldown.
+				 * This has a <cooldown> seconds cooldown.
 				 * While on cooldown, multiply all of your damage dealt by <damageMult>x.
 				'''
 		}

@@ -12,7 +12,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
     public sealed class AstrophageEffect : PetEffect
     {
         public override PetClasses PetClassPrimary => PetClasses.None;
-        public override void PostUpdateEquips()
+        public override void PostUpdateMiscEffects()
         {
 
         }

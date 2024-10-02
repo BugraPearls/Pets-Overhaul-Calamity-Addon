@@ -27,7 +27,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                 Pet.SetPetAbilityTimer(cooldown);
             }
         }
-        public override void PostUpdateEquips()
+        public override void PostUpdateMiscEffects()
         {
             if (Pet.PetInUse(CalamityPetIDs.ThirdSage) && Pet.timer > 0)
             {

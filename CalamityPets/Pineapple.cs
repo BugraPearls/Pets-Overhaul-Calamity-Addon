@@ -21,7 +21,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         public float moveSpd = 0.125f;
         public float miningSpeed = 0.2f;
         public override PetClasses PetClassPrimary => PetClasses.Utility;
-        public override void PostUpdateEquips()
+        public override void PostUpdateMiscEffects()
         {
             void WellFedAmp(int Defense, float Crit, float Damage, float SummonerKb, float MoveSpd, float MiningSpeed)
             {

@@ -11,7 +11,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
     public sealed class BrimlingEffect : PetEffect
     {
         public override PetClasses PetClassPrimary => PetClasses.None;
-        public override void PostUpdateEquips()
+        public override void PostUpdateMiscEffects()
         {
 
         }

@@ -42,7 +42,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                 Pet.SetPetAbilityTimer(rebirthCooldown);
             }
         }
-        public override void PostUpdateEquips()
+        public override void PostUpdateMiscEffects()
         {
             if (Pet.PetInUseWithSwapCd(CalamityPetIDs.SonOfYharon))
             {

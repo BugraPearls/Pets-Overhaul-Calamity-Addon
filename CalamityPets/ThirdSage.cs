@@ -38,8 +38,8 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         {
             if (Pet.AbilityPressCheck() && Pet.PetInUseWithSwapCd(CalamityPetIDs.ThirdSage))
             {
-                if (ModContent.GetInstance<Personalization>().AbilitySoundDisabled == false)
-                    SoundEngine.PlaySound(SoundID.Item2 with { Pitch = -0.5f, PitchVariance = 0.4f }, Player.position);
+                if (ModContent.GetInstance<Personalization>().AbilitySoundEnabled)
+                    SoundEngine.PlaySound(SoundID.Item2 with { Pitch = -0.5f, PitchVariance = 0.4f }, Player.Center);
                 Pet.PetRecovery(Player.statLifeMax2, percHealing, flatHealing, isLifesteal: false);
                 Pet.timer = Pet.timerMax;
             }
@@ -54,7 +54,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
 
         public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
         {
-            if (ModContent.GetInstance<Personalization>().DisableTooltipToggle == false && !Keybinds.PetTooltipHide.Current)
+            if (ModContent.GetInstance<Personalization>().EnableTooltipToggle && !Keybinds.PetTooltipHide.Current)
             {
                 return;
             }

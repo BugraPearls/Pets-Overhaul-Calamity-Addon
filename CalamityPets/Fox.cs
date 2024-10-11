@@ -48,8 +48,8 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                 }
                 if (amountOfDebuffs > 0)
                 {
-                    if (ModContent.GetInstance<Personalization>().AbilitySoundDisabled == false)
-                        SoundEngine.PlaySound(SoundID.Item35 with { Pitch = 0.75f, PitchVariance = 0.1f }, Player.position);
+                    if (ModContent.GetInstance<Personalization>().AbilitySoundEnabled)
+                        SoundEngine.PlaySound(SoundID.Item35 with { Pitch = 0.75f, PitchVariance = 0.1f }, Player.Center);
                     cleansePenalty = baseTime + perTime * (amountOfDebuffs - 1);
                     CombatText.NewText(Player.getRect(), Color.Orange, Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.FoxCleansedText") + amountOfDebuffs.ToString(),dramatic: true);
                     Pet.timer = Pet.timerMax;
@@ -66,7 +66,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
 
         public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
         {
-            if (ModContent.GetInstance<Personalization>().DisableTooltipToggle == false && !Keybinds.PetTooltipHide.Current)
+            if (ModContent.GetInstance<Personalization>().EnableTooltipToggle && !Keybinds.PetTooltipHide.Current)
             {
                 return;
             }

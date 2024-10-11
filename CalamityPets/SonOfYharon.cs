@@ -125,11 +125,11 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         {
             if (Pet.AbilityPressCheck() && Pet.PetInUseWithSwapCd(CalamityPetIDs.SonOfYharon))
             {
-                if (ModContent.GetInstance<Personalization>().AbilitySoundDisabled == false)
+                if (ModContent.GetInstance<Personalization>().AbilitySoundEnabled)
                 {
-                    SoundEngine.PlaySound(new SoundStyle("CalamityMod/Sounds/Custom/Yharon/YharonRoar") with { PitchVariance = 0.2f }, Player.position) ;
+                    SoundEngine.PlaySound(new SoundStyle("CalamityMod/Sounds/Custom/Yharon/YharonRoar") with { PitchVariance = 0.2f }, Player.Center) ;
                 }
-                PopupText.NewText(new AdvancedPopupRequest() with { Text = "REBORN!!", DurationInFrames = 150, Velocity = new Vector2(0, -10), Color = new Color(209, 107, 75) }, Player.position);
+                PopupText.NewText(new AdvancedPopupRequest() with { Text = "REBORN!!", DurationInFrames = 150, Velocity = new Vector2(0, -10), Color = new Color(209, 107, 75) }, Player.Center);
                 float playerCurrentHp = Player.statLife;
                 if (Player.statLifeMax2 / Player.statLife > 4)
                 {
@@ -148,11 +148,11 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
             timer = 0;
             if (Pet.PetInUseWithSwapCd(CalamityPetIDs.SonOfYharon) && Pet.timer<= 0)
             {
-                if (ModContent.GetInstance<Personalization>().AbilitySoundDisabled == false)
+                if (ModContent.GetInstance<Personalization>().AbilitySoundEnabled)
                 {
-                    SoundEngine.PlaySound(new SoundStyle("CalamityMod/Sounds/Custom/Yharon/YharonRoarShort") with { PitchVariance = 0.3f }, Player.position);
+                    SoundEngine.PlaySound(new SoundStyle("CalamityMod/Sounds/Custom/Yharon/YharonRoarShort") with { PitchVariance = 0.3f }, Player.Center);
                 }
-                PopupText.NewText(new AdvancedPopupRequest() with { Text = "Son of Yharon is delaying your death!", DurationInFrames = 150, Velocity = new Vector2(0, -10), Color = new Color(209, 107, 75) }, Player.position);
+                PopupText.NewText(new AdvancedPopupRequest() with { Text = "Son of Yharon is delaying your death!", DurationInFrames = 150, Velocity = new Vector2(0, -10), Color = new Color(209, 107, 75) }, Player.Center);
                 Pet.PetRecovery(Player.statLifeMax2, 1f, isLifesteal: false);
                 deadTimer = rebirthDuration;
                 Pet.timer = Pet.timerMax;
@@ -171,7 +171,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
 
         public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
         {
-            if (ModContent.GetInstance<Personalization>().DisableTooltipToggle == false && !Keybinds.PetTooltipHide.Current)
+            if (ModContent.GetInstance<Personalization>().EnableTooltipToggle && !Keybinds.PetTooltipHide.Current)
             {
                 return;
             }

@@ -46,7 +46,17 @@ Mods: {
 			ForgottenDragonEgg:
 				'''
 				<class>
-				- 
+				- [i:<stackIcon>] Current stacks: <dragonPractice>. Sources of stack gains are as follows:
+				 * Direct hits on primary target and all enemies hit by explosion give <hitStack>.
+				 * Direct kills on primary target and all enemies killed by explosion and execute give <killStack>.
+				 * Gained stacks are multiplied by <bossMultiply> if target is a Boss, or multiplied by their rarity value + 1.
+				- Press Pet Ability Keybind (<keybind>) to charge Super Scorcher Breath for your next attack, exploding on hit,
+				enemies hit by explosion gets burnt and granting you permanent stacks, with <cooldown> seconds cooldown.
+				 * Super Scorcher Breath attack expires after <expire> seconds of not using it.
+				 * Explosion deals <baseMult>% + [i:<stackIcon>] <stackMult>% of your initial damage, with <baseSize> + [i:<stackIcon>] <stackSize> blocks of radius.
+				 * Explosion burns enemies for <burnDuration> + [i:<stackIcon>] <stackBurnDuration> seconds and deals <baseBurn> + [i:<stackIcon>] <stackBurn> damage per second.
+				 * While enemies are being burnt, going below <baseExecute>% + [i:<stackIcon>] <stackExecute>% of their health instantly executes them.
+				 * Explosion & stack gain is disabled for Dummies etc, and stats per 1 stack get worse as stacks are higher.
 				'''
 			Astrophage:
 				'''
@@ -186,6 +196,13 @@ Mods: {
 		Buffs: {
 			TheGrandNourishmentTooltip: Superior improvements to all stats!
 			TheGrandNourishment.DisplayName: The Grand Nourishment
+		}
+
+		Items: {
+			DragonPracticeIcon: {
+				DisplayName: Dragon Practice
+				Tooltip: Displayed on Akato Pet's Tooltip. Icon Credit: Riot Games.
+			}
 		}
 	}
 }

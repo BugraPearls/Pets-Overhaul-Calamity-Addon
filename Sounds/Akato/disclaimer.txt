@@ -1,0 +1,5 @@
+All sound effects in this folder belongs to Riot Games' made character, Smolder from League of Legends. 
+
+All are taken from https://leagueoflegends.fandom.com/wiki/Smolder/LoL/Audio
+
+(All three Q on-hit sound effects, and Q execute sound effect.)

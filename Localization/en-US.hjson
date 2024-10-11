@@ -61,12 +61,18 @@ Mods: {
 			Astrophage:
 				'''
 				<class>
-				- 
+				- Inflicts enemies in <infectRadius> blocks with Astral Infection for <infectDuration> seconds.
+				- Enemies in <slowRadius> blocks gets slowed for <slowAmount>% if they have Astral Infection debuff.
+				 * If an enemy dies while under this effect, the nearest enemy in <spreadRadius> blocks of them will get
+				Astral Infection with its remaining duration, and be slowed by <spreadSlow>% for <spreadSlowDuration> seconds.
 				'''
 			BearsEye:
 				'''
 				<class>
-				- 
+				- Going below <belowHealth>% health gives you a Shield equal to
+				<baseShield>% base + <bonusShield>% bonus health shield for <shieldDuration> seconds.
+				- Increases Rogue damage by <rogueDmg>%.
+				- Increases Rogue stealth gain speed by <stealthGain>%.
 				'''
 			CharredRelic:
 				'''
@@ -113,12 +119,22 @@ Mods: {
 			PrimroseKeepsake:
 				'''
 				<class>
-				- 
+				- Going below <belowHealth>% health gives you a Shield equal to
+				<baseShield>% base + <bonusShield>% bonus health shield for <shieldDuration> seconds.
+				 * While its active or below <belowHealth>% health, power absorb bonus damage is multiplied by <absorbMult>x.
+				- Increases Rogue stealth gain speed by <stealthGain>%.
+				- Dealing final blow on an enemy with Rogue hits absorbs their power.
+				 * Adding <percAbsorb>% of their base damage value to your next hit.
+				 * Proccing this bonus damage grants <procShield> shield for <procShieldDuration> seconds.		
+				 * Current stored damage to be added to your next hit: <storedDmg>
 				'''
 			RomajedaOrchid:
 				'''
 				<class>
-				- 
+				- Dealing final blow on an enemy with Rogue hits absorbs their power.
+				 * Adding <percAbsorb>% of their base damage value to your next hit.
+				 * Stealth Strikes multiplies this damage by <stealthMult>x.
+				 * Current stored damage to be added to your next hit: <storedDmg>
 				'''
 			JoyfulHeart:
 				'''

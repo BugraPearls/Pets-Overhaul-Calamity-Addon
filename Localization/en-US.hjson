@@ -121,13 +121,15 @@ Mods: {
 			PrimroseKeepsake:
 				'''
 				<class>
-				- Going below <belowHealth>% health gives you a Shield equal to
-				<baseShield>% base + <bonusShield>% bonus health shield for <shieldDuration> seconds.
-				 * While its active or below <belowHealth>% health, power absorb bonus damage is multiplied by <absorbMult>x.
-				- Increases Rogue stealth gain speed by <stealthGain>%.
+				- Taking damage that puts you below <belowHealth>% health gives you a Shield
+				equal to <baseShield>% base + <bonusShield>% bonus health shield for <shieldDuration> seconds.
+				 * Damage taking you below <belowHealth>% health will be reduced accordingly with the Shield.
+				 * Lifeguard Shield has a <cooldown> seconds cooldown.
+				 * When activated, for same duration, power absorption deals <lifeguardMult>x damage.
+				- Increases Rogue stealth gain by <stealthMoving>% while moving, and <stealthNotMoving>% while not.
 				- Dealing final blow on an enemy with Rogue hits absorbs their power.
 				 * Adding <percAbsorb>% of their base damage value to your next hit.
-				 * Proccing this bonus damage grants <procShield> shield for <procShieldDuration> seconds.		
+				 * Proccing this bonus damage grants <procShield> shield for <procShieldDuration> seconds.
 				 * Current stored damage to be added to your next hit: <storedDmg>
 				'''
 			RomajedaOrchid:

@@ -19,7 +19,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         public int currentNextDamage = 0;
         public override void ModifyHitNPCWithProj(Projectile proj, NPC target, ref NPC.HitModifiers modifiers)
         {
-            if (GlobalPet.LifestealCheck(target) && modifiers.DamageType is RogueDamageClass)
+            if (Pet.PetInUseWithSwapCd(CalamityPetIDs.Kendra) && GlobalPet.LifestealCheck(target) && modifiers.DamageType is RogueDamageClass)
             {
                 modifiers.FlatBonusDamage += currentNextDamage * (proj.Calamity().stealthStrike ? stealthMult : 1f);
                 currentNextDamage = 0;
@@ -27,7 +27,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         }
         public override void OnHitNPCWithProj(Projectile proj, NPC target, NPC.HitInfo hit, int damageDone)
         {
-            if (target.active == false && hit.DamageType is RogueDamageClass)
+            if (Pet.PetInUseWithSwapCd(CalamityPetIDs.Kendra) && target.active == false && hit.DamageType is RogueDamageClass)
             {
                 if ((target.damage * absorbPercent) > currentNextDamage)
                     currentNextDamage = (int)(target.damage * absorbPercent);
@@ -36,7 +36,6 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
     }
     public sealed class RomajedaOrchidTooltip : GlobalItem
     {
-
         public override bool AppliesToEntity(Item entity, bool lateInstantiation)
         {
             return entity.type == CalamityPetIDs.Kendra;

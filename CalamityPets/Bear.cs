@@ -87,6 +87,15 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
             BearEffect bear = Main.LocalPlayer.GetModPlayer<BearEffect>();
             tooltips.Add(new(Mod, "Tooltip0", Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.BearsEye")
                 .Replace("<class>", PetTextsColors.ClassText(bear.PetClassPrimary, bear.PetClassSecondary))
+                .Replace("<belowHealth>", Math.Round(bear.hpTreshold * 100, 2).ToString())
+                .Replace("<baseShield>", Math.Round(bear.baseHpShield * 100, 2).ToString())
+                .Replace("<bonusShield>", Math.Round(bear.bonusHpShield * 100, 2).ToString())
+                .Replace("<shieldDuration>", Math.Round(bear.shieldDuration / 60f, 2).ToString())
+                .Replace("<cooldown>", Math.Round(bear.cooldown / 60f, 2).ToString())
+                .Replace("<rogueDmg>", Math.Round(bear.rogueDmg * 100, 2).ToString())
+                .Replace("<stealthDmg>", Math.Round(bear.stealthDmg * 100, 2).ToString())
+                .Replace("<stealthMoving>", Math.Round(bear.stealthMoving * 100, 2).ToString())
+                .Replace("<stealthNotMoving>", Math.Round(bear.stealthNotMoving * 100, 2).ToString())
             ));
         }
     }

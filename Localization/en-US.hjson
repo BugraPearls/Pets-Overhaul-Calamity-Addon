@@ -71,7 +71,8 @@ Mods: {
 				<class>
 				- Taking damage that puts you below <belowHealth>% health gives you a Shield
 				equal to <baseShield>% base + <bonusShield>% bonus health shield for <shieldDuration> seconds.
-				 * Damage taking you below <belowHealth>% health will be reduced accordingly with the Shield you get.
+				 * Damage taking you below <belowHealth>% health will be reduced accordingly with the Shield.
+				 * Lifeguard Shield has a <cooldown> seconds cooldown.
 				- Increases Rogue damage by <rogueDmg>%, Stealth Strike damage by <stealthDmg>%.
 				- Increases Rogue stealth gain by <stealthMoving>% while moving, and <stealthNotMoving>% while not.
 				'''

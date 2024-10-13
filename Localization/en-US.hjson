@@ -143,11 +143,13 @@ Mods: {
 			JoyfulHeart:
 				'''
 				<class>
-				- Press Pet Ability Keybind (<keybind>) to spread some Love!
-				 * All enemies and Players in 35 block radius gets Lovestruck for 15 seconds.
-				- All Lovestruck Enemies are slowed by 30% and deal -10 damage.
-				- Is too cute. All players affected by Lovestruck are cute.
-				 * Its hard for enemies to hurt cute players, Players get 8% damage reduction.
+				- You're spreading love & peace.
+				 * Your damage is multiplied by <selfDmg>x.
+				 * Damage taken is multiplied by <takenDmg>x.
+				- Press Pet Ability Keybind (<keybind>) to grant healing to
+				EVERYTHING in <radius> blocks, including some self love.
+				 * Heals <perSecRegen> twice per second for <duration> seconds.
+				 * Regen is doubled for Players and Friendly NPC's
 				'''
 			Levi:
 				'''
@@ -216,6 +218,11 @@ Mods: {
 		Buffs: {
 			TheGrandNourishmentTooltip: Superior improvements to all stats!
 			TheGrandNourishment.DisplayName: The Grand Nourishment
+
+			LoveSpread: {
+				DisplayName: Love Spread
+				Description: A Lad Shark is spreading love!
+			}
 		}
 
 		Items: {

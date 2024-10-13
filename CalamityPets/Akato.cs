@@ -254,7 +254,10 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                 Smoldering highestExecute = Burns.MaxBy(x => x.ExecuteTreshold);
                 if (npc.life <= npc.lifeMax * highestExecute.ExecuteTreshold)
                 {
-                    CombatText.NewText(npc.getRect(), Main.MouseTextColorReal,(int)(npc.lifeMax*highestExecute.ExecuteTreshold), true);
+                    GlobalPet.RemoveOldestCombatText();
+
+                    CombatText.NewText(npc.getRect(), Color.GhostWhite,(int)(npc.lifeMax*highestExecute.ExecuteTreshold), true);
+                    
                     npc.StrikeInstantKill();
                     highestExecute.AkatoOfBurner.AddStack(npc);
                 }

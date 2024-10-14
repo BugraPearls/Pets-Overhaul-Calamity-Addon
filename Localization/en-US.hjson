@@ -79,7 +79,14 @@ Mods: {
 			CharredRelic:
 				'''
 				<class>
-				- 
+				- Going below <treshold>% health grants you <dr>% damage reduction.
+				- Taking damage reflects the damage, and spawns fireballs.
+				 * Damage reflected is <reflectAmount>% of pre-mitigation damage.
+				 * Reflection damage is doubled if you're below <treshold>% health.
+				 * Fireballs deal half of taken pre-mitigation damage + your defense,
+				 scaling with your damage reduction, and applying Brimstone Flames on hit.
+				 * Fireballs travel randomly, and fireballs spawns as 5 upon being hurt.
+				 * Fireballs has a <cooldown> seconds cooldown to be re-cast on hurt.
 				'''
 			CosmicPlushie:
 				'''

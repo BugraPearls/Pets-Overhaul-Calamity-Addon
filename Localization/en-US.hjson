@@ -196,7 +196,11 @@ Mods: {
 			PlagueCaller:
 				'''
 				<class>
-				- 
+				- On Rogue hit, enemies keep stacks of percentage of the dealt damage to target and its surroundings.
+				 * Primary target stacks for <primaryPerc>%, while enemies in <hitAoE> blocks stack for <surroundingPerc>% of dealt damage.
+				 * Stacks stay on target for <stackDuration> seconds and the timer is refreshed upon getting a new stack.
+				- Press Pet Ability Keybind (<keybind>) to detonate all stacks from all enemies in <detonateRadius> blocks.
+				 * <cooldown> seconds cooldown, detonating enemies applies Plague and a <slow>% slow for <plagueDuration> seconds.
 				'''
 			McNuggets:
 				'''

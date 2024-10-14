@@ -83,8 +83,10 @@ Mods: {
 				'''
 			CosmicPlushie:
 				'''
-				<class>
-				- 
+				[c/<color>:Emotionally] <class>
+				- dying deals <damage> damage to all enemies in <block> blocks around u
+				 * no effect with non-hardcore characters
+				 * :3
 				'''
 			TrashmanTrashcan:
 				'''

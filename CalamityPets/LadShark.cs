@@ -21,10 +21,10 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         public override PetClasses PetClassPrimary => PetClasses.Defensive;
         public override PetClasses PetClassSecondary => PetClasses.Supportive;
         public float selfDmg = 0.85f;
-        public float enemyDmg = 0.78f;
+        public float enemyDmg = 0.8f;
         public int grantRegen = 3;
         public int regenDuration = 180;
-        public int regenCd = 600;
+        public int regenCd = 1200;
 
         public int radius = 320;
 

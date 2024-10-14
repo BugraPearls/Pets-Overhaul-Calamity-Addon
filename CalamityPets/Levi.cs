@@ -15,7 +15,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         public override PetClasses PetClassPrimary => PetClasses.Offensive;
         public override PetClasses PetClassSecondary => PetClasses.Defensive;
         public float dmgPerFish = 0.005f;
-        public float oneDefPerFishPower = 2f;
+        public float oneDefPerFishPower = 2.5f;
         public float crit = 5f;
         public int helm = 9;
         public int chest = 13;
@@ -60,15 +60,15 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                 int def = item.defense;
                 if (item.type == ItemID.AnglerHat)
                 {
-                    def += levi.helm;
+                    def = levi.helm;
                 }
                 if (item.type == ItemID.AnglerVest)
                 {
-                    def += levi.chest;
+                    def = levi.chest;
                 }
                 if (item.type == ItemID.AnglerPants)
                 {
-                    def += levi.leg;
+                    def = levi.leg;
                 }
                 if (tooltips.Find(x => x.Name == "Defense") != null)
                     tooltips.Find(x => x.Name == "Defense").Text = def.ToString() + Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.LeviDef");

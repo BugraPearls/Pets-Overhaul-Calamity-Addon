@@ -32,7 +32,6 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         private int deadTimer = 0;
         private float healthToMult = 1f;
         private int damageToTakeAfterReborn = 0;
-        private PlayerDeathReason reason;
         public override PetClasses PetClassPrimary => PetClasses.Defensive;
         public override PetClasses PetClassSecondary => PetClasses.Utility;
         public override void PreUpdate()
@@ -58,24 +57,26 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                 {
                     if (deadTimer == 0)
                     {
+                        string reason;
                         switch (Main.rand.Next(4))
                         {
                             case 0:
-                                reason = PlayerDeathReason.ByCustomReason(Player.name + " ran out of flames, and all that is left is ashes.");
+                                reason = Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.YharonDeath1");
                                 break;
                             case 1:
-                                reason = PlayerDeathReason.ByCustomReason(Player.name + " was punished by Yharon for abusing his kid.");
+                                reason = Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.YharonDeath2");
                                 break;
                             case 2:
-                                reason = PlayerDeathReason.ByCustomReason("Son of Yharon seems like isn't capable enough, and couldn't delay " + Player.name + "'s death any longer.");
+                                reason = Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.YharonDeath3");
                                 break;
                             case 3:
-                                reason = PlayerDeathReason.ByCustomReason(Player.name + " should've learned to Reborn before its was too late.");
+                                reason = Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.YharonDeath4");
                                 break;
                             default:
+                                reason = Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.YharonDeath1");
                                 break;
                         }
-                        Player.KillMe(reason, Player.statLifeMax2, 0);
+                        Player.KillMe(PlayerDeathReason.ByCustomReason(reason.Replace("<name>",Player.name)), Player.statLifeMax2, 0);
                     }
                     deadTimer = -1;
                 }
@@ -89,24 +90,26 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                 {
                     if (timer == 0)
                     {
+                        string reason;
                         switch (Main.rand.Next(4))
                         {
                             case 0:
-                                reason = PlayerDeathReason.ByCustomReason(Player.name + " could not contain temporary power given by Yharon.");
+                                reason = Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.YharonDeath5");
                                 break;
                             case 1:
-                                reason = PlayerDeathReason.ByCustomReason("Yharon's son is sad for "+Player.name);
+                                reason = Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.YharonDeath6");
                                 break;
                             case 2:
-                                reason = PlayerDeathReason.ByCustomReason("Powers of Rebirth should've been handled only by the Eternal Phoenixes, " + Player.name + ", was not the one to handle.");
+                                reason = Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.YharonDeath7");
                                 break;
                             case 3:
-                                reason = PlayerDeathReason.ByCustomReason(Player.name + " tried to eat the nuggies???");
+                                reason = Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.YharonDeath8");
                                 break;
                             default:
+                                reason = Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.YharonDeath5");
                                 break;
                         }
-                        Player.Hurt(reason, damageToTakeAfterReborn, 0, dodgeable: true, knockback: 0);
+                        Player.Hurt(PlayerDeathReason.ByCustomReason(reason.Replace("<name>",Player.name)), damageToTakeAfterReborn, 0, dodgeable: true, knockback: 0);
                         damageToTakeAfterReborn = 0;
                     }
                     timer = -1;
@@ -129,7 +132,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                 {
                     SoundEngine.PlaySound(new SoundStyle("CalamityMod/Sounds/Custom/Yharon/YharonRoar") with { PitchVariance = 0.2f }, Player.Center) ;
                 }
-                PopupText.NewText(new AdvancedPopupRequest() with { Text = "REBORN!!", DurationInFrames = 150, Velocity = new Vector2(0, -10), Color = new Color(209, 107, 75) }, Player.Center);
+                PopupText.NewText(new AdvancedPopupRequest() with { Text = Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.YharonReborn"), DurationInFrames = 150, Velocity = new Vector2(0, -10), Color = new Color(209, 107, 75) }, Player.Center);
                 float playerCurrentHp = Player.statLife;
                 if (Player.statLifeMax2 / Player.statLife > 4)
                 {
@@ -152,7 +155,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                 {
                     SoundEngine.PlaySound(new SoundStyle("CalamityMod/Sounds/Custom/Yharon/YharonRoarShort") with { PitchVariance = 0.3f }, Player.Center);
                 }
-                PopupText.NewText(new AdvancedPopupRequest() with { Text = "Son of Yharon is delaying your death!", DurationInFrames = 150, Velocity = new Vector2(0, -10), Color = new Color(209, 107, 75) }, Player.Center);
+                PopupText.NewText(new AdvancedPopupRequest() with { Text = Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.YharonDelay"), DurationInFrames = 150, Velocity = new Vector2(0, -10), Color = new Color(209, 107, 75) }, Player.Center);
                 Pet.PetRecovery(Player.statLifeMax2, 1f, isLifesteal: false);
                 deadTimer = rebirthDuration;
                 Pet.timer = Pet.timerMax;

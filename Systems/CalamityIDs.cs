@@ -55,5 +55,6 @@ namespace PetsOverhaulCalamityAddon.Systems
     {
         public const int AstrophageSlow = 20;
         public const int PlagueSlow = 21;
+        public const int trashmanSignatureMove = 22;
     }
 }

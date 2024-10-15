@@ -97,10 +97,10 @@ Mods: {
 				 * it miigghhhttt be devouring towards other players too.....
 				 * :3
 				'''
-			CosmicDeath1: "<name> have done little bit of tomfoolery."
-			CosmicDeath2: "<name> is doing tiny amount of trolling. :tf:"
-			CosmicDeath3: "<name> fat fingered"
-			CosmicDeath4: "<name> is 100% lying if they say 'mb'"
+			CosmicDeath1: <name> have done little bit of tomfoolery.
+			CosmicDeath2: <name> is doing tiny amount of trolling. :tf:
+			CosmicDeath3: <name> fat fingered
+			CosmicDeath4: <name> is 100% lying if they say 'mb'
 			TrashmanTrashcan:
 				'''
 				<class>
@@ -170,7 +170,7 @@ Mods: {
 				'''
 				<class>
 				- For every 1 fishing power, gain <dmgPer>% damage.
-				- For every <defPer> fishing powers, gain 1 defense.
+				- For every <defPer> fishing power, gain 1 defense.
 				- Angler Armor pieces gain <helm>/<chest>/<leg> defense respectively.
 				- All of your Angler Armor pieces gain <critChance>% crit chance.
 				'''
@@ -234,16 +234,16 @@ Mods: {
 				 * Player gains the base effects, with no amplifiers, no shielding but you will be healed to maximum health.
 				 * Player [c/f8baba:will be killed immediately] after the effects wear off. (Son of Yharon gets too exhausted since he does it for you!)
 				'''
-				YharonReborn: REBORN!!
-				YharonDelay: Son of Yharon is delaying your death!
-				YharonDeath1: <name> ran out of flames, and all that is left is ashes.
-				YharonDeath2: <name> was punished by Yharon for abusing his kid.
-				YharonDeath3: Son of Yharon seems like isn't capable enough, and couldn't delay <name>'s death any longer.
-				YharonDeath4: <name> should've learned to Reborn before its was too late.
-				YharonDeath5: <name> could not contain temporary power given by Yharon."
-				YharonDeath6: Yharon's son is sad for <name>.
-				YharonDeath7: Powers of Rebirth should've been handled only by the Eternal Phoenixes, <name>, was not the one to handle.
-				YharonDeath8: <name> tried to eat the nuggies???
+			YharonReborn: REBORN!!
+			YharonDelay: Son of Yharon is delaying your death!
+			YharonDeath1: <name> ran out of flames, and all that is left is ashes.
+			YharonDeath2: <name> was punished by Yharon for abusing his kid.
+			YharonDeath3: Son of Yharon seems like isn't capable enough, and couldn't delay <name>'s death any longer.
+			YharonDeath4: <name> should've learned to Reborn before its was too late.
+			YharonDeath5: <name> could not contain temporary power given by Yharon."
+			YharonDeath6: Yharon's son is sad for <name>.
+			YharonDeath7: Powers of Rebirth should've been handled only by the Eternal Phoenixes, <name>, was not the one to handle.
+			YharonDeath8: <name> tried to eat the nuggies???
 			BrimstoneJewel:
 				'''
 				<class>

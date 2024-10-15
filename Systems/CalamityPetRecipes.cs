@@ -3,11 +3,6 @@ using CalamityMod.Items.Placeables.Furniture.Trophies;
 using CalamityMod.NPCs.TownNPCs;
 using PetsOverhaul.Items;
 using PetsOverhaul.Systems;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Terraria;
 using Terraria.ModLoader;
 

@@ -13,10 +13,7 @@ namespace PetsOverhaulCalamityAddon.Systems
         GlobalPet Pet => Player.GetModPlayer<GlobalPet>();
         public override void UpdateEquips()
         {
-            if (Pet.PetInUseWithSwapCd(ItemID.SkeletronPetItem) && Calamity.chaliceOfTheBloodGod)
-            {
-                Calamity.chaliceOfTheBloodGod = false;
-            }
+
         }
     }
 }

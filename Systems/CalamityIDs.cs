@@ -2,6 +2,7 @@
 using CalamityMod.Items.Fishing.SunkenSeaCatches;
 using CalamityMod.Items.Pets;
 using CalamityMod.Projectiles.Typeless;
+using PetsOverhaul.NPCs;
 using Terraria.ModLoader;
 
 namespace PetsOverhaulCalamityAddon.Systems
@@ -46,5 +47,13 @@ namespace PetsOverhaulCalamityAddon.Systems
         public static int Radiator => ModContent.GetInstance<RadiatingCrystal>().Type;
         public static int Sparks => ModContent.GetInstance<EnchantedButterfly>().Type;
         public static int Yuu => ModContent.GetInstance<ChromaticOrb>().Type;
+    }
+    /// <summary>
+    /// CalamitySlows starts from 20 just in case.
+    /// </summary>
+    public class CalSlows : PetSlowIDs
+    {
+        public const int AstrophageSlow = 20;
+        public const int PlagueSlow = 21;
     }
 }

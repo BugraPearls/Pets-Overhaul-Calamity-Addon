@@ -173,14 +173,24 @@ Mods: {
 			RottingEyeball:
 				'''
 				<class>
-				- Killing Corrupt enemies accumulates strength.
-				 * Current Corrupt kills: <killCount>
+				- Deal <incrToCorrupt>% more damage to Corruption enemies.
+				- Your Corruption enemy kills with this Pet: <killCount>
+				- Gain following bonuses depending on your kills.
+				 * +<dmg>% damage, +<crit>% crit chance, +<luck> luck,
+				+<pen> armor penetration and +<critDmg>% crit damage.
+				 * Multiply stats by <evilMult>x while in Corruption biome.
+				 * Kills required for next stat upgrades: <killReq>
 				'''
 			BloodyVein:
 				'''
 				<class>
-				- Killing Crimson enemies accumulates strength.
-				 * Current Crimson kills: <killCount>
+				- Receive <drFromCrimson>% less damage from Crimson enemies.
+				- Your crimson enemy kills with this Pet: <killCount>
+				- Gain following bonuses depending on your kills.
+				 * +<def> defense, +<hp> maximum health, +<luck> luck,
+				+<dr>% damage reduction and +<regen> health regen.
+				 * Multiply stats by <evilMult>x while in Crimson biome.
+				 * Kills required for next stat upgrades: <killReq>
 				'''
 			PineapplePet:
 				'''

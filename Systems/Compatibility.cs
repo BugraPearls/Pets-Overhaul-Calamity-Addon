@@ -68,7 +68,7 @@ namespace PetsOverhaulCalamityAddon.Systems
             PetItemIDs.LightPetNamesAndItems.AddRange(CalamityLightPetItemIDs);
         }
 
-        public static List<int> CalamityNonBossTrueBosses = [ModContent.NPCType<EbonianPaladin>(), ModContent.NPCType<CrimulanPaladin>(), ModContent.NPCType<SplitEbonianPaladin>(), ModContent.NPCType<SplitCrimulanPaladin>()]
+        public static List<int> CalamityNonBossTrueBosses = [ModContent.NPCType<EbonianPaladin>(), ModContent.NPCType<CrimulanPaladin>(), ModContent.NPCType<SplitEbonianPaladin>(), ModContent.NPCType<SplitCrimulanPaladin>()];
         public static void AddCalamityNonBossTrueBosses()
         {
             NpcPet.NonBossTrueBosses.AddRange(CalamityNonBossTrueBosses);

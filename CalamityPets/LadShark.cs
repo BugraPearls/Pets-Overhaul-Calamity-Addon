@@ -64,7 +64,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         {
             if (Pet.AbilityPressCheck() && Pet.PetInUseWithSwapCd(CalamityPetIDs.LadShark))
             {
-                if (ModContent.GetInstance<Personalization>().AbilitySoundEnabled)
+                if (ModContent.GetInstance<PetPersonalization>().AbilitySoundEnabled)
                     SoundEngine.PlaySound(SoundID.DD2_DarkMageCastHeal with { PitchVariance = 0.4f }, Player.Center);
 
                 for (int i = 0; i < Main.maxNPCs; i++)
@@ -136,7 +136,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
 
         public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
         {
-            if (ModContent.GetInstance<Personalization>().EnableTooltipToggle && !Keybinds.PetTooltipHide.Current)
+            if (ModContent.GetInstance<PetPersonalization>().EnableTooltipToggle && !PetKeybinds.PetTooltipHide.Current)
             {
                 return;
             }
@@ -146,7 +146,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                 .Replace("<class>", PetTextsColors.ClassText(shark.PetClassPrimary, shark.PetClassSecondary))
                 .Replace("<selfDmg>", shark.selfDmg.ToString())
                 .Replace("<takenDmg>", shark.enemyDmg.ToString())
-                .Replace("<keybind>", PetTextsColors.KeybindText(Keybinds.UsePetAbility).ToString())
+                .Replace("<keybind>", PetTextsColors.KeybindText(PetKeybinds.UsePetAbility).ToString())
                 .Replace("<radius>", Math.Round(shark.radius / 16f, 2).ToString())
                 .Replace("<perSecRegen>", shark.grantRegen.ToString())
                 .Replace("<duration>", Math.Round(shark.regenDuration / 60f, 2).ToString())

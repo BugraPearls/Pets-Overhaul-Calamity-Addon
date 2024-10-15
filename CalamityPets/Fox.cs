@@ -48,7 +48,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                 }
                 if (amountOfDebuffs > 0)
                 {
-                    if (ModContent.GetInstance<Personalization>().AbilitySoundEnabled)
+                    if (ModContent.GetInstance<PetPersonalization>().AbilitySoundEnabled)
                         SoundEngine.PlaySound(SoundID.Item35 with { Pitch = 0.75f, PitchVariance = 0.1f }, Player.Center);
                     cleansePenalty = baseTime + perTime * (amountOfDebuffs - 1);
                     CombatText.NewText(Player.getRect(), Color.Orange, Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.FoxCleansedText") + amountOfDebuffs.ToString(),dramatic: true);
@@ -66,7 +66,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
 
         public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
         {
-            if (ModContent.GetInstance<Personalization>().EnableTooltipToggle && !Keybinds.PetTooltipHide.Current)
+            if (ModContent.GetInstance<PetPersonalization>().EnableTooltipToggle && !PetKeybinds.PetTooltipHide.Current)
             {
                 return;
             }
@@ -74,7 +74,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
             FoxEffect fox = Main.LocalPlayer.GetModPlayer<FoxEffect>();
             tooltips.Add(new(Mod, "Tooltip0", Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.FoxDrive")
                 .Replace("<class>", PetTextsColors.ClassText(fox.PetClassPrimary, fox.PetClassSecondary))
-                .Replace("<keybind>", PetTextsColors.KeybindText(Keybinds.UsePetAbility))
+                .Replace("<keybind>", PetTextsColors.KeybindText(PetKeybinds.UsePetAbility))
                 .Replace("<baseCurse>", Math.Round(fox.baseTime / 60f, 2).ToString())
                 .Replace("<perCurse>", Math.Round(fox.perTime / 60f, 2).ToString())
                 .Replace("<cooldown>", Math.Round(fox.cooldown / 60f, 2).ToString())

@@ -134,7 +134,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
             if (npc.active == false)
             {
                 stack = stackForKill;
-                if (ModContent.GetInstance<Personalization>().AbilitySoundEnabled)
+                if (ModContent.GetInstance<PetPersonalization>().AbilitySoundEnabled)
                 {
                     SoundEngine.PlaySound(new SoundStyle("PetsOverhaulCalamityAddon/Sounds/Akato/AkatoExecute") with { PitchVariance = 1f, Identifier = "akatoExecute", MaxInstances = 4, SoundLimitBehavior = SoundLimitBehavior.ReplaceOldest, Type = SoundType.Sound, Volume = 0.7f }, npc.Center); //See disclaimer.txt in Sounds/Akato folder for further info regarding sounds origin
                 }
@@ -184,7 +184,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
             if (Pet.PetInUseWithSwapCd(CalamityPetIDs.Akato) && beginOnHit > 0)
             {
                 Projectile.NewProjectileDirect(GlobalPet.GetSource_Pet(EntitySourcePetIDs.PetProjectile), target.Center, Vector2.Zero, ModContent.ProjectileType<PetExplosion>(), Main.DamageVar(damageDone * (explosionMult + StackExplosionBonus),Player.luck), 0, owner: Player.whoAmI, explosionSize+ StackExplosionSize);
-                if (ModContent.GetInstance<Personalization>().AbilitySoundEnabled)
+                if (ModContent.GetInstance<PetPersonalization>().AbilitySoundEnabled)
                 {
                     string path;
                     switch (Main.rand.Next(3))
@@ -298,7 +298,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         }
         public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
         {
-            if (ModContent.GetInstance<Personalization>().EnableTooltipToggle && !Keybinds.PetTooltipHide.Current)
+            if (ModContent.GetInstance<PetPersonalization>().EnableTooltipToggle && !PetKeybinds.PetTooltipHide.Current)
             {
                 return;
             }
@@ -308,7 +308,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
             tooltips.Add(new(Mod, "Tooltip0", Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.ForgottenDragonEgg")
                         .Replace("<class>", PetTextsColors.ClassText(akato.PetClassPrimary, akato.PetClassSecondary))
                         .Replace("<stackIcon>", ModContent.ItemType<DragonPracticeIcon>().ToString())
-                        .Replace("<keybind>", PetTextsColors.KeybindText(Keybinds.UsePetAbility))
+                        .Replace("<keybind>", PetTextsColors.KeybindText(PetKeybinds.UsePetAbility))
                         .Replace("<cooldown>", Math.Round(akato.cooldown/60f,2).ToString())
                         .Replace("<expire>", Math.Round(akato.onHitExpiration / 60f, 2).ToString())
                         .Replace("<baseSize>", Math.Round(akato.explosionSize / 16f, 2).ToString())

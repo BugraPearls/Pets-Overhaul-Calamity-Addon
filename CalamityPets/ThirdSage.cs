@@ -38,7 +38,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         {
             if (Pet.AbilityPressCheck() && Pet.PetInUseWithSwapCd(CalamityPetIDs.ThirdSage))
             {
-                if (ModContent.GetInstance<Personalization>().AbilitySoundEnabled)
+                if (ModContent.GetInstance<PetPersonalization>().AbilitySoundEnabled)
                     SoundEngine.PlaySound(SoundID.Item2 with { Pitch = -0.5f, PitchVariance = 0.4f }, Player.Center);
                 Pet.PetRecovery(Player.statLifeMax2, percHealing, flatHealing, isLifesteal: false);
                 Pet.timer = Pet.timerMax;
@@ -54,14 +54,14 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
 
         public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
         {
-            if (ModContent.GetInstance<Personalization>().EnableTooltipToggle && !Keybinds.PetTooltipHide.Current)
+            if (ModContent.GetInstance<PetPersonalization>().EnableTooltipToggle && !PetKeybinds.PetTooltipHide.Current)
             {
                 return;
             }
             ThirdSageEffect sage = Main.LocalPlayer.GetModPlayer<ThirdSageEffect>();
 
             tooltips.Add(new(Mod, "Tooltip0", Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.HermitsBoxofOneHundredMedicines")
-                    .Replace("<keybind>", PetTextsColors.KeybindText(Keybinds.UsePetAbility))
+                    .Replace("<keybind>", PetTextsColors.KeybindText(PetKeybinds.UsePetAbility))
                     .Replace("<class>", PetTextsColors.ClassText(sage.PetClassPrimary, sage.PetClassSecondary))
                     .Replace("<flatHeal>", sage.flatHealing.ToString())
                     .Replace("<percHeal>", Math.Round(sage.percHealing * 100, 2).ToString())

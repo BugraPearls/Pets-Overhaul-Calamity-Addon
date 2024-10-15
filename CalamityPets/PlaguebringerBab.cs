@@ -38,7 +38,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         {
             if (Pet.AbilityPressCheck() && Pet.PetInUseWithSwapCd(CalamityPetIDs.PlagueBringerBab))
             {
-                if (ModContent.GetInstance<Personalization>().AbilitySoundEnabled)
+                if (ModContent.GetInstance<PetPersonalization>().AbilitySoundEnabled)
                 {
                     if (Main.rand.NextBool())
                         SoundEngine.PlaySound(new SoundStyle("CalamityMod/Sounds/Custom/PlagueSounds/PBGAttackSwitch1") with { PitchVariance = 0.4f }, Player.Center);
@@ -127,7 +127,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
 
         public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
         {
-            if (ModContent.GetInstance<Personalization>().EnableTooltipToggle && !Keybinds.PetTooltipHide.Current)
+            if (ModContent.GetInstance<PetPersonalization>().EnableTooltipToggle && !PetKeybinds.PetTooltipHide.Current)
             {
                 return;
             }
@@ -139,7 +139,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                 .Replace("<hitAoE>", Math.Round(plague.surroundRadius / 16f, 2).ToString())
                 .Replace("<surroundingPerc>", Math.Round(plague.surroundingMult * 100, 2).ToString())
                 .Replace("<stackDuration>", Math.Round(plague.timeToAdd / 60f, 2).ToString())
-                .Replace("<keybind>", PetTextsColors.KeybindText(Keybinds.UsePetAbility))
+                .Replace("<keybind>", PetTextsColors.KeybindText(PetKeybinds.UsePetAbility))
                 .Replace("<detonateRadius>", Math.Round(plague.detonateRadius / 16f, 2).ToString())
                 .Replace("<cooldown>", Math.Round(plague.cooldown / 60f, 2).ToString())
                 .Replace("<slow>", Math.Round(plague.slowAmount * 100, 2).ToString())

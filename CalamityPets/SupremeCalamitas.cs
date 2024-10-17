@@ -11,6 +11,7 @@ using Terraria.ID;
 using PetsOverhaul.Items;
 using PetsOverhaul.Projectiles;
 using System;
+using PetsOverhaul.Buffs;
 
 namespace PetsOverhaulCalamityAddon.CalamityPets
 {
@@ -105,6 +106,16 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
             if (index >= 0 && tooltips[index].Text.Contains('∞')) //This is bit of a bandaid fix, items that doesn't naturally have a mana value ends up having "Mana cost +∞" with red text if they have a prefix, no matter if prefix has no effects on mana cost.
             {
                 tooltips[index].Hide();
+            }
+        }
+    }
+    public sealed class SupremeCalamitasManaSicknessTooltip : GlobalBuff
+    {
+        public override void ModifyBuffText(int type, ref string buffName, ref string tip, ref int rare)
+        {
+            if (Main.LocalPlayer.miscEquips[0].type == CalamityPetIDs.SupremeCalamitas && type == BuffID.ManaSickness && Main.LocalPlayer.HasBuff(ModContent.BuffType<ObliviousPet>()) == false)
+            {
+                tip += "\n" + Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.ScalManaSicknessExtraText");
             }
         }
     }

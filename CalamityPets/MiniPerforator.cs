@@ -144,7 +144,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         }
         public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
-            if (Pet.PetInUseWithSwapCd(CalamityPetIDs.MiniPerforator) && target.active == false && GlobalPet.CrimsonEnemies.Contains(target.type))
+            if (Pet.PetInUseWithSwapCd(CalamityPetIDs.MiniPerforator) && target.active == false && GlobalPet.CrimsonEnemies.Contains(target.type) && target.SpawnedFromStatue == false)
             {
                 evilKills++;
             }

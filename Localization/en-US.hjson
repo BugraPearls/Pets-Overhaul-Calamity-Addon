@@ -245,7 +245,15 @@ Mods: {
 			BrimstoneJewel:
 				'''
 				<class>
-				- 
+				- Your hits will now always crit, no matter the chance.
+				- Reduces your Crit Damage by <critDmgReduce>%,
+				but also increase it by <chanceToDmg>% of your crit chance.
+				 * Crit chances that overflows 100% also increases crit damage.
+				- Adds a Mana Cost to ALL of your weapons, equal to Weapon's use time x2.
+				 * Magic Weapons instead gets their mana cost increased by <magicCost>%.
+				 * Summoner's only whips benefit from all of the effects above.
+				 * Any weapons that channels something or is a tool does not benefit too.
+				- Mana Sickness will now reduce ALL affected damage, rather than just Magic.
 				'''
 			HermitsBoxofOneHundredMedicines:
 				'''

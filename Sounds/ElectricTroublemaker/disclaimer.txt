@@ -1,0 +1,9 @@
+All sound effects taken from Pokemon, Gen 3 move sound effects.
+All are taken from https://downloads.khinsider.com/game-soundtracks/album/pokemon-sfx-gen-3-attack-moves-rse-fr-lg
+
+Thunder Wave 2nd Part,
+Waterfall 2nd Part,
+Flame Wheel 2nd Part,
+Blizzard,
+Razor Leaf 1st Part,
+and Aerial Ace.

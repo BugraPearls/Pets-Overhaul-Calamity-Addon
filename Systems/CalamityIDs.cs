@@ -3,6 +3,8 @@ using CalamityMod.Items.Fishing.SunkenSeaCatches;
 using CalamityMod.Items.Pets;
 using CalamityMod.Projectiles.Typeless;
 using PetsOverhaul.NPCs;
+using System.Linq;
+using Terraria;
 using Terraria.ModLoader;
 
 namespace PetsOverhaulCalamityAddon.Systems
@@ -51,10 +53,12 @@ namespace PetsOverhaulCalamityAddon.Systems
     /// <summary>
     /// CalamitySlows starts from 20 just in case.
     /// </summary>
-    public class CalSlows : PetSlowIDs
+    public class CalSlows
     {
         public const int AstrophageSlow = 20;
         public const int PlagueSlow = 21;
         public const int trashmanSignatureMove = 22;
+        public const int rotomThunderWave = 23;
+        public const int rotomBlizzard = 24;
     }
 }

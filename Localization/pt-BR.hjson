@@ -170,6 +170,22 @@ Mods: {
 				<class>
 				- 
 				'''
+			/* SnailPositiveAggro:
+				'''
+				- While your aggro value is positive grants you the following:
+				 * 1 defense per <aggroDef> aggro value.
+				 * 1 maximum health per <aggroHealth> aggro value.
+				 * 1% damage reduction per <aggroDr> aggro value.
+				 * -1% movement speed per <aggroMs> aggro value.
+				''' */
+			/* SnailNegativeAggro:
+				'''
+				- While your aggro value is negative grants you the following:
+				 * 1% damage per <aggroDamage> aggro value.
+				 * 1% crit chance per <aggroCrit> aggro value.
+				 * 1 armor pen per <aggroPen> aggro value.
+				 * 1% movement speed per <aggroMs> aggro value.
+				''' */
 			GeyserShell:
 				'''
 				<class>
@@ -345,6 +361,9 @@ Mods: {
 			}
 		}
 
-		// Projectiles.RotomBlizzard.DisplayName: Rotom Blizzard
+		Projectiles: {
+			// RotomBlizzard.DisplayName: Blizzard
+			// Trashcan.DisplayName: Trashcan
+		}
 	}
 }

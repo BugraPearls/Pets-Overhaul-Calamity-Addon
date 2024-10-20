@@ -53,8 +53,8 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         public float overheatCooldown = 0.35f;
 
         public const int blizzard = 3;
-        public int blizzardDmg = 10;
-        public int blizzardRadius = 104;
+        public int blizzardDmg = 9;
+        public int blizzardRadius = 160;
         public int blizzardDuration = 210;
         public float coldSlow = 0.1f;
         public int freezeDuration = 20;
@@ -65,7 +65,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         public int leafStormDmg = 15;
         public int minimumLeaf = 10;
         public int maxLeaf = 15;
-        public float leafStormCooldown = 0.55f;
+        public float leafStormCooldown = 0.45f;
 
         public const int airSlash = 5;
         public int airSlashDmg = 15;
@@ -333,7 +333,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                     case blizzard:
                         if (Pet.timer + Pet.timerMax * leafStormCooldown < Pet.timerMax)
                         {
-                            Projectile.NewProjectile(GlobalPet.GetSource_Pet(EntitySourcePetIDs.PetProjectile), target.Center, Vector2.Zero, ModContent.ProjectileType<RotomBlizzard>(), blizzardDmg, 0, Player.whoAmI); //does its type effectiveness in Projectile code
+                            Projectile.NewProjectile(GlobalPet.GetSource_Pet(EntitySourcePetIDs.PetProjectile), target.Center, Vector2.Zero, ModContent.ProjectileType<RotomBlizzard>(), blizzardDmg, 0, Player.whoAmI, blizzardRadius, blizzardDuration); //does its type effectiveness in Projectile code
                             if (ModContent.GetInstance<PetPersonalization>().AbilitySoundEnabled)
                                 SoundEngine.PlaySound(new SoundStyle("PetsOverhaulCalamityAddon/Sounds/ElectricTroublemaker/Blizzard") with { PitchVariance = 0.8f }, target.Center);
                             Pet.timer += (int)(Pet.timerMax * leafStormCooldown);

@@ -19,7 +19,8 @@ namespace PetsOverhaul.LightPets
             if (Player.miscEquips[1].TryGetGlobalItem(out ThiefsDimePet dime))
             {
                 Player.Calamity().rogueVelocity += dime.RogueVelocity.CurrentStatFloat;
-                Player.Calamity().accStealthGenBoost += dime.StealthGain.CurrentStatFloat;
+                Player.Calamity().stealthGenStandstill += dime.StealthGain.CurrentStatFloat;
+                Player.Calamity().stealthGenMoving += dime.StealthGain.CurrentStatFloat;
                 Player.GetDamage<RogueDamageClass>() += dime.RogueDamage.CurrentStatFloat;
             }
         }

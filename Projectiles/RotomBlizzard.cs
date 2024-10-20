@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Terraria;
+using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -20,13 +21,18 @@ namespace PetsOverhaulCalamityAddon.Projectiles
         public ElectricTroublemakerEffect Rotom => Main.player[Projectile.owner].GetModPlayer<ElectricTroublemakerEffect>();
         public override void SetDefaults()
         {
-            Projectile.timeLeft = 210;
-            Projectile.width = 80;
-            Projectile.height = 80;
+            Projectile.timeLeft = 5;
+            Projectile.width = 1;
+            Projectile.height = 1;
             Projectile.penetrate = -1;
             Projectile.usesIDStaticNPCImmunity = true;
             Projectile.idStaticNPCHitCooldown = 10;
             Projectile.friendly = true;
+        }
+        public override void OnSpawn(IEntitySource source)
+        {
+            Projectile.Resize((int)Projectile.ai[0], (int)Projectile.ai[0]);
+            Projectile.timeLeft = (int)Projectile.ai[1];
         }
         public override void AI()
         {
@@ -52,7 +58,7 @@ namespace PetsOverhaulCalamityAddon.Projectiles
             }
             if (Main.rand.NextBool(2))
             {
-                Dust.NewDustPerfect(new Vector2(Main.rand.NextFloat(Projectile.width) + Projectile.position.X, Projectile.position.Y - 5), DustID.SnowflakeIce, new Vector2(0.4f, 9.5f)).noGravity = true;
+                Dust.NewDustPerfect(new Vector2(Main.rand.NextFloat(Projectile.width) + Projectile.position.X, Projectile.position.Y - 5), DustID.SnowflakeIce, new Vector2(0.4f, 11.5f)).noGravity = true;
             }
         }   
         public override void ModifyHitNPC(NPC target, ref NPC.HitModifiers modifiers)

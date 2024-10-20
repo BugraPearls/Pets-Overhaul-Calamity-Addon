@@ -123,9 +123,9 @@ Mods: {
 			CosmicPlushie:
 				'''
 				[c/<color>:Emotionally] <class>
-				- dying deals <damage> damage to all enemies in <block> blocks around u
-				 * no effect with non-hardcore characters
-				 * always crits!
+				- dying deals <damage> damage to all enemies in <block> blocks around u!
+				 * no effect with non-hardcore characters!
+				 * an amazing chance to crit!
 				 * it miigghhhttt be devouring towards other players too.....
 				 * :3
 				'''
@@ -136,12 +136,15 @@ Mods: {
 			TrashmanTrashcan:
 				'''
 				<class>
-				- 
+				- Press Pet Ability Keybind (<keybind>) to use Trash Man's Signature move.
+				 * Trashcan hits for <damage> damage and applies bleed for <bleedDuration> seconds.
+				 * Enemies around target is slowed by <slow>% for <slowDuration> seconds.
+				 * With <confuseChance>% chance, enemies also can be confused for <confuseDuration> seconds.
 				'''
 			TheEtomer:
 				'''
 				<class>
-				- Press <abilitySwitch> to switch abilities, and <abilityUse> to initiate on-hit effects.
+				- Press (<abilitySwitch>) to switch abilities, and (<abilityUse>) to initiate on-hit effects.
 				- Allows you to choose between 6 abilities that works on-hit. Re-Use ability to cancel.
 				- They benefit with your current Troublemaker form and enemy vulnerability.
 				 * Dex form will apply <dexMult>x to all abilities, while others are <STABMult>x effectiveness.
@@ -201,12 +204,35 @@ Mods: {
 			AbyssShellFossil:
 				'''
 				<class>
-				- 
+				- Depending on how much Aggro you have, gain defensive or offensive stats.
+				- Current aggro value: <aggro>, press (<switch>) to swap between -/+ tooltips.
+				<tooltip>
+				 * 
+				'''
+			SnailPositiveAggro:
+				'''
+				- While your aggro value is positive grants you the following:
+				 * 1 defense per <aggroDef> aggro value.
+				 * 1 maximum health per <aggroHealth> aggro value.
+				 * 1% damage reduction per <aggroDr> aggro value.
+				 * -1% movement speed per <aggroMs> aggro value.
+				'''
+			SnailNegativeAggro:
+				'''
+				- While your aggro value is negative grants you the following:
+				 * 1% damage per <aggroDamage> aggro value.
+				 * 1% crit chance per <aggroCrit> aggro value.
+				 * 1 armor pen per <aggroPen> aggro value.
+				 * 1% movement speed per <aggroMs> aggro value.
 				'''
 			GeyserShell:
 				'''
 				<class>
-				- 
+				- Increases your standing stealth recovery by <stealth>%.
+				- Increases maximum stealth by <maxStealth>.
+				- Increases stealth attack damage by <stealthDmg>%.
+				- Stealth attacks causes to spawn acid around you and the target on-hit.
+				 * Deals <damage> damage, and applies Irradiated for <irradiateDuration> seconds.
 				'''
 			FoxDrive:
 				'''
@@ -370,6 +396,9 @@ Mods: {
 			}
 		}
 
-		Projectiles.RotomBlizzard.DisplayName: Rotom Blizzard
+		Projectiles: {
+			RotomBlizzard.DisplayName: Blizzard
+			Trashcan.DisplayName: Trashcan
+		}
 	}
 }

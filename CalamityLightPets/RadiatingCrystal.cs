@@ -98,7 +98,7 @@ namespace PetsOverhaul.LightPets
 
                         .Replace("<knockback>", Knockback.BaseAndPerQuality())
                         .Replace("<def>", DebuffedDefense.BaseAndPerQuality())
-                        .Replace("<radius>", DebuffedDefense.BaseAndPerQuality(Math.Round(PoisonRadius.StatPerRoll / 16f, 2).ToString()))
+                        .Replace("<radius>", PoisonRadius.BaseAndPerQuality(Math.Round(PoisonRadius.StatPerRoll / 16f, 2).ToString()))
 
                         .Replace("<knockbackLine>", Knockback.StatSummaryLine())
                         .Replace("<defLine>", DebuffedDefense.StatSummaryLine())

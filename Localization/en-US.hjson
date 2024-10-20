@@ -50,7 +50,7 @@ Mods: {
 				'''
 				Increases defense by <def> while under any debuff,
 				except debuffs that can't be healed by nurse or Mana Sickness,
-				Knockback by <knockback> and poisons enemies in <radius> blocks per quality.
+				Knockback by <knockback> and poisons enemies in <radius> blocks.
 				Defense Under Debuff Bonus: <defLine>
 				Knockback Bonus: <knockbackLine>
 				Poison Radius: <radiusLine>

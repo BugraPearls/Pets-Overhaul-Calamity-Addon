@@ -28,7 +28,7 @@ namespace PetsOverhaul.LightPets
     }
     public sealed class EnchantedButterflyPet : GlobalItem
     {
-        public LightPetStat PetHealPower = new(30, 10, 50);
+        public LightPetStat PetHealPower = new(30, 0.006f, 0.07f);
         public LightPetStat GlobalFortune = new(16, 1, 6);
         public LightPetStat Aggro = new(20, -5, -40);
         public LightPetStat Mana = new(10, 4, 25);

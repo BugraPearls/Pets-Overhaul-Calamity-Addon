@@ -4,16 +4,16 @@ Mods: {
 			RustedJingleBell:
 				'''
 				Increases your maximum breathing time under water
-				by <breathe> seconds per quality, Pet Ability Haste by <haste> per quality,
-				and Mining fortune by <fortune> per quality while touching a liquid.
+				by <breathe> seconds, Pet Ability Haste by <haste>,
+				and Mining fortune by <fortune> while touching a liquid.
 				Bonus Breathe Seconds: <breatheLine>
 				Pet Ability Haste: <hasteLine>
 				In Liquid Mining Fortune: <fortuneLine>
 				'''
 			ThiefsDime:
 				'''
-				Increases Luck by <luck> per quality, Rogue damage by <rogue> per quality,
-				Rogue velocity by <velocity> per quality and stealth gain by <stealth> per quality.
+				Increases Luck by <luck>, Rogue damage by <rogue>,
+				Rogue velocity by <velocity> and stealth gain by <stealth>.
 				Luck: <luckLine>
 				Rouge Damage: <rogueLine>
 				Rogue Velocity: <velocityLine>
@@ -21,9 +21,9 @@ Mods: {
 				'''
 			SuspiciousLookingNOU:
 				'''
-				Increases luck by <luck> per quality, decreases your damage by <damage> per quality,
-				and increases blocks where fall damage beings by <fall> per quality.
-				Also increases how sus you are by <sus> per quality.
+				Increases luck by <luck>, decreases your damage by <damage>,
+				and increases blocks where fall damage beings by <fall>.
+				Also increases how sus you are by <sus>.
 				Luck: <luckLine>
 				Lowered Damage: <damageLine>
 				Blocks till Fall Begin: <fallLine>
@@ -32,26 +32,26 @@ Mods: {
 			LittleLight:
 				'''
 				Increases your aggro by <aggro>, knockback resist by <kbResist>,
-				Maximum health by <health> and increases Pet shields by <shield>.
+				Shields gained by Pets by <shield> and Maximum health by <health>.
 				Aggro: <aggroLine>
 				Knockback Resistance: <kbResistLine>
-				Maximum Health: <healthLine>
 				Pet Shield Bonus: <shieldLine>
+				Maximum Health: <healthLine>
 				'''
 			StrangeOrb:
 				'''
-				Increases fishing power by <power> per quality, fishing fortune by <fortune> per quality
-				and increases Pet Healing by <heal> per quality if you're touching a liquid.
+				Increases fishing power by <power>, fishing fortune by <fortune>
+				and increases Pet Healing by <heal> if you're touching a liquid.
 				Fishing Power: <powerLine>
 				Fishing Fortune: <fortuneLine>
 				Pet Healing in Liquid: <healLine>
 				'''
 			RadiatingCrystal:
 				'''
-				Increases defense by <def> per quality while under any debuff,
+				Increases defense by <def> while under any debuff,
 				except debuffs that can't be healed by nurse or Mana Sickness,
 				Knockback by <knockback> and poisons enemies in <radius> blocks per quality.
-				Defense Umder Debuff: <defLine>
+				Defense Under Debuff: <defLine>
 				Knockback: <knockbackLine>
 				Poison Radius: <radiusLine>
 				'''

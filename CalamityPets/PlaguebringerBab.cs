@@ -143,7 +143,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                 .Replace("<detonateRadius>", Math.Round(plague.detonateRadius / 16f, 2).ToString())
                 .Replace("<cooldown>", Math.Round(plague.cooldown / 60f, 2).ToString())
                 .Replace("<slow>", Math.Round(plague.slowAmount * 100, 2).ToString())
-                .Replace("<plagueDuration>", Math.Round(plague.cooldown / 60f, 2).ToString())
+                .Replace("<plagueDuration>", Math.Round(plague.plagueAndSlowDuration / 60f, 2).ToString())
             ));
         }
     }

@@ -94,7 +94,7 @@ namespace PetsOverhaul.LightPets
             {
                 return;
             }
-            tooltips.Add(new(Mod, "Tooltip0", Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.LightPetTooltips.RustedJingleBell")
+            tooltips.Add(new(Mod, "Tooltip0", Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.LightPetTooltips.RadiatingCrystal")
 
                         .Replace("<knockback>", Knockback.BaseAndPerQuality())
                         .Replace("<def>", DebuffedDefense.BaseAndPerQuality())

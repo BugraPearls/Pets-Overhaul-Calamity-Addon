@@ -4,30 +4,42 @@ Mods: {
 			RustedJingleBell:
 				'''
 				Increases your maximum breathing time under water
-				by <breathe> seconds and Pet Ability Haste by <haste> seconds.
+				by <breathe> seconds, Pet Ability Haste by <haste>%,
+				and Mining fortune by <fortune> while touching a liquid.
 				Bonus Breathe Seconds: <breatheLine>
 				Pet Ability Haste: <hasteLine>
+				In Liquid Mining Fortune: <fortuneLine>
 				'''
 			ThiefsDime:
 				'''
-				Increases coins dropped by non-boss enemies by <coin>
-				Increases Rouge damage by <rouge>.
-				Extra Coins: <coinLine>
+				Increases luck by <luck>, Rogue damage by <rogue>,
+				Rogue velocity by <velocity> and stealth gain by <stealth>.
+				Luck: <luckLine>
 				Rouge Damage: <rougeLine>
+				Rogue Velocity: <velocityLine>
+				Rogue Stealth Gain: <stealthLine>
 				'''
 			SuspiciousLookingNOU:
 				'''
 				69
 				420
 				'''
-			LittleLight: ""
+			LittleLight:
+			'''
+			Increases your aggro by <aggro>, knockback resist by <kbResist>,
+			Maximum health by <health> and increases Pet shields by <shield>.
+			Aggro: <aggroLine>
+			Knockback Resistance: <kbResistLine>
+			Maximum Health: <healthLine>
+			Pet Shield Bonus: <shieldLine>
+			'''
 			StrangeOrb:
 				'''
 				Increases fishing power by <power>, fishing fortune by <fortune>
-				and increases movement speed by <moveSpd> if submerged in a liquid.
+				and increases Pet Healing by <heal> if touching a liquid.
 				Fishing Power: <powerLine>
 				Fishing Fortune: <fortuneLine>
-				Move Speed in Liquids: <moveSpdLine>
+				Pet Healing in Liquid: <healLine>
 				'''
 			RadiatingCrystal:
 				'''

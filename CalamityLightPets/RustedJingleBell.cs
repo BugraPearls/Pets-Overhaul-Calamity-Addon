@@ -24,13 +24,18 @@ namespace PetsOverhaul.LightPets
             {
                 Player.breathMax += bell.Breathe.CurrentStatInt / 7; //In vanilla how long Player can breathe by default is breathMax * 7 due to it ticking down every 7 frame.
                 Pet.abilityHaste += bell.Haste.CurrentStatFloat;
+                if (Collision.WetCollision(Player.position,Player.width,Player.height))
+                {
+                    Pet.miningFortune += bell.MiningFortuneInWater.CurrentStatInt;
+                }
             }
         }
     }
     public sealed class RustedJingleBell : GlobalItem
     {
         public LightPetStat Breathe = new(30, 14, 90);
-        public LightPetStat Haste = new(40, 0.002f, 0.03f);
+        public LightPetStat Haste = new(25, 0.002f, 0.03f);
+        public LightPetStat MiningFortuneInWater = new(10, 2, 5);
         public override bool InstancePerEntity => true;
         public override bool AppliesToEntity(Item entity, bool lateInstantiation)
         {
@@ -40,34 +45,42 @@ namespace PetsOverhaul.LightPets
         {
             Breathe.SetRoll();
             Haste.SetRoll();
+            MiningFortuneInWater.SetRoll();
         }
         public override void NetSend(Item item, BinaryWriter writer)
         {
             writer.Write((byte)Breathe.CurrentRoll);
             writer.Write((byte)Haste.CurrentRoll);
+            writer.Write((byte)MiningFortuneInWater.CurrentRoll);
         }
         public override void NetReceive(Item item, BinaryReader reader)
         {
             Breathe.CurrentRoll = reader.ReadByte();
             Haste.CurrentRoll = reader.ReadByte();
+            MiningFortuneInWater.CurrentRoll = reader.ReadByte();
         }
         public override void SaveData(Item item, TagCompound tag)
         {
-            tag.Add("BellBreathe", Breathe.CurrentRoll);
-            tag.Add("BellHaste", Haste.CurrentRoll); 
+            tag.Add("Stat1", Breathe.CurrentRoll);
+            tag.Add("Stat2", Haste.CurrentRoll);
+            tag.Add("Stat3", MiningFortuneInWater.CurrentRoll);
         }
         public override void LoadData(Item item, TagCompound tag)
         {
-            if (tag.TryGet("BellBreathe", out int breathe))
+            if (tag.TryGet("Stat1", out int breathe))
             {
                 Breathe.CurrentRoll = breathe;
             }
 
-            if (tag.TryGet("BellHaste", out int haste))
+            if (tag.TryGet("Stat2", out int haste))
             {
                 Haste.CurrentRoll = haste;
             }
 
+            if (tag.TryGet("Stat3", out int fortune))
+            {
+                MiningFortuneInWater.CurrentRoll = fortune;
+            }
         }
         public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
         {
@@ -79,9 +92,11 @@ namespace PetsOverhaul.LightPets
 
                         .Replace("<breathe>", Breathe.BaseAndPerQuality(Math.Round(Breathe.StatPerRoll / 60f, 2).ToString(), Math.Round(Breathe.BaseStat / 60f, 2).ToString()))
                         .Replace("<haste>", Haste.BaseAndPerQuality())
+                        .Replace("<fortune>", MiningFortuneInWater.BaseAndPerQuality())
 
                         .Replace("<breatheLine>", Breathe.StatSummaryLine(Math.Round(Breathe.CurrentStatInt / 60f, 2).ToString()))
                         .Replace("<hasteLine>", Haste.StatSummaryLine())
+                        .Replace("<hasteLine>", MiningFortuneInWater.StatSummaryLine())
                         ));
             if (Haste.CurrentRoll <= 0)
             {

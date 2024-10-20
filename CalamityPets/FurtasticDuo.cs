@@ -56,7 +56,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         {
             if (Pet.PetInUseWithSwapCd(CalamityPetIDs.FurtasticDuo) && Pet.timer <= 0)
             {
-                int shieldAmount = (int)(Player.statLifeMax * baseHpShield + ((Player.statLifeMax2 - Player.statLifeMax) * bonusHpShield));
+                int shieldAmount = (int)((Player.statLifeMax * baseHpShield + (Player.statLifeMax2 - Player.statLifeMax) * bonusHpShield) * Pet.petShieldMultiplier);
 
                 modifiers.ModifyHurtInfo += (ref Player.HurtInfo info) =>
                 {
@@ -73,7 +73,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                             CombatText.NewText(Player.getRect(), Color.DarkGreen, -reduce);
                         }
                         info.Damage -= reduce;
-                        Pet.AddShield(shieldAmount - reduce, shieldDuration);
+                        Pet.AddShield(shieldAmount - reduce, shieldDuration, false);
                         Pet.timer = Pet.timerMax;
                         lifeguardMultTimer = shieldDuration;
                     }

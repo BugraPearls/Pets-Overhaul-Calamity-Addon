@@ -20,7 +20,7 @@ namespace PetsOverhaul.LightPets
         }
         public override void PostUpdateMiscEffects()
         {
-            if (Player.miscEquips[1].TryGetGlobalItem(out RustedJingleBell bell))
+            if (Player.miscEquips[1].TryGetGlobalItem(out RustedJingleBellPet bell))
             {
                 Player.breathMax += bell.Breathe.CurrentStatInt / 7; //In vanilla how long Player can breathe by default is breathMax * 7 due to it ticking down every 7 frame.
                 Pet.abilityHaste += bell.Haste.CurrentStatFloat;
@@ -31,7 +31,7 @@ namespace PetsOverhaul.LightPets
             }
         }
     }
-    public sealed class RustedJingleBell : GlobalItem
+    public sealed class RustedJingleBellPet : GlobalItem
     {
         public LightPetStat Breathe = new(30, 14, 90);
         public LightPetStat Haste = new(25, 0.002f, 0.03f);
@@ -96,7 +96,7 @@ namespace PetsOverhaul.LightPets
 
                         .Replace("<breatheLine>", Breathe.StatSummaryLine(Math.Round(Breathe.CurrentStatInt / 60f, 2).ToString()))
                         .Replace("<hasteLine>", Haste.StatSummaryLine())
-                        .Replace("<hasteLine>", MiningFortuneInWater.StatSummaryLine())
+                        .Replace("<fortuneLine>", MiningFortuneInWater.StatSummaryLine())
                         ));
             if (Haste.CurrentRoll <= 0)
             {

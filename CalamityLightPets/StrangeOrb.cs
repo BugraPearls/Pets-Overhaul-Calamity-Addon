@@ -15,7 +15,7 @@ namespace PetsOverhaul.LightPets
     {
         public override void PostUpdateMiscEffects()
         {
-            if (Player.miscEquips[1].TryGetGlobalItem(out StrangeOrb orb))
+            if (Player.miscEquips[1].TryGetGlobalItem(out StrangeOrbPet orb))
             {
                 Player.fishingSkill += orb.FishingPower.CurrentStatInt;
                 Pet.fishingFortune += orb.FishingFortune.CurrentStatInt;
@@ -26,7 +26,7 @@ namespace PetsOverhaul.LightPets
             }
         }
     }
-    public sealed class StrangeOrb : GlobalItem
+    public sealed class StrangeOrbPet : GlobalItem
     {
         public LightPetStat FishingPower = new(8, 1);
         public LightPetStat FishingFortune = new(25, 1);
@@ -83,7 +83,7 @@ namespace PetsOverhaul.LightPets
             {
                 return;
             }
-            tooltips.Add(new(Mod, "Tooltip0", Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.LightPetTooltips.RustedJingleBell")
+            tooltips.Add(new(Mod, "Tooltip0", Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.LightPetTooltips.StrangeOrb")
 
                         .Replace("<power>", FishingPower.BaseAndPerQuality())
                         .Replace("<fortune>", FishingFortune.BaseAndPerQuality())

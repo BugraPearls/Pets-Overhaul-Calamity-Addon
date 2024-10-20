@@ -16,7 +16,7 @@ namespace PetsOverhaul.LightPets
     {
         public override void PostUpdateMiscEffects()
         {
-            if (Player.miscEquips[1].TryGetGlobalItem(out ThiefsDime dime))
+            if (Player.miscEquips[1].TryGetGlobalItem(out ThiefsDimePet dime))
             {
                 Player.Calamity().rogueVelocity += dime.RogueVelocity.CurrentStatFloat;
                 Player.Calamity().accStealthGenBoost += dime.StealthGain.CurrentStatFloat;
@@ -25,18 +25,18 @@ namespace PetsOverhaul.LightPets
         }
         public override void ModifyLuck(ref float luck)
         {
-            if (Player.miscEquips[1].TryGetGlobalItem(out ThiefsDime dime))
+            if (Player.miscEquips[1].TryGetGlobalItem(out ThiefsDimePet dime))
             {
                 luck += dime.Luck.CurrentStatFloat;
             }
         }
     }
-    public sealed class ThiefsDime : GlobalItem
+    public sealed class ThiefsDimePet : GlobalItem
     {
-        public LightPetStat Luck = new(8, 1);
-        public LightPetStat RogueDamage = new(25, 1);
-        public LightPetStat RogueVelocity = new(25, 1);
-        public LightPetStat StealthGain = new(30, 0.005f, 0.06f);
+        public LightPetStat Luck = new(16, 0.005f);
+        public LightPetStat RogueDamage = new(20, 0.0025f, 0.05f);
+        public LightPetStat RogueVelocity = new(40, 0.004f, 0.04f);
+        public LightPetStat StealthGain = new(30, 0.004f, 0.03f);
         public override bool InstancePerEntity => true;
         public override bool AppliesToEntity(Item entity, bool lateInstantiation)
         {
@@ -98,14 +98,14 @@ namespace PetsOverhaul.LightPets
             {
                 return;
             }
-            tooltips.Add(new(Mod, "Tooltip0", Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.LightPetTooltips.RustedJingleBell")
+            tooltips.Add(new(Mod, "Tooltip0", Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.LightPetTooltips.ThiefsDime")
 
-                        .Replace("<luck>", Luck.BaseAndPerQuality())
+                        .Replace("<luck>", Luck.BaseAndPerQuality(Luck.StatPerRoll.ToString()))
                         .Replace("<rogue>", RogueDamage.BaseAndPerQuality())
-                        .Replace("<velocity>", RogueVelocity.StatSummaryLine())
+                        .Replace("<velocity>", RogueVelocity.BaseAndPerQuality())
                         .Replace("<stealth>", StealthGain.BaseAndPerQuality())
 
-                        .Replace("<luckLine>", Luck.StatSummaryLine())
+                        .Replace("<luckLine>", Luck.StatSummaryLine(Math.Round(Luck.CurrentStatFloat, 2).ToString()))
                         .Replace("<rogueLine>", RogueDamage.StatSummaryLine())
                         .Replace("<velocityLine>", RogueVelocity.StatSummaryLine())
                         .Replace("<stealthLine>", StealthGain.StatSummaryLine())

@@ -4,39 +4,44 @@ Mods: {
 			RustedJingleBell:
 				'''
 				Increases your maximum breathing time under water
-				by <breathe> seconds, Pet Ability Haste by <haste>%,
-				and Mining fortune by <fortune> while touching a liquid.
+				by <breathe> seconds per quality, Pet Ability Haste by <haste> per quality,
+				and Mining fortune by <fortune> per quality while touching a liquid.
 				Bonus Breathe Seconds: <breatheLine>
 				Pet Ability Haste: <hasteLine>
 				In Liquid Mining Fortune: <fortuneLine>
 				'''
 			ThiefsDime:
 				'''
-				Increases luck by <luck>, Rogue damage by <rogue>,
-				Rogue velocity by <velocity> and stealth gain by <stealth>.
+				Increases Luck by <luck> per quality, Rogue damage by <rogue> per quality,
+				Rogue velocity by <velocity> per quality and stealth gain by <stealth> per quality.
 				Luck: <luckLine>
-				Rouge Damage: <rougeLine>
+				Rouge Damage: <rogueLine>
 				Rogue Velocity: <velocityLine>
 				Rogue Stealth Gain: <stealthLine>
 				'''
 			SuspiciousLookingNOU:
 				'''
-				69
-				420
+				Increases luck by <luck> per quality, decreases your damage by <damage> per quality,
+				and increases blocks where fall damage beings by <fall> per quality.
+				Also increases how sus you are by <sus> per quality.
+				Luck: <luckLine>
+				Lowered Damage: <damageLine>
+				Blocks till Fall Begin: <fallLine>
+				sus meter: <susLine>
 				'''
 			LittleLight:
-			'''
-			Increases your aggro by <aggro>, knockback resist by <kbResist>,
-			Maximum health by <health> and increases Pet shields by <shield>.
-			Aggro: <aggroLine>
-			Knockback Resistance: <kbResistLine>
-			Maximum Health: <healthLine>
-			Pet Shield Bonus: <shieldLine>
-			'''
+				'''
+				Increases your aggro by <aggro>, knockback resist by <kbResist>,
+				Maximum health by <health> and increases Pet shields by <shield>.
+				Aggro: <aggroLine>
+				Knockback Resistance: <kbResistLine>
+				Maximum Health: <healthLine>
+				Pet Shield Bonus: <shieldLine>
+				'''
 			StrangeOrb:
 				'''
-				Increases fishing power by <power>, fishing fortune by <fortune>
-				and increases Pet Healing by <heal> if touching a liquid.
+				Increases fishing power by <power> per quality, fishing fortune by <fortune> per quality
+				and increases Pet Healing by <heal> per quality if you're touching a liquid.
 				Fishing Power: <powerLine>
 				Fishing Fortune: <fortuneLine>
 				Pet Healing in Liquid: <healLine>

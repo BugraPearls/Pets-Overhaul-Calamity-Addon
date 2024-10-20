@@ -1,1 +1,10 @@
-Modify this file with a description of your mod.
+This mod is Calamity Addon of Pets Overhaul mod, which adds multiple new effects to existing Pets, adding them more personality!
+
+Your Pets can improve many aspects of your game with unique effects, including Light Pets, whom has a 'stat roll' system, making almost all Light Pets stats distinct from one another.
+
+Check out Pets Overhaul's description or our Discord server for further more info!
+
+https://discord.gg/KubSpqvDGE
+
+The Calamity Addon currently supports Brazillian Portuguese localization (By: Erstarisk)
+Icon and all artwork done by: Furqi

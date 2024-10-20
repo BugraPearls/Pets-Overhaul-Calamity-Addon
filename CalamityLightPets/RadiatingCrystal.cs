@@ -16,13 +16,13 @@ namespace PetsOverhaul.LightPets
     {
         public override void PostUpdateMiscEffects()
         {
-            if (Player.miscEquips[1].TryGetGlobalItem(out RadiatingCrystal crystal))
+            if (Player.miscEquips[1].TryGetGlobalItem(out RadiatingCrystalPet crystal))
             {
                 Player.GetCritChance<GenericDamageClass>() += crystal.CritChance.CurrentStatFloat;
             }
         }
     }
-    public sealed class RadiatingCrystal : GlobalItem
+    public sealed class RadiatingCrystalPet : GlobalItem
     {
         public LightPetStat PoisonTolerance = new(25, 14, 90);
         public LightPetStat CritChance = new(40, 0.15f, 2.5f);

@@ -48,10 +48,12 @@ Mods: {
 				'''
 			RadiatingCrystal:
 				'''
-				Increases critical chance by <crit>
-				and mining fortune by <fortune>
-				Crit Chance: <critLine>
-				Mining Fortune: <fortuneLine>
+				Increases defense by <def> per quality while under any debuff,
+				except debuffs that can't be healed by nurse or Mana Sickness,
+				Knockback by <knockback> and poisons enemies in <radius> blocks per quality.
+				Defense Umder Debuff: <defLine>
+				Knockback: <knockbackLine>
+				Poison Radius: <radiusLine>
 				'''
 			EnchantedButterfly: "Increases "
 			ChromaticOrb: ""
@@ -198,8 +200,8 @@ Mods: {
 				 * Doing so succesfully causes an overload, you cannot use anything for next
 				 <baseCurse> base seconds + <perCurse> second per debuff cleansed.
 				 * This includes semi-debuffs. (debuffs that has both upsides and downsides!)
-				 * Cleanse does not remove Potion and Mana Sickness.
-				 * Has a <cooldown> second cooldown.
+				 * Cleanse does not remove debuffs that can't be removed by Nurse.
+				 * Its <cooldown> second cooldown begins if a debuff is succesfully cleansed.
 				 * Essentially applies cursed debuff, though it ignores immunities.
 				'''
 			FoxCleansedText: "Debuffs Cleansed: "

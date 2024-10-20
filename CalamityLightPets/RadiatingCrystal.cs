@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using Terraria;
+using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
@@ -18,14 +19,29 @@ namespace PetsOverhaul.LightPets
         {
             if (Player.miscEquips[1].TryGetGlobalItem(out RadiatingCrystalPet crystal))
             {
-                Player.GetCritChance<GenericDamageClass>() += crystal.CritChance.CurrentStatFloat;
+                Player.GetKnockback<GenericDamageClass>() += crystal.Knockback.CurrentStatFloat;
+                for (int i = 0; i < Player.MaxBuffs; i++)
+                {
+                    if (Main.debuff[Player.buffType[i]] && BuffID.Sets.NurseCannotRemoveDebuff[Player.buffType[i]] == false)
+                    {
+                        Player.statDefense += crystal.DebuffedDefense.CurrentStatInt;
+                    }
+                }
+                foreach (NPC npc in Main.ActiveNPCs)
+                {
+                    if (Player.Distance(npc.Center) < crystal.PoisonRadius.CurrentStatInt)
+                    {
+                        npc.AddBuff(BuffID.Poisoned, 60);
+                    }
+                }
             }
         }
     }
     public sealed class RadiatingCrystalPet : GlobalItem
     {
-        public LightPetStat PoisonTolerance = new(25, 14, 90);
-        public LightPetStat CritChance = new(40, 0.15f, 2.5f);
+        public LightPetStat Knockback = new(25, 0.01f, 0.05f);
+        public LightPetStat DebuffedDefense = new(7, 1);
+        public LightPetStat PoisonRadius = new(15, 12, 60);
         public override bool InstancePerEntity => true;
         public override bool AppliesToEntity(Item entity, bool lateInstantiation)
         {
@@ -33,36 +49,44 @@ namespace PetsOverhaul.LightPets
         }
         public override void UpdateInventory(Item item, Player player)
         {
-            PoisonTolerance.SetRoll();
-            CritChance.SetRoll();
+            Knockback.SetRoll();
+            DebuffedDefense.SetRoll();
+            PoisonRadius.SetRoll();
         }
         public override void NetSend(Item item, BinaryWriter writer)
         {
-            writer.Write((byte)PoisonTolerance.CurrentRoll);
-            writer.Write((byte)CritChance.CurrentRoll);
+            writer.Write((byte)Knockback.CurrentRoll);
+            writer.Write((byte)DebuffedDefense.CurrentRoll);
+            writer.Write((byte)PoisonRadius.CurrentRoll);
         }
         public override void NetReceive(Item item, BinaryReader reader)
         {
-            PoisonTolerance.CurrentRoll = reader.ReadByte();
-            CritChance.CurrentRoll = reader.ReadByte();
+            Knockback.CurrentRoll = reader.ReadByte();
+            DebuffedDefense.CurrentRoll = reader.ReadByte();
+            PoisonRadius.CurrentRoll = reader.ReadByte();
         }
         public override void SaveData(Item item, TagCompound tag)
         {
-            tag.Add("RadiatorTolerance", PoisonTolerance.CurrentRoll);
-            tag.Add("RadiatorCrit", CritChance.CurrentRoll); 
+            tag.Add("Stat1", Knockback.CurrentRoll);
+            tag.Add("Stat2", DebuffedDefense.CurrentRoll);
+            tag.Add("Stat3", PoisonRadius.CurrentRoll);
         }
         public override void LoadData(Item item, TagCompound tag)
         {
-            if (tag.TryGet("RadiatorTolerance", out int poisonTolerance))
+            if (tag.TryGet("Stat1", out int poisonTolerance))
             {
-                PoisonTolerance.CurrentRoll = poisonTolerance;
+                Knockback.CurrentRoll = poisonTolerance;
             }
 
-            if (tag.TryGet("RadiatorCrit", out int crit))
+            if (tag.TryGet("Stat2", out int def))
             {
-                CritChance.CurrentRoll = crit;
+                DebuffedDefense.CurrentRoll = def;
             }
 
+            if (tag.TryGet("Stat3", out int radius))
+            {
+                PoisonRadius.CurrentRoll = radius;
+            }
         }
         public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
         {
@@ -72,13 +96,15 @@ namespace PetsOverhaul.LightPets
             }
             tooltips.Add(new(Mod, "Tooltip0", Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.LightPetTooltips.RustedJingleBell")
 
-                        .Replace("<tolerance>", PoisonTolerance.BaseAndPerQuality(Math.Round(PoisonTolerance.StatPerRoll / 60f, 2).ToString(), Math.Round(PoisonTolerance.BaseStat / 60f, 2).ToString()))
-                        .Replace("<crit>", CritChance.BaseAndPerQuality())
+                        .Replace("<knockback>", Knockback.BaseAndPerQuality())
+                        .Replace("<def>", DebuffedDefense.BaseAndPerQuality())
+                        .Replace("<radius>", DebuffedDefense.BaseAndPerQuality(Math.Round(PoisonRadius.StatPerRoll / 16f, 2).ToString()))
 
-                        .Replace("<toleranceLine>", PoisonTolerance.StatSummaryLine(Math.Round(PoisonTolerance.CurrentStatInt / 60f, 2).ToString()))
-                        .Replace("<critLine>", CritChance.StatSummaryLine())
+                        .Replace("<knockbackLine>", Knockback.StatSummaryLine())
+                        .Replace("<defLine>", DebuffedDefense.StatSummaryLine())
+                        .Replace("<radiusLine>", PoisonRadius.StatSummaryLine(Math.Round(PoisonRadius.CurrentStatInt / 16f, 2).ToString()))
                         ));
-            if (CritChance.CurrentRoll <= 0)
+            if (DebuffedDefense.CurrentRoll <= 0)
             {
                 tooltips.Add(new(Mod, "Tooltip0", PetTextsColors.RollMissingText()));
             }

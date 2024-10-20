@@ -40,7 +40,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                 int amountOfDebuffs = 0;
                 for (int i = 0; i < Player.MaxBuffs; i++)
                 {
-                    if (Main.debuff[Player.buffType[i]] && Player.buffType[i] != BuffID.PotionSickness && Player.buffType[i] != BuffID.ManaSickness)
+                    if (Main.debuff[Player.buffType[i]] && BuffID.Sets.NurseCannotRemoveDebuff[Player.buffType[i]] == false)
                     {
                         Player.DelBuff(i);
                         amountOfDebuffs++;

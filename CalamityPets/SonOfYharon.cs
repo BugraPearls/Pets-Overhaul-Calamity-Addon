@@ -76,7 +76,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                                 reason = Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.YharonDeath1");
                                 break;
                         }
-                        Player.KillMe(PlayerDeathReason.ByCustomReason(reason.Replace("<name>",Player.name)), Player.statLifeMax2, 0);
+                        Player.KillMe(PlayerDeathReason.ByCustomReason(reason.Replace("<name>", Player.name)), Player.statLifeMax2, 0);
                     }
                     deadTimer = -1;
                 }
@@ -109,7 +109,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                                 reason = Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.YharonDeath5");
                                 break;
                         }
-                        Player.Hurt(PlayerDeathReason.ByCustomReason(reason.Replace("<name>",Player.name)), damageToTakeAfterReborn, 0, dodgeable: true, knockback: 0);
+                        Player.Hurt(PlayerDeathReason.ByCustomReason(reason.Replace("<name>", Player.name)), damageToTakeAfterReborn, 0, dodgeable: true, knockback: 0);
                         damageToTakeAfterReborn = 0;
                     }
                     timer = -1;
@@ -130,7 +130,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
             {
                 if (ModContent.GetInstance<PetPersonalization>().AbilitySoundEnabled)
                 {
-                    SoundEngine.PlaySound(new SoundStyle("CalamityMod/Sounds/Custom/Yharon/YharonRoar") with { PitchVariance = 0.2f }, Player.Center) ;
+                    SoundEngine.PlaySound(new SoundStyle("CalamityMod/Sounds/Custom/Yharon/YharonRoar") with { PitchVariance = 0.2f }, Player.Center);
                 }
                 PopupText.NewText(new AdvancedPopupRequest() with { Text = Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.YharonReborn"), DurationInFrames = 150, Velocity = new Vector2(0, -10), Color = new Color(209, 107, 75) }, Player.Center);
                 float playerCurrentHp = Player.statLife;
@@ -141,7 +141,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                 healthToMult = Player.statLifeMax2 / playerCurrentHp / 2;
                 int missingHp = Player.statLifeMax2 - Player.statLife;
                 damageToTakeAfterReborn = missingHp;
-                Pet.petShield.Add((missingHp, (int)Math.Ceiling(rebirthDuration * healthToMult)));
+                Pet.AddShield(missingHp, (int)Math.Ceiling(rebirthDuration * healthToMult));
                 timer = (int)Math.Ceiling(rebirthDuration * healthToMult);
                 Pet.timer = Pet.timerMax;
             }
@@ -149,7 +149,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         public override bool PreKill(double damage, int hitDirection, bool pvp, ref bool playSound, ref bool genDust, ref PlayerDeathReason damageSource)
         {
             timer = 0;
-            if (Pet.PetInUseWithSwapCd(CalamityPetIDs.SonOfYharon) && Pet.timer<= 0)
+            if (Pet.PetInUseWithSwapCd(CalamityPetIDs.SonOfYharon) && Pet.timer <= 0)
             {
                 if (ModContent.GetInstance<PetPersonalization>().AbilitySoundEnabled)
                 {

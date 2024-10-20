@@ -63,7 +63,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                             CombatText.NewText(Player.getRect(), Color.DarkGreen, -reduce);
                         }
                         info.Damage -= reduce;
-                        Pet.petShield.Add((shieldAmount - reduce, shieldDuration));
+                        Pet.AddShield(shieldAmount - reduce, shieldDuration);
                         Pet.timer = Pet.timerMax;
                     }
                 };

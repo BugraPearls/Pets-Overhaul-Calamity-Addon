@@ -9,6 +9,7 @@
 	</PropertyGroup>
 	<ItemGroup>
 	  <None Remove="Buffs\TheGrandNourishment.png" />
+	  <None Remove="description_workshop.txt" />
 	  <None Remove="icon.png" />
 	  <None Remove="Items\DragonPracticeIcon.png" />
 	</ItemGroup>

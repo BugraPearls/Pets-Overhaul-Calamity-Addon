@@ -6,25 +6,25 @@ Mods: {
 				Increases your maximum breathing time under water
 				by <breathe> seconds, Pet Ability Haste by <haste>,
 				and Mining fortune by <fortune> while touching a liquid.
-				Bonus Breathe Seconds: <breatheLine>
-				Pet Ability Haste: <hasteLine>
-				In Liquid Mining Fortune: <fortuneLine>
+				Breathe Seconds Bonus: <breatheLine>
+				Pet Ability Haste Bonus: <hasteLine>
+				Mining Fortune Bonus In Liquid: <fortuneLine>
 				'''
 			ThiefsDime:
 				'''
 				Increases Luck by <luck>, Rogue damage by <rogue>,
 				Rogue velocity by <velocity> and stealth gain by <stealth>.
-				Luck: <luckLine>
-				Rouge Damage: <rogueLine>
-				Rogue Velocity: <velocityLine>
-				Rogue Stealth Gain: <stealthLine>
+				Luck Bonus: <luckLine>
+				Rouge Damage Bonus: <rogueLine>
+				Rogue Velocity Bonus: <velocityLine>
+				Rogue Stealth Gain Bonus: <stealthLine>
 				'''
 			SuspiciousLookingNOU:
 				'''
 				Increases luck by <luck>, decreases your damage by <damage>,
 				and increases blocks where fall damage beings by <fall>.
 				Also increases how sus you are by <sus>.
-				Luck: <luckLine>
+				Luck Bonus: <luckLine>
 				Lowered Damage: <damageLine>
 				Blocks till Fall Begin: <fallLine>
 				sus meter: <susLine>
@@ -33,30 +33,45 @@ Mods: {
 				'''
 				Increases your aggro by <aggro>, knockback resist by <kbResist>,
 				Shields gained by Pets by <shield> and Maximum health by <health>.
-				Aggro: <aggroLine>
-				Knockback Resistance: <kbResistLine>
-				Pet Shield Bonus: <shieldLine>
-				Maximum Health: <healthLine>
+				Aggro Bonus: <aggroLine>
+				Knockback Resistance Bonus: <kbResistLine>
+				Pet Shield Increase Bonus: <shieldLine>
+				Health Bonus: <healthLine>
 				'''
 			StrangeOrb:
 				'''
 				Increases fishing power by <power>, fishing fortune by <fortune>
 				and increases Pet Healing by <heal> if you're touching a liquid.
-				Fishing Power: <powerLine>
-				Fishing Fortune: <fortuneLine>
-				Pet Healing in Liquid: <healLine>
+				Fishing Power Bonus: <powerLine>
+				Fishing Fortune Bonus: <fortuneLine>
+				Pet Healing Bonus in Liquid: <healLine>
 				'''
 			RadiatingCrystal:
 				'''
 				Increases defense by <def> while under any debuff,
 				except debuffs that can't be healed by nurse or Mana Sickness,
 				Knockback by <knockback> and poisons enemies in <radius> blocks per quality.
-				Defense Under Debuff: <defLine>
-				Knockback: <knockbackLine>
+				Defense Under Debuff Bonus: <defLine>
+				Knockback Bonus: <knockbackLine>
 				Poison Radius: <radiusLine>
 				'''
-			EnchantedButterfly: "Increases "
-			ChromaticOrb: ""
+			EnchantedButterfly:
+				'''
+				Increases healing from Pets by <heal>, global fortune by <fortune>,
+				and Mana by <mana>. Reduces Aggro by <aggro>.
+				Pet Healing Bonus: <healLine>
+				Global Fortune Bonus: <fortuneLine>
+				Aggro Reduction Bonus: <aggroLine>
+				Mana Bonus: <manaLine>
+				'''
+			ChromaticOrb:
+				'''
+				Increases Pet Ability Haste by <haste>, Crit Chance by <crit>,
+				and Jump speed by <jump>.
+				Pet Ability Haste Bonus: <hasteLine>
+				Crit Chance Bonus: <critLine>
+				Jump Speed Bonus: <jumpLine>
+				'''
 		}
 
 		PetTooltips: {

@@ -3,7 +3,7 @@ Mods: {
 		LightPetTooltips: {
 			RustedJingleBell:
 				'''
-				Increases your maximum breathing time under water
+				Increases your maximum breathing time underwater
 				by <breathe> seconds, Pet Ability Haste by <haste>,
 				and Mining fortune by <fortune> while touching a liquid.
 				Breathe Seconds Bonus: <breatheLine>
@@ -22,7 +22,7 @@ Mods: {
 			SuspiciousLookingNOU:
 				'''
 				Increases luck by <luck>, decreases your damage by <damage>,
-				and increases blocks where fall damage beings by <fall>.
+				and increases blocks where fall damage begins by <fall>.
 				Also increases how sus you are by <sus>.
 				Luck Bonus: <luckLine>
 				Lowered Damage: <damageLine>
@@ -49,7 +49,7 @@ Mods: {
 			RadiatingCrystal:
 				'''
 				Increases defense by <def> while under any debuff,
-				except debuffs that can't be healed by nurse or Mana Sickness,
+				except debuffs that can't be healed by Nurse or Mana Sickness,
 				Knockback by <knockback> and poisons enemies in <radius> blocks.
 				Defense Under Debuff Bonus: <defLine>
 				Knockback Bonus: <knockbackLine>
@@ -79,16 +79,16 @@ Mods: {
 				'''
 				<class>
 				- [i:<stackIcon>] Current stacks: <dragonPractice>. Sources of stack gains are as follows:
-				 * Direct hits on primary target and all enemies hit by explosion give <hitStack>.
-				 * Direct kills on primary target and all enemies killed by explosion and execute give <killStack>.
-				 * Gained stacks are multiplied by <bossMultiply> if target is a Boss, or multiplied by their rarity value + 1.
+				 * Direct hits on the primary target and all enemies hit by explosion give <hitStack>.
+				 * Direct kills on the primary target and all enemies killed by explosion and execute give <killStack>.
+				 * Gained stacks are multiplied by <bossMultiply> if the target is a Boss, or multiplied by their rarity value + 1.
 				- Press Pet Ability Keybind (<keybind>) to charge Super Scorcher Breath for your next attack, exploding on hit,
-				enemies hit by explosion gets burnt and granting you permanent stacks, with <cooldown> seconds cooldown.
+				enemies hit by explosion get burnt and grant you permanent stacks, with <cooldown> seconds cooldown.
 				 * Super Scorcher Breath attack expires after <expire> seconds of not using it.
 				 * Explosion deals <baseMult>% + [i:<stackIcon>] <stackMult>% of your initial damage, with <baseSize> + [i:<stackIcon>] <stackSize> blocks of radius.
 				 * Explosion burns enemies for <burnDuration> + [i:<stackIcon>] <stackBurnDuration> seconds and deals <baseBurn> + [i:<stackIcon>] <stackBurn> damage per second.
 				 * While enemies are being burnt, going below <baseExecute>% + [i:<stackIcon>] <stackExecute>% of their health instantly executes them.
-				 * Explosion & stack gain is disabled for Dummies etc, and stats per 1 stack get worse as stacks are higher.
+				 * Explosion & stack gain are disabled for Dummies etc, and stats per 1 stack get worse as stacks are higher.
 				'''
 			Astrophage:
 				'''
@@ -117,8 +117,8 @@ Mods: {
 				 * Reflection damage is doubled if you're below <treshold>% health.
 				 * Fireballs deal half of taken pre-mitigation damage + your defense,
 				 scaling with your damage reduction, and applying Brimstone Flames on hit.
-				 * Fireballs travel randomly, and fireballs spawns as 5 upon being hurt.
-				 * Fireballs has a <cooldown> seconds cooldown to be re-cast on hurt.
+				 * Fireballs travel randomly, and fireballs spawn as 5 upon being hurt.
+				 * Fireballs have a <cooldown> seconds cooldown to be re-cast on hurt.
 				'''
 			CosmicPlushie:
 				'''
@@ -129,7 +129,7 @@ Mods: {
 				 * it miigghhhttt be devouring towards other players too.....
 				 * :3
 				'''
-			CosmicDeath1: <name> have done little bit of tomfoolery.
+			CosmicDeath1: <name> has done little bit of tomfoolery.
 			CosmicDeath2: <name> is doing tiny amount of trolling. :tf:
 			CosmicDeath3: <name> fat fingered
 			CosmicDeath4: <name> is 100% lying if they say 'mb'
@@ -145,8 +145,8 @@ Mods: {
 				'''
 				<class>
 				- Press (<abilitySwitch>) to switch abilities, and (<abilityUse>) to initiate on-hit effects.
-				- Allows you to choose between 6 abilities that works on-hit. Re-Use ability to cancel.
-				- They benefit with your current Troublemaker form and enemy vulnerability.
+				- Allows you to choose between 6 abilities that work on-hit. Re-Use ability to cancel.
+				- They benefit from your current Troublemaker form and enemy vulnerability.
 				 * Dex form will apply <dexMult>x to all abilities, while others are <STABMult>x effectiveness.
 				- Has <baseCooldown> seconds cooldown, but all abilities cost % of your cooldown.
 				<abilityTooltip>
@@ -179,7 +179,7 @@ Mods: {
 				 * Uses Cold resistance & vulnerability, and buffed by Frost form.
 				 * Your next strike whips out a mini Blizzard in target location,
 				constantly dealing <dmg> damage to all enemies inside it for <blizzardDuration> seconds.
-				 * Enemies inside Blizzard is constantly slowed by <slow>%.
+				 * Enemies inside Blizzard are constantly slowed by <slow>%.
 				 * Enemies hit for <freezeRequirement> seconds gets applied with Glacial State for <freezeDuration> seconds.
 				 * Costs <percentOfCd>% of your current Pet Ability Cooldown. (<percentToSeconds> seconds)
 				'''
@@ -194,8 +194,8 @@ Mods: {
 			RotomAirSlash:
 				'''
 				- Current Ability: Air Slash
-				 * Is more effective if enemy is grounded (if affected by gravity),
-				normal effectiveness if grounded enemy is currently midair, and
+				 * Is more effective if the enemy is grounded (if affected by gravity),
+				normal effectiveness if the grounded enemy is currently midair, and
 				not very effective if they aren't affected by gravity. Buffed by Fan form.
 				 * Your next strike hits all enemies in <radius> blocks for <dmg> damage,
 				while also knocking them away from you with <knockback> knockback.
@@ -232,7 +232,7 @@ Mods: {
 				- Increases your standing stealth recovery by <stealth>%.
 				- Increases maximum stealth by <maxStealth>.
 				- Increases stealth attack damage by <stealthDmg>%.
-				- Stealth attacks causes to spawn acid around you and the target on-hit.
+				- Stealth attacks spawn acid around you and the target on-hit.
 				 * Deals <damage> damage, and applies Irradiated for <irradiateDuration> seconds.
 				 * Has <cooldown> seconds cooldown.
 				'''
@@ -240,11 +240,11 @@ Mods: {
 				'''
 				<class>
 				- Press Pet Ability Keybind (<keybind>) to format (cleanse) ALL the debuffs on you.
-				 * Doing so succesfully causes an overload, you cannot use anything for next
+				 * Doing so successfully causes an overload, you cannot use anything for the next
 				 <baseCurse> base seconds + <perCurse> second per debuff cleansed.
-				 * This includes semi-debuffs. (debuffs that has both upsides and downsides!)
-				 * Cleanse does not remove debuffs that can't be removed by Nurse.
-				 * Its <cooldown> second cooldown begins if a debuff is succesfully cleansed.
+				 * This includes semi-debuffs. (debuffs that have both upsides and downsides!)
+				 * Cleanse does not remove debuffs that can't be removed by the Nurse.
+				 * Its <cooldown> second cooldown begins if a debuff is successfully cleansed.
 				 * Essentially applies cursed debuff, though it ignores immunities.
 				'''
 			FoxCleansedText: "Debuffs Cleansed: "
@@ -255,20 +255,20 @@ Mods: {
 				equal to <baseShield>% base + <bonusShield>% bonus health shield for <shieldDuration> seconds.
 				 * Damage taking you below <belowHealth>% health will be reduced accordingly with the Shield.
 				 * Lifeguard Shield has a <cooldown> seconds cooldown.
-				 * When activated, for same duration, power absorption deals <lifeguardMult>x damage.
+				 * When activated, for the same duration, power absorption deals <lifeguardMult>x damage.
 				- Increases Rogue stealth gain by <stealthMoving>% while moving, and <stealthNotMoving>% while not.
-				- Dealing final blow on an enemy with Rogue hits absorbs their power.
+				- Dealing the final blow on an enemy with Rogue hits absorbs their power.
 				 * Adding <percAbsorb>% of their base damage value to your next hit.
 				 * Proccing this bonus damage grants <procShield> shield for <procShieldDuration> seconds.
-				 * Current stored damage to be added to your next hit: <storedDmg>
+				 * Currently stored damage to be added to your next hit: <storedDmg>
 				'''
 			RomajedaOrchid:
 				'''
 				<class>
-				- Dealing final blow on an enemy with Rogue hits absorbs their power.
+				- Dealing the final blow on an enemy with Rogue hits absorbs their power.
 				 * Adding <percAbsorb>% of their base damage value to your next hit.
 				 * Stealth Strikes multiplies this damage by <stealthMult>x.
-				 * Current stored damage to be added to your next hit: <storedDmg>
+				 * Currently stored damage to be added to your next hit: <storedDmg>
 				'''
 			JoyfulHeart:
 				'''
@@ -277,7 +277,7 @@ Mods: {
 				 * Your damage is multiplied by <selfDmg>x.
 				 * Damage taken is multiplied by <takenDmg>x.
 				- Press Pet Ability Keybind (<keybind>) to grant healing to
-				EVERYTHING in <radius> blocks, including some self love.
+				EVERYTHING in <radius> blocks, including some self-love.
 				 * Heals <perSecRegen> twice per second for <duration> seconds.
 				 * Regen is doubled for Players and Friendly NPC's
 				'''
@@ -296,7 +296,7 @@ Mods: {
 				<class>
 				- Deal <incrToCorrupt>% more damage to Corruption enemies.
 				- Your Corruption enemy kills with this Pet: <killCount>
-				- Gain following bonuses depending on your kills.
+				- Gain the following bonuses depending on your kills.
 				 * +<dmg>% damage, +<crit>% crit chance, +<luck> luck,
 				+<pen> armor penetration and +<critDmg>% crit damage.
 				 * Multiply stats by <evilMult>x while in Corruption biome.
@@ -307,7 +307,7 @@ Mods: {
 				<class>
 				- Receive <drFromCrimson>% less damage from Crimson enemies.
 				- Your crimson enemy kills with this Pet: <killCount>
-				- Gain following bonuses depending on your kills.
+				- Gain the following bonuses depending on your kills.
 				 * +<def> defense, +<hp> maximum health, +<luck> luck,
 				+<dr>% damage reduction and +<regen> health regen.
 				 * Multiply stats by <evilMult>x while in Crimson biome.
@@ -318,7 +318,7 @@ Mods: {
 				<class>
 				- Modifies your Food items' Well Fed properties.
 				 * Increases Well Fed stage by +1.
-				 * Duration of Well Fed buffs will be half of base amount.
+				 * Duration of Well Fed buffs will be half of the base amount.
 				 * Exquisitely Stuffed will become The Grand Nourishment, further improving effects.
 				 * +<def> Def, <crit>% Crit, <dmg>% Dmg, +<sumKb> Sum. Kb, %<moveSpd> Move Spd, %<miningSpd> Mining Spd
 				 * Any lower tier of Well Fed cannot override The Grand Nourishment.
@@ -327,7 +327,7 @@ Mods: {
 			PlagueCaller:
 				'''
 				<class>
-				- On Rogue hit, enemies keep stacks of percentage of the dealt damage to target and its surroundings.
+				- On Rogue hit, enemies keep stacks of a percentage of the dealt damage to the target and its surroundings.
 				 * Primary target stacks for <primaryPerc>%, while enemies in <hitAoE> blocks stack for <surroundingPerc>% of dealt damage.
 				 * Stacks stay on target for <stackDuration> seconds and the timer is refreshed upon getting a new stack.
 				- Press Pet Ability Keybind (<keybind>) to detonate all stacks from all enemies in <detonateRadius> blocks.
@@ -336,45 +336,45 @@ Mods: {
 			McNuggets:
 				'''
 				<class>
-				- Press Pet Ability Keybind (<keybind>) to use Rebirth Ability. While Reborn, gain following effects:
-				 * You will gain a shield with exact amount of your missing health.
+				- Press Pet Ability Keybind (<keybind>) to use Rebirth Ability. While Reborn, gain the following effects:
+				 * You will gain a shield with the exact amount of your missing health.
 				 * Gain <dmgRebirth>% damage, <defRebirth> defense and <msRebirth>% movement speed.
 				 * Your attacks inflict Dragonfire for <fireTime> seconds.
 				 * Reborn effects lasts for <rebornDuration> seconds.
-				 * All buff amounts and durations can increase up to 300% depending on the health ability was used at. 
+				 * All buff amounts and durations can increase up to 300% depending on the health ability was used at.  
 				 * Effect amplifier is way more useful the lesser health you have, reaching maximum potential at 25% hp.
-				 * You will take damage for exact amount of initial shield after effects wear off, the shield can tank the damage.
+				 * You will take damage for the exact amount of initial shield after effects wear off, the shield can tank the damage.
 				 * Rebirth ability has a <cooldown> minute cooldown.
-				- If Player dies while ability isn't on cooldown, but wasn't used manually, it will save the player with following:
-				 * Player gains the base effects, with no amplifiers, no shielding but you will be healed to maximum health.
+				- If the Player dies while the ability isn't on cooldown, but wasn't used manually, it will save the player with the following:
+				 * The player gains the base effects, with no amplifiers, and no shielding but you will be healed to maximum health.
 				 * Player [c/f8baba:will be killed immediately] after the effects wear off. (Son of Yharon gets too exhausted since he does it for you!)
 				'''
 			YharonReborn: REBORN!!
 			YharonDelay: Son of Yharon is delaying your death!
 			YharonDeath1: <name> ran out of flames, and all that is left is ashes.
 			YharonDeath2: <name> was punished by Yharon for abusing his kid.
-			YharonDeath3: Son of Yharon seems like isn't capable enough, and couldn't delay <name>'s death any longer.
-			YharonDeath4: <name> should've learned to Reborn before its was too late.
+			YharonDeath3: The Son of Yharon seems like isn't capable enough, and couldn't delay <name>'s death any longer.
+			YharonDeath4: <name> should've learned to Reborn before it was too late.
 			YharonDeath5: <name> could not contain temporary power given by Yharon."
 			YharonDeath6: Yharon's son is sad for <name>.
-			YharonDeath7: Powers of Rebirth should've been handled only by the Eternal Phoenixes, <name>, was not the one to handle.
+			YharonDeath7: Powers of Rebirth should've been handled only by the Eternal Phoenixes, <name>, was not the one to handle it.
 			YharonDeath8: <name> tried to eat the nuggies???
 			BrimstoneJewel:
 				'''
 				<class>
-				- Your hits will now always crit, no matter the chance.
+				- Your hits will now always critically hit, no matter the chance.
 				- Reduces your Crit Damage by <critDmgReduce>%, but also increases it by <chanceToDmg>% of your crit chance.
-				 * Crit chances that overflows 100% also increases crit damage.
-				- Adds a Mana Cost to ALL of your weapons, equal to Weapon's use time x2.
-				 * Magic Weapons instead gets their mana cost increased by <magicCost>%.
+				 * Crit chances that overflow 100% also increase the crit damage.
+				- Adds a Mana Cost to ALL of your weapons, equal to the Weapon's use time x2.
+				 * Magic Weapons instead get their mana cost increased by <magicCost>%.
 				 * Summoner's only whips benefit from all of the effects above.
-				 * Any weapons that channels something or is a tool does not benefit too.
+				 * Any weapon that channels something or is a tool does not benefit as well.
 				- Mana Sickness will now reduce ALL affected damage, rather than just Magic.
 				'''
 			ScalManaSicknessExtraText:
 				'''
-				Also reducing all other damage, except
-				Minions and Channeling weapons by same amount.
+				Also reducing all other damage, except;
+				Minions and Channeling weapons by the same amount.
 				'''
 			HermitsBoxofOneHundredMedicines:
 				'''

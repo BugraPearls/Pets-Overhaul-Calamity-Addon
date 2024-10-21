@@ -207,23 +207,24 @@ Mods: {
 				- Depending on how much Aggro you have, gain defensive or offensive stats.
 				- Current aggro value: <aggro>, press (<switch>) to swap between -/+ tooltips.
 				<tooltip>
-				 * 
 				'''
+			SnailActive: ACTIVE!
+			SnailInactive: INACTIVE!
 			SnailPositiveAggro:
 				'''
-				- While your aggro value is positive grants you the following:
-				 * 1 defense per <aggroDef> aggro value.
-				 * 1 maximum health per <aggroHealth> aggro value.
-				 * 1% damage reduction per <aggroDr> aggro value.
-				 * -1% movement speed per <aggroMs> aggro value.
+				- While your aggro value is positive grants you the following: (<active>)
+				 * 1 defense per <aggroDef> aggro value. Current: <def>
+				 * 1 maximum health per <aggroHealth> aggro value. Current: <hp>
+				 * 1% damage reduction per <aggroDr> aggro value. Current: <dr>%
+				 * -1% movement speed per <aggroMsLower> aggro value. Current: <msLower>%
 				'''
 			SnailNegativeAggro:
 				'''
-				- While your aggro value is negative grants you the following:
-				 * 1% damage per <aggroDamage> aggro value.
-				 * 1% crit chance per <aggroCrit> aggro value.
-				 * 1 armor pen per <aggroPen> aggro value.
-				 * 1% movement speed per <aggroMs> aggro value.
+				- While your aggro value is negative grants you the following: (<active>)
+				 * 1% damage per <aggroDamage> aggro value. Current: <dmg>%
+				 * 1% crit chance per <aggroCrit> aggro value. Current: <crit>%
+				 * 1 armor pen per <aggroPen> aggro value. Current: <pen>
+				 * 1% movement speed per <aggroMs> aggro value. Current: <ms>%
 				'''
 			GeyserShell:
 				'''

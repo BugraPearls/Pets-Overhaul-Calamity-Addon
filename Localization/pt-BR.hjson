@@ -207,23 +207,24 @@ Mods: {
 				- Dependendo de quanta Agressividade inimiga você tem, ganhe estatísticas defensivas ou ofensivas.
 				- Valor atual de agressividade: <aggro>, pressione (<switch>) para alternar entre dicas -/+.
 				<tooltip>
-				 * 
 				'''
+			SnailActive: ATIVO!
+			SnailInactive: INATIVO!
 			SnailPositiveAggro:
 				'''
-				- Enquanto seu valor de agressividade for positivo, concede o seguinte:
-				 * 1 defesa por <aggroDef> de valor de agressividade.
-				 * 1 saúde máxima por <aggroHealth> de valor de agressividade.
-				 * 1% de redução de dano por <aggroDr> de valor de agressividade.
-				 * -1% de velocidade de movimento por <aggroMs> de valor de agressividade.
+				- Enquanto seu valor de agressividade for positivo, concede o seguinte: (<active>)
+				 * 1 defesa por <aggroDef> de valor de agressividade. Atual: <def>
+				 * 1 saúde máxima por <aggroHealth> de valor de agressividade. Atual: <hp>
+				 * 1% de redução de dano por <aggroDr> de valor de agressividade. Atual: <dr>%
+				 * -1% de velocidade de movimento por <aggroMsLower> de valor de agressividade. Atual: <msLower>%
 				'''
 			SnailNegativeAggro:
 				'''
-				- Enquanto seu valor de agressividade for negativo, concede o seguinte:
-				 * 1% de dano por <aggroDamage> de valor de agressividade.
-				 * 1% de chance crítica por <aggroCrit> de valor de agressividade.
-				 * 1 penetração de armadura por <aggroPen> de valor de agressividade.
-				 * 1% de velocidade de movimento por <aggroMs> de valor de agressividade.
+				- Enquanto seu valor de agressividade for negativo, concede o seguinte: (<active>)
+				 * 1% de dano por <aggroDamage> de valor de agressividade. Atual: <dmg>%
+				 * 1% de chance crítica por <aggroCrit> de valor de agressividade. Atual: <crit>%
+				 * 1 penetração de armadura por <aggroPen> de valor de agressividade. Atual: <pen>
+				 * 1% de velocidade de movimento por <aggroMs> de valor de agressividade. Atual: <ms>%
 				'''
 			GeyserShell:
 				'''

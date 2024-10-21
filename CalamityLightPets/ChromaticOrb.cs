@@ -21,7 +21,7 @@ namespace PetsOverhaul.LightPets
             {
                 Pet.abilityHaste += orb.AbilityHaste.CurrentStatFloat;
                 Player.GetCritChance<GenericDamageClass>() += orb.CritChance.CurrentStatFloat * 100;
-                Player.jumpSpeedBoost += orb.JumpSpeed.CurrentStatFloat;
+                Player.jumpSpeedBoost += Player.jumpSpeed * orb.JumpSpeed.CurrentStatFloat;
             }
         }
     }

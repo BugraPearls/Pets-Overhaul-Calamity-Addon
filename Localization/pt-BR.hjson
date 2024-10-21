@@ -303,14 +303,6 @@ Mods: {
 			BloodyVein:
 				'''
 				<class>
-				- Receive <drFromCrimson>% less damage from Crimson enemies.
-				- Your crimson enemy kills with this Pet: <killCount>
-				- Gain following bonuses depending on your kills.
-				 * +<def> defense, +<hp> maximum health, +<luck> luck,
-				+<dr>% damage reduction and +<regen> health regen.
-				 * Multiply stats by <evilMult>x while in Crimson biome.
-				 * Kills required for next stat upgrades: <killReq>
-				<class>
 				- Receba <drFromCrimson>% menos dano de inimigos do Carmim.
 				- Suas mortes de inimigos do Carmim com este PET: <killCount>
 				- Ganhe os seguintes bônus dependendo das suas mortes.
@@ -405,8 +397,8 @@ Mods: {
 		}
 
 		Projectiles: {
-			// RotomBlizzard.DisplayName: Nevasca
-			// Trashcan.DisplayName: Lata de Lixo
+			RotomBlizzard.DisplayName: Nevasca
+			Trashcan.DisplayName: Lata de Lixo
 		}
 	}
 }

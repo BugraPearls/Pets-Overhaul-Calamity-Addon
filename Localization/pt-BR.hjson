@@ -388,7 +388,9 @@ Mods: {
 
 		Buffs: {
 			TheGrandNourishmentTooltip: Aumento gigante para todas as estatísticas
-			TheGrandNourishment.DisplayName: O Grande Banquete
+			TheGrandNourishmentDisplayName: O Grande Banquete
+			BleedOutTooltip: Você está sangrando!
+			BleedOutDisplayName: Sangramento
 		}
 
 		Items: {

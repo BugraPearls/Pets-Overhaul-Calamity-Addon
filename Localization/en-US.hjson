@@ -388,7 +388,9 @@ Mods: {
 
 		Buffs: {
 			TheGrandNourishmentTooltip: Superior improvements to all stats!
-			TheGrandNourishment.DisplayName: The Grand Nourishment
+			TheGrandNourishmentDisplayName: The Grand Nourishment
+			BleedOutTooltip: You're bleeding out!
+			BleedOutDisplayName: Bleeding
 		}
 
 		Items: {

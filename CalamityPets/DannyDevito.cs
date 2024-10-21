@@ -5,15 +5,43 @@ using System.Collections.Generic;
 using Terraria;
 using Terraria.Localization;
 using Terraria.ModLoader;
+using Terraria.GameInput;
+using PetsOverhaulCalamityAddon.Projectiles;
+using Microsoft.CodeAnalysis;
+using Microsoft.Xna.Framework;
+using Terraria.Audio;
+using Terraria.ID;
+using System;
 
 namespace PetsOverhaulCalamityAddon.CalamityPets
 {
     public sealed class DannyDevitoEffect : PetEffect
     {
-        public override PetClasses PetClassPrimary => PetClasses.None;
-        public override void PostUpdateMiscEffects()
+        public override PetClasses PetClassPrimary => PetClasses.Utility;
+        public override PetClasses PetClassSecondary => PetClasses.Offensive;
+        public int radius = 150;
+        public int damage = 35;
+        public int bleedDuration = 780;
+        public float slow = 0.35f;
+        public int slowDuration = 330;
+        public int confusionChance = 40; //out of 100
+        public int confusionDuration = 150;
+        public int cooldown = 420;
+        public override void ProcessTriggers(TriggersSet triggersSet)
         {
-
+            if (Pet.AbilityPressCheck() && Pet.PetInUseWithSwapCd(CalamityPetIDs.DannyDevito))
+            {
+                SoundEngine.PlaySound(SoundID.Item1 with { PitchVariance = 0.2f }, Player.Center);
+                Projectile.NewProjectile(GlobalPet.GetSource_Pet(EntitySourcePetIDs.PetProjectile), Player.Center, new Vector2(Main.MouseWorld.X - Player.Center.X, Main.MouseWorld.Y - Player.Center.Y) * 0.03f, ModContent.ProjectileType<Trashcan>(), damage, 4f, Player.whoAmI);
+                Pet.timer = Pet.timerMax;
+            }
+        }
+        public override void PreUpdate()
+        {
+            if (Pet.PetInUseWithSwapCd(CalamityPetIDs.DannyDevito))
+            {
+                Pet.SetPetAbilityTimer(cooldown);
+            }
         }
     }
     public sealed class TrashmanTrashcanTooltip : GlobalItem
@@ -33,6 +61,12 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
             DannyDevitoEffect dannyDevito = Main.LocalPlayer.GetModPlayer<DannyDevitoEffect>();
             tooltips.Add(new(Mod, "Tooltip0", Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.TrashmanTrashcan")
                 .Replace("<class>", PetTextsColors.ClassText(dannyDevito.PetClassPrimary, dannyDevito.PetClassSecondary))
+                .Replace("<keybind>", PetTextsColors.KeybindText(PetKeybinds.UsePetAbility))
+                .Replace("<damage>", dannyDevito.damage.ToString())
+                .Replace("<slow>", Math.Round(dannyDevito.slow * 100, 2).ToString())
+                .Replace("<slowDuration>", Math.Round(dannyDevito.slowDuration / 60f, 2).ToString())
+                .Replace("<confuseChance>", dannyDevito.confusionChance.ToString())
+                .Replace("<slow>", Math.Round(dannyDevito.confusionDuration / 60f, 2).ToString())
             ));
         }
     }

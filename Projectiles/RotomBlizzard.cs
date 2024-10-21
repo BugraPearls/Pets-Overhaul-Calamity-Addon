@@ -1,14 +1,8 @@
 ﻿using CalamityMod.Buffs.StatDebuffs;
-using CalamityMod.NPCs.NormalNPCs;
 using Microsoft.Xna.Framework;
 using PetsOverhaul.NPCs;
 using PetsOverhaulCalamityAddon.CalamityPets;
 using PetsOverhaulCalamityAddon.Systems;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
@@ -54,13 +48,13 @@ namespace PetsOverhaulCalamityAddon.Projectiles
             }
             for (int i = 0; i < 3; i++)
             {
-                Dust.NewDustPerfect(new Vector2(Main.rand.NextFloat(Projectile.width) + Projectile.position.X, Projectile.position.Y - Main.rand.NextFloat(5f,6f)), DustID.Snow, Vector2.Zero).noGravity = true;
+                Dust.NewDustPerfect(new Vector2(Main.rand.NextFloat(Projectile.width) + Projectile.position.X, Projectile.position.Y - Main.rand.NextFloat(5f, 6f)), DustID.Snow, Vector2.Zero).noGravity = true;
             }
             if (Main.rand.NextBool(2))
             {
                 Dust.NewDustPerfect(new Vector2(Main.rand.NextFloat(Projectile.width) + Projectile.position.X, Projectile.position.Y - 5), DustID.SnowflakeIce, new Vector2(0.4f, 11.5f)).noGravity = true;
             }
-        }   
+        }
         public override void ModifyHitNPC(NPC target, ref NPC.HitModifiers modifiers)
         {
             modifiers.FinalDamage *= Rotom.GetTypeEffectiveness(target, ElectricTroublemakerEffect.blizzard);

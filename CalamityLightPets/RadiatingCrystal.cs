@@ -1,5 +1,4 @@
-﻿using CalamityMod.CalPlayer;
-using PetsOverhaul.Config;
+﻿using PetsOverhaul.Config;
 using PetsOverhaul.Systems;
 using PetsOverhaulCalamityAddon.Systems;
 using System;

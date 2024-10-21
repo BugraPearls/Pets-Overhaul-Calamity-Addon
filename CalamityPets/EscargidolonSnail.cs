@@ -1,15 +1,12 @@
-using PetsOverhaulCalamityAddon.Systems;
 using PetsOverhaul.Config;
 using PetsOverhaul.Systems;
+using PetsOverhaulCalamityAddon.Systems;
+using System;
 using System.Collections.Generic;
 using Terraria;
+using Terraria.GameInput;
 using Terraria.Localization;
 using Terraria.ModLoader;
-using Terraria.GameContent.ItemDropRules;
-using CalamityMod;
-using PetsOverhaulCalamityAddon.CalamityPets;
-using Terraria.GameInput;
-using System;
 
 namespace PetsOverhaulCalamityAddon.CalamityPets
 {
@@ -90,8 +87,8 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                         .Replace("<aggroMsLower>", snail.aggroToNegativeMs.ToString())
                         .Replace("<def>", snail.CurrentDef.ToString())
                         .Replace("<hp>", snail.CurrentHp.ToString())
-                        .Replace("<dr>", Math.Round(snail.CurrentDr,2).ToString())
-                        .Replace("<msLower>", Math.Round(snail.CurrentNegativeMs,2).ToString());
+                        .Replace("<dr>", Math.Round(snail.CurrentDr, 2).ToString())
+                        .Replace("<msLower>", Math.Round(snail.CurrentNegativeMs, 2).ToString());
                     break;
                 case false:
                     Tooltip = Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.SnailNegativeAggro")
@@ -100,10 +97,10 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                         .Replace("<aggroCrit>", snail.aggroToCrit.ToString())
                         .Replace("<aggroPen>", snail.aggroToPen.ToString())
                         .Replace("<aggroMs>", snail.aggroToMs.ToString())
-                        .Replace("<dmg>", Math.Round(snail.CurrentDmg,2).ToString())
-                        .Replace("<crit>", Math.Round(snail.CurrentCrit,2).ToString())
-                        .Replace("<pen>", Math.Round(snail.CurrentPen,2).ToString())
-                        .Replace("<ms>", Math.Round(snail.CurrentMs,2).ToString());
+                        .Replace("<dmg>", Math.Round(snail.CurrentDmg, 2).ToString())
+                        .Replace("<crit>", Math.Round(snail.CurrentCrit, 2).ToString())
+                        .Replace("<pen>", Math.Round(snail.CurrentPen, 2).ToString())
+                        .Replace("<ms>", Math.Round(snail.CurrentMs, 2).ToString());
                     break;
                 default:
             }

@@ -24,7 +24,7 @@ namespace PetsOverhaul.LightPets
             {
                 Player.breathMax += bell.Breathe.CurrentStatInt / 7; //In vanilla how long Player can breathe by default is breathMax * 7 due to it ticking down every 7 frame.
                 Pet.abilityHaste += bell.Haste.CurrentStatFloat;
-                if (Collision.WetCollision(Player.position,Player.width,Player.height))
+                if (Collision.WetCollision(Player.position, Player.width, Player.height))
                 {
                     Pet.miningFortune += bell.MiningFortuneInWater.CurrentStatInt;
                 }

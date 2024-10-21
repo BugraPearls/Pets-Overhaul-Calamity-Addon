@@ -1,15 +1,13 @@
-using PetsOverhaulCalamityAddon.Systems;
+using CalamityMod;
+using Microsoft.Xna.Framework;
 using PetsOverhaul.Config;
 using PetsOverhaul.Systems;
+using PetsOverhaulCalamityAddon.Systems;
+using System;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.Localization;
 using Terraria.ModLoader;
-using System;
-using Microsoft.Xna.Framework;
-using CalamityMod;
-using CalamityMod.Projectiles.Pets;
-using CalamityMod.Buffs.Pets;
 
 namespace PetsOverhaulCalamityAddon.CalamityPets
 {
@@ -38,7 +36,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
             {
                 Pet.SetPetAbilityTimer(cooldown);
                 lifeguardMultTimer--;
-                if (lifeguardMultTimer < 0) 
+                if (lifeguardMultTimer < 0)
                 {
                     lifeguardMultTimer = 0;
                 }
@@ -94,7 +92,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
             {
                 modifiers.FlatBonusDamage += currentNextDamage * (lifeguardMultTimer > 0 ? lifeguardMult : 1f);
                 currentNextDamage = 0;
-                Pet.AddShield(procShield,procShieldDuration);
+                Pet.AddShield(procShield, procShieldDuration);
             }
         }
     }

@@ -1,13 +1,13 @@
-using PetsOverhaulCalamityAddon.Systems;
+using CalamityMod;
+using Microsoft.Xna.Framework;
 using PetsOverhaul.Config;
 using PetsOverhaul.Systems;
+using PetsOverhaulCalamityAddon.Systems;
+using System;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.Localization;
 using Terraria.ModLoader;
-using CalamityMod;
-using Microsoft.Xna.Framework;
-using System;
 
 namespace PetsOverhaulCalamityAddon.CalamityPets
 {
@@ -56,9 +56,9 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                         int reduce = info.Damage - 1;
 
                         reduce = Math.Min(reduce, belowHpDamage);
-                        reduce = Math.Min(reduce,shieldAmount);
+                        reduce = Math.Min(reduce, shieldAmount);
 
-                        if (reduce > 0) 
+                        if (reduce > 0)
                         {
                             CombatText.NewText(Player.getRect(), Color.DarkGreen, -reduce);
                         }

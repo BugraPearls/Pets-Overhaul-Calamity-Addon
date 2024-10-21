@@ -12,9 +12,10 @@ namespace PetsOverhaulCalamityAddon.Buffs
             BuffID.Sets.IsWellFed[Type] = true;
         }
         public override LocalizedText Description => Language.GetText("Mods.PetsOverhaulCalamityAddon.Buffs.TheGrandNourishmentTooltip");
+        public override LocalizedText DisplayName => Language.GetText("Mods.PetsOverhaulCalamityAddon.Buffs.TheGrandNourishmentDisplayName");
         public override void Update(Player player, ref int buffIndex)
         {
-            if (player.HasBuff(BuffID.WellFed)|| player.HasBuff(BuffID.WellFed2) || player.HasBuff(BuffID.WellFed3))
+            if (player.HasBuff(BuffID.WellFed) || player.HasBuff(BuffID.WellFed2) || player.HasBuff(BuffID.WellFed3))
             {
                 player.ClearBuff(BuffID.WellFed);
                 player.ClearBuff(BuffID.WellFed2);

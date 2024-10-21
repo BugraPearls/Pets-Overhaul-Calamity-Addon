@@ -1,17 +1,16 @@
-using PetsOverhaulCalamityAddon.Systems;
+using Microsoft.Xna.Framework;
 using PetsOverhaul.Config;
 using PetsOverhaul.Systems;
+using PetsOverhaulCalamityAddon.Projectiles;
+using PetsOverhaulCalamityAddon.Systems;
+using System;
 using System.Collections.Generic;
 using Terraria;
+using Terraria.Audio;
+using Terraria.GameInput;
+using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
-using Terraria.GameInput;
-using PetsOverhaulCalamityAddon.Projectiles;
-using Microsoft.CodeAnalysis;
-using Microsoft.Xna.Framework;
-using Terraria.Audio;
-using Terraria.ID;
-using System;
 
 namespace PetsOverhaulCalamityAddon.CalamityPets
 {

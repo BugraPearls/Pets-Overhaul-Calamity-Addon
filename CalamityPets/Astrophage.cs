@@ -1,15 +1,14 @@
-using CalamityMod.Items.Fishing.AstralCatches;
-using PetsOverhaulCalamityAddon.Systems;
+using CalamityMod;
+using CalamityMod.Buffs.DamageOverTime;
 using PetsOverhaul.Config;
+using PetsOverhaul.NPCs;
 using PetsOverhaul.Systems;
+using PetsOverhaulCalamityAddon.Systems;
+using System;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.Localization;
 using Terraria.ModLoader;
-using CalamityMod.Buffs.DamageOverTime;
-using PetsOverhaul.NPCs;
-using CalamityMod;
-using System;
 
 namespace PetsOverhaulCalamityAddon.CalamityPets
 {
@@ -99,7 +98,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
             }
 
             AstrophageEffect astro = Main.LocalPlayer.GetModPlayer<AstrophageEffect>();
-            tooltips.Add(new(Mod, "Tooltip0", Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.Astrophage")    
+            tooltips.Add(new(Mod, "Tooltip0", Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.Astrophage")
                 .Replace("<class>", PetTextsColors.ClassText(astro.PetClassPrimary, astro.PetClassSecondary))
                 .Replace("<infectRadius>", Math.Round(astro.infectRadius / 16f, 2).ToString())
                 .Replace("<infectDuration>", Math.Round(astro.infectDuration / 60f, 2).ToString())

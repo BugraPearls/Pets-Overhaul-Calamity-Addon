@@ -1,10 +1,6 @@
 ﻿using CalamityMod.Items.Fishing.AstralCatches;
 using CalamityMod.Items.Fishing.SunkenSeaCatches;
 using CalamityMod.Items.Pets;
-using CalamityMod.Projectiles.Typeless;
-using PetsOverhaul.NPCs;
-using System.Linq;
-using Terraria;
 using Terraria.ModLoader;
 
 namespace PetsOverhaulCalamityAddon.Systems

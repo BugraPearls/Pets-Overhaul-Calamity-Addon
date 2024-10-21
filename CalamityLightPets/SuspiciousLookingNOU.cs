@@ -1,5 +1,4 @@
-﻿using CalamityMod;
-using PetsOverhaul.Config;
+﻿using PetsOverhaul.Config;
 using PetsOverhaul.Systems;
 using PetsOverhaulCalamityAddon.Systems;
 using System;
@@ -113,7 +112,7 @@ namespace PetsOverhaul.LightPets
                         .Replace("<fall>", FallBlocks.BaseAndPerQuality())
                         .Replace("<sus>", Sus.BaseAndPerQuality())
 
-                        .Replace("<luckLine>", Luck.StatSummaryLine(Math.Round(Luck.CurrentStatFloat,2).ToString()))
+                        .Replace("<luckLine>", Luck.StatSummaryLine(Math.Round(Luck.CurrentStatFloat, 2).ToString()))
                         .Replace("<damageLine>", Damage.StatSummaryLine())
                         .Replace("<fallLine>", FallBlocks.StatSummaryLine())
                         .Replace("<susLine>", Sus.StatSummaryLine())

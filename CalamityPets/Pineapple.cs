@@ -1,4 +1,3 @@
-using CalamityMod.NPCs.Yharon;
 using PetsOverhaul.Config;
 using PetsOverhaul.Systems;
 using PetsOverhaulCalamityAddon.Buffs;
@@ -63,7 +62,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
             On_Player.AddBuff += ChangeWellFed;
         }
 
-        static private void ChangeWellFed(On_Player.orig_AddBuff orig, Player self, int type, int timeToAdd, bool quiet, bool foodHack)
+        private static void ChangeWellFed(On_Player.orig_AddBuff orig, Player self, int type, int timeToAdd, bool quiet, bool foodHack)
         {
             int buffType = type;
             int buffTime = timeToAdd;
@@ -94,7 +93,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                 self.ClearBuff(BuffID.WellFed2);
                 self.ClearBuff(BuffID.WellFed3);
             }
-            else if ((buffType == BuffID.WellFed || buffType == BuffID.WellFed2 || buffType == BuffID.WellFed3) && self.HasBuff(ModContent.BuffType<TheGrandNourishment>())) 
+            else if ((buffType == BuffID.WellFed || buffType == BuffID.WellFed2 || buffType == BuffID.WellFed3) && self.HasBuff(ModContent.BuffType<TheGrandNourishment>()))
             {
                 return;
             }
@@ -120,7 +119,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                 .Replace("<class>", PetTextsColors.ClassText(pineapple.PetClassPrimary, pineapple.PetClassSecondary))
                 .Replace("<def>", pineapple.defense.ToString())
                 .Replace("<crit>", Math.Round(pineapple.crit, 2).ToString())
-                .Replace("<dmg>", Math.Round(pineapple.damage* 100, 2).ToString())
+                .Replace("<dmg>", Math.Round(pineapple.damage * 100, 2).ToString())
                 .Replace("<sumKb>", Math.Round(pineapple.summonerKb, 2).ToString())
                 .Replace("<moveSpd>", Math.Round(pineapple.moveSpd * 100, 2).ToString())
                 .Replace("<miningSpd>", Math.Round(pineapple.miningSpeed * 100, 2).ToString())

@@ -8,6 +8,7 @@
 		
 	</PropertyGroup>
 	<ItemGroup>
+	  <None Remove="Buffs\BleedOut.png" />
 	  <None Remove="Buffs\TheGrandNourishment.png" />
 	  <None Remove="description_workshop.txt" />
 	  <None Remove="icon.png" />

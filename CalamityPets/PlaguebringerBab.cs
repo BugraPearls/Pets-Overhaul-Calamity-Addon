@@ -1,18 +1,18 @@
-using PetsOverhaulCalamityAddon.Systems;
+using CalamityMod;
+using CalamityMod.Buffs.DamageOverTime;
+using Microsoft.Xna.Framework;
 using PetsOverhaul.Config;
+using PetsOverhaul.NPCs;
 using PetsOverhaul.Systems;
+using PetsOverhaulCalamityAddon.Systems;
+using System;
 using System.Collections.Generic;
 using Terraria;
+using Terraria.Audio;
+using Terraria.GameInput;
+using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
-using Terraria.GameInput;
-using Microsoft.Xna.Framework;
-using CalamityMod;
-using Terraria.Audio;
-using System;
-using Terraria.ID;
-using CalamityMod.Buffs.DamageOverTime;
-using PetsOverhaul.NPCs;
 
 namespace PetsOverhaulCalamityAddon.CalamityPets
 {
@@ -51,7 +51,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                     if (npc.active && Player.Distance(npc.Center) < detonateRadius && npc.TryGetGlobalNPC(out PlaguebringerBabStacks boom) && boom.stacks > 0)
                     {
                         npc.AddBuff(ModContent.BuffType<Plague>(), plagueAndSlowDuration);
-                        NpcPet.AddSlow(new NpcPet.PetSlow(slowAmount, plagueAndSlowDuration, CalSlows.PlagueSlow),npc);
+                        NpcPet.AddSlow(new NpcPet.PetSlow(slowAmount, plagueAndSlowDuration, CalSlows.PlagueSlow), npc);
                         NPC.HitInfo hit = new NPC.HitInfo() with { Damage = boom.stacks, DamageType = DamageClass.Generic };
                         npc.StrikeNPC(hit);
 
@@ -135,7 +135,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
             PlaguebringerBabEffect plague = Main.LocalPlayer.GetModPlayer<PlaguebringerBabEffect>();
             tooltips.Add(new(Mod, "Tooltip0", Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.PlagueCaller")
                 .Replace("<class>", PetTextsColors.ClassText(plague.PetClassPrimary, plague.PetClassSecondary))
-                .Replace("<primaryPerc>", Math.Round(plague.mainTargetMult*100,2).ToString())
+                .Replace("<primaryPerc>", Math.Round(plague.mainTargetMult * 100, 2).ToString())
                 .Replace("<hitAoE>", Math.Round(plague.surroundRadius / 16f, 2).ToString())
                 .Replace("<surroundingPerc>", Math.Round(plague.surroundingMult * 100, 2).ToString())
                 .Replace("<stackDuration>", Math.Round(plague.timeToAdd / 60f, 2).ToString())

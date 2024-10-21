@@ -1,19 +1,13 @@
-using PetsOverhaulCalamityAddon.Systems;
 using PetsOverhaul.Config;
+using PetsOverhaul.Projectiles;
 using PetsOverhaul.Systems;
+using PetsOverhaulCalamityAddon.Systems;
+using System;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
-using System;
-using Terraria.ID;
-using log4net.Core;
-using CalamityMod.NPCs;
-using Terraria.Utilities;
-using CalamityMod;
-using PetsOverhaul.Projectiles;
-using CalamityMod.Projectiles.Summon;
 
 namespace PetsOverhaulCalamityAddon.CalamityPets
 {

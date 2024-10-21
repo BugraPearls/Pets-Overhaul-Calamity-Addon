@@ -1,13 +1,12 @@
-using PetsOverhaulCalamityAddon.Systems;
+using CalamityMod;
 using PetsOverhaul.Config;
 using PetsOverhaul.Systems;
+using PetsOverhaulCalamityAddon.Systems;
+using System;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.Localization;
 using Terraria.ModLoader;
-using System;
-using CalamityMod;
-using CalamityMod.Balancing;
 
 namespace PetsOverhaulCalamityAddon.CalamityPets
 {
@@ -52,8 +51,8 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
             tooltips.Add(new(Mod, "Tooltip0", Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.RomajedaOrchid")
                 .Replace("<class>", PetTextsColors.ClassText(kendra.PetClassPrimary, kendra.PetClassSecondary))
                 .Replace("<percAbsorb>", Math.Round(kendra.absorbPercent * 100, 2).ToString())
-                .Replace("<stealthMult>",kendra.stealthMult.ToString())
-                .Replace("<storedDmg>",kendra.currentNextDamage.ToString())
+                .Replace("<stealthMult>", kendra.stealthMult.ToString())
+                .Replace("<storedDmg>", kendra.currentNextDamage.ToString())
             ));
         }
     }

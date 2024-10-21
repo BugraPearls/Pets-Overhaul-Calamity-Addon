@@ -1,26 +1,22 @@
-using PetsOverhaulCalamityAddon.Systems;
+using CalamityMod;
+using CalamityMod.CalPlayer;
+using Microsoft.Xna.Framework;
 using PetsOverhaul.Config;
+using PetsOverhaul.NPCs;
+using PetsOverhaul.Projectiles;
 using PetsOverhaul.Systems;
+using PetsOverhaulCalamityAddon.Projectiles;
+using PetsOverhaulCalamityAddon.Systems;
+using System;
 using System.Collections.Generic;
 using Terraria;
+using Terraria.Audio;
+using Terraria.DataStructures;
+using Terraria.GameInput;
+using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
-using Terraria.GameInput;
-using Terraria.Audio;
-using Terraria.ID;
-using CalamityMod.Buffs.Pets;
-using CalamityMod.CalPlayer;
 using Terraria.ModLoader.IO;
-using CalamityMod;
-using PetsOverhaul.NPCs;
-using System.Net.Http.Headers;
-using Microsoft.Xna.Framework;
-using Terraria.DataStructures;
-using PetsOverhaul.PetEffects;
-using System;
-using PetsOverhaul.Projectiles;
-using Humanizer;
-using PetsOverhaulCalamityAddon.Projectiles;
 
 namespace PetsOverhaulCalamityAddon.CalamityPets
 {
@@ -342,13 +338,13 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                     case leafStorm:
                         if (Pet.timer + Pet.timerMax * leafStormCooldown < Pet.timerMax)
                         {
-                            for (int i = 0; i < Main.rand.Next(minimumLeaf,maxLeaf); i++)
+                            for (int i = 0; i < Main.rand.Next(minimumLeaf, maxLeaf); i++)
                             {
-                                Projectile.NewProjectile(GlobalPet.GetSource_Pet(EntitySourcePetIDs.PetProjectile),target.Center + Main.rand.NextVector2CircularEdge(target.width, target.height), Main.rand.NextVector2CircularEdge(10,10),ProjectileID.Leaf, (int)(leafStormDmg * GetTypeEffectiveness(target, leafStorm)), 0, Player.whoAmI);
+                                Projectile.NewProjectile(GlobalPet.GetSource_Pet(EntitySourcePetIDs.PetProjectile), target.Center + Main.rand.NextVector2CircularEdge(target.width, target.height), Main.rand.NextVector2CircularEdge(10, 10), ProjectileID.Leaf, (int)(leafStormDmg * GetTypeEffectiveness(target, leafStorm)), 0, Player.whoAmI);
                             }
 
                             if (ModContent.GetInstance<PetPersonalization>().AbilitySoundEnabled)
-                                SoundEngine.PlaySound(new SoundStyle("PetsOverhaulCalamityAddon/Sounds/ElectricTroublemaker/LeafStorm") with { Pitch = -0.4f, PitchVariance = 0.5f}, target.Center);
+                                SoundEngine.PlaySound(new SoundStyle("PetsOverhaulCalamityAddon/Sounds/ElectricTroublemaker/LeafStorm") with { Pitch = -0.4f, PitchVariance = 0.5f }, target.Center);
                             Pet.timer += (int)(Pet.timerMax * leafStormCooldown);
                         }
                         break;
@@ -364,7 +360,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                             }
                             for (int i = 0; i < 15; i++)
                             {
-                                Dust.NewDustPerfect(target.Center + Main.rand.NextVector2Circular(airSlashRadius/2.5f, airSlashRadius/2.5f), DustID.Cloud, new Vector2(hit.HitDirection * 6,-3)).noGravity = true;
+                                Dust.NewDustPerfect(target.Center + Main.rand.NextVector2Circular(airSlashRadius / 2.5f, airSlashRadius / 2.5f), DustID.Cloud, new Vector2(hit.HitDirection * 6, -3)).noGravity = true;
                             }
                             if (ModContent.GetInstance<PetPersonalization>().AbilitySoundEnabled)
                                 SoundEngine.PlaySound(new SoundStyle("PetsOverhaulCalamityAddon/Sounds/ElectricTroublemaker/AirSlash") with { PitchVariance = 0.5f }, target.Center);
@@ -454,7 +450,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                     break;
                 case ElectricTroublemakerEffect.airSlash:
                     MoveTooltip = Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.RotomAirSlash")
-                        .Replace("<radius>", Math.Round(rotom.airSlashRadius / 16f,2).ToString())
+                        .Replace("<radius>", Math.Round(rotom.airSlashRadius / 16f, 2).ToString())
                         .Replace("<dmg>", rotom.airSlashDmg.ToString())
                         .Replace("<knockback>", rotom.airSlashKb.ToString())
                         .Replace("<percentOfCd>", Math.Round(rotom.airSlashCooldown * 100, 2).ToString())
@@ -469,7 +465,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                     .Replace("<abilityUse>", PetTextsColors.KeybindText(PetKeybinds.UsePetAbility))
                     .Replace("<dexMult>", ElectricTroublemakerEffect.dexMult.ToString())
                     .Replace("<STABMult>", ElectricTroublemakerEffect.STABMult.ToString())
-                    .Replace("<baseCooldown>", Math.Round(rotom.baseCooldown/60f,2).ToString())
+                    .Replace("<baseCooldown>", Math.Round(rotom.baseCooldown / 60f, 2).ToString())
                     .Replace("<abilityTooltip>", MoveTooltip)
                 ));
         }

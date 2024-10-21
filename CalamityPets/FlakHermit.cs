@@ -1,19 +1,16 @@
-using PetsOverhaulCalamityAddon.Systems;
+using CalamityMod;
+using CalamityMod.Buffs.StatDebuffs;
+using Microsoft.Xna.Framework;
 using PetsOverhaul.Config;
 using PetsOverhaul.Systems;
+using PetsOverhaulCalamityAddon.Systems;
+using System;
 using System.Collections.Generic;
 using Terraria;
+using Terraria.Audio;
+using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
-using CalamityMod;
-using Microsoft.Xna.Framework;
-using CalamityMod.Items.Weapons.Rogue;
-using CalamityMod.Buffs.StatDebuffs;
-using Terraria.ID;
-using Terraria.Audio;
-using CalamityMod.Projectiles.Enemy;
-using CalamityMod.NPCs.AcidRain;
-using System;
 
 namespace PetsOverhaulCalamityAddon.CalamityPets
 {
@@ -42,7 +39,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                 SoundEngine.PlaySound(SoundID.Item96 with { PitchVariance = 0.6f }, center);
             for (int i = 0; i < 35; i++)
             {
-                Dust.NewDustPerfect(center + Main.rand.NextVector2Circular(radius, radius), DustID.CursedTorch,Scale: 2f);
+                Dust.NewDustPerfect(center + Main.rand.NextVector2Circular(radius, radius), DustID.CursedTorch, Scale: 2f);
             }
         }
         public override void PreUpdate()
@@ -55,7 +52,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         public override void PostUpdate()
         {
             if (Pet.PetInUseWithSwapCd(CalamityPetIDs.FlakHermit) && Player.Calamity().stealthStrikeThisFrame && Pet.timer <= 0)
-            {   
+            {
                 AcidExplosion(Player.Center);
                 Pet.timer = Pet.timerMax;
                 nextHitIsExplosive = true;

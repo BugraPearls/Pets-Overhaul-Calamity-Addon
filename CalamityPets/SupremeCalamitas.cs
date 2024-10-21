@@ -1,17 +1,14 @@
-﻿using PetsOverhaulCalamityAddon.Systems;
+﻿using PetsOverhaul.Buffs;
 using PetsOverhaul.Config;
+using PetsOverhaul.Projectiles;
 using PetsOverhaul.Systems;
+using PetsOverhaulCalamityAddon.Systems;
+using System;
 using System.Collections.Generic;
 using Terraria;
+using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
-using Terraria.WorldBuilding;
-using CalamityMod;
-using Terraria.ID;
-using PetsOverhaul.Items;
-using PetsOverhaul.Projectiles;
-using System;
-using PetsOverhaul.Buffs;
 
 namespace PetsOverhaulCalamityAddon.CalamityPets
 {
@@ -138,7 +135,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                 .Replace("<class>", PetTextsColors.ClassText(calamitas.PetClassPrimary, calamitas.PetClassSecondary))
                 .Replace("<critDmgReduce>", Math.Round(calamitas.critDmgReduce * 100, 2).ToString())
                 .Replace("<chanceToDmg>", Math.Round(calamitas.critChanceToDmg * 100, 2).ToString())
-                .Replace("<magicCost>", Math.Round(calamitas.magicExtraCost * 100,2).ToString())
+                .Replace("<magicCost>", Math.Round(calamitas.magicExtraCost * 100, 2).ToString())
             ));
         }
     }

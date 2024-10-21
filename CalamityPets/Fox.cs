@@ -1,15 +1,15 @@
-using PetsOverhaulCalamityAddon.Systems;
+using Microsoft.Xna.Framework;
 using PetsOverhaul.Config;
 using PetsOverhaul.Systems;
+using PetsOverhaulCalamityAddon.Systems;
+using System;
 using System.Collections.Generic;
 using Terraria;
-using Terraria.Localization;
-using Terraria.ModLoader;
 using Terraria.Audio;
 using Terraria.GameInput;
 using Terraria.ID;
-using System;
-using Microsoft.Xna.Framework;
+using Terraria.Localization;
+using Terraria.ModLoader;
 
 namespace PetsOverhaulCalamityAddon.CalamityPets
 {
@@ -51,7 +51,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                     if (ModContent.GetInstance<PetPersonalization>().AbilitySoundEnabled)
                         SoundEngine.PlaySound(SoundID.Item35 with { Pitch = 0.75f, PitchVariance = 0.1f }, Player.Center);
                     cleansePenalty = baseTime + perTime * (amountOfDebuffs - 1);
-                    CombatText.NewText(Player.getRect(), Color.Orange, Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.FoxCleansedText") + amountOfDebuffs.ToString(),dramatic: true);
+                    CombatText.NewText(Player.getRect(), Color.Orange, Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.FoxCleansedText") + amountOfDebuffs.ToString(), dramatic: true);
                     Pet.timer = Pet.timerMax;
                 }
             }

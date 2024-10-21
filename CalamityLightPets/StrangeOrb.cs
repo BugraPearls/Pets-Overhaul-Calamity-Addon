@@ -1,7 +1,6 @@
 ﻿using PetsOverhaul.Config;
 using PetsOverhaul.Systems;
 using PetsOverhaulCalamityAddon.Systems;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using Terraria;
@@ -19,7 +18,7 @@ namespace PetsOverhaul.LightPets
             {
                 Player.fishingSkill += orb.FishingPower.CurrentStatInt;
                 Pet.fishingFortune += orb.FishingFortune.CurrentStatInt;
-                if (Collision.WetCollision(Player.position,Player.width,Player.height))
+                if (Collision.WetCollision(Player.position, Player.width, Player.height))
                 {
                     Pet.petHealMultiplier += orb.HealInWater.CurrentStatFloat;
                 }

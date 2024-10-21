@@ -1,7 +1,4 @@
-using CalamityMod;
-using CalamityMod.CalPlayer;
 using CalamityMod.Dusts;
-using Humanizer;
 using Microsoft.Xna.Framework;
 using PetsOverhaul.Config;
 using PetsOverhaul.NPCs;
@@ -12,12 +9,9 @@ using PetsOverhaulCalamityAddon.Systems;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net.Http.Headers;
 using Terraria;
 using Terraria.Audio;
-using Terraria.DataStructures;
 using Terraria.GameInput;
-using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
@@ -44,9 +38,9 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         public int explosionSize = 240;
 
         public int stackBurnBonusMult = 40;
-        public int StackBurnBonus 
-        { 
-            get 
+        public int StackBurnBonus
+        {
+            get
             {
                 if (dragonPracticeStacks == 1)
                 {
@@ -57,7 +51,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                     return 0;
                 }
                 return (int)(Math.Log10(dragonPracticeStacks) * stackBurnBonusMult);
-            } 
+            }
         }
 
         public int stackBurnTimeMult = 15;
@@ -183,7 +177,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         {
             if (Pet.PetInUseWithSwapCd(CalamityPetIDs.Akato) && beginOnHit > 0)
             {
-                Projectile.NewProjectileDirect(GlobalPet.GetSource_Pet(EntitySourcePetIDs.PetProjectile), target.Center, Vector2.Zero, ModContent.ProjectileType<PetExplosion>(), Main.DamageVar(damageDone * (explosionMult + StackExplosionBonus),Player.luck), 0, owner: Player.whoAmI, explosionSize+ StackExplosionSize);
+                Projectile.NewProjectileDirect(GlobalPet.GetSource_Pet(EntitySourcePetIDs.PetProjectile), target.Center, Vector2.Zero, ModContent.ProjectileType<PetExplosion>(), Main.DamageVar(damageDone * (explosionMult + StackExplosionBonus), Player.luck), 0, owner: Player.whoAmI, explosionSize + StackExplosionSize);
                 if (ModContent.GetInstance<PetPersonalization>().AbilitySoundEnabled)
                 {
                     string path;
@@ -256,8 +250,8 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                 {
                     GlobalPet.RemoveOldestCombatText();
 
-                    CombatText.NewText(npc.getRect(), Color.GhostWhite,(int)(npc.lifeMax*highestExecute.ExecuteTreshold), true);
-                    
+                    CombatText.NewText(npc.getRect(), Color.GhostWhite, (int)(npc.lifeMax * highestExecute.ExecuteTreshold), true);
+
                     npc.StrikeInstantKill();
                     highestExecute.AkatoOfBurner.AddStack(npc);
                 }
@@ -309,7 +303,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                         .Replace("<class>", PetTextsColors.ClassText(akato.PetClassPrimary, akato.PetClassSecondary))
                         .Replace("<stackIcon>", ModContent.ItemType<DragonPracticeIcon>().ToString())
                         .Replace("<keybind>", PetTextsColors.KeybindText(PetKeybinds.UsePetAbility))
-                        .Replace("<cooldown>", Math.Round(akato.cooldown/60f,2).ToString())
+                        .Replace("<cooldown>", Math.Round(akato.cooldown / 60f, 2).ToString())
                         .Replace("<expire>", Math.Round(akato.onHitExpiration / 60f, 2).ToString())
                         .Replace("<baseSize>", Math.Round(akato.explosionSize / 16f, 2).ToString())
                         .Replace("<stackSize>", Math.Round(akato.StackExplosionSize / 16f, 2).ToString())

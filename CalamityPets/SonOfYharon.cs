@@ -1,22 +1,16 @@
-using CalamityMod.Buffs.Summon;
-using PetsOverhaulCalamityAddon.Systems;
-using CalamityMod.Items.Weapons.Summon;
-using CalamityMod.Projectiles.Summon;
+using CalamityMod.Buffs.DamageOverTime;
+using Microsoft.Xna.Framework;
 using PetsOverhaul.Config;
 using PetsOverhaul.Systems;
+using PetsOverhaulCalamityAddon.Systems;
 using System;
 using System.Collections.Generic;
 using Terraria;
+using Terraria.Audio;
+using Terraria.DataStructures;
 using Terraria.GameInput;
-using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
-using Terraria.DataStructures;
-using System.Threading;
-using CalamityMod.Buffs.DamageOverTime;
-using Terraria.Audio;
-using Microsoft.Xna.Framework;
-using CalamityMod.Sounds;
 
 namespace PetsOverhaulCalamityAddon.CalamityPets
 {

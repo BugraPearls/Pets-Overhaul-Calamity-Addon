@@ -1,12 +1,12 @@
-using PetsOverhaulCalamityAddon.Systems;
 using PetsOverhaul.Config;
 using PetsOverhaul.Systems;
+using PetsOverhaulCalamityAddon.Systems;
+using System;
 using System.Collections.Generic;
 using Terraria;
+using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
-using Terraria.ID;
-using System;
 
 namespace PetsOverhaulCalamityAddon.CalamityPets
 {
@@ -74,7 +74,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                     tooltips.Find(x => x.Name == "Defense").Text = def.ToString() + Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.LeviDef");
 
                 if (tooltips.Find(x => x.Name == "Tooltip0") != null)
-                tooltips.Find(x => x.Name == "Tooltip0").Text = levi.crit.ToString() + Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.LeviCrit");
+                    tooltips.Find(x => x.Name == "Tooltip0").Text = levi.crit.ToString() + Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.LeviCrit");
             }
         }
     }
@@ -96,7 +96,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
             LeviEffect levi = Main.LocalPlayer.GetModPlayer<LeviEffect>();
             tooltips.Add(new(Mod, "Tooltip0", Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.Levi")
                 .Replace("<class>", PetTextsColors.ClassText(levi.PetClassPrimary, levi.PetClassSecondary))
-                .Replace("<dmgPer>", Math.Round(levi.dmgPerFish *100,2).ToString())
+                .Replace("<dmgPer>", Math.Round(levi.dmgPerFish * 100, 2).ToString())
                 .Replace("<defPer>", levi.oneDefPerFishPower.ToString())
                 .Replace("<helm>", levi.helm.ToString())
                 .Replace("<chest>", levi.chest.ToString())

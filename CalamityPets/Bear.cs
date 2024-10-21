@@ -32,7 +32,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                 Pet.SetPetAbilityTimer(cooldown);
             }
         }
-        public override void PostUpdateMiscEffects()
+        public override void PostUpdateEquips()
         {
             if (Pet.PetInUseWithSwapCd(CalamityPetIDs.Bear))
             {

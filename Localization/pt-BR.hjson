@@ -234,6 +234,7 @@ Mods: {
 				- Aumenta o dano de ataque furtivo em <stealthDmg>%.
 				- Ataques furtivos fazem com que ácido apareça ao seu redor e ao redor do alvo ao acertar.
 				 * Causa <damage> de dano e aplica Irradiado por <irradiateDuration> segundos.
+				 * Tem um tempo de recarga de <cooldown> segundos.
 				'''
 			FoxDrive:
 				'''

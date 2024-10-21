@@ -44,7 +44,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                 }
             }
         }
-        public override void PostUpdateMiscEffects()
+        public override void PostUpdateEquips()
         {
             if (Pet.PetInUseWithSwapCd(CalamityPetIDs.FurtasticDuo))
             {

@@ -234,6 +234,7 @@ Mods: {
 				- Increases stealth attack damage by <stealthDmg>%.
 				- Stealth attacks causes to spawn acid around you and the target on-hit.
 				 * Deals <damage> damage, and applies Irradiated for <irradiateDuration> seconds.
+				 * Has <cooldown> seconds cooldown.
 				'''
 			FoxDrive:
 				'''

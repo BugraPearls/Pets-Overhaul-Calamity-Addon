@@ -4,40 +4,74 @@ Mods: {
 			RustedJingleBell:
 				'''
 				Aumenta seu tempo máximo de respiração debaixo d'água
-				em <breathe> segundos e Aceleração de Habilidade de PET em <haste> segundos.
+				em <breathe> segundos, Aceleração de Habilidade de PET em <haste> segundos,
+				e Fortuna de Mineração em <fortune> enquanto tocar em algum líquido.
 				Segundos de Respiração Bônus: <breatheLine>
 				Aceleração de Habilidade de PET: <hasteLine>
+				Bonus de Fortuna de Mineração em liquidos: <fortuneLine>
 				'''
 			ThiefsDime:
 				'''
-				Aumenta as moedas dropadas por inimigos que não são chefes em <coin>.
-				Aumenta o dano da classe Ladino em <rouge>.
-				Moedas Extras: <coinLine>
-				Dano Ladino: <rougeLine>
+				Aumenta a Sorte em <luck>, o dano de Ladino em <rogue>,
+				a velocidade de Ladino em <velocity> e o ganho de furtividade em <stealth>.
+				Bônus de Sorte: <luckLine>
+				Bônus de Dano de Ladino: <rogueLine>
+				Bônus de Velocidade de Ladino: <velocityLine>
+				Bônus de Ganho de Furtividade de Ladino: <stealthLine>
 				'''
 			SuspiciousLookingNOU:
 				'''
-				69
-				420
+				Aumenta a sorte em <luck>, diminui seu dano em <damage>
+				e aumenta a quantidade de blocos onde o dano de queda começa em <fall>.
+				Além disso, aumenta o quão sus você é em <sus>.
+				Bônus de Sorte: <luckLine>
+				Dano Reduzido: <damageLine>
+				Blocos até o Dano de Queda Começar: <fallLine>
+				medidor de sus: <susLine>
 				'''
-			LittleLight: ""
+			LittleLight:
+				'''
+				Aumenta Agressividade inimiga em <aggro>, resistência a recuo em <kbResist>,
+				Escudos ganhos por PET's em <shield> e saúde máxima em <health>.
+				Bônus de Agressividade: <aggroLine>
+				Bônus de Resistência a Recuo: <kbResistLine>
+				Bônus de Aumento de Escudo de PET's: <shieldLine>
+				Bônus de Saúde: <healthLine>
+				'''
 			StrangeOrb:
 				'''
 				Aumenta o poder de pesca em <power>, a fortuna de pesca em <fortune>
-				e aumenta a velocidade de movimento em <moveSpd> quando submerso em um líquido.
+				e aumenta a cura de PET's em <heal> quando toca em um líquido.
 				Poder de Pesca: <powerLine>
 				Fortuna de Pesca: <fortuneLine>
-				Velocidade em Líquidos: <moveSpdLine>
+				Bonus de Cura de PET's em líquidos: <healLine>
 				'''
 			RadiatingCrystal:
 				'''
-				Aumenta a chance crítica em <crit>
-				e a fortuna de mineração em <fortune>
-				Chance Crítica: <critLine>
-				Fortuna de Mineração: <fortuneLine>
+				Aumenta a defesa em <def> enquanto estiver sob qualquer debuff,
+				exceto debuffs que não podem ser curados pela Enfermeira ou Enjoo de mana,
+				Recuo em <knockback> e envenena inimigos em um raio de <radius> blocos.
+				Bônus de Defesa Sob Debuff: <defLine>
+				Bônus de Recuo: <knockbackLine>
+				Raio de Envenenamento: <radiusLine>
 				'''
-			EnchantedButterfly: "Aumenta "
-			ChromaticOrb: ""
+			EnchantedButterfly:
+				'''
+				Aumenta a cura de PET's em <heal>, a fortuna global em <fortune>,
+				e Mana máxima em <mana>. Reduz a Agressividade inimiga em <aggro>.
+				Bônus de Cura de PET's: <healLine>
+				Bônus de Fortuna Global: <fortuneLine>
+				Bônus de Redução de Agressividade: <aggroLine>
+				Bônus de Mana: <manaLine>
+				'''
+			ChromaticOrb:
+				'''
+				Aumenta a Pressa de Habilidade de PET's em <haste>, a Chance Crítica em <crit>,
+				e a velocidade de pulo em <jump>.
+				Bônus de Pressa de Habilidade de PET's: <hasteLine>
+				Bônus de Chance Crítica: <critLine>
+				Bônus de Velocidade de Pulo: <jumpLine>
+				'''
 		}
 
 		PetTooltips: {
@@ -88,12 +122,6 @@ Mods: {
 				'''
 			CosmicPlushie:
 				'''
-				[c/<color>:Emotionally] <class>
-				- dying deals <damage> damage to all enemies in <block> blocks around u
-				 * no effect with non-hardcore characters
-				 * always crits!
-				 * it miigghhhttt be devouring towards other players too.....
-				 * :3
 				[c/<color>:Emocionalmente] <class>
 				- morrer causa <damage> de dano a todos os inimigos em um raio de <block> blocos ao seu redor
 				 * sem efeito com personagens não-hardcore
@@ -103,93 +131,108 @@ Mods: {
 				'''
 			CosmicDeath1: <name> fez uma pequenininha dose de tolices.
 			CosmicDeath2: <name> está fazendo um pouquinho de trollagem. :tf:
-			CosmicDeath3: <name> fat fingered está com dedos de cheetos //need better context
+			CosmicDeath3: <name> está com dedos de cheetos
 			CosmicDeath4: <name> está mentindo 100% se ele dizer 'foi mal'
 			TrashmanTrashcan:
 				'''
 				<class>
-				- 
+				- Pressione a tecla de habilidade do PET (<keybind>) para usar o movimento característico do Homem do Lixo.
+				 * A Lata de Lixo causa <damage> de dano e aplica sangramento por <bleedDuration> segundos.
+				 * Inimigos ao redor do alvo são desacelerados em <slow>% por <slowDuration> segundos.
+				 * Com <confuseChance>% de chance, os inimigos também podem ficar confusos por <confuseDuration> segundos.
 				'''
 			TheEtomer:
 				'''
 				<class>
-				- 
+				- Pressione (<abilitySwitch>) para alternar habilidades e (<abilityUse>) para iniciar efeitos ao acertar.
+				- Permite escolher entre 6 habilidades que funcionam ao acertar. Reutilize a habilidade para cancelar.
+				- Elas se beneficiam da sua forma atual do Encrenqueiro e da vulnerabilidade do inimigo.
+				 * A forma Dex aplicará <dexMult>x a todas as habilidades, enquanto outras terão <STABMult>x de eficácia.
+				- Possui um tempo de recarga de <baseCooldown> segundos, mas todas as habilidades custam % da sua recarga.
+				<abilityTooltip>
 				'''
-			/* RotomThunderWave:
+			RotomThunderWave:
 				'''
-				- Current Ability: Thunder Wave
-				 * Uses Electricity resistance & vulnerability, and buffed by Electric form.
-				 * Your next strike paralyzes all enemies in <radius> blocks, slowing by <slow>% for <slowDuration> seconds.
-				 * Costs <percentOfCd>% of your current Pet Ability Cooldown. (<percentToSeconds> seconds)
-				''' */
-			/* RotomHydroPump:
+				- Habilidade Atual: Onda de Trovão
+				 * Usa resistência e vulnerabilidade ao Eletricidade, e é fortalecida pela forma Elétrica.
+				 * Seu próximo golpe paralisa todos os inimigos em um raio de <radius> blocos, desacelerando-os em <slow>% por <slowDuration> segundos.
+				 * Custa <percentOfCd>% da sua recarga atual de Habilidade do PET. (<percentToSeconds> segundos)
 				'''
-				- Current Ability: Hydro Pump
-				 * Uses Water resistance & vulnerability, and buffed by Wash form.
-				 * Your next strike deals extra <dmg> damage and applies Wet debuff to the target for <wetDuration> seconds.
-				 * Costs <percentOfCd>% of your current Pet Ability Cooldown. (<percentToSeconds> seconds)
-				''' */
-			/* RotomOverheat:
+			RotomHydroPump:
 				'''
-				- Current Ability: Overheat
-				 * Uses Heat resistance & vulnerability, and buffed by Heat form.
-				 * Your next strike explodes around you and your target in <radius> blocks, dealing <dmg> damage.
-				 * Main target gets burnt with On Fire! debuff for <burnDuration> seconds.
-				 * Costs <percentOfCd>% of your current Pet Ability Cooldown. (<percentToSeconds> seconds)
-				''' */
-			/* RotomBlizzard:
+				- Habilidade Atual: Jato d'Água
+				 * Usa resistência e vulnerabilidade ao Água, e é fortalecida pela forma de Lavagem.
+				 * Seu próximo golpe causa <dmg> de dano extra e aplica o debuff Molhado ao alvo por <wetDuration> segundos.
+				 * Custa <percentOfCd>% da sua recarga atual de Habilidade do PET. (<percentToSeconds> segundos)
 				'''
-				- Current Ability: Blizzard
-				 * Uses Cold resistance & vulnerability, and buffed by Frost form.
-				 * Your next strike whips out a mini Blizzard in target location,
-				constantly dealing <dmg> damage to all enemies inside it for <blizzardDuration> seconds.
-				 * Enemies inside Blizzard is constantly slowed by <slow>%.
-				 * Enemies hit for <freezeRequirement> seconds gets applied with Glacial State for <freezeDuration> seconds.
-				 * Costs <percentOfCd>% of your current Pet Ability Cooldown. (<percentToSeconds> seconds)
-				''' */
-			/* RotomLeafStorm:
+			RotomOverheat:
 				'''
-				- Current Ability: Leaf Storm
-				 * Uses Sickness resistance & vulnerability, and buffed by Mow form.
-				 * Your next strike spawns damaging leaves out of your target,
-				dealing <dmg> damage, spawning between <lowLeaf> to <highLeaf> leaves.
-				 * Costs <percentOfCd>% of your current Pet Ability Cooldown. (<percentToSeconds> seconds)
-				''' */
-			/* RotomAirSlash:
+				- Habilidade Atual: Superaquecimento
+				 * Usa resistência e vulnerabilidade ao Calor, e é fortalecida pela forma de Calor.
+				 * Seu próximo golpe explode ao seu redor e no seu alvo em um raio de <radius> blocos, causando <dmg> de dano.
+				 * O alvo principal pega fogo com o debuff Em Chamas! por <burnDuration> segundos.
+				 * Custa <percentOfCd>% da sua recarga atual de Habilidade do PET. (<percentToSeconds> segundos)
 				'''
-				- Current Ability: Air Slash
-				 * Is more effective if enemy is grounded (if affected by gravity),
-				normal effectiveness if grounded enemy is currently midair, and
-				not very effective if they aren't affected by gravity. Buffed by Fan form.
-				 * Your next strike hits all enemies in <radius> blocks for <dmg> damage,
-				while also knocking them away from you with <knockback> knockback.
-				 * Costs <percentOfCd>% of your current Pet Ability Cooldown. (<percentToSeconds> seconds)
-				''' */
+			RotomBlizzard:
+				'''
+				- Habilidade Atual: Nevasca
+				 * Usa resistência e vulnerabilidade ao Frio, e é fortalecida pela forma de Gelo.
+				 * Seu próximo golpe cria uma mini Nevasca na localização do alvo,
+				causando constantemente <dmg> de dano a todos os inimigos dentro dela por <blizzardDuration> segundos.
+				 * Inimigos dentro da Nevasca são constantemente desacelerados em <slow>%.
+				 * Inimigos atingidos por <freezeRequirement> segundos recebem o estado Glacial por <freezeDuration> segundos.
+				 * Custa <percentOfCd>% da sua recarga atual de Habilidade do PET. (<percentToSeconds> segundos)
+				'''
+			RotomLeafStorm:
+				'''
+				- Habilidade Atual: Tempestade de Folhas
+				 * Usa resistência e vulnerabilidade a Doenças, e é fortalecida pela forma de Corte.
+				 * Seu próximo golpe gera folhas danosas do seu alvo,
+				causando <dmg> de dano e gerando entre <lowLeaf> a <highLeaf> folhas.
+				 * Custa <percentOfCd>% da sua recarga atual de Habilidade do PET. (<percentToSeconds> segundos)
+				'''
+			RotomAirSlash:
+				'''
+				- Habilidade Atual: Corte de Ar
+				 * É mais eficaz se o inimigo estiver no chão (se for afetado pela gravidade),
+				eficácia normal se o inimigo de chão estiver no ar, e
+				não é muito eficaz se não for afetado pela gravidade. Fortalecida pela forma de Ventoinha.
+				 * Seu próximo golpe atinge todos os inimigos em um raio de <radius> blocos, causando <dmg> de dano,
+				enquanto os empurra para longe de você com <knockback> de recuo.
+				 * Custa <percentOfCd>% da sua recarga atual de Habilidade do PET. (<percentToSeconds> segundos)
+				'''
 			AbyssShellFossil:
 				'''
 				<class>
-				- 
+				- Dependendo de quanta Agressividade inimiga você tem, ganhe estatísticas defensivas ou ofensivas.
+				- Valor atual de agressividade: <aggro>, pressione (<switch>) para alternar entre dicas -/+.
+				<tooltip>
+				 * 
 				'''
-			/* SnailPositiveAggro:
+			SnailPositiveAggro:
 				'''
-				- While your aggro value is positive grants you the following:
-				 * 1 defense per <aggroDef> aggro value.
-				 * 1 maximum health per <aggroHealth> aggro value.
-				 * 1% damage reduction per <aggroDr> aggro value.
-				 * -1% movement speed per <aggroMs> aggro value.
-				''' */
-			/* SnailNegativeAggro:
+				- Enquanto seu valor de agressividade for positivo, concede o seguinte:
+				 * 1 defesa por <aggroDef> de valor de agressividade.
+				 * 1 saúde máxima por <aggroHealth> de valor de agressividade.
+				 * 1% de redução de dano por <aggroDr> de valor de agressividade.
+				 * -1% de velocidade de movimento por <aggroMs> de valor de agressividade.
 				'''
-				- While your aggro value is negative grants you the following:
-				 * 1% damage per <aggroDamage> aggro value.
-				 * 1% crit chance per <aggroCrit> aggro value.
-				 * 1 armor pen per <aggroPen> aggro value.
-				 * 1% movement speed per <aggroMs> aggro value.
-				''' */
+			SnailNegativeAggro:
+				'''
+				- Enquanto seu valor de agressividade for negativo, concede o seguinte:
+				 * 1% de dano por <aggroDamage> de valor de agressividade.
+				 * 1% de chance crítica por <aggroCrit> de valor de agressividade.
+				 * 1 penetração de armadura por <aggroPen> de valor de agressividade.
+				 * 1% de velocidade de movimento por <aggroMs> de valor de agressividade.
+				'''
 			GeyserShell:
 				'''
 				<class>
-				- 
+				- Aumenta a recuperação de furtividade em pé em <stealth>%.
+				- Aumenta a furtividade máxima em <maxStealth>.
+				- Aumenta o dano de ataque furtivo em <stealthDmg>%.
+				- Ataques furtivos fazem com que ácido apareça ao seu redor e ao redor do alvo ao acertar.
+				 * Causa <damage> de dano e aplica Irradiado por <irradiateDuration> segundos.
 				'''
 			FoxDrive:
 				'''
@@ -250,7 +293,7 @@ Mods: {
 				'''
 				<class>
 				- Cause <incrToCorrupt>% mais dano a inimigos da Corrupção.
-				- Suas mortes de inimigos da Corrupção com este animal de estimação: <killCount>
+				- Suas mortes de inimigos da Corrupção com este PET: <killCount>
 				- Ganhe os seguintes bônus dependendo das suas mortes.
 				 * +<dmg>% de dano, +<crit>% de chance crítica, +<luck> de sorte,
 				+<pen> de penetração de armadura e +<critDmg>% de dano crítico.
@@ -269,7 +312,7 @@ Mods: {
 				 * Kills required for next stat upgrades: <killReq>
 				<class>
 				- Receba <drFromCrimson>% menos dano de inimigos do Carmim.
-				- Suas mortes de inimigos do Carmim com este animal de estimação: <killCount>
+				- Suas mortes de inimigos do Carmim com este PET: <killCount>
 				- Ganhe os seguintes bônus dependendo das suas mortes.
 				 * +<def> de defesa, +<hp> de saúde máxima, +<luck> de sorte,
 				+<dr>% de redução de dano e +<regen> de regeneração de saúde.
@@ -285,7 +328,7 @@ Mods: {
 				 * Extremamente satisfeito se tornará O Grande Banquete, melhorando ainda mais os efeitos.
 				 * +<def> de Def, <crit>% de Crítico, <dmg>% de Dano, +<sumKb> de Soma. Kb, %<moveSpd> de Velocidade de Movimento, %<miningSpd> de Velocidade de Mineração.
 				 * Qualquer nível inferior de Bem Alimentado não pode substituir O Grande Banquete.
-				- Concede 50% extras dos benefícios de Bem Alimentado enquanto o animal de estimação estiver ativo.
+				- Concede 50% extras dos benefícios de Bem Alimentado enquanto o PET estiver ativo.
 				'''
 			PlagueCaller:
 				'''
@@ -362,8 +405,8 @@ Mods: {
 		}
 
 		Projectiles: {
-			// RotomBlizzard.DisplayName: Blizzard
-			// Trashcan.DisplayName: Trashcan
+			// RotomBlizzard.DisplayName: Nevasca
+			// Trashcan.DisplayName: Lata de Lixo
 		}
 	}
 }

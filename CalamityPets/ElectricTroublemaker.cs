@@ -282,9 +282,9 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                                     NpcPet.AddSlow(new NpcPet.PetSlow(tWaveSlow * GetTypeEffectiveness(npc, thunderWave), tWaveDuration, CalSlows.rotomThunderWave), npc);
                                 }
                             }
-                            for (int i = 0; i < 8; i++)
+                            for (int i = 0; i < 12; i++)
                             {
-                                Dust.NewDustPerfect(target.Center + Main.rand.NextVector2Circular(tWaveRadius, tWaveRadius), DustID.Electric);
+                                Dust.NewDustPerfect(target.Center + Main.rand.NextVector2CircularEdge(tWaveRadius, tWaveRadius), DustID.Electric);
                             }
                             if (ModContent.GetInstance<PetPersonalization>().AbilitySoundEnabled)
                                 SoundEngine.PlaySound(new SoundStyle("PetsOverhaulCalamityAddon/Sounds/ElectricTroublemaker/ThunderWave") with { PitchVariance = 0.6f }, target.Center);

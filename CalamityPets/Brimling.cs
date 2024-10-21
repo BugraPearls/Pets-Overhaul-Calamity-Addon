@@ -44,7 +44,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                     float dmg = (info.SourceDamage / 2 + Player.statDefense) * (1f + Player.endurance);
                     for (int i = 0; i < 5; i++)
                     {
-                        Projectile proj = Projectile.NewProjectileDirect(GlobalPet.GetSource_Pet(EntitySourcePetIDs.PetProjectile), Player.Center, 2f * Main.rand.NextVector2Circular(3f, 3f), ModContent.ProjectileType<BrimstoneFireballMinion>(), Main.DamageVar(dmg, Player.luck), 0f, Player.whoAmI);
+                        Projectile proj = Projectile.NewProjectileDirect(GlobalPet.GetSource_Pet(EntitySourcePetIDs.PetProjectile), Player.Center, Main.rand.NextVector2CircularEdge(4f, 4f), ModContent.ProjectileType<BrimstoneFireballMinion>(), Main.DamageVar(dmg, Player.luck), 0f, Player.whoAmI);
                         proj.tileCollide = false;
                         proj.DamageType = DamageClass.Generic;
                         proj.netUpdate = true;
@@ -54,7 +54,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
 
                 if (info.DamageSource.TryGetCausingEntity(out Entity entity))
                 {
-                    NPC.HitInfo hit = new NPC.HitInfo() with { Crit = false, DamageType = DamageClass.Generic, HitDirection = info.HitDirection, Knockback = 0.5f };
+                    NPC.HitInfo hit = new NPC.HitInfo() with { Crit = false, DamageType = DamageClass.Generic, HitDirection = info.HitDirection, Knockback = 6.5f };
                     int damageTaken = info.SourceDamage > Player.statLife ? Player.statLife : info.SourceDamage; //Caps the Reflect's base damage to Player's current HP.
                     int mult = (Player.statLife < Player.statLifeMax2 * drTreshold) ? 2 : 1;
 

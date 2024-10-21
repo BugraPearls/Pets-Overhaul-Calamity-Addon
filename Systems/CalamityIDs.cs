@@ -10,41 +10,41 @@ namespace PetsOverhaulCalamityAddon.Systems
     /// </summary>
     public class CalamityPetIDs
     {
-        public static int Akato => ModContent.GetInstance<ForgottenDragonEgg>().Type;
-        public static int Astrophage => ModContent.GetInstance<AstrophageItem>().Type;
-        public static int Bear => ModContent.GetInstance<BearsEye>().Type;
-        public static int Brimling => ModContent.GetInstance<CharredRelic>().Type;
-        public static int ChibiiDevourer => ModContent.GetInstance<CosmicPlushie>().Type;
-        public static int DannyDevito => ModContent.GetInstance<TrashmanTrashcan>().Type;
-        public static int ElectricTroublemaker => ModContent.GetInstance<TheEtomer>().Type;
-        public static int EscargidolonSnail => ModContent.GetInstance<AbyssShellFossil>().Type;
-        public static int FlakHermit => ModContent.GetInstance<GeyserShell>().Type;
-        public static int Fox => ModContent.GetInstance<FoxDrive>().Type;
-        public static int FurtasticDuo => ModContent.GetInstance<PrimroseKeepsake>().Type;
-        public static int Kendra => ModContent.GetInstance<RomajedaOrchid>().Type;
-        public static int LadShark => ModContent.GetInstance<JoyfulHeart>().Type;
-        public static int Levi => ModContent.GetInstance<Levi>().Type;
-        public static int MiniHiveMind => ModContent.GetInstance<RottingEyeball>().Type;
-        public static int MiniPerforator => ModContent.GetInstance<BloodyVein>().Type;
-        public static int Pineapple => ModContent.GetInstance<PineapplePet>().Type;
-        public static int PlagueBringerBab => ModContent.GetInstance<PlagueCaller>().Type;
-        public static int SonOfYharon => ModContent.GetInstance<McNuggets>().Type;
-        public static int SupremeCalamitas => ModContent.GetInstance<BrimstoneJewel>().Type;
-        public static int ThirdSage => ModContent.GetInstance<HermitsBoxofOneHundredMedicines>().Type;
+        public static int Akato => ModContent.ItemType<ForgottenDragonEgg>();
+        public static int Astrophage => ModContent.ItemType<AstrophageItem>();
+        public static int Bear => ModContent.ItemType<BearsEye>();
+        public static int Brimling => ModContent.ItemType<CharredRelic>();
+        public static int ChibiiDevourer => ModContent.ItemType<CosmicPlushie>();
+        public static int DannyDevito => ModContent.ItemType<TrashmanTrashcan>();
+        public static int ElectricTroublemaker => ModContent.ItemType<TheEtomer>();
+        public static int EscargidolonSnail => ModContent.ItemType<AbyssShellFossil>();
+        public static int FlakHermit => ModContent.ItemType<GeyserShell>();
+        public static int Fox => ModContent.ItemType<FoxDrive>();
+        public static int FurtasticDuo => ModContent.ItemType<PrimroseKeepsake>();
+        public static int Kendra => ModContent.ItemType<RomajedaOrchid>();
+        public static int LadShark => ModContent.ItemType<JoyfulHeart>();
+        public static int Levi => ModContent.ItemType<Levi>();
+        public static int MiniHiveMind => ModContent.ItemType<RottingEyeball>();
+        public static int MiniPerforator => ModContent.ItemType<BloodyVein>();
+        public static int Pineapple => ModContent.ItemType<PineapplePet>();
+        public static int PlagueBringerBab => ModContent.ItemType<PlagueCaller>();
+        public static int SonOfYharon => ModContent.ItemType<McNuggets>();
+        public static int SupremeCalamitas => ModContent.ItemType<BrimstoneJewel>();
+        public static int ThirdSage => ModContent.ItemType<HermitsBoxofOneHundredMedicines>();
     }
     /// <summary>
     /// Class that includes ItemIDs of Light Pets of Calamity, working with similar purpose of ItemID class.
     /// </summary>
     public class CalamityLightPetIDs
     {
-        public static int BabyGhostBell => ModContent.GetInstance<RustedJingleBell>().Type;
-        public static int Goldie => ModContent.GetInstance<ThiefsDime>().Type;
-        public static int Lilorde => ModContent.GetInstance<SuspiciousLookingNOU>().Type;
-        public static int LittleLight => ModContent.GetInstance<LittleLight>().Type;
-        public static int OceanSpirit => ModContent.GetInstance<StrangeOrb>().Type;
-        public static int Radiator => ModContent.GetInstance<RadiatingCrystal>().Type;
-        public static int Sparks => ModContent.GetInstance<EnchantedButterfly>().Type;
-        public static int Yuu => ModContent.GetInstance<ChromaticOrb>().Type;
+        public static int BabyGhostBell => ModContent.ItemType<RustedJingleBell>();
+        public static int Goldie => ModContent.ItemType<ThiefsDime>();
+        public static int Lilorde => ModContent.ItemType<SuspiciousLookingNOU>();
+        public static int LittleLight => ModContent.ItemType<LittleLight>();
+        public static int OceanSpirit => ModContent.ItemType<StrangeOrb>();
+        public static int Radiator => ModContent.ItemType<RadiatingCrystal>();
+        public static int Sparks => ModContent.ItemType<EnchantedButterfly>();
+        public static int Yuu => ModContent.ItemType<ChromaticOrb>();
     }
     /// <summary>
     /// CalamitySlows starts from 20 just in case.

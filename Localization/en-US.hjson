@@ -15,7 +15,7 @@ Mods: {
 				Increases Luck by <luck>, Rogue damage by <rogue>,
 				Rogue velocity by <velocity> and stealth gain by <stealth>.
 				Luck Bonus: <luckLine>
-				Rouge Damage Bonus: <rogueLine>
+				Rogue Damage Bonus: <rogueLine>
 				Rogue Velocity Bonus: <velocityLine>
 				Rogue Stealth Gain Bonus: <stealthLine>
 				'''

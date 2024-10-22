@@ -80,9 +80,9 @@ namespace PetsOverhaulCalamityAddon.Systems
         public static List<(int, int[])> CalamityHarvestingItems = new()
         {
             (165, [ModContent.ItemType<Acidwood>()]),
-            (250,[ModContent.ItemType<SpineSapling>(), ModContent.ItemType<ScorchedBone>()]),
             (400,[ModContent.ItemType<AstralGrassSeeds>(), ModContent.ItemType<CinderBlossomSeeds>(), ModContent.ItemType<SulphuricScale>(), ModContent.ItemType<CorrodedFossil>(), ModContent.ItemType<PlantyMush>()]),
             (600, [ModContent.ItemType<AstralMonolith>()]),
+            (950,[ModContent.ItemType<SpineSapling>(), ModContent.ItemType<ScorchedBone>()]),
             (1000, [ModContent.ItemType<StarblightSoot>(), ItemID.FallenStar]),
             (12500, [ModContent.ItemType<HapuFruit>()]),
         };

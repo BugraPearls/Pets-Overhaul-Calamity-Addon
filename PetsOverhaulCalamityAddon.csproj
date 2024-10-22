@@ -19,7 +19,7 @@
 	    <HintPath>..\ModAssemblies\CalamityMod_v2.0.4.3.dll</HintPath>
 	  </Reference>
 	  <Reference Include="PetsOverhaul">
-	    <HintPath>..\ModAssemblies\PetsOverhaul_v3.0.dll</HintPath>
+	    <HintPath>..\ModAssemblies\PetsOverhaul_v3.0.1.dll</HintPath>
 	  </Reference>
 	</ItemGroup>
 

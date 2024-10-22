@@ -8,6 +8,7 @@ namespace PetsOverhaulCalamityAddon
         public override void Load()
         {
             Compatibility.AddPetItemNames();
+            Compatibility.AddCalamityItemsToGatheringLists();
             Compatibility.AddCalamityNonBossTrueBosses();
             Compatibility.AddCalamityCorruptEnemies();
             Compatibility.AddCalamityCrimsonEnemies();

@@ -37,7 +37,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
             if (Pet.PetInUseWithSwapCd(CalamityPetIDs.Bear))
             {
                 Player.GetDamage<RogueDamageClass>() += rogueDmg;
-                Player.Calamity().stealthDamage += stealthDmg;
+                Player.Calamity().bonusStealthDamage += stealthDmg;
                 Player.Calamity().stealthGenMoving += stealthMoving;
                 Player.Calamity().stealthGenStandstill += stealthNotMoving;
             }

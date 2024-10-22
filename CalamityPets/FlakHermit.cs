@@ -71,7 +71,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
             if (Pet.PetInUseWithSwapCd(CalamityPetIDs.FlakHermit))
             {
                 Player.Calamity().stealthGenStandstill += standingStealth;
-                Player.Calamity().stealthDamage += stealthDmg;
+                Player.Calamity().bonusStealthDamage += stealthDmg;
                 Player.Calamity().rogueStealthMax += maxStealth;
             }
         }

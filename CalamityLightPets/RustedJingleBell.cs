@@ -18,7 +18,7 @@ namespace PetsOverhaul.LightPets
         {
             Player.breathMax = vanillaBreatheReset;
         }
-        public override void PostUpdateMiscEffects()
+        public override void PostUpdateEquips()
         {
             if (Player.miscEquips[1].TryGetGlobalItem(out RustedJingleBellPet bell))
             {

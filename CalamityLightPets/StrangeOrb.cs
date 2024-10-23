@@ -12,7 +12,7 @@ namespace PetsOverhaul.LightPets
 {
     public sealed class StrangeOrbEffect : LightPetEffect
     {
-        public override void PostUpdateMiscEffects()
+        public override void PostUpdateEquips()
         {
             if (Player.miscEquips[1].TryGetGlobalItem(out StrangeOrbPet orb))
             {

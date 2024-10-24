@@ -62,10 +62,11 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                 .Replace("<class>", PetTextsColors.ClassText(dannyDevito.PetClassPrimary, dannyDevito.PetClassSecondary))
                 .Replace("<keybind>", PetTextsColors.KeybindText(PetKeybinds.UsePetAbility))
                 .Replace("<damage>", dannyDevito.damage.ToString())
+                .Replace("<bleedDuration>", Math.Round(dannyDevito.bleedDuration / 60f, 2).ToString())
                 .Replace("<slow>", Math.Round(dannyDevito.slow * 100, 2).ToString())
                 .Replace("<slowDuration>", Math.Round(dannyDevito.slowDuration / 60f, 2).ToString())
                 .Replace("<confuseChance>", dannyDevito.confusionChance.ToString())
-                .Replace("<slow>", Math.Round(dannyDevito.confusionDuration / 60f, 2).ToString())
+                .Replace("<confuseDuration>", Math.Round(dannyDevito.confusionDuration / 60f, 2).ToString())
             ));
         }
     }

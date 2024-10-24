@@ -133,7 +133,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
             if (Pet.PetInUseWithSwapCd(CalamityPetIDs.MiniHiveMind))
             {
                 modifiers.CritDamage += critDmg;
-                if (GlobalPet.CrimsonEnemies.Contains(target.type))
+                if (GlobalPet.CorruptEnemies.Contains(target.type))
                 {
                     modifiers.FinalDamage *= 1f + dmgIncrIfCorrupt;
                 }
@@ -141,7 +141,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         }
         public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
-            if (Pet.PetInUseWithSwapCd(CalamityPetIDs.MiniHiveMind) && target.active == false && GlobalPet.CrimsonEnemies.Contains(target.type) && target.SpawnedFromStatue == false)
+            if (Pet.PetInUseWithSwapCd(CalamityPetIDs.MiniHiveMind) && target.active == false && GlobalPet.CorruptEnemies.Contains(target.type) && target.SpawnedFromStatue == false)
             {
                 evilKills++;
             }

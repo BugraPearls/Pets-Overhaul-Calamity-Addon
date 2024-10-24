@@ -268,7 +268,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         }
         public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
-            if (Pet.PetInUseWithSwapCd(CalamityPetIDs.ElectricTroublemaker))
+            if (Pet.PetInUseWithSwapCd(CalamityPetIDs.ElectricTroublemaker) && chargeNextAttack)
             {
                 switch (currentMove)
                 {
@@ -282,10 +282,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                                     NpcPet.AddSlow(new NpcPet.PetSlow(tWaveSlow * GetTypeEffectiveness(npc, thunderWave), tWaveDuration, CalSlows.rotomThunderWave), npc);
                                 }
                             }
-                            for (int i = 0; i < 12; i++)
-                            {
-                                Dust.NewDustPerfect(target.Center + Main.rand.NextVector2CircularEdge(tWaveRadius, tWaveRadius), DustID.Electric);
-                            }
+                            GlobalPet.CircularDustEffect(target.Center, DustID.Electric, tWaveRadius, 10);
                             if (ModContent.GetInstance<PetPersonalization>().AbilitySoundEnabled)
                                 SoundEngine.PlaySound(new SoundStyle("PetsOverhaulCalamityAddon/Sounds/ElectricTroublemaker/ThunderWave") with { PitchVariance = 0.6f }, target.Center);
                             Pet.timer += (int)(Pet.timerMax * tWaveCooldown);
@@ -362,6 +359,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                             {
                                 Dust.NewDustPerfect(target.Center + Main.rand.NextVector2Circular(airSlashRadius / 2.5f, airSlashRadius / 2.5f), DustID.Cloud, new Vector2(hit.HitDirection * 6, -3)).noGravity = true;
                             }
+                            GlobalPet.CircularDustEffect(target.Center, DustID.Snow, airSlashRadius, 10);
                             if (ModContent.GetInstance<PetPersonalization>().AbilitySoundEnabled)
                                 SoundEngine.PlaySound(new SoundStyle("PetsOverhaulCalamityAddon/Sounds/ElectricTroublemaker/AirSlash") with { PitchVariance = 0.5f }, target.Center);
                             Pet.timer += (int)(Pet.timerMax * airSlashCooldown);

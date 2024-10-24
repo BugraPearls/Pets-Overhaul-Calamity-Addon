@@ -1,16 +1,7 @@
 ﻿using CalamityMod;
-using CalamityMod.Items.Accessories;
-using PetsOverhaul.Items;
 using PetsOverhaul.PetEffects;
 using PetsOverhaul.Systems;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Terraria;
-using Terraria.DataStructures;
-using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace PetsOverhaulCalamityAddon.Systems
@@ -29,6 +20,13 @@ namespace PetsOverhaulCalamityAddon.Systems
             if (Player.Calamity().fungalSymbiote && TileBeforeSymbiote == false && CalamityUtils.ParanoidTileRetrieval(X, Y).HasTile)
             {
                 TilePlacement.AddToList(X, Y);
+            }
+        }
+        public override void PostUpdateEquips()
+        {
+            if (Player.Calamity().HasAnyEnergyShield)
+            {
+                Player.GetModPlayer<MiniPrime>().shieldedStatBoostActive = true;
             }
         }
     }

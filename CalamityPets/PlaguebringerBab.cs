@@ -23,7 +23,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         public float mainTargetMult = 0.25f;
         public float surroundingMult = 0.15f;
         public int surroundRadius = 96;
-        public int detonateRadius = 1600;
+        public int detonateRadius = 1200;
         public int cooldown = 510;
         public int plagueAndSlowDuration = 150;
         public float slowAmount = 0.25f;
@@ -62,6 +62,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                         boom.timer = 0;
                     }
                 }
+                GlobalPet.CircularDustEffect(Player.Center, DustID.JungleTorch, detonateRadius, 200, scale: 2f);
                 Pet.timer = Pet.timerMax;
             }
 
@@ -70,6 +71,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         {
             if (Pet.PetInUseWithSwapCd(CalamityPetIDs.PlagueBringerBab) && hit.DamageType is RogueDamageClass && target.TryGetGlobalNPC(out PlaguebringerBabStacks victim))
             {
+                GlobalPet.CircularDustEffect(target.Center, DustID.JungleTorch, surroundRadius, 12);
                 if (target.active)
                 {
                     victim.timer = timeToAdd;
@@ -109,7 +111,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         {
             if (stacks > 0 && timer > 0 && Main.rand.NextBool(30))
             {
-                Dust.NewDust(npc.position, npc.width, npc.height, DustID.JungleSpore);
+                Dust.NewDust(npc.position, npc.width, npc.height, DustID.JungleTorch);
             }
         }
         public override void OnKill(NPC npc)

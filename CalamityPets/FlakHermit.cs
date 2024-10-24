@@ -16,7 +16,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
 {
     public sealed class FlakHermitEffect : PetEffect
     {
-        public override PetClasses PetClassPrimary => PetClasses.None;
+        public override PetClasses PetClassPrimary => PetClasses.Rogue;
         public float standingStealth = 0.4f;
         public float maxStealth = 0.1f;
         public float stealthDmg = 0.08f;
@@ -37,10 +37,11 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
             }
             if (ModContent.GetInstance<PetPersonalization>().AbilitySoundEnabled)
                 SoundEngine.PlaySound(SoundID.Item96 with { PitchVariance = 0.6f }, center);
-            for (int i = 0; i < 35; i++)
+            for (int i = 0; i < 25; i++)
             {
                 Dust.NewDustPerfect(center + Main.rand.NextVector2Circular(radius, radius), DustID.CursedTorch, Scale: 2f);
             }
+            GlobalPet.CircularDustEffect(Player.Center, DustID.CursedTorch, radius, 20, scale: 2f);
         }
         public override void PreUpdate()
         {

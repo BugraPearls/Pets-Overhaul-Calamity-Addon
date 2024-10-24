@@ -1,3 +1,4 @@
+using CalamityMod.Dusts;
 using PetsOverhaul.Config;
 using PetsOverhaul.Systems;
 using PetsOverhaulCalamityAddon.Systems;
@@ -31,6 +32,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
             if (check)
             {
                 SoundEngine.PlaySound(SoundID.Meowmere, Player.Center);
+                GlobalPet.CircularDustEffect(Player.Center, DustID.PinkFairy, block, 30);
                 for (int i = 0; i < Main.maxNPCs; i++)
                 {
                     if (Player.Distance(Main.npc[i].Center) < block)

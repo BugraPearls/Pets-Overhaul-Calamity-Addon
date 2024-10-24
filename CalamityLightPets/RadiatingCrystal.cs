@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using Terraria;
+using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
@@ -14,6 +15,13 @@ namespace PetsOverhaul.LightPets
 {
     public sealed class RadiatingCrystalEffect : LightPetEffect
     {
+        public override void DrawEffects(PlayerDrawSet drawInfo, ref float r, ref float g, ref float b, ref float a, ref bool fullBright)
+        {
+            if (drawInfo.shadow == 0f && Player.miscEquips[1].TryGetGlobalItem(out RadiatingCrystalPet crystal))
+            {
+                drawInfo.DustCache.AddRange(GlobalPet.CircularDustEffect(Player.Center, DustID.CursedTorch, crystal.PoisonRadius.CurrentStatInt, crystal.PoisonRadius.CurrentStatInt / 20));
+            }
+        }
         public override void PostUpdateEquips()
         {
             if (Player.miscEquips[1].TryGetGlobalItem(out RadiatingCrystalPet crystal))
@@ -97,7 +105,7 @@ namespace PetsOverhaul.LightPets
 
                         .Replace("<knockback>", Knockback.BaseAndPerQuality())
                         .Replace("<def>", DebuffedDefense.BaseAndPerQuality())
-                        .Replace("<radius>", PoisonRadius.BaseAndPerQuality(Math.Round(PoisonRadius.StatPerRoll / 16f, 2).ToString()))
+                        .Replace("<radius>", PoisonRadius.BaseAndPerQuality(Math.Round(PoisonRadius.StatPerRoll / 16f, 2).ToString(), Math.Round(PoisonRadius.BaseStat / 16f, 2).ToString()))
 
                         .Replace("<knockbackLine>", Knockback.StatSummaryLine())
                         .Replace("<defLine>", DebuffedDefense.StatSummaryLine())

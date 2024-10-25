@@ -26,7 +26,7 @@ namespace PetsOverhaulCalamityAddon.Systems
         {
             if (Player.Calamity().HasAnyEnergyShield)
             {
-                Player.GetModPlayer<MiniPrime>().shieldedStatBoostActive = true;
+                Player.GetModPlayer<MiniPrime>().AddShieldedStatBoosts();
             }
         }
     }

@@ -15,17 +15,11 @@ namespace PetsOverhaul.LightPets
 {
     public sealed class RadiatingCrystalEffect : LightPetEffect
     {
-        public override void DrawEffects(PlayerDrawSet drawInfo, ref float r, ref float g, ref float b, ref float a, ref bool fullBright)
-        {
-            if (drawInfo.shadow == 0f && Player.miscEquips[1].TryGetGlobalItem(out RadiatingCrystalPet crystal))
-            {
-                drawInfo.DustCache.AddRange(GlobalPet.CircularDustEffect(Player.Center, DustID.CursedTorch, crystal.PoisonRadius.CurrentStatInt, crystal.PoisonRadius.CurrentStatInt / 20));
-            }
-        }
         public override void PostUpdateEquips()
         {
             if (Player.miscEquips[1].TryGetGlobalItem(out RadiatingCrystalPet crystal))
             {
+                GlobalPet.CircularDustEffect(Player.Center, DustID.CursedTorch, crystal.PoisonRadius.CurrentStatInt, crystal.PoisonRadius.CurrentStatInt / 20);
                 Player.GetKnockback<GenericDamageClass>() += crystal.Knockback.CurrentStatFloat;
                 for (int i = 0; i < Player.MaxBuffs; i++)
                 {

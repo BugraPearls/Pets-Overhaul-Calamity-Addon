@@ -26,18 +26,12 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
 
         public float slowAmount = 0.4f;
         public float infectionHeavySlow = 2.2f;
-        public override void DrawEffects(PlayerDrawSet drawInfo, ref float r, ref float g, ref float b, ref float a, ref bool fullBright)
-        {
-            if (Pet.PetInUseWithSwapCd(CalamityPetIDs.Astrophage) && drawInfo.shadow == 0f)
-            {
-                drawInfo.DustCache.AddRange(GlobalPet.CircularDustEffect(Player.Center, DustID.CoralTorch, infectRadius, 8));
-                drawInfo.DustCache.AddRange(GlobalPet.CircularDustEffect(Player.Center, DustID.Granite, slowRadius, 30, scale: 0.8f));
-            }
-        }
         public override void PostUpdateMiscEffects()
         {
             if (Pet.PetInUseWithSwapCd(CalamityPetIDs.Astrophage))
             {
+                GlobalPet.CircularDustEffect(Player.Center, DustID.CoralTorch, infectRadius, 8);
+                GlobalPet.CircularDustEffect(Player.Center, DustID.Granite, slowRadius, 30, scale: 0.8f);
                 for (int i = 0; i < Main.maxNPCs; i++)
                 {
                     NPC npc = Main.npc[i];

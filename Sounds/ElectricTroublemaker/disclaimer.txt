@@ -7,3 +7,6 @@ Flame Wheel 2nd Part,
 Blizzard,
 Razor Leaf 1st Part,
 and Aerial Ace.
+
+Rotom Cry used in Death sound effect is taken from: https://www.myinstants.com/en/instant/rotom-cry-56906/
+Neutral hit sound effect from gen 3 taken from: https://soundeffects.fandom.com/wiki/Pok%C3%A9mon_Damage

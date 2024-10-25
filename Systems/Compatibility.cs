@@ -18,11 +18,13 @@ using CalamityMod.NPCs.Perforator;
 using CalamityMod.NPCs.ProfanedGuardians;
 using CalamityMod.NPCs.Providence;
 using CalamityMod.NPCs.SlimeGod;
+using CalamityMod.Sounds;
 using MonoMod.Utils;
 using PetsOverhaul.NPCs;
 using PetsOverhaul.PetEffects;
 using PetsOverhaul.Systems;
 using System.Collections.Generic;
+using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -146,6 +148,152 @@ namespace PetsOverhaulCalamityAddon.Systems
         public static void AddCalamityHallowEnemies()
         {
             GlobalPet.HallowEnemies.AddRange(CalamityHallowEnemies);
+        }
+
+        public static Dictionary<int, SoundStyle[]> CalamityPetHurtSounds = new()
+        {
+                        {
+                CalamityPetIDs.Astrophage,
+                [CommonCalamitySounds.AstralNPCHitSound with {PitchVariance = 0.6f}]
+            },
+                        {
+                CalamityPetIDs.SonOfYharon,
+                [new SoundStyle("CalamityMod/Sounds/NPCHit/YharonHurt") with { PitchVariance = 0.6f, Volume = 2f}]
+            },
+                        {
+                CalamityPetIDs.Bear,
+                [SoundID.Meowmere]
+            },
+                        {
+                CalamityPetIDs.Kendra,
+                [new SoundStyle("CalamityMod/Sounds/Item/KendraBark") with { PitchVariance = 0.4f, Pitch = -0.2f}]
+            },
+                        {
+                ItemID.DogWhistle,
+                [new SoundStyle("CalamityMod/Sounds/Item/KendraBark") with { PitchVariance = 0.4f, Pitch = 0.8f}] //Puppy Pet will also use Kendra's bark, with higher pitch
+            },
+                        {
+                CalamityPetIDs.FurtasticDuo,
+                [new SoundStyle("CalamityMod/Sounds/Item/KendraBark") with { PitchVariance = 0.4f, Pitch = -0.2f},
+                SoundID.Meowmere]
+            },
+                        {
+                CalamityPetIDs.Brimling,
+                [SoundID.NPCHit29 with { PitchVariance = 0.5f}]
+            },
+                        {
+                CalamityPetIDs.ChibiiDevourer,
+                [                new SoundStyle("CalamityMod/Sounds/NPCKilled/DevourerSegmentBreak1") with { PitchVariance = 0.3f, Volume = 0.8f },
+                                new SoundStyle("CalamityMod/Sounds/NPCKilled/DevourerSegmentBreak2") with { PitchVariance = 0.3f, Volume = 0.8f },
+                                new SoundStyle("CalamityMod/Sounds/NPCKilled/DevourerSegmentBreak3") with { PitchVariance = 0.3f, Volume = 0.8f },
+                                new SoundStyle("CalamityMod/Sounds/NPCKilled/DevourerSegmentBreak4") with { PitchVariance = 0.3f, Volume = 0.8f }]
+            },
+                        {
+                CalamityPetIDs.Akato,
+                [                new SoundStyle("PetsOverhaulCalamityAddon/Sounds/Akato/AkatoHurt0") with { PitchVariance = 0.3f },
+                                new SoundStyle("PetsOverhaulCalamityAddon/Sounds/Akato/AkatoHurt1") with { PitchVariance = 0.3f },
+                                new SoundStyle("PetsOverhaulCalamityAddon/Sounds/Akato/AkatoHurt2") with { PitchVariance = 0.3f }]
+            },
+                        {
+                CalamityPetIDs.ElectricTroublemaker,
+                [new SoundStyle("PetsOverhaulCalamityAddon/Sounds/ElectricTroublemaker/PokemonNeutralHit") with { PitchVariance = 0.5f }]
+            },
+                        {
+                CalamityPetIDs.FlakHermit,
+                [SoundID.NPCHit41 with { PitchVariance = 0.5f }]
+            },
+                        {
+                CalamityPetIDs.MiniPerforator,
+                [new SoundStyle("CalamityMod/Sounds/NPCHit/PerfHiveHit1") with { PitchVariance = 0.3f },
+                new SoundStyle("CalamityMod/Sounds/NPCHit/PerfHiveHit2") with { PitchVariance = 0.3f },
+                new SoundStyle("CalamityMod/Sounds/NPCHit/PerfHiveHit3") with { PitchVariance = 0.3f }]
+            },
+                        {
+                CalamityPetIDs.PlagueBringerBab,
+                [SoundID.NPCHit4 with { PitchVariance = 0.5f }]
+            },
+                        {
+                CalamityPetIDs.SupremeCalamitas,
+                [new SoundStyle("CalamityMod/Sounds/Custom/SCalSounds/BrothersHurt1") with { PitchVariance = 0.4f},
+                new SoundStyle("CalamityMod/Sounds/Custom/SCalSounds/BrothersHurt2") with { PitchVariance = 0.4f}]
+            },
+
+        };
+
+        public static Dictionary<int, SoundStyle[]> CalamityPetAmbientSounds = new()
+        {
+                        {
+                CalamityPetIDs.SonOfYharon,
+                [new SoundStyle("CalamityMod/Sounds/Custom/Yharon/YharonRoarShort") with { PitchVariance = 0.6f, Volume = 0.3f}]
+            },
+                        {
+                CalamityPetIDs.Kendra,
+                [new SoundStyle("CalamityMod/Sounds/Item/KendraBark") with { PitchVariance = 0.4f, Pitch = -0.2f, Volume = 0.3f}]
+            },
+                        {
+                ItemID.DogWhistle,
+                [new SoundStyle("CalamityMod/Sounds/Item/KendraBark") with { PitchVariance = 0.4f, Pitch = 0.8f, Volume = 0.3f }] //Puppy Pet will also use Kendra's bark, with higher pitch
+            },
+                        {
+                CalamityPetIDs.FurtasticDuo,
+                [new SoundStyle("CalamityMod/Sounds/Item/KendraBark") with { PitchVariance = 0.4f, Pitch = -0.2f, Volume = 0.3f},
+                SoundID.Meowmere with {Volume = 0.3f}]
+            },
+            {
+                CalamityPetIDs.ChibiiDevourer,
+                [                new SoundStyle("CalamityMod/Sounds/Custom/DevourerSpawn") with { PitchVariance = 0.5f, Pitch = -0.4f },
+                                new SoundStyle("CalamityMod/Sounds/Custom/DevourerAttack") with { PitchVariance = 0.7f }]
+            },
+        };
+
+        public static Dictionary<int, SoundStyle> CalamityPetKillSounds = new()
+        {
+            {
+                CalamityPetIDs.Astrophage,
+                CommonCalamitySounds.AstralNPCDeathSound with {PitchVariance = 0.6f}
+            },
+            {
+                CalamityPetIDs.SonOfYharon,
+                new SoundStyle("CalamityMod/Sounds/NPCKilled/YharonDeath") with { PitchVariance = 0.6f }
+            },
+            {
+                CalamityPetIDs.Brimling,
+                SoundID.NPCDeath39 with { PitchVariance = 0.5f }
+            },
+            {
+                CalamityPetIDs.ChibiiDevourer,
+                new SoundStyle("CalamityMod/Sounds/NPCKilled/DevourerDeath") with { PitchVariance = 0.6f }
+            },
+            {
+                CalamityPetIDs.Akato,
+                new SoundStyle("PetsOverhaulCalamityAddon/Sounds/Akato/AkatoDeath") with { PitchVariance = 1f }
+            },
+            {
+                CalamityPetIDs.ElectricTroublemaker,
+                new SoundStyle("PetsOverhaulCalamityAddon/Sounds/ElectricTroublemaker/RotomCry") with { PitchVariance = 0.6f, Pitch = -0.7f }
+            },
+            {
+                CalamityPetIDs.FlakHermit,
+                SoundID.NPCDeath43 with { PitchVariance = 0.6f }
+            },
+            {
+                CalamityPetIDs.MiniPerforator,
+                new SoundStyle("CalamityMod/Sounds/NPCKilled/PerfHiveDeath") with { PitchVariance = 0.6f }
+            },
+            {
+                CalamityPetIDs.PlagueBringerBab,
+                CommonCalamitySounds.PlagueBoomSound with { PitchVariance = 0.2f }
+            },
+            {
+                CalamityPetIDs.SupremeCalamitas,
+                new SoundStyle("CalamityMod/Sounds/NPCKilled/SepulcherDeath") with { PitchVariance = 0.6f }
+            }
+        };
+        public static void AddCalSoundEffects()
+        {
+            PetSounds.PetItemIdToHurtSound.AddRange(CalamityPetHurtSounds);
+            PetSounds.PetItemIdToAmbientSound.AddRange(CalamityPetAmbientSounds);
+            PetSounds.PetItemidToKillSound.AddRange(CalamityPetKillSounds);
         }
     }
 }

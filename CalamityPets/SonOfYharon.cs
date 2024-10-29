@@ -16,9 +16,9 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
 {
     public sealed class SonOfYharonEffect : PetEffect
     {
-        public float dmgRebirth = 0.2f;
-        public int defRebirth = 16;
-        public float msRebirth = 0.12f;
+        public float dmgRebirth = 0.18f;
+        public int defRebirth = 15;
+        public float msRebirth = 0.1f;
         public int fireTime = 90;
         public int rebirthDuration = 900;
         public int rebirthCooldown = 7200;
@@ -51,25 +51,14 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                 {
                     if (deadTimer == 0)
                     {
-                        string reason;
-                        switch (Main.rand.Next(4))
+                        string reason = Main.rand.Next(4) switch
                         {
-                            case 0:
-                                reason = Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.YharonDeath1");
-                                break;
-                            case 1:
-                                reason = Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.YharonDeath2");
-                                break;
-                            case 2:
-                                reason = Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.YharonDeath3");
-                                break;
-                            case 3:
-                                reason = Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.YharonDeath4");
-                                break;
-                            default:
-                                reason = Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.YharonDeath1");
-                                break;
-                        }
+                            0 => Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.YharonDeath1"),
+                            1 => Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.YharonDeath2"),
+                            2 => Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.YharonDeath3"),
+                            3 => Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.YharonDeath4"),
+                            _ => Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.YharonDeath1"),
+                        };
                         Player.KillMe(PlayerDeathReason.ByCustomReason(reason.Replace("<name>", Player.name)), Player.statLifeMax2, 0);
                     }
                     deadTimer = -1;

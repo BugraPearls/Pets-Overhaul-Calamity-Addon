@@ -15,7 +15,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
     {
         public float rogueDmg = 0.05f;
         public float stealthDmg = 0.03f;
-        public float stealthMoving = 0.3f;
+        public float stealthMoving = 0.2f;
         public float stealthNotMoving = 0.06f;
 
         public float hpTreshold = 0.2f;

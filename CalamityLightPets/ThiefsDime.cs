@@ -37,7 +37,7 @@ namespace PetsOverhaul.LightPets
         public LightPetStat Luck = new(16, 0.005f);
         public LightPetStat RogueDamage = new(20, 0.0025f, 0.05f);
         public LightPetStat RogueVelocity = new(40, 0.004f, 0.04f);
-        public LightPetStat StealthGain = new(30, 0.004f, 0.03f);
+        public LightPetStat StealthGain = new(30, 0.002f, 0.03f);
         public override bool InstancePerEntity => true;
         public override bool AppliesToEntity(Item entity, bool lateInstantiation)
         {

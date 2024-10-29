@@ -16,7 +16,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         public override PetClasses PetClassPrimary => PetClasses.Rogue;
         public override PetClasses PetClassSecondary => PetClasses.Defensive;
 
-        public float stealthMoving = 0.25f;
+        public float stealthMoving = 0.16f;
         public float stealthNotMoving = 0.05f;
         public float hpTreshold = 0.2f;
         public float baseHpShield = 0.13f;

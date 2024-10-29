@@ -25,7 +25,7 @@ namespace PetsOverhaul.LightPets
     public sealed class ChromaticOrbPet : GlobalItem
     {
         public LightPetStat AbilityHaste = new(40, 0.0045f, 0.07f);
-        public LightPetStat CritChance = new(30, 0.0025f, 0.03f);
+        public LightPetStat CritChance = new(30, 0.002f, 0.03f);
         public LightPetStat JumpSpeed = new(10, 0.015f, 0.05f);
         //Thought about adding bonus Rage damage, but could be too much for 1 pet regarding damage output. Maybe in future if seems ok.
         public override bool InstancePerEntity => true;

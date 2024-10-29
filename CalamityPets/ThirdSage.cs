@@ -16,7 +16,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
     {
         public float damageMult = 0.9f;
         public int flatHealing = 23;
-        public float percHealing = 0.1f;
+        public float percHealing = 0.08f;
         public int cooldown = 960;
         public override PetClasses PetClassPrimary => PetClasses.Defensive;
         public override void PreUpdate()

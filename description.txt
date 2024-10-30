@@ -4,6 +4,16 @@ Your Pets can improve many aspects of your game with unique effects, including L
 
 Check out Pets Overhaul's description or our Discord server for further more info!
 
+FAQ:
+Q: What is coming next?
+A: Currently main focus won't be going for more other mods Pets, but rather improving existing systems & Pets. 
+Q: Next crossmod?
+A: If a crossmod is being done; It will be 99% Thorium's Pets.
+Q: Will there be X Mod's Pets?
+A: I would prefer community doing them, since I am struggling with making more Pets where the effect(s); Fits the pet, Is unique from others and Is balanced.
+Q: I would make Pets, but I don't know what to do!
+A: If you are interested, refer to our Discord channel where there is a guide on how, and our GitHub as Pets Overhaul is very developer friendly, you can even balance Pets as you please! https://github.com/BugraPearls/Pets-Overhaul
+
 https://discord.gg/KubSpqvDGE
 
 The Calamity Addon currently supports Brazillian Portuguese localization (By: Erstarisk)

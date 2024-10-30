@@ -37,32 +37,21 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                 {
                     if (Player.Distance(Main.npc[i].Center) < block)
                     {
-                        Main.npc[i].SimpleStrikeNPC(dmg, Player.direction, true, kb);
+                        Main.npc[i].SimpleStrikeNPC(dmg, Player.direction, true, kb, DamageClass.Generic, true,Player.luck);
                     }
                 }
                 for (int i = 0; i < Main.maxPlayers; i++)
                 {
                     if (Player.Distance(Main.player[i].Center) < block)
                     {
-                        string reason;
-                        switch (Main.rand.Next(4))
+                        string reason = Main.rand.Next(4) switch
                         {
-                            case 0:
-                                reason = Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.CosmicDeath1");
-                                break;
-                            case 1:
-                                reason = Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.CosmicDeath2");
-                                break;
-                            case 2:
-                                reason = Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.CosmicDeath3");
-                                break;
-                            case 3:
-                                reason = Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.CosmicDeath4");
-                                break;
-                            default:
-                                reason = Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.CosmicDeath1");
-                                break;
-                        }
+                            0 => Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.CosmicDeath1"),
+                            1 => Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.CosmicDeath2"),
+                            2 => Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.CosmicDeath3"),
+                            3 => Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.CosmicDeath4"),
+                            _ => Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.CosmicDeath1"),
+                        };
                         Main.player[i].Hurt(PlayerDeathReason.ByCustomReason(reason.Replace("<name>", Player.name)), dmg, Player.direction, true, dodgeable: false, scalingArmorPenetration: 1f, knockback: kb);
                     }
                 }

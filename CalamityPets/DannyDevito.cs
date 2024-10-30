@@ -31,7 +31,9 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
             if (Pet.AbilityPressCheck() && Pet.PetInUseWithSwapCd(CalamityPetIDs.DannyDevito))
             {
                 SoundEngine.PlaySound(SoundID.Item1 with { PitchVariance = 0.2f }, Player.Center);
-                Projectile.NewProjectile(GlobalPet.GetSource_Pet(EntitySourcePetIDs.PetProjectile), Player.Center, new Vector2(Main.MouseWorld.X - Player.Center.X, Main.MouseWorld.Y - Player.Center.Y) * 0.03f, ModContent.ProjectileType<Trashcan>(), damage, 4f, Player.whoAmI);
+                Projectile petProjectile = Projectile.NewProjectileDirect(GlobalPet.GetSource_Pet(EntitySourcePetIDs.PetProjectile), Player.Center, new Vector2(Main.MouseWorld.X - Player.Center.X, Main.MouseWorld.Y - Player.Center.Y) * 0.03f, ModContent.ProjectileType<Trashcan>(), damage, 4f, Player.whoAmI);
+                petProjectile.DamageType = DamageClass.Generic;
+                petProjectile.CritChance = (int)Player.GetTotalCritChance(DamageClass.Generic);
                 Pet.timer = Pet.timerMax;
             }
         }

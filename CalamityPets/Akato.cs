@@ -177,25 +177,18 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         {
             if (Pet.PetInUseWithSwapCd(CalamityPetIDs.Akato) && beginOnHit > 0)
             {
-                Projectile.NewProjectileDirect(GlobalPet.GetSource_Pet(EntitySourcePetIDs.PetProjectile), target.Center, Vector2.Zero, ModContent.ProjectileType<PetExplosion>(), Main.DamageVar(damageDone * (explosionMult + StackExplosionBonus), Player.luck), 0, owner: Player.whoAmI, explosionSize + StackExplosionSize);
+                Projectile petProjectile = Projectile.NewProjectileDirect(GlobalPet.GetSource_Pet(EntitySourcePetIDs.PetProjectile), target.Center, Vector2.Zero, ModContent.ProjectileType<PetExplosion>(), (int)(damageDone * (explosionMult + StackExplosionBonus)), 0, Player.whoAmI, explosionSize + StackExplosionSize);
+                petProjectile.DamageType = hit.DamageType;
+                petProjectile.CritChance = (int)Player.GetTotalCritChance(hit.DamageType);
                 if (ModContent.GetInstance<PetPersonalization>().AbilitySoundEnabled)
                 {
-                    string path;
-                    switch (Main.rand.Next(3))
+                    string path = Main.rand.Next(3) switch
                     {
-                        case 0:
-                            path = "PetsOverhaulCalamityAddon/Sounds/Akato/AkatoExplosion0";
-                            break;
-                        case 1:
-                            path = "PetsOverhaulCalamityAddon/Sounds/Akato/AkatoExplosion1";
-                            break;
-                        case 2:
-                            path = "PetsOverhaulCalamityAddon/Sounds/Akato/AkatoExplosion2";
-                            break;
-                        default:
-                            path = "PetsOverhaulCalamityAddon/Sounds/Akato/AkatoExplosion0";
-                            break;
-                    }
+                        0 => "PetsOverhaulCalamityAddon/Sounds/Akato/AkatoExplosion0",
+                        1 => "PetsOverhaulCalamityAddon/Sounds/Akato/AkatoExplosion1",
+                        2 => "PetsOverhaulCalamityAddon/Sounds/Akato/AkatoExplosion2",
+                        _ => "PetsOverhaulCalamityAddon/Sounds/Akato/AkatoExplosion0",
+                    };
                     SoundEngine.PlaySound(new SoundStyle(path) with { PitchVariance = 0.6f, Identifier = "akatoExplosion", MaxInstances = 2, SoundLimitBehavior = SoundLimitBehavior.ReplaceOldest, Type = SoundType.Sound, Volume = 0.8f }, target.Center); //See disclaimer.txt in Sounds/Akato folder for further info regarding sounds origin
                 }
                 beginOnHit = 0;

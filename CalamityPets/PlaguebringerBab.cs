@@ -52,12 +52,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                     {
                         npc.AddBuff(ModContent.BuffType<Plague>(), plagueAndSlowDuration);
                         NpcPet.AddSlow(new NpcPet.PetSlow(slowAmount, plagueAndSlowDuration, CalSlows.PlagueSlow), npc);
-                        NPC.HitInfo hit = new NPC.HitInfo() with { Damage = boom.stacks, DamageType = DamageClass.Generic };
-                        npc.StrikeNPC(hit);
-
-                        if (Main.netMode != NetmodeID.SinglePlayer)
-                            NetMessage.SendStrikeNPC(npc, hit);
-
+                        npc.SimpleStrikeNPC(boom.stacks, npc.direction, Main.rand.NextBool((int)Math.Min(Player.GetTotalCritChance<RogueDamageClass>(), 100), 100), 0, DamageClass.Throwing, true, Player.luck);
                         boom.stacks = 0;
                         boom.timer = 0;
                     }

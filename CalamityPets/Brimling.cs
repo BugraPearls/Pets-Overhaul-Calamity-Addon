@@ -21,6 +21,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         public int baseDmg = 30;
         public int cooldown = 210;
         public float reflectAmount = 0.45f;
+        public float kbFromReflect = 5f;
         public override void PreUpdate()
         {
             if (Pet.PetInUse(CalamityPetIDs.Brimling))
@@ -47,6 +48,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                         Projectile proj = Projectile.NewProjectileDirect(GlobalPet.GetSource_Pet(EntitySourcePetIDs.PetProjectile), Player.Center, Main.rand.NextVector2CircularEdge(4f, 4f), ModContent.ProjectileType<BrimstoneFireballMinion>(), Main.DamageVar(dmg, Player.luck), 0f, Player.whoAmI);
                         proj.tileCollide = false;
                         proj.DamageType = DamageClass.Generic;
+                        proj.CritChance = (int)Player.GetCritChance(DamageClass.Generic);
                         proj.netUpdate = true;
                     }
                     Pet.timer = Pet.timerMax;
@@ -54,22 +56,15 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
 
                 if (info.DamageSource.TryGetCausingEntity(out Entity entity))
                 {
-                    NPC.HitInfo hit = new NPC.HitInfo() with { Crit = false, DamageType = DamageClass.Generic, HitDirection = info.HitDirection, Knockback = 6.5f };
-                    int damageTaken = info.SourceDamage > Player.statLife ? Player.statLife : info.SourceDamage; //Caps the Reflect's base damage to Player's current HP.
-                    int mult = (Player.statLife < Player.statLifeMax2 * drTreshold) ? 2 : 1;
-
-                    if (entity is Projectile projectile && projectile.TryGetGlobalProjectile(out ProjectileSourceChecks proj))
+                    int damageTaken = Main.DamageVar(info.SourceDamage, Player.luck);
+                    damageTaken = Math.Min(damageTaken, Player.statLife); //Caps the Reflect's base damage to Player's current HP.
+                    if (entity is Projectile projectile && projectile.TryGetGlobalProjectile(out ProjectileSourceChecks proj) && Main.npc[proj.sourceNpcId].active)
                     {
-                        NPC npc = Main.npc[proj.sourceNpcId];
-                        npc.StrikeNPC(hit with { Damage = (int)(damageTaken * reflectAmount * mult) });
-                        if (Main.netMode != NetmodeID.SinglePlayer)
-                            NetMessage.SendStrikeNPC(npc, hit);
+                        Main.npc[proj.sourceNpcId].SimpleStrikeNPC((int)(damageTaken * reflectAmount), info.HitDirection, Main.rand.NextBool((int)Math.Min(Player.GetTotalCritChance<GenericDamageClass>(), 100), 100), kbFromReflect, DamageClass.Generic);
                     }
-                    else if (entity is NPC npc && npc.active == true && npc.immortal == false)
+                    else if (entity is NPC npc && npc.active == true)
                     {
-                        npc.StrikeNPC(hit with { Damage = (int)(damageTaken * reflectAmount * mult) });
-                        if (Main.netMode != NetmodeID.SinglePlayer)
-                            NetMessage.SendStrikeNPC(npc, hit);
+                        npc.SimpleStrikeNPC((int)(damageTaken * reflectAmount), info.HitDirection, Main.rand.NextBool((int)Math.Min(Player.GetTotalCritChance<GenericDamageClass>(), 100), 100), kbFromReflect, DamageClass.Generic);
                     }
                 }
             }

@@ -31,7 +31,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
             {
                 if (npc.Distance(center) < radius)
                 {
-                    npc.SimpleStrikeNPC(acidBaseDmg, Player.direction, damageType: new RogueDamageClass(), damageVariation: true, luck: Player.luck);
+                    npc.SimpleStrikeNPC(acidBaseDmg, Player.direction, Main.rand.NextBool((int)Math.Min(Player.GetTotalCritChance<RogueDamageClass>(), 100), 100), 0, DamageClass.Throwing, true, Player.luck);
                     npc.AddBuff(ModContent.BuffType<Irradiated>(), irradiateDuration);
                 }
             }

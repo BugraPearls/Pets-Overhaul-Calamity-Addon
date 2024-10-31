@@ -40,7 +40,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                 {
                     Player.statDefense += CurrentDef;
                     Player.statLifeMax2 += CurrentHp;
-                    Player.endurance += CurrentDr;
+                    Player.endurance += CurrentDr / 100;
                     Player.moveSpeed += CurrentNegativeMs / 100;
                 }
                 else

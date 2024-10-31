@@ -16,5 +16,8 @@ A: If you are interested, refer to our Discord channel where there is a guide on
 
 https://discord.gg/KubSpqvDGE
 
-The Calamity Addon currently supports Brazillian Portuguese localization (By: [url=https://steamcommunity.com/id/Erstarisk/]Erstarisk[/url])
+The Calamity Addon currently supports following for Localization;
+Brazillian Portuguese localization (By: [url=https://steamcommunity.com/id/Erstarisk/]Erstarisk[/url])
+Russian localization (By: [url=https://steamcommunity.com/id/teokai/]Teokai[/url])
+
 Icon and all artwork done by: [url=https://steamcommunity.com/id/IsThatFurqi]Furqi[/url]

@@ -177,7 +177,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         {
             if (Pet.PetInUseWithSwapCd(CalamityPetIDs.Akato) && beginOnHit > 0)
             {
-                Projectile petProjectile = Projectile.NewProjectileDirect(GlobalPet.GetSource_Pet(EntitySourcePetIDs.PetProjectile), target.Center, Vector2.Zero, ModContent.ProjectileType<PetExplosion>(), (int)(damageDone * (explosionMult + StackExplosionBonus)), 0, Player.whoAmI, explosionSize + StackExplosionSize);
+                Projectile petProjectile = Projectile.NewProjectileDirect(GlobalPet.GetSource_Pet(EntitySourcePetIDs.PetProjectile), target.Center, Vector2.Zero, ModContent.ProjectileType<PetExplosion>(), Pet.PetDamage(damageDone * (explosionMult + StackExplosionBonus)), 0, Player.whoAmI, explosionSize + StackExplosionSize);
                 petProjectile.DamageType = hit.DamageType;
                 petProjectile.CritChance = (int)Player.GetTotalCritChance(hit.DamageType);
                 if (ModContent.GetInstance<PetPersonalization>().AbilitySoundEnabled)

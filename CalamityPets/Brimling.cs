@@ -1,3 +1,4 @@
+using CalamityMod;
 using CalamityMod.Projectiles.Summon;
 using PetsOverhaul.Config;
 using PetsOverhaul.Projectiles;
@@ -18,7 +19,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         public override PetClasses PetClassSecondary => PetClasses.Offensive;
         public float drTreshold = 0.25f;
         public float dr = 0.15f;
-        public int baseDmg = 30;
+        public int baseDmg = 30; //unused
         public int cooldown = 210;
         public float reflectAmount = 0.45f;
         public float kbFromReflect = 5f;
@@ -56,15 +57,15 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
 
                 if (info.DamageSource.TryGetCausingEntity(out Entity entity))
                 {
-                    int damageTaken = Main.DamageVar(info.SourceDamage, Player.luck);
-                    damageTaken = Math.Min(damageTaken, Player.statLife); //Caps the Reflect's base damage to Player's current HP.
+                    int damageTaken = Math.Min(info.SourceDamage, Player.statLife); 
+                    damageTaken = Main.DamageVar(Pet.PetDamage(damageTaken * reflectAmount), Player.luck); //Caps the Reflect's base damage to Player's current HP.
                     if (entity is Projectile projectile && projectile.TryGetGlobalProjectile(out ProjectileSourceChecks proj) && Main.npc[proj.sourceNpcId].active)
                     {
-                        Main.npc[proj.sourceNpcId].SimpleStrikeNPC(Pet.PetDamage(damageTaken * reflectAmount), info.HitDirection, Main.rand.NextBool((int)Math.Min(Player.GetTotalCritChance<GenericDamageClass>(), 100), 100), kbFromReflect, DamageClass.Generic);
+                        Main.npc[proj.sourceNpcId].SimpleStrikeNPC(damageTaken, info.HitDirection, Main.rand.NextBool((int)Math.Min(Player.GetTotalCritChance<GenericDamageClass>(), 100), 100), kbFromReflect, DamageClass.Generic);
                     }
                     else if (entity is NPC npc && npc.active == true)
                     {
-                        npc.SimpleStrikeNPC(Pet.PetDamage(damageTaken * reflectAmount), info.HitDirection, Main.rand.NextBool((int)Math.Min(Player.GetTotalCritChance<GenericDamageClass>(), 100), 100), kbFromReflect, DamageClass.Generic);
+                        npc.SimpleStrikeNPC(damageTaken, info.HitDirection, Main.rand.NextBool((int)Math.Min(Player.GetTotalCritChance<GenericDamageClass>(), 100), 100), kbFromReflect, DamageClass.Generic);
                     }
                 }
             }

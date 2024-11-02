@@ -70,7 +70,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                 if (target.active)
                 {
                     victim.timer = timeToAdd;
-                    victim.stacks += GlobalPet.Randomizer((int)(hit.Damage * mainTargetMult * 100));
+                    victim.stacks += Math.Max(GlobalPet.Randomizer((int)(hit.SourceDamage * mainTargetMult * 100)), 1);
                 }
                 for (int i = 0; i < Main.maxNPCs; i++)
                 {
@@ -81,7 +81,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                     if (npc.active && target.Distance(npc.Center) < surroundRadius && npc.TryGetGlobalNPC(out PlaguebringerBabStacks surrounder))
                     {
                         surrounder.timer = timeToAdd;
-                        surrounder.stacks += GlobalPet.Randomizer((int)(hit.Damage * surroundingMult * 100));
+                        surrounder.stacks += Math.Max(GlobalPet.Randomizer((int)(hit.SourceDamage * surroundingMult * 100)), 1);
                     }
                 }
             }

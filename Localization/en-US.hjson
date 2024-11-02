@@ -58,11 +58,11 @@ Mods: {
 			EnchantedButterfly:
 				'''
 				Increases healing from Pets by <heal>, global fortune by <fortune>,
-				and Mana by <mana>. Reduces Aggro by <aggro>.
+				and Pet sourced damage by <damage>. Reduces Aggro by <aggro>.
 				Pet Healing Bonus: <healLine>
 				Global Fortune Bonus: <fortuneLine>
 				Aggro Reduction Bonus: <aggroLine>
-				Mana Bonus: <manaLine>
+				Pet Sourced Damage Bonus: <damageLine>
 				'''
 			ChromaticOrb:
 				'''
@@ -140,6 +140,7 @@ Mods: {
 				 * Trashcan hits for <damage> damage and applies bleed for <bleedDuration> seconds.
 				 * Enemies around target is slowed by <slow>% for <slowDuration> seconds.
 				 * With <confuseChance>% chance, enemies also can be confused for <confuseDuration> seconds.
+				 * Damage, slow amount and confusion chance are affected by Sickness Vulnerability.
 				'''
 			TheEtomer:
 				'''

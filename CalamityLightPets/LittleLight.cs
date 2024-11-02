@@ -34,7 +34,7 @@ namespace PetsOverhaul.LightPets
         public LightPetStat Aggro = new(20, 10, 50);
         public LightPetStat KnockbackResist = new(20, 0.02f, 0.2f);
         public LightPetStat ShieldIncrease = new(20, 0.008f, 0.06f);
-        public LightPetStat Health = new(20, 2, 15);
+        public LightPetStat Health = new(20, 2, 25);
         public override bool InstancePerEntity => true;
         public override bool AppliesToEntity(Item entity, bool lateInstantiation)
         {

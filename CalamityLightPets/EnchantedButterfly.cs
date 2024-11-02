@@ -19,7 +19,7 @@ namespace PetsOverhaul.LightPets
                 Pet.petHealMultiplier += butter.PetHealPower.CurrentStatInt;
                 Pet.globalFortune += butter.GlobalFortune.CurrentStatInt;
                 Player.aggro += butter.Aggro.CurrentStatInt;
-                Player.statManaMax2 += butter.Mana.CurrentStatInt;
+                Pet.petDirectDamageMultiplier += butter.PetDamage.CurrentStatFloat;
             }
         }
     }
@@ -28,7 +28,7 @@ namespace PetsOverhaul.LightPets
         public LightPetStat PetHealPower = new(30, 0.006f, 0.07f);
         public LightPetStat GlobalFortune = new(16, 1, 6);
         public LightPetStat Aggro = new(20, -5, -40);
-        public LightPetStat Mana = new(10, 4, 15);
+        public LightPetStat PetDamage = new(10, 0.01f, 0.05f);
         public override bool InstancePerEntity => true;
         public override bool AppliesToEntity(Item entity, bool lateInstantiation)
         {
@@ -39,28 +39,28 @@ namespace PetsOverhaul.LightPets
             PetHealPower.SetRoll();
             GlobalFortune.SetRoll();
             Aggro.SetRoll();
-            Mana.SetRoll();
+            PetDamage.SetRoll();
         }
         public override void NetSend(Item item, BinaryWriter writer)
         {
             writer.Write((byte)PetHealPower.CurrentRoll);
             writer.Write((byte)GlobalFortune.CurrentRoll);
             writer.Write((byte)Aggro.CurrentRoll);
-            writer.Write((byte)Mana.CurrentRoll);
+            writer.Write((byte)PetDamage.CurrentRoll);
         }
         public override void NetReceive(Item item, BinaryReader reader)
         {
             PetHealPower.CurrentRoll = reader.ReadByte();
             GlobalFortune.CurrentRoll = reader.ReadByte();
             Aggro.CurrentRoll = reader.ReadByte();
-            Mana.CurrentRoll = reader.ReadByte();
+            PetDamage.CurrentRoll = reader.ReadByte();
         }
         public override void SaveData(Item item, TagCompound tag)
         {
             tag.Add("Stat1", PetHealPower.CurrentRoll);
             tag.Add("Stat2", GlobalFortune.CurrentRoll);
             tag.Add("Stat3", Aggro.CurrentRoll);
-            tag.Add("Stat4", Mana.CurrentRoll);
+            tag.Add("Stat4", PetDamage.CurrentRoll);
         }
         public override void LoadData(Item item, TagCompound tag)
         {
@@ -81,7 +81,7 @@ namespace PetsOverhaul.LightPets
 
             if (tag.TryGet("Stat4", out int mana))
             {
-                Mana.CurrentRoll = mana;
+                PetDamage.CurrentRoll = mana;
             }
         }
         public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
@@ -95,12 +95,12 @@ namespace PetsOverhaul.LightPets
                         .Replace("<heal>", PetHealPower.BaseAndPerQuality())
                         .Replace("<fortune>", GlobalFortune.BaseAndPerQuality())
                         .Replace("<aggro>", Aggro.BaseAndPerQuality())
-                        .Replace("<mana>", Mana.BaseAndPerQuality())
+                        .Replace("<damage>", PetDamage.BaseAndPerQuality())
 
                         .Replace("<healLine>", PetHealPower.StatSummaryLine())
                         .Replace("<fortuneLine>", GlobalFortune.StatSummaryLine())
                         .Replace("<aggroLine>", Aggro.StatSummaryLine(Aggro.CurrentStatInt.ToString())) //Using overload so the + doesn't appear on tooltip
-                        .Replace("<manaLine>", Mana.StatSummaryLine())
+                        .Replace("<damageLine>", PetDamage.StatSummaryLine())
                         ));
             if (GlobalFortune.CurrentRoll <= 0)
             {

@@ -1,9 +1,11 @@
-﻿using Microsoft.Xna.Framework;
+﻿using CalamityMod;
+using Microsoft.Xna.Framework;
 using PetsOverhaul.Config;
 using PetsOverhaul.NPCs;
 using PetsOverhaulCalamityAddon.Buffs;
 using PetsOverhaulCalamityAddon.CalamityPets;
 using PetsOverhaulCalamityAddon.Systems;
+using System;
 using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
@@ -14,6 +16,18 @@ namespace PetsOverhaulCalamityAddon.Projectiles
     public class Trashcan : ModProjectile
     {
         public DannyDevitoEffect Trashman => Main.player[Projectile.owner].GetModPlayer<DannyDevitoEffect>();
+        public static float SickWeakness(NPC npc)
+        {
+            float baseVal = 1f;
+            if (npc.Calamity().VulnerableToSickness.HasValue)
+            {
+                if (npc.Calamity().VulnerableToSickness.Value)
+                    baseVal *= 2f;
+                else
+                    baseVal *= 0.5f;
+            }
+            return baseVal;
+        }
         public override void SetDefaults()
         {
             Projectile.CloneDefaults(ProjectileID.ThrowingKnife);
@@ -25,19 +39,19 @@ namespace PetsOverhaulCalamityAddon.Projectiles
             Projectile.friendly = true;
             Projectile.penetrate = 1;
         }
+        public override void ModifyHitNPC(NPC target, ref NPC.HitModifiers modifiers)
+        {
+            modifiers.FinalDamage *= SickWeakness(target);
+        }
         public override void OnKill(int timeLeft)
         {
             foreach (NPC npc in Main.ActiveNPCs)
             {
                 if (Projectile.Distance(npc.Center) < Trashman.radius)
                 {
-                    NpcPet.AddSlow(new NpcPet.PetSlow(Trashman.slow, Trashman.slowDuration, CalSlows.trashmanSignatureMove), npc);
-                    int chance = Trashman.confusionChance;
-                    if (chance > 100)
-                    {
-                        chance = 100;
-                    }
-                    if (Main.rand.NextBool(chance, 100))
+                    NpcPet.AddSlow(new NpcPet.PetSlow(Trashman.slow * SickWeakness(npc), Trashman.slowDuration, CalSlows.trashmanSignatureMove), npc);
+
+                    if (Main.rand.NextBool(Math.Min((int)(Trashman.confusionChance * SickWeakness(npc)), 100), 100))
                     {
                         npc.AddBuff(BuffID.Confused, Trashman.confusionDuration);
                     }
@@ -55,6 +69,7 @@ namespace PetsOverhaulCalamityAddon.Projectiles
         }
         public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
+            if (target.active)
             target.AddBuff(ModContent.BuffType<BleedOut>(), Trashman.bleedDuration);
         }
     }

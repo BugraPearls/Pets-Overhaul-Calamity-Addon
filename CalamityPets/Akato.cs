@@ -1,3 +1,4 @@
+using CalamityMod;
 using CalamityMod.Dusts;
 using Microsoft.Xna.Framework;
 using PetsOverhaul.Config;
@@ -31,9 +32,9 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         private int beginOnHit = 0;
         public int onHitExpiration = 180;
 
-        public int burnAmount = 300; //This burn is multiplied by 2 inside the SuperScorchingFlame code, so this is per second damage.
+        public int burnAmount = 250; //This burn is multiplied by 2 inside the SuperScorchingFlame code, so this is per second damage.
         public int burnDuration = 180;
-        public float explosionMult = 0.7f;
+        public float explosionMult = 0.6f;
         public float executeTreshold = 0.065f;
         public int explosionSize = 240;
 
@@ -71,7 +72,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
             }
         }
 
-        public float stackExplosionBonusMult = 0.1f;
+        public float stackExplosionBonusMult = 0.09f;
         public float StackExplosionBonus
         {
             get
@@ -121,7 +122,18 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                 return (int)(Math.Log10(dragonPracticeStacks) * stackExplosionSizeMult);
             }
         }
-
+        public static float HeatWeakness(NPC npc)
+        {
+            float baseVal = 1f;
+            if (npc.Calamity().VulnerableToHeat.HasValue)
+            {
+                if (npc.Calamity().VulnerableToHeat.Value)
+                    baseVal *= 2f;
+                else
+                    baseVal *= 0.5f;
+            }
+            return baseVal;
+        }
         public void AddStack(NPC npc)
         {
             long stack;
@@ -177,7 +189,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         {
             if (Pet.PetInUseWithSwapCd(CalamityPetIDs.Akato) && beginOnHit > 0)
             {
-                Projectile petProjectile = Projectile.NewProjectileDirect(GlobalPet.GetSource_Pet(EntitySourcePetIDs.PetProjectile), target.Center, Vector2.Zero, ModContent.ProjectileType<PetExplosion>(), Pet.PetDamage(damageDone * (explosionMult + StackExplosionBonus)), 0, Player.whoAmI, explosionSize + StackExplosionSize);
+                Projectile petProjectile = Projectile.NewProjectileDirect(GlobalPet.GetSource_Pet(EntitySourcePetIDs.PetProjectile), target.Center, Vector2.Zero, ModContent.ProjectileType<PetExplosion>(), Pet.PetDamage(hit.SourceDamage * (explosionMult + StackExplosionBonus)), 0, Player.whoAmI, explosionSize + StackExplosionSize);
                 petProjectile.DamageType = hit.DamageType;
                 petProjectile.CritChance = (int)Player.GetTotalCritChance(hit.DamageType);
                 if (ModContent.GetInstance<PetPersonalization>().AbilitySoundEnabled)
@@ -235,7 +247,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
             {
                 foreach (Smoldering smolder in Burns)
                 {
-                    npc.lifeRegen -= smolder.BurnAmount * 2;
+                    npc.lifeRegen -= (int)(smolder.BurnAmount * 2 * AkatoEffect.HeatWeakness(npc));
                     damage = npc.lifeMax / 100;
                 }
                 Smoldering highestExecute = Burns.MaxBy(x => x.ExecuteTreshold);

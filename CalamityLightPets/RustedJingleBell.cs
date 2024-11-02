@@ -35,7 +35,7 @@ namespace PetsOverhaul.LightPets
     {
         public LightPetStat Breathe = new(30, 14, 90);
         public LightPetStat Haste = new(25, 0.002f, 0.03f);
-        public LightPetStat MiningFortuneInWater = new(10, 2, 5);
+        public LightPetStat MiningFortuneInWater = new(10, 2, 10);
         public override bool InstancePerEntity => true;
         public override bool AppliesToEntity(Item entity, bool lateInstantiation)
         {

@@ -139,11 +139,19 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                 }
             }
         }
-        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
+        public override void Load()
         {
-            if (Pet.PetInUseWithSwapCd(CalamityPetIDs.MiniHiveMind) && target.active == false && GlobalPet.CorruptEnemies.Contains(target.type) && target.SpawnedFromStatue == false)
+            GlobalPet.OnEnemyDeath += EnemyKillEffect;
+        }
+        public override void Unload()
+        {
+            GlobalPet.OnEnemyDeath -= EnemyKillEffect;
+        }
+        public static void EnemyKillEffect(NPC npc, Player player)
+        {
+            if (player.TryGetModPlayer(out MiniHiveMindEffect hive) && hive.Pet.PetInUseWithSwapCd(CalamityPetIDs.MiniHiveMind) && GlobalPet.CorruptEnemies.Contains(npc.type) && npc.SpawnedFromStatue == false)
             {
-                evilKills++;
+                hive.evilKills++;
             }
         }
         public override void SaveData(TagCompound tag)

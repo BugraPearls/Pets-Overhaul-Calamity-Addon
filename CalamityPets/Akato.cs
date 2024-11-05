@@ -25,7 +25,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         public long dragonPracticeStacks = 0;
         public const long maxStacks = 1000000000000; //1 trillion, 1.000.000.000.000
         public const int bossMult = 10;
-        public const int stackForKill = 3;
+        public const int stackForKill = 4;
         public const int stackPerHit = 1;
         public int cooldown = 600;
 
@@ -38,6 +38,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         public float executeTreshold = 0.065f;
         public int explosionSize = 240;
 
+        #region Stack Bonuses
         public int stackBurnBonusMult = 40;
         public int StackBurnBonus
         {
@@ -122,6 +123,8 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                 return (int)(Math.Log10(dragonPracticeStacks) * stackExplosionSizeMult);
             }
         }
+        #endregion
+
         public static float HeatWeakness(NPC npc)
         {
             float baseVal = 1f;
@@ -134,30 +137,36 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
             }
             return baseVal;
         }
-        public void AddStack(NPC npc)
+        public override void Load()
         {
-            long stack;
-            if (npc.active == false)
+            GlobalPet.OnEnemyDeath += EnemyKillEffect;
+        }
+        public override void Unload()
+        {
+            GlobalPet.OnEnemyDeath -= EnemyKillEffect;
+        }
+        public static void EnemyKillEffect(NPC npc, Player player)
+        {
+            if (player.TryGetModPlayer(out AkatoEffect akato) && akato.Pet.PetInUseWithSwapCd(CalamityPetIDs.Akato) && npc.TryGetGlobalNPC(out SuperScorcherBreath scorch) && scorch.Burns.Count > 0)
             {
-                stack = stackForKill;
                 if (ModContent.GetInstance<PetPersonalization>().AbilitySoundEnabled)
                 {
                     SoundEngine.PlaySound(new SoundStyle("PetsOverhaulCalamityAddon/Sounds/Akato/AkatoExecute") with { PitchVariance = 1f, Identifier = "akatoExecute", MaxInstances = 4, SoundLimitBehavior = SoundLimitBehavior.ReplaceOldest, Type = SoundType.Sound, Volume = 0.7f }, npc.Center); //See disclaimer.txt in Sounds/Akato folder for further info regarding sounds origin
                 }
+                akato.dragonPracticeStacks += CalculateStacks(npc, stackForKill);
             }
-            else
-            {
-                stack = stackPerHit;
-            }
+        }
+        public static int CalculateStacks(NPC npc, int stackToAdd)
+        {
             if (npc.boss || NpcPet.NonBossTrueBosses.Contains(npc.type))
             {
-                stack *= bossMult;
+                stackToAdd *= bossMult;
             }
             else if (npc.rarity > 0)
             {
-                stack *= 1 + npc.rarity;
+                stackToAdd *= 1 + npc.rarity;
             }
-            dragonPracticeStacks += stack;
+            return stackToAdd;
         }
         public override void SaveData(TagCompound tag)
         {
@@ -206,7 +215,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                 beginOnHit = 0;
                 if (GlobalPet.LifestealCheck(target))
                 {
-                    AddStack(target);
+                    dragonPracticeStacks += CalculateStacks(target, stackPerHit);
                 }
             }
         }
@@ -214,7 +223,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         {
             if (Pet.PetInUseWithSwapCd(CalamityPetIDs.Akato) && GlobalPet.LifestealCheck(target) && proj.TryGetGlobalProjectile(out ProjectileSourceChecks petProj) && petProj.petProj)
             {
-                AddStack(target);
+                dragonPracticeStacks += CalculateStacks(target, stackPerHit);
                 if (target.active && target.TryGetGlobalNPC(out SuperScorcherBreath scorch))
                 {
                     scorch.Burns.Add(new SuperScorcherBreath.Smoldering(Player.whoAmI, burnDuration + StackBurnTime));
@@ -258,7 +267,6 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                     CombatText.NewText(npc.getRect(), Color.GhostWhite, (int)(npc.lifeMax * highestExecute.ExecuteTreshold), true);
 
                     npc.StrikeInstantKill();
-                    highestExecute.AkatoOfBurner.AddStack(npc);
                 }
             }
         }
@@ -280,11 +288,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                     Burns[i] = value;
                 }
 
-                int num = Burns.FindIndex(x => x.BurnDuration <= 0);
-                if (num != -1)
-                {
-                    Burns.RemoveAt(num);
-                }
+                Burns.RemoveAll(x => x.BurnDuration <= 0);
             }
             return base.PreAI(npc);
         }

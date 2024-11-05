@@ -80,7 +80,7 @@ Mods: {
 				<class>
 				- [i:<stackIcon>] Current stacks: <dragonPractice>. Sources of stack gains are as follows:
 				 * Direct hits on the primary target and all enemies hit by explosion give <hitStack>.
-				 * Direct kills on the primary target and all enemies killed by explosion and execute give <killStack>.
+				 * Enemies that die while being under the effect of Burn of Explosion give <killStack>.
 				 * Gained stacks are multiplied by <bossMultiply> if the target is a Boss, or multiplied by their rarity value + 1.
 				- Press Pet Ability Keybind (<keybind>) to charge Super Scorcher Breath for your next attack, exploding on hit,
 				enemies hit by explosion get burnt and grant you permanent stacks, with <cooldown> seconds cooldown.

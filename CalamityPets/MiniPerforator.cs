@@ -136,11 +136,19 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                 luck += luckVal;
             }
         }
-        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
+        public override void Load()
         {
-            if (Pet.PetInUseWithSwapCd(CalamityPetIDs.MiniPerforator) && target.active == false && GlobalPet.CrimsonEnemies.Contains(target.type) && target.SpawnedFromStatue == false)
+            GlobalPet.OnEnemyDeath += EnemyKillEffect;
+        }
+        public override void Unload()
+        {
+            GlobalPet.OnEnemyDeath -= EnemyKillEffect;
+        }
+        public static void EnemyKillEffect(NPC npc, Player player)
+        {
+            if (player.TryGetModPlayer(out MiniPerforatorEffect perf) && perf.Pet.PetInUseWithSwapCd(CalamityPetIDs.MiniPerforator) && GlobalPet.CrimsonEnemies.Contains(npc.type) && npc.SpawnedFromStatue == false)
             {
-                evilKills++;
+                perf.evilKills++;
             }
         }
         public override void ModifyHurt(ref Player.HurtModifiers modifiers)

@@ -258,16 +258,16 @@ Mods: {
 				 * Lifeguard Shield has a <cooldown> seconds cooldown.
 				 * When activated, for the same duration, power absorption deals <lifeguardMult>x damage.
 				- Increases Rogue stealth gain by <stealthMoving>% while moving, and <stealthNotMoving>% while not.
-				- Dealing the final blow on an enemy with Rogue hits absorbs their power.
-				 * Adding <percAbsorb>% of their base damage value to your next hit.
+				- Killing an enemy absorbs their power for your next Rogue hit.
+				 * Adding <percAbsorb>% of their base damage value to your next Rogue hit.
 				 * Proccing this bonus damage grants <procShield> shield for <procShieldDuration> seconds.
 				 * Currently stored damage to be added to your next hit: <storedDmg>
 				'''
 			RomajedaOrchid:
 				'''
 				<class>
-				- Dealing the final blow on an enemy with Rogue hits absorbs their power.
-				 * Adding <percAbsorb>% of their base damage value to your next hit.
+				- Killing an enemy absorbs their power for your next Rogue hit.
+				 * Adding <percAbsorb>% of their base damage value to your next Rogue hit.
 				 * Stealth Strikes multiplies this damage by <stealthMult>x.
 				 * Currently stored damage to be added to your next hit: <storedDmg>
 				'''

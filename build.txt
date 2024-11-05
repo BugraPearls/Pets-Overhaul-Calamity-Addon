@@ -1,6 +1,6 @@
-modReferences = PetsOverhaul@3.0.7, CalamityMod@2.0.4.5
+modReferences = PetsOverhaul@3.0.9, CalamityMod@2.0.4.5
 displayName = Pets Overhaul: Calamity Addon
 author = Pearlie
-version = 1.0.6
+version = 1.0.6.1
 buildIgnore = icon_workshop.png
 homepage = https://discord.gg/KubSpqvDGE

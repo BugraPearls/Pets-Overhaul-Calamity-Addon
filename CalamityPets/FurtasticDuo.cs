@@ -78,17 +78,25 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                 };
             }
         }
-        public override void OnHitNPCWithProj(Projectile proj, NPC target, NPC.HitInfo hit, int damageDone)
+        public override void Load()
         {
-            if (Pet.PetInUseWithSwapCd(CalamityPetIDs.FurtasticDuo) && target.active == false && hit.DamageType is RogueDamageClass)
+            GlobalPet.OnEnemyDeath += OnKillEffect;
+        }
+        public override void Unload()
+        {
+            GlobalPet.OnEnemyDeath -= OnKillEffect;
+        }
+        public static void OnKillEffect(NPC npc, Player player)
+        {
+            if (player.TryGetModPlayer(out FurtasticDuoEffect duo) && duo.Pet.PetInUseWithSwapCd(CalamityPetIDs.FurtasticDuo))
             {
-                if ((target.damage * absorbPercent) > currentNextDamage)
-                    currentNextDamage = (int)(target.damage * absorbPercent);
+                if ((npc.damage * duo.absorbPercent) > duo.currentNextDamage)
+                    duo.currentNextDamage = (int)(npc.damage * duo.absorbPercent);
             }
         }
         public override void ModifyHitNPCWithProj(Projectile proj, NPC target, ref NPC.HitModifiers modifiers)
         {
-            if (Pet.PetInUseWithSwapCd(CalamityPetIDs.FurtasticDuo) && GlobalPet.LifestealCheck(target) && modifiers.DamageType is RogueDamageClass)
+            if (currentNextDamage > 0 && Pet.PetInUseWithSwapCd(CalamityPetIDs.FurtasticDuo) && GlobalPet.LifestealCheck(target) && modifiers.DamageType is RogueDamageClass)
             {
                 modifiers.FlatBonusDamage += currentNextDamage * (lifeguardMultTimer > 0 ? lifeguardMult : 1f);
                 currentNextDamage = 0;

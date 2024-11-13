@@ -29,7 +29,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         public float infectionHeavySlow = 2.2f;
         public override void PostUpdateMiscEffects()
         {
-            if (Pet.PetInUseWithSwapCd(CalamityPetIDs.Astrophage))
+            if (PetIsEquipped())
             {
                 GlobalPet.CircularDustEffect(Player.Center, DustID.CoralTorch, infectRadius, 8);
                 GlobalPet.CircularDustEffect(Player.Center, DustID.Granite, slowRadius, 30, scale: 0.8f);

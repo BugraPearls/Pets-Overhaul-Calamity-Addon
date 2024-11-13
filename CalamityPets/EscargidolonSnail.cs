@@ -35,7 +35,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         public float aggroToMs = 250;
         public override void PostUpdateMiscEffects()
         {
-            if (Pet.PetInUseWithSwapCd(CalamityPetIDs.EscargidolonSnail))
+            if (PetIsEquipped())
             {
                 if (Player.aggro >= 0)
                 {

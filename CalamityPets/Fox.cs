@@ -23,7 +23,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         private int cleansePenalty = 0;
         public override void PreUpdate()
         {
-            if (Pet.PetInUse(CalamityPetIDs.Fox))
+            if (PetIsEquipped(false))
             {
                 Pet.SetPetAbilityTimer(cooldown);
             }
@@ -36,7 +36,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         }
         public override void ProcessTriggers(TriggersSet triggersSet)
         {
-            if (Pet.AbilityPressCheck() && Pet.PetInUseWithSwapCd(CalamityPetIDs.Fox))
+            if (Pet.AbilityPressCheck() && PetIsEquipped())
             {
                 int amountOfDebuffs = 0;
                 for (int i = 0; i < Player.MaxBuffs; i++)

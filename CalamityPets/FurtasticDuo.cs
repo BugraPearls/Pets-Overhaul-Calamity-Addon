@@ -33,7 +33,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         public int procShieldDuration = 150;
         public override void PreUpdate()
         {
-            if (Pet.PetInUse(CalamityPetIDs.FurtasticDuo))
+            if (PetIsEquipped(false))
             {
                 Pet.SetPetAbilityTimer(cooldown);
                 lifeguardMultTimer--;
@@ -45,7 +45,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         }
         public override void PostUpdateEquips()
         {
-            if (Pet.PetInUseWithSwapCd(CalamityPetIDs.FurtasticDuo))
+            if (PetIsEquipped())
             {
                 Player.Calamity().stealthGenMoving += stealthMoving;
                 Player.Calamity().stealthGenStandstill += stealthNotMoving;
@@ -53,7 +53,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         }
         public override void ModifyHurt(ref Player.HurtModifiers modifiers)
         {
-            if (Pet.PetInUseWithSwapCd(CalamityPetIDs.FurtasticDuo) && Pet.timer <= 0)
+            if (PetIsEquipped() && Pet.timer <= 0)
             {
                 int shieldAmount = (int)((Player.statLifeMax * baseHpShield + (Player.statLifeMax2 - Player.statLifeMax) * bonusHpShield) * Pet.petShieldMultiplier);
 
@@ -89,7 +89,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         }
         public static void OnKillEffect(NPC npc, Player player)
         {
-            if (player.TryGetModPlayer(out FurtasticDuoEffect duo) && duo.Pet.PetInUseWithSwapCd(CalamityPetIDs.FurtasticDuo))
+            if (player.TryGetModPlayer(out FurtasticDuoEffect duo) && duo.PetIsEquipped())
             {
                 if ((npc.damage * duo.absorbPercent) > duo.currentNextDamage)
                     duo.currentNextDamage = (int)(npc.damage * duo.absorbPercent);
@@ -97,7 +97,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         }
         public override void ModifyHitNPCWithProj(Projectile proj, NPC target, ref NPC.HitModifiers modifiers)
         {
-            if (currentNextDamage > 0 && Pet.PetInUseWithSwapCd(CalamityPetIDs.FurtasticDuo) && GlobalPet.LifestealCheck(target) && modifiers.DamageType is RogueDamageClass)
+            if (currentNextDamage > 0 && PetIsEquipped() && GlobalPet.LifestealCheck(target) && modifiers.DamageType is RogueDamageClass)
             {
                 modifiers.FlatBonusDamage += currentNextDamage * (lifeguardMultTimer > 0 ? lifeguardMult : 1f);
                 currentNextDamage = 0;

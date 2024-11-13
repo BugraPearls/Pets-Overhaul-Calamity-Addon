@@ -30,7 +30,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         public int currentRegen = 0;
         public override void PreUpdate()
         {
-            if (Pet.PetInUse(CalamityPetIDs.LadShark))
+            if (PetIsEquipped(false))
             {
                 Pet.SetPetAbilityTimer(regenCd);
             }
@@ -46,21 +46,21 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         }
         public override void ModifyWeaponDamage(Item item, ref StatModifier damage)
         {
-            if (Pet.PetInUseWithSwapCd(CalamityPetIDs.LadShark))
+            if (PetIsEquipped())
             {
                 damage *= selfDmg;
             }
         }
         public override void ModifyHurt(ref Player.HurtModifiers modifiers)
         {
-            if (Pet.PetInUseWithSwapCd(CalamityPetIDs.LadShark))
+            if (PetIsEquipped())
             {
                 modifiers.FinalDamage *= enemyDmg;
             }
         }
         public override void ProcessTriggers(TriggersSet triggersSet)
         {
-            if (Pet.AbilityPressCheck() && Pet.PetInUseWithSwapCd(CalamityPetIDs.LadShark))
+            if (Pet.AbilityPressCheck() && PetIsEquipped())
             {
                 if (ModContent.GetInstance<PetPersonalization>().AbilitySoundEnabled)
                     SoundEngine.PlaySound(SoundID.DD2_DarkMageCastHeal with { PitchVariance = 0.4f }, Player.Center);

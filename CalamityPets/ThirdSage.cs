@@ -22,21 +22,21 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         public override PetClasses PetClassPrimary => PetClasses.Defensive;
         public override void PreUpdate()
         {
-            if (Pet.PetInUse(CalamityPetIDs.ThirdSage))
+            if (PetIsEquipped(false))
             {
                 Pet.SetPetAbilityTimer(cooldown);
             }
         }
         public override void PostUpdateMiscEffects()
         {
-            if (Pet.PetInUse(CalamityPetIDs.ThirdSage) && Pet.timer > 0)
+            if (PetIsEquipped(false) && Pet.timer > 0)
             {
                 Player.GetDamage<GenericDamageClass>() *= damageMult;
             }
         }
         public override void ProcessTriggers(TriggersSet triggersSet)
         {
-            if (Pet.AbilityPressCheck() && Pet.PetInUseWithSwapCd(CalamityPetIDs.ThirdSage))
+            if (Pet.AbilityPressCheck() && PetIsEquipped())
             {
                 if (ModContent.GetInstance<PetPersonalization>().AbilitySoundEnabled)
                     SoundEngine.PlaySound(SoundID.Item2 with { Pitch = -0.5f, PitchVariance = 0.4f }, Player.Center);

@@ -38,7 +38,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
             {
                 WellFedAmp(defense, crit, damage, summonerKb, moveSpd, miningSpeed);
             }
-            if (Pet.PetInUseWithSwapCd(CalamityPetIDs.Pineapple)) //Half of all Well Fed buffs (Calamity Modified values)
+            if (PetIsEquipped()) //Half of all Well Fed buffs (Calamity Modified values)
             {
                 if (Player.HasBuff(ModContent.BuffType<TheGrandNourishment>()))
                 {
@@ -68,7 +68,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
             int buffType = type;
             int buffTime = timeToAdd;
             PineappleEffect pineapple = self.GetModPlayer<PineappleEffect>();
-            if (pineapple.Pet.PetInUseWithSwapCd(CalamityPetIDs.Pineapple) && BuffID.Sets.IsWellFed[type])
+            if (pineapple.PetIsEquipped() && BuffID.Sets.IsWellFed[type])
             {
                 switch (type)
                 {

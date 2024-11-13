@@ -23,7 +23,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         public bool check = false;
         public override void PreUpdate()
         {
-            if (Pet.PetInUse(CalamityPetIDs.ChibiiDevourer) && Player.difficulty == PlayerDifficultyID.Hardcore)
+            if (PetIsEquipped(false) && Player.difficulty == PlayerDifficultyID.Hardcore)
                 check = true;
             else
                 check = false;

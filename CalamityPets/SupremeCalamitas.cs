@@ -43,21 +43,21 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         }
         public override void ModifyWeaponDamage(Item item, ref StatModifier damage)
         {
-            if (Player.HasBuff(BuffID.ManaSickness) && Pet.PetInUseWithSwapCd(CalamityPetIDs.SupremeCalamitas) && ItemIsATool(item) == false && item.DamageType is not SummonDamageClass or MagicSummonHybridDamageClass or MagicDamageClass)
+            if (Player.HasBuff(BuffID.ManaSickness) && PetIsEquipped() && ItemIsATool(item) == false && item.DamageType is not SummonDamageClass or MagicSummonHybridDamageClass or MagicDamageClass)
             {
                 damage *= 1f - Player.manaSickReduction;
             }
         }
         public override void ModifyHitNPCWithItem(Item item, NPC target, ref NPC.HitModifiers modifiers)
         {
-            if (Pet.PetInUseWithSwapCd(CalamityPetIDs.SupremeCalamitas) && ItemIsATool(item) == false && modifiers.DamageType is not SummonDamageClass && item.channel == false)
+            if (PetIsEquipped() && ItemIsATool(item) == false && modifiers.DamageType is not SummonDamageClass && item.channel == false)
             {
                 SetCritDmgModifs(ref modifiers);
             }
         }
         public override void ModifyHitNPCWithProj(Projectile proj, NPC target, ref NPC.HitModifiers modifiers)
         {
-            if (Pet.PetInUseWithSwapCd(CalamityPetIDs.SupremeCalamitas) && modifiers.DamageType is not SummonDamageClass && proj.TryGetGlobalProjectile(out ProjectileSourceChecks source) && source.itemProjIsFrom.channel == false && ItemIsATool(source.itemProjIsFrom) == false)
+            if (PetIsEquipped() && modifiers.DamageType is not SummonDamageClass && proj.TryGetGlobalProjectile(out ProjectileSourceChecks source) && source.itemProjIsFrom.channel == false && ItemIsATool(source.itemProjIsFrom) == false)
             {
                 SetCritDmgModifs(ref modifiers);
             }
@@ -71,7 +71,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         {
             if (originalManaCost == -1)
                 originalManaCost = item.mana;
-            if (player.TryGetModPlayer(out SupremeCalamitasEffect sCal) && sCal.Pet.PetInUseWithSwapCd(CalamityPetIDs.SupremeCalamitas) && item.damage > 0 && SupremeCalamitasEffect.ItemIsATool(item) == false && item.channel == false)
+            if (player.TryGetModPlayer(out SupremeCalamitasEffect sCal) && sCal.PetIsEquipped() && item.damage > 0 && SupremeCalamitasEffect.ItemIsATool(item) == false && item.channel == false)
             {
                 if (item.DamageType is SummonDamageClass or MagicDamageClass or MagicSummonHybridDamageClass && item.mana > 0 && item.channel)
                 {
@@ -93,7 +93,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         }
         public override void ModifyManaCost(Item item, Player player, ref float reduce, ref float mult)
         {
-            if (player.TryGetModPlayer(out SupremeCalamitasEffect sCal) && sCal.Pet.PetInUseWithSwapCd(CalamityPetIDs.SupremeCalamitas) && SupremeCalamitasEffect.ItemIsATool(item) == false && item.DamageType is MagicDamageClass or MagicSummonHybridDamageClass && item.mana > 0)
+            if (player.TryGetModPlayer(out SupremeCalamitasEffect sCal) && sCal.PetIsEquipped() && SupremeCalamitasEffect.ItemIsATool(item) == false && item.DamageType is MagicDamageClass or MagicSummonHybridDamageClass && item.mana > 0)
             {
                 mult += sCal.magicExtraCost;
             }

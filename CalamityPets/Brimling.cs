@@ -26,21 +26,21 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         public float kbFromReflect = 5f;
         public override void PreUpdate()
         {
-            if (Pet.PetInUse(CalamityPetIDs.Brimling))
+            if (PetIsEquipped(false))
             {
                 Pet.SetPetAbilityTimer(cooldown);
             }
         }
         public override void PostUpdateMiscEffects()
         {
-            if (Pet.PetInUseWithSwapCd(CalamityPetIDs.Brimling) && Player.statLife < Player.statLifeMax2 * drTreshold)
+            if (PetIsEquipped() && Player.statLife < Player.statLifeMax2 * drTreshold)
             {
                 Player.endurance += dr;
             }
         }
         public override void OnHurt(Player.HurtInfo info)
         {
-            if (Pet.PetInUseWithSwapCd(CalamityPetIDs.Brimling))
+            if (PetIsEquipped())
             {
                 if (Pet.timer <= 0)
                 {

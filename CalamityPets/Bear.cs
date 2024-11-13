@@ -28,14 +28,14 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         public override PetClasses PetClassSecondary => PetClasses.Defensive;
         public override void PreUpdate()
         {
-            if (Pet.PetInUse(CalamityPetIDs.Bear))
+            if (PetIsEquipped(false))
             {
                 Pet.SetPetAbilityTimer(cooldown);
             }
         }
         public override void PostUpdateEquips()
         {
-            if (Pet.PetInUseWithSwapCd(CalamityPetIDs.Bear))
+            if (PetIsEquipped())
             {
                 Player.GetDamage<RogueDamageClass>() += rogueDmg;
                 Player.Calamity().bonusStealthDamage += stealthDmg;
@@ -45,7 +45,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         }
         public override void ModifyHurt(ref Player.HurtModifiers modifiers)
         {
-            if (Pet.PetInUseWithSwapCd(CalamityPetIDs.Bear) && Pet.timer <= 0)
+            if (PetIsEquipped() && Pet.timer <= 0)
             {
                 int shieldAmount = (int)((Player.statLifeMax * baseHpShield + (Player.statLifeMax2 - Player.statLifeMax) * bonusHpShield) * Pet.petShieldMultiplier);
 

@@ -23,7 +23,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         public int leg = 9;
         public override void PostUpdateMiscEffects()
         {
-            if (Pet.PetInUseWithSwapCd(CalamityPetIDs.Levi))
+            if (PetIsEquipped())
             {
                 Player.GetDamage<GenericDamageClass>() += Player.fishingSkill * dmgPerFish;
                 Player.statDefense += (int)(Player.fishingSkill / oneDefPerFishPower);
@@ -56,7 +56,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
         {
             LeviEffect levi = Main.LocalPlayer.GetModPlayer<LeviEffect>();
-            if (levi.Pet.PetInUseWithSwapCd(CalamityPetIDs.Levi))
+            if (levi.PetIsEquipped())
             {
                 int def = item.defense;
                 if (item.type == ItemID.AnglerHat)

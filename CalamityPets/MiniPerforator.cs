@@ -116,7 +116,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                 regen = (int)(regen * evilMult);
             }
 
-            if (Pet.PetInUseWithSwapCd(CalamityPetIDs.MiniPerforator))
+            if (PetIsEquipped())
             {
                 Player.statLifeMax2 += health;
                 Player.statDefense += defense;
@@ -125,14 +125,14 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         }
         public override void UpdateLifeRegen()
         {
-            if (Pet.PetInUseWithSwapCd(CalamityPetIDs.MiniPerforator))
+            if (PetIsEquipped())
             {
                 Player.lifeRegen += regen;
             }
         }
         public override void ModifyLuck(ref float luck)
         {
-            if (Pet.PetInUseWithSwapCd(CalamityPetIDs.MiniPerforator))
+            if (PetIsEquipped())
             {
                 luck += luckVal;
             }
@@ -147,14 +147,14 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         }
         public static void EnemyKillEffect(NPC npc, Player player)
         {
-            if (player.TryGetModPlayer(out MiniPerforatorEffect perf) && perf.Pet.PetInUseWithSwapCd(CalamityPetIDs.MiniPerforator) && GlobalPet.CrimsonEnemies.Contains(npc.type) && npc.SpawnedFromStatue == false)
+            if (player.TryGetModPlayer(out MiniPerforatorEffect perf) && perf.PetIsEquipped() && GlobalPet.CrimsonEnemies.Contains(npc.type) && npc.SpawnedFromStatue == false)
             {
                 perf.evilKills++;
             }
         }
         public override void ModifyHurt(ref Player.HurtModifiers modifiers)
         {
-            if (Pet.PetInUseWithSwapCd(CalamityPetIDs.MiniPerforator) && modifiers.DamageSource.TryGetCausingEntity(out Entity entity) && ((entity is Projectile proj && proj.TryGetGlobalProjectile(out ProjectileSourceChecks source) && GlobalPet.CrimsonEnemies.Contains(Main.npc[source.sourceNpcId].type)) || (entity is NPC npc && GlobalPet.CrimsonEnemies.Contains(npc.type))))
+            if (PetIsEquipped() && modifiers.DamageSource.TryGetCausingEntity(out Entity entity) && ((entity is Projectile proj && proj.TryGetGlobalProjectile(out ProjectileSourceChecks source) && GlobalPet.CrimsonEnemies.Contains(Main.npc[source.sourceNpcId].type)) || (entity is NPC npc && GlobalPet.CrimsonEnemies.Contains(npc.type))))
             {
                 modifiers.FinalDamage *= 1f - drIfHurtByCrimson;
             }

@@ -29,7 +29,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         public int cooldown = 420;
         public override void ProcessTriggers(TriggersSet triggersSet)
         {
-            if (Pet.AbilityPressCheck() && Pet.PetInUseWithSwapCd(CalamityPetIDs.DannyDevito))
+            if (Pet.AbilityPressCheck() && PetIsEquipped())
             {
                 SoundEngine.PlaySound(SoundID.Item1 with { PitchVariance = 0.2f }, Player.Center);
                 Projectile petProjectile = Projectile.NewProjectileDirect(GlobalPet.GetSource_Pet(EntitySourcePetIDs.PetProjectile), Player.Center, new Vector2(Main.MouseWorld.X - Player.Center.X, Main.MouseWorld.Y - Player.Center.Y) * 0.03f, ModContent.ProjectileType<Trashcan>(), Pet.PetDamage(damage), 4f, Player.whoAmI);
@@ -40,7 +40,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         }
         public override void PreUpdate()
         {
-            if (Pet.PetInUseWithSwapCd(CalamityPetIDs.DannyDevito))
+            if (PetIsEquipped())
             {
                 Pet.SetPetAbilityTimer(cooldown);
             }

@@ -19,7 +19,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         public int currentNextDamage = 0;
         public override void ModifyHitNPCWithProj(Projectile proj, NPC target, ref NPC.HitModifiers modifiers)
         {
-            if (currentNextDamage > 0 && Pet.PetInUseWithSwapCd(CalamityPetIDs.Kendra) && GlobalPet.LifestealCheck(target) && modifiers.DamageType is RogueDamageClass)
+            if (currentNextDamage > 0 && PetIsEquipped() && GlobalPet.LifestealCheck(target) && modifiers.DamageType is RogueDamageClass)
             {
                 modifiers.FlatBonusDamage += currentNextDamage * (proj.Calamity().stealthStrike ? stealthMult : 1f);
                 currentNextDamage = 0;
@@ -35,7 +35,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         }
         public static void OnKillEffect(NPC npc, Player player)
         {
-            if (player.TryGetModPlayer(out KendraEffect kendra) && kendra.Pet.PetInUseWithSwapCd(CalamityPetIDs.Kendra))
+            if (player.TryGetModPlayer(out KendraEffect kendra) && kendra.PetIsEquipped())
             {
                 if ((npc.damage * kendra.absorbPercent) > kendra.currentNextDamage)
                     kendra.currentNextDamage = (int)(npc.damage * kendra.absorbPercent);

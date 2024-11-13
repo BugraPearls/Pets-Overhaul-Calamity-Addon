@@ -30,14 +30,14 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         public float slowAmount = 0.25f;
         public override void PreUpdate()
         {
-            if (Pet.PetInUse(CalamityPetIDs.PlagueBringerBab))
+            if (PetIsEquipped(false))
             {
                 Pet.SetPetAbilityTimer(cooldown);
             }
         }
         public override void ProcessTriggers(TriggersSet triggersSet)
         {
-            if (Pet.AbilityPressCheck() && Pet.PetInUseWithSwapCd(CalamityPetIDs.PlagueBringerBab))
+            if (Pet.AbilityPressCheck() && PetIsEquipped())
             {
                 if (ModContent.GetInstance<PetPersonalization>().AbilitySoundEnabled)
                 {
@@ -64,7 +64,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         }
         public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
-            if (Pet.PetInUseWithSwapCd(CalamityPetIDs.PlagueBringerBab) && hit.DamageType is RogueDamageClass && target.TryGetGlobalNPC(out PlaguebringerBabStacks victim))
+            if (PetIsEquipped() && hit.DamageType is RogueDamageClass && target.TryGetGlobalNPC(out PlaguebringerBabStacks victim))
             {
                 GlobalPet.CircularDustEffect(target.Center, DustID.JungleTorch, surroundRadius, 12);
                 if (target.active)

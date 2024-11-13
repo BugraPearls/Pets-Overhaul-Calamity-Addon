@@ -46,14 +46,14 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         }
         public override void PreUpdate()
         {
-            if (Pet.PetInUse(CalamityPetIDs.FlakHermit))
+            if (PetIsEquipped(false))
             {
                 Pet.SetPetAbilityTimer(cooldown);
             }
         }
         public override void PostUpdate()
         {
-            if (Pet.PetInUseWithSwapCd(CalamityPetIDs.FlakHermit) && Player.Calamity().stealthStrikeThisFrame && Pet.timer <= 0)
+            if (PetIsEquipped() && Player.Calamity().stealthStrikeThisFrame && Pet.timer <= 0)
             {
                 AcidExplosion(Player.Center);
                 Pet.timer = Pet.timerMax;
@@ -62,7 +62,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         }
         public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
-            if (Pet.PetInUseWithSwapCd(CalamityPetIDs.FlakHermit) && hit.DamageType is RogueDamageClass && nextHitIsExplosive)
+            if (PetIsEquipped() && hit.DamageType is RogueDamageClass && nextHitIsExplosive)
             {
                 AcidExplosion(target.Center);
                 nextHitIsExplosive = false;
@@ -70,7 +70,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         }
         public override void PostUpdateEquips() //seems like Calamity runs rogueStealthMax checks at MiscEffects, which causes it to not work properly
         {
-            if (Pet.PetInUseWithSwapCd(CalamityPetIDs.FlakHermit))
+            if (PetIsEquipped())
             {
                 Player.Calamity().stealthGenStandstill += standingStealth;
                 Player.Calamity().bonusStealthDamage += stealthDmg;

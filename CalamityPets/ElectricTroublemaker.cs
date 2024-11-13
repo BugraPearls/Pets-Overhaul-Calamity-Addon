@@ -183,7 +183,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         }
         public override void PreUpdate()
         {
-            if (Pet.PetInUse(CalamityPetIDs.ElectricTroublemaker))
+            if (PetIsEquipped(false))
             {
                 Pet.SetPetAbilityTimer(baseCooldown);
             }
@@ -194,7 +194,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         }
         public override void DrawEffects(PlayerDrawSet drawInfo, ref float r, ref float g, ref float b, ref float a, ref bool fullBright)
         {
-            if (chargeNextAttack && Pet.PetInUse(CalamityPetIDs.ElectricTroublemaker) && Main.rand.NextBool(15) && drawInfo.shadow == 0f)
+            if (chargeNextAttack && PetIsEquipped(false) && Main.rand.NextBool(15) && drawInfo.shadow == 0f)
             {
                 switch (currentMove)
                 {
@@ -253,7 +253,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         }
         public override void ProcessTriggers(TriggersSet triggersSet)
         {
-            if (PetKeybinds.PetAbilitySwitch.JustPressed && Pet.PetInUse(CalamityPetIDs.ElectricTroublemaker))
+            if (PetKeybinds.PetAbilitySwitch.JustPressed && PetIsEquipped(false))
             {
                 currentMove++;
                 if (currentMove >= 6)
@@ -261,7 +261,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                     currentMove = 0;
                 }
             }
-            if (Player.dead == false && PetKeybinds.UsePetAbility.JustPressed && Pet.PetInUseWithSwapCd(CalamityPetIDs.ElectricTroublemaker) && internalCooldownToInitiateAttack <= 0)
+            if (Player.dead == false && PetKeybinds.UsePetAbility.JustPressed && PetIsEquipped() && internalCooldownToInitiateAttack <= 0)
             {
                 chargeNextAttack = !chargeNextAttack;
                 internalCooldownToInitiateAttack = 10;
@@ -269,7 +269,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         }
         public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
-            if (Pet.PetInUseWithSwapCd(CalamityPetIDs.ElectricTroublemaker) && chargeNextAttack)
+            if (PetIsEquipped() && chargeNextAttack)
             {
                 switch (currentMove)
                 {

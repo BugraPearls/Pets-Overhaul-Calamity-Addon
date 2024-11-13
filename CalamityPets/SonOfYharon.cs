@@ -31,14 +31,14 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         public override PetClasses PetClassSecondary => PetClasses.Utility;
         public override void PreUpdate()
         {
-            if (Pet.PetInUse(CalamityPetIDs.SonOfYharon))
+            if (PetIsEquipped(false))
             {
                 Pet.SetPetAbilityTimer(rebirthCooldown);
             }
         }
         public override void PostUpdateMiscEffects()
         {
-            if (Pet.PetInUseWithSwapCd(CalamityPetIDs.SonOfYharon))
+            if (PetIsEquipped())
             {
                 timer--;
                 deadTimer--;
@@ -103,14 +103,14 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         }
         public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
-            if (Pet.PetInUseWithSwapCd(CalamityPetIDs.SonOfYharon) && (timer > 0 || deadTimer > 0))
+            if (PetIsEquipped() && (timer > 0 || deadTimer > 0))
             {
                 target.AddBuff(ModContent.BuffType<Dragonfire>(), (int)Math.Ceiling(fireTime * (deadTimer > 0 ? 1f : healthToMult)));
             }
         }
         public override void ProcessTriggers(TriggersSet triggersSet)
         {
-            if (Pet.AbilityPressCheck() && Pet.PetInUseWithSwapCd(CalamityPetIDs.SonOfYharon))
+            if (Pet.AbilityPressCheck() && PetIsEquipped())
             {
                 if (ModContent.GetInstance<PetPersonalization>().AbilitySoundEnabled)
                 {
@@ -133,7 +133,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         public override bool PreKill(double damage, int hitDirection, bool pvp, ref bool playSound, ref bool genDust, ref PlayerDeathReason damageSource)
         {
             timer = 0;
-            if (Pet.PetInUseWithSwapCd(CalamityPetIDs.SonOfYharon) && Pet.timer <= 0)
+            if (PetIsEquipped() && Pet.timer <= 0)
             {
                 if (ModContent.GetInstance<PetPersonalization>().AbilitySoundEnabled)
                 {

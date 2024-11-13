@@ -149,7 +149,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         }
         public static void EnemyKillEffect(NPC npc, Player player)
         {
-            if (player.TryGetModPlayer(out AkatoEffect akato) && akato.Pet.PetInUseWithSwapCd(CalamityPetIDs.Akato) && npc.TryGetGlobalNPC(out SuperScorcherBreath scorch) && scorch.Burns.Count > 0)
+            if (player.TryGetModPlayer(out AkatoEffect akato) && akato.PetIsEquipped() && npc.TryGetGlobalNPC(out SuperScorcherBreath scorch) && scorch.Burns.Count > 0)
             {
                 if (ModContent.GetInstance<PetPersonalization>().AbilitySoundEnabled)
                 {
@@ -187,7 +187,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
             {
                 dragonPracticeStacks = maxStacks;
             }
-            if (Pet.PetInUse(CalamityPetIDs.Akato))
+            if (PetIsEquipped(false))
             {
                 Pet.SetPetAbilityTimer(cooldown);
                 beginOnHit--;
@@ -198,7 +198,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         }
         public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
-            if (Pet.PetInUseWithSwapCd(CalamityPetIDs.Akato) && beginOnHit > 0)
+            if (PetIsEquipped() && beginOnHit > 0)
             {
                 Projectile petProjectile = Projectile.NewProjectileDirect(GlobalPet.GetSource_Pet(EntitySourcePetIDs.PetProjectile), target.Center, Vector2.Zero, ModContent.ProjectileType<PetExplosion>(), Pet.PetDamage(hit.SourceDamage * (explosionMult + StackExplosionBonus)), 0, Player.whoAmI, explosionSize + StackExplosionSize);
                 petProjectile.DamageType = hit.DamageType;
@@ -223,7 +223,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         }
         public override void OnHitNPCWithProj(Projectile proj, NPC target, NPC.HitInfo hit, int damageDone)
         {
-            if (Pet.PetInUseWithSwapCd(CalamityPetIDs.Akato) && GlobalPet.LifestealCheck(target) && proj.TryGetGlobalProjectile(out ProjectileSourceChecks petProj) && petProj.petProj)
+            if (PetIsEquipped() && GlobalPet.LifestealCheck(target) && proj.TryGetGlobalProjectile(out ProjectileSourceChecks petProj) && petProj.petProj)
             {
                 dragonPracticeStacks += CalculateStacks(target, stackPerHit);
                 if (target.active && target.TryGetGlobalNPC(out SuperScorcherBreath scorch))
@@ -234,7 +234,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         }
         public override void ProcessTriggers(TriggersSet triggersSet)
         {
-            if (Pet.AbilityPressCheck() && Pet.PetInUseWithSwapCd(CalamityPetIDs.Akato))
+            if (Pet.AbilityPressCheck() && PetIsEquipped())
             {
                 Pet.timer = Pet.timerMax;
                 beginOnHit = onHitExpiration;

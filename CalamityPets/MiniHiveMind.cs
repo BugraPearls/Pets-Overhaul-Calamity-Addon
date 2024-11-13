@@ -115,7 +115,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                 critDmg *= evilMult;
             }
 
-            if (Pet.PetInUseWithSwapCd(CalamityPetIDs.MiniHiveMind))
+            if (PetIsEquipped())
             {
                 Player.GetCritChance<GenericDamageClass>() += crit;
                 Player.GetDamage<GenericDamageClass>() += damage;
@@ -124,14 +124,14 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         }
         public override void ModifyLuck(ref float luck)
         {
-            if (Pet.PetInUseWithSwapCd(CalamityPetIDs.MiniHiveMind))
+            if (PetIsEquipped())
             {
                 luck += luckVal;
             }
         }
         public override void ModifyHitNPC(NPC target, ref NPC.HitModifiers modifiers)
         {
-            if (Pet.PetInUseWithSwapCd(CalamityPetIDs.MiniHiveMind))
+            if (PetIsEquipped())
             {
                 modifiers.CritDamage += critDmg;
                 if (GlobalPet.CorruptEnemies.Contains(target.type))
@@ -150,7 +150,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         }
         public static void EnemyKillEffect(NPC npc, Player player)
         {
-            if (player.TryGetModPlayer(out MiniHiveMindEffect hive) && hive.Pet.PetInUseWithSwapCd(CalamityPetIDs.MiniHiveMind) && GlobalPet.CorruptEnemies.Contains(npc.type) && npc.SpawnedFromStatue == false)
+            if (player.TryGetModPlayer(out MiniHiveMindEffect hive) && hive.PetIsEquipped() && GlobalPet.CorruptEnemies.Contains(npc.type) && npc.SpawnedFromStatue == false)
             {
                 hive.evilKills++;
             }

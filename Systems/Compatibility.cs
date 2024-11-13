@@ -295,5 +295,13 @@ namespace PetsOverhaulCalamityAddon.Systems
             PetSounds.PetItemIdToAmbientSound.AddRange(CalamityPetAmbientSounds);
             PetSounds.PetItemidToKillSound.AddRange(CalamityPetKillSounds);
         }
+        public static void AddCalPetSlows()
+        {
+            PetSlowIDs.SicknessBasedSlows.Add(CalSlows.AstrophageSlow);
+            PetSlowIDs.SicknessBasedSlows.Add(CalSlows.PlagueSlow);
+            PetSlowIDs.SicknessBasedSlows.Add(CalSlows.trashmanSignatureMove);
+            PetSlowIDs.ElectricBasedSlows.Add(CalSlows.rotomThunderWave);
+            PetSlowIDs.ColdBasedSlows.Add(CalSlows.rotomBlizzard);
+        }
     }
 }

@@ -13,6 +13,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
 {
     public sealed class PineappleEffect : PetEffect
     {
+        public override int PetItemID => CalamityPetIDs.Pineapple;
         public int defense = 5;
         public float crit = 5;
         public float damage = 0.125f;

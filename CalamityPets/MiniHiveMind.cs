@@ -12,6 +12,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
 {
     public sealed class MiniHiveMindEffect : PetEffect
     {
+        public override int PetItemID => CalamityPetIDs.MiniHiveMind;
         public override PetClasses PetClassPrimary => PetClasses.Offensive;
         public int evilKills = 0;
         public int Level = 0;

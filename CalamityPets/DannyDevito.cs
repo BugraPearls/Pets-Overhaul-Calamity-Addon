@@ -16,6 +16,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
 {
     public sealed class DannyDevitoEffect : PetEffect
     {
+        public override int PetItemID => CalamityPetIDs.DannyDevito;
         public override PetClasses PetClassPrimary => PetClasses.Utility;
         public override PetClasses PetClassSecondary => PetClasses.Offensive;
         public int radius = 150;

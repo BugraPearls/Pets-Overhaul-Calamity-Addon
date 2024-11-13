@@ -13,6 +13,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
 {
     public sealed class FurtasticDuoEffect : PetEffect
     {
+        public override int PetItemID => CalamityPetIDs.FurtasticDuo;
         public override PetClasses PetClassPrimary => PetClasses.Rogue;
         public override PetClasses PetClassSecondary => PetClasses.Defensive;
 

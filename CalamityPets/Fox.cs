@@ -15,6 +15,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
 {
     public sealed class FoxEffect : PetEffect
     {
+        public override int PetItemID => CalamityPetIDs.Fox;
         public override PetClasses PetClassPrimary => PetClasses.Utility;
         public int baseTime = 120;
         public int perTime = 30;

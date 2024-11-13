@@ -12,6 +12,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
 {
     public sealed class LeviEffect : PetEffect
     {
+        public override int PetItemID => CalamityPetIDs.Levi;
         public override PetClasses PetClassPrimary => PetClasses.Offensive;
         public override PetClasses PetClassSecondary => PetClasses.Defensive;
         public float dmgPerFish = 0.005f;

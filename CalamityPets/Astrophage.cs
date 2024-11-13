@@ -18,6 +18,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
 {
     public sealed class AstrophageEffect : PetEffect
     {
+        public override int PetItemID => CalamityPetIDs.Astrophage;
         public override PetClasses PetClassPrimary => PetClasses.Utility;
         public override PetClasses PetClassSecondary => PetClasses.Offensive;
         public int infectRadius = 80;

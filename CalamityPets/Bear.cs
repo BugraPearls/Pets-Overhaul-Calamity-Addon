@@ -13,6 +13,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
 {
     public sealed class BearEffect : PetEffect
     {
+        public override int PetItemID => CalamityPetIDs.Bear;
         public float rogueDmg = 0.05f;
         public float stealthDmg = 0.03f;
         public float stealthMoving = 0.2f;

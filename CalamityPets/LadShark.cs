@@ -15,6 +15,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
 {
     public sealed class LadSharkEffect : PetEffect
     {
+        public override int PetItemID => CalamityPetIDs.LadShark;
         public override PetClasses PetClassPrimary => PetClasses.Defensive;
         public override PetClasses PetClassSecondary => PetClasses.Supportive;
         public float selfDmg = 0.85f;

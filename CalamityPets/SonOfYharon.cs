@@ -16,6 +16,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
 {
     public sealed class SonOfYharonEffect : PetEffect
     {
+        public override int PetItemID => CalamityPetIDs.SonOfYharon;
         public float dmgRebirth = 0.18f;
         public int defRebirth = 15;
         public float msRebirth = 0.1f;

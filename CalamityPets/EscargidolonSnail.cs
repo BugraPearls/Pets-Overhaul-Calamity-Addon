@@ -12,6 +12,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
 {
     public sealed class EscargidolonSnailEffect : PetEffect
     {
+        public override int PetItemID => CalamityPetIDs.EscargidolonSnail;
         public override PetClasses PetClassPrimary => PetClasses.Defensive;
         public override PetClasses PetClassSecondary => PetClasses.Offensive;
         public bool CurrentTooltip = true;

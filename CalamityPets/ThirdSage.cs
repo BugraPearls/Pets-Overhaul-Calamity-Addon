@@ -14,6 +14,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
 {
     public sealed class ThirdSageEffect : PetEffect
     {
+        public override int PetItemID => CalamityPetIDs.ThirdSage;
         public float damageMult = 0.9f;
         public int flatHealing = 23;
         public float percHealing = 0.08f;

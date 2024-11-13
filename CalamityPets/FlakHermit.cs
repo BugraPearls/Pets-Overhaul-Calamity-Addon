@@ -16,6 +16,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
 {
     public sealed class FlakHermitEffect : PetEffect
     {
+        public override int PetItemID => CalamityPetIDs.FlakHermit;
         public override PetClasses PetClassPrimary => PetClasses.Rogue;
         public float standingStealth = 0.25f;
         public float maxStealth = 0.1f;

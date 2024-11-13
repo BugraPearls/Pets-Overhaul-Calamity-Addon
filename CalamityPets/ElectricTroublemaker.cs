@@ -22,6 +22,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
 {
     public sealed class ElectricTroublemakerEffect : PetEffect
     {
+        public override int PetItemID => CalamityPetIDs.ElectricTroublemaker;
         public int currentMove = 0;
         public const float dexMult = 1.2f;
         public const float STABMult = 1.5f;

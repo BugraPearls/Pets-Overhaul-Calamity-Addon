@@ -18,6 +18,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
 {
     public sealed class PlaguebringerBabEffect : PetEffect
     {
+        public override int PetItemID => CalamityPetIDs.PlagueBringerBab;
         public override PetClasses PetClassPrimary => PetClasses.Rogue;
         public int timeToAdd = 420;
         public float mainTargetMult = 0.25f;

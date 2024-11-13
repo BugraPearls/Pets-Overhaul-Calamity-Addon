@@ -12,6 +12,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
 {
     public sealed class KendraEffect : PetEffect
     {
+        public override int PetItemID => CalamityPetIDs.Kendra;
         public override PetClasses PetClassPrimary => PetClasses.Rogue;
         public float absorbPercent = 1.70f;
         public float stealthMult = 1.3f;

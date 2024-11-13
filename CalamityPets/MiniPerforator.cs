@@ -13,6 +13,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
 {
     public sealed class MiniPerforatorEffect : PetEffect
     {
+        public override int PetItemID => CalamityPetIDs.MiniPerforator;
         public override PetClasses PetClassPrimary => PetClasses.Defensive;
         public int evilKills = 0;
         public int Level = 0;

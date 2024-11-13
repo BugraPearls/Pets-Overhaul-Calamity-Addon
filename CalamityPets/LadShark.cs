@@ -66,22 +66,17 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
 
                 GlobalPet.CircularDustEffect(Player.Center, DustID.HealingPlus, radius, 30, scale: 2f);
 
-                for (int i = 0; i < Main.maxNPCs; i++)
+                foreach (var npc in Main.ActiveNPCs)
                 {
-                    NPC npc = Main.npc[i];
-                    if (npc.Distance(Player.Center) < radius && npc.canGhostHeal && npc.type != NPCID.TargetDummy)
+                    if (npc.Distance(Player.Center) < radius && npc.canGhostHeal && npc.immortal == false && npc.TryGetGlobalNPC(out LoveRecoveryNPCs lad))
                     {
-                        if (npc.TryGetGlobalNPC(out LoveRecoveryNPCs lad))
-                        {
-                            lad.recoveryValue = grantRegen;
-                            lad.timer += regenDuration;
-                        }
+                        lad.recoveryValue = grantRegen;
+                        lad.timer += regenDuration;
                     }
                 }
-                for (int i = 0; i < Main.maxPlayers; i++)
+                foreach (var player in Main.ActivePlayers)
                 {
-                    Player player = Main.player[i];
-                    if (player.active && ((player.whoAmI != 255 && player.whoAmI == Main.myPlayer) || (player.Distance(Player.Center) < radius)))
+                    if ((player.whoAmI == Main.myPlayer) || (player.Distance(Player.Center) < radius))
                     {
                         player.GetModPlayer<LadSharkEffect>().loveRecoveryTimer += regenDuration;
                         player.GetModPlayer<LadSharkEffect>().currentRegen = grantRegen * 2;

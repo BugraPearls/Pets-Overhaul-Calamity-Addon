@@ -45,10 +45,9 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                     else
                         SoundEngine.PlaySound(new SoundStyle("CalamityMod/Sounds/Custom/PlagueSounds/PBGAttackSwitch2") with { PitchVariance = 0.4f }, Player.Center);
                 }
-                for (int i = 0; i < Main.maxNPCs; i++)
+                foreach (var npc in Main.ActiveNPCs)
                 {
-                    NPC npc = Main.npc[i];
-                    if (npc.active && Player.Distance(npc.Center) < detonateRadius && npc.TryGetGlobalNPC(out PlaguebringerBabStacks boom) && boom.stacks > 0)
+                    if (Player.Distance(npc.Center) < detonateRadius && npc.TryGetGlobalNPC(out PlaguebringerBabStacks boom) && boom.stacks > 0)
                     {
                         npc.AddBuff(ModContent.BuffType<Plague>(), plagueAndSlowDuration);
                         NpcPet.AddSlow(new NpcPet.PetSlow(slowAmount, plagueAndSlowDuration, CalSlows.PlagueSlow), npc);
@@ -72,13 +71,12 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                     victim.timer = timeToAdd;
                     victim.stacks += Math.Max(GlobalPet.Randomizer((int)(hit.SourceDamage * mainTargetMult * 100)), 1);
                 }
-                for (int i = 0; i < Main.maxNPCs; i++)
+                foreach (var npc in Main.ActiveNPCs)
                 {
-                    if (i == target.whoAmI)
+                    if (npc == target)
                         continue;
 
-                    NPC npc = Main.npc[i];
-                    if (npc.active && target.Distance(npc.Center) < surroundRadius && npc.TryGetGlobalNPC(out PlaguebringerBabStacks surrounder))
+                    if (target.Distance(npc.Center) < surroundRadius && npc.TryGetGlobalNPC(out PlaguebringerBabStacks surrounder))
                     {
                         surrounder.timer = timeToAdd;
                         surrounder.stacks += Math.Max(GlobalPet.Randomizer((int)(hit.SourceDamage * surroundingMult * 100)), 1);

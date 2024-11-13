@@ -32,15 +32,14 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
             {
                 GlobalPet.CircularDustEffect(Player.Center, DustID.CoralTorch, infectRadius, 8);
                 GlobalPet.CircularDustEffect(Player.Center, DustID.Granite, slowRadius, 30, scale: 0.8f);
-                for (int i = 0; i < Main.maxNPCs; i++)
+                foreach (var npc in Main.ActiveNPCs)
                 {
-                    NPC npc = Main.npc[i];
-                    if (npc.active && Player.Distance(npc.Center) < infectRadius)
+                    if (Player.Distance(npc.Center) < infectRadius)
                     {
                         npc.AddBuff(ModContent.BuffType<AstralInfectionDebuff>(), infectDuration);
                     }
 
-                    if (npc.active && npc.TryGetGlobalNPC(out AstrophageInfection astro))
+                    if (npc.TryGetGlobalNPC(out AstrophageInfection astro))
                     {
                         if (Player.Distance(npc.Center) < slowRadius && npc.Calamity().astralInfection > 0)
                         {
@@ -69,12 +68,11 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
             if (infectedVal > 0 && npc.Calamity().astralInfection > 0)
             {
                 GlobalPet.CircularDustEffect(npc.Center, DustID.DarkCelestial, deathSpreadRange, 40);
-                for (int i = 0; i < Main.maxNPCs; i++)
+                foreach (var target in Main.ActiveNPCs)
                 {
-                    if (i == npc.whoAmI)
+                    if (target == npc)
                         continue;
-                    NPC target = Main.npc[i];
-                    if (target.active && npc.Distance(target.Center) < deathSpreadRange && npc.Distance(target.Center) < closestRange)
+                    if (npc.Distance(target.Center) < deathSpreadRange && npc.Distance(target.Center) < closestRange)
                     {
                         closestRange = npc.Distance(target.Center);
                         closestWhoAmI = target.whoAmI;

@@ -33,16 +33,16 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
             {
                 SoundEngine.PlaySound(SoundID.Meowmere, Player.Center);
                 GlobalPet.CircularDustEffect(Player.Center, DustID.PinkFairy, block, 30);
-                for (int i = 0; i < Main.maxNPCs; i++)
+                foreach (var npc in Main.ActiveNPCs)
                 {
-                    if (Player.Distance(Main.npc[i].Center) < block)
+                    if (Player.Distance(npc.Center) < block)
                     {
-                        Main.npc[i].SimpleStrikeNPC(Pet.PetDamage(dmg), Player.direction, true, kb, DamageClass.Generic, true,Player.luck);
+                        npc.SimpleStrikeNPC(Pet.PetDamage(dmg), Player.direction, true, kb, DamageClass.Generic, true,Player.luck);
                     }
                 }
-                for (int i = 0; i < Main.maxPlayers; i++)
+                foreach (var player in Main.ActivePlayers)
                 {
-                    if (Player.Distance(Main.player[i].Center) < block)
+                    if (Player.Distance(player.Center) < block)
                     {
                         string reason = Main.rand.Next(4) switch
                         {
@@ -52,7 +52,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                             3 => Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.CosmicDeath4"),
                             _ => Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.CosmicDeath1"),
                         };
-                        Main.player[i].Hurt(PlayerDeathReason.ByCustomReason(reason.Replace("<name>", Player.name)), dmg, Player.direction, true, dodgeable: false, scalingArmorPenetration: 1f, knockback: kb);
+                        player.Hurt(PlayerDeathReason.ByCustomReason(reason.Replace("<name>", Player.name)), dmg, Player.direction, true, dodgeable: false, scalingArmorPenetration: 1f, knockback: kb);
                     }
                 }
             }

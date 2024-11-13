@@ -83,7 +83,7 @@ Mods: {
 				 * Enemies that die while being under the effect of Burn of Explosion give <killStack>.
 				 * Gained stacks are multiplied by <bossMultiply> if the target is a Boss, or multiplied by their rarity value + 1.
 				- Press Pet Ability Keybind (<keybind>) to charge Super Scorcher Breath for your next attack, exploding on hit,
-				enemies hit by explosion get burnt and grant you permanent stacks, with <cooldown> seconds cooldown.
+				  enemies hit by explosion get burnt and grant you permanent stacks, with <cooldown> seconds cooldown.
 				 * Super Scorcher Breath attack expires after <expire> seconds of not using it.
 				 * Explosion deals <baseMult>% + [i:<stackIcon>] <stackMult>% of your initial damage, with <baseSize> + [i:<stackIcon>] <stackSize> blocks of radius.
 				 * Explosion burns enemies for <burnDuration> + [i:<stackIcon>] <stackBurnDuration> seconds and deals <baseBurn> + [i:<stackIcon>] <stackBurn> damage per second.
@@ -96,13 +96,13 @@ Mods: {
 				- Inflicts enemies in <infectRadius> blocks with Astral Infection for <infectDuration> seconds.
 				- Enemies in <slowRadius> blocks gets slowed for <slowAmount>% if they have Astral Infection debuff.
 				 * If an enemy dies while under this effect, the nearest enemy in <spreadRadius> blocks of them will get
-				Astral Infection with its remaining duration, and be slowed by <spreadSlow>% for <spreadSlowDuration> seconds.
+				   Astral Infection with its remaining duration, and be slowed by <spreadSlow>% for <spreadSlowDuration> seconds.
 				'''
 			BearsEye:
 				'''
 				<class>
 				- Taking damage that puts you below <belowHealth>% health gives you a Shield
-				equal to <baseShield>% base + <bonusShield>% bonus health shield for <shieldDuration> seconds.
+				  equal to <baseShield>% base + <bonusShield>% bonus health shield for <shieldDuration> seconds.
 				 * Damage taking you below <belowHealth>% health will be reduced accordingly with the Shield.
 				 * Lifeguard Shield has a <cooldown> seconds cooldown.
 				- Increases Rogue damage by <rogueDmg>%, Stealth Strike damage by <stealthDmg>%.
@@ -116,7 +116,7 @@ Mods: {
 				 * Damage reflected is <reflectAmount>% of pre-mitigation damage.
 				 * Reflection damage is doubled if you're below <treshold>% health.
 				 * Fireballs deal half of taken pre-mitigation damage + your defense,
-				 scaling with your damage reduction, and applying Brimstone Flames on hit.
+				   scaling with your damage reduction, and applying Brimstone Flames on hit.
 				 * Fireballs travel randomly, and fireballs spawn as 5 upon being hurt.
 				 * Fireballs have a <cooldown> seconds cooldown to be re-cast on hurt.
 				'''
@@ -189,17 +189,17 @@ Mods: {
 				- Current Ability: Leaf Storm
 				 * Uses Sickness resistance & vulnerability, and buffed by Mow form.
 				 * Your next strike spawns damaging leaves out of your target,
-				dealing <dmg> damage, spawning between <lowLeaf> to <highLeaf> leaves.
+				   dealing <dmg> damage, spawning between <lowLeaf> to <highLeaf> leaves.
 				 * Costs <percentOfCd>% of your current Pet Ability Cooldown. (<percentToSeconds> seconds)
 				'''
 			RotomAirSlash:
 				'''
 				- Current Ability: Air Slash
 				 * Is more effective if the enemy is grounded (if affected by gravity),
-				normal effectiveness if the grounded enemy is currently midair, and
-				not very effective if they aren't affected by gravity. Buffed by Fan form.
+				   normal effectiveness if the grounded enemy is currently midair, and
+				   not very effective if they aren't affected by gravity. Buffed by Fan form.
 				 * Your next strike hits all enemies in <radius> blocks for <dmg> damage,
-				while also knocking them away from you with <knockback> knockback.
+				   while also knocking them away from you with <knockback> knockback.
 				 * Costs <percentOfCd>% of your current Pet Ability Cooldown. (<percentToSeconds> seconds)
 				'''
 			AbyssShellFossil:
@@ -242,7 +242,7 @@ Mods: {
 				<class>
 				- Press Pet Ability Keybind (<keybind>) to format (cleanse) ALL the debuffs on you.
 				 * Doing so successfully causes an overload, you cannot use anything for the next
-				 <baseCurse> base seconds + <perCurse> second per debuff cleansed.
+				   <baseCurse> base seconds + <perCurse> second per debuff cleansed.
 				 * This includes semi-debuffs. (debuffs that have both upsides and downsides!)
 				 * Cleanse does not remove debuffs that can't be removed by the Nurse.
 				 * Its <cooldown> second cooldown begins if a debuff is successfully cleansed.
@@ -253,7 +253,7 @@ Mods: {
 				'''
 				<class>
 				- Taking damage that puts you below <belowHealth>% health gives you a Shield
-				equal to <baseShield>% base + <bonusShield>% bonus health shield for <shieldDuration> seconds.
+				  equal to <baseShield>% base + <bonusShield>% bonus health shield for <shieldDuration> seconds.
 				 * Damage taking you below <belowHealth>% health will be reduced accordingly with the Shield.
 				 * Lifeguard Shield has a <cooldown> seconds cooldown.
 				 * When activated, for the same duration, power absorption deals <lifeguardMult>x damage.
@@ -278,7 +278,7 @@ Mods: {
 				 * Your damage is multiplied by <selfDmg>x.
 				 * Damage taken is multiplied by <takenDmg>x.
 				- Press Pet Ability Keybind (<keybind>) to grant healing to
-				EVERYTHING in <radius> blocks, including some self-love.
+				  EVERYTHING in <radius> blocks, including some self-love.
 				 * Heals <perSecRegen> twice per second for <duration> seconds.
 				 * Regen is doubled for Players and Friendly NPC's
 				'''
@@ -299,7 +299,7 @@ Mods: {
 				- Your Corruption enemy kills with this Pet: <killCount>
 				- Gain the following bonuses depending on your kills.
 				 * +<dmg>% damage, +<crit>% crit chance, +<luck> luck,
-				+<pen> armor penetration and +<critDmg>% crit damage.
+				   +<pen> armor penetration and +<critDmg>% crit damage.
 				 * Multiply stats by <evilMult>x while in Corruption biome.
 				 * Kills required for next stat upgrades: <killReq>
 				'''
@@ -310,7 +310,7 @@ Mods: {
 				- Your crimson enemy kills with this Pet: <killCount>
 				- Gain the following bonuses depending on your kills.
 				 * +<def> defense, +<hp> maximum health, +<luck> luck,
-				+<dr>% damage reduction and +<regen> health regen.
+				   +<dr>% damage reduction and +<regen> health regen.
 				 * Multiply stats by <evilMult>x while in Crimson biome.
 				 * Kills required for next stat upgrades: <killReq>
 				'''

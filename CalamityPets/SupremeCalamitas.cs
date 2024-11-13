@@ -116,27 +116,22 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
             }
         }
     }
-    public sealed class BrimstoneJewelTooltip : GlobalItem
+    public sealed class BrimstoneJewelTooltip : PetTooltip
     {
-        public override bool AppliesToEntity(Item entity, bool lateInstantiation)
+        public override PetEffect PetsEffect => calamitas;
+        public static SupremeCalamitasEffect calamitas
         {
-            return entity.type == CalamityPetIDs.SupremeCalamitas;
-        }
-
-        public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-        {
-            if (ModContent.GetInstance<PetPersonalization>().EnableTooltipToggle && !PetKeybinds.PetTooltipHide.Current)
+            get
             {
-                return;
+                if (Main.LocalPlayer.TryGetModPlayer(out SupremeCalamitasEffect pet))
+                    return pet;
+                else
+                    return ModContent.GetInstance<SupremeCalamitasEffect>();
             }
-            SupremeCalamitasEffect calamitas = Main.LocalPlayer.GetModPlayer<SupremeCalamitasEffect>();
-
-            tooltips.Add(new(Mod, "Tooltip0", Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.BrimstoneJewel")
-                .Replace("<class>", PetTextsColors.ClassText(calamitas.PetClassPrimary, calamitas.PetClassSecondary))
+        }
+        public override string PetsTooltip => Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.BrimstoneJewel")
                 .Replace("<critDmgReduce>", Math.Round(calamitas.critDmgReduce * 100, 2).ToString())
                 .Replace("<chanceToDmg>", Math.Round(calamitas.critChanceToDmg * 100, 2).ToString())
-                .Replace("<magicCost>", Math.Round(calamitas.magicExtraCost * 100, 2).ToString())
-            ));
-        }
+                .Replace("<magicCost>", Math.Round(calamitas.magicExtraCost * 100, 2).ToString());
     }
 }

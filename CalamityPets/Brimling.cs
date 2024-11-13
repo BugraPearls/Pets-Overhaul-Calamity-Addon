@@ -71,28 +71,23 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
             }
         }
     }
-    public sealed class CharredRelicTooltip : GlobalItem
+    public sealed class CharredRelicTooltip : PetTooltip
     {
-        public override bool AppliesToEntity(Item entity, bool lateInstantiation)
+        public override PetEffect PetsEffect => brimling;
+        public static BrimlingEffect brimling
         {
-            return entity.type == CalamityPetIDs.Brimling;
-        }
-
-        public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-        {
-            if (ModContent.GetInstance<PetPersonalization>().EnableTooltipToggle && !PetKeybinds.PetTooltipHide.Current)
+            get
             {
-                return;
+                if (Main.LocalPlayer.TryGetModPlayer(out BrimlingEffect pet))
+                    return pet;
+                else
+                    return ModContent.GetInstance<BrimlingEffect>();
             }
-
-            BrimlingEffect brimling = Main.LocalPlayer.GetModPlayer<BrimlingEffect>();
-            tooltips.Add(new(Mod, "Tooltip0", Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.CharredRelic")
-                .Replace("<class>", PetTextsColors.ClassText(brimling.PetClassPrimary, brimling.PetClassSecondary))
+        }
+        public override string PetsTooltip => Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.CharredRelic")
                 .Replace("<treshold>", Math.Round(brimling.drTreshold * 100, 2).ToString())
                 .Replace("<dr>", Math.Round(brimling.dr * 100, 2).ToString())
                 .Replace("<reflectAmount>", Math.Round(brimling.reflectAmount * 100, 2).ToString())
-                .Replace("<cooldown>", Math.Round(brimling.cooldown / 60f, 2).ToString())
-            ));
-        }
+                .Replace("<cooldown>", Math.Round(brimling.cooldown / 60f, 2).ToString());
     }
 }

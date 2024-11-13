@@ -58,27 +58,22 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
             }
         }
     }
-    public sealed class CosmicPlushieTooltip : GlobalItem
+    public sealed class CosmicPlushieTooltip : PetTooltip
     {
-        public override bool AppliesToEntity(Item entity, bool lateInstantiation)
+        public override PetEffect PetsEffect => chibiiDevourer;
+        public static ChibiiDevourerEffect chibiiDevourer
         {
-            return entity.type == CalamityPetIDs.ChibiiDevourer;
-        }
-
-        public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-        {
-            if (ModContent.GetInstance<PetPersonalization>().EnableTooltipToggle && !PetKeybinds.PetTooltipHide.Current)
+            get
             {
-                return;
+                if (Main.LocalPlayer.TryGetModPlayer(out ChibiiDevourerEffect pet))
+                    return pet;
+                else
+                    return ModContent.GetInstance<ChibiiDevourerEffect>();
             }
-
-            ChibiiDevourerEffect chibiiDevourer = Main.LocalPlayer.GetModPlayer<ChibiiDevourerEffect>();
-            tooltips.Add(new(Mod, "Tooltip0", Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.CosmicPlushie")
-                .Replace("<class>", PetTextsColors.ClassText(chibiiDevourer.PetClassPrimary, chibiiDevourer.PetClassSecondary))
+        }
+        public override string PetsTooltip => Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.CosmicPlushie")
                 .Replace("<color>", PetTextsColors.SupportiveClass.Hex3())
                 .Replace("<damage>", chibiiDevourer.dmg.ToString())
-                .Replace("<block>", Math.Round(chibiiDevourer.block / 16f, 2).ToString())
-            ));
-        }
+                .Replace("<block>", Math.Round(chibiiDevourer.block / 16f, 2).ToString());
     }
 }

@@ -57,28 +57,23 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
             }
         }
     }
-    public sealed class FoxDriveTooltip : GlobalItem
+    public sealed class FoxDriveTooltip : PetTooltip
     {
-        public override bool AppliesToEntity(Item entity, bool lateInstantiation)
+        public override PetEffect PetsEffect => fox;
+        public static FoxEffect fox
         {
-            return entity.type == CalamityPetIDs.Fox;
-        }
-
-        public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-        {
-            if (ModContent.GetInstance<PetPersonalization>().EnableTooltipToggle && !PetKeybinds.PetTooltipHide.Current)
+            get
             {
-                return;
+                if (Main.LocalPlayer.TryGetModPlayer(out FoxEffect pet))
+                    return pet;
+                else
+                    return ModContent.GetInstance<FoxEffect>();
             }
-
-            FoxEffect fox = Main.LocalPlayer.GetModPlayer<FoxEffect>();
-            tooltips.Add(new(Mod, "Tooltip0", Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.FoxDrive")
-                .Replace("<class>", PetTextsColors.ClassText(fox.PetClassPrimary, fox.PetClassSecondary))
+        }
+        public override string PetsTooltip => Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.FoxDrive")
                 .Replace("<keybind>", PetTextsColors.KeybindText(PetKeybinds.UsePetAbility))
                 .Replace("<baseCurse>", Math.Round(fox.baseTime / 60f, 2).ToString())
                 .Replace("<perCurse>", Math.Round(fox.perTime / 60f, 2).ToString())
-                .Replace("<cooldown>", Math.Round(fox.cooldown / 60f, 2).ToString())
-            ));
-        }
+                .Replace("<cooldown>", Math.Round(fox.cooldown / 60f, 2).ToString());
     }
 }

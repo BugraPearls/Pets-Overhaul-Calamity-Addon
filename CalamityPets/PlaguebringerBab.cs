@@ -113,23 +113,20 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
             stacks = 0;
         }
     }
-    public sealed class PlagueCallerTooltip : GlobalItem
+    public sealed class PlagueCallerTooltip : PetTooltip
     {
-        public override bool AppliesToEntity(Item entity, bool lateInstantiation)
+        public override PetEffect PetsEffect => plague;
+        public static PlaguebringerBabEffect plague
         {
-            return entity.type == CalamityPetIDs.PlagueBringerBab;
-        }
-
-        public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-        {
-            if (ModContent.GetInstance<PetPersonalization>().EnableTooltipToggle && !PetKeybinds.PetTooltipHide.Current)
+            get
             {
-                return;
+                if (Main.LocalPlayer.TryGetModPlayer(out PlaguebringerBabEffect pet))
+                    return pet;
+                else
+                    return ModContent.GetInstance<PlaguebringerBabEffect>();
             }
-
-            PlaguebringerBabEffect plague = Main.LocalPlayer.GetModPlayer<PlaguebringerBabEffect>();
-            tooltips.Add(new(Mod, "Tooltip0", Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.PlagueCaller")
-                .Replace("<class>", PetTextsColors.ClassText(plague.PetClassPrimary, plague.PetClassSecondary))
+        }
+        public override string PetsTooltip => Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.PlagueCaller")
                 .Replace("<primaryPerc>", Math.Round(plague.mainTargetMult * 100, 2).ToString())
                 .Replace("<hitAoE>", Math.Round(plague.surroundRadius / 16f, 2).ToString())
                 .Replace("<surroundingPerc>", Math.Round(plague.surroundingMult * 100, 2).ToString())
@@ -138,8 +135,6 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                 .Replace("<detonateRadius>", Math.Round(plague.detonateRadius / 16f, 2).ToString())
                 .Replace("<cooldown>", Math.Round(plague.cooldown / 60f, 2).ToString())
                 .Replace("<slow>", Math.Round(plague.slowAmount * 100, 2).ToString())
-                .Replace("<plagueDuration>", Math.Round(plague.plagueAndSlowDuration / 60f, 2).ToString())
-            ));
-        }
+                .Replace("<plagueDuration>", Math.Round(plague.plagueAndSlowDuration / 60f, 2).ToString());
     }
 }

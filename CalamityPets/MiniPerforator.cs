@@ -170,23 +170,20 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
             }
         }
     }
-    public sealed class BloodyVeinTooltip : GlobalItem
+    public sealed class BloodyVeinTooltip : PetTooltip
     {
-        public override bool AppliesToEntity(Item entity, bool lateInstantiation)
+        public override PetEffect PetsEffect => perforator;
+        public static MiniPerforatorEffect perforator
         {
-            return entity.type == CalamityPetIDs.MiniPerforator;
-        }
-
-        public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-        {
-            if (ModContent.GetInstance<PetPersonalization>().EnableTooltipToggle && !PetKeybinds.PetTooltipHide.Current)
+            get
             {
-                return;
+                if (Main.LocalPlayer.TryGetModPlayer(out MiniPerforatorEffect pet))
+                    return pet;
+                else
+                    return ModContent.GetInstance<MiniPerforatorEffect>();
             }
-
-            MiniPerforatorEffect perforator = Main.LocalPlayer.GetModPlayer<MiniPerforatorEffect>();
-            tooltips.Add(new(Mod, "Tooltip0", Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.BloodyVein")
-                        .Replace("<class>", PetTextsColors.ClassText(perforator.PetClassPrimary, perforator.PetClassSecondary))
+        }
+        public override string PetsTooltip => Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.BloodyVein")
                         .Replace("<drFromCrimson>", Math.Round(perforator.drIfHurtByCrimson * 100, 2).ToString())
                         .Replace("<killCount>", perforator.evilKills.ToString())
                         .Replace("<def>", perforator.defense.ToString())
@@ -195,8 +192,6 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                         .Replace("<dr>", Math.Round(perforator.dr * 100, 2).ToString())
                         .Replace("<regen>", perforator.regen.ToString())
                         .Replace("<evilMult>", perforator.evilMult.ToString())
-                        .Replace("<killReq>", perforator.Level >= MiniPerforatorEffect.maxLvl ? Language.GetTextValue("Mods.PetsOverhaul.PetItemTooltips.JunimoMaxed") : (perforator.expTresholds[Math.Clamp(perforator.Level + 1, 0, MiniPerforatorEffect.maxLvl)] - perforator.evilKills).ToString())
-                    ));
-        }
+                        .Replace("<killReq>", perforator.Level >= MiniPerforatorEffect.maxLvl ? Language.GetTextValue("Mods.PetsOverhaul.PetItemTooltips.JunimoMaxed") : (perforator.expTresholds[Math.Clamp(perforator.Level + 1, 0, MiniPerforatorEffect.maxLvl)] - perforator.evilKills).ToString());
     }
 }

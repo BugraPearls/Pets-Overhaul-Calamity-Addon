@@ -100,30 +100,25 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
             orig(self, buffType, buffTime, quiet, foodHack);
         }
     }
-    public sealed class PineappleItemTooltip : GlobalItem
+    public sealed class PineappleItemTooltip : PetTooltip
     {
-
-        public override bool AppliesToEntity(Item entity, bool lateInstantiation)
+        public override PetEffect PetsEffect => pineapple;
+        public static PineappleEffect pineapple
         {
-            return entity.type == CalamityPetIDs.Pineapple;
-        }
-
-        public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-        {
-            if (ModContent.GetInstance<PetPersonalization>().EnableTooltipToggle && !PetKeybinds.PetTooltipHide.Current)
+            get
             {
-                return;
+                if (Main.LocalPlayer.TryGetModPlayer(out PineappleEffect pet))
+                    return pet;
+                else
+                    return ModContent.GetInstance<PineappleEffect>();
             }
-            PineappleEffect pineapple = Main.LocalPlayer.GetModPlayer<PineappleEffect>();
-            tooltips.Add(new(Mod, "Tooltip0", Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.PineapplePet")
-                .Replace("<class>", PetTextsColors.ClassText(pineapple.PetClassPrimary, pineapple.PetClassSecondary))
+        }
+        public override string PetsTooltip => Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.PineapplePet")
                 .Replace("<def>", pineapple.defense.ToString())
                 .Replace("<crit>", Math.Round(pineapple.crit, 2).ToString())
                 .Replace("<dmg>", Math.Round(pineapple.damage * 100, 2).ToString())
                 .Replace("<sumKb>", Math.Round(pineapple.summonerKb, 2).ToString())
                 .Replace("<moveSpd>", Math.Round(pineapple.moveSpd * 100, 2).ToString())
-                .Replace("<miningSpd>", Math.Round(pineapple.miningSpeed * 100, 2).ToString())
-            ));
-        }
+                .Replace("<miningSpd>", Math.Round(pineapple.miningSpeed * 100, 2).ToString());
     }
 }

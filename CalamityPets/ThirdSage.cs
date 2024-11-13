@@ -44,29 +44,24 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
             }
         }
     }
-    public sealed class HermitsBoxofOneHundredMedicinesTooltip : GlobalItem
+    public sealed class HermitsBoxofOneHundredMedicinesTooltip : PetTooltip
     {
-        public override bool AppliesToEntity(Item entity, bool lateInstantiation)
+        public override PetEffect PetsEffect => sage;
+        public static ThirdSageEffect sage
         {
-            return entity.type == CalamityPetIDs.ThirdSage;
-        }
-
-        public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-        {
-            if (ModContent.GetInstance<PetPersonalization>().EnableTooltipToggle && !PetKeybinds.PetTooltipHide.Current)
+            get
             {
-                return;
+                if (Main.LocalPlayer.TryGetModPlayer(out ThirdSageEffect pet))
+                    return pet;
+                else
+                    return ModContent.GetInstance<ThirdSageEffect>();
             }
-            ThirdSageEffect sage = Main.LocalPlayer.GetModPlayer<ThirdSageEffect>();
-
-            tooltips.Add(new(Mod, "Tooltip0", Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.HermitsBoxofOneHundredMedicines")
+        }
+        public override string PetsTooltip => Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.HermitsBoxofOneHundredMedicines")
                     .Replace("<keybind>", PetTextsColors.KeybindText(PetKeybinds.UsePetAbility))
-                    .Replace("<class>", PetTextsColors.ClassText(sage.PetClassPrimary, sage.PetClassSecondary))
                     .Replace("<flatHeal>", sage.flatHealing.ToString())
                     .Replace("<percHeal>", Math.Round(sage.percHealing * 100, 2).ToString())
                     .Replace("<cooldown>", Math.Round(sage.cooldown / 60f, 2).ToString())
-                    .Replace("<damageMult>", Math.Round(sage.damageMult, 2).ToString())
-                ));
-        }
+                    .Replace("<damageMult>", Math.Round(sage.damageMult, 2).ToString());
     }
 }

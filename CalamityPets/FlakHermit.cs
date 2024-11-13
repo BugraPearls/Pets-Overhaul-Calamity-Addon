@@ -77,31 +77,25 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
             }
         }
     }
-    public sealed class GeyserShellTooltip : GlobalItem
+    public sealed class GeyserShellTooltip : PetTooltip
     {
-
-        public override bool AppliesToEntity(Item entity, bool lateInstantiation)
+        public override PetEffect PetsEffect => hermit;
+        public static FlakHermitEffect hermit
         {
-            return entity.type == CalamityPetIDs.FlakHermit;
-        }
-
-        public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-        {
-            if (ModContent.GetInstance<PetPersonalization>().EnableTooltipToggle && !PetKeybinds.PetTooltipHide.Current)
+            get
             {
-                return;
+                if (Main.LocalPlayer.TryGetModPlayer(out FlakHermitEffect pet))
+                    return pet;
+                else
+                    return ModContent.GetInstance<FlakHermitEffect>();
             }
-
-            FlakHermitEffect hermit = Main.LocalPlayer.GetModPlayer<FlakHermitEffect>();
-            tooltips.Add(new(Mod, "Tooltip0", Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.GeyserShell")
-                .Replace("<class>", PetTextsColors.ClassText(hermit.PetClassPrimary, hermit.PetClassSecondary))
+        }
+        public override string PetsTooltip => Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.GeyserShell")
                 .Replace("<stealth>", Math.Round(hermit.standingStealth * 100, 2).ToString())
                 .Replace("<maxStealth>", Math.Round(hermit.maxStealth * 100, 2).ToString())
                 .Replace("<stealthDmg>", Math.Round(hermit.stealthDmg * 100, 2).ToString())
                 .Replace("<damage>", hermit.acidBaseDmg.ToString())
                 .Replace("<irradiateDuration>", Math.Round(hermit.irradiateDuration / 60f, 2).ToString())
-                .Replace("<cooldown>", Math.Round(hermit.cooldown / 60f, 2).ToString())
-            ));
-        }
+                .Replace("<cooldown>", Math.Round(hermit.cooldown / 60f, 2).ToString());
     }
 }

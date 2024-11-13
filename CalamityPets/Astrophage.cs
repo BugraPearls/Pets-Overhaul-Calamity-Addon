@@ -86,32 +86,26 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
             }
         }
     }
-    public sealed class AstrophageItemTooltip : GlobalItem
+    public sealed class AstrophageItemTooltip : PetTooltip
     {
-
-        public override bool AppliesToEntity(Item entity, bool lateInstantiation)
+        public override PetEffect PetsEffect => astro;
+        public static AstrophageEffect astro
         {
-            return entity.type == CalamityPetIDs.Astrophage;
-        }
-
-        public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-        {
-            if (ModContent.GetInstance<PetPersonalization>().EnableTooltipToggle && !PetKeybinds.PetTooltipHide.Current)
+            get
             {
-                return;
+                if (Main.LocalPlayer.TryGetModPlayer(out AstrophageEffect pet))
+                    return pet;
+                else
+                    return ModContent.GetInstance<AstrophageEffect>();
             }
-
-            AstrophageEffect astro = Main.LocalPlayer.GetModPlayer<AstrophageEffect>();
-            tooltips.Add(new(Mod, "Tooltip0", Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.Astrophage")
-                .Replace("<class>", PetTextsColors.ClassText(astro.PetClassPrimary, astro.PetClassSecondary))
+        }
+        public override string PetsTooltip => Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.Astrophage")
                 .Replace("<infectRadius>", Math.Round(astro.infectRadius / 16f, 2).ToString())
                 .Replace("<infectDuration>", Math.Round(astro.infectDuration / 60f, 2).ToString())
                 .Replace("<slowRadius>", Math.Round(astro.slowRadius / 16f, 2).ToString())
                 .Replace("<slowAmount>", Math.Round(astro.slowAmount * 100, 2).ToString())
                 .Replace("<spreadRadius>", Math.Round(AstrophageInfection.deathSpreadRange / 16f, 2).ToString())
                 .Replace("<spreadSlow>", Math.Round(astro.infectionHeavySlow * 100, 2).ToString())
-                .Replace("<spreadSlowDuration>", Math.Round(AstrophageInfection.deathSpreadSlowDur / 60f, 2).ToString())
-            ));
-        }
+                .Replace("<spreadSlowDuration>", Math.Round(AstrophageInfection.deathSpreadSlowDur / 60f, 2).ToString());
     }
 }

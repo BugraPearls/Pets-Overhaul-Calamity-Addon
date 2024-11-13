@@ -78,31 +78,25 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
             }
         }
     }
-    public sealed class LeviItemTooltip : GlobalItem
+    public sealed class LeviItemTooltip : PetTooltip
     {
-
-        public override bool AppliesToEntity(Item entity, bool lateInstantiation)
+        public override PetEffect PetsEffect => levi;
+        public static LeviEffect levi
         {
-            return entity.type == CalamityPetIDs.Levi;
-        }
-
-        public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-        {
-            if (ModContent.GetInstance<PetPersonalization>().EnableTooltipToggle && !PetKeybinds.PetTooltipHide.Current)
+            get
             {
-                return;
+                if (Main.LocalPlayer.TryGetModPlayer(out LeviEffect pet))
+                    return pet;
+                else
+                    return ModContent.GetInstance<LeviEffect>();
             }
-
-            LeviEffect levi = Main.LocalPlayer.GetModPlayer<LeviEffect>();
-            tooltips.Add(new(Mod, "Tooltip0", Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.Levi")
-                .Replace("<class>", PetTextsColors.ClassText(levi.PetClassPrimary, levi.PetClassSecondary))
+        }
+        public override string PetsTooltip => Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.Levi")
                 .Replace("<dmgPer>", Math.Round(levi.dmgPerFish * 100, 2).ToString())
                 .Replace("<defPer>", levi.oneDefPerFishPower.ToString())
                 .Replace("<helm>", levi.helm.ToString())
                 .Replace("<chest>", levi.chest.ToString())
                 .Replace("<leg>", levi.leg.ToString())
-                .Replace("<critChance>", levi.crit.ToString())
-            ));
-        }
+                .Replace("<critChance>", levi.crit.ToString());
     }
 }

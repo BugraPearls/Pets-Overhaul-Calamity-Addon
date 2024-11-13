@@ -166,23 +166,20 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
             }
         }
     }
-    public sealed class RottingEyeballTooltip : GlobalItem
+    public sealed class RottingEyeballTooltip : PetTooltip
     {
-        public override bool AppliesToEntity(Item entity, bool lateInstantiation)
+        public override PetEffect PetsEffect => hive;
+        public static MiniHiveMindEffect hive
         {
-            return entity.type == CalamityPetIDs.MiniHiveMind;
-        }
-
-        public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-        {
-            if (ModContent.GetInstance<PetPersonalization>().EnableTooltipToggle && !PetKeybinds.PetTooltipHide.Current)
+            get
             {
-                return;
+                if (Main.LocalPlayer.TryGetModPlayer(out MiniHiveMindEffect pet))
+                    return pet;
+                else
+                    return ModContent.GetInstance<MiniHiveMindEffect>();
             }
-
-            MiniHiveMindEffect hive = Main.LocalPlayer.GetModPlayer<MiniHiveMindEffect>();
-            tooltips.Add(new(Mod, "Tooltip0", Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.RottingEyeball")
-                        .Replace("<class>", PetTextsColors.ClassText(hive.PetClassPrimary, hive.PetClassSecondary))
+        }
+        public override string PetsTooltip => Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.RottingEyeball")
                         .Replace("<incrToCorrupt>", Math.Round(hive.dmgIncrIfCorrupt * 100, 2).ToString())
                         .Replace("<killCount>", hive.evilKills.ToString())
                         .Replace("<dmg>", Math.Round(hive.damage * 100, 2).ToString())
@@ -191,8 +188,6 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                         .Replace("<pen>", hive.pen.ToString())
                         .Replace("<critDmg>", Math.Round(hive.critDmg * 100, 2).ToString())
                         .Replace("<evilMult>", hive.evilMult.ToString())
-                        .Replace("<killReq>", hive.Level >= MiniHiveMindEffect.maxLvl ? Language.GetTextValue("Mods.PetsOverhaul.PetItemTooltips.JunimoMaxed") : (hive.expTresholds[Math.Clamp(hive.Level + 1, 0, MiniHiveMindEffect.maxLvl)] - hive.evilKills).ToString())
-                ));
-        }
+                        .Replace("<killReq>", hive.Level >= MiniHiveMindEffect.maxLvl ? Language.GetTextValue("Mods.PetsOverhaul.PetItemTooltips.JunimoMaxed") : (hive.expTresholds[Math.Clamp(hive.Level + 1, 0, MiniHiveMindEffect.maxLvl)] - hive.evilKills).ToString());
     }
 }

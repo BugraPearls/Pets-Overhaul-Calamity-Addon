@@ -395,85 +395,86 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
             }
         }
     }
-    public sealed class TheEtomerTooltip : GlobalItem
+    public sealed class TheEtomerTooltip : PetTooltip
     {
-
-        public override bool AppliesToEntity(Item entity, bool lateInstantiation)
+        public override PetEffect PetsEffect => rotom;
+        public static ElectricTroublemakerEffect rotom
         {
-            return entity.type == CalamityPetIDs.ElectricTroublemaker;
-        }
-
-        public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-        {
-            if (ModContent.GetInstance<PetPersonalization>().EnableTooltipToggle && !PetKeybinds.PetTooltipHide.Current)
+            get
             {
-                return;
+                if (Main.LocalPlayer.TryGetModPlayer(out ElectricTroublemakerEffect pet))
+                    return pet;
+                else
+                    return ModContent.GetInstance<ElectricTroublemakerEffect>();
             }
-            ElectricTroublemakerEffect rotom = Main.LocalPlayer.GetModPlayer<ElectricTroublemakerEffect>();
-            string MoveTooltip = "Invalid Ability";
-            switch (rotom.currentMove)
+        }
+        public override string PetsTooltip
+        {
+            get
             {
-                case ElectricTroublemakerEffect.thunderWave:
-                    MoveTooltip = Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.RotomThunderWave")
-                        .Replace("<radius>", Math.Round(rotom.tWaveRadius / 16f, 2).ToString())
-                        .Replace("<slow>", Math.Round(rotom.tWaveSlow * 100, 2).ToString())
-                        .Replace("<slowDuration>", Math.Round(rotom.tWaveDuration / 60f, 2).ToString())
-                        .Replace("<percentOfCd>", Math.Round(rotom.tWaveCooldown * 100, 2).ToString())
-                        .Replace("<percentToSeconds>", Math.Round(rotom.tWaveCooldown * rotom.Pet.timerMax / 60, 2).ToString());
-                    break;
-                case ElectricTroublemakerEffect.hydroPump:
-                    MoveTooltip = Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.RotomHydroPump")
-                        .Replace("<dmg>", rotom.hydroPumpDmg.ToString())
-                        .Replace("<wetDuration>", Math.Round(rotom.wetDuration / 60f, 2).ToString())
-                        .Replace("<percentOfCd>", Math.Round(rotom.hydroPumpCooldown * 100, 2).ToString())
-                        .Replace("<percentToSeconds>", Math.Round(rotom.hydroPumpCooldown * rotom.Pet.timerMax / 60, 2).ToString());
-                    break;
-                case ElectricTroublemakerEffect.overheat:
-                    MoveTooltip = Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.RotomOverheat")
-                        .Replace("<radius>", Math.Round(rotom.overheatRadius / 16f, 2).ToString())
-                        .Replace("<dmg>", rotom.overheatDmg.ToString())
-                        .Replace("<burnDuration>", Math.Round(rotom.burnDuration / 60f, 2).ToString())
-                        .Replace("<percentOfCd>", Math.Round(rotom.overheatCooldown * 100, 2).ToString())
-                        .Replace("<percentToSeconds>", Math.Round(rotom.overheatCooldown * rotom.Pet.timerMax / 60, 2).ToString());
-                    break;
-                case ElectricTroublemakerEffect.blizzard:
-                    MoveTooltip = Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.RotomBlizzard")
-                        .Replace("<dmg>", rotom.blizzardDmg.ToString())
-                        .Replace("<blizzardDuration>", Math.Round(rotom.blizzardDuration / 60f, 2).ToString())
-                        .Replace("<slow>", Math.Round(rotom.coldSlow * 100, 2).ToString())
-                        .Replace("<freezeRequirement>", Math.Round(rotom.freezeRequirement / 60f, 2).ToString())
-                        .Replace("<freezeDuration>", Math.Round(rotom.freezeDuration / 60f, 2).ToString())
-                        .Replace("<percentOfCd>", Math.Round(rotom.blizzardCooldown * 100, 2).ToString())
-                        .Replace("<percentToSeconds>", Math.Round(rotom.blizzardCooldown * rotom.Pet.timerMax / 60, 2).ToString());
-                    break;
-                case ElectricTroublemakerEffect.leafStorm:
-                    MoveTooltip = Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.RotomLeafStorm")
-                        .Replace("<dmg>", rotom.leafStormDmg.ToString())
-                        .Replace("<lowLeaf>", rotom.minimumLeaf.ToString())
-                        .Replace("<highLeaf>", rotom.maxLeaf.ToString())
-                        .Replace("<percentOfCd>", Math.Round(rotom.leafStormCooldown * 100, 2).ToString())
-                        .Replace("<percentToSeconds>", Math.Round(rotom.leafStormCooldown * rotom.Pet.timerMax / 60, 2).ToString());
-                    break;
-                case ElectricTroublemakerEffect.airSlash:
-                    MoveTooltip = Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.RotomAirSlash")
-                        .Replace("<radius>", Math.Round(rotom.airSlashRadius / 16f, 2).ToString())
-                        .Replace("<dmg>", rotom.airSlashDmg.ToString())
-                        .Replace("<knockback>", rotom.airSlashKb.ToString())
-                        .Replace("<percentOfCd>", Math.Round(rotom.airSlashCooldown * 100, 2).ToString())
-                        .Replace("<percentToSeconds>", Math.Round(rotom.airSlashCooldown * rotom.Pet.timerMax / 60, 2).ToString());
-                    break;
-                default:
-                    break;
-            };
-            tooltips.Add(new(Mod, "Tooltip0", Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.TheEtomer")
-                    .Replace("<class>", PetTextsColors.ClassText(rotom.PetClassPrimary, rotom.PetClassSecondary))
-                    .Replace("<abilitySwitch>", PetTextsColors.KeybindText(PetKeybinds.PetAbilitySwitch))
-                    .Replace("<abilityUse>", PetTextsColors.KeybindText(PetKeybinds.UsePetAbility))
-                    .Replace("<dexMult>", ElectricTroublemakerEffect.dexMult.ToString())
-                    .Replace("<STABMult>", ElectricTroublemakerEffect.STABMult.ToString())
-                    .Replace("<baseCooldown>", Math.Round(rotom.baseCooldown / 60f, 2).ToString())
-                    .Replace("<abilityTooltip>", MoveTooltip)
-                ));
+                string MoveTooltip = "Invalid Ability";
+                switch (rotom.currentMove)
+                {
+                    case ElectricTroublemakerEffect.thunderWave:
+                        MoveTooltip = Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.RotomThunderWave")
+                            .Replace("<radius>", Math.Round(rotom.tWaveRadius / 16f, 2).ToString())
+                            .Replace("<slow>", Math.Round(rotom.tWaveSlow * 100, 2).ToString())
+                            .Replace("<slowDuration>", Math.Round(rotom.tWaveDuration / 60f, 2).ToString())
+                            .Replace("<percentOfCd>", Math.Round(rotom.tWaveCooldown * 100, 2).ToString())
+                            .Replace("<percentToSeconds>", Math.Round(rotom.tWaveCooldown * rotom.Pet.timerMax / 60, 2).ToString());
+                        break;
+                    case ElectricTroublemakerEffect.hydroPump:
+                        MoveTooltip = Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.RotomHydroPump")
+                            .Replace("<dmg>", rotom.hydroPumpDmg.ToString())
+                            .Replace("<wetDuration>", Math.Round(rotom.wetDuration / 60f, 2).ToString())
+                            .Replace("<percentOfCd>", Math.Round(rotom.hydroPumpCooldown * 100, 2).ToString())
+                            .Replace("<percentToSeconds>", Math.Round(rotom.hydroPumpCooldown * rotom.Pet.timerMax / 60, 2).ToString());
+                        break;
+                    case ElectricTroublemakerEffect.overheat:
+                        MoveTooltip = Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.RotomOverheat")
+                            .Replace("<radius>", Math.Round(rotom.overheatRadius / 16f, 2).ToString())
+                            .Replace("<dmg>", rotom.overheatDmg.ToString())
+                            .Replace("<burnDuration>", Math.Round(rotom.burnDuration / 60f, 2).ToString())
+                            .Replace("<percentOfCd>", Math.Round(rotom.overheatCooldown * 100, 2).ToString())
+                            .Replace("<percentToSeconds>", Math.Round(rotom.overheatCooldown * rotom.Pet.timerMax / 60, 2).ToString());
+                        break;
+                    case ElectricTroublemakerEffect.blizzard:
+                        MoveTooltip = Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.RotomBlizzard")
+                            .Replace("<dmg>", rotom.blizzardDmg.ToString())
+                            .Replace("<blizzardDuration>", Math.Round(rotom.blizzardDuration / 60f, 2).ToString())
+                            .Replace("<slow>", Math.Round(rotom.coldSlow * 100, 2).ToString())
+                            .Replace("<freezeRequirement>", Math.Round(rotom.freezeRequirement / 60f, 2).ToString())
+                            .Replace("<freezeDuration>", Math.Round(rotom.freezeDuration / 60f, 2).ToString())
+                            .Replace("<percentOfCd>", Math.Round(rotom.blizzardCooldown * 100, 2).ToString())
+                            .Replace("<percentToSeconds>", Math.Round(rotom.blizzardCooldown * rotom.Pet.timerMax / 60, 2).ToString());
+                        break;
+                    case ElectricTroublemakerEffect.leafStorm:
+                        MoveTooltip = Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.RotomLeafStorm")
+                            .Replace("<dmg>", rotom.leafStormDmg.ToString())
+                            .Replace("<lowLeaf>", rotom.minimumLeaf.ToString())
+                            .Replace("<highLeaf>", rotom.maxLeaf.ToString())
+                            .Replace("<percentOfCd>", Math.Round(rotom.leafStormCooldown * 100, 2).ToString())
+                            .Replace("<percentToSeconds>", Math.Round(rotom.leafStormCooldown * rotom.Pet.timerMax / 60, 2).ToString());
+                        break;
+                    case ElectricTroublemakerEffect.airSlash:
+                        MoveTooltip = Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.RotomAirSlash")
+                            .Replace("<radius>", Math.Round(rotom.airSlashRadius / 16f, 2).ToString())
+                            .Replace("<dmg>", rotom.airSlashDmg.ToString())
+                            .Replace("<knockback>", rotom.airSlashKb.ToString())
+                            .Replace("<percentOfCd>", Math.Round(rotom.airSlashCooldown * 100, 2).ToString())
+                            .Replace("<percentToSeconds>", Math.Round(rotom.airSlashCooldown * rotom.Pet.timerMax / 60, 2).ToString());
+                        break;
+                    default:
+                        break;
+                };
+                return Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.TheEtomer")
+                       .Replace("<abilitySwitch>", PetTextsColors.KeybindText(PetKeybinds.PetAbilitySwitch))
+                       .Replace("<abilityUse>", PetTextsColors.KeybindText(PetKeybinds.UsePetAbility))
+                       .Replace("<dexMult>", ElectricTroublemakerEffect.dexMult.ToString())
+                       .Replace("<STABMult>", ElectricTroublemakerEffect.STABMult.ToString())
+                       .Replace("<baseCooldown>", Math.Round(rotom.baseCooldown / 60f, 2).ToString())
+                       .Replace("<abilityTooltip>", MoveTooltip);
+            }
         }
     }
 }

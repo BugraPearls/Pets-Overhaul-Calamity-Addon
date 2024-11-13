@@ -3,6 +3,7 @@ using CalamityMod.Dusts;
 using Microsoft.Xna.Framework;
 using PetsOverhaul.Config;
 using PetsOverhaul.NPCs;
+using PetsOverhaul.PetEffects;
 using PetsOverhaul.Projectiles;
 using PetsOverhaul.Systems;
 using PetsOverhaulCalamityAddon.Items;
@@ -293,23 +294,20 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
             return base.PreAI(npc);
         }
     }
-    public sealed class ForgottenDragonEggTooltip : GlobalItem
+    public sealed class ForgottenDragonEggTooltip : PetTooltip
     {
-        public override bool AppliesToEntity(Item entity, bool lateInstantiation)
+        public override PetEffect PetsEffect => akato;
+        public static AkatoEffect akato
         {
-            return entity.type == CalamityPetIDs.Akato;
-        }
-        public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-        {
-            if (ModContent.GetInstance<PetPersonalization>().EnableTooltipToggle && !PetKeybinds.PetTooltipHide.Current)
+            get
             {
-                return;
+                if (Main.LocalPlayer.TryGetModPlayer(out AkatoEffect pet))
+                    return pet;
+                else
+                    return ModContent.GetInstance<AkatoEffect>();
             }
-
-            AkatoEffect akato = Main.LocalPlayer.GetModPlayer<AkatoEffect>();
-
-            tooltips.Add(new(Mod, "Tooltip0", Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.ForgottenDragonEgg")
-                        .Replace("<class>", PetTextsColors.ClassText(akato.PetClassPrimary, akato.PetClassSecondary))
+        }
+        public override string PetsTooltip => Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.ForgottenDragonEgg")
                         .Replace("<stackIcon>", ModContent.ItemType<DragonPracticeIcon>().ToString())
                         .Replace("<keybind>", PetTextsColors.KeybindText(PetKeybinds.UsePetAbility))
                         .Replace("<cooldown>", Math.Round(akato.cooldown / 60f, 2).ToString())
@@ -327,8 +325,6 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                         .Replace("<dragonPractice>", akato.dragonPracticeStacks.ToString())
                         .Replace("<hitStack>", AkatoEffect.stackPerHit.ToString())
                         .Replace("<killStack>", AkatoEffect.stackForKill.ToString())
-                        .Replace("<bossMultiply>", AkatoEffect.bossMult.ToString())
-                    ));
-        }
+                        .Replace("<bossMultiply>", AkatoEffect.bossMult.ToString());
     }
 }

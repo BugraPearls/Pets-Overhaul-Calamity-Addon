@@ -148,30 +148,26 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                 return base.PreKill(damage, hitDirection, pvp, ref playSound, ref genDust, ref damageSource);
         }
     }
-    public sealed class McNuggetsTooltip : GlobalItem
+    public sealed class McNuggetsTooltip : PetTooltip
     {
-        public override bool AppliesToEntity(Item entity, bool lateInstantiation)
+        public override PetEffect PetsEffect => yharon;
+        public static SonOfYharonEffect yharon
         {
-            return entity.type == CalamityPetIDs.SonOfYharon;
-        }
-
-        public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-        {
-            if (ModContent.GetInstance<PetPersonalization>().EnableTooltipToggle && !PetKeybinds.PetTooltipHide.Current)
+            get
             {
-                return;
+                if (Main.LocalPlayer.TryGetModPlayer(out SonOfYharonEffect pet))
+                    return pet;
+                else
+                    return ModContent.GetInstance<SonOfYharonEffect>();
             }
-            SonOfYharonEffect yharon = Main.LocalPlayer.GetModPlayer<SonOfYharonEffect>();
-            tooltips.Add(new(Mod, "Tooltip0", Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.McNuggets")
-                .Replace("<class>", PetTextsColors.ClassText(yharon.PetClassPrimary, yharon.PetClassSecondary))
+        }
+        public override string PetsTooltip => Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.McNuggets")
                         .Replace("<keybind>", PetTextsColors.KeybindText(PetKeybinds.UsePetAbility))
                         .Replace("<dmgRebirth>", Math.Round(yharon.dmgRebirth * 100, 2).ToString())
                         .Replace("<defRebirth>", yharon.defRebirth.ToString())
                         .Replace("<msRebirth>", Math.Round(yharon.msRebirth * 100, 2).ToString())
                         .Replace("<fireTime>", Math.Round(yharon.fireTime / 60f, 2).ToString())
                         .Replace("<rebornDuration>", Math.Round(yharon.rebirthDuration / 60f, 2).ToString())
-                        .Replace("<cooldown>", Math.Round(yharon.rebirthCooldown / 3600f, 2).ToString())
-            ));
-        }
+                        .Replace("<cooldown>", Math.Round(yharon.rebirthCooldown / 3600f, 2).ToString());
     }
 }

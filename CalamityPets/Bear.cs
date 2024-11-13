@@ -70,23 +70,20 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
             }
         }
     }
-    public sealed class BearsEyeTooltip : GlobalItem
+    public sealed class BearsEyeTooltip : PetTooltip
     {
-        public override bool AppliesToEntity(Item entity, bool lateInstantiation)
+        public override PetEffect PetsEffect => bear;
+        public static BearEffect bear
         {
-            return entity.type == CalamityPetIDs.Bear;
-        }
-
-        public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-        {
-            if (ModContent.GetInstance<PetPersonalization>().EnableTooltipToggle && !PetKeybinds.PetTooltipHide.Current)
+            get
             {
-                return;
+                if (Main.LocalPlayer.TryGetModPlayer(out BearEffect pet))
+                    return pet;
+                else
+                    return ModContent.GetInstance<BearEffect>();
             }
-
-            BearEffect bear = Main.LocalPlayer.GetModPlayer<BearEffect>();
-            tooltips.Add(new(Mod, "Tooltip0", Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.BearsEye")
-                .Replace("<class>", PetTextsColors.ClassText(bear.PetClassPrimary, bear.PetClassSecondary))
+        }
+        public override string PetsTooltip => Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.BearsEye")
                 .Replace("<belowHealth>", Math.Round(bear.hpTreshold * 100, 2).ToString())
                 .Replace("<baseShield>", Math.Round(bear.baseHpShield * 100, 2).ToString())
                 .Replace("<bonusShield>", Math.Round(bear.bonusHpShield * 100, 2).ToString())
@@ -95,8 +92,6 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                 .Replace("<rogueDmg>", Math.Round(bear.rogueDmg * 100, 2).ToString())
                 .Replace("<stealthDmg>", Math.Round(bear.stealthDmg * 100, 2).ToString())
                 .Replace("<stealthMoving>", Math.Round(bear.stealthMoving * 100, 2).ToString())
-                .Replace("<stealthNotMoving>", Math.Round(bear.stealthNotMoving * 100, 2).ToString())
-            ));
-        }
+                .Replace("<stealthNotMoving>", Math.Round(bear.stealthNotMoving * 100, 2).ToString());
     }
 }

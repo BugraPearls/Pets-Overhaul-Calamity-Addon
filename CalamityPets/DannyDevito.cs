@@ -45,31 +45,26 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
             }
         }
     }
-    public sealed class TrashmanTrashcanTooltip : GlobalItem
+    public sealed class TrashmanTrashcanTooltip : PetTooltip
     {
-        public override bool AppliesToEntity(Item entity, bool lateInstantiation)
+        public override PetEffect PetsEffect => dannyDevito;
+        public static DannyDevitoEffect dannyDevito
         {
-            return entity.type == CalamityPetIDs.DannyDevito;
-        }
-
-        public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-        {
-            if (ModContent.GetInstance<PetPersonalization>().EnableTooltipToggle && !PetKeybinds.PetTooltipHide.Current)
+            get
             {
-                return;
+                if (Main.LocalPlayer.TryGetModPlayer(out DannyDevitoEffect pet))
+                    return pet;
+                else
+                    return ModContent.GetInstance<DannyDevitoEffect>();
             }
-
-            DannyDevitoEffect dannyDevito = Main.LocalPlayer.GetModPlayer<DannyDevitoEffect>();
-            tooltips.Add(new(Mod, "Tooltip0", Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.TrashmanTrashcan")
-                .Replace("<class>", PetTextsColors.ClassText(dannyDevito.PetClassPrimary, dannyDevito.PetClassSecondary))
+        }
+        public override string PetsTooltip => Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.TrashmanTrashcan")
                 .Replace("<keybind>", PetTextsColors.KeybindText(PetKeybinds.UsePetAbility))
                 .Replace("<damage>", dannyDevito.damage.ToString())
                 .Replace("<bleedDuration>", Math.Round(dannyDevito.bleedDuration / 60f, 2).ToString())
                 .Replace("<slow>", Math.Round(dannyDevito.slow * 100, 2).ToString())
                 .Replace("<slowDuration>", Math.Round(dannyDevito.slowDuration / 60f, 2).ToString())
                 .Replace("<confuseChance>", dannyDevito.confusionChance.ToString())
-                .Replace("<confuseDuration>", Math.Round(dannyDevito.confusionDuration / 60f, 2).ToString())
-            ));
-        }
+                .Replace("<confuseDuration>", Math.Round(dannyDevito.confusionDuration / 60f, 2).ToString());
     }
 }

@@ -41,27 +41,22 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
             }
         }
     }
-    public sealed class RomajedaOrchidTooltip : GlobalItem
+    public sealed class RomajedaOrchidTooltip : PetTooltip
     {
-        public override bool AppliesToEntity(Item entity, bool lateInstantiation)
+        public override PetEffect PetsEffect => kendra;
+        public static KendraEffect kendra
         {
-            return entity.type == CalamityPetIDs.Kendra;
-        }
-
-        public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-        {
-            if (ModContent.GetInstance<PetPersonalization>().EnableTooltipToggle && !PetKeybinds.PetTooltipHide.Current)
+            get
             {
-                return;
+                if (Main.LocalPlayer.TryGetModPlayer(out KendraEffect pet))
+                    return pet;
+                else
+                    return ModContent.GetInstance<KendraEffect>();
             }
-
-            KendraEffect kendra = Main.LocalPlayer.GetModPlayer<KendraEffect>();
-            tooltips.Add(new(Mod, "Tooltip0", Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.RomajedaOrchid")
-                .Replace("<class>", PetTextsColors.ClassText(kendra.PetClassPrimary, kendra.PetClassSecondary))
+        }
+        public override string PetsTooltip => Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.RomajedaOrchid")
                 .Replace("<percAbsorb>", Math.Round(kendra.absorbPercent * 100, 2).ToString())
                 .Replace("<stealthMult>", kendra.stealthMult.ToString())
-                .Replace("<storedDmg>", kendra.currentNextDamage.ToString())
-            ));
-        }
+                .Replace("<storedDmg>", kendra.currentNextDamage.ToString());
     }
 }

@@ -104,23 +104,20 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
             }
         }
     }
-    public sealed class PrimroseKeepsakeTooltip : GlobalItem
+    public sealed class PrimroseKeepsakeTooltip : PetTooltip
     {
-        public override bool AppliesToEntity(Item entity, bool lateInstantiation)
+        public override PetEffect PetsEffect => duo;
+        public static FurtasticDuoEffect duo
         {
-            return entity.type == CalamityPetIDs.FurtasticDuo;
-        }
-
-        public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-        {
-            if (ModContent.GetInstance<PetPersonalization>().EnableTooltipToggle && !PetKeybinds.PetTooltipHide.Current)
+            get
             {
-                return;
+                if (Main.LocalPlayer.TryGetModPlayer(out FurtasticDuoEffect pet))
+                    return pet;
+                else
+                    return ModContent.GetInstance<FurtasticDuoEffect>();
             }
-
-            FurtasticDuoEffect duo = Main.LocalPlayer.GetModPlayer<FurtasticDuoEffect>();
-            tooltips.Add(new(Mod, "Tooltip0", Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.PrimroseKeepsake")
-                .Replace("<class>", PetTextsColors.ClassText(duo.PetClassPrimary, duo.PetClassSecondary))
+        }
+        public override string PetsTooltip => Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.PrimroseKeepsake")
                 .Replace("<belowHealth>", Math.Round(duo.hpTreshold * 100, 2).ToString())
                 .Replace("<baseShield>", Math.Round(duo.baseHpShield * 100, 2).ToString())
                 .Replace("<bonusShield>", Math.Round(duo.bonusHpShield * 100, 2).ToString())
@@ -133,8 +130,6 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                 .Replace("<lifeguardMult>", duo.lifeguardMult.ToString())
                 .Replace("<storedDmg>", duo.currentNextDamage.ToString())
                 .Replace("<procShield>", duo.procShield.ToString())
-                .Replace("<procShieldDuration>", Math.Round(duo.procShieldDuration / 60f, 2).ToString())
-            ));
-        }
+                .Replace("<procShieldDuration>", Math.Round(duo.procShieldDuration / 60f, 2).ToString());
     }
 }

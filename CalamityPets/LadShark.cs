@@ -120,31 +120,25 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
             return base.PreAI(npc);
         }
     }
-    public sealed class JoyfulHeartTooltip : GlobalItem
+    public sealed class JoyfulHeartTooltip : PetTooltip
     {
-
-        public override bool AppliesToEntity(Item entity, bool lateInstantiation)
+        public override PetEffect PetsEffect => shark;
+        public static LadSharkEffect shark
         {
-            return entity.type == CalamityPetIDs.LadShark;
-        }
-
-        public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-        {
-            if (ModContent.GetInstance<PetPersonalization>().EnableTooltipToggle && !PetKeybinds.PetTooltipHide.Current)
+            get
             {
-                return;
+                if (Main.LocalPlayer.TryGetModPlayer(out LadSharkEffect pet))
+                    return pet;
+                else
+                    return ModContent.GetInstance<LadSharkEffect>();
             }
-
-            LadSharkEffect shark = Main.LocalPlayer.GetModPlayer<LadSharkEffect>();
-            tooltips.Add(new(Mod, "Tooltip0", Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.JoyfulHeart")
-                .Replace("<class>", PetTextsColors.ClassText(shark.PetClassPrimary, shark.PetClassSecondary))
+        }
+        public override string PetsTooltip => Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.JoyfulHeart")
                 .Replace("<selfDmg>", shark.selfDmg.ToString())
                 .Replace("<takenDmg>", shark.enemyDmg.ToString())
                 .Replace("<keybind>", PetTextsColors.KeybindText(PetKeybinds.UsePetAbility).ToString())
                 .Replace("<radius>", Math.Round(shark.radius / 16f, 2).ToString())
                 .Replace("<perSecRegen>", shark.grantRegen.ToString())
-                .Replace("<duration>", Math.Round(shark.regenDuration / 60f, 2).ToString())
-            ));
-        }
+                .Replace("<duration>", Math.Round(shark.regenDuration / 60f, 2).ToString());
     }
 }

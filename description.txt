@@ -17,6 +17,7 @@ A: If you are interested, refer to our Discord channel where there is a guide on
 https://discord.gg/KubSpqvDGE
 
 The Calamity Addon currently supports following for Localization;
+Chinese localization (By: ROH)
 Brazillian Portuguese localization (By: Erstarisk)
 Russian localization (By: Teokai)
 

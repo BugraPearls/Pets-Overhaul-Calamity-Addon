@@ -3,6 +3,7 @@
 Your Pets will improve many aspects of your game with unique effects, including Light Pets, who has a 'stat roll' system, making almost all Light Pets stats distinct from one another.
 
 Check out [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2982195397]Pets Overhaul's Steam Workshop Page[/url] or our Discord server for further more info!
+Recommended to use /pet pets or /pet class [arg] command in-game to access all up to date Pet Effects!
 
 FAQ:
 Q: What is coming next?

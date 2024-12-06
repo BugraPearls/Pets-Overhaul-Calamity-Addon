@@ -25,21 +25,17 @@ namespace PetsOverhaul.LightPets
             }
         }
     }
-    public sealed class StrangeOrbPet : GlobalItem
+    public sealed class StrangeOrbPet : LightPetItem
     {
         public LightPetStat FishingPower = new(8, 1);
         public LightPetStat FishingFortune = new(25, 1);
         public LightPetStat HealInWater = new(35, 0.005f, 0.07f);
-        public override bool InstancePerEntity => true;
-        public override bool AppliesToEntity(Item entity, bool lateInstantiation)
-        {
-            return entity.type == CalamityLightPetIDs.OceanSpirit;
-        }
+        public override int LightPetItemID => CalamityLightPetIDs.OceanSpirit;
         public override void UpdateInventory(Item item, Player player)
         {
-            FishingPower.SetRoll();
-            FishingFortune.SetRoll();
-            HealInWater.SetRoll();
+            FishingPower.SetRoll(player.luck);
+            FishingFortune.SetRoll(player.luck);
+            HealInWater.SetRoll(player.luck);
         }
         public override void NetSend(Item item, BinaryWriter writer)
         {

@@ -181,13 +181,9 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                 currentMove = move;
             }
         }
-        public override void PreUpdate()
+        public override int PetAbilityCooldown => baseCooldown;
+        public override void ExtraPreUpdateNoCheck()
         {
-            if (PetIsEquipped(false))
-            {
-                Pet.SetPetAbilityTimer(baseCooldown);
-            }
-
             internalCooldownToInitiateAttack--;
             if (internalCooldownToInitiateAttack < 0)
                 internalCooldownToInitiateAttack = 0;

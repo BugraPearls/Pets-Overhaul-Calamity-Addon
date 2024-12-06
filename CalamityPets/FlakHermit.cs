@@ -44,13 +44,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
             }
             GlobalPet.CircularDustEffect(Player.Center, DustID.CursedTorch, radius, 20, scale: 2f);
         }
-        public override void PreUpdate()
-        {
-            if (PetIsEquipped(false))
-            {
-                Pet.SetPetAbilityTimer(cooldown);
-            }
-        }
+        public override int PetAbilityCooldown => cooldown;
         public override void PostUpdate()
         {
             if (PetIsEquipped() && Player.Calamity().stealthStrikeThisFrame && Pet.timer <= 0)

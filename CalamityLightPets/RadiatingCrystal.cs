@@ -38,21 +38,17 @@ namespace PetsOverhaul.LightPets
             }
         }
     }
-    public sealed class RadiatingCrystalPet : GlobalItem
+    public sealed class RadiatingCrystalPet : LightPetItem
     {
         public LightPetStat Knockback = new(25, 0.01f, 0.05f);
         public LightPetStat DebuffedDefense = new(7, 1);
         public LightPetStat PoisonRadius = new(15, 12, 60);
-        public override bool InstancePerEntity => true;
-        public override bool AppliesToEntity(Item entity, bool lateInstantiation)
-        {
-            return entity.type == CalamityLightPetIDs.Radiator;
-        }
+        public override int LightPetItemID => CalamityLightPetIDs.Radiator;
         public override void UpdateInventory(Item item, Player player)
         {
-            Knockback.SetRoll();
-            DebuffedDefense.SetRoll();
-            PoisonRadius.SetRoll();
+            Knockback.SetRoll(player.luck);
+            DebuffedDefense.SetRoll(player.luck);
+            PoisonRadius.SetRoll(player.luck);
         }
         public override void NetSend(Item item, BinaryWriter writer)
         {

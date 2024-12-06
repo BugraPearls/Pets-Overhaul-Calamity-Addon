@@ -29,13 +29,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         private int damageToTakeAfterReborn = 0;
         public override PetClasses PetClassPrimary => PetClasses.Defensive;
         public override PetClasses PetClassSecondary => PetClasses.Utility;
-        public override void PreUpdate()
-        {
-            if (PetIsEquipped(false))
-            {
-                Pet.SetPetAbilityTimer(rebirthCooldown);
-            }
-        }
+        public override int PetAbilityCooldown => rebirthCooldown;
         public override void PostUpdateMiscEffects()
         {
             if (PetIsEquipped())

@@ -13,11 +13,6 @@ namespace PetsOverhaul.LightPets
 {
     public sealed class RustedJingleBellEffect : LightPetEffect
     {
-        public int vanillaBreatheReset = 200; //vanilla doesn't reset the breathe max, so we do it ourselves. 
-        public override void ResetEffects()
-        {
-            Player.breathMax = vanillaBreatheReset;
-        }
         public override void PostUpdateEquips()
         {
             if (Player.miscEquips[1].TryGetGlobalItem(out RustedJingleBellPet bell))
@@ -31,21 +26,17 @@ namespace PetsOverhaul.LightPets
             }
         }
     }
-    public sealed class RustedJingleBellPet : GlobalItem
+    public sealed class RustedJingleBellPet : LightPetItem
     {
         public LightPetStat Breathe = new(30, 14, 90);
         public LightPetStat Haste = new(25, 0.002f, 0.03f);
         public LightPetStat MiningFortuneInWater = new(10, 2, 10);
-        public override bool InstancePerEntity => true;
-        public override bool AppliesToEntity(Item entity, bool lateInstantiation)
-        {
-            return entity.type == CalamityLightPetIDs.BabyGhostBell;
-        }
+        public override int LightPetItemID => CalamityLightPetIDs.BabyGhostBell;
         public override void UpdateInventory(Item item, Player player)
         {
-            Breathe.SetRoll();
-            Haste.SetRoll();
-            MiningFortuneInWater.SetRoll();
+            Breathe.SetRoll(player.luck);
+            Haste.SetRoll(player.luck);
+            MiningFortuneInWater.SetRoll(player.luck);
         }
         public override void NetSend(Item item, BinaryWriter writer)
         {

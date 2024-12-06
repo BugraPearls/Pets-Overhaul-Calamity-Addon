@@ -34,7 +34,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
             modifiers.CritDamage -= critDmgReduce;
             modifiers.CritDamage += Player.GetTotalCritChance(modifiers.DamageType) * critChanceToDmg * 0.01f;
         }
-        public override void PreUpdate()
+        public override void ExtraPreUpdateNoCheck()
         {
             if (Main.mouseItem.TryGetGlobalItem(out SupremeCalamitasManaCost scal)) //Done because Main.mouseItem does not count in UpdateInventory()
             {

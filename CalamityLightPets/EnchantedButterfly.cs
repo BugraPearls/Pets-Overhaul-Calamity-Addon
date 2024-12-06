@@ -23,23 +23,19 @@ namespace PetsOverhaul.LightPets
             }
         }
     }
-    public sealed class EnchantedButterflyPet : GlobalItem
+    public sealed class EnchantedButterflyPet : LightPetItem
     {
         public LightPetStat PetHealPower = new(30, 0.006f, 0.07f);
         public LightPetStat GlobalFortune = new(16, 1, 6);
         public LightPetStat Aggro = new(20, -5, -40);
         public LightPetStat PetDamage = new(10, 0.01f, 0.05f);
-        public override bool InstancePerEntity => true;
-        public override bool AppliesToEntity(Item entity, bool lateInstantiation)
-        {
-            return entity.type == CalamityLightPetIDs.Sparks;
-        }
+        public override int LightPetItemID => CalamityLightPetIDs.Sparks;
         public override void UpdateInventory(Item item, Player player)
         {
-            PetHealPower.SetRoll();
-            GlobalFortune.SetRoll();
-            Aggro.SetRoll();
-            PetDamage.SetRoll();
+            PetHealPower.SetRoll(player.luck);
+            GlobalFortune.SetRoll(player.luck);
+            Aggro.SetRoll(player.luck);
+            PetDamage.SetRoll(player.luck);
         }
         public override void NetSend(Item item, BinaryWriter writer)
         {

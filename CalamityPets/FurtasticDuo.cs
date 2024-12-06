@@ -31,16 +31,13 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         public int currentNextDamage = 0;
         public int procShield = 3;
         public int procShieldDuration = 150;
-        public override void PreUpdate()
+        public override int PetAbilityCooldown => cooldown;
+        public override void ExtraPreUpdate()
         {
-            if (PetIsEquipped(false))
+            lifeguardMultTimer--;
+            if (lifeguardMultTimer < 0)
             {
-                Pet.SetPetAbilityTimer(cooldown);
-                lifeguardMultTimer--;
-                if (lifeguardMultTimer < 0)
-                {
-                    lifeguardMultTimer = 0;
-                }
+                lifeguardMultTimer = 0;
             }
         }
         public override void PostUpdateEquips()

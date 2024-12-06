@@ -181,7 +181,8 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                 dragonPracticeStacks = stack;
             }
         }
-        public override void PreUpdate()
+        public override int PetAbilityCooldown => cooldown;
+        public override void ExtraPreUpdateNoCheck()
         {
             if (dragonPracticeStacks > maxStacks)
             {
@@ -189,7 +190,6 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
             }
             if (PetIsEquipped(false))
             {
-                Pet.SetPetAbilityTimer(cooldown);
                 beginOnHit--;
                 if (beginOnHit < 0)
                     beginOnHit = 0;

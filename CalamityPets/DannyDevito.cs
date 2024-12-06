@@ -38,13 +38,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                 Pet.timer = Pet.timerMax;
             }
         }
-        public override void PreUpdate()
-        {
-            if (PetIsEquipped())
-            {
-                Pet.SetPetAbilityTimer(cooldown);
-            }
-        }
+        public override int PetAbilityCooldown => cooldown;
     }
     public sealed class TrashmanTrashcanTooltip : PetTooltip
     {

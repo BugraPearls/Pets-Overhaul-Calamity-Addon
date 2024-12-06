@@ -29,23 +29,19 @@ namespace PetsOverhaul.LightPets
             }
         }
     }
-    public sealed class LittleLightPet : GlobalItem
+    public sealed class LittleLightPet : LightPetItem
     {
         public LightPetStat Aggro = new(20, 10, 50);
         public LightPetStat KnockbackResist = new(20, 0.02f, 0.2f);
         public LightPetStat ShieldIncrease = new(20, 0.008f, 0.06f);
         public LightPetStat Health = new(20, 2, 25);
-        public override bool InstancePerEntity => true;
-        public override bool AppliesToEntity(Item entity, bool lateInstantiation)
-        {
-            return entity.type == CalamityLightPetIDs.LittleLight;
-        }
+        public override int LightPetItemID => CalamityLightPetIDs.LittleLight;
         public override void UpdateInventory(Item item, Player player)
         {
-            Aggro.SetRoll();
-            KnockbackResist.SetRoll();
-            ShieldIncrease.SetRoll();
-            Health.SetRoll();
+            Aggro.SetRoll(player.luck);
+            KnockbackResist.SetRoll(player.luck);
+            ShieldIncrease.SetRoll(player.luck);
+            Health.SetRoll(player.luck);
         }
         public override void NetSend(Item item, BinaryWriter writer)
         {

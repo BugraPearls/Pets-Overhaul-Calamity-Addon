@@ -21,12 +21,9 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         public int perTime = 30;
         public int cooldown = 7200;
         private int cleansePenalty = 0;
-        public override void PreUpdate()
+        public override int PetAbilityCooldown => cooldown;
+        public override void ExtraPreUpdateNoCheck()
         {
-            if (PetIsEquipped(false))
-            {
-                Pet.SetPetAbilityTimer(cooldown);
-            }
             if (cleansePenalty > 0)
             {
                 cleansePenalty--;

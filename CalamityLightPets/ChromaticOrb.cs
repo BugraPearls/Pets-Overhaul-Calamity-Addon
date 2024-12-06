@@ -22,22 +22,18 @@ namespace PetsOverhaul.LightPets
             }
         }
     }
-    public sealed class ChromaticOrbPet : GlobalItem
+    public sealed class ChromaticOrbPet : LightPetItem
     {
         public LightPetStat AbilityHaste = new(40, 0.0045f, 0.07f);
         public LightPetStat CritChance = new(30, 0.002f, 0.03f);
         public LightPetStat JumpSpeed = new(10, 0.015f, 0.05f);
         //Thought about adding bonus Rage damage, but could be too much for 1 pet regarding damage output. Maybe in future if seems ok.
-        public override bool InstancePerEntity => true;
-        public override bool AppliesToEntity(Item entity, bool lateInstantiation)
-        {
-            return entity.type == CalamityLightPetIDs.Yuu;
-        }
+        public override int LightPetItemID => CalamityLightPetIDs.Yuu;
         public override void UpdateInventory(Item item, Player player)
         {
-            AbilityHaste.SetRoll();
-            CritChance.SetRoll();
-            JumpSpeed.SetRoll();
+            AbilityHaste.SetRoll(player.luck);
+            CritChance.SetRoll(player.luck);
+            JumpSpeed.SetRoll(player.luck);
         }
         public override void NetSend(Item item, BinaryWriter writer)
         {

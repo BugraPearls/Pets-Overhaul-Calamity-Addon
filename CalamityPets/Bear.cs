@@ -26,13 +26,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         public int cooldown = 3000;
         public override PetClasses PetClassPrimary => PetClasses.Rogue;
         public override PetClasses PetClassSecondary => PetClasses.Defensive;
-        public override void PreUpdate()
-        {
-            if (PetIsEquipped(false))
-            {
-                Pet.SetPetAbilityTimer(cooldown);
-            }
-        }
+        public override int PetAbilityCooldown => cooldown;
         public override void PostUpdateEquips()
         {
             if (PetIsEquipped())

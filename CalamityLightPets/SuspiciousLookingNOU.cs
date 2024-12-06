@@ -38,23 +38,19 @@ namespace PetsOverhaul.LightPets
             }
         }
     }
-    public sealed class SuspiciousLookingNOUPet : GlobalItem
+    public sealed class SuspiciousLookingNOUPet : LightPetItem
     {
         public LightPetStat Luck = new(69, 0.01f);
         public LightPetStat Damage = new(31, -0.003f);
         public LightPetStat FallBlocks = new(420, 1);
         public LightPetStat Sus = new(100, 0.01f, 0.01f);
-        public override bool InstancePerEntity => true;
-        public override bool AppliesToEntity(Item entity, bool lateInstantiation)
-        {
-            return entity.type == CalamityLightPetIDs.Lilorde;
-        }
+        public override int LightPetItemID => CalamityLightPetIDs.Lilorde;
         public override void UpdateInventory(Item item, Player player)
         {
-            Luck.SetRoll();
-            Damage.SetRoll();
-            FallBlocks.SetRoll();
-            Sus.SetRoll();
+            Luck.SetRoll(player.luck);
+            Damage.SetRoll(player.luck);
+            FallBlocks.SetRoll(player.luck);
+            Sus.SetRoll(player.luck);
         }
         public override void NetSend(Item item, BinaryWriter writer)
         {

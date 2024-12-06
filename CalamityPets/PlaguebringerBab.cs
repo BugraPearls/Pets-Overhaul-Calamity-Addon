@@ -28,13 +28,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         public int cooldown = 510;
         public int plagueAndSlowDuration = 150;
         public float slowAmount = 0.25f;
-        public override void PreUpdate()
-        {
-            if (PetIsEquipped(false))
-            {
-                Pet.SetPetAbilityTimer(cooldown);
-            }
-        }
+        public override int PetAbilityCooldown => cooldown;
         public override void ProcessTriggers(TriggersSet triggersSet)
         {
             if (Pet.AbilityPressCheck() && PetIsEquipped())

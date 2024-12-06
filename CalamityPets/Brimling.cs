@@ -24,13 +24,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         public int cooldown = 210;
         public float reflectAmount = 0.45f;
         public float kbFromReflect = 5f;
-        public override void PreUpdate()
-        {
-            if (PetIsEquipped(false))
-            {
-                Pet.SetPetAbilityTimer(cooldown);
-            }
-        }
+        public override int PetAbilityCooldown => cooldown;
         public override void PostUpdateMiscEffects()
         {
             if (PetIsEquipped() && Player.statLife < Player.statLifeMax2 * drTreshold)

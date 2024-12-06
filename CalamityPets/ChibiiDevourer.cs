@@ -21,9 +21,9 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         public int block = 320;
         public float kb = 100f;
         public bool check = false;
-        public override void PreUpdate()
+        public override void ExtraPreUpdate()
         {
-            if (PetIsEquipped(false) && Player.difficulty == PlayerDifficultyID.Hardcore)
+            if (Player.difficulty == PlayerDifficultyID.Hardcore)
                 check = true;
             else
                 check = false;

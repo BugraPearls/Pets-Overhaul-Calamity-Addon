@@ -28,13 +28,9 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
 
         public int loveRecoveryTimer = -1;
         public int currentRegen = 0;
-        public override void PreUpdate()
+        public override int PetAbilityCooldown => regenCd;
+        public override void ExtraPreUpdateNoCheck()
         {
-            if (PetIsEquipped(false))
-            {
-                Pet.SetPetAbilityTimer(regenCd);
-            }
-
             if (loveRecoveryTimer >= 0)
             {
                 if (loveRecoveryTimer % 30 == 0)

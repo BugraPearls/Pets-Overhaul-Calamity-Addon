@@ -1,9 +1,6 @@
-using CalamityMod.Dusts;
-using PetsOverhaul.Config;
 using PetsOverhaul.Systems;
 using PetsOverhaulCalamityAddon.Systems;
 using System;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.Audio;
 using Terraria.DataStructures;
@@ -38,7 +35,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                 {
                     if (Player.Distance(npc.Center) < block)
                     {
-                        npc.SimpleStrikeNPC(Pet.PetDamage(dmg), Player.direction, true, kb, DamageClass.Generic, true,Player.luck);
+                        npc.SimpleStrikeNPC(Pet.PetDamage(dmg), Player.direction, true, kb, DamageClass.Generic, true, Player.luck);
                     }
                 }
                 foreach (var player in Main.ActivePlayers)

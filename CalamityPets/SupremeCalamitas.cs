@@ -1,5 +1,4 @@
 ﻿using PetsOverhaul.Buffs;
-using PetsOverhaul.Config;
 using PetsOverhaul.Projectiles;
 using PetsOverhaul.Systems;
 using PetsOverhaulCalamityAddon.Systems;

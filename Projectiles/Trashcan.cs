@@ -70,7 +70,7 @@ namespace PetsOverhaulCalamityAddon.Projectiles
         public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
             if (target.active)
-            target.AddBuff(ModContent.BuffType<BleedOut>(), Trashman.bleedDuration);
+                target.AddBuff(ModContent.BuffType<BleedOut>(), Trashman.bleedDuration);
         }
     }
 }

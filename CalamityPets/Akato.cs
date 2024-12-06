@@ -3,7 +3,6 @@ using CalamityMod.Dusts;
 using Microsoft.Xna.Framework;
 using PetsOverhaul.Config;
 using PetsOverhaul.NPCs;
-using PetsOverhaul.PetEffects;
 using PetsOverhaul.Projectiles;
 using PetsOverhaul.Systems;
 using PetsOverhaulCalamityAddon.Items;

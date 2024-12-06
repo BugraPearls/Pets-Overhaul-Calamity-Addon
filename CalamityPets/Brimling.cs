@@ -1,13 +1,9 @@
-using CalamityMod;
 using CalamityMod.Projectiles.Summon;
-using PetsOverhaul.Config;
 using PetsOverhaul.Projectiles;
 using PetsOverhaul.Systems;
 using PetsOverhaulCalamityAddon.Systems;
 using System;
-using System.Collections.Generic;
 using Terraria;
-using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
 
@@ -52,7 +48,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
 
                 if (info.DamageSource.TryGetCausingEntity(out Entity entity))
                 {
-                    int damageTaken = Math.Min(info.SourceDamage, Player.statLife); 
+                    int damageTaken = Math.Min(info.SourceDamage, Player.statLife);
                     damageTaken = Main.DamageVar(Pet.PetDamage(damageTaken * reflectAmount), Player.luck); //Caps the Reflect's base damage to Player's current HP.
                     if (entity is Projectile projectile && projectile.TryGetGlobalProjectile(out ProjectileSourceChecks proj) && Main.npc[proj.sourceNpcId].active)
                     {

@@ -5,17 +5,19 @@ Your Pets will improve many aspects of your game with unique effects, including 
 Check out [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2982195397]Pets Overhaul's Steam Workshop Page[/url] or our Discord server for further more info!
 Recommended to use /pet pets or /pet class [arg] command in-game to access all up to date Pet Effects!
 
-FAQ:
-Q: What is coming next?
-A: Currently main focus won't be going for more other mods Pets, but rather improving existing systems & Pets. 
-Q: Next crossmod?
-A: If a crossmod is being done; It will be 99% Thorium's Pets.
-Q: Will there be X Mod's Pets?
-A: I would prefer community doing them, since I am struggling with making more Pets where the effect(s); Fits the pet, Is unique from others and Is balanced.
-Q: I would make Pets, but I don't know what to do!
-A: If you are interested, refer to our Discord channel where there is a guide on how, and our [url=https://github.com/BugraPearls/Pets-Overhaul]GitHub[/url] as Pets Overhaul is very developer friendly, you can even balance Pets as you please!
+Additions
+[list]
+[*] +20 More Pet Effects on top of Base mod's +65 Pet Effects!
+[*] With their unique Quality Rolling system, 8 More Light Pet Effects, on top of Base mod's 10 Light Pet Effects!
+[*] A new Town NPC; Pet Tamer, who can combine two Light Pets into one that inherits highest qualities of both!
+[*] More than 10 Aura effects by Vanilla Town Pets & Slimes, acting in a similar fashion of Campfire etc.
+[*] Mastery Shard item dropping from bosses allowing you to craft Master Mode exclusive Pets by a limited amount!
+[/list]
 
-https://discord.gg/KubSpqvDGE
+Q: Will X Mod get Pet Effects?
+A: Only one I can confidently say I will personally work on is Thorium. Other mods mostly is falling in hands of the community. Pets Overhaul is very crossmod friendly, so if interested, go for it!
+
+Join our [url=https://discord.gg/KubSpqvDGE]Discord server![/url]
 
 The Calamity Addon currently supports following for Localization;
 Chinese localization (By: [url=https://steamcommunity.com/profiles/76561198849203846/]ROH[/url])

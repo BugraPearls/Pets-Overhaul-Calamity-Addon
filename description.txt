@@ -6,16 +6,16 @@ Check out Pets Overhaul's description or our Discord server for further more inf
 Recommended to use /pet pets or /pet class [arg] command in-game to access all up to date Pet Effects!
 
 Additions
-+20 More Pet Effects on top of Base mod's +65 Pet Effects!
++20 More Unique Pet Effects on top of Base mod's +65 Pet Effects!
 With their unique Quality Rolling system, 8 More Light Pet Effects, on top of Base mod's 10 Light Pet Effects!
-A new Town NPC; Pet Tamer, who can combine two Light Pets into one that inherits highest qualities of both!
-More than 10 Aura effects by Vanilla Town Pets & Slimes, acting in a similar fashion of Campfire etc.
-Mastery Shard item dropping from bosses allowing you to craft Master Mode exclusive Pets by a limited amount!
 
 Q: Will X Mod get Pet Effects?
-A: Only one I can confidently say I will personally work on is Thorium. Other mods mostly is falling in hands of the community. Pets Overhaul is very crossmod friendly, so if interested, go for it!
+A: Only one I can confidently say I will personally work on is Thorium. Other mods mostly is falling in hands of the community. Pets Overhaul's code library is easy to use & has lots of tools & has lots of changeable stuff, so if interested, go for it!
 
 Join our Discord server! https://discord.gg/KubSpqvDGE
+
+Check out our GitHub Page to check the code, contribute & submit issues!
+https://github.com/BugraPearls/Pets-Overhaul-Calamity-Addon
 
 The Calamity Addon currently supports following for Localization;
 Chinese localization (By: ROH)

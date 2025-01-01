@@ -8,9 +8,11 @@ using CalamityMod.Items.Fishing.SunkenSeaCatches;
 using CalamityMod.Items.Materials;
 using CalamityMod.Items.Placeables;
 using CalamityMod.Items.Placeables.Ores;
+using CalamityMod.Items.Weapons.Magic;
 using CalamityMod.Items.Weapons.Melee;
 using CalamityMod.Items.Weapons.Ranged;
 using CalamityMod.Items.Weapons.Rogue;
+using CalamityMod.Items.Weapons.Summon;
 using CalamityMod.NPCs.HiveMind;
 using CalamityMod.NPCs.NormalNPCs;
 using CalamityMod.NPCs.OldDuke;
@@ -289,19 +291,43 @@ namespace PetsOverhaulCalamityAddon.Systems
                 new SoundStyle("CalamityMod/Sounds/NPCKilled/SepulcherDeath") with { PitchVariance = 0.6f }
             }
         };
-        public static void AddCalSoundEffects()
+        public static void AddCalamitySoundEffects()
         {
             PetSounds.PetItemIdToHurtSound.AddRange(CalamityPetHurtSounds);
             PetSounds.PetItemIdToAmbientSound.AddRange(CalamityPetAmbientSounds);
             PetSounds.PetItemidToKillSound.AddRange(CalamityPetKillSounds);
         }
-        public static void AddCalPetSlows()
+        public static void AddCalamityPetSlows()
         {
             PetSlowIDs.SicknessBasedSlows.Add(CalSlows.AstrophageSlow);
             PetSlowIDs.SicknessBasedSlows.Add(CalSlows.PlagueSlow);
             PetSlowIDs.SicknessBasedSlows.Add(CalSlows.trashmanSignatureMove);
             PetSlowIDs.ElectricBasedSlows.Add(CalSlows.rotomThunderWave);
             PetSlowIDs.ColdBasedSlows.Add(CalSlows.rotomBlizzard);
+        }
+        /// <summary>
+        /// All Items listed under 'soil blocks' in Calamities official Wiki.
+        /// </summary>
+        public static List<int> CalSoilBlocks = [ModContent.ItemType<EutrophicSand>(), ModContent.ItemType<Navystone>(), ModContent.ItemType<BrimstoneSlag>(), ModContent.ItemType<ScorchedRemains>(), ModContent.ItemType<SulphurousSand>(), ModContent.ItemType<SulphurousSandstone>(), ModContent.ItemType<HardenedSulphurousSandstone>(), ModContent.ItemType<SulphurousShale>(), ModContent.ItemType<AbyssGravel>(), ModContent.ItemType<PlantyMush>(), ModContent.ItemType<PyreMantle>(), ModContent.ItemType<PyreMantleMolten>(), ModContent.ItemType<Voidstone>(), ModContent.ItemType<AstralDirt>(), ModContent.ItemType<AstralClay>(), ModContent.ItemType<AstralStone>(), ModContent.ItemType<AstralSand>(), ModContent.ItemType<HardenedAstralSand>(), ModContent.ItemType<AstralSandstone>(), ModContent.ItemType<CelestialRemains>(), ModContent.ItemType<AstralSnow>(), ModContent.ItemType<AstralIce>(), ModContent.ItemType<NovaeSlag>(), ModContent.ItemType<VernalSoil>()];
+        /// <summary>
+        /// All weapons crafted with Living Shard + Blossom Flux.
+        /// </summary>
+        public static List<int> CalPlanteraWeapons = [ItemID.TerraBlade,ModContent.ItemType<BlossomFlux>(), ModContent.ItemType<BotanicPiercer>(), ModContent.ItemType<Photosynthesis>(), ModContent.ItemType<PlantationStaff>(), ModContent.ItemType<SamsaraSlicer>(), ModContent.ItemType<StygianShield>(), ModContent.ItemType<VernalBolter>(), ModContent.ItemType<WildfireBloom>()];
+        /// <summary>
+        /// All weapons crafted with Nightmare Fuel.
+        /// </summary>
+        public static List<int> CalNightmareWeapons = [ModContent.ItemType<LightGodsBrilliance>(), ModContent.ItemType<RecitationoftheBeast>(), ModContent.ItemType<Ataraxia>(), ModContent.ItemType<CorvidHarbringerStaff>(), ModContent.ItemType<DevilsDevastation>(), ModContent.ItemType<FaceMelter>(), ModContent.ItemType<Karasawa>(), ModContent.ItemType<Penumbra>(), ModContent.ItemType<Phangasm>(), ModContent.ItemType<RubicoPrime>()];
+        /// <summary>
+        /// All weapons crafted with Endothermic Energy.
+        /// </summary>
+        public static List<int> CalEndothermicWeapons = [ModContent.ItemType<PrimordialAncient>(), ModContent.ItemType<Alluvion>(), ModContent.ItemType<EndoHydraStaff>(), ModContent.ItemType<Hypothermia>(), ModContent.ItemType<Orderbringer>(), ModContent.ItemType<PrismaticBreaker>(), ModContent.ItemType<SDFMG>(), ModContent.ItemType<ThePack>(), ModContent.ItemType<Endogenesis>(), ModContent.ItemType<NanoblackReaper>(), ModContent.ItemType<IceBarrage>()];
+        public static void AddCalamityItemLists()
+        {
+            BabyPenguin.IceFishingDrops.Add(ModContent.ItemType<FishofEleum>());
+            DirtiestBlock.CommonBlock.AddRange(CalSoilBlocks);
+            Sapling.PlanteraWeapon.AddRange(CalPlanteraWeapons);
+            CursedSapling.PumpkinMoonWeapons.AddRange(CalNightmareWeapons);
+            BabyGrinch.FrostMoonWeapons.AddRange(CalEndothermicWeapons);
         }
     }
 }

@@ -13,8 +13,9 @@ namespace PetsOverhaulCalamityAddon
             Compatibility.AddCalamityCorruptEnemies();
             Compatibility.AddCalamityCrimsonEnemies();
             Compatibility.AddCalamityHallowEnemies();
-            Compatibility.AddCalSoundEffects();
-            Compatibility.AddCalPetSlows();
+            Compatibility.AddCalamitySoundEffects();
+            Compatibility.AddCalamityPetSlows();
+            Compatibility.AddCalamityItemLists();
         }
     }
 }

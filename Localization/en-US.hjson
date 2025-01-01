@@ -1,5 +1,14 @@
 Mods: {
 	PetsOverhaulCalamityAddon: {
+		MoonlingRogueTooltip:
+			'''
+			- Rogue Bonuses:
+			 * Increases maximum rogue stealth by <rogueStealthMax>.
+			 * Increases rogue stealth gain by <rogueStealthGain>%.
+			 * Increases rogue damage by <rogueDmg>%.
+			 * Increases rogue velocity by <rogueVelocity>%.
+			'''
+
 		LightPetTooltips: {
 			RustedJingleBell:
 				'''

@@ -42,19 +42,13 @@ namespace PetsOverhaulCalamityAddon.Systems
             if (Player.TryGetModPlayer(out Moonling moonling))
             {
                 moonling.ExternalTooltips.Add(CalClasses);
-                moonling.ExternalStats.Add(CalDamageClasses);
-                if (moonling.HighestDamage == Player.GetTotalDamage<RogueDamageClass>())
+                if (moonling.PetIsEquipped() && moonling.currentClass == moonling.Tooltips.FindIndex(x => x == CalClasses))
                 {
-                    if (moonling.PetIsEquipped())
-                    {
-                        Player.Calamity().rogueVelocity += rogueVelo;
-                        Player.Calamity().rogueStealthMax += stealthMax;
-                        Player.GetDamage<RogueDamageClass>() += rogueDmg;
-                        Player.Calamity().stealthGenMoving += stealthGain;
-                        Player.Calamity().stealthGenStandstill += stealthGain;
-                    }
-
-                    moonling.CurrentClass = PetTextsColors.PetClassLocalized(PetClasses.Rogue);
+                    Player.Calamity().rogueVelocity += rogueVelo;
+                    Player.Calamity().rogueStealthMax += stealthMax;
+                    Player.GetDamage<RogueDamageClass>() += rogueDmg;
+                    Player.Calamity().stealthGenMoving += stealthGain;
+                    Player.Calamity().stealthGenStandstill += stealthGain;
                 }
             }
         }

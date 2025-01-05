@@ -16,7 +16,7 @@ namespace PetsOverhaulCalamityAddon.Systems
         public float rogueDmg = 0.2f;
         public float stealthGain = 0.15f;
         public float stealthMax = 0.2f;
-        public string CalClasses => Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.MoonlingRogueTooltip")
+        public string RogueClassText => Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.MoonlingRogueTooltip")
                                             .Replace("<rogueVelocity>", Math.Round(rogueVelo * 100, 2).ToString())
                                             .Replace("<rogueDmg>", Math.Round(rogueDmg * 100, 2).ToString())
                                             .Replace("<rogueStealthGain>", Math.Round(stealthGain * 100, 2).ToString())
@@ -36,13 +36,22 @@ namespace PetsOverhaulCalamityAddon.Systems
             {
                 TilePlacement.AddToList(X, Y);
             }
+
+            if (Player.TryGetModPlayer(out Junimo junimo))
+            {
+                junimo.extraBosses += Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.JunimoExtraBosses");
+            }
+            if (DownedBossSystem.downedProvidence)
+                junimo.externalLvlIncr += 5;
+            if (DownedBossSystem.downedDoG)
+                junimo.externalLvlIncr += 5;
         }
         public override void PostUpdateEquips()
         {
             if (Player.TryGetModPlayer(out Moonling moonling))
             {
-                moonling.ExternalTooltips.Add(CalClasses);
-                if (moonling.PetIsEquipped() && moonling.currentClass == moonling.Tooltips.FindIndex(x => x == CalClasses))
+                moonling.ExternalTooltips.Add(RogueClassText);
+                if (moonling.PetIsEquipped() && moonling.currentClass == moonling.Tooltips.FindIndex(x => x == RogueClassText))
                 {
                     Player.Calamity().rogueVelocity += rogueVelo;
                     Player.Calamity().rogueStealthMax += stealthMax;

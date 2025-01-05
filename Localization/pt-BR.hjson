@@ -8,6 +8,7 @@ Mods: {
 			 * Increases rogue damage by <rogueDmg>%.
 			 * Increases rogue velocity by <rogueVelocity>%.
 			''' */
+		// JunimoExtraBosses: ", Providence, Devourer of Gods"
 
 		LightPetTooltips: {
 			RustedJingleBell:

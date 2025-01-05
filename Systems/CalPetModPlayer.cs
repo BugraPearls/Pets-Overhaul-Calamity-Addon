@@ -26,6 +26,24 @@ namespace PetsOverhaulCalamityAddon.Systems
         internal bool TileBeforeSymbiote = false;
         internal int X => (int)Player.Center.X / 16;
         internal int Y => (int)(Player.Bottom.Y - 1f) / 16;
+        public override void Load()
+        {
+            On_Player.Update += EvenMorePreUpdate;
+        }
+
+        private static void EvenMorePreUpdate(On_Player.orig_Update orig, Player self, int i)
+        {
+            if (self.TryGetModPlayer(out Junimo junimo)) //This is done so its consistently added to junimo's externalLvlIncr field before its utilized to prevent loads of level ups before Player joins into the world.
+            {
+                junimo.extraBosses += Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.JunimoExtraBosses");
+                if (DownedBossSystem.downedProvidence)
+                    junimo.externalLvlIncr += 5;
+                if (DownedBossSystem.downedDoG)
+                    junimo.externalLvlIncr += 5;
+            }
+            orig(self, i);
+        }
+
         public override void PreUpdate()
         {
             TileBeforeSymbiote = CalamityUtils.ParanoidTileRetrieval(X, Y).HasTile;
@@ -36,15 +54,6 @@ namespace PetsOverhaulCalamityAddon.Systems
             {
                 TilePlacement.AddToList(X, Y);
             }
-
-            if (Player.TryGetModPlayer(out Junimo junimo))
-            {
-                junimo.extraBosses += Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.JunimoExtraBosses");
-            }
-            if (DownedBossSystem.downedProvidence)
-                junimo.externalLvlIncr += 5;
-            if (DownedBossSystem.downedDoG)
-                junimo.externalLvlIncr += 5;
         }
         public override void PostUpdateEquips()
         {

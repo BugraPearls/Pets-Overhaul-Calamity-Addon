@@ -15,15 +15,15 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         public override PetClasses PetClassPrimary => PetClasses.Offensive;
         public int evilKills = 0;
         public int Level = 0;
-        public List<int> expTresholds = [0, 10, 50, 150, 400, 900, 1700, 3000, 5000, 10000];
-        public const int maxLvl = 9;
+        public List<int> expTresholds = [0, 10, 50, 150, 400, 900, 1700, 3000, 5000, 10000, 50000];
+        public const int maxLvl = 10;
         public float damage = 0;
         public float crit = 0;
         public float luckVal = 0;
         public float pen = 0;
         public float critDmg = 0;
-        public float evilMult = 1.5f;
-        public float dmgIncrIfCorrupt = 0.06f;
+        public float evilMult = 1.35f;
+        public float dmgIncrIfCorrupt = 0.12f;
         public override void ResetEffects()
         {
             damage = 0;
@@ -47,8 +47,8 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
 
             if (Level >= 0)
             {
-                damage += 0.03f;
-                crit += 1f;
+                damage += 0.01f;
+                crit += 0.5f;
             }
             if (Level >= 1)
             {
@@ -62,13 +62,13 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
             if (Level >= 3)
             {
                 damage += 0.01f;
-                crit += 1f;
                 pen += 1f;
             }
             if (Level >= 4)
             {
-                critDmg += 0.02f;
-                damage += 0.02f;
+                pen += 1f;
+                damage += 0.01f;
+                crit += 0.5f;
             }
             if (Level >= 5)
             {
@@ -88,7 +88,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                 damage += 0.01f;
                 pen += 2f;
                 luckVal += 0.01f;
-                critDmg += 0.03f;
+                critDmg += 0.01f;
             }
             if (Level >= 8)
             {
@@ -102,6 +102,11 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                 crit += 1f;
                 damage += 0.01f;
                 pen += 2f;
+                luckVal += 0.01f;
+                critDmg += 0.01f;
+            }
+            if (Level >= 10)
+            {
                 luckVal += 0.05f;
                 critDmg += 0.01f;
             }
@@ -184,7 +189,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                         .Replace("<killCount>", hive.evilKills.ToString())
                         .Replace("<dmg>", Math.Round(hive.damage * 100, 2).ToString())
                         .Replace("<crit>", hive.crit.ToString())
-                        .Replace("<luck>", hive.luckVal.ToString())
+                        .Replace("<luck>", Math.Round(hive.luckVal,2).ToString())
                         .Replace("<pen>", hive.pen.ToString())
                         .Replace("<critDmg>", Math.Round(hive.critDmg * 100, 2).ToString())
                         .Replace("<evilMult>", hive.evilMult.ToString())

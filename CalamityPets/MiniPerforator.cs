@@ -16,15 +16,15 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         public override PetClasses PetClassPrimary => PetClasses.Defensive;
         public int evilKills = 0;
         public int Level = 0;
-        public List<int> expTresholds = [0, 10, 50, 150, 400, 900, 1700, 3000, 5000, 10000];
-        public const int maxLvl = 9;
+        public List<int> expTresholds = [0, 10, 50, 150, 400, 900, 1700, 3000, 5000, 10000, 50000];
+        public const int maxLvl = 10;
         public int defense = 0;
         public int health = 0;
         public float luckVal = 0;
         public float dr = 0;
         public int regen = 0;
         public float evilMult = 1.5f;
-        public float drIfHurtByCrimson = 0.06f;
+        public float drIfHurtByCrimson = 0.10f;
         public override void ResetEffects()
         {
             defense = 0;
@@ -49,7 +49,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
             if (Level >= 0)
             {
                 health += 5;
-                defense += 2;
+                defense += 1;
             }
             if (Level >= 1)
             {
@@ -64,11 +64,11 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
             {
                 defense += 1;
                 health += 5;
-                dr += 0.01f;
+                dr += 0.005f;
             }
             if (Level >= 4)
             {
-                regen += 1;
+                defense += 2;
                 health += 5;
             }
             if (Level >= 5)
@@ -76,18 +76,16 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                 luckVal += 0.005f;
                 health += 5;
                 dr += 0.01f;
-                defense += 1;
             }
             if (Level >= 6)
             {
                 defense += 2;
                 health += 5;
-                dr += 0.01f;
+                dr += 0.005f;
             }
             if (Level >= 7)
             {
                 health += 5;
-                dr += 0.01f;
                 luckVal += 0.01f;
                 regen += 1;
             }
@@ -95,7 +93,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
             {
                 health += 5;
                 defense += 2;
-                dr += 0.02f;
+                dr += 0.01f;
                 luckVal += 0.02f;
             }
             if (Level >= 9)
@@ -103,6 +101,11 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                 health += 5;
                 defense += 1;
                 dr += 0.01f;
+                luckVal += 0.01f;
+                regen += 1;
+            }
+            if (Level >= 10)
+            {
                 luckVal += 0.05f;
                 regen += 1;
             }
@@ -188,7 +191,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                         .Replace("<killCount>", perforator.evilKills.ToString())
                         .Replace("<def>", perforator.defense.ToString())
                         .Replace("<hp>", perforator.health.ToString())
-                        .Replace("<luck>", perforator.luckVal.ToString())
+                        .Replace("<luck>", Math.Round(perforator.luckVal,2).ToString())
                         .Replace("<dr>", Math.Round(perforator.dr * 100, 2).ToString())
                         .Replace("<regen>", perforator.regen.ToString())
                         .Replace("<evilMult>", perforator.evilMult.ToString())

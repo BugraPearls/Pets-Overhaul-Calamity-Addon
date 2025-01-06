@@ -18,6 +18,8 @@ Join our [url=https://discord.gg/KubSpqvDGE]Discord server![/url]
 
 Check out our [url=https://github.com/BugraPearls/Pets-Overhaul-Calamity-Addon]GitHub Page[/url] to check the code, contribute & submit issues!
 
+Check out our [url=https://www.patreon.com/pearlying]Patreon Page[/url] if you'd like to support the Mod!
+
 The Calamity Addon currently supports following for Localization;
 Chinese localization (By: [url=https://steamcommunity.com/profiles/76561198849203846/]ROH[/url])
 Brazillian Portuguese localization (By: [url=https://steamcommunity.com/id/Erstarisk/]Erstarisk[/url])

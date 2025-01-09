@@ -1,3 +1,4 @@
+using PetsOverhaul.Projectiles;
 using PetsOverhaul.Systems;
 using PetsOverhaulCalamityAddon.Systems;
 using System;
@@ -15,7 +16,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         public override PetClasses PetClassPrimary => PetClasses.Offensive;
         public int evilKills = 0;
         public int Level = 0;
-        public List<int> expTresholds = [0, 10, 50, 150, 400, 900, 1700, 3000, 5000, 10000, 50000];
+        public List<int> expTresholds = [0, 10, 50, 150, 400, 900, 1700, 3000, 5000, 10000, 25000];
         public const int maxLvl = 10;
         public float damage = 0;
         public float crit = 0;
@@ -24,6 +25,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         public float critDmg = 0;
         public float evilMult = 1.35f;
         public float dmgIncrIfCorrupt = 0.12f;
+        public float takenPenalty = 0.07f;
         public override void ResetEffects()
         {
             damage = 0;
@@ -144,6 +146,13 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                 }
             }
         }
+        public override void ModifyHurt(ref Player.HurtModifiers modifiers)
+        {
+            if (PetIsEquipped() && modifiers.DamageSource.TryGetCausingEntity(out Entity entity) && ((entity is Projectile proj && proj.TryGetGlobalProjectile(out ProjectileSourceChecks source) && GlobalPet.CorruptEnemies.Contains(Main.npc[source.sourceNpcId].type) == false) || (entity is NPC npc && GlobalPet.CorruptEnemies.Contains(npc.type)) == false))
+            {
+                modifiers.FinalDamage *= 1f + takenPenalty;
+            }
+        }
         public override void Load()
         {
             GlobalPet.OnEnemyDeath += EnemyKillEffect;
@@ -186,6 +195,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         }
         public override string PetsTooltip => Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.RottingEyeball")
                         .Replace("<incrToCorrupt>", Math.Round(hive.dmgIncrIfCorrupt * 100, 2).ToString())
+                        .Replace("<penalty>", Math.Round(hive.takenPenalty * 100, 2).ToString())
                         .Replace("<killCount>", hive.evilKills.ToString())
                         .Replace("<dmg>", Math.Round(hive.damage * 100, 2).ToString())
                         .Replace("<crit>", hive.crit.ToString())

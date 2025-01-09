@@ -306,6 +306,7 @@ Mods: {
 				'''
 				<class>
 				- Deal <incrToCorrupt>% more damage to Corruption enemies.
+				- Receive <penalty>% more damage, except from Corruption enemies.
 				- Your Corruption enemy kills with this Pet: <killCount>
 				- Gain the following bonuses depending on your kills.
 				 * +<dmg>% damage, +<crit>% crit chance, +<luck> luck,
@@ -317,6 +318,7 @@ Mods: {
 				'''
 				<class>
 				- Receive <drFromCrimson>% less damage from Crimson enemies.
+				- Deal <penalty>% less damage except vs. Crimson enemies.
 				- Your crimson enemy kills with this Pet: <killCount>
 				- Gain the following bonuses depending on your kills.
 				 * +<def> defense, +<hp> maximum health, +<luck> luck,

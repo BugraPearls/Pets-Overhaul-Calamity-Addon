@@ -1,3 +1,4 @@
+using CalamityMod.Projectiles.Summon;
 using PetsOverhaul.Projectiles;
 using PetsOverhaul.Systems;
 using PetsOverhaulCalamityAddon.Systems;
@@ -16,7 +17,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         public override PetClasses PetClassPrimary => PetClasses.Defensive;
         public int evilKills = 0;
         public int Level = 0;
-        public List<int> expTresholds = [0, 10, 50, 150, 400, 900, 1700, 3000, 5000, 10000, 50000];
+        public List<int> expTresholds = [0, 10, 50, 150, 400, 900, 1700, 3000, 5000, 10000, 25000];
         public const int maxLvl = 10;
         public int defense = 0;
         public int health = 0;
@@ -25,6 +26,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         public int regen = 0;
         public float evilMult = 1.5f;
         public float drIfHurtByCrimson = 0.10f;
+        public float dmgPenalty = 0.05f;
         public override void ResetEffects()
         {
             defense = 0;
@@ -154,6 +156,16 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                 perf.evilKills++;
             }
         }
+        public override void ModifyHitNPC(NPC target, ref NPC.HitModifiers modifiers)
+        {
+            if (PetIsEquipped())
+            {
+                if (GlobalPet.CrimsonEnemies.Contains(target.type) == false)
+                {
+                    modifiers.FinalDamage *= 1f - dmgPenalty;
+                }
+            }
+        }
         public override void ModifyHurt(ref Player.HurtModifiers modifiers)
         {
             if (PetIsEquipped() && modifiers.DamageSource.TryGetCausingEntity(out Entity entity) && ((entity is Projectile proj && proj.TryGetGlobalProjectile(out ProjectileSourceChecks source) && GlobalPet.CrimsonEnemies.Contains(Main.npc[source.sourceNpcId].type)) || (entity is NPC npc && GlobalPet.CrimsonEnemies.Contains(npc.type))))
@@ -188,6 +200,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         }
         public override string PetsTooltip => Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.BloodyVein")
                         .Replace("<drFromCrimson>", Math.Round(perforator.drIfHurtByCrimson * 100, 2).ToString())
+                        .Replace("<penalty>", Math.Round(perforator.dmgPenalty * 100, 2).ToString())
                         .Replace("<killCount>", perforator.evilKills.ToString())
                         .Replace("<def>", perforator.defense.ToString())
                         .Replace("<hp>", perforator.health.ToString())

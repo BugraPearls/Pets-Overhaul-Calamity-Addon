@@ -1,14 +1,14 @@
 Mods: {
 	PetsOverhaulCalamityAddon: {
-		/* MoonlingRogueTooltip:
+		MoonlingRogueTooltip:
 			'''
-			- Rogue Bonuses:
-			 * Increases maximum rogue stealth by <rogueStealthMax>.
-			 * Increases rogue stealth gain by <rogueStealthGain>%.
-			 * Increases rogue damage by <rogueDmg>%.
-			 * Increases rogue velocity by <rogueVelocity>%.
-			''' */
-		// JunimoExtraBosses: ", Providence, Devourer of Gods"
+			- 盗贼加成：
+			 - 增加<rogueStealthMax>点最大潜行值
+			 - 增加<rogueStealthGain>%潜行值恢复速度
+			 - 增加<rogueDmg>%盗贼伤害
+			 - 增加<rogueVelocity>%盗贼弹幕速度
+			'''
+		JunimoExtraBosses: "，亵渎天神，神明吞噬者"
 
 		LightPetTooltips: {
 			RustedJingleBell:
@@ -294,6 +294,7 @@ Mods: {
 				'''
 				<class>
 				- 对腐化敌人造成额外<incrToCorrupt>%伤害
+				- 来自非腐化敌人的攻击对你造成额外<penalty>%伤害
 				- 装备此宠物击杀的腐化敌人数量：<killCount>
 				- 根据击杀数量获得以下加成：
 				 * +<dmg>%伤害，+<crit>%暴击率，+<luck>运气，+<pen>护甲穿透，+<critDmg>%暴击伤害
@@ -304,6 +305,7 @@ Mods: {
 				'''
 				<class>
 				- 受到猩红敌人的伤害降低<drFromCrimson>%
+				- 来自非猩红敌人的攻击对你造成额外<penalty>%伤害
 				- 装备此宠物击杀的猩红敌人数量：<killCount>
 				- 根据击杀数量获得以下加成：
 				 * +<def>防御，+<hp>最大生命值，+<luck>运气，+<dr>%伤害减免，+<regen>生命再生

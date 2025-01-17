@@ -8,7 +8,7 @@ Mods: {
 			 - 增加<rogueDmg>%盗贼伤害
 			 - 增加<rogueVelocity>%盗贼弹幕速度
 			'''
-		JunimoExtraBosses: "，亵渎天神，神明吞噬者"
+		JunimoExtraBosses: ，亵渎天神，神明吞噬者
 
 		LightPetTooltips: {
 			RustedJingleBell:

@@ -12,6 +12,7 @@ namespace PetsOverhaul.LightPets
 {
     public sealed class LittleLightEffect : LightPetEffect
     {
+        public override int LightPetItemID => CalamityLightPetIDs.LittleLight;
         public override void PostUpdateEquips()
         {
             if (Player.miscEquips[1].TryGetGlobalItem(out LittleLightPet light))

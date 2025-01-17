@@ -14,6 +14,7 @@ namespace PetsOverhaul.LightPets
 {
     public sealed class RadiatingCrystalEffect : LightPetEffect
     {
+        public override int LightPetItemID => CalamityLightPetIDs.Radiator;
         public override void PostUpdateEquips()
         {
             if (Player.miscEquips[1].TryGetGlobalItem(out RadiatingCrystalPet crystal))

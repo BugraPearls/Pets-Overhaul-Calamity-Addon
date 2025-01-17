@@ -13,6 +13,7 @@ namespace PetsOverhaul.LightPets
 {
     public sealed class RustedJingleBellEffect : LightPetEffect
     {
+        public override int LightPetItemID => CalamityLightPetIDs.BabyGhostBell;
         public override void PostUpdateEquips()
         {
             if (Player.miscEquips[1].TryGetGlobalItem(out RustedJingleBellPet bell))

@@ -12,6 +12,7 @@ namespace PetsOverhaul.LightPets
 {
     public sealed class StrangeOrbEffect : LightPetEffect
     {
+        public override int LightPetItemID => CalamityLightPetIDs.OceanSpirit;
         public override void PostUpdateEquips()
         {
             if (Player.miscEquips[1].TryGetGlobalItem(out StrangeOrbPet orb))

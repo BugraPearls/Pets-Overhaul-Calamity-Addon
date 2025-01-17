@@ -14,6 +14,7 @@ namespace PetsOverhaul.LightPets
 {
     public sealed class ThiefsDimeEffect : LightPetEffect
     {
+        public override int LightPetItemID => CalamityLightPetIDs.Goldie;
         public override void PostUpdateEquips()
         {
             if (Player.miscEquips[1].TryGetGlobalItem(out ThiefsDimePet dime))

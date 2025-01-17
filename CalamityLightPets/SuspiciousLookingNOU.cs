@@ -14,6 +14,7 @@ namespace PetsOverhaul.LightPets
 {
     public sealed class SuspiciousLookingNOUEffect : LightPetEffect
     {
+        public override int LightPetItemID => CalamityLightPetIDs.Lilorde;
         public override void PostUpdateEquips()
         {
             if (Player.miscEquips[1].TryGetGlobalItem(out SuspiciousLookingNOUPet sus))

@@ -4,6 +4,7 @@ using PetsOverhaulCalamityAddon.Systems;
 using System.Collections.Generic;
 using System.IO;
 using Terraria;
+using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
@@ -12,6 +13,7 @@ namespace PetsOverhaul.LightPets
 {
     public sealed class ChromaticOrbEffect : LightPetEffect
     {
+        public override int LightPetItemID => CalamityLightPetIDs.Yuu;
         public override void PostUpdateEquips()
         {
             if (Player.miscEquips[1].TryGetGlobalItem(out ChromaticOrbPet orb))

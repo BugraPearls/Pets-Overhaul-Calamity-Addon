@@ -1,14 +1,14 @@
 Mods: {
 	PetsOverhaulCalamityAddon: {
-		/* MoonlingRogueTooltip:
+		MoonlingRogueTooltip:
 			'''
-			- Rogue Bonuses:
-			 * Increases maximum rogue stealth by <rogueStealthMax>.
-			 * Increases rogue stealth gain by <rogueStealthGain>%.
-			 * Increases rogue damage by <rogueDmg>%.
-			 * Increases rogue velocity by <rogueVelocity>%.
-			''' */
-		// JunimoExtraBosses: ", Providence, Devourer of Gods"
+			- Бонусы разбойника:
+			 * Увеличивает максимальную скрытность разбойника на <rogueStealthMax>.  
+			 * Увеличивает прирост скрытности разбойника на <rogueStealthGain>%.  
+			 * Увеличивает урон разбойника на <rogueDmg>%.  
+			 * Увеличивает скорость разбойника на <rogueVelocity>%.  
+			'''
+		JunimoExtraBosses: ", Провидение, Поглотитель Богов"
 
 		LightPetTooltips: {
 			RustedJingleBell:

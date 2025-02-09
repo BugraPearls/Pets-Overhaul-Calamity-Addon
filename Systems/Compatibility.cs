@@ -99,7 +99,7 @@ namespace PetsOverhaulCalamityAddon.Systems
             (1100,[ModContent.ItemType<CryonicOre>()]),
             (1200,[ModContent.ItemType<HallowedOre>(), ModContent.ItemType<Voidstone>()]),
             (1300,[ModContent.ItemType<PerennialOre>()]),
-            (1400,[ModContent.ItemType<ScoriaOre>()]),
+            (1400,[ModContent.ItemType<ScoriaOre>(),ModContent.ItemType<Lumenyl>()]),
             (1500,[ModContent.ItemType<AstralOre>(), ModContent.ItemType<ExodiumCluster>()]),
             (1700,[ModContent.ItemType<UelibloomOre>()]),
             (2000,[ModContent.ItemType<AuricOre>()]),

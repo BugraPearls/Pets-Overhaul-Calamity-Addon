@@ -295,8 +295,8 @@ Mods: {
 			Levi:
 				'''
 				<class>
-				- For every 1 fishing power, gain <dmgPer>% damage.
-				- For every <defPer> fishing power, gain 1 defense.
+				- For every 1 fishing power, gain <dmgPer>% damage. Current: <currentDmg>%
+				- For every <defPer> fishing power, gain 1 defense. Current: <currentDef>
 				- Angler Armor pieces gain <helm>/<chest>/<leg> defense respectively.
 				- All of your Angler Armor pieces gain <critChance>% crit chance.
 				'''

@@ -20,12 +20,13 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         public int helm = 9;
         public int chest = 13;
         public int leg = 9;
+        public int actFishPow => Player.GetFishingConditions().FinalFishingLevel;
         public override void PostUpdateMiscEffects()
         {
             if (PetIsEquipped())
             {
-                Player.GetDamage<GenericDamageClass>() += Player.fishingSkill * dmgPerFish;
-                Player.statDefense += (int)(Player.fishingSkill / oneDefPerFishPower);
+                Player.GetDamage<GenericDamageClass>() += actFishPow * dmgPerFish;
+                Player.statDefense += (int)(actFishPow / oneDefPerFishPower);
             }
         }
     }
@@ -60,15 +61,15 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                 int def = item.defense;
                 if (item.type == ItemID.AnglerHat)
                 {
-                    def = levi.helm;
+                    def = levi.helm + item.defense;
                 }
                 if (item.type == ItemID.AnglerVest)
                 {
-                    def = levi.chest;
+                    def = levi.chest + item.defense;
                 }
                 if (item.type == ItemID.AnglerPants)
                 {
-                    def = levi.leg;
+                    def = levi.leg + item.defense;
                 }
                 if (tooltips.Find(x => x.Name == "Defense") != null)
                     tooltips.Find(x => x.Name == "Defense").Text = def.ToString() + Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.LeviDef");
@@ -93,7 +94,9 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         }
         public override string PetsTooltip => Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.Levi")
                 .Replace("<dmgPer>", Math.Round(levi.dmgPerFish * 100, 2).ToString())
+                .Replace("<currentDmg>", Math.Round(levi.dmgPerFish * levi.actFishPow * 100, 2).ToString())
                 .Replace("<defPer>", levi.oneDefPerFishPower.ToString())
+                .Replace("<currentDef>", Math.Round(levi.actFishPow / levi.oneDefPerFishPower, 2).ToString())
                 .Replace("<helm>", levi.helm.ToString())
                 .Replace("<chest>", levi.chest.ToString())
                 .Replace("<leg>", levi.leg.ToString())

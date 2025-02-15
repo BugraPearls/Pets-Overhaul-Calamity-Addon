@@ -92,8 +92,8 @@ namespace PetsOverhaulCalamityAddon.Systems
         };
         public static List<(int, int[])> CalamityMiningBlocks = new()
         {
-            (300,[ModContent.ItemType<CelestialRemains>(), ModContent.ItemType<NovaeSlag>()]),
-            (425,[ModContent.ItemType<SeaPrism>(), ModContent.ItemType<PrismShard>()]),
+            (300,[ModContent.ItemType<CelestialRemains>(), ModContent.ItemType<NovaeSlag>(), ModContent.ItemType<PrismShard>()]),
+            (450,[ModContent.ItemType<SeaPrism>()]),
             (550,[ModContent.ItemType<AerialiteOre>(), ModContent.ItemType<AerialiteOreDisenchanted>()]),
             (950,[ModContent.ItemType<InfernalSuevite>()]),
             (1100,[ModContent.ItemType<CryonicOre>()]),

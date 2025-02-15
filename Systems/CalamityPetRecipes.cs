@@ -37,7 +37,7 @@ namespace PetsOverhaulCalamityAddon.Systems
             PetRecipes.PetRecipe(Recipe.Create(CalamityPetIDs.MiniPerforator).AddIngredient<BloodSample>(125).AddIngredient(ItemID.ViciousPowder, 100).AddIngredient<BlightedGel>(25), 300);
             PetRecipes.PetRecipe(Recipe.Create(CalamityPetIDs.Pineapple).AddIngredient(ItemID.Pineapple).AddIngredient(ItemID.Goldfish,400), 1000);
             PetRecipes.PetRecipe(Recipe.Create(CalamityPetIDs.PlagueBringerBab).AddIngredient<PlagueCellCanister>(225).AddIngredient(ItemID.Stinger,50).AddIngredient<InfectedArmorPlating>(100),3000);
-            PetRecipes.PetRecipe(Recipe.Create(CalamityPetIDs.SonOfYharon).AddIngredient(ItemID.ChickenNugget).AddIngredient<EffulgentFeather>(40).AddIngredient<YharonSoulFragment>(30).AddIngredient<ScoriaBar>(25).AddIngredient<AshesofCalamity>(25),15000);
+            PetRecipes.PetRecipe(Recipe.Create(CalamityPetIDs.SonOfYharon).AddIngredient(ItemID.ChickenNugget,3).AddIngredient<EffulgentFeather>(40).AddIngredient<YharonSoulFragment>(30).AddIngredient<ScoriaBar>(25).AddIngredient<AshesofCalamity>(25),15000);
             PetRecipes.MasterModePetRecipe(Recipe.Create(CalamityPetIDs.SupremeCalamitas).AddIngredient<AshesofAnnihilation>(25).AddIngredient<AshesofCalamity>(100).AddIngredient(ItemID.LargeRuby).AddIngredient(ItemID.ArcaneCrystal,50),25000);
             PetRecipes.PetRecipe(Recipe.Create(CalamityPetIDs.ThirdSage).AddIngredient(ItemID.SoulofLight,5).AddIngredient(ItemID.SoulofNight,5).AddIngredient(ItemID.GuideVoodooDoll).AddIngredient<BloodOrb>(100).AddIngredient(ItemID.BottledWater,100),100);
 

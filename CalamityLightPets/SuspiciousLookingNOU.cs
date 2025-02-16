@@ -10,7 +10,7 @@ using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
 
-namespace PetsOverhaul.LightPets
+namespace PetsOverhaulCalamityAddon.CalamityLightPets
 {
     public sealed class SuspiciousLookingNOUEffect : LightPetEffect
     {
@@ -96,13 +96,8 @@ namespace PetsOverhaul.LightPets
                 Sus.CurrentRoll = sus;
             }
         }
-        public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-        {
-            if (ModContent.GetInstance<PetPersonalization>().EnableTooltipToggle && !PetKeybinds.PetTooltipHide.Current)
-            {
-                return;
-            }
-            tooltips.Add(new(Mod, "Tooltip0", Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.LightPetTooltips.SuspiciousLookingNOU")
+        public override int GetRoll() => Sus.CurrentRoll;
+        public override string PetsTooltip => Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.LightPetTooltips.SuspiciousLookingNOU")
 
                         .Replace("<luck>", Luck.BaseAndPerQuality(Luck.StatPerRoll.ToString()))
                         .Replace("<damage>", Damage.BaseAndPerQuality())
@@ -112,12 +107,6 @@ namespace PetsOverhaul.LightPets
                         .Replace("<luckLine>", Luck.StatSummaryLine(Math.Round(Luck.CurrentStatFloat, 2).ToString()))
                         .Replace("<damageLine>", Damage.StatSummaryLine())
                         .Replace("<fallLine>", FallBlocks.StatSummaryLine())
-                        .Replace("<susLine>", Sus.StatSummaryLine())
-                        ));
-            if (Damage.CurrentRoll <= 0)
-            {
-                tooltips.Add(new(Mod, "Tooltip0", PetTextsColors.RollMissingText()));
-            }
-        }
+                        .Replace("<susLine>", Sus.StatSummaryLine());
     }
 }

@@ -10,7 +10,7 @@ using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
 
-namespace PetsOverhaul.LightPets
+namespace PetsOverhaulCalamityAddon.CalamityLightPets
 {
     public sealed class RadiatingCrystalEffect : LightPetEffect
     {
@@ -85,13 +85,8 @@ namespace PetsOverhaul.LightPets
                 PoisonRadius.CurrentRoll = radius;
             }
         }
-        public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-        {
-            if (ModContent.GetInstance<PetPersonalization>().EnableTooltipToggle && !PetKeybinds.PetTooltipHide.Current)
-            {
-                return;
-            }
-            tooltips.Add(new(Mod, "Tooltip0", Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.LightPetTooltips.RadiatingCrystal")
+        public override int GetRoll() => Knockback.CurrentRoll;
+        public override string PetsTooltip => Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.LightPetTooltips.RadiatingCrystal")
 
                         .Replace("<knockback>", Knockback.BaseAndPerQuality())
                         .Replace("<def>", DebuffedDefense.BaseAndPerQuality())
@@ -99,12 +94,6 @@ namespace PetsOverhaul.LightPets
 
                         .Replace("<knockbackLine>", Knockback.StatSummaryLine())
                         .Replace("<defLine>", DebuffedDefense.StatSummaryLine())
-                        .Replace("<radiusLine>", PoisonRadius.StatSummaryLine(Math.Round(PoisonRadius.CurrentStatInt / 16f, 2).ToString()))
-                        ));
-            if (DebuffedDefense.CurrentRoll <= 0)
-            {
-                tooltips.Add(new(Mod, "Tooltip0", PetTextsColors.RollMissingText()));
-            }
-        }
+                        .Replace("<radiusLine>", PoisonRadius.StatSummaryLine(Math.Round(PoisonRadius.CurrentStatInt / 16f, 2).ToString()));
     }
 }

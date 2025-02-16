@@ -9,7 +9,7 @@ using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
 
-namespace PetsOverhaul.LightPets
+namespace PetsOverhaulCalamityAddon.CalamityLightPets
 {
     public sealed class RustedJingleBellEffect : LightPetEffect
     {
@@ -74,13 +74,8 @@ namespace PetsOverhaul.LightPets
                 MiningFortuneInWater.CurrentRoll = fortune;
             }
         }
-        public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-        {
-            if (ModContent.GetInstance<PetPersonalization>().EnableTooltipToggle && !PetKeybinds.PetTooltipHide.Current)
-            {
-                return;
-            }
-            tooltips.Add(new(Mod, "Tooltip0", Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.LightPetTooltips.RustedJingleBell")
+        public override int GetRoll() => Breathe.CurrentRoll;
+        public override string PetsTooltip => Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.LightPetTooltips.RustedJingleBell")
 
                         .Replace("<breathe>", Breathe.BaseAndPerQuality(Math.Round(Breathe.StatPerRoll / 60f, 2).ToString(), Math.Round(Breathe.BaseStat / 60f, 2).ToString()))
                         .Replace("<haste>", Haste.BaseAndPerQuality())
@@ -88,12 +83,6 @@ namespace PetsOverhaul.LightPets
 
                         .Replace("<breatheLine>", Breathe.StatSummaryLine(Math.Round(Breathe.CurrentStatInt / 60f, 2).ToString()))
                         .Replace("<hasteLine>", Haste.StatSummaryLine())
-                        .Replace("<fortuneLine>", MiningFortuneInWater.StatSummaryLine())
-                        ));
-            if (Haste.CurrentRoll <= 0)
-            {
-                tooltips.Add(new(Mod, "Tooltip0", PetTextsColors.RollMissingText()));
-            }
-        }
+                        .Replace("<fortuneLine>", MiningFortuneInWater.StatSummaryLine());
     }
 }

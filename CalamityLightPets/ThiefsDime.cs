@@ -10,7 +10,7 @@ using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
 
-namespace PetsOverhaul.LightPets
+namespace PetsOverhaulCalamityAddon.CalamityLightPets
 {
     public sealed class ThiefsDimeEffect : LightPetEffect
     {
@@ -90,13 +90,8 @@ namespace PetsOverhaul.LightPets
                 StealthGain.CurrentRoll = stealth;
             }
         }
-        public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-        {
-            if (ModContent.GetInstance<PetPersonalization>().EnableTooltipToggle && !PetKeybinds.PetTooltipHide.Current)
-            {
-                return;
-            }
-            tooltips.Add(new(Mod, "Tooltip0", Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.LightPetTooltips.ThiefsDime")
+        public override int GetRoll() => Luck.CurrentRoll;
+        public override string PetsTooltip => Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.LightPetTooltips.ThiefsDime")
 
                         .Replace("<luck>", Luck.BaseAndPerQuality(Luck.StatPerRoll.ToString()))
                         .Replace("<rogue>", RogueDamage.BaseAndPerQuality())
@@ -106,12 +101,6 @@ namespace PetsOverhaul.LightPets
                         .Replace("<luckLine>", Luck.StatSummaryLine(Math.Round(Luck.CurrentStatFloat, 2).ToString()))
                         .Replace("<rogueLine>", RogueDamage.StatSummaryLine())
                         .Replace("<velocityLine>", RogueVelocity.StatSummaryLine())
-                        .Replace("<stealthLine>", StealthGain.StatSummaryLine())
-                        ));
-            if (RogueDamage.CurrentRoll <= 0)
-            {
-                tooltips.Add(new(Mod, "Tooltip0", PetTextsColors.RollMissingText()));
-            }
-        }
+                        .Replace("<stealthLine>", StealthGain.StatSummaryLine());
     }
 }

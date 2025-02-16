@@ -8,7 +8,7 @@ using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
 
-namespace PetsOverhaul.LightPets
+namespace PetsOverhaulCalamityAddon.CalamityLightPets
 {
     public sealed class EnchantedButterflyEffect : LightPetEffect
     {
@@ -81,13 +81,8 @@ namespace PetsOverhaul.LightPets
                 PetDamage.CurrentRoll = mana;
             }
         }
-        public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-        {
-            if (ModContent.GetInstance<PetPersonalization>().EnableTooltipToggle && !PetKeybinds.PetTooltipHide.Current)
-            {
-                return;
-            }
-            tooltips.Add(new(Mod, "Tooltip0", Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.LightPetTooltips.EnchantedButterfly")
+        public override int GetRoll() => Aggro.CurrentRoll;
+        public override string PetsTooltip => Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.LightPetTooltips.EnchantedButterfly")
 
                         .Replace("<heal>", PetHealPower.BaseAndPerQuality())
                         .Replace("<fortune>", GlobalFortune.BaseAndPerQuality())
@@ -97,12 +92,7 @@ namespace PetsOverhaul.LightPets
                         .Replace("<healLine>", PetHealPower.StatSummaryLine())
                         .Replace("<fortuneLine>", GlobalFortune.StatSummaryLine())
                         .Replace("<aggroLine>", Aggro.StatSummaryLine(Aggro.CurrentStatInt.ToString())) //Using overload so the + doesn't appear on tooltip
-                        .Replace("<damageLine>", PetDamage.StatSummaryLine())
-                        ));
-            if (GlobalFortune.CurrentRoll <= 0)
-            {
-                tooltips.Add(new(Mod, "Tooltip0", PetTextsColors.RollMissingText()));
-            }
-        }
+                        .Replace("<damageLine>", PetDamage.StatSummaryLine());
+
     }
 }

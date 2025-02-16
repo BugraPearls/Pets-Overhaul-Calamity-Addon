@@ -8,7 +8,7 @@ using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
 
-namespace PetsOverhaul.LightPets
+namespace PetsOverhaulCalamityAddon.CalamityLightPets
 {
     public sealed class StrangeOrbEffect : LightPetEffect
     {
@@ -73,13 +73,8 @@ namespace PetsOverhaul.LightPets
                 HealInWater.CurrentRoll = heal;
             }
         }
-        public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-        {
-            if (ModContent.GetInstance<PetPersonalization>().EnableTooltipToggle && !PetKeybinds.PetTooltipHide.Current)
-            {
-                return;
-            }
-            tooltips.Add(new(Mod, "Tooltip0", Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.LightPetTooltips.StrangeOrb")
+        public override int GetRoll() => HealInWater.CurrentRoll;
+        public override string PetsTooltip => Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.LightPetTooltips.StrangeOrb")
 
                         .Replace("<power>", FishingPower.BaseAndPerQuality())
                         .Replace("<fortune>", FishingFortune.BaseAndPerQuality())
@@ -87,12 +82,6 @@ namespace PetsOverhaul.LightPets
 
                         .Replace("<powerLine>", FishingPower.StatSummaryLine())
                         .Replace("<fortuneLine>", FishingFortune.StatSummaryLine())
-                        .Replace("<healLine>", HealInWater.StatSummaryLine())
-                        ));
-            if (FishingFortune.CurrentRoll <= 0)
-            {
-                tooltips.Add(new(Mod, "Tooltip0", PetTextsColors.RollMissingText()));
-            }
-        }
+                        .Replace("<healLine>", HealInWater.StatSummaryLine());
     }
 }

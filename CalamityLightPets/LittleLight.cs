@@ -8,7 +8,7 @@ using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
 
-namespace PetsOverhaul.LightPets
+namespace PetsOverhaulCalamityAddon.CalamityLightPets
 {
     public sealed class LittleLightEffect : LightPetEffect
     {
@@ -87,13 +87,8 @@ namespace PetsOverhaul.LightPets
                 Health.CurrentRoll = health;
             }
         }
-        public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-        {
-            if (ModContent.GetInstance<PetPersonalization>().EnableTooltipToggle && !PetKeybinds.PetTooltipHide.Current)
-            {
-                return;
-            }
-            tooltips.Add(new(Mod, "Tooltip0", Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.LightPetTooltips.LittleLight")
+        public override int GetRoll() => Health.CurrentRoll;
+        public override string PetsTooltip => Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.LightPetTooltips.LittleLight")
 
                         .Replace("<aggro>", Aggro.BaseAndPerQuality())
                         .Replace("<kbResist>", KnockbackResist.BaseAndPerQuality())
@@ -103,12 +98,7 @@ namespace PetsOverhaul.LightPets
                         .Replace("<aggroLine>", Aggro.StatSummaryLine())
                         .Replace("<kbResistLine>", KnockbackResist.StatSummaryLine())
                         .Replace("<shieldLine>", ShieldIncrease.StatSummaryLine())
-                        .Replace("<healthLine>", Health.StatSummaryLine())
-                        ));
-            if (KnockbackResist.CurrentRoll <= 0)
-            {
-                tooltips.Add(new(Mod, "Tooltip0", PetTextsColors.RollMissingText()));
-            }
-        }
+                        .Replace("<healthLine>", Health.StatSummaryLine());
+
     }
 }

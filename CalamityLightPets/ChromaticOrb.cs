@@ -9,7 +9,7 @@ using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
 
-namespace PetsOverhaul.LightPets
+namespace PetsOverhaulCalamityAddon.CalamityLightPets
 {
     public sealed class ChromaticOrbEffect : LightPetEffect
     {
@@ -72,13 +72,8 @@ namespace PetsOverhaul.LightPets
                 JumpSpeed.CurrentRoll = jump;
             }
         }
-        public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-        {
-            if (ModContent.GetInstance<PetPersonalization>().EnableTooltipToggle && !PetKeybinds.PetTooltipHide.Current)
-            {
-                return;
-            }
-            tooltips.Add(new(Mod, "Tooltip0", Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.LightPetTooltips.ChromaticOrb")
+        public override int GetRoll() => AbilityHaste.CurrentRoll;
+        public override string PetsTooltip => Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.LightPetTooltips.ChromaticOrb")
 
                         .Replace("<haste>", AbilityHaste.BaseAndPerQuality())
                         .Replace("<crit>", CritChance.BaseAndPerQuality())
@@ -86,12 +81,6 @@ namespace PetsOverhaul.LightPets
 
                         .Replace("<hasteLine>", AbilityHaste.StatSummaryLine())
                         .Replace("<critLine>", CritChance.StatSummaryLine())
-                        .Replace("<jumpLine>", JumpSpeed.StatSummaryLine())
-                        ));
-            if (CritChance.CurrentRoll <= 0)
-            {
-                tooltips.Add(new(Mod, "Tooltip0", PetTextsColors.RollMissingText()));
-            }
-        }
+                        .Replace("<jumpLine>", JumpSpeed.StatSummaryLine());
     }
 }

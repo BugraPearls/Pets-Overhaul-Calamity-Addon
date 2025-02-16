@@ -253,10 +253,10 @@ Mods: {
 				- Press Pet Ability Keybind (<keybind>) to format (cleanse) ALL the debuffs on you.
 				 * Doing so successfully causes an overload, you cannot use anything for the next
 				   <baseCurse> base seconds + <perCurse> second per debuff cleansed.
+				 * Essentially applies cursed debuff, though it ignores immunities.
 				 * This includes semi-debuffs. (debuffs that have both upsides and downsides!)
 				 * Cleanse does not remove debuffs that can't be removed by the Nurse.
 				 * Its <cooldown> second cooldown begins if a debuff is successfully cleansed.
-				 * Essentially applies cursed debuff, though it ignores immunities.
 				'''
 			FoxCleansedText: "Debuffs Cleansed: "
 			PrimroseKeepsake:

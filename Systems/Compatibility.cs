@@ -1,5 +1,6 @@
 ﻿using CalamityMod.Items.Accessories;
 using CalamityMod.Items.Accessories.Vanity;
+using CalamityMod.Items.Critters;
 using CalamityMod.Items.Fishing;
 using CalamityMod.Items.Fishing.AstralCatches;
 using CalamityMod.Items.Fishing.BrimstoneCragCatches;
@@ -7,7 +8,26 @@ using CalamityMod.Items.Fishing.SulphurCatches;
 using CalamityMod.Items.Fishing.SunkenSeaCatches;
 using CalamityMod.Items.Materials;
 using CalamityMod.Items.Placeables;
+using CalamityMod.Items.Placeables.DraedonStructures;
+using CalamityMod.Items.Placeables.Furniture;
+using CalamityMod.Items.Placeables.FurnitureAbyss;
+using CalamityMod.Items.Placeables.FurnitureAcidwood;
+using CalamityMod.Items.Placeables.FurnitureAshen;
+using CalamityMod.Items.Placeables.FurnitureBotanic;
+using CalamityMod.Items.Placeables.FurnitureCosmilite;
+using CalamityMod.Items.Placeables.FurnitureEutrophic;
+using CalamityMod.Items.Placeables.FurnitureExo;
+using CalamityMod.Items.Placeables.FurnitureMonolith;
+using CalamityMod.Items.Placeables.FurnitureOtherworldly;
+using CalamityMod.Items.Placeables.FurniturePlagued;
+using CalamityMod.Items.Placeables.FurnitureProfaned;
+using CalamityMod.Items.Placeables.FurnitureSacrilegious;
+using CalamityMod.Items.Placeables.FurnitureSilva;
+using CalamityMod.Items.Placeables.FurnitureStatigel;
+using CalamityMod.Items.Placeables.FurnitureStratus;
+using CalamityMod.Items.Placeables.FurnitureVoid;
 using CalamityMod.Items.Placeables.Ores;
+using CalamityMod.Items.SummonItems;
 using CalamityMod.Items.Weapons.Magic;
 using CalamityMod.Items.Weapons.Melee;
 using CalamityMod.Items.Weapons.Ranged;
@@ -26,6 +46,7 @@ using PetsOverhaul.NPCs;
 using PetsOverhaul.PetEffects;
 using PetsOverhaul.Systems;
 using System.Collections.Generic;
+using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -308,7 +329,9 @@ namespace PetsOverhaulCalamityAddon.Systems
         /// <summary>
         /// All Items listed under 'soil blocks' in Calamities official Wiki.
         /// </summary>
-        public static List<int> CalSoilBlocks = [ModContent.ItemType<EutrophicSand>(), ModContent.ItemType<Navystone>(), ModContent.ItemType<BrimstoneSlag>(), ModContent.ItemType<ScorchedRemains>(), ModContent.ItemType<SulphurousSand>(), ModContent.ItemType<SulphurousSandstone>(), ModContent.ItemType<HardenedSulphurousSandstone>(), ModContent.ItemType<SulphurousShale>(), ModContent.ItemType<AbyssGravel>(), ModContent.ItemType<PlantyMush>(), ModContent.ItemType<PyreMantle>(), ModContent.ItemType<PyreMantleMolten>(), ModContent.ItemType<Voidstone>(), ModContent.ItemType<AstralDirt>(), ModContent.ItemType<AstralClay>(), ModContent.ItemType<AstralStone>(), ModContent.ItemType<AstralSand>(), ModContent.ItemType<HardenedAstralSand>(), ModContent.ItemType<AstralSandstone>(), ModContent.ItemType<CelestialRemains>(), ModContent.ItemType<AstralSnow>(), ModContent.ItemType<AstralIce>(), ModContent.ItemType<NovaeSlag>(), ModContent.ItemType<VernalSoil>()];
+        public static List<int> CalSoilBlocks = [ModContent.ItemType<EutrophicSand>(), ModContent.ItemType<Navystone>(), ModContent.ItemType<BrimstoneSlag>(), ModContent.ItemType<ScorchedRemains>(), ModContent.ItemType<SulphurousSand>(), ModContent.ItemType<SulphurousSandstone>(), ModContent.ItemType<HardenedSulphurousSandstone>(), ModContent.ItemType<SulphurousShale>(), 
+            ModContent.ItemType<AbyssGravel>(), ModContent.ItemType<PlantyMush>(), ModContent.ItemType<PyreMantle>(), ModContent.ItemType<PyreMantleMolten>(), ModContent.ItemType<Voidstone>(), ModContent.ItemType<AstralDirt>(), ModContent.ItemType<AstralClay>(), ModContent.ItemType<AstralStone>(), ModContent.ItemType<AstralSand>(), ModContent.ItemType<HardenedAstralSand>(), 
+            ModContent.ItemType<AstralSandstone>(), ModContent.ItemType<CelestialRemains>(), ModContent.ItemType<AstralSnow>(), ModContent.ItemType<AstralIce>(), ModContent.ItemType<NovaeSlag>(), ModContent.ItemType<VernalSoil>()];
         /// <summary>
         /// All weapons crafted with Living Shard + Blossom Flux.
         /// </summary>
@@ -328,6 +351,20 @@ namespace PetsOverhaulCalamityAddon.Systems
             Sapling.PlanteraWeapon.AddRange(CalPlanteraWeapons);
             CursedSapling.PumpkinMoonWeapons.AddRange(CalNightmareWeapons);
             BabyGrinch.FrostMoonWeapons.AddRange(CalEndothermicWeapons);
+        }
+
+        public static int[] calChests = [ModContent.ItemType<AbyssTreasureChest>(), ModContent.ItemType<AshenChest>(), ModContent.ItemType<AstralChest>(), ModContent.ItemType<RustyChest>(), ModContent.ItemType<SecurityChest>(), ModContent.ItemType<SacrilegiousChest>(), ModContent.ItemType<OtherworldlyChest>(), ModContent.ItemType<StratusChest>(), ModContent.ItemType<BotanicChest>(), 
+            ModContent.ItemType<CosmiliteChest>(), ModContent.ItemType<ExoChest>(), ModContent.ItemType<SilvaChest>(), ModContent.ItemType<EutrophicChest>(), ModContent.ItemType<AgedSecurityChest>(), ModContent.ItemType<RustyChest>(), ModContent.ItemType<MonolithChest>(), ModContent.ItemType<PlaguedPlateChest>(), ModContent.ItemType<ProfanedChest>(), 
+            ModContent.ItemType<StatigelChest>(), ModContent.ItemType<AbyssChest>(), ModContent.ItemType<VoidChest>(), ModContent.ItemType<AcidwoodChest>()];
+        public static int[] calBugs = [ModContent.ItemType<BabyFlakCrabItem>(), ModContent.ItemType<TwinklerItem>()];
+        public static int[] calAnimals = [ModContent.ItemType<BabyFlakCrabItem>(), ModContent.ItemType<TwinklerItem>(), ModContent.ItemType<BloodwormItem>(), ModContent.ItemType<PiggyItem>(), ModContent.ItemType<BabyCannonballJellyfishItem>(), ModContent.ItemType<BabyGhostBellItem>(), ModContent.ItemType<SeaMinnowItem>()];
+        public static void AddCalamityRecipeGroups()
+        {
+            RecipeGroupsForPets.silts.Add(ModContent.ItemType<CelestialRemains>());
+            RecipeGroupsForPets.iceBlocks.Add(ModContent.ItemType<AstralIce>());
+            RecipeGroupsForPets.chests.AddRange(calChests);
+            RecipeGroupsForPets.allBugs.AddRange(calBugs);
+            RecipeGroupsForPets.animals.AddRange(calAnimals);
         }
     }
 }

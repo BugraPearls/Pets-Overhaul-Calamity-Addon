@@ -16,6 +16,7 @@ namespace PetsOverhaulCalamityAddon
             Compatibility.AddCalamitySoundEffects();
             Compatibility.AddCalamityPetSlows();
             Compatibility.AddCalamityItemLists();
+            Compatibility.AddCalamityRecipeGroups();
         }
     }
 }

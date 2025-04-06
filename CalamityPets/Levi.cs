@@ -39,19 +39,22 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         public override void UpdateEquip(Item item, Player player)
         {
             LeviEffect levi = player.GetModPlayer<LeviEffect>();
-            if (item.type == ItemID.AnglerHat)
+            if (levi.PetIsEquipped())
             {
-                player.statDefense += levi.helm;
+                if (item.type == ItemID.AnglerHat)
+                {
+                    player.statDefense += levi.helm;
+                }
+                if (item.type == ItemID.AnglerVest)
+                {
+                    player.statDefense += levi.chest;
+                }
+                if (item.type == ItemID.AnglerPants)
+                {
+                    player.statDefense += levi.leg;
+                }
+                player.GetCritChance<GenericDamageClass>() += levi.crit;
             }
-            if (item.type == ItemID.AnglerVest)
-            {
-                player.statDefense += levi.chest;
-            }
-            if (item.type == ItemID.AnglerPants)
-            {
-                player.statDefense += levi.leg;
-            }
-            player.GetCritChance<GenericDamageClass>() += levi.crit;
         }
         public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
         {
@@ -71,11 +74,9 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                 {
                     def = levi.leg + item.defense;
                 }
-                if (tooltips.Find(x => x.Name == "Defense") != null)
-                    tooltips.Find(x => x.Name == "Defense").Text = def.ToString() + Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.LeviDef");
-
-                if (tooltips.Find(x => x.Name == "Tooltip0") != null)
-                    tooltips.Find(x => x.Name == "Tooltip0").Text = levi.crit.ToString() + Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.LeviCrit");
+                int indx = tooltips.FindLastIndex(x => x.Name == "Defense");
+                    tooltips.Insert(indx +1, new(Mod,"PetTooltip0", def.ToString() + Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.LeviDef")));
+                tooltips.Insert(indx + 2, new(Mod, "PetTooltip1", levi.crit.ToString() + Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.LeviCrit")));
             }
         }
     }

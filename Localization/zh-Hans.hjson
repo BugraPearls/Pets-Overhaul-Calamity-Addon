@@ -288,7 +288,6 @@ Mods: {
 				- 每件渔夫套装分别增加<helm>/<chest>/<leg>点防御
 				- 每件渔夫套装都会增加<critChance>%暴击率
 				'''
-			LeviDef: "{$LegacyTooltip.25}"
 			LeviCrit: %暴击率增加
 			RottingEyeball:
 				'''

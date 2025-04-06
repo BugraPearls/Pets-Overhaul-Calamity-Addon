@@ -299,7 +299,6 @@ Mods: {
 				- As peças da Armadura de Pescador ganham <helm>/<chest>/<leg> de defesa, respectivamente.
 				- Todas as suas peças da Armadura de Pescador ganham <critChance>% de chance crítica.
 				'''
-			LeviDef: "{$LegacyTooltip.25}"
 			LeviCrit: % de chance de dano crítico aumentado
 			RottingEyeball:
 				'''

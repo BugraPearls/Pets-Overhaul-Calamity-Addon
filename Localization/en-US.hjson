@@ -300,7 +300,6 @@ Mods: {
 				- Angler Armor pieces gain <helm>/<chest>/<leg> defense respectively.
 				- All of your Angler Armor pieces gain <critChance>% crit chance.
 				'''
-			LeviDef: "{$LegacyTooltip.25}"
 			LeviCrit: % increased critical strike chance
 			RottingEyeball:
 				'''

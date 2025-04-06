@@ -75,8 +75,10 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                     def = levi.leg + item.defense;
                 }
                 int indx = tooltips.FindLastIndex(x => x.Name == "Defense");
-                    tooltips.Insert(indx +1, new(Mod,"PetTooltip0", def.ToString() + Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.LeviDef")));
-                tooltips.Insert(indx + 2, new(Mod, "PetTooltip1", levi.crit.ToString() + Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.LeviCrit")));
+                if (indx < 0)
+                    indx = tooltips.FindLastIndex(x => x.Name == "ItemName") + 1; //safety net
+                    tooltips[indx].Text = def.ToString() + Language.GetTextValue("LegacyTooltip.25");
+                tooltips.Insert(indx + 1, new(Mod, "PetTooltip0", levi.crit.ToString() + Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.LeviCrit")));
             }
         }
     }

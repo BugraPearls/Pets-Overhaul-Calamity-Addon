@@ -373,5 +373,9 @@ namespace PetsOverhaulCalamityAddon.Systems
             RecipeGroupsForPets.allBugs.AddRange(calBugs);
             RecipeGroupsForPets.animals.AddRange(calAnimals);
         }
+        public static void AddCalamityNPCsToIgnoreForMiscEffects()
+        {
+            GlobalPet.EnemiesForLifestealToIgnore.Add(ModContent.NPCType<SuperDummyNPC>());
+        }
     }
 }

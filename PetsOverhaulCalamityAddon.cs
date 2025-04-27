@@ -17,6 +17,7 @@ namespace PetsOverhaulCalamityAddon
             Compatibility.AddCalamityPetSlows();
             Compatibility.AddCalamityItemLists();
             Compatibility.AddCalamityRecipeGroups();
+            Compatibility.AddCalamityNPCsToIgnoreForMiscEffects();
         }
     }
 }

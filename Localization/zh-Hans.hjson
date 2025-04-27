@@ -99,6 +99,7 @@ Mods: {
 				 * 燃烧敌人的生命值低于<baseExecute>% + [i:<stackIcon>] <stackExecute>%时，立即处决它们
 				 * 爆炸和层数叠加对傀儡等无效，层数越高，层数提供的加成越少
 				'''
+			// ForgottenDragonEggStack: "[i:<stackIcon>] Akato stacks"
 			Astrophage:
 				'''
 				<class>
@@ -270,6 +271,7 @@ Mods: {
 				 * 潜伏攻击会将其乘以<stealthMult>
 				 * 当前储存的下次攻击伤害：<storedDmg>
 				'''
+			// RomajedaOrchidStack: bonus damage for next rogue hit
 			JoyfulHeart:
 				'''
 				<class>
@@ -300,6 +302,7 @@ Mods: {
 				 * 在腐化环境时所有加成乘以<evilMult>
 				 * 升级到下一级所需击杀数量：<killReq>
 				'''
+			// RottingEyeballStack: corruption kills until next level
 			BloodyVein:
 				'''
 				<class>
@@ -311,6 +314,7 @@ Mods: {
 				 * 在猩红环境时所有加成乘以<evilMult>
 				 * 升级到下一级所需击杀数量：<killReq>
 				'''
+			// BloodyVeinStack: crimson kills until next level
 			PineapplePet:
 				'''
 				<class>
@@ -347,6 +351,7 @@ Mods: {
 				 * 获得所有基础效果，但属性加成不受影响，不获得护盾但恢复所有生命值
 				 * 玩家在效果结束时会[c/f8baba:立即死亡]（犽戎之子为你倾尽了全力！）
 				'''
+			// McNuggetsStack: remaining rebirth duration
 			YharonReborn: 重生！！！
 			YharonDelay: 犽戎之子延缓了你的死亡！
 			YharonDeath1: <name>燃尽了火焰，剩下的只有灰烬。

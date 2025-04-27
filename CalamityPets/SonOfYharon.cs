@@ -1,4 +1,5 @@
 using CalamityMod.Buffs.DamageOverTime;
+using log4net.Core;
 using Microsoft.Xna.Framework;
 using PetsOverhaul.Config;
 using PetsOverhaul.Systems;
@@ -29,6 +30,10 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         public override PetClasses PetClassPrimary => PetClasses.Defensive;
         public override PetClasses PetClassSecondary => PetClasses.Utility;
         public override int PetAbilityCooldown => rebirthCooldown;
+        public override int PetStackCurrent => timer + deadTimer + 2; //One or the other will be shown, and neither should be different than 0 at anytime when another is active, so should be fine. And a +2 because both default to -1 every frame.
+        public override int PetStackMax => 0;
+        public override bool PetStackIsSeconds => true;
+        public override string PetStackText => Compatibility.LocVal("PetTooltips.McNuggetsStack");
         public override void PostUpdateMiscEffects()
         {
             if (PetIsEquipped())
@@ -67,25 +72,14 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                 {
                     if (timer == 0)
                     {
-                        string reason;
-                        switch (Main.rand.Next(4))
+                        string reason = Main.rand.Next(4) switch
                         {
-                            case 0:
-                                reason = Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.YharonDeath5");
-                                break;
-                            case 1:
-                                reason = Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.YharonDeath6");
-                                break;
-                            case 2:
-                                reason = Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.YharonDeath7");
-                                break;
-                            case 3:
-                                reason = Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.YharonDeath8");
-                                break;
-                            default:
-                                reason = Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.YharonDeath5");
-                                break;
-                        }
+                            0 => Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.YharonDeath5"),
+                            1 => Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.YharonDeath6"),
+                            2 => Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.YharonDeath7"),
+                            3 => Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.YharonDeath8"),
+                            _ => Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.YharonDeath5"),
+                        };
                         Player.Hurt(PlayerDeathReason.ByCustomReason(reason.Replace("<name>", Player.name)), damageToTakeAfterReborn, 0, dodgeable: true, knockback: 0);
                         damageToTakeAfterReborn = 0;
                     }

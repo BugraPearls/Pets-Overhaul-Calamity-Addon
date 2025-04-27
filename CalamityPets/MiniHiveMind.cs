@@ -1,5 +1,7 @@
+using CalamityMod.Projectiles.Summon;
 using PetsOverhaul.Projectiles;
 using PetsOverhaul.Systems;
+using PetsOverhaulCalamityAddon.Items;
 using PetsOverhaulCalamityAddon.Systems;
 using System;
 using System.Collections.Generic;
@@ -26,6 +28,9 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         public float evilMult = 1.35f;
         public float dmgIncrIfCorrupt = 0.12f;
         public float takenPenalty = 0.07f;
+        public override int PetStackCurrent => evilKills - expTresholds[Math.Clamp(Level, 0, maxLvl)];
+        public override int PetStackMax => expTresholds[Math.Clamp(Level + 1, 0, maxLvl)] - expTresholds[Math.Clamp(Level, 0, maxLvl)];
+        public override string PetStackText => Compatibility.LocVal("PetTooltips.RottingEyeballStack");
         public override void ResetEffects()
         {
             damage = 0;

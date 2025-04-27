@@ -49,15 +49,20 @@ using System.Collections.Generic;
 using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace PetsOverhaulCalamityAddon.Systems
 {
     /// <summary>
-    /// Class mostly for making already existing systems in Pets Overhaul work with Calamity's added content aswell.
+    /// Class mostly for making already existing systems in Pets Overhaul work with Calamity's added content aswell. Also a few util stuff.
     /// </summary>
-    internal class Compatibility //All initiated in PetsOverhaulCalamityAddon.cs
+    public class Compatibility //All initiated in PetsOverhaulCalamityAddon.cs
     {
+        public static string LocVal(string localizationKeyValue)
+        {
+            return Language.GetTextValue("Mods.PetsOverhaulCalamityAddon." + localizationKeyValue);
+        }
         public static Dictionary<string, int> CalamityLightPetItemIDs = new()
         {
             { "RustedJingleBell", CalamityLightPetIDs.BabyGhostBell },

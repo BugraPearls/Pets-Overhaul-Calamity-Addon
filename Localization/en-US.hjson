@@ -100,6 +100,7 @@ Mods: {
 				 * While enemies are being burnt, going below <baseExecute>% + [i:<stackIcon>] <stackExecute>% of their health instantly executes them.
 				 * Explosion & stack gain are disabled for Dummies etc, and stats per 1 stack get worse as stacks are higher.
 				'''
+			ForgottenDragonEggStack: "[i:<stackIcon>] Akato stacks"
 			Astrophage:
 				'''
 				<class>
@@ -281,6 +282,7 @@ Mods: {
 				 * Stealth Strikes multiplies this damage by <stealthMult>x.
 				 * Currently stored damage to be added to your next hit: <storedDmg>
 				'''
+			RomajedaOrchidStack: bonus damage for next rogue hit
 			JoyfulHeart:
 				'''
 				<class>
@@ -313,6 +315,7 @@ Mods: {
 				 * Multiply stats by <evilMult>x while in Corruption biome.
 				 * Kills required for next stat upgrades: <killReq>
 				'''
+			RottingEyeballStack: corruption kills until next level
 			BloodyVein:
 				'''
 				<class>
@@ -325,6 +328,7 @@ Mods: {
 				 * Multiply stats by <evilMult>x while in Crimson biome.
 				 * Kills required for next stat upgrades: <killReq>
 				'''
+			BloodyVeinStack: crimson kills until next level
 			PineapplePet:
 				'''
 				<class>
@@ -353,7 +357,7 @@ Mods: {
 				 * Gain <dmgRebirth>% damage, <defRebirth> defense and <msRebirth>% movement speed.
 				 * Your attacks inflict Dragonfire for <fireTime> seconds.
 				 * Reborn effects lasts for <rebornDuration> seconds.
-				 * All buff amounts and durations can increase up to 300% depending on the health ability was used at.  
+				 * All buff amounts and durations can increase up to 300% depending on the health ability was used at.
 				 * Effect amplifier is way more useful the lesser health you have, reaching maximum potential at 25% hp.
 				 * You will take damage for the exact amount of initial shield after effects wear off, the shield can tank the damage.
 				 * Rebirth ability has a <cooldown> minute cooldown.
@@ -361,6 +365,7 @@ Mods: {
 				 * The player gains the base effects, with no amplifiers, and no shielding but you will be healed to maximum health.
 				 * Player [c/f8baba:will be killed immediately] after the effects wear off. (Son of Yharon gets too exhausted since he does it for you!)
 				'''
+			McNuggetsStack: remaining rebirth duration
 			YharonReborn: REBORN!!
 			YharonDelay: Son of Yharon is delaying your death!
 			YharonDeath1: <name> ran out of flames, and all that is left is ashes.

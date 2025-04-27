@@ -30,6 +30,9 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         public int procShield = 3;
         public int procShieldDuration = 150;
         public override int PetAbilityCooldown => cooldown;
+        public override int PetStackCurrent => currentNextDamage;
+        public override int PetStackMax => 0;
+        public override string PetStackText => Compatibility.LocVal("PetTooltips.RomajedaOrchidStack");
         public override void ExtraPreUpdate()
         {
             lifeguardMultTimer--;

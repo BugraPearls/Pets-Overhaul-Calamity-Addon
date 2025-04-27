@@ -180,6 +180,10 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                 dragonPracticeStacks = stack;
             }
         }
+
+        public override int PetStackCurrent => (int)Math.Min(dragonPracticeStacks,int.MaxValue); //Surely someone won't hit the Integer limit.
+        public override int PetStackMax => 0;
+        public override string PetStackText => Compatibility.LocVal("PetTooltips.ForgottenDragonEggStack").Replace("<stackIcon>", ModContent.ItemType<DragonPracticeIcon>().ToString());
         public override int PetAbilityCooldown => cooldown;
         public override void ExtraPreUpdateNoCheck()
         {

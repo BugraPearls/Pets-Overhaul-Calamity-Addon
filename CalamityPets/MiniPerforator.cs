@@ -27,6 +27,9 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         public float evilMult = 1.5f;
         public float drIfHurtByCrimson = 0.10f;
         public float dmgPenalty = 0.05f;
+        public override int PetStackCurrent => evilKills - expTresholds[Math.Clamp(Level, 0, maxLvl)];
+        public override int PetStackMax => expTresholds[Math.Clamp(Level + 1, 0, maxLvl)] - expTresholds[Math.Clamp(Level, 0, maxLvl)];
+        public override string PetStackText => Compatibility.LocVal("PetTooltips.BloodyVeinStack");
         public override void ResetEffects()
         {
             defense = 0;

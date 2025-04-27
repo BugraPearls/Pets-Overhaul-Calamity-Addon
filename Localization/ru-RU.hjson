@@ -100,6 +100,7 @@ Mods: {
 				  * Пока враги горят, снижение их здоровья ниже <baseExecute>% + [i:<stackIcon>] <stackExecute>% мгновенно казнит их.
 				  * Взрыв и прирост стаков отключены для манекенов и подобных объектов, а характеристики за стак ухудшаются при увеличении числа стаков.
 				'''
+			// ForgottenDragonEggStack: "[i:<stackIcon>] Akato stacks"
 			Astrophage:
 				'''
 				<class>
@@ -279,6 +280,7 @@ Mods: {
 				  * Скрытные удары умножают этот урон на <stealthMult>х.
 				  * Текущий накопленный урон: <storedDmg>
 				'''
+			// RomajedaOrchidStack: bonus damage for next rogue hit
 			JoyfulHeart:
 				'''
 				<class>
@@ -310,6 +312,7 @@ Mods: {
 				  * Умножение характеристик на <evilMult>x в биоме Порчи.
 				  * Требуется убийств для следующего улучшения характеристик: <killReq>
 				'''
+			// RottingEyeballStack: corruption kills until next level
 			BloodyVein:
 				'''
 				<class>
@@ -321,6 +324,7 @@ Mods: {
 				  * Умножение характеристик на <evilMult>x в биоме Багрянца.
 				  * Требуется убийств для следующего улучшения характеристик: <killReq>
 				'''
+			// BloodyVeinStack: crimson kills until next level
 			PineapplePet:
 				'''
 				<class>
@@ -358,6 +362,7 @@ Mods: {
 				  * Игрок получает базовые эффекты без усилителей и щита, но будет исцелен до максимального здоровья.
 				  * Игрок [c/f8baba:будет убит мгновенно] после окончания эффектов. (Сын Ярона слишком утомлен, так как использовал способность вместо вас!)
 				'''
+			// McNuggetsStack: remaining rebirth duration
 			YharonReborn: ПЕРЕРОЖДЕНИЕ!!
 			YharonDelay: Сын Ярона откладывает вашу смерть!
 			YharonDeath1: <name> выгорел до тла, и остался лишь пепел.

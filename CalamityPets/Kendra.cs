@@ -15,6 +15,9 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         public float absorbPercent = 1.70f;
         public float stealthMult = 1.3f;
         public int currentNextDamage = 0;
+        public override int PetStackCurrent => currentNextDamage;
+        public override int PetStackMax => 0;
+        public override string PetStackText => Compatibility.LocVal("PetTooltips.RomajedaOrchidStack");
         public override void ModifyHitNPCWithProj(Projectile proj, NPC target, ref NPC.HitModifiers modifiers)
         {
             if (currentNextDamage > 0 && PetIsEquipped() && GlobalPet.LifestealCheck(target) && modifiers.DamageType is RogueDamageClass)

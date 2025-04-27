@@ -100,6 +100,7 @@ Mods: {
 				 * Enquanto os inimigos estão queimando, ao ficarem abaixo de <baseExecute>% + [i:<stackIcon>] <stackExecute>% de vida, são instantaneamente executados.
 				 * Explosão e ganho de stacks são desativados para Bonecos de Treinamento, etc, e os status por 1 stack pioram conforme os stacks aumentam.
 				'''
+			// ForgottenDragonEggStack: "[i:<stackIcon>] Akato stacks"
 			Astrophage:
 				'''
 				<class>
@@ -280,6 +281,7 @@ Mods: {
 				 * Golpes Furtivos multiplicam esse dano por <stealthMult>x.
 				 * Dano armazenado atual a ser adicionado ao seu próximo golpe: <storedDmg>
 				'''
+			// RomajedaOrchidStack: bonus damage for next rogue hit
 			JoyfulHeart:
 				'''
 				<class>
@@ -311,6 +313,7 @@ Mods: {
 				 * Multiplica as estatísticas por <evilMult>x enquanto estiver no bioma da Corrupção.
 				 * Mortes necessárias para as próximas melhorias de estatísticas: <killReq>
 				'''
+			// RottingEyeballStack: corruption kills until next level
 			BloodyVein:
 				'''
 				<class>
@@ -322,6 +325,7 @@ Mods: {
 				 * Multiplica as estatísticas por <evilMult>x enquanto estiver no bioma do Carmim.
 				 * Mortes necessárias para as próximas melhorias de estatísticas: <killReq>
 				'''
+			// BloodyVeinStack: crimson kills until next level
 			PineapplePet:
 				'''
 				<class>
@@ -358,6 +362,7 @@ Mods: {
 				 * O jogador ganha os efeitos básicos, sem amplificadores, sem escudo, mas será curado para a saúde máxima.
 				 * O jogador [c/f8baba:será morto imediatamente] após os efeitos acabarem. (O Filho de Yharon fica muito exausto, pois faz isso por você!)
 				'''
+			// McNuggetsStack: remaining rebirth duration
 			YharonReborn: RENASCIDO!!
 			YharonDelay: O Filho de Yharon está adiando sua morte!
 			YharonDeath1: <name> não tem mais suas chamas, e apenas cinzas restaram

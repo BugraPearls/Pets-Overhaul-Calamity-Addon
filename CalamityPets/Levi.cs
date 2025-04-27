@@ -81,12 +81,12 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                 {
                     indx = tooltips.FindLastIndex(x => x.Name == "ItemName") + 1;
                     tooltips.Insert(indx, new (Mod, "PetTooltip0", def.ToString() + Language.GetTextValue("LegacyTooltip.25")));
-                    tooltips.Insert(indx + 1, new(Mod, "PetTooltip1", levi.crit.ToString() + Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.LeviCrit")));
+                    tooltips.Insert(indx + 1, new(Mod, "PetTooltip1", levi.crit.ToString() + Compatibility.LocVal("PetTooltips.LeviCrit")));
                 }
                 else
                 {
                     tooltips[indx].Text = def.ToString() + Language.GetTextValue("LegacyTooltip.25");
-                    tooltips.Insert(indx + 1, new(Mod, "PetTooltip0", levi.crit.ToString() + Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.LeviCrit")));
+                    tooltips.Insert(indx + 1, new(Mod, "PetTooltip0", levi.crit.ToString() + Compatibility.LocVal("PetTooltips.LeviCrit")));
                 }
             }
         }
@@ -104,7 +104,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                     return ModContent.GetInstance<LeviEffect>();
             }
         }
-        public override string PetsTooltip => Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.Levi")
+        public override string PetsTooltip => Compatibility.LocVal("PetTooltips.Levi")
                 .Replace("<dmgPer>", Math.Round(levi.dmgPerFish * 100, 2).ToString())
                 .Replace("<currentDmg>", Math.Round(levi.dmgPerFish * levi.actFishPow * 100, 2).ToString())
                 .Replace("<defPer>", levi.oneDefPerFishPower.ToString())

@@ -97,7 +97,7 @@ namespace PetsOverhaulCalamityAddon.CalamityLightPets
             }
         }
         public override int GetRoll() => Sus.CurrentRoll;
-        public override string PetsTooltip => Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.LightPetTooltips.SuspiciousLookingNOU")
+        public override string PetsTooltip => Compatibility.LocVal("LightPetTooltips.SuspiciousLookingNOU")
 
                         .Replace("<luck>", Luck.BaseAndPerQuality(Luck.StatPerRoll.ToString()))
                         .Replace("<damage>", Damage.BaseAndPerQuality())

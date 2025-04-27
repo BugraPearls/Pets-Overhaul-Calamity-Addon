@@ -91,7 +91,7 @@ namespace PetsOverhaulCalamityAddon.CalamityLightPets
             }
         }
         public override int GetRoll() => Luck.CurrentRoll;
-        public override string PetsTooltip => Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.LightPetTooltips.ThiefsDime")
+        public override string PetsTooltip => Compatibility.LocVal("LightPetTooltips.ThiefsDime")
 
                         .Replace("<luck>", Luck.BaseAndPerQuality(Luck.StatPerRoll.ToString()))
                         .Replace("<rogue>", RogueDamage.BaseAndPerQuality())

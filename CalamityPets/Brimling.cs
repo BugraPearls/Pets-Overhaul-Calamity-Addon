@@ -75,7 +75,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                     return ModContent.GetInstance<BrimlingEffect>();
             }
         }
-        public override string PetsTooltip => Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.CharredRelic")
+        public override string PetsTooltip => Compatibility.LocVal("PetTooltips.CharredRelic")
                 .Replace("<treshold>", Math.Round(brimling.drTreshold * 100, 2).ToString())
                 .Replace("<dr>", Math.Round(brimling.dr * 100, 2).ToString())
                 .Replace("<reflectAmount>", Math.Round(brimling.reflectAmount * 100, 2).ToString())

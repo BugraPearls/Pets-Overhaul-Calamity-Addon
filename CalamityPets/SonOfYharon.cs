@@ -52,11 +52,11 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                     {
                         string reason = Main.rand.Next(4) switch
                         {
-                            0 => Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.YharonDeath1"),
-                            1 => Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.YharonDeath2"),
-                            2 => Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.YharonDeath3"),
-                            3 => Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.YharonDeath4"),
-                            _ => Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.YharonDeath1"),
+                            0 => Compatibility.LocVal("PetTooltips.YharonDeath1"),
+                            1 => Compatibility.LocVal("PetTooltips.YharonDeath2"),
+                            2 => Compatibility.LocVal("PetTooltips.YharonDeath3"),
+                            3 => Compatibility.LocVal("PetTooltips.YharonDeath4"),
+                            _ => Compatibility.LocVal("PetTooltips.YharonDeath1"),
                         };
                         Player.KillMe(PlayerDeathReason.ByCustomReason(reason.Replace("<name>", Player.name)), Player.statLifeMax2, 0);
                     }
@@ -74,11 +74,11 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                     {
                         string reason = Main.rand.Next(4) switch
                         {
-                            0 => Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.YharonDeath5"),
-                            1 => Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.YharonDeath6"),
-                            2 => Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.YharonDeath7"),
-                            3 => Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.YharonDeath8"),
-                            _ => Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.YharonDeath5"),
+                            0 => Compatibility.LocVal("PetTooltips.YharonDeath5"),
+                            1 => Compatibility.LocVal("PetTooltips.YharonDeath6"),
+                            2 => Compatibility.LocVal("PetTooltips.YharonDeath7"),
+                            3 => Compatibility.LocVal("PetTooltips.YharonDeath8"),
+                            _ => Compatibility.LocVal("PetTooltips.YharonDeath5"),
                         };
                         Player.Hurt(PlayerDeathReason.ByCustomReason(reason.Replace("<name>", Player.name)), damageToTakeAfterReborn, 0, dodgeable: true, knockback: 0);
                         damageToTakeAfterReborn = 0;
@@ -103,7 +103,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                 {
                     SoundEngine.PlaySound(new SoundStyle("CalamityMod/Sounds/Custom/Yharon/YharonRoar") with { PitchVariance = 0.2f }, Player.Center);
                 }
-                PopupText.NewText(new AdvancedPopupRequest() with { Text = Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.YharonReborn"), DurationInFrames = 150, Velocity = new Vector2(0, -10), Color = new Color(209, 107, 75) }, Player.Center);
+                PopupText.NewText(new AdvancedPopupRequest() with { Text = Compatibility.LocVal("PetTooltips.YharonReborn"), DurationInFrames = 150, Velocity = new Vector2(0, -10), Color = new Color(209, 107, 75) }, Player.Center);
                 float playerCurrentHp = Player.statLife;
                 if (Player.statLifeMax2 / Player.statLife > 4)
                 {
@@ -126,7 +126,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                 {
                     SoundEngine.PlaySound(new SoundStyle("CalamityMod/Sounds/Custom/Yharon/YharonRoarShort") with { PitchVariance = 0.3f }, Player.Center);
                 }
-                PopupText.NewText(new AdvancedPopupRequest() with { Text = Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.YharonDelay"), DurationInFrames = 150, Velocity = new Vector2(0, -10), Color = new Color(209, 107, 75) }, Player.Center);
+                PopupText.NewText(new AdvancedPopupRequest() with { Text = Compatibility.LocVal("PetTooltips.YharonDelay"), DurationInFrames = 150, Velocity = new Vector2(0, -10), Color = new Color(209, 107, 75) }, Player.Center);
                 Pet.PetRecovery(Player.statLifeMax2, 1f, isLifesteal: false);
                 deadTimer = rebirthDuration;
                 Pet.timer = Pet.timerMax;
@@ -149,7 +149,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                     return ModContent.GetInstance<SonOfYharonEffect>();
             }
         }
-        public override string PetsTooltip => Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.McNuggets")
+        public override string PetsTooltip => Compatibility.LocVal("PetTooltips.McNuggets")
                         .Replace("<keybind>", PetTextsColors.KeybindText(PetKeybinds.UsePetAbility))
                         .Replace("<dmgRebirth>", Math.Round(yharon.dmgRebirth * 100, 2).ToString())
                         .Replace("<defRebirth>", yharon.defRebirth.ToString())

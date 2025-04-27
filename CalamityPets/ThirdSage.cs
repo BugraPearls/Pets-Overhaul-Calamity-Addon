@@ -51,7 +51,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                     return ModContent.GetInstance<ThirdSageEffect>();
             }
         }
-        public override string PetsTooltip => Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.HermitsBoxofOneHundredMedicines")
+        public override string PetsTooltip => Compatibility.LocVal("PetTooltips.HermitsBoxofOneHundredMedicines")
                     .Replace("<keybind>", PetTextsColors.KeybindText(PetKeybinds.UsePetAbility))
                     .Replace("<flatHeal>", sage.flatHealing.ToString())
                     .Replace("<percHeal>", Math.Round(sage.percHealing * 100, 2).ToString())

@@ -74,7 +74,7 @@ namespace PetsOverhaulCalamityAddon.CalamityLightPets
             }
         }
         public override int GetRoll() => HealInWater.CurrentRoll;
-        public override string PetsTooltip => Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.LightPetTooltips.StrangeOrb")
+        public override string PetsTooltip => Compatibility.LocVal("LightPetTooltips.StrangeOrb")
 
                         .Replace("<power>", FishingPower.BaseAndPerQuality())
                         .Replace("<fortune>", FishingFortune.BaseAndPerQuality())

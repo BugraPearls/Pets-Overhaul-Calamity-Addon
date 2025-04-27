@@ -198,7 +198,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                     return ModContent.GetInstance<MiniHiveMindEffect>();
             }
         }
-        public override string PetsTooltip => Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.RottingEyeball")
+        public override string PetsTooltip => Compatibility.LocVal("PetTooltips.RottingEyeball")
                         .Replace("<incrToCorrupt>", Math.Round(hive.dmgIncrIfCorrupt * 100, 2).ToString())
                         .Replace("<penalty>", Math.Round(hive.takenPenalty * 100, 2).ToString())
                         .Replace("<killCount>", hive.evilKills.ToString())

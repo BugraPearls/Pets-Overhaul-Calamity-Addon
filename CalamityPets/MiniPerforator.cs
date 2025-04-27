@@ -201,7 +201,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                     return ModContent.GetInstance<MiniPerforatorEffect>();
             }
         }
-        public override string PetsTooltip => Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.BloodyVein")
+        public override string PetsTooltip => Compatibility.LocVal("PetTooltips.BloodyVein")
                         .Replace("<drFromCrimson>", Math.Round(perforator.drIfHurtByCrimson * 100, 2).ToString())
                         .Replace("<penalty>", Math.Round(perforator.dmgPenalty * 100, 2).ToString())
                         .Replace("<killCount>", perforator.evilKills.ToString())

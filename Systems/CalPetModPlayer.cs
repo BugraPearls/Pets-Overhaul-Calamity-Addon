@@ -16,7 +16,7 @@ namespace PetsOverhaulCalamityAddon.Systems
         public float rogueDmg = 0.2f;
         public float stealthGain = 0.15f;
         public float stealthMax = 0.2f;
-        public string RogueClassText => Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.MoonlingRogueTooltip")
+        public string RogueClassText => Compatibility.LocVal("MoonlingRogueTooltip")
                                             .Replace("<rogueVelocity>", Math.Round(rogueVelo * 100, 2).ToString())
                                             .Replace("<rogueDmg>", Math.Round(rogueDmg * 100, 2).ToString())
                                             .Replace("<rogueStealthGain>", Math.Round(stealthGain * 100, 2).ToString())
@@ -35,7 +35,7 @@ namespace PetsOverhaulCalamityAddon.Systems
         {
             if (self.TryGetModPlayer(out Junimo junimo)) //This is done so its consistently added to junimo's externalLvlIncr field before its utilized to prevent loads of level ups before Player joins into the world.
             {
-                junimo.extraBosses += Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.JunimoExtraBosses");
+                junimo.extraBosses += Compatibility.LocVal("JunimoExtraBosses");
                 if (DownedBossSystem.downedProvidence)
                     junimo.externalLvlIncr += 5;
                 if (DownedBossSystem.downedDoG)

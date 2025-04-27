@@ -51,7 +51,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                     return ModContent.GetInstance<DannyDevitoEffect>();
             }
         }
-        public override string PetsTooltip => Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.TrashmanTrashcan")
+        public override string PetsTooltip => Compatibility.LocVal("PetTooltips.TrashmanTrashcan")
                 .Replace("<keybind>", PetTextsColors.KeybindText(PetKeybinds.UsePetAbility))
                 .Replace("<damage>", dannyDevito.damage.ToString())
                 .Replace("<bleedDuration>", Math.Round(dannyDevito.bleedDuration / 60f, 2).ToString())

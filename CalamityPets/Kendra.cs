@@ -58,7 +58,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                     return ModContent.GetInstance<KendraEffect>();
             }
         }
-        public override string PetsTooltip => Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.RomajedaOrchid")
+        public override string PetsTooltip => Compatibility.LocVal("PetTooltips.RomajedaOrchid")
                 .Replace("<percAbsorb>", Math.Round(kendra.absorbPercent * 100, 2).ToString())
                 .Replace("<stealthMult>", kendra.stealthMult.ToString())
                 .Replace("<storedDmg>", kendra.currentNextDamage.ToString());

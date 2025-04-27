@@ -80,8 +80,8 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                 switch (snail.CurrentTooltip)
                 {
                     case true:
-                        Tooltip = Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.SnailPositiveAggro")
-                            .Replace("<active>", snail.Player.aggro >= 0 ? Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.SnailActive") : Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.SnailInactive"))
+                        Tooltip = Compatibility.LocVal("PetTooltips.SnailPositiveAggro")
+                            .Replace("<active>", snail.Player.aggro >= 0 ? Compatibility.LocVal("PetTooltips.SnailActive") : Compatibility.LocVal("PetTooltips.SnailInactive"))
                             .Replace("<aggroDef>", snail.aggroToDef.ToString())
                             .Replace("<aggroHealth>", snail.aggroToHp.ToString())
                             .Replace("<aggroDr>", snail.aggroToDr.ToString())
@@ -92,8 +92,8 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                             .Replace("<msLower>", Math.Round(snail.CurrentNegativeMs, 2).ToString());
                         break;
                     case false:
-                        Tooltip = Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.SnailNegativeAggro")
-                            .Replace("<active>", snail.Player.aggro < 0 ? Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.SnailActive") : Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.SnailInactive"))
+                        Tooltip = Compatibility.LocVal("PetTooltips.SnailNegativeAggro")
+                            .Replace("<active>", snail.Player.aggro < 0 ? Compatibility.LocVal("PetTooltips.SnailActive") : Compatibility.LocVal("PetTooltips.SnailInactive"))
                             .Replace("<aggroDamage>", snail.aggroToDmg.ToString())
                             .Replace("<aggroCrit>", snail.aggroToCrit.ToString())
                             .Replace("<aggroPen>", snail.aggroToPen.ToString())
@@ -105,7 +105,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                         break;
                     default:
                 }
-                return Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.AbyssShellFossil")
+                return Compatibility.LocVal("PetTooltips.AbyssShellFossil")
                     .Replace("<aggro>", snail.Player.aggro.ToString())
                     .Replace("<switch>", PetTextsColors.KeybindText(PetKeybinds.PetTooltipSwap))
                     .Replace("<tooltip>", Tooltip);

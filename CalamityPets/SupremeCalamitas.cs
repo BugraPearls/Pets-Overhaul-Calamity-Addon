@@ -113,7 +113,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         {
             if (Main.LocalPlayer.miscEquips[0].type == CalamityPetIDs.SupremeCalamitas && type == BuffID.ManaSickness && Main.LocalPlayer.HasBuff(ModContent.BuffType<ObliviousPet>()) == false)
             {
-                tip += "\n" + Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.ScalManaSicknessExtraText");
+                tip += "\n" + Compatibility.LocVal("PetTooltips.ScalManaSicknessExtraText");
             }
         }
     }
@@ -130,7 +130,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                     return ModContent.GetInstance<SupremeCalamitasEffect>();
             }
         }
-        public override string PetsTooltip => Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.BrimstoneJewel")
+        public override string PetsTooltip => Compatibility.LocVal("PetTooltips.BrimstoneJewel")
                 .Replace("<critDmgReduce>", Math.Round(calamitas.critDmgReduce * 100, 2).ToString())
                 .Replace("<chanceToDmg>", Math.Round(calamitas.critChanceToDmg * 100, 2).ToString())
                 .Replace("<magicCost>", Math.Round(calamitas.magicExtraCost * 100, 2).ToString());

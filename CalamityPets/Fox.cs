@@ -48,7 +48,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                     if (ModContent.GetInstance<PetPersonalization>().AbilitySoundEnabled)
                         SoundEngine.PlaySound(SoundID.Item35 with { Pitch = 0.75f, PitchVariance = 0.1f }, Player.Center);
                     cleansePenalty = baseTime + perTime * (amountOfDebuffs - 1);
-                    CombatText.NewText(Player.getRect(), Color.Orange, Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.FoxCleansedText") + amountOfDebuffs.ToString(), dramatic: true);
+                    CombatText.NewText(Player.getRect(), Color.Orange, Compatibility.LocVal("PetTooltips.FoxCleansedText") + amountOfDebuffs.ToString(), dramatic: true);
                     Pet.timer = Pet.timerMax;
                 }
             }
@@ -67,7 +67,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                     return ModContent.GetInstance<FoxEffect>();
             }
         }
-        public override string PetsTooltip => Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.FoxDrive")
+        public override string PetsTooltip => Compatibility.LocVal("PetTooltips.FoxDrive")
                 .Replace("<keybind>", PetTextsColors.KeybindText(PetKeybinds.UsePetAbility))
                 .Replace("<baseCurse>", Math.Round(fox.baseTime / 60f, 2).ToString())
                 .Replace("<perCurse>", Math.Round(fox.perTime / 60f, 2).ToString())

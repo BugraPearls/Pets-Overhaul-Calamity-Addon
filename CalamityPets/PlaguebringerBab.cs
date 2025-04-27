@@ -120,7 +120,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                     return ModContent.GetInstance<PlaguebringerBabEffect>();
             }
         }
-        public override string PetsTooltip => Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.PlagueCaller")
+        public override string PetsTooltip => Compatibility.LocVal("PetTooltips.PlagueCaller")
                 .Replace("<primaryPerc>", Math.Round(plague.mainTargetMult * 100, 2).ToString())
                 .Replace("<hitAoE>", Math.Round(plague.surroundRadius / 16f, 2).ToString())
                 .Replace("<surroundingPerc>", Math.Round(plague.surroundingMult * 100, 2).ToString())

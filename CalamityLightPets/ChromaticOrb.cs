@@ -73,7 +73,7 @@ namespace PetsOverhaulCalamityAddon.CalamityLightPets
             }
         }
         public override int GetRoll() => AbilityHaste.CurrentRoll;
-        public override string PetsTooltip => Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.LightPetTooltips.ChromaticOrb")
+        public override string PetsTooltip => Compatibility.LocVal("LightPetTooltips.ChromaticOrb")
 
                         .Replace("<haste>", AbilityHaste.BaseAndPerQuality())
                         .Replace("<crit>", CritChance.BaseAndPerQuality())

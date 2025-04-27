@@ -86,7 +86,7 @@ namespace PetsOverhaulCalamityAddon.CalamityLightPets
             }
         }
         public override int GetRoll() => Knockback.CurrentRoll;
-        public override string PetsTooltip => Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.LightPetTooltips.RadiatingCrystal")
+        public override string PetsTooltip => Compatibility.LocVal("LightPetTooltips.RadiatingCrystal")
 
                         .Replace("<knockback>", Knockback.BaseAndPerQuality())
                         .Replace("<def>", DebuffedDefense.BaseAndPerQuality())

@@ -84,7 +84,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                     return ModContent.GetInstance<FlakHermitEffect>();
             }
         }
-        public override string PetsTooltip => Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.GeyserShell")
+        public override string PetsTooltip => Compatibility.LocVal("PetTooltips.GeyserShell")
                 .Replace("<stealth>", Math.Round(hermit.standingStealth * 100, 2).ToString())
                 .Replace("<maxStealth>", Math.Round(hermit.maxStealth * 100, 2).ToString())
                 .Replace("<stealthDmg>", Math.Round(hermit.stealthDmg * 100, 2).ToString())

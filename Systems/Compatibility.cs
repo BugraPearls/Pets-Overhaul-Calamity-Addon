@@ -59,6 +59,9 @@ namespace PetsOverhaulCalamityAddon.Systems
     /// </summary>
     public class Compatibility //All initiated in PetsOverhaulCalamityAddon.cs
     {
+        /// <summary>
+        /// Same as PetTextsColors.LocVal for Calamity Addon. Shortened version of GetTextValue.
+        /// </summary>
         public static string LocVal(string localizationKeyValue)
         {
             return Language.GetTextValue("Mods.PetsOverhaulCalamityAddon." + localizationKeyValue);

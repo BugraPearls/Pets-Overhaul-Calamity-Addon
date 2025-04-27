@@ -112,7 +112,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                     return ModContent.GetInstance<PineappleEffect>();
             }
         }
-        public override string PetsTooltip => Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.PineapplePet")
+        public override string PetsTooltip => Compatibility.LocVal("PetTooltips.PineapplePet")
                 .Replace("<def>", pineapple.defense.ToString())
                 .Replace("<crit>", Math.Round(pineapple.crit, 2).ToString())
                 .Replace("<dmg>", Math.Round(pineapple.damage * 100, 2).ToString())

@@ -118,7 +118,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                     return ModContent.GetInstance<FurtasticDuoEffect>();
             }
         }
-        public override string PetsTooltip => Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.PrimroseKeepsake")
+        public override string PetsTooltip => Compatibility.LocVal("PetTooltips.PrimroseKeepsake")
                 .Replace("<belowHealth>", Math.Round(duo.hpTreshold * 100, 2).ToString())
                 .Replace("<baseShield>", Math.Round(duo.baseHpShield * 100, 2).ToString())
                 .Replace("<bonusShield>", Math.Round(duo.bonusHpShield * 100, 2).ToString())

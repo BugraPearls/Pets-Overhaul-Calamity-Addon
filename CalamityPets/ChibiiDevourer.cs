@@ -44,11 +44,11 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                     {
                         string reason = Main.rand.Next(4) switch
                         {
-                            0 => Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.CosmicDeath1"),
-                            1 => Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.CosmicDeath2"),
-                            2 => Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.CosmicDeath3"),
-                            3 => Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.CosmicDeath4"),
-                            _ => Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.CosmicDeath1"),
+                            0 => Compatibility.LocVal("PetTooltips.CosmicDeath1"),
+                            1 => Compatibility.LocVal("PetTooltips.CosmicDeath2"),
+                            2 => Compatibility.LocVal("PetTooltips.CosmicDeath3"),
+                            3 => Compatibility.LocVal("PetTooltips.CosmicDeath4"),
+                            _ => Compatibility.LocVal("PetTooltips.CosmicDeath1"),
                         };
                         player.Hurt(PlayerDeathReason.ByCustomReason(reason.Replace("<name>", Player.name)), dmg, Player.direction, true, dodgeable: false, scalingArmorPenetration: 1f, knockback: kb);
                     }
@@ -69,7 +69,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                     return ModContent.GetInstance<ChibiiDevourerEffect>();
             }
         }
-        public override string PetsTooltip => Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.CosmicPlushie")
+        public override string PetsTooltip => Compatibility.LocVal("PetTooltips.CosmicPlushie")
                 .Replace("<color>", PetTextsColors.SupportiveClass.Hex3())
                 .Replace("<damage>", chibiiDevourer.dmg.ToString())
                 .Replace("<block>", Math.Round(chibiiDevourer.block / 16f, 2).ToString());

@@ -311,7 +311,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                     return ModContent.GetInstance<AkatoEffect>();
             }
         }
-        public override string PetsTooltip => Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.ForgottenDragonEgg")
+        public override string PetsTooltip => Compatibility.LocVal("PetTooltips.ForgottenDragonEgg")
                         .Replace("<stackIcon>", ModContent.ItemType<DragonPracticeIcon>().ToString())
                         .Replace("<keybind>", PetTextsColors.KeybindText(PetKeybinds.UsePetAbility))
                         .Replace("<cooldown>", Math.Round(akato.cooldown / 60f, 2).ToString())

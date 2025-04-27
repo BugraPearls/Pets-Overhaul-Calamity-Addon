@@ -82,7 +82,7 @@ namespace PetsOverhaulCalamityAddon.CalamityLightPets
             }
         }
         public override int GetRoll() => Aggro.CurrentRoll;
-        public override string PetsTooltip => Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.LightPetTooltips.EnchantedButterfly")
+        public override string PetsTooltip => Compatibility.LocVal("LightPetTooltips.EnchantedButterfly")
 
                         .Replace("<heal>", PetHealPower.BaseAndPerQuality())
                         .Replace("<fortune>", GlobalFortune.BaseAndPerQuality())

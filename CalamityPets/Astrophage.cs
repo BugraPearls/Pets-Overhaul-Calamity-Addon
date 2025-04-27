@@ -95,7 +95,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                     return ModContent.GetInstance<AstrophageEffect>();
             }
         }
-        public override string PetsTooltip => Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.Astrophage")
+        public override string PetsTooltip => Compatibility.LocVal("PetTooltips.Astrophage")
                 .Replace("<infectRadius>", Math.Round(astro.infectRadius / 16f, 2).ToString())
                 .Replace("<infectDuration>", Math.Round(astro.infectDuration / 60f, 2).ToString())
                 .Replace("<slowRadius>", Math.Round(astro.slowRadius / 16f, 2).ToString())

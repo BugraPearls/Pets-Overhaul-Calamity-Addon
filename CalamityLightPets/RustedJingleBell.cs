@@ -75,7 +75,7 @@ namespace PetsOverhaulCalamityAddon.CalamityLightPets
             }
         }
         public override int GetRoll() => Breathe.CurrentRoll;
-        public override string PetsTooltip => Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.LightPetTooltips.RustedJingleBell")
+        public override string PetsTooltip => Compatibility.LocVal("LightPetTooltips.RustedJingleBell")
 
                         .Replace("<breathe>", Breathe.BaseAndPerQuality(Math.Round(Breathe.StatPerRoll / 60f, 2).ToString(), Math.Round(Breathe.BaseStat / 60f, 2).ToString()))
                         .Replace("<haste>", Haste.BaseAndPerQuality())

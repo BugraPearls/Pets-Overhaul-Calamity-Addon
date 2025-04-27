@@ -76,7 +76,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                     return ModContent.GetInstance<BearEffect>();
             }
         }
-        public override string PetsTooltip => Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.BearsEye")
+        public override string PetsTooltip => Compatibility.LocVal("PetTooltips.BearsEye")
                 .Replace("<belowHealth>", Math.Round(bear.hpTreshold * 100, 2).ToString())
                 .Replace("<baseShield>", Math.Round(bear.baseHpShield * 100, 2).ToString())
                 .Replace("<bonusShield>", Math.Round(bear.bonusHpShield * 100, 2).ToString())

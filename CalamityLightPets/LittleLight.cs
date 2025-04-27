@@ -88,7 +88,7 @@ namespace PetsOverhaulCalamityAddon.CalamityLightPets
             }
         }
         public override int GetRoll() => Health.CurrentRoll;
-        public override string PetsTooltip => Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.LightPetTooltips.LittleLight")
+        public override string PetsTooltip => Compatibility.LocVal("LightPetTooltips.LittleLight")
 
                         .Replace("<aggro>", Aggro.BaseAndPerQuality())
                         .Replace("<kbResist>", KnockbackResist.BaseAndPerQuality())

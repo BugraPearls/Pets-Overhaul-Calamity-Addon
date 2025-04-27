@@ -129,7 +129,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                     return ModContent.GetInstance<LadSharkEffect>();
             }
         }
-        public override string PetsTooltip => Language.GetTextValue("Mods.PetsOverhaulCalamityAddon.PetTooltips.JoyfulHeart")
+        public override string PetsTooltip => Compatibility.LocVal("PetTooltips.JoyfulHeart")
                 .Replace("<selfDmg>", shark.selfDmg.ToString())
                 .Replace("<takenDmg>", shark.enemyDmg.ToString())
                 .Replace("<keybind>", PetTextsColors.KeybindText(PetKeybinds.UsePetAbility).ToString())

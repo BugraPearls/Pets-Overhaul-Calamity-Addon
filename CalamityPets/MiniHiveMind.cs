@@ -1,7 +1,5 @@
-using CalamityMod.Projectiles.Summon;
 using PetsOverhaul.Projectiles;
 using PetsOverhaul.Systems;
-using PetsOverhaulCalamityAddon.Items;
 using PetsOverhaulCalamityAddon.Systems;
 using System;
 using System.Collections.Generic;
@@ -204,7 +202,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                         .Replace("<killCount>", hive.evilKills.ToString())
                         .Replace("<dmg>", Math.Round(hive.damage * 100, 2).ToString())
                         .Replace("<crit>", hive.crit.ToString())
-                        .Replace("<luck>", Math.Round(hive.luckVal,2).ToString())
+                        .Replace("<luck>", Math.Round(hive.luckVal, 2).ToString())
                         .Replace("<pen>", hive.pen.ToString())
                         .Replace("<critDmg>", Math.Round(hive.critDmg * 100, 2).ToString())
                         .Replace("<evilMult>", hive.evilMult.ToString())

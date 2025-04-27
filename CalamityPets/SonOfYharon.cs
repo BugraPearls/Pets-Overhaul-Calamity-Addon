@@ -1,5 +1,4 @@
 using CalamityMod.Buffs.DamageOverTime;
-using log4net.Core;
 using Microsoft.Xna.Framework;
 using PetsOverhaul.Config;
 using PetsOverhaul.Systems;
@@ -9,7 +8,6 @@ using Terraria;
 using Terraria.Audio;
 using Terraria.DataStructures;
 using Terraria.GameInput;
-using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace PetsOverhaulCalamityAddon.CalamityPets

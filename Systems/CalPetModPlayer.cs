@@ -1,11 +1,8 @@
 ﻿using CalamityMod;
-using CalamityMod.NPCs.PlagueEnemies;
 using PetsOverhaul.PetEffects;
 using PetsOverhaul.Systems;
 using System;
-using System.Collections.Generic;
 using Terraria;
-using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace PetsOverhaulCalamityAddon.Systems

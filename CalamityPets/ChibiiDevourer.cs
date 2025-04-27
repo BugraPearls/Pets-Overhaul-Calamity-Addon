@@ -5,7 +5,6 @@ using Terraria;
 using Terraria.Audio;
 using Terraria.DataStructures;
 using Terraria.ID;
-using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace PetsOverhaulCalamityAddon.CalamityPets
@@ -35,7 +34,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                 {
                     if (Player.Distance(npc.Center) < block)
                     {
-                        npc.SimpleStrikeNPC(Pet.PetDamage(dmg,DamageClass.Generic), Player.direction, true, kb, DamageClass.Generic, true, Player.luck);
+                        npc.SimpleStrikeNPC(Pet.PetDamage(dmg, DamageClass.Generic), Player.direction, true, kb, DamageClass.Generic, true, Player.luck);
                     }
                 }
                 foreach (var player in Main.ActivePlayers)

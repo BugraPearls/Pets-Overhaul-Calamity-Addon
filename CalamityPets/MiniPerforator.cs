@@ -1,4 +1,3 @@
-using CalamityMod.Projectiles.Summon;
 using PetsOverhaul.Projectiles;
 using PetsOverhaul.Systems;
 using PetsOverhaulCalamityAddon.Systems;
@@ -207,7 +206,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                         .Replace("<killCount>", perforator.evilKills.ToString())
                         .Replace("<def>", perforator.defense.ToString())
                         .Replace("<hp>", perforator.health.ToString())
-                        .Replace("<luck>", Math.Round(perforator.luckVal,2).ToString())
+                        .Replace("<luck>", Math.Round(perforator.luckVal, 2).ToString())
                         .Replace("<dr>", Math.Round(perforator.dr * 100, 2).ToString())
                         .Replace("<regen>", perforator.regen.ToString())
                         .Replace("<evilMult>", perforator.evilMult.ToString())

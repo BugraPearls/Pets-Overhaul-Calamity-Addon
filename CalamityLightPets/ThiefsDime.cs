@@ -1,13 +1,9 @@
 ﻿using CalamityMod;
-using PetsOverhaul.Config;
 using PetsOverhaul.Systems;
 using PetsOverhaulCalamityAddon.Systems;
 using System;
-using System.Collections.Generic;
 using System.IO;
 using Terraria;
-using Terraria.Localization;
-using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
 
 namespace PetsOverhaulCalamityAddon.CalamityLightPets

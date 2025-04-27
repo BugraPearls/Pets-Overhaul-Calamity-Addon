@@ -13,7 +13,6 @@ using System.Linq;
 using Terraria;
 using Terraria.Audio;
 using Terraria.GameInput;
-using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
 
@@ -181,7 +180,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
             }
         }
 
-        public override int PetStackCurrent => (int)Math.Min(dragonPracticeStacks,int.MaxValue); //Surely someone won't hit the Integer limit.
+        public override int PetStackCurrent => (int)Math.Min(dragonPracticeStacks, int.MaxValue); //Surely someone won't hit the Integer limit.
         public override int PetStackMax => 0;
         public override string PetStackText => Compatibility.LocVal("PetTooltips.ForgottenDragonEggStack").Replace("<stackIcon>", ModContent.ItemType<DragonPracticeIcon>().ToString());
         public override int PetAbilityCooldown => cooldown;
@@ -203,7 +202,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         {
             if (PetIsEquipped() && beginOnHit > 0)
             {
-                Projectile petProjectile = Projectile.NewProjectileDirect(GlobalPet.GetSource_Pet(EntitySourcePetIDs.PetProjectile), target.Center, Vector2.Zero, ModContent.ProjectileType<PetExplosion>(), Pet.PetDamage(hit.SourceDamage * (explosionMult + StackExplosionBonus),hit.DamageType), 0, Player.whoAmI, explosionSize + StackExplosionSize);
+                Projectile petProjectile = Projectile.NewProjectileDirect(GlobalPet.GetSource_Pet(EntitySourcePetIDs.PetProjectile), target.Center, Vector2.Zero, ModContent.ProjectileType<PetExplosion>(), Pet.PetDamage(hit.SourceDamage * (explosionMult + StackExplosionBonus), hit.DamageType), 0, Player.whoAmI, explosionSize + StackExplosionSize);
                 petProjectile.DamageType = hit.DamageType;
                 petProjectile.CritChance = (int)Player.GetTotalCritChance(hit.DamageType);
                 if (ModContent.GetInstance<PetPersonalization>().AbilitySoundEnabled)

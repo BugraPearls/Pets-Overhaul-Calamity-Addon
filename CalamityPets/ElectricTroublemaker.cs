@@ -13,7 +13,6 @@ using Terraria.Audio;
 using Terraria.DataStructures;
 using Terraria.GameInput;
 using Terraria.ID;
-using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
 
@@ -287,7 +286,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                     case hydroPump:
                         if (target.active && Pet.timer + Pet.timerMax * hydroPumpCooldown < Pet.timerMax)
                         {
-                            target.SimpleStrikeNPC(Pet.PetDamage(hydroPumpDmg * GetTypeEffectiveness(target, hydroPump),hit.DamageType), hit.HitDirection, Main.rand.NextBool((int)Math.Min(Player.GetTotalCritChance(hit.DamageType), 100), 100), 0, hit.DamageType, true, Player.luck);
+                            target.SimpleStrikeNPC(Pet.PetDamage(hydroPumpDmg * GetTypeEffectiveness(target, hydroPump), hit.DamageType), hit.HitDirection, Main.rand.NextBool((int)Math.Min(Player.GetTotalCritChance(hit.DamageType), 100), 100), 0, hit.DamageType, true, Player.luck);
                             for (int i = 0; i < 10; i++)
                             {
                                 Dust.NewDustDirect(target.position, target.width, target.height, DustID.Water, hit.HitDirection * Main.rand.NextFloat(7f, 12f), Main.rand.NextFloat(0, 1.5f), 0, Scale: 3f).noGravity = true;
@@ -301,7 +300,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                     case overheat:
                         if (Pet.timer + Pet.timerMax * overheatCooldown < Pet.timerMax)
                         {
-                            Projectile petProjectile = Projectile.NewProjectileDirect(GlobalPet.GetSource_Pet(EntitySourcePetIDs.PetProjectile), target.Center, Vector2.Zero, ModContent.ProjectileType<PetExplosion>(), Pet.PetDamage(overheatDmg * GetTypeEffectiveness(target, overheat),hit.DamageType), 0, Player.whoAmI, overheatRadius);
+                            Projectile petProjectile = Projectile.NewProjectileDirect(GlobalPet.GetSource_Pet(EntitySourcePetIDs.PetProjectile), target.Center, Vector2.Zero, ModContent.ProjectileType<PetExplosion>(), Pet.PetDamage(overheatDmg * GetTypeEffectiveness(target, overheat), hit.DamageType), 0, Player.whoAmI, overheatRadius);
                             petProjectile.DamageType = hit.DamageType;
                             petProjectile.CritChance = (int)Player.GetTotalCritChance(hit.DamageType);
                             target.AddBuff(BuffID.OnFire, (int)(burnDuration * GetTypeEffectiveness(target, overheat)));
@@ -310,7 +309,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                                 Dust.NewDustPerfect(target.Center + Main.rand.NextVector2Circular(overheatRadius, overheatRadius), DustID.SolarFlare);
                             }
 
-                            Projectile petProj = Projectile.NewProjectileDirect(GlobalPet.GetSource_Pet(EntitySourcePetIDs.PetProjectile), Player.Center, Vector2.Zero, ModContent.ProjectileType<PetExplosion>(), Pet.PetDamage(overheatDmg * GetTypeEffectiveness(target, overheat),hit.DamageType), 0, Player.whoAmI, overheatRadius);
+                            Projectile petProj = Projectile.NewProjectileDirect(GlobalPet.GetSource_Pet(EntitySourcePetIDs.PetProjectile), Player.Center, Vector2.Zero, ModContent.ProjectileType<PetExplosion>(), Pet.PetDamage(overheatDmg * GetTypeEffectiveness(target, overheat), hit.DamageType), 0, Player.whoAmI, overheatRadius);
                             petProj.DamageType = hit.DamageType;
                             petProj.CritChance = (int)Player.GetTotalCritChance(hit.DamageType);
                             for (int i = 0; i < 10; i++)
@@ -326,7 +325,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                     case blizzard:
                         if (Pet.timer + Pet.timerMax * leafStormCooldown < Pet.timerMax)
                         {
-                            Projectile petProjectile = Projectile.NewProjectileDirect(GlobalPet.GetSource_Pet(EntitySourcePetIDs.PetProjectile), target.Center, Vector2.Zero, ModContent.ProjectileType<RotomBlizzard>(), Pet.PetDamage(blizzardDmg,hit.DamageType), 0, Player.whoAmI, blizzardRadius, blizzardDuration); //does its type effectiveness in Projectile code
+                            Projectile petProjectile = Projectile.NewProjectileDirect(GlobalPet.GetSource_Pet(EntitySourcePetIDs.PetProjectile), target.Center, Vector2.Zero, ModContent.ProjectileType<RotomBlizzard>(), Pet.PetDamage(blizzardDmg, hit.DamageType), 0, Player.whoAmI, blizzardRadius, blizzardDuration); //does its type effectiveness in Projectile code
                             petProjectile.DamageType = hit.DamageType;
                             petProjectile.CritChance = (int)Player.GetTotalCritChance(hit.DamageType);
                             if (ModContent.GetInstance<PetPersonalization>().AbilitySoundEnabled)
@@ -339,7 +338,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                         {
                             for (int i = 0; i < Main.rand.Next(minimumLeaf, maxLeaf); i++)
                             {
-                                Projectile petProjectile = Projectile.NewProjectileDirect(GlobalPet.GetSource_Pet(EntitySourcePetIDs.PetProjectile), target.Center + Main.rand.NextVector2CircularEdge(target.width, target.height), Main.rand.NextVector2CircularEdge(10, 10), ProjectileID.Leaf, Pet.PetDamage(leafStormDmg * GetTypeEffectiveness(target, leafStorm),hit.DamageType), 0, Player.whoAmI);
+                                Projectile petProjectile = Projectile.NewProjectileDirect(GlobalPet.GetSource_Pet(EntitySourcePetIDs.PetProjectile), target.Center + Main.rand.NextVector2CircularEdge(target.width, target.height), Main.rand.NextVector2CircularEdge(10, 10), ProjectileID.Leaf, Pet.PetDamage(leafStormDmg * GetTypeEffectiveness(target, leafStorm), hit.DamageType), 0, Player.whoAmI);
                                 petProjectile.DamageType = hit.DamageType;
                                 petProjectile.CritChance = (int)Player.GetTotalCritChance(hit.DamageType);
                             }
@@ -356,7 +355,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                             {
                                 if (target.Distance(npc.Center) < airSlashRadius)
                                 {
-                                    npc.SimpleStrikeNPC(Pet.PetDamage(airSlashDmg * GetTypeEffectiveness(npc, airSlash),hit.DamageType), hit.HitDirection, Main.rand.NextBool((int)Math.Min(Player.GetTotalCritChance(hit.DamageType), 100), 100), airSlashKb * GetTypeEffectiveness(npc, airSlash), hit.DamageType, true, Player.luck);
+                                    npc.SimpleStrikeNPC(Pet.PetDamage(airSlashDmg * GetTypeEffectiveness(npc, airSlash), hit.DamageType), hit.HitDirection, Main.rand.NextBool((int)Math.Min(Player.GetTotalCritChance(hit.DamageType), 100), 100), airSlashKb * GetTypeEffectiveness(npc, airSlash), hit.DamageType, true, Player.luck);
                                 }
                             }
                             for (int i = 0; i < 15; i++)

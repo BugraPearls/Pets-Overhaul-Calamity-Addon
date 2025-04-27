@@ -46,7 +46,6 @@ using PetsOverhaul.NPCs;
 using PetsOverhaul.PetEffects;
 using PetsOverhaul.Systems;
 using System.Collections.Generic;
-using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
 using Terraria.Localization;
@@ -337,13 +336,13 @@ namespace PetsOverhaulCalamityAddon.Systems
         /// <summary>
         /// All Items listed under 'soil blocks' in Calamities official Wiki.
         /// </summary>
-        public static List<int> CalSoilBlocks = [ModContent.ItemType<EutrophicSand>(), ModContent.ItemType<Navystone>(), ModContent.ItemType<BrimstoneSlag>(), ModContent.ItemType<ScorchedRemains>(), ModContent.ItemType<SulphurousSand>(), ModContent.ItemType<SulphurousSandstone>(), ModContent.ItemType<HardenedSulphurousSandstone>(), ModContent.ItemType<SulphurousShale>(), 
-            ModContent.ItemType<AbyssGravel>(), ModContent.ItemType<PlantyMush>(), ModContent.ItemType<PyreMantle>(), ModContent.ItemType<PyreMantleMolten>(), ModContent.ItemType<Voidstone>(), ModContent.ItemType<AstralDirt>(), ModContent.ItemType<AstralClay>(), ModContent.ItemType<AstralStone>(), ModContent.ItemType<AstralSand>(), ModContent.ItemType<HardenedAstralSand>(), 
+        public static List<int> CalSoilBlocks = [ModContent.ItemType<EutrophicSand>(), ModContent.ItemType<Navystone>(), ModContent.ItemType<BrimstoneSlag>(), ModContent.ItemType<ScorchedRemains>(), ModContent.ItemType<SulphurousSand>(), ModContent.ItemType<SulphurousSandstone>(), ModContent.ItemType<HardenedSulphurousSandstone>(), ModContent.ItemType<SulphurousShale>(),
+            ModContent.ItemType<AbyssGravel>(), ModContent.ItemType<PlantyMush>(), ModContent.ItemType<PyreMantle>(), ModContent.ItemType<PyreMantleMolten>(), ModContent.ItemType<Voidstone>(), ModContent.ItemType<AstralDirt>(), ModContent.ItemType<AstralClay>(), ModContent.ItemType<AstralStone>(), ModContent.ItemType<AstralSand>(), ModContent.ItemType<HardenedAstralSand>(),
             ModContent.ItemType<AstralSandstone>(), ModContent.ItemType<CelestialRemains>(), ModContent.ItemType<AstralSnow>(), ModContent.ItemType<AstralIce>(), ModContent.ItemType<NovaeSlag>(), ModContent.ItemType<VernalSoil>()];
         /// <summary>
         /// All weapons crafted with Living Shard + Blossom Flux.
         /// </summary>
-        public static List<int> CalPlanteraWeapons = [ItemID.TerraBlade,ModContent.ItemType<BlossomFlux>(), ModContent.ItemType<BotanicPiercer>(), ModContent.ItemType<Photosynthesis>(), ModContent.ItemType<PlantationStaff>(), ModContent.ItemType<SamsaraSlicer>(), ModContent.ItemType<StygianShield>(), ModContent.ItemType<VernalBolter>(), ModContent.ItemType<WildfireBloom>()];
+        public static List<int> CalPlanteraWeapons = [ItemID.TerraBlade, ModContent.ItemType<BlossomFlux>(), ModContent.ItemType<BotanicPiercer>(), ModContent.ItemType<Photosynthesis>(), ModContent.ItemType<PlantationStaff>(), ModContent.ItemType<SamsaraSlicer>(), ModContent.ItemType<StygianShield>(), ModContent.ItemType<VernalBolter>(), ModContent.ItemType<WildfireBloom>()];
         /// <summary>
         /// All weapons crafted with Nightmare Fuel.
         /// </summary>
@@ -361,8 +360,8 @@ namespace PetsOverhaulCalamityAddon.Systems
             BabyGrinch.FrostMoonWeapons.AddRange(CalEndothermicWeapons);
         }
 
-        public static int[] calChests = [ModContent.ItemType<AbyssTreasureChest>(), ModContent.ItemType<AshenChest>(), ModContent.ItemType<AstralChest>(), ModContent.ItemType<RustyChest>(), ModContent.ItemType<SecurityChest>(), ModContent.ItemType<SacrilegiousChest>(), ModContent.ItemType<OtherworldlyChest>(), ModContent.ItemType<StratusChest>(), ModContent.ItemType<BotanicChest>(), 
-            ModContent.ItemType<CosmiliteChest>(), ModContent.ItemType<ExoChest>(), ModContent.ItemType<SilvaChest>(), ModContent.ItemType<EutrophicChest>(), ModContent.ItemType<AgedSecurityChest>(), ModContent.ItemType<RustyChest>(), ModContent.ItemType<MonolithChest>(), ModContent.ItemType<PlaguedPlateChest>(), ModContent.ItemType<ProfanedChest>(), 
+        public static int[] calChests = [ModContent.ItemType<AbyssTreasureChest>(), ModContent.ItemType<AshenChest>(), ModContent.ItemType<AstralChest>(), ModContent.ItemType<RustyChest>(), ModContent.ItemType<SecurityChest>(), ModContent.ItemType<SacrilegiousChest>(), ModContent.ItemType<OtherworldlyChest>(), ModContent.ItemType<StratusChest>(), ModContent.ItemType<BotanicChest>(),
+            ModContent.ItemType<CosmiliteChest>(), ModContent.ItemType<ExoChest>(), ModContent.ItemType<SilvaChest>(), ModContent.ItemType<EutrophicChest>(), ModContent.ItemType<AgedSecurityChest>(), ModContent.ItemType<RustyChest>(), ModContent.ItemType<MonolithChest>(), ModContent.ItemType<PlaguedPlateChest>(), ModContent.ItemType<ProfanedChest>(),
             ModContent.ItemType<StatigelChest>(), ModContent.ItemType<AbyssChest>(), ModContent.ItemType<VoidChest>(), ModContent.ItemType<AcidwoodChest>()];
         public static int[] calBugs = [ModContent.ItemType<BabyFlakCrabItem>(), ModContent.ItemType<TwinklerItem>()];
         public static int[] calAnimals = [ModContent.ItemType<BabyFlakCrabItem>(), ModContent.ItemType<TwinklerItem>(), ModContent.ItemType<BloodwormItem>(), ModContent.ItemType<PiggyItem>(), ModContent.ItemType<BabyCannonballJellyfishItem>(), ModContent.ItemType<BabyGhostBellItem>(), ModContent.ItemType<SeaMinnowItem>()];

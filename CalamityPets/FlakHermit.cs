@@ -8,7 +8,6 @@ using System;
 using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
-using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace PetsOverhaulCalamityAddon.CalamityPets
@@ -31,7 +30,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
             {
                 if (npc.Distance(center) < radius)
                 {
-                    npc.SimpleStrikeNPC(Pet.PetDamage(acidBaseDmg,DamageClass.Throwing), Player.direction, Main.rand.NextBool((int)Math.Min(Player.GetTotalCritChance<RogueDamageClass>(), 100), 100), 0, DamageClass.Throwing, true, Player.luck);
+                    npc.SimpleStrikeNPC(Pet.PetDamage(acidBaseDmg, DamageClass.Throwing), Player.direction, Main.rand.NextBool((int)Math.Min(Player.GetTotalCritChance<RogueDamageClass>(), 100), 100), 0, DamageClass.Throwing, true, Player.luck);
                     npc.AddBuff(ModContent.BuffType<Irradiated>(), irradiateDuration);
                 }
             }

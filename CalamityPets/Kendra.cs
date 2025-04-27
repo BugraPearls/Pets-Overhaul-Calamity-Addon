@@ -3,7 +3,6 @@ using PetsOverhaul.Systems;
 using PetsOverhaulCalamityAddon.Systems;
 using System;
 using Terraria;
-using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace PetsOverhaulCalamityAddon.CalamityPets

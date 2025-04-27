@@ -80,7 +80,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                 if (indx < 0) //SOMEHOW if Defense line doesn't exist.
                 {
                     indx = tooltips.FindLastIndex(x => x.Name == "ItemName") + 1;
-                    tooltips.Insert(indx, new (Mod, "PetTooltip0", def.ToString() + Language.GetTextValue("LegacyTooltip.25")));
+                    tooltips.Insert(indx, new(Mod, "PetTooltip0", def.ToString() + Language.GetTextValue("LegacyTooltip.25")));
                     tooltips.Insert(indx + 1, new(Mod, "PetTooltip1", levi.crit.ToString() + Compatibility.LocVal("PetTooltips.LeviCrit")));
                 }
                 else

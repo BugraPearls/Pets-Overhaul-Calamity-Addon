@@ -89,8 +89,10 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         {
             if (player.TryGetModPlayer(out FurtasticDuoEffect duo) && duo.PetIsEquipped())
             {
-                if ((npc.damage * duo.absorbPercent) > duo.currentNextDamage)
-                    duo.currentNextDamage = (int)(npc.damage * duo.absorbPercent);
+                if ((npc.defDamage * duo.absorbPercent) > duo.currentNextDamage)
+                {
+                    duo.currentNextDamage = (int)(npc.defDamage * duo.absorbPercent);
+                }
             }
         }
         public override void ModifyHitNPCWithProj(Projectile proj, NPC target, ref NPC.HitModifiers modifiers)

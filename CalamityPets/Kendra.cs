@@ -38,8 +38,10 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         {
             if (player.TryGetModPlayer(out KendraEffect kendra) && kendra.PetIsEquipped())
             {
-                if ((npc.damage * kendra.absorbPercent) > kendra.currentNextDamage)
-                    kendra.currentNextDamage = (int)(npc.damage * kendra.absorbPercent);
+                if ((npc.defDamage * kendra.absorbPercent) > kendra.currentNextDamage) //Using defDamage instead of damage, because damage can get changed while defDamage is stored.
+                {
+                    kendra.currentNextDamage = (int)(npc.defDamage * kendra.absorbPercent);
+                }
             }
         }
     }

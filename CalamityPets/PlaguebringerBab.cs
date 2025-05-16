@@ -40,7 +40,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                 }
                 foreach (var npc in Main.ActiveNPCs)
                 {
-                    if (Player.Distance(npc.Center) < detonateRadius && npc.TryGetGlobalNPC(out PlaguebringerBabStacks boom) && boom.stacks > 0)
+                    if (npc.dontTakeDamage == false && Player.Distance(npc.Center) < detonateRadius && npc.TryGetGlobalNPC(out PlaguebringerBabStacks boom) && boom.stacks > 0)
                     {
                         npc.AddBuff(ModContent.BuffType<Plague>(), plagueAndSlowDuration);
                         NpcPet.AddSlow(new NpcPet.PetSlow(slowAmount, plagueAndSlowDuration, CalSlows.PlagueSlow), npc);
@@ -66,7 +66,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                 }
                 foreach (var npc in Main.ActiveNPCs)
                 {
-                    if (npc == target)
+                    if (npc == target && npc.dontTakeDamage == true)
                         continue;
 
                     if (target.Distance(npc.Center) < surroundRadius && npc.TryGetGlobalNPC(out PlaguebringerBabStacks surrounder))

@@ -28,7 +28,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         {
             foreach (NPC npc in Main.ActiveNPCs)
             {
-                if (npc.Distance(center) < radius)
+                if (npc.Distance(center) < radius && npc.dontTakeDamage == false)
                 {
                     npc.SimpleStrikeNPC(Pet.PetDamage(acidBaseDmg, DamageClass.Throwing), Player.direction, Main.rand.NextBool((int)Math.Min(Player.GetTotalCritChance<RogueDamageClass>(), 100), 100), 0, DamageClass.Throwing, true, Player.luck);
                     npc.AddBuff(ModContent.BuffType<Irradiated>(), irradiateDuration);

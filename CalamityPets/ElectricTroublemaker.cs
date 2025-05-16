@@ -284,7 +284,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                         }
                         break;
                     case hydroPump:
-                        if (target.active && Pet.timer + Pet.timerMax * hydroPumpCooldown < Pet.timerMax)
+                        if (target.active && target.dontTakeDamage == false && Pet.timer + Pet.timerMax * hydroPumpCooldown < Pet.timerMax)
                         {
                             target.SimpleStrikeNPC(Pet.PetDamage(hydroPumpDmg * GetTypeEffectiveness(target, hydroPump), hit.DamageType), hit.HitDirection, Main.rand.NextBool((int)Math.Min(Player.GetTotalCritChance(hit.DamageType), 100), 100), 0, hit.DamageType, true, Player.luck);
                             for (int i = 0; i < 10; i++)
@@ -303,7 +303,10 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                             Projectile petProjectile = Projectile.NewProjectileDirect(GlobalPet.GetSource_Pet(EntitySourcePetIDs.PetProjectile), target.Center, Vector2.Zero, ModContent.ProjectileType<PetExplosion>(), Pet.PetDamage(overheatDmg * GetTypeEffectiveness(target, overheat), hit.DamageType), 0, Player.whoAmI, overheatRadius);
                             petProjectile.DamageType = hit.DamageType;
                             petProjectile.CritChance = (int)Player.GetTotalCritChance(hit.DamageType);
-                            target.AddBuff(BuffID.OnFire, (int)(burnDuration * GetTypeEffectiveness(target, overheat)));
+                            if (target.active)
+                            {
+                                target.AddBuff(BuffID.OnFire, (int)(burnDuration * GetTypeEffectiveness(target, overheat)));
+                            }
                             for (int i = 0; i < 15; i++)
                             {
                                 Dust.NewDustPerfect(target.Center + Main.rand.NextVector2Circular(overheatRadius, overheatRadius), DustID.SolarFlare);
@@ -353,7 +356,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                         {
                             foreach (var npc in Main.ActiveNPCs)
                             {
-                                if (target.Distance(npc.Center) < airSlashRadius)
+                                if (target.Distance(npc.Center) < airSlashRadius && npc.dontTakeDamage == false)
                                 {
                                     npc.SimpleStrikeNPC(Pet.PetDamage(airSlashDmg * GetTypeEffectiveness(npc, airSlash), hit.DamageType), hit.HitDirection, Main.rand.NextBool((int)Math.Min(Player.GetTotalCritChance(hit.DamageType), 100), 100), airSlashKb * GetTypeEffectiveness(npc, airSlash), hit.DamageType, true, Player.luck);
                                 }

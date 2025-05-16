@@ -1,3 +1,4 @@
+using PetsOverhaul.PetEffects;
 using PetsOverhaul.Systems;
 using PetsOverhaulCalamityAddon.Systems;
 using System;
@@ -32,14 +33,14 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                 GlobalPet.CircularDustEffect(Player.Center, DustID.PinkFairy, block, 30);
                 foreach (var npc in Main.ActiveNPCs)
                 {
-                    if (Player.Distance(npc.Center) < block)
+                    if (Player.Distance(npc.Center) < block && npc.dontTakeDamage == false)
                     {
                         npc.SimpleStrikeNPC(Pet.PetDamage(dmg, DamageClass.Generic), Player.direction, true, kb, DamageClass.Generic, true, Player.luck);
                     }
                 }
                 foreach (var player in Main.ActivePlayers)
                 {
-                    if (Player.Distance(player.Center) < block)
+                    if (Player.Distance(player.Center) < block && Player.creativeGodMode == false)
                     {
                         string reason = Main.rand.Next(4) switch
                         {

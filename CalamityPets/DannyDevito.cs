@@ -17,7 +17,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         public override PetClasses PetClassPrimary => PetClasses.Utility;
         public override PetClasses PetClassSecondary => PetClasses.Offensive;
         public int radius = 150;
-        public int damage = 35;
+        public int damage = 25;
         public int bleedDuration = 780;
         public float slow = 0.35f;
         public int slowDuration = 330;

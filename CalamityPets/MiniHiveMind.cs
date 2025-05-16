@@ -23,7 +23,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         public float luckVal = 0;
         public float pen = 0;
         public float critDmg = 0;
-        public float evilMult = 1.35f;
+        public float evilMult = 1.3f;
         public float dmgIncrIfCorrupt = 0.12f;
         public float takenPenalty = 0.07f;
         public override int PetStackCurrent => evilKills - expTresholds[Math.Clamp(Level, 0, maxLvl)];

@@ -15,9 +15,9 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
     {
         public override int PetItemID => CalamityPetIDs.Fox;
         public override PetClasses PetClassPrimary => PetClasses.Utility;
-        public int baseTime = 120;
-        public int perTime = 30;
-        public int cooldown = 7200;
+        public int baseTime = 30;
+        public int perTime = 12;
+        public int cooldown = 900;
         private int cleansePenalty = 0;
         public override int PetAbilityCooldown => cooldown;
         public override void ExtraPreUpdateNoCheck()

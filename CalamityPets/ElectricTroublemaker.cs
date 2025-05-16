@@ -27,7 +27,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         public const float superEffective = 2f;
         public const float notVeryEffective = 0.5f;
         public bool chargeNextAttack = false;
-        public int baseCooldown = 6000;
+        public int baseCooldown = 3000;
         private int internalCooldownToInitiateAttack = 0; //This to remove accidental initiations/cancelings.
 
         public const int thunderWave = 0;
@@ -57,8 +57,8 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         public float blizzardCooldown = 0.8f;
 
         public const int leafStorm = 4;
-        public int leafStormDmg = 15;
-        public int minimumLeaf = 10;
+        public int leafStormDmg = 20;
+        public int minimumLeaf = 12;
         public int maxLeaf = 15;
         public float leafStormCooldown = 0.45f;
 

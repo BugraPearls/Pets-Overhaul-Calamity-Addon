@@ -21,7 +21,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         {
             if (currentNextDamage > 0 && PetIsEquipped() && GlobalPet.LifestealCheck(target) && modifiers.DamageType is RogueDamageClass)
             {
-                modifiers.FlatBonusDamage += currentNextDamage * (proj.Calamity().stealthStrike ? stealthMult : 1f);
+                modifiers.FlatBonusDamage += Player.GetTotalDamage<RogueDamageClass>().ApplyTo(currentNextDamage * (proj.Calamity().stealthStrike ? stealthMult : 1f));
                 currentNextDamage = 0;
             }
         }

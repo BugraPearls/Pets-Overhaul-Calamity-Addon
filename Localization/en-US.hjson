@@ -163,31 +163,33 @@ Mods: {
 				- Has <baseCooldown> seconds cooldown, but all abilities cost % of your cooldown.
 				<abilityTooltip>
 				'''
+			TheEtomerStack: move to be used next hit
+			RotomCurrent: "Current Ability: "
+			RotomThunderWaveName: Thunder Wave
 			RotomThunderWave:
 				'''
-				- Current Ability: Thunder Wave
 				 * Uses Electricity resistance & vulnerability, and buffed by Electric form.
 				 * Your next strike paralyzes all enemies in <radius> blocks, slowing by <slow>% for <slowDuration> seconds.
 				 * Costs <percentOfCd>% of your current Pet Ability Cooldown. (<percentToSeconds> seconds)
 				'''
+			RotomHydroPumpName: Hydro Pump
 			RotomHydroPump:
 				'''
-				- Current Ability: Hydro Pump
 				 * Uses Water resistance & vulnerability, and buffed by Wash form.
 				 * Your next strike deals extra <dmg> damage and applies Wet debuff to the target for <wetDuration> seconds.
 				 * Costs <percentOfCd>% of your current Pet Ability Cooldown. (<percentToSeconds> seconds)
 				'''
+			RotomOverheatName: Overheat
 			RotomOverheat:
 				'''
-				- Current Ability: Overheat
 				 * Uses Heat resistance & vulnerability, and buffed by Heat form.
 				 * Your next strike explodes around you and your target in <radius> blocks, dealing <dmg> damage.
 				 * Main target gets burnt with On Fire! debuff for <burnDuration> seconds.
 				 * Costs <percentOfCd>% of your current Pet Ability Cooldown. (<percentToSeconds> seconds)
 				'''
+			RotomBlizzardName: Blizzard
 			RotomBlizzard:
 				'''
-				- Current Ability: Blizzard
 				 * Uses Cold resistance & vulnerability, and buffed by Frost form.
 				 * Your next strike whips out a mini Blizzard in target location,
 				constantly dealing <dmg> damage to all enemies inside it for <blizzardDuration> seconds.
@@ -195,17 +197,17 @@ Mods: {
 				 * Enemies hit for <freezeRequirement> seconds gets applied with Glacial State for <freezeDuration> seconds.
 				 * Costs <percentOfCd>% of your current Pet Ability Cooldown. (<percentToSeconds> seconds)
 				'''
+			RotomLeafStormName: Leaf Storm
 			RotomLeafStorm:
 				'''
-				- Current Ability: Leaf Storm
 				 * Uses Sickness resistance & vulnerability, and buffed by Mow form.
 				 * Your next strike spawns damaging leaves out of your target,
 				   dealing <dmg> damage, spawning between <lowLeaf> to <highLeaf> leaves.
 				 * Costs <percentOfCd>% of your current Pet Ability Cooldown. (<percentToSeconds> seconds)
 				'''
+			RotomAirSlashName: Air Slash
 			RotomAirSlash:
 				'''
-				- Current Ability: Air Slash
 				 * Is more effective if the enemy is grounded (if affected by gravity),
 				   normal effectiveness if the grounded enemy is currently midair, and
 				   not very effective if they aren't affected by gravity. Buffed by Fan form.
@@ -217,9 +219,10 @@ Mods: {
 				'''
 				<class>
 				- Depending on how much Aggro you have, gain defensive or offensive stats.
-				- Current aggro value: <aggro>, press (<switch>) to swap between -/+ tooltips.
+				- Press Pet Ability Switch (<switchKeybind>) to swap between tooltips.
 				<tooltip>
 				'''
+			AbyssShellFossilStack: aggro value
 			SnailActive: ACTIVE!
 			SnailInactive: INACTIVE!
 			SnailPositiveAggro:
@@ -349,6 +352,7 @@ Mods: {
 				- Press Pet Ability Keybind (<keybind>) to detonate all stacks from all enemies in <detonateRadius> blocks.
 				 * <cooldown> seconds cooldown, detonating enemies applies Plague and a <slow>% slow for <plagueDuration> seconds.
 				'''
+			PlagueCallerStack: nearby total detonateable damage
 			McNuggets:
 				'''
 				<class>
@@ -388,6 +392,7 @@ Mods: {
 				 * Any weapon that channels something or is a tool does not benefit as well.
 				- Mana Sickness will now reduce ALL affected damage, rather than just Magic.
 				'''
+			BrimstoneJewelStack: crit damage modifier by the Pet
 			ScalManaSicknessExtraText:
 				'''
 				Also reducing all other damage, except;

@@ -26,7 +26,23 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         public int cooldown = 510;
         public int plagueAndSlowDuration = 150;
         public float slowAmount = 0.25f;
+        public int CurrentCanDetonate { get 
+            {
+                int current = 0;
+                foreach (var npc in Main.ActiveNPCs)
+                {
+                    if (npc.dontTakeDamage == false && Player.Distance(npc.Center) < detonateRadius && npc.TryGetGlobalNPC(out PlaguebringerBabStacks boom) && boom.stacks > 0)
+                    {
+                        current += boom.stacks;
+                    }
+                }
+                return current;
+            }
+        }
         public override int PetAbilityCooldown => cooldown;
+        public override string PetStackText => Compatibility.LocVal("PetTooltips.PlagueCallerStack");
+        public override int PetStackMax => 0;
+        public override int PetStackCurrent => CurrentCanDetonate;
         public override void ProcessTriggers(TriggersSet triggersSet)
         {
             if (Pet.AbilityPressCheck() && PetIsEquipped())

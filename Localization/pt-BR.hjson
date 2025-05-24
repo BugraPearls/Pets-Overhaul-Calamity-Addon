@@ -162,6 +162,9 @@ Mods: {
 				- Possui um tempo de recarga de <baseCooldown> segundos, mas todas as habilidades custam % da sua recarga.
 				<abilityTooltip>
 				'''
+			// TheEtomerStack: move to be used next hit
+			// RotomCurrent: "Current Ability: "
+			// RotomThunderWaveName: Thunder Wave
 			RotomThunderWave:
 				'''
 				- Habilidade Atual: Onda de Trovão
@@ -169,6 +172,7 @@ Mods: {
 				 * Seu próximo golpe paralisa todos os inimigos em um raio de <radius> blocos, desacelerando-os em <slow>% por <slowDuration> segundos.
 				 * Custa <percentOfCd>% da sua recarga atual de Habilidade do PET. (<percentToSeconds> segundos)
 				'''
+			// RotomHydroPumpName: Hydro Pump
 			RotomHydroPump:
 				'''
 				- Habilidade Atual: Jato d'Água
@@ -176,6 +180,7 @@ Mods: {
 				 * Seu próximo golpe causa <dmg> de dano extra e aplica o debuff Molhado ao alvo por <wetDuration> segundos.
 				 * Custa <percentOfCd>% da sua recarga atual de Habilidade do PET. (<percentToSeconds> segundos)
 				'''
+			// RotomOverheatName: Overheat
 			RotomOverheat:
 				'''
 				- Habilidade Atual: Superaquecimento
@@ -184,6 +189,7 @@ Mods: {
 				 * O alvo principal pega fogo com o debuff Em Chamas! por <burnDuration> segundos.
 				 * Custa <percentOfCd>% da sua recarga atual de Habilidade do PET. (<percentToSeconds> segundos)
 				'''
+			// RotomBlizzardName: Blizzard
 			RotomBlizzard:
 				'''
 				- Habilidade Atual: Nevasca
@@ -194,6 +200,7 @@ Mods: {
 				 * Inimigos atingidos por <freezeRequirement> segundos recebem o estado Glacial por <freezeDuration> segundos.
 				 * Custa <percentOfCd>% da sua recarga atual de Habilidade do PET. (<percentToSeconds> segundos)
 				'''
+			// RotomLeafStormName: Leaf Storm
 			RotomLeafStorm:
 				'''
 				- Habilidade Atual: Tempestade de Folhas
@@ -202,6 +209,7 @@ Mods: {
 				causando <dmg> de dano e gerando entre <lowLeaf> a <highLeaf> folhas.
 				 * Custa <percentOfCd>% da sua recarga atual de Habilidade do PET. (<percentToSeconds> segundos)
 				'''
+			// RotomAirSlashName: Air Slash
 			RotomAirSlash:
 				'''
 				- Habilidade Atual: Corte de Ar
@@ -219,6 +227,7 @@ Mods: {
 				- Valor atual de agressividade: <aggro>, pressione (<switch>) para alternar entre dicas -/+.
 				<tooltip>
 				'''
+			// AbyssShellFossilStack: aggro value
 			SnailActive: ATIVO!
 			SnailInactive: INATIVO!
 			SnailPositiveAggro:
@@ -346,6 +355,7 @@ Mods: {
 				- Pressione a tecla de Habilidade do PET (<keybind>) para detonar todos os stacks de todos os inimigos em um raio de <detonateRadius> blocos.
 				 * Tempo de recarga de <cooldown> segundos, detonando inimigos aplica Praga e uma desaceleração de <slow>% por <plagueDuration> segundos.
 				'''
+			// PlagueCallerStack: nearby total detonateable damage
 			McNuggets:
 				'''
 				<class>
@@ -385,6 +395,7 @@ Mods: {
 				 * Qualquer arma que canaliza algo ou é uma ferramenta também não se beneficia.
 				- O Enjoo de Mana agora reduzirá TODOS os danos afetados, em vez de apenas o Mágico.
 				'''
+			// BrimstoneJewelStack: crit damage modifier by the Pet
 			ScalManaSicknessExtraText:
 				'''
 				Também reduz todo os outros tipos de dano, exceto

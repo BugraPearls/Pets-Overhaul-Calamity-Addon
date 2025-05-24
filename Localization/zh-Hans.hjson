@@ -159,6 +159,9 @@ Mods: {
 				- 拥有<baseCooldown>秒基础冷却时间
 				<abilityTooltip>
 				'''
+			// TheEtomerStack: move to be used next hit
+			// RotomCurrent: "Current Ability: "
+			// RotomThunderWaveName: Thunder Wave
 			RotomThunderWave:
 				'''
 				- 当前招式：电磁波
@@ -166,6 +169,7 @@ Mods: {
 				 - 你的下次攻击会麻痹<radius>格范围内的敌人，造成<slow>%减速<slowDuration>秒
 				 - <percentOfCd>%当前宠物技能冷却时间（<percentToSeconds>秒）
 				'''
+			// RotomHydroPumpName: Hydro Pump
 			RotomHydroPump:
 				'''
 				- 当前招式：水炮
@@ -173,6 +177,7 @@ Mods: {
 				 - 你的下次攻击会造成额外<dmg>点伤害并造成潮湿减益<wetDuration>秒
 				 - <percentOfCd>%当前宠物技能冷却时间（<percentToSeconds>秒）
 				'''
+			// RotomOverheatName: Overheat
 			RotomOverheat:
 				'''
 				- 当前招式：过热
@@ -181,6 +186,7 @@ Mods: {
 				 - 对命中的第一个目标造成着火了减益<burnDuration>秒
 				 - <percentOfCd>%当前宠物技能冷却时间（<percentToSeconds>秒）
 				'''
+			// RotomBlizzardName: Blizzard
 			RotomBlizzard:
 				'''
 				- 当前招式：暴风雪
@@ -190,6 +196,7 @@ Mods: {
 				 - 对在暴风雪中停留超过<freezeRequirement>秒的敌人造成冰河时代减益<freezeDuration>秒
 				 - <percentOfCd>%当前宠物技能冷却时间（<percentToSeconds>秒）
 				'''
+			// RotomLeafStormName: Leaf Storm
 			RotomLeafStorm:
 				'''
 				- 当前招式：飞叶风暴
@@ -197,6 +204,7 @@ Mods: {
 				 * 你的下次攻击会生成伤害性叶子，造成<dmg>伤害，生成<lowLeaf>~<highLeaf>个叶子
 				 * <percentOfCd>%当前宠物技能冷却时间（<percentToSeconds>秒）
 				'''
+			// RotomAirSlashName: Air Slash
 			RotomAirSlash:
 				'''
 				- 当前招式：空气斩
@@ -211,6 +219,7 @@ Mods: {
 				- 当前仇恨值：<aggro>，按下（<switch>）以切换负数/正数工具提示
 				<tooltip>
 				'''
+			// AbyssShellFossilStack: aggro value
 			SnailActive: 已激活！
 			SnailInactive: 未激活！
 			SnailPositiveAggro:
@@ -335,6 +344,7 @@ Mods: {
 				- 按下宠物技能键（<keybind>）以引爆<detonateRadius>格范围内所有敌人的所有层数
 				 * 此效果有<cooldown>秒冷却，引爆会造成瘟疫减益和<slow>%减速<plagueDuration>秒
 				'''
+			// PlagueCallerStack: nearby total detonateable damage
 			McNuggets:
 				'''
 				<class>
@@ -374,6 +384,7 @@ Mods: {
 				 * 不加成蓄力武器和工具
 				- 魔力疾病现在会降低所有受影响的伤害
 				'''
+			// BrimstoneJewelStack: crit damage modifier by the Pet
 			ScalManaSicknessExtraText:
 				'''
 				也降低其他职业的伤害

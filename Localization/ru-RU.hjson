@@ -162,6 +162,9 @@ Mods: {
 				- Имеет перезарядку <baseCooldown> секунд, но все способности расходуют x% от вашей перезарядки.
 				<abilityTooltip>
 				'''
+			// TheEtomerStack: move to be used next hit
+			// RotomCurrent: "Current Ability: "
+			// RotomThunderWaveName: Thunder Wave
 			RotomThunderWave:
 				'''
 				- Текущая способность: Грозовая волна
@@ -169,6 +172,7 @@ Mods: {
 				  * Ваш следующий удар парализует всех врагов в радиусе <radius> блоков, замедляя на <slow>% на <slowDuration> секунд.
 				  * Стоит <percentOfCd>% вашей текущей перезарядки способности питомца. (<percentToSeconds> секунд)
 				'''
+			// RotomHydroPumpName: Hydro Pump
 			RotomHydroPump:
 				'''
 				- Текущая способность: Гидро Насос
@@ -176,6 +180,7 @@ Mods: {
 				  * Ваш следующий удар наносит дополнительный урон <dmg> и накладывает дебафф "Влажный" на цель на <wetDuration> секунд.
 				  * Стоит <percentOfCd>% вашей текущей перезарядки способности питомца. (<percentToSeconds> секунд)
 				'''
+			// RotomOverheatName: Overheat
 			RotomOverheat:
 				'''
 				- Текущая способность: Перегрев
@@ -184,6 +189,7 @@ Mods: {
 				  * Основная цель получает дебафф "В огне!" на <burnDuration> секунд.
 				  * Стоит <percentOfCd>% вашей текущей перезарядки способности питомца. (<percentToSeconds> секунд)
 				'''
+			// RotomBlizzardName: Blizzard
 			RotomBlizzard:
 				'''
 				- Текущая способность: Метель
@@ -194,6 +200,7 @@ Mods: {
 				  * Враги, находящиеся под воздействием метели более <freezeRequirement> секунд, получают состояние Заморозки на <freezeDuration> секунды.
 				  * Стоит <percentOfCd>% вашей текущей перезарядки способности питомца. (<percentToSeconds> секунд)
 				'''
+			// RotomLeafStormName: Leaf Storm
 			RotomLeafStorm:
 				'''
 				- Текущая способность: Листовой шторм
@@ -202,6 +209,7 @@ Mods: {
 				    порождая от <lowLeaf> до <highLeaf> листьев.
 				  * Стоит <percentOfCd>% вашей текущей перезарядки способности питомца. (<percentToSeconds> секунд)
 				'''
+			// RotomAirSlashName: Air Slash
 			RotomAirSlash:
 				'''
 				- Текущая способность: Воздушный порез
@@ -218,6 +226,7 @@ Mods: {
 				- Текущее значения агрессии: <aggro>, нажмите (<switch>), чтобы переключить между -/+ подсказками.
 				<tooltip>
 				'''
+			// AbyssShellFossilStack: aggro value
 			SnailActive: АКТИВНО!
 			SnailInactive: НЕАКТИВНО!
 			SnailPositiveAggro:
@@ -346,6 +355,7 @@ Mods: {
 				- Нажмите клавишу способности питомца (<keybind>), чтобы взорвать все стаки на всех врагах в радиусе <detonateRadius> блоков.
 				  * Перезарядка <cooldown> секунд, взрыв врагов накладывает Чуму и замедляет на <slow>% на <plagueDuration> секунды.
 				'''
+			// PlagueCallerStack: nearby total detonateable damage
 			McNuggets:
 				'''
 				<class>
@@ -385,6 +395,7 @@ Mods: {
 				  * Любое оружие, которое удерживается (Йо-йо, кистени и т.д.), либо инструменты, не получают этот бонус.
 				- Маны-болезнь теперь будет уменьшать ЛЮБОЙ урон, а не только магический.
 				'''
+			// BrimstoneJewelStack: crit damage modifier by the Pet
 			ScalManaSicknessExtraText:
 				'''
 				Также снижает весь другой урон, за исключением;

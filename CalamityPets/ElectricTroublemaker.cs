@@ -1,5 +1,6 @@
 using CalamityMod;
 using CalamityMod.CalPlayer;
+using CalamityMod.NPCs.NormalNPCs;
 using Microsoft.Xna.Framework;
 using PetsOverhaul.Config;
 using PetsOverhaul.NPCs;
@@ -69,6 +70,22 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         public float airSlashCooldown = 0.3f;
         public override PetClasses PetClassPrimary => PetClasses.Offensive;
         public override PetClasses PetClassSecondary => PetClasses.Utility;
+        public string CurrentMoveName
+        {
+            get { return currentMove switch
+            {
+                thunderWave => Compatibility.LocVal("PetTooltips.RotomThunderWaveName"),
+                hydroPump => Compatibility.LocVal("PetTooltips.RotomHydroPumpName"),
+                overheat => Compatibility.LocVal("PetTooltips.RotomOverheatName"),
+                blizzard => Compatibility.LocVal("PetTooltips.RotomBlizzardName"),
+                leafStorm => Compatibility.LocVal("PetTooltips.RotomLeafStormName"),
+                airSlash => Compatibility.LocVal("PetTooltips.RotomAirSlashName"),
+                _ => "Invalid Class",
+            };
+            }
+        }
+        public override string PetStackText => Compatibility.LocVal("PetTooltips.TheEtomerStack");
+        public override string PetStackSpecial => CurrentMoveName;
         public float GetTypeEffectiveness(NPC npc, int moveId)
         {
             float baseVal = 1f;
@@ -414,7 +431,8 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                 switch (rotom.currentMove)
                 {
                     case ElectricTroublemakerEffect.thunderWave:
-                        MoveTooltip = Compatibility.LocVal("PetTooltips.RotomThunderWave")
+                        MoveTooltip = Compatibility.LocVal("PetTooltips.RotomCurrent") + rotom.CurrentMoveName + "\n" +
+                            Compatibility.LocVal("PetTooltips.RotomThunderWave")
                             .Replace("<radius>", Math.Round(rotom.tWaveRadius / 16f, 2).ToString())
                             .Replace("<slow>", Math.Round(rotom.tWaveSlow * 100, 2).ToString())
                             .Replace("<slowDuration>", Math.Round(rotom.tWaveDuration / 60f, 2).ToString())
@@ -422,14 +440,16 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                             .Replace("<percentToSeconds>", Math.Round(rotom.tWaveCooldown * rotom.Pet.timerMax / 60, 2).ToString());
                         break;
                     case ElectricTroublemakerEffect.hydroPump:
-                        MoveTooltip = Compatibility.LocVal("PetTooltips.RotomHydroPump")
+                        MoveTooltip = Compatibility.LocVal("PetTooltips.RotomCurrent") + rotom.CurrentMoveName + "\n" + 
+                            Compatibility.LocVal("PetTooltips.RotomHydroPump")
                             .Replace("<dmg>", rotom.hydroPumpDmg.ToString())
                             .Replace("<wetDuration>", Math.Round(rotom.wetDuration / 60f, 2).ToString())
                             .Replace("<percentOfCd>", Math.Round(rotom.hydroPumpCooldown * 100, 2).ToString())
                             .Replace("<percentToSeconds>", Math.Round(rotom.hydroPumpCooldown * rotom.Pet.timerMax / 60, 2).ToString());
                         break;
                     case ElectricTroublemakerEffect.overheat:
-                        MoveTooltip = Compatibility.LocVal("PetTooltips.RotomOverheat")
+                        MoveTooltip = Compatibility.LocVal("PetTooltips.RotomCurrent") + rotom.CurrentMoveName + "\n" +
+                            Compatibility.LocVal("PetTooltips.RotomOverheat")
                             .Replace("<radius>", Math.Round(rotom.overheatRadius / 16f, 2).ToString())
                             .Replace("<dmg>", rotom.overheatDmg.ToString())
                             .Replace("<burnDuration>", Math.Round(rotom.burnDuration / 60f, 2).ToString())
@@ -437,7 +457,8 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                             .Replace("<percentToSeconds>", Math.Round(rotom.overheatCooldown * rotom.Pet.timerMax / 60, 2).ToString());
                         break;
                     case ElectricTroublemakerEffect.blizzard:
-                        MoveTooltip = Compatibility.LocVal("PetTooltips.RotomBlizzard")
+                        MoveTooltip = Compatibility.LocVal("PetTooltips.RotomCurrent") + rotom.CurrentMoveName + "\n" + 
+                            Compatibility.LocVal("PetTooltips.RotomBlizzard")
                             .Replace("<dmg>", rotom.blizzardDmg.ToString())
                             .Replace("<blizzardDuration>", Math.Round(rotom.blizzardDuration / 60f, 2).ToString())
                             .Replace("<slow>", Math.Round(rotom.coldSlow * 100, 2).ToString())
@@ -447,7 +468,8 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                             .Replace("<percentToSeconds>", Math.Round(rotom.blizzardCooldown * rotom.Pet.timerMax / 60, 2).ToString());
                         break;
                     case ElectricTroublemakerEffect.leafStorm:
-                        MoveTooltip = Compatibility.LocVal("PetTooltips.RotomLeafStorm")
+                        MoveTooltip = Compatibility.LocVal("PetTooltips.RotomCurrent") + rotom.CurrentMoveName + "\n" + 
+                            Compatibility.LocVal("PetTooltips.RotomLeafStorm")
                             .Replace("<dmg>", rotom.leafStormDmg.ToString())
                             .Replace("<lowLeaf>", rotom.minimumLeaf.ToString())
                             .Replace("<highLeaf>", rotom.maxLeaf.ToString())
@@ -455,7 +477,8 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                             .Replace("<percentToSeconds>", Math.Round(rotom.leafStormCooldown * rotom.Pet.timerMax / 60, 2).ToString());
                         break;
                     case ElectricTroublemakerEffect.airSlash:
-                        MoveTooltip = Compatibility.LocVal("PetTooltips.RotomAirSlash")
+                        MoveTooltip = Compatibility.LocVal("PetTooltips.RotomCurrent") + rotom.CurrentMoveName + "\n" + 
+                            Compatibility.LocVal("PetTooltips.RotomAirSlash")
                             .Replace("<radius>", Math.Round(rotom.airSlashRadius / 16f, 2).ToString())
                             .Replace("<dmg>", rotom.airSlashDmg.ToString())
                             .Replace("<knockback>", rotom.airSlashKb.ToString())

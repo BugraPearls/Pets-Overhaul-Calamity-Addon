@@ -12,6 +12,9 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         public override int PetItemID => CalamityPetIDs.EscargidolonSnail;
         public override PetClasses PetClassPrimary => PetClasses.Defensive;
         public override PetClasses PetClassSecondary => PetClasses.Offensive;
+        public override int PetStackCurrent => Player.aggro;
+        public override int PetStackMax => 0;
+        public override string PetStackText => Compatibility.LocVal("PetTooltips.AbyssShellFossilStack");
         public bool CurrentTooltip = true;
         public int CurrentDef => Player.aggro / aggroToDef;
         public int aggroToDef = 100;
@@ -52,7 +55,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         }
         public override void ProcessTriggers(TriggersSet triggersSet)
         {
-            if (PetKeybinds.PetTooltipSwap.JustPressed)
+            if (PetKeybinds.PetAbilitySwitch.JustPressed)
             {
                 CurrentTooltip = !CurrentTooltip;
             }
@@ -105,8 +108,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                     default:
                 }
                 return Compatibility.LocVal("PetTooltips.AbyssShellFossil")
-                    .Replace("<aggro>", snail.Player.aggro.ToString())
-                    .Replace("<switch>", PetTextsColors.KeybindText(PetKeybinds.PetTooltipSwap))
+                    .Replace("<switchKeybind>", PetTextsColors.KeybindText(PetKeybinds.PetAbilitySwitch))
                     .Replace("<tooltip>", Tooltip);
             }
         }

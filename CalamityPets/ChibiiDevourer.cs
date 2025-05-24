@@ -17,17 +17,10 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         public int dmg = 99999;
         public int block = 320;
         public float kb = 100f;
-        public bool check = false;
-        public override void ExtraPreUpdate()
-        {
-            if (Player.difficulty == PlayerDifficultyID.Hardcore)
-                check = true;
-            else
-                check = false;
-        }
+        public bool DiffCheck => Player.difficulty == PlayerDifficultyID.Hardcore;
         public override void Kill(double damage, int hitDirection, bool pvp, PlayerDeathReason damageSource)
         {
-            if (check)
+            if (DiffCheck)
             {
                 SoundEngine.PlaySound(SoundID.Meowmere, Player.Center);
                 GlobalPet.CircularDustEffect(Player.Center, DustID.PinkFairy, block, 30);

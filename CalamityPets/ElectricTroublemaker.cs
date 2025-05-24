@@ -85,7 +85,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
             }
         }
         public override string PetStackText => Compatibility.LocVal("PetTooltips.TheEtomerStack");
-        public override string PetStackSpecial => CurrentMoveName;
+        public override string PetStackSpecial => CurrentMoveName + (chargeNextAttack ? Compatibility.LocVal("PetTooltips.RotomActive") : "");
         public float GetTypeEffectiveness(NPC npc, int moveId)
         {
             float baseVal = 1f;

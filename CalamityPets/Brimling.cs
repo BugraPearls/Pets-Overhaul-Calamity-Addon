@@ -15,7 +15,6 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         public override PetClasses PetClassSecondary => PetClasses.Offensive;
         public float drTreshold = 0.25f;
         public float dr = 0.15f;
-        public int baseDmg = 30; //unused
         public int cooldown = 210;
         public float reflectAmount = 0.45f;
         public float kbFromReflect = 5f;

@@ -462,10 +462,7 @@ Mods: {
 				- Killing an enemy absorbs their power for your next Rogue hit.
 				 * Proccing this bonus damage grants a shield.
 				'''
-			RomajedaOrchid:
-				'''
-				- Killing an enemy absorbs their power for your next Rogue hit.
-				'''
+			RomajedaOrchid: - Killing an enemy absorbs their power for your next Rogue hit.
 			JoyfulHeart:
 				'''
 				- You take less damage, and deal less damage.

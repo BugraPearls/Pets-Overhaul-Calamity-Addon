@@ -86,7 +86,6 @@ Mods: {
 		PetTooltips: {
 			ForgottenDragonEgg:
 				'''
-				<class>
 				- [i:<stackIcon>] 当前层数：<dragonPractice>。以下方式可以叠加层数：
 				 * 充能攻击直接击中和爆炸命中的所有敌人都会叠加<hitStack>层
 				 * 爆炸燃烧杀死的敌人会叠加<killStack>层
@@ -102,14 +101,12 @@ Mods: {
 			// ForgottenDragonEggStack: "[i:<stackIcon>] Akato stacks"
 			Astrophage:
 				'''
-				<class>
 				- 对<infectRadius>格范围内的敌人造成<infectDuration>秒幻星感染
 				- 对<slowRadius>格范围内受幻星感染影响的敌人造成<slowAmount>%减速
 				 - 带有幻星感染和减速效果的敌人死亡时会将幻星感染减益转移给<spreadRadius>格范围内最近的敌人，并造成<spreadSlow>%减速<spreadSlowDuration>秒
 				'''
 			BearsEye:
 				'''
-				<class>
 				- 受伤后低于<belowHealth>%生命值时会获得一个护盾<shieldDuration>秒，护盾值为<baseShield>%基础最大生命值 + <bonusShield>%额外最大生命值
 				 - 根据护盾值减少此次伤害
 				 - 此效果有<cooldown>秒冷却
@@ -118,7 +115,6 @@ Mods: {
 				'''
 			CharredRelic:
 				'''
-				<class>
 				- 生命值低于<treshold>%时增加<dr>%伤害减免
 				- 受伤会反弹伤害，并发射5个硫磺火球
 				 - 反弹原伤害的<reflectAmount>%
@@ -142,7 +138,6 @@ Mods: {
 			CosmicDeath4: <name>说道歉的话肯定在说谎
 			TrashmanTrashcan:
 				'''
-				<class>
 				- 按下宠物技能键（<keybind>）来扔出垃圾罐
 				 - 垃圾罐会造成<damage>伤害并造成流血<bleedDuration>秒
 				 - 使目标周围的敌人减速<slow>% <slowDuration>秒
@@ -151,7 +146,6 @@ Mods: {
 				'''
 			TheEtomer:
 				'''
-				<class>
 				- 按下（<abilitySwitch>）键切换招式，按下（<abilityUse>）键来启用命中招式
 				- 可以在6种命中招式之间切换。重新按下技能键以取消
 				- 受当前宠物形态和敌人减益弱性加成
@@ -214,7 +208,6 @@ Mods: {
 				'''
 			AbyssShellFossil:
 				'''
-				<class>
 				- 根据你的仇恨值获得防御或攻击属性
 				- 当前仇恨值：<aggro>，按下（<switch>）以切换负数/正数工具提示
 				<tooltip>
@@ -240,7 +233,6 @@ Mods: {
 				'''
 			GeyserShell:
 				'''
-				<class>
 				- 增加<stealth>%不移动时的潜行值恢复速度
 				- 增加<maxStealth>最大潜行值
 				- 增加<stealthDmg>%潜伏攻击伤害
@@ -250,7 +242,6 @@ Mods: {
 				'''
 			FoxDrive:
 				'''
-				<class>
 				- 按下宠物技能键（<keybind>）以格式化（清除）你身上的所有减益
 				 * 成功清除会过载，你在<baseCurse> + <perCurse> x 清除减益数 秒内无法使用任何物品
 				 * 包括半减益（有利有弊的减益！）
@@ -261,7 +252,6 @@ Mods: {
 			FoxCleansedText: “清除的减益：”
 			PrimroseKeepsake:
 				'''
-				<class>
 				- 受伤后低于<belowHealth>%生命值时会获得护盾<shieldDuration>秒，护盾值为<baseShield>%基础最大生命值 + <bonusShield>%额外最大生命值
 				 * 根据护盾值减少此次伤害
 				 * 此效果有<cooldown>秒冷却
@@ -274,7 +264,6 @@ Mods: {
 				'''
 			RomajedaOrchid:
 				'''
-				<class>
 				- 击杀敌人会为你的下次盗贼攻击吸收它们的能量
 				 * 你的下次盗贼攻击增加它们基础伤害的<percAbsorb>%
 				 * 潜伏攻击会将其乘以<stealthMult>
@@ -283,7 +272,6 @@ Mods: {
 			// RomajedaOrchidStack: bonus damage for next rogue hit
 			JoyfulHeart:
 				'''
-				<class>
 				- 你在传播爱与和平
 				 * 你的伤害乘以<selfDmg>
 				 * 你受到的伤害乘以<takenDmg>
@@ -293,7 +281,6 @@ Mods: {
 				'''
 			Levi:
 				'''
-				<class>
 				- 每有1点渔力，增加<dmgPer>%伤害
 				- 每有<defPer>点渔力，增加1点防御
 				- 每件渔夫套装分别增加<helm>/<chest>/<leg>点防御
@@ -302,7 +289,6 @@ Mods: {
 			LeviCrit: %暴击率增加
 			RottingEyeball:
 				'''
-				<class>
 				- 对腐化敌人造成额外<incrToCorrupt>%伤害
 				- 来自非腐化敌人的攻击对你造成额外<penalty>%伤害
 				- 装备此宠物击杀的腐化敌人数量：<killCount>
@@ -314,7 +300,6 @@ Mods: {
 			// RottingEyeballStack: corruption kills until next level
 			BloodyVein:
 				'''
-				<class>
 				- 受到猩红敌人的伤害降低<drFromCrimson>%
 				- 来自非猩红敌人的攻击对你造成额外<penalty>%伤害
 				- 装备此宠物击杀的猩红敌人数量：<killCount>
@@ -326,7 +311,6 @@ Mods: {
 			// BloodyVeinStack: crimson kills until next level
 			PineapplePet:
 				'''
-				<class>
 				- 调整食物物品的饱食增益
 				 * 饱食增益等级+1
 				 * 增益时长减半
@@ -337,7 +321,6 @@ Mods: {
 				'''
 			PlagueCaller:
 				'''
-				<class>
 				- 受到盗贼攻击的敌人和周围敌人会叠加造成伤害一定值的层数
 				 * 受击目标叠加伤害量的<primaryPerc>%，其<hitAoE>格范围内的敌人叠加伤害量的<surroundingPerc>%
 				 * 层数会保留<stackDuration>秒，在叠加层数时重置计时器
@@ -347,7 +330,6 @@ Mods: {
 			// PlagueCallerStack: nearby total detonateable damage
 			McNuggets:
 				'''
-				<class>
 				- 按下宠物技能键（<keybind>）使用重生技能。重生时，获得以下效果：
 				 * 获得等同于已损失生命值的护盾
 				 * 增加<dmgRebirth>%伤害，<defRebirth>防御和<msRebirth>%移动速度
@@ -374,7 +356,6 @@ Mods: {
 			YharonDeath8: <name>想吃鸡蛋？？？
 			BrimstoneJewel:
 				'''
-				<class>
 				- 你的攻击总是会暴击，无视暴击率
 				- 暴击伤害降低<critDmgReduce>%，但增加等同于暴击率的<chanceToDmg>%
 				 * 高于100%的暴击率会增加暴击伤害
@@ -392,7 +373,6 @@ Mods: {
 				'''
 			HermitsBoxofOneHundredMedicines:
 				'''
-				<class>
 				- 按下宠物技能键（<keybind>）吃药
 				- 为你恢复<flatHeal> + <percHeal>%最大生命值的生命
 				 * 此效果有<cooldown>秒冷却

@@ -87,7 +87,6 @@ Mods: {
 		PetTooltips: {
 			ForgottenDragonEgg:
 				'''
-				<class>
 				- [i:<stackIcon>] Current stacks: <dragonPractice>. Sources of stack gains are as follows:
 				 * Direct hits on the primary target and all enemies hit by explosion give <hitStack>.
 				 * Enemies that die while being under the effect of Burn of Explosion give <killStack>.
@@ -103,7 +102,6 @@ Mods: {
 			ForgottenDragonEggStack: "[i:<stackIcon>] Akato stacks"
 			Astrophage:
 				'''
-				<class>
 				- Inflicts enemies in <infectRadius> blocks with Astral Infection for <infectDuration> seconds.
 				- Enemies in <slowRadius> blocks gets slowed for <slowAmount>% if they have Astral Infection debuff.
 				 * If an enemy dies while under this effect, the nearest enemy in <spreadRadius> blocks of them will get
@@ -111,7 +109,6 @@ Mods: {
 				'''
 			BearsEye:
 				'''
-				<class>
 				- Taking damage that puts you below <belowHealth>% health gives you a Shield
 				  equal to <baseShield>% base + <bonusShield>% bonus health shield for <shieldDuration> seconds.
 				 * Damage taking you below <belowHealth>% health will be reduced accordingly with the Shield.
@@ -121,7 +118,6 @@ Mods: {
 				'''
 			CharredRelic:
 				'''
-				<class>
 				- Going below <treshold>% health grants you <dr>% damage reduction.
 				- Taking damage reflects the damage, and spawns fireballs.
 				 * Damage reflected is <reflectAmount>% of pre-mitigation damage.
@@ -133,7 +129,7 @@ Mods: {
 				'''
 			CosmicPlushie:
 				'''
-				[c/<color>:Emotionally] <class>
+				[c/<color>:Emotionally] 
 				- dying deals <damage> damage to all enemies in <block> blocks around u!
 				 * no effect with non-hardcore characters!
 				 * an amazing chance to crit!
@@ -146,7 +142,6 @@ Mods: {
 			CosmicDeath4: <name> is 100% lying if they say 'mb'
 			TrashmanTrashcan:
 				'''
-				<class>
 				- Press Pet Ability Keybind (<keybind>) to use Trash Man's Signature move.
 				 * Trashcan hits for <damage> damage and applies bleed for <bleedDuration> seconds.
 				 * Enemies around target is slowed by <slow>% for <slowDuration> seconds.
@@ -155,7 +150,6 @@ Mods: {
 				'''
 			TheEtomer:
 				'''
-				<class>
 				- Press (<abilitySwitch>) to switch abilities, and (<abilityUse>) to initiate on-hit effects.
 				- Allows you to choose between 6 abilities that work on-hit. Re-Use ability to cancel.
 				- They benefit from your current Troublemaker form and enemy vulnerability.
@@ -217,7 +211,6 @@ Mods: {
 				'''
 			AbyssShellFossil:
 				'''
-				<class>
 				- Depending on how much Aggro you have, gain defensive or offensive stats.
 				- Press Pet Ability Switch (<switchKeybind>) to swap between tooltips.
 				<tooltip>
@@ -243,7 +236,6 @@ Mods: {
 				'''
 			GeyserShell:
 				'''
-				<class>
 				- Increases your standing stealth recovery by <stealth>%.
 				- Increases maximum stealth by <maxStealth>.
 				- Increases stealth attack damage by <stealthDmg>%.
@@ -253,7 +245,6 @@ Mods: {
 				'''
 			FoxDrive:
 				'''
-				<class>
 				- Press Pet Ability Keybind (<keybind>) to format (cleanse) ALL the debuffs on you.
 				 * Doing so successfully causes an overload, you cannot use anything for the next
 				   <baseCurse> base seconds + <perCurse> second per debuff cleansed.
@@ -265,7 +256,6 @@ Mods: {
 			FoxCleansedText: "Debuffs Cleansed: "
 			PrimroseKeepsake:
 				'''
-				<class>
 				- Taking damage that puts you below <belowHealth>% health gives you a Shield
 				  equal to <baseShield>% base + <bonusShield>% bonus health shield for <shieldDuration> seconds.
 				 * Damage taking you below <belowHealth>% health will be reduced accordingly with the Shield.
@@ -279,7 +269,6 @@ Mods: {
 				'''
 			RomajedaOrchid:
 				'''
-				<class>
 				- Killing an enemy absorbs their power for your next Rogue hit.
 				 * Adding <percAbsorb>% of their base damage value to your next Rogue hit.
 				 * Stealth Strikes multiplies this damage by <stealthMult>x.
@@ -288,7 +277,6 @@ Mods: {
 			RomajedaOrchidStack: bonus damage for next rogue hit
 			JoyfulHeart:
 				'''
-				<class>
 				- You're spreading love & peace.
 				 * Your damage is multiplied by <selfDmg>x.
 				 * Damage taken is multiplied by <takenDmg>x.
@@ -299,7 +287,6 @@ Mods: {
 				'''
 			Levi:
 				'''
-				<class>
 				- For every 1 fishing power, gain <dmgPer>% damage. Current: <currentDmg>%
 				- For every <defPer> fishing power, gain 1 defense. Current: <currentDef>
 				- Angler Armor pieces gain <helm>/<chest>/<leg> defense respectively.
@@ -308,7 +295,6 @@ Mods: {
 			LeviCrit: % increased critical strike chance
 			RottingEyeball:
 				'''
-				<class>
 				- Deal <incrToCorrupt>% more damage to Corruption enemies.
 				- Receive <penalty>% more damage, except from Corruption enemies.
 				- Your Corruption enemy kills with this Pet: <killCount>
@@ -321,7 +307,6 @@ Mods: {
 			RottingEyeballStack: corruption kills until next level
 			BloodyVein:
 				'''
-				<class>
 				- Receive <drFromCrimson>% less damage from Crimson enemies.
 				- Deal <penalty>% less damage except vs. Crimson enemies.
 				- Your crimson enemy kills with this Pet: <killCount>
@@ -334,7 +319,6 @@ Mods: {
 			BloodyVeinStack: crimson kills until next level
 			PineapplePet:
 				'''
-				<class>
 				- Modifies your Food items' Well Fed properties.
 				 * Increases Well Fed stage by +1.
 				 * Duration of Well Fed buffs will be half of the base amount.
@@ -345,7 +329,6 @@ Mods: {
 				'''
 			PlagueCaller:
 				'''
-				<class>
 				- On Rogue hit, enemies keep stacks of a percentage of the dealt damage to the target and its surroundings.
 				 * Primary target stacks for <primaryPerc>%, while enemies in <hitAoE> blocks stack for <surroundingPerc>% of dealt damage.
 				 * Stacks stay on target for <stackDuration> seconds and the timer is refreshed upon getting a new stack.
@@ -355,7 +338,6 @@ Mods: {
 			PlagueCallerStack: nearby total detonateable damage
 			McNuggets:
 				'''
-				<class>
 				- Press Pet Ability Keybind (<keybind>) to use Rebirth Ability. While Reborn, gain the following effects:
 				 * You will gain a shield with the exact amount of your missing health.
 				 * Gain <dmgRebirth>% damage, <defRebirth> defense and <msRebirth>% movement speed.
@@ -382,7 +364,6 @@ Mods: {
 			YharonDeath8: <name> tried to eat the nuggies???
 			BrimstoneJewel:
 				'''
-				<class>
 				- Your hits will now always critically hit, no matter the chance.
 				- Reduces your Crit Damage by <critDmgReduce>%, but also increases it by <chanceToDmg>% of your crit chance.
 				 * Crit chances that overflow 100% also increase the crit damage.
@@ -400,14 +381,16 @@ Mods: {
 				'''
 			HermitsBoxofOneHundredMedicines:
 				'''
-				<class>
 				- Press Pet Ability Keybind (<keybind>) to consume a medicine.
 				- You will recover <flatHeal> + <percHeal>% of your maximum health, however;
 				 * This has a <cooldown> seconds cooldown.
 				 * While on cooldown, multiply all of your damage dealt by <damageMult>x.
 				'''
 		}
-
+		SimpleTooltips: 
+		{
+		
+		}
 		Buffs: {
 			TheGrandNourishmentTooltip: Superior improvements to all stats!
 			TheGrandNourishmentDisplayName: The Grand Nourishment

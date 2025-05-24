@@ -87,7 +87,6 @@ Mods: {
 		PetTooltips: {
 			ForgottenDragonEgg:
 				'''
-				<class>
 				- [i:<stackIcon>] Stacks atuais: <dragonPractice>. As fontes de ganho de stacks são as seguintes:
 				 * Acertos diretos no alvo primário e todos os inimigos atingidos pela explosão concedem <hitStack>.
 				 * Mortes diretas no alvo primário e todos os inimigos mortos por explosão e execução concedem <killStack>.
@@ -103,7 +102,6 @@ Mods: {
 			// ForgottenDragonEggStack: "[i:<stackIcon>] Akato stacks"
 			Astrophage:
 				'''
-				<class>
 				- Inflige inimigos em um raio de <infectRadius> blocos com Infecção Astral por <infectDuration> segundos.
 				- Inimigos em um raio de <slowRadius> blocos são desacelerados em <slowAmount>% se tiverem o debuff de Infecção Astral.
 				 * Se um inimigo morrer enquanto estiver sob este efeito, o inimigo mais próximo em um raio de <spreadRadius> blocos receberá
@@ -111,7 +109,6 @@ Mods: {
 				'''
 			BearsEye:
 				'''
-				<class>
 				- Receber dano que o coloca abaixo de <belowHealth>% de vida concede um Escudo
 				igual a <baseShield>% da vida base + <bonusShield>% de escudo de vida bônus por <shieldDuration> segundos.
 				 * O dano que o coloca abaixo de <belowHealth>% de vida será reduzido de acordo com o Escudo.
@@ -121,7 +118,6 @@ Mods: {
 				'''
 			CharredRelic:
 				'''
-				<class>
 				- Ficar abaixo de <treshold>% de vida concede <dr>% de redução de dano.
 				- Receber dano reflete o dano e gera bolas de fogo.
 				 * O dano refletido é <reflectAmount>% do dano antes da mitigação.
@@ -146,7 +142,6 @@ Mods: {
 			CosmicDeath4: <name> está mentindo 100% se ele dizer 'foi mal'
 			TrashmanTrashcan:
 				'''
-				<class>
 				- Pressione a tecla de habilidade do PET (<keybind>) para usar o movimento característico do Homem do Lixo.
 				 * A Lata de Lixo causa <damage> de dano e aplica sangramento por <bleedDuration> segundos.
 				 * Inimigos ao redor do alvo são desacelerados em <slow>% por <slowDuration> segundos.
@@ -154,7 +149,6 @@ Mods: {
 				'''
 			TheEtomer:
 				'''
-				<class>
 				- Pressione (<abilitySwitch>) para alternar habilidades e (<abilityUse>) para iniciar efeitos ao acertar.
 				- Permite escolher entre 6 habilidades que funcionam ao acertar. Reutilize a habilidade para cancelar.
 				- Elas se beneficiam da sua forma atual do Encrenqueiro e da vulnerabilidade do inimigo.
@@ -222,7 +216,6 @@ Mods: {
 				'''
 			AbyssShellFossil:
 				'''
-				<class>
 				- Dependendo de quanta Agressividade inimiga você tem, ganhe estatísticas defensivas ou ofensivas.
 				- Valor atual de agressividade: <aggro>, pressione (<switch>) para alternar entre dicas -/+.
 				<tooltip>
@@ -248,7 +241,6 @@ Mods: {
 				'''
 			GeyserShell:
 				'''
-				<class>
 				- Aumenta a recuperação de furtividade em pé em <stealth>%.
 				- Aumenta a furtividade máxima em <maxStealth>.
 				- Aumenta o dano de ataque furtivo em <stealthDmg>%.
@@ -258,7 +250,6 @@ Mods: {
 				'''
 			FoxDrive:
 				'''
-				<class>
 				- Pressione a tecla de Habilidade do PET (<keybind>) para formatar (limpar) TODOS os debuffs em você.
 				 * Fazer isso com sucesso causa uma sobrecarga; você não pode usar nada pelos próximos
 				 <baseCurse> segundos base + <perCurse> segundo por debuff limpo.
@@ -270,7 +261,6 @@ Mods: {
 			FoxCleansedText: "Debuffs Formatados: "
 			PrimroseKeepsake:
 				'''
-				<class>
 				- Receber dano que o coloca abaixo de <belowHealth>% de vida concede um Escudo
 				igual a <baseShield>% base + <bonusShield>% de escudo de vida bônus por <shieldDuration> segundos.
 				 * O dano que o coloca abaixo de <belowHealth>% de vida será reduzido de acordo com o Escudo.
@@ -284,7 +274,6 @@ Mods: {
 				'''
 			RomajedaOrchid:
 				'''
-				<class>
 				- Desferir o golpe final em um inimigo com ataques do Ladino absorve seu poder.
 				 * Adicionando <percAbsorb>% do valor de dano base deles ao seu próximo golpe.
 				 * Golpes Furtivos multiplicam esse dano por <stealthMult>x.
@@ -293,7 +282,6 @@ Mods: {
 			// RomajedaOrchidStack: bonus damage for next rogue hit
 			JoyfulHeart:
 				'''
-				<class>
 				- Você está espalhando amor e paz.
 				 * Seu dano é multiplicado por <selfDmg>x.
 				 * O dano recebido é multiplicado por <takenDmg>x.
@@ -304,7 +292,6 @@ Mods: {
 				'''
 			Levi:
 				'''
-				<class>
 				- Para cada 1 poder de pesca, ganhe <dmgPer>% de dano.
 				- Para cada <defPer> poder de pesca, ganhe 1 de defesa.
 				- As peças da Armadura de Pescador ganham <helm>/<chest>/<leg> de defesa, respectivamente.
@@ -313,7 +300,6 @@ Mods: {
 			LeviCrit: % de chance de dano crítico aumentado
 			RottingEyeball:
 				'''
-				<class>
 				- Cause <incrToCorrupt>% mais dano a inimigos da Corrupção.
 				- Suas mortes de inimigos da Corrupção com este PET: <killCount>
 				- Ganhe os seguintes bônus dependendo das suas mortes.
@@ -325,7 +311,6 @@ Mods: {
 			// RottingEyeballStack: corruption kills until next level
 			BloodyVein:
 				'''
-				<class>
 				- Receba <drFromCrimson>% menos dano de inimigos do Carmim.
 				- Suas mortes de inimigos do Carmim com este PET: <killCount>
 				- Ganhe os seguintes bônus dependendo das suas mortes.
@@ -337,7 +322,6 @@ Mods: {
 			// BloodyVeinStack: crimson kills until next level
 			PineapplePet:
 				'''
-				<class>
 				- Modifica as propriedades de Bem Alimentado dos seus itens de comida.
 				 * Aumenta o estágio de Bem Alimentado em +1.
 				 * A duração dos buffs de Bem Alimentado será metade do valor base.
@@ -348,7 +332,6 @@ Mods: {
 				'''
 			PlagueCaller:
 				'''
-				<class>
 				- Ao atingir inimigos com ataques Furtivos, eles mantêm stacks de porcentagem do dano causado ao alvo e aos arredores.
 				 * O alvo principal stacka até <primaryPerc>%, enquanto inimigos em um raio de <hitAoE> blocos acumulam <surroundingPerc>% do dano causado.
 				 * Os stacks permanecem no alvo por <stackDuration> segundos e o tempo é renovado ao receber um novo stack.
@@ -358,7 +341,6 @@ Mods: {
 			// PlagueCallerStack: nearby total detonateable damage
 			McNuggets:
 				'''
-				<class>
 				- Pressione a tecla de Habilidade do PET (<keybind>) para usar a Habilidade de Renascimento. Enquanto Renascido, ganhe os seguintes efeitos:
 				 * Você ganhará um escudo com a quantidade exata de sua saúde perdida.
 				 * Ganhe <dmgRebirth>% de dano, <defRebirth> de defesa e <msRebirth>% de velocidade de movimento.
@@ -385,7 +367,6 @@ Mods: {
 			YharonDeath8: <name> tentou comer os nuggets???
 			BrimstoneJewel:
 				'''
-				<class>
 				- Seus ataques sempre causarão acertos críticos, independentemente da chance.
 				- Reduz seu Dano Crítico em <critDmgReduce>%, mas também o aumenta em <chanceToDmg>% da sua chance de crítico.
 				 * Chances de crítico que ultrapassam 100% também aumentam o dano crítico.
@@ -403,7 +384,6 @@ Mods: {
 				'''
 			HermitsBoxofOneHundredMedicines:
 				'''
-				<class>
 				- Pressione a tecla de Habilidade do PET (<keybind>) para consumir um remédio.
 				- Você recuperará <flatHeal> + <percHeal>% da sua saúde máxima, no entanto;
 				 * Isso tem um tempo de recarga de <cooldown> segundos.

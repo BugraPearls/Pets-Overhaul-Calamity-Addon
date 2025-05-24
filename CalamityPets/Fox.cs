@@ -71,5 +71,6 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                 .Replace("<baseCurse>", Math.Round(fox.baseTime / 60f, 2).ToString())
                 .Replace("<perCurse>", Math.Round(fox.perTime / 60f, 2).ToString())
                 .Replace("<cooldown>", Math.Round(fox.cooldown / 60f, 2).ToString());
+        public override string SimpleTooltip => Compatibility.LocVal("SimpleTooltips.FoxDrive").Replace("<keybind>", PetTextsColors.KeybindText(PetKeybinds.UsePetAbility));
     }
 }

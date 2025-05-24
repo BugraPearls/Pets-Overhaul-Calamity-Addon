@@ -61,5 +61,6 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                 .Replace("<percAbsorb>", Math.Round(kendra.absorbPercent * 100, 2).ToString())
                 .Replace("<stealthMult>", kendra.stealthMult.ToString())
                 .Replace("<storedDmg>", kendra.currentNextDamage.ToString());
+        public override string SimpleTooltip => Compatibility.LocVal("SimpleTooltips.RomajedaOrchid");
     }
 }

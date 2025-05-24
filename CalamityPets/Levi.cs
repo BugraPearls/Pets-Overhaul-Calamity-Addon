@@ -113,5 +113,6 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                 .Replace("<chest>", levi.chest.ToString())
                 .Replace("<leg>", levi.leg.ToString())
                 .Replace("<critChance>", levi.crit.ToString());
+        public override string SimpleTooltip => Compatibility.LocVal("SimpleTooltips.Levi");
     }
 }

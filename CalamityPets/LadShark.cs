@@ -135,5 +135,6 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                 .Replace("<radius>", Math.Round(shark.radius / 16f, 2).ToString())
                 .Replace("<perSecRegen>", shark.grantRegen.ToString())
                 .Replace("<duration>", Math.Round(shark.regenDuration / 60f, 2).ToString());
+        public override string SimpleTooltip => Compatibility.LocVal("SimpleTooltips.JoyfulHeart").Replace("<keybind>", PetTextsColors.KeybindText(PetKeybinds.UsePetAbility).ToString());
     }
 }

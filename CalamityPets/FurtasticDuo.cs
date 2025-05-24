@@ -131,5 +131,6 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                 .Replace("<storedDmg>", duo.currentNextDamage.ToString())
                 .Replace("<procShield>", duo.procShield.ToString())
                 .Replace("<procShieldDuration>", Math.Round(duo.procShieldDuration / 60f, 2).ToString());
+        public override string SimpleTooltip => Compatibility.LocVal("SimpleTooltips.PrimroseKeepsake");
     }
 }

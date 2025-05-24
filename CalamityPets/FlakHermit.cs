@@ -90,5 +90,6 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                 .Replace("<damage>", hermit.acidBaseDmg.ToString())
                 .Replace("<irradiateDuration>", Math.Round(hermit.irradiateDuration / 60f, 2).ToString())
                 .Replace("<cooldown>", Math.Round(hermit.cooldown / 60f, 2).ToString());
+        public override string SimpleTooltip => Compatibility.LocVal("SimpleTooltips.GeyserShell");
     }
 }

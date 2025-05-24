@@ -145,5 +145,6 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                 .Replace("<cooldown>", Math.Round(plague.cooldown / 60f, 2).ToString())
                 .Replace("<slow>", Math.Round(plague.slowAmount * 100, 2).ToString())
                 .Replace("<plagueDuration>", Math.Round(plague.plagueAndSlowDuration / 60f, 2).ToString());
+        public override string SimpleTooltip => Compatibility.LocVal("SimpleTooltips.PlagueCaller").Replace("<keybind>", PetTextsColors.KeybindText(PetKeybinds.UsePetAbility));
     }
 }

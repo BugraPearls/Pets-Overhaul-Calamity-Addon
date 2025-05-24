@@ -129,7 +129,7 @@ Mods: {
 				'''
 			CosmicPlushie:
 				'''
-				[c/<color>:Emotionally] 
+				[c/<color>:Emotionally] <class>
 				- dying deals <damage> damage to all enemies in <block> blocks around u!
 				 * no effect with non-hardcore characters!
 				 * an amazing chance to crit!
@@ -157,23 +157,24 @@ Mods: {
 				- Has <baseCooldown> seconds cooldown, but all abilities cost % of your cooldown.
 				<abilityTooltip>
 				'''
-			TheEtomerStack: move to be used next hit
+			TheEtomerStack: move selected
 			RotomCurrent: "Current Ability: "
-			RotomThunderWaveName: Thunder Wave
+			RotomActive: "[c/a2a2a2: ready to be used]"
+			RotomThunderWaveName: "[c/FFFF00:Thunder Wave]"
 			RotomThunderWave:
 				'''
 				 * Uses Electricity resistance & vulnerability, and buffed by Electric form.
 				 * Your next strike paralyzes all enemies in <radius> blocks, slowing by <slow>% for <slowDuration> seconds.
 				 * Costs <percentOfCd>% of your current Pet Ability Cooldown. (<percentToSeconds> seconds)
 				'''
-			RotomHydroPumpName: Hydro Pump
+			RotomHydroPumpName: "[c/0f5e9c:Hydro Pump]"
 			RotomHydroPump:
 				'''
 				 * Uses Water resistance & vulnerability, and buffed by Wash form.
 				 * Your next strike deals extra <dmg> damage and applies Wet debuff to the target for <wetDuration> seconds.
 				 * Costs <percentOfCd>% of your current Pet Ability Cooldown. (<percentToSeconds> seconds)
 				'''
-			RotomOverheatName: Overheat
+			RotomOverheatName: "[c/ff5a00:Overheat]"
 			RotomOverheat:
 				'''
 				 * Uses Heat resistance & vulnerability, and buffed by Heat form.
@@ -181,7 +182,7 @@ Mods: {
 				 * Main target gets burnt with On Fire! debuff for <burnDuration> seconds.
 				 * Costs <percentOfCd>% of your current Pet Ability Cooldown. (<percentToSeconds> seconds)
 				'''
-			RotomBlizzardName: Blizzard
+			RotomBlizzardName: "[c/3fd0d4:Blizzard]"
 			RotomBlizzard:
 				'''
 				 * Uses Cold resistance & vulnerability, and buffed by Frost form.
@@ -191,7 +192,7 @@ Mods: {
 				 * Enemies hit for <freezeRequirement> seconds gets applied with Glacial State for <freezeDuration> seconds.
 				 * Costs <percentOfCd>% of your current Pet Ability Cooldown. (<percentToSeconds> seconds)
 				'''
-			RotomLeafStormName: Leaf Storm
+			RotomLeafStormName: "[c/34a203:Leaf Storm]"
 			RotomLeafStorm:
 				'''
 				 * Uses Sickness resistance & vulnerability, and buffed by Mow form.
@@ -199,7 +200,7 @@ Mods: {
 				   dealing <dmg> damage, spawning between <lowLeaf> to <highLeaf> leaves.
 				 * Costs <percentOfCd>% of your current Pet Ability Cooldown. (<percentToSeconds> seconds)
 				'''
-			RotomAirSlashName: Air Slash
+			RotomAirSlashName: "[c/cfecf7:Air Slash]"
 			RotomAirSlash:
 				'''
 				 * Is more effective if the enemy is grounded (if affected by gravity),
@@ -358,7 +359,7 @@ Mods: {
 			YharonDeath2: <name> was punished by Yharon for abusing his kid.
 			YharonDeath3: The Son of Yharon seems like isn't capable enough, and couldn't delay <name>'s death any longer.
 			YharonDeath4: <name> should've learned to Reborn before it was too late.
-			YharonDeath5: <name> could not contain temporary power given by Yharon."
+			YharonDeath5: <name> could not contain temporary power given by Yharon.
 			YharonDeath6: Yharon's son is sad for <name>.
 			YharonDeath7: Powers of Rebirth should've been handled only by the Eternal Phoenixes, <name>, was not the one to handle it.
 			YharonDeath8: <name> tried to eat the nuggies???
@@ -387,10 +388,143 @@ Mods: {
 				 * While on cooldown, multiply all of your damage dealt by <damageMult>x.
 				'''
 		}
-		SimpleTooltips: 
-		{
-		
+
+		SimpleTooltips: {
+			ForgottenDragonEgg:
+				'''
+				- Pressing Pet Ability Keybind (<keybind>) makes your next hit explode.
+				 * Explosion burns hit enemies, and low health enemies will get executed.
+				    * The triggering hit, explosion hits and executions grants you stacks.
+				 * Stacks increases effectiveness of this Pet, they're permanent and can stack up infinitely.
+				'''
+			Astrophage:
+				'''
+				- Enemies very close to you will get inflicted with Astral Infection.
+				- Enemies that are close to you that has Astral Infection gets slowed.
+				 * If they die while under this slow, they will spread the infection.
+				'''
+			BearsEye:
+				'''
+				- When your health goes low, grants you a shield.
+				- Increases Rogue damage, stealth strike damage and stealth gains. 
+				'''
+			CharredRelic:
+				'''
+				- When you're health is low, grants you damage reduction.
+				- Receiving damage reflects it back to attacker and spawns fireballs.
+				'''
+			CosmicPlushie:
+				'''
+				[c/<color>:Emotionally] <class>
+				- Deals very wholesome damage to every creature around you.
+				 * When you die.
+				 * Only when your character is hardcore.
+				 * Yes this is a troll pet, it had to be done.
+				'''
+			TrashmanTrashcan:
+				'''
+				- Press Pet Ability Keybind (<keybind>) to throw a Trashcan.
+				 * Deals damage and causes enemy to bleed.
+				 * Upon impact, slows and confuses enemies in a radius.
+				'''
+			TheEtomer:
+				'''
+				- Press (<abilitySwitch>) to switch abilities, and (<abilityUse>) to initiate them.
+				- They proc on top of the enemy of your next hit.
+				- [c/FFFF00:Thunder Wave slows enemies.]
+				- [c/0f5e9c:Hydro Pump deals single target damage and applies Wet debuff.]
+				- [c/ff5a00:Overheat deals AoE damage and applies On Fire debuff.]
+				- [c/3fd0d4:Blizzard deals continious AoE damage, slows, and applies Glacial State debuff.]
+				- [c/34a203:Leaf Storm shoots out leaves in a circle, dealing wide damage.]
+				- [c/cfecf7:Air Slash deals AoE damage and applies heavy knockback.]
+				'''
+			AbyssShellFossil:
+				'''
+				- Depending on how much Aggro you have, gain defensive or offensive stats.
+				 * Defense, Health, Damage Reduction gain and Move Speed loss if aggro stat is positive
+				 * Damage, Crit Chance, Armor Pen and Move Speed gain if aggro stat is negative
+				'''
+			GeyserShell:
+				'''
+				- Increases standing stealth recovery and maximum stealth.
+				- Increases stealth strike damage.
+				- Stealth attacks trigger an AoE acid attack around you and the target.
+				'''
+			FoxDrive:
+				'''
+				- Press Pet Ability Keybind (<keybind>) to remove all debuffs.
+				 * After removing all debuffs, for a short amount of time you cannot use items.
+				'''
+			PrimroseKeepsake:
+				'''
+				- When your health goes low, grants you a shield.
+				- Increases Rogue stealth gain.
+				- Killing an enemy absorbs their power for your next Rogue hit.
+				 * Proccing this bonus damage grants a shield.
+				'''
+			RomajedaOrchid:
+				'''
+				- Killing an enemy absorbs their power for your next Rogue hit.
+				'''
+			JoyfulHeart:
+				'''
+				- You take less damage, and deal less damage.
+				- Press Pet Ability Keybind (<keybind>) to heal all entities nearby.
+				'''
+			Levi:
+				'''
+				- Depending on your fishing power, gain damage and defense.
+				- Angler armor pieces gain bonus defense and crit chance.
+				'''
+			RottingEyeball:
+				'''
+				- Deal more damage to Corruption enemies.
+				- Take more damage, but not from Corruption enemies.
+				- Corruption enemy kills are counted permanently, 
+				  and depending on kill count, gain offensive stats.
+				'''
+			BloodyVein:
+				'''
+				- Receive less damage from Crimson enemies.
+				- Deal less damage, but not to Crimson enemies.
+				- Crimson enemy kills are counted permanently, 
+				  and depending on kill count, gain defensive stats.
+				'''
+			PineapplePet:
+				'''
+				- Increases eaten food items Well Fed stage, but reduces duration.
+				- Increases Well Fed buffs effectivenesses.
+				'''
+			PlagueCaller:
+				'''
+				- Rogue hits stores percentage of dealt damage on main target and surrounding enemies.
+				- Press Pet Ability Keybind (<keybind>) to detonate all stored damage.
+				'''
+			McNuggets:
+				'''
+				- Press Pet Ability Keybind (<keybind>) to use Rebirth Ability.
+				 * Gain Damage, Defense and Move Speed.
+				 * Attacks inflict Dragonfire debuff.
+				 * All effects scale with missing health.
+				 * Gives you a shield, equal to your missing health.
+				   But take this shield as damage at the end of the duration.
+				- If you take lethal damage, your death will be delayed for a while.
+				'''
+			BrimstoneJewel:
+				'''
+				- Modifies non-channelling & non-Summon weapons. 
+				 * All your hits will now crit.
+				 * Lose some crit damage, but convert your crit chance into crit damage.
+				 * Adds Mana Cost to your weapon.
+				- Mana Sickness will now reduce all damage.
+				'''
+			HermitsBoxofOneHundredMedicines:
+				'''
+				- Press Pet Ability Keybind (<keybind>) to heal.
+				- Deal less damage while this ability is on cooldown.
+				'''
 		}
+
 		Buffs: {
 			TheGrandNourishmentTooltip: Superior improvements to all stats!
 			TheGrandNourishmentDisplayName: The Grand Nourishment

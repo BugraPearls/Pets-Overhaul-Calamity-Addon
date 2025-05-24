@@ -118,5 +118,6 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                 .Replace("<sumKb>", Math.Round(pineapple.summonerKb, 2).ToString())
                 .Replace("<moveSpd>", Math.Round(pineapple.moveSpd * 100, 2).ToString())
                 .Replace("<miningSpd>", Math.Round(pineapple.miningSpeed * 100, 2).ToString());
+        public override string SimpleTooltip => Compatibility.LocVal("SimpleTooltips.PineapplePet");
     }
 }

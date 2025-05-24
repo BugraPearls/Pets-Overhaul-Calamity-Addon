@@ -211,5 +211,6 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                         .Replace("<regen>", perforator.regen.ToString())
                         .Replace("<evilMult>", perforator.evilMult.ToString())
                         .Replace("<killReq>", perforator.Level >= MiniPerforatorEffect.maxLvl ? Language.GetTextValue("Mods.PetsOverhaul.PetItemTooltips.JunimoMaxed") : (perforator.expTresholds[Math.Clamp(perforator.Level + 1, 0, MiniPerforatorEffect.maxLvl)] - perforator.evilKills).ToString());
+        public override string SimpleTooltip => Compatibility.LocVal("SimpleTooltips.BloodyVein");
     }
 }

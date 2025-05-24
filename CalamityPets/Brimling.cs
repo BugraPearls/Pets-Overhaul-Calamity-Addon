@@ -78,5 +78,6 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                 .Replace("<dr>", Math.Round(brimling.dr * 100, 2).ToString())
                 .Replace("<reflectAmount>", Math.Round(brimling.reflectAmount * 100, 2).ToString())
                 .Replace("<cooldown>", Math.Round(brimling.cooldown / 60f, 2).ToString());
+        public override string SimpleTooltip => Compatibility.LocVal("SimpleTooltips.CharredRelic");
     }
 }

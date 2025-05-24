@@ -207,5 +207,6 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                         .Replace("<critDmg>", Math.Round(hive.critDmg * 100, 2).ToString())
                         .Replace("<evilMult>", hive.evilMult.ToString())
                         .Replace("<killReq>", hive.Level >= MiniHiveMindEffect.maxLvl ? Language.GetTextValue("Mods.PetsOverhaul.PetItemTooltips.JunimoMaxed") : (hive.expTresholds[Math.Clamp(hive.Level + 1, 0, MiniHiveMindEffect.maxLvl)] - hive.evilKills).ToString());
+        public override string SimpleTooltip => Compatibility.LocVal("SimpleTooltips.RottingEyeball");
     }
 }

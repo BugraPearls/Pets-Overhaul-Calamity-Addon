@@ -329,5 +329,6 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                         .Replace("<hitStack>", AkatoEffect.stackPerHit.ToString())
                         .Replace("<killStack>", AkatoEffect.stackForKill.ToString())
                         .Replace("<bossMultiply>", AkatoEffect.bossMult.ToString());
+        public override string SimpleTooltip => Compatibility.LocVal("SimpleTooltips.ForgottenDragonEgg").Replace("<keybind>", PetTextsColors.KeybindText(PetKeybinds.UsePetAbility));
     }
 }

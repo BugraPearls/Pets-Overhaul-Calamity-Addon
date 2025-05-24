@@ -102,5 +102,6 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                 .Replace("<spreadRadius>", Math.Round(AstrophageInfection.deathSpreadRange / 16f, 2).ToString())
                 .Replace("<spreadSlow>", Math.Round(astro.infectionHeavySlow * 100, 2).ToString())
                 .Replace("<spreadSlowDuration>", Math.Round(AstrophageInfection.deathSpreadSlowDur / 60f, 2).ToString());
+        public override string SimpleTooltip => Compatibility.LocVal("SimpleTooltips.Astrophage");
     }
 }

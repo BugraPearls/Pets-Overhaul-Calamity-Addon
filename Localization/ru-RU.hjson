@@ -156,9 +156,10 @@ Mods: {
 				- Имеет перезарядку <baseCooldown> секунд, но все способности расходуют x% от вашей перезарядки.
 				<abilityTooltip>
 				'''
-			// TheEtomerStack: move to be used next hit
+			// TheEtomerStack: move selected
 			// RotomCurrent: "Current Ability: "
-			// RotomThunderWaveName: Thunder Wave
+			// RotomActive: "[c/a2a2a2: ready to be used]"
+			// RotomThunderWaveName: "[c/FFFF00:Thunder Wave]"
 			RotomThunderWave:
 				'''
 				- Текущая способность: Грозовая волна
@@ -166,7 +167,7 @@ Mods: {
 				  * Ваш следующий удар парализует всех врагов в радиусе <radius> блоков, замедляя на <slow>% на <slowDuration> секунд.
 				  * Стоит <percentOfCd>% вашей текущей перезарядки способности питомца. (<percentToSeconds> секунд)
 				'''
-			// RotomHydroPumpName: Hydro Pump
+			// RotomHydroPumpName: "[c/0f5e9c:Hydro Pump]"
 			RotomHydroPump:
 				'''
 				- Текущая способность: Гидро Насос
@@ -174,7 +175,7 @@ Mods: {
 				  * Ваш следующий удар наносит дополнительный урон <dmg> и накладывает дебафф "Влажный" на цель на <wetDuration> секунд.
 				  * Стоит <percentOfCd>% вашей текущей перезарядки способности питомца. (<percentToSeconds> секунд)
 				'''
-			// RotomOverheatName: Overheat
+			// RotomOverheatName: "[c/ff5a00:Overheat]"
 			RotomOverheat:
 				'''
 				- Текущая способность: Перегрев
@@ -183,7 +184,7 @@ Mods: {
 				  * Основная цель получает дебафф "В огне!" на <burnDuration> секунд.
 				  * Стоит <percentOfCd>% вашей текущей перезарядки способности питомца. (<percentToSeconds> секунд)
 				'''
-			// RotomBlizzardName: Blizzard
+			// RotomBlizzardName: "[c/3fd0d4:Blizzard]"
 			RotomBlizzard:
 				'''
 				- Текущая способность: Метель
@@ -194,7 +195,7 @@ Mods: {
 				  * Враги, находящиеся под воздействием метели более <freezeRequirement> секунд, получают состояние Заморозки на <freezeDuration> секунды.
 				  * Стоит <percentOfCd>% вашей текущей перезарядки способности питомца. (<percentToSeconds> секунд)
 				'''
-			// RotomLeafStormName: Leaf Storm
+			// RotomLeafStormName: "[c/34a203:Leaf Storm]"
 			RotomLeafStorm:
 				'''
 				- Текущая способность: Листовой шторм
@@ -203,7 +204,7 @@ Mods: {
 				    порождая от <lowLeaf> до <highLeaf> листьев.
 				  * Стоит <percentOfCd>% вашей текущей перезарядки способности питомца. (<percentToSeconds> секунд)
 				'''
-			// RotomAirSlashName: Air Slash
+			// RotomAirSlashName: "[c/cfecf7:Air Slash]"
 			RotomAirSlash:
 				'''
 				- Текущая способность: Воздушный порез
@@ -389,6 +390,192 @@ Mods: {
 				  * Перезарядка способности <cooldown> секунд.
 				  * Во время перезарядки весь урон, который вы наносите, умножается на <damageMult>x.
 				'''
+		}
+
+		SimpleTooltips: {
+			/* ForgottenDragonEgg:
+				'''
+				- Pressing Pet Ability Keybind (<keybind>) makes your next hit explode.
+				 * Explosion burns hit enemies, and low health enemies will get executed.
+				    * The triggering hit, explosion hits and executions grants you stacks.
+				 * Stacks increases effectiveness of this Pet, they're permanent and can stack up infinitely.
+				''' */
+			/* Astrophage:
+				'''
+				- Enemies very close to you will get inflicted with Astral Infection.
+				- Enemies that are close to you that has Astral Infection gets slowed.
+				 * If they die while under this slow, they will spread the infection.
+				''' */
+			/* BearsEye:
+				'''
+				- When your health goes low, grants you a shield.
+				- Increases Rogue damage, stealth strike damage and stealth gains. 
+				''' */
+			/* CharredRelic:
+				'''
+				- When you're health is low, grants you damage reduction.
+				- Receiving damage reflects it back to attacker and spawns fireballs.
+				''' */
+			/* CosmicPlushie:
+				'''
+				[c/<color>:Emotionally] <class>
+				- Deals very wholesome damage to every creature around you.
+				 * When you die.
+				 * Only when your character is hardcore.
+				 * Yes this is a troll pet, it had to be done.
+				''' */
+			/* TrashmanTrashcan:
+				'''
+				- Press Pet Ability Keybind (<keybind>) to throw a Trashcan.
+				 * Deals damage and causes enemy to bleed.
+				 * Upon impact, slows and confuses enemies in a radius.
+				''' */
+			/* TheEtomer:
+				'''
+				- Press (<abilitySwitch>) to switch abilities, and (<abilityUse>) to initiate them.
+				- They proc on top of the enemy of your next hit.
+				- [c/FFFF00:Thunder Wave slows enemies.]
+				- [c/0f5e9c:Hydro Pump deals single target damage and applies Wet debuff.]
+				- [c/ff5a00:Overheat deals AoE damage and applies On Fire debuff.]
+				- [c/3fd0d4:Blizzard deals continious AoE damage, slows, and applies Glacial State debuff.]
+				- [c/34a203:Leaf Storm shoots out leaves in a circle, dealing wide damage.]
+				- [c/cfecf7:Air Slash deals AoE damage and applies heavy knockback.]
+				''' */
+			/* AbyssShellFossil:
+				'''
+				- Depending on how much Aggro you have, gain defensive or offensive stats.
+				- Press Pet Ability Switch (<switchKeybind>) to swap between tooltips.
+				<tooltip>
+				''' */
+			/* GeyserShell:
+				'''
+				- Increases your standing stealth recovery by <stealth>%.
+				- Increases maximum stealth by <maxStealth>.
+				- Increases stealth attack damage by <stealthDmg>%.
+				- Stealth attacks spawn acid around you and the target on-hit.
+				 * Deals <damage> damage, and applies Irradiated for <irradiateDuration> seconds.
+				 * Has <cooldown> seconds cooldown.
+				''' */
+			/* FoxDrive:
+				'''
+				- Press Pet Ability Keybind (<keybind>) to format (cleanse) ALL the debuffs on you.
+				 * Doing so successfully causes an overload, you cannot use anything for the next
+				   <baseCurse> base seconds + <perCurse> second per debuff cleansed.
+				 * Essentially applies cursed debuff, though it ignores immunities.
+				 * This includes semi-debuffs. (debuffs that have both upsides and downsides!)
+				 * Cleanse does not remove debuffs that can't be removed by the Nurse.
+				 * Its <cooldown> second cooldown begins if a debuff is successfully cleansed.
+				''' */
+			/* PrimroseKeepsake:
+				'''
+				- Taking damage that puts you below <belowHealth>% health gives you a Shield
+				  equal to <baseShield>% base + <bonusShield>% bonus health shield for <shieldDuration> seconds.
+				 * Damage taking you below <belowHealth>% health will be reduced accordingly with the Shield.
+				 * Lifeguard Shield has a <cooldown> seconds cooldown.
+				 * When activated, for the same duration, power absorption deals <lifeguardMult>x damage.
+				- Increases Rogue stealth gain by <stealthMoving>% while moving, and <stealthNotMoving>% while not.
+				- Killing an enemy absorbs their power for your next Rogue hit.
+				 * Adding <percAbsorb>% of their base damage value to your next Rogue hit.
+				 * Proccing this bonus damage grants <procShield> shield for <procShieldDuration> seconds.
+				 * Currently stored damage to be added to your next hit: <storedDmg>
+				''' */
+			/* RomajedaOrchid:
+				'''
+				- Killing an enemy absorbs their power for your next Rogue hit.
+				 * Adding <percAbsorb>% of their base damage value to your next Rogue hit.
+				 * Stealth Strikes multiplies this damage by <stealthMult>x.
+				 * Currently stored damage to be added to your next hit: <storedDmg>
+				''' */
+			/* JoyfulHeart:
+				'''
+				- You're spreading love & peace.
+				 * Your damage is multiplied by <selfDmg>x.
+				 * Damage taken is multiplied by <takenDmg>x.
+				- Press Pet Ability Keybind (<keybind>) to grant healing to
+				  EVERYTHING in <radius> blocks, including some self-love.
+				 * Heals <perSecRegen> twice per second for <duration> seconds.
+				 * Regen is doubled for Players and Friendly NPC's
+				''' */
+			/* Levi:
+				'''
+				- For every 1 fishing power, gain <dmgPer>% damage. Current: <currentDmg>%
+				- For every <defPer> fishing power, gain 1 defense. Current: <currentDef>
+				- Angler Armor pieces gain <helm>/<chest>/<leg> defense respectively.
+				- All of your Angler Armor pieces gain <critChance>% crit chance.
+				''' */
+			/* RottingEyeball:
+				'''
+				- Deal <incrToCorrupt>% more damage to Corruption enemies.
+				- Receive <penalty>% more damage, except from Corruption enemies.
+				- Your Corruption enemy kills with this Pet: <killCount>
+				- Gain the following bonuses depending on your kills.
+				 * +<dmg>% damage, +<crit>% crit chance, +<luck> luck,
+				   +<pen> armor penetration and +<critDmg>% crit damage.
+				 * Multiply stats by <evilMult>x while in Corruption biome.
+				 * Kills required for next stat upgrades: <killReq>
+				''' */
+			/* BloodyVein:
+				'''
+				- Receive <drFromCrimson>% less damage from Crimson enemies.
+				- Deal <penalty>% less damage except vs. Crimson enemies.
+				- Your crimson enemy kills with this Pet: <killCount>
+				- Gain the following bonuses depending on your kills.
+				 * +<def> defense, +<hp> maximum health, +<luck> luck,
+				   +<dr>% damage reduction and +<regen> health regen.
+				 * Multiply stats by <evilMult>x while in Crimson biome.
+				 * Kills required for next stat upgrades: <killReq>
+				''' */
+			/* PineapplePet:
+				'''
+				- Modifies your Food items' Well Fed properties.
+				 * Increases Well Fed stage by +1.
+				 * Duration of Well Fed buffs will be half of the base amount.
+				 * Exquisitely Stuffed will become The Grand Nourishment, further improving effects.
+				 * +<def> Def, <crit>% Crit, <dmg>% Dmg, +<sumKb> Sum. Kb, %<moveSpd> Move Spd, %<miningSpd> Mining Spd
+				 * Any lower tier of Well Fed cannot override The Grand Nourishment.
+				- Grants an extra 50% of Well Fed benefits while the Pet is active.
+				''' */
+			/* PlagueCaller:
+				'''
+				- On Rogue hit, enemies keep stacks of a percentage of the dealt damage to the target and its surroundings.
+				 * Primary target stacks for <primaryPerc>%, while enemies in <hitAoE> blocks stack for <surroundingPerc>% of dealt damage.
+				 * Stacks stay on target for <stackDuration> seconds and the timer is refreshed upon getting a new stack.
+				- Press Pet Ability Keybind (<keybind>) to detonate all stacks from all enemies in <detonateRadius> blocks.
+				 * <cooldown> seconds cooldown, detonating enemies applies Plague and a <slow>% slow for <plagueDuration> seconds.
+				''' */
+			/* McNuggets:
+				'''
+				- Press Pet Ability Keybind (<keybind>) to use Rebirth Ability. While Reborn, gain the following effects:
+				 * You will gain a shield with the exact amount of your missing health.
+				 * Gain <dmgRebirth>% damage, <defRebirth> defense and <msRebirth>% movement speed.
+				 * Your attacks inflict Dragonfire for <fireTime> seconds.
+				 * Reborn effects lasts for <rebornDuration> seconds.
+				 * All buff amounts and durations can increase up to 300% depending on the health ability was used at.
+				 * Effect amplifier is way more useful the lesser health you have, reaching maximum potential at 25% hp.
+				 * You will take damage for the exact amount of initial shield after effects wear off, the shield can tank the damage.
+				 * Rebirth ability has a <cooldown> minute cooldown.
+				- If the Player dies while the ability isn't on cooldown, but wasn't used manually, it will save the player with the following:
+				 * The player gains the base effects, with no amplifiers, and no shielding but you will be healed to maximum health.
+				 * Player [c/f8baba:will be killed immediately] after the effects wear off. (Son of Yharon gets too exhausted since he does it for you!)
+				''' */
+			/* BrimstoneJewel:
+				'''
+				- Your hits will now always critically hit, no matter the chance.
+				- Reduces your Crit Damage by <critDmgReduce>%, but also increases it by <chanceToDmg>% of your crit chance.
+				 * Crit chances that overflow 100% also increase the crit damage.
+				- Adds a Mana Cost to ALL of your weapons, equal to the Weapon's use time x2.
+				 * Magic Weapons instead get their mana cost increased by <magicCost>%.
+				 * Summoner's only whips benefit from all of the effects above.
+				 * Any weapon that channels something or is a tool does not benefit as well.
+				- Mana Sickness will now reduce ALL affected damage, rather than just Magic.
+				''' */
+			/* HermitsBoxofOneHundredMedicines:
+				'''
+				- Press Pet Ability Keybind (<keybind>) to consume a medicine.
+				- You will recover <flatHeal> + <percHeal>% of your maximum health, however;
+				 * This has a <cooldown> seconds cooldown.
+				 * While on cooldown, multiply all of your damage dealt by <damageMult>x.
+				''' */
 		}
 
 		Buffs: {

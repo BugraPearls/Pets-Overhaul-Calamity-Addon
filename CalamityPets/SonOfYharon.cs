@@ -155,5 +155,6 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                         .Replace("<fireTime>", Math.Round(yharon.fireTime / 60f, 2).ToString())
                         .Replace("<rebornDuration>", Math.Round(yharon.rebirthDuration / 60f, 2).ToString())
                         .Replace("<cooldown>", Math.Round(yharon.rebirthCooldown / 3600f, 2).ToString());
+        public override string SimpleTooltip => Compatibility.LocVal("SimpleTooltips.McNuggets").Replace("<keybind>", PetTextsColors.KeybindText(PetKeybinds.UsePetAbility));
     }
 }

@@ -66,5 +66,6 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                 .Replace("<color>", PetTextsColors.SupportiveClass.Hex3())
                 .Replace("<damage>", chibiiDevourer.dmg.ToString())
                 .Replace("<block>", Math.Round(chibiiDevourer.block / 16f, 2).ToString());
+        public override string SimpleTooltip => Compatibility.LocVal("SimpleTooltips.CosmicPlushie").Replace("<color>", PetTextsColors.SupportiveClass.Hex3());
     }
 }

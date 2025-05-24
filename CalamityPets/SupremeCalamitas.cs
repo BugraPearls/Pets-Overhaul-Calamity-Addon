@@ -135,5 +135,6 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                 .Replace("<critDmgReduce>", Math.Round(calamitas.critDmgReduce * 100, 2).ToString())
                 .Replace("<chanceToDmg>", Math.Round(calamitas.critChanceToDmg * 100, 2).ToString())
                 .Replace("<magicCost>", Math.Round(calamitas.magicExtraCost * 100, 2).ToString());
+        public override string SimpleTooltip => Compatibility.LocVal("SimpleTooltips.BrimstoneJewel");
     }
 }

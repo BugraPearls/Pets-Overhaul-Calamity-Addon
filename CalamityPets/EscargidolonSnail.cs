@@ -112,6 +112,6 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                     .Replace("<tooltip>", Tooltip);
             }
         }
-
+        public override string SimpleTooltip => Compatibility.LocVal("SimpleTooltips.AbyssShellFossil");
     }
 }

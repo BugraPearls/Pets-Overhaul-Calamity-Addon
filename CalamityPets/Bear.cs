@@ -85,5 +85,6 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                 .Replace("<stealthDmg>", Math.Round(bear.stealthDmg * 100, 2).ToString())
                 .Replace("<stealthMoving>", Math.Round(bear.stealthMoving * 100, 2).ToString())
                 .Replace("<stealthNotMoving>", Math.Round(bear.stealthNotMoving * 100, 2).ToString());
+        public override string SimpleTooltip => Compatibility.LocVal("SimpleTooltips.BearsEye");
     }
 }

@@ -30,7 +30,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         public override int PetAbilityCooldown => rebirthCooldown;
         public override int PetStackCurrent => timer + deadTimer + 2; //One or the other will be shown, and neither should be different than 0 at anytime when another is active, so should be fine. And a +2 because both default to -1 every frame.
         public override int PetStackMax => 0;
-        public override bool PetStackIsSeconds => true;
+        public override string PetStackSpecial => PetTextsColors.SecondsOutOfText(timer + deadTimer + 2, 0);
         public override string PetStackText => Compatibility.LocVal("PetTooltips.McNuggetsStack");
         public override void PostUpdateMiscEffects()
         {

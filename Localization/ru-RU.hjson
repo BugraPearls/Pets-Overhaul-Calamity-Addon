@@ -210,8 +210,8 @@ Mods: {
 				'''
 			AbyssShellFossil:
 				'''
-- В зависимости от того, сколько у вас агрессии, вы можете получить защитные или атакующие характеристики.
-- Нажмите «Переключатель способностей питомца» (<switchKeybind>), чтобы переключаться между подсказками.
+				- В зависимости от того, сколько у вас агрессии, вы можете получить защитные или атакующие характеристики.
+				- Нажмите «Переключатель способностей питомца» (<switchKeybind>), чтобы переключаться между подсказками.
 				<tooltip>
 				'''
 			AbyssShellFossilStack: агро значение
@@ -286,34 +286,34 @@ Mods: {
 				'''
 			Levi:
 				'''
-- За каждую 1 силу рыбалки, получите <dmgPer>% урона. Текущий: <currentDmg>%
-- За каждую силу рыбалки <defPer>, получите 1 защиту. Текущий: <currentDef>
-- Части брони рыболова получают <helm>/<chest>/<leg> защиты соответственно.
-- Все ваши части брони рыболова получают <critChance>% шанса крита.
+				- За каждую 1 силу рыбалки, получите <dmgPer>% урона. Текущий: <currentDmg>%
+				- За каждую силу рыбалки <defPer>, получите 1 защиту. Текущий: <currentDef>
+				- Части брони рыболова получают <helm>/<chest>/<leg> защиты соответственно.
+				- Все ваши части брони рыболова получают <critChance>% шанса крита.
 				'''
 			LeviCrit: % увеличение шанса критического удара
 			RottingEyeball:
 				'''
-- Наносите <incrToCorrupt>% больше урона врагам Порчи.
-- Получайте <penalty>% больше урона, за исключением врагов Порчи.
-- Убийства вашего врага Порчи с этим питомцем: <killCount>
-- Получайте следующие бонусы в зависимости от ваших убийств.
- * +<dmg>% урона, +<crit>% шанса крита, +<luck> удачи,
- +<pen> пробивания брони и +<critDmg>% урона крита.
- * Умножайте характеристики на <evilMult>x в биоме Порчи.
- * Убийства, требуемые для следующих улучшений характеристик: <killReq>
+				- Наносите <incrToCorrupt>% больше урона врагам Порчи.
+				- Получайте <penalty>% больше урона, за исключением врагов Порчи.
+				- Убийства вашего врага Порчи с этим питомцем: <killCount>
+				- Получайте следующие бонусы в зависимости от ваших убийств.
+				* +<dmg>% урона, +<crit>% шанса крита, +<luck> удачи,
+				+<pen> пробивания брони и +<critDmg>% урона крита.
+				* Умножайте характеристики на <evilMult>x в биоме Порчи.
+				* Убийства, требуемые для следующих улучшений характеристик: <killReq>
 				'''
 			RottingEyeballStack: коррупция убивает до следующего уровня
 			BloodyVein:
 				'''
- - Получайте на <drFromCrimson>% меньше урона от врагов Crimson.
-- Наносите на <penalty>% меньше урона, за исключением врагов Crimson.
-- Убийства врагов Crimson с этим питомцем: <killCount>
-- Получайте следующие бонусы в зависимости от ваших убийств.
-* +<def> защита, +<hp> максимальное здоровье, +<luck> удача,
-+<dr>% снижение урона и +<regen> восстановление здоровья.
-* Умножьте характеристики на <evilMult>x в биоме Crimson.
-* Убийства, требуемые для следующих улучшений характеристик: <killReq>
+				- Получайте на <drFromCrimson>% меньше урона от врагов Crimson.
+				- Наносите на <penalty>% меньше урона, за исключением врагов Crimson.
+				- Убийства врагов Crimson с этим питомцем: <killCount>
+				- Получайте следующие бонусы в зависимости от ваших убийств.
+				* +<def> защита, +<hp> максимальное здоровье, +<luck> удача,
+				+<dr>% снижение урона и +<regen> восстановление здоровья.
+				* Умножьте характеристики на <evilMult>x в биоме Crimson.
+				* Убийства, требуемые для следующих улучшений характеристик: <killReq>
 				'''
 			BloodyVeinStack: Crimson убийства до следующего уровня
 			PineapplePet:
@@ -389,136 +389,137 @@ Mods: {
 		}
 
 		SimpleTooltips: {
-			/* ForgottenDragonEgg:
-				'''
-				- Pressing Pet Ability Keybind (<keybind>) makes your next hit explode.
-				 * Explosion burns hit enemies, and low health enemies will get executed.
-				    * The triggering hit, explosion hits and executions grants you stacks.
-				 * Stacks increases effectiveness of this Pet, they're permanent and can stack up infinitely.
-				''' */
-			/* Astrophage:
-				'''
-				- Enemies very close to you will get inflicted with Astral Infection.
-				- Enemies that are close to you that has Astral Infection gets slowed.
-				 * If they die while under this slow, they will spread the infection.
-				''' */
-			/* BearsEye:
-				'''
-				- When your health goes low, grants you a shield.
-				- Increases Rogue damage, stealth strike damage and stealth gains. 
-				''' */
-			/* CharredRelic:
-				'''
-				- When you're health is low, grants you damage reduction.
-				- Receiving damage reflects it back to attacker and spawns fireballs.
-				''' */
-			/* CosmicPlushie:
-				'''
-				[c/<color>:Emotionally] <class>
-				- Deals very wholesome damage to every creature around you.
-				 * When you die.
-				 * Only when your character is hardcore.
-				 * Yes this is a troll pet, it had to be done.
-				''' */
-			/* TrashmanTrashcan:
-				'''
-				- Press Pet Ability Keybind (<keybind>) to throw a Trashcan.
-				 * Deals damage and causes enemy to bleed.
-				 * Upon impact, slows and confuses enemies in a radius.
-				''' */
-			/* TheEtomer:
-				'''
-				- Press (<abilitySwitch>) to switch abilities, and (<abilityUse>) to initiate them.
-				- They proc on top of the enemy of your next hit.
-				- [c/FFFF00:Thunder Wave slows enemies.]
-				- [c/0f5e9c:Hydro Pump deals single target damage and applies Wet debuff.]
-				- [c/ff5a00:Overheat deals AoE damage and applies On Fire debuff.]
-				- [c/3fd0d4:Blizzard deals continious AoE damage, slows, and applies Glacial State debuff.]
-				- [c/34a203:Leaf Storm shoots out leaves in a circle, dealing wide damage.]
-				- [c/cfecf7:Air Slash deals AoE damage and applies heavy knockback.]
-				''' */
-			/* AbyssShellFossil:
-				'''
-				- Depending on how much Aggro you have, gain defensive or offensive stats.
-				 * Defense, Health, Damage Reduction gain and Move Speed loss if aggro stat is positive
-				 * Damage, Crit Chance, Armor Pen and Move Speed gain if aggro stat is negative
-				''' */
-			/* GeyserShell:
-				'''
-				- Increases standing stealth recovery and maximum stealth.
-				- Increases stealth strike damage.
-				- Stealth attacks trigger an AoE acid attack around you and the target.
-				''' */
-			/* FoxDrive:
-				'''
-				- Press Pet Ability Keybind (<keybind>) to remove all debuffs.
-				 * After removing all debuffs, for a short amount of time you cannot use items.
-				''' */
-			/* PrimroseKeepsake:
-				'''
-				- When your health goes low, grants you a shield.
-				- Increases Rogue stealth gain.
-				- Killing an enemy absorbs their power for your next Rogue hit.
-				 * Proccing this bonus damage grants a shield.
-				''' */
-			// RomajedaOrchid: - Killing an enemy absorbs their power for your next Rogue hit.
-			/* JoyfulHeart:
-				'''
-				- You take less damage, and deal less damage.
-				- Press Pet Ability Keybind (<keybind>) to heal all entities nearby.
-				''' */
-			/* Levi:
-				'''
-				- Depending on your fishing power, gain damage and defense.
-				- Angler armor pieces gain bonus defense and crit chance.
-				''' */
-			/* RottingEyeball:
-				'''
-				- Deal more damage to Corruption enemies.
-				- Take more damage, but not from Corruption enemies.
-				- Corruption enemy kills are counted permanently, 
-				  and depending on kill count, gain offensive stats.
-				''' */
-			/* BloodyVein:
-				'''
-				- Receive less damage from Crimson enemies.
-				- Deal less damage, but not to Crimson enemies.
-				- Crimson enemy kills are counted permanently, 
-				  and depending on kill count, gain defensive stats.
-				''' */
-			/* PineapplePet:
-				'''
-				- Increases eaten food items Well Fed stage, but reduces duration.
-				- Increases Well Fed buffs effectivenesses.
-				''' */
-			/* PlagueCaller:
-				'''
-				- Rogue hits stores percentage of dealt damage on main target and surrounding enemies.
-				- Press Pet Ability Keybind (<keybind>) to detonate all stored damage.
-				''' */
-			/* McNuggets:
-				'''
-				- Press Pet Ability Keybind (<keybind>) to use Rebirth Ability.
-				 * Gain Damage, Defense and Move Speed.
-				 * Attacks inflict Dragonfire debuff.
-				 * All effects scale with missing health.
-				 * Gives you a shield, equal to your missing health.
-				   But take this shield as damage at the end of the duration.
-				- If you take lethal damage, your death will be delayed for a while.
-				''' */
-			/* BrimstoneJewel:
-				'''
-				- Modifies non-channelling & non-Summon weapons. 
-				 * All your hits will now crit.
-				 * Lose some crit damage, but convert your crit chance into crit damage.
-				 * Adds Mana Cost to your weapon.
-				- Mana Sickness will now reduce all damage.
-				''' */
-			/* HermitsBoxofOneHundredMedicines:
-				'''
-				- Press Pet Ability Keybind (<keybind>) to heal.
-				- Deal less damage while this ability is on cooldown.
-				''' */
+ForgottenDragonEgg:
+  '''
+  - Нажатие клавиши способности питомца (<keybind>) заставляет следующую атаку взорваться.
+    * Взрыв поджигает врагов, а враги с низким здоровьем будут добиты.
+    * Атака, взрыв и добивания дают вам стаки.
+    * Стаки усиливают питомца, они постоянные и накапливаются бесконечно.
+  '''
+Astrophage:
+  '''
+  - Враги рядом с вами получают Астральную инфекцию.
+  - Инфицированные враги поблизости замедляются.
+    * Если они умирают в этом состоянии, инфекция распространяется.
+  '''
+BearsEye:
+  '''
+  - При низком здоровье вы получаете щит.
+  - Увеличивает урон Разбойника, урон скрытной атаки и прирост скрытности.
+  '''
+CharredRelic:
+  '''
+  - При низком здоровье вы получаете снижение урона.
+  - Получая урон, отражаете его и создаете огненные шары.
+  '''
+CosmicPlushie:
+  '''
+  [c/<color>:Эмоционально] <class>
+  - Наносит "тёплый" урон всем существам вокруг вас.
+    * Только при вашей смерти.
+    * Только в хардкоре.
+    * Да, это шуточный питомец. Иначе и быть не могло.
+  '''
+TrashmanTrashcan:
+  '''
+  - Нажмите клавишу способности питомца (<keybind>), чтобы бросить мусорный бак.
+    * Наносит урон и вызывает кровотечение.
+    * При ударе замедляет и сбивает с толку врагов поблизости.
+  '''
+TheEtomer:
+  '''
+  - Нажмите (<abilitySwitch>), чтобы сменить способность, и (<abilityUse>), чтобы использовать её.
+  - Срабатывает на враге при следующем ударе.
+  - [c/FFFF00:Грозовая волна замедляет врагов.]
+  - [c/0f5e9c:Гидроудар наносит одиночный урон и накладывает "Мокрый".]
+  - [c/ff5a00:Перегрев наносит AoE-урон и поджигает.]
+  - [c/3fd0d4:Метель наносит постоянный AoE-урон, замедляет и накладывает Ледяное состояние.]
+  - [c/34a203:Листовой шторм выпускает листья по кругу, нанося урон.]
+  - [c/cfecf7:Воздушный рез наносит AoE-урон и сильно отталкивает.]
+  '''
+AbyssShellFossil:
+  '''
+  - В зависимости от агро, получаете защитные или атакующие бонусы.
+    * Положительное агро: защита, здоровье, снижение урона, но замедление.
+    * Отрицательное агро: урон, крит, пробитие брони и ускорение.
+  '''
+GeyserShell:
+  '''
+  - Увеличивает восстановление скрытности и её максимум в покое.
+  - Увеличивает урон скрытной атаки.
+  - Скрытные атаки вызывают AoE кислотную атаку.
+  '''
+FoxDrive:
+  '''
+  - Нажмите клавишу способности питомца (<keybind>), чтобы снять все дебаффы.
+    * После снятия дебаффов, на короткое время нельзя использовать предметы.
+  '''
+PrimroseKeepsake:
+  '''
+  - При низком здоровье вы получаете щит.
+  - Увеличивает прирост скрытности Разбойника.
+  - Убийство врага поглощает его силу для следующей атаки.
+    * Срабатывание бонуса даёт щит.
+  '''
+RomajedaOrchid:
+  '''
+  - Убийство врага поглощает его силу для следующей атаки Разбойника.
+  '''
+JoyfulHeart:
+  '''
+  - Вы получаете меньше урона, но и наносите меньше.
+  - Нажмите клавишу способности питомца (<keybind>), чтобы исцелить всех рядом.
+  '''
+Levi:
+  '''
+  - В зависимости от силы рыбалки, увеличивает урон и защиту.
+  - Экипировка рыбака получает бонус к защите и шансу крита.
+  '''
+RottingEyeball:
+  '''
+  - Больше урона по врагам из Искажения.
+  - Получаете больше урона, но не от врагов из Искажения.
+  - Убийства врагов из Искажения считаются навсегда и дают боевые бонусы.
+  '''
+BloodyVein:
+  '''
+  - Получаете меньше урона от врагов из Багряна.
+  - Наносите меньше урона, но не врагам из Багряна.
+  - Убийства врагов из Багряна считаются навсегда и дают защитные бонусы.
+  '''
+PineapplePet:
+  '''
+  - Увеличивает стадию сытости от еды, но сокращает её длительность.
+  - Усиливает эффекты сытости.
+  '''
+PlagueCaller:
+  '''
+  - Атаки Разбойника сохраняют часть урона по целям и ближайшим врагам.
+  - Нажмите клавишу способности питомца (<keybind>), чтобы взорвать накопленный урон.
+  '''
+McNuggets:
+  '''
+  - Нажмите клавишу способности питомца (<keybind>), чтобы использовать способность Возрождения.
+    * Получите урон, защиту и скорость.
+    * Атаки накладывают Драконье пламя.
+    * Все эффекты масштабируются от недостающего здоровья.
+    * Получаете щит, равный потерянному здоровью.
+      Но в конце действия получаете урон от щита.
+  - При смертельном уроне, смерть откладывается на время.
+  '''
+BrimstoneJewel:
+  '''
+  - Модифицирует оружие (без канала и без призыва).
+    * Все удары теперь критуют.
+    * Потеря урона крита, но шанс крита превращается в его урон.
+    * У оружия появляется расход маны.
+  - Болезнь маны теперь снижает весь урон.
+  '''
+HermitsBoxofOneHundredMedicines:
+  '''
+  - Нажмите клавишу способности питомца (<keybind>), чтобы исцелиться.
+  - Пока способность на перезарядке — урон снижен.
+  '''
 		}
 
 		Buffs: {

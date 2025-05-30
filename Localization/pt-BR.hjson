@@ -393,136 +393,136 @@ Mods: {
 		}
 
 		SimpleTooltips: {
-			/* ForgottenDragonEgg:
-				'''
-				- Pressing Pet Ability Keybind (<keybind>) makes your next hit explode.
-				 * Explosion burns hit enemies, and low health enemies will get executed.
-				    * The triggering hit, explosion hits and executions grants you stacks.
-				 * Stacks increases effectiveness of this Pet, they're permanent and can stack up infinitely.
-				''' */
-			/* Astrophage:
-				'''
-				- Enemies very close to you will get inflicted with Astral Infection.
-				- Enemies that are close to you that has Astral Infection gets slowed.
-				 * If they die while under this slow, they will spread the infection.
-				''' */
-			/* BearsEye:
-				'''
-				- When your health goes low, grants you a shield.
-				- Increases Rogue damage, stealth strike damage and stealth gains. 
-				''' */
-			/* CharredRelic:
-				'''
-				- When you're health is low, grants you damage reduction.
-				- Receiving damage reflects it back to attacker and spawns fireballs.
-				''' */
-			/* CosmicPlushie:
-				'''
-				[c/<color>:Emotionally] <class>
-				- Deals very wholesome damage to every creature around you.
-				 * When you die.
-				 * Only when your character is hardcore.
-				 * Yes this is a troll pet, it had to be done.
-				''' */
-			/* TrashmanTrashcan:
-				'''
-				- Press Pet Ability Keybind (<keybind>) to throw a Trashcan.
-				 * Deals damage and causes enemy to bleed.
-				 * Upon impact, slows and confuses enemies in a radius.
-				''' */
-			/* TheEtomer:
-				'''
-				- Press (<abilitySwitch>) to switch abilities, and (<abilityUse>) to initiate them.
-				- They proc on top of the enemy of your next hit.
-				- [c/FFFF00:Thunder Wave slows enemies.]
-				- [c/0f5e9c:Hydro Pump deals single target damage and applies Wet debuff.]
-				- [c/ff5a00:Overheat deals AoE damage and applies On Fire debuff.]
-				- [c/3fd0d4:Blizzard deals continious AoE damage, slows, and applies Glacial State debuff.]
-				- [c/34a203:Leaf Storm shoots out leaves in a circle, dealing wide damage.]
-				- [c/cfecf7:Air Slash deals AoE damage and applies heavy knockback.]
-				''' */
-			/* AbyssShellFossil:
-				'''
-				- Depending on how much Aggro you have, gain defensive or offensive stats.
-				 * Defense, Health, Damage Reduction gain and Move Speed loss if aggro stat is positive
-				 * Damage, Crit Chance, Armor Pen and Move Speed gain if aggro stat is negative
-				''' */
-			/* GeyserShell:
-				'''
-				- Increases standing stealth recovery and maximum stealth.
-				- Increases stealth strike damage.
-				- Stealth attacks trigger an AoE acid attack around you and the target.
-				''' */
-			/* FoxDrive:
-				'''
-				- Press Pet Ability Keybind (<keybind>) to remove all debuffs.
-				 * After removing all debuffs, for a short amount of time you cannot use items.
-				''' */
-			/* PrimroseKeepsake:
-				'''
-				- When your health goes low, grants you a shield.
-				- Increases Rogue stealth gain.
-				- Killing an enemy absorbs their power for your next Rogue hit.
-				 * Proccing this bonus damage grants a shield.
-				''' */
-			// RomajedaOrchid: - Killing an enemy absorbs their power for your next Rogue hit.
-			/* JoyfulHeart:
-				'''
-				- You take less damage, and deal less damage.
-				- Press Pet Ability Keybind (<keybind>) to heal all entities nearby.
-				''' */
-			/* Levi:
-				'''
-				- Depending on your fishing power, gain damage and defense.
-				- Angler armor pieces gain bonus defense and crit chance.
-				''' */
-			/* RottingEyeball:
-				'''
-				- Deal more damage to Corruption enemies.
-				- Take more damage, but not from Corruption enemies.
-				- Corruption enemy kills are counted permanently, 
-				  and depending on kill count, gain offensive stats.
-				''' */
-			/* BloodyVein:
-				'''
-				- Receive less damage from Crimson enemies.
-				- Deal less damage, but not to Crimson enemies.
-				- Crimson enemy kills are counted permanently, 
-				  and depending on kill count, gain defensive stats.
-				''' */
-			/* PineapplePet:
-				'''
-				- Increases eaten food items Well Fed stage, but reduces duration.
-				- Increases Well Fed buffs effectivenesses.
-				''' */
-			/* PlagueCaller:
-				'''
-				- Rogue hits stores percentage of dealt damage on main target and surrounding enemies.
-				- Press Pet Ability Keybind (<keybind>) to detonate all stored damage.
-				''' */
-			/* McNuggets:
-				'''
-				- Press Pet Ability Keybind (<keybind>) to use Rebirth Ability.
-				 * Gain Damage, Defense and Move Speed.
-				 * Attacks inflict Dragonfire debuff.
-				 * All effects scale with missing health.
-				 * Gives you a shield, equal to your missing health.
-				   But take this shield as damage at the end of the duration.
-				- If you take lethal damage, your death will be delayed for a while.
-				''' */
-			/* BrimstoneJewel:
-				'''
-				- Modifies non-channelling & non-Summon weapons. 
-				 * All your hits will now crit.
-				 * Lose some crit damage, but convert your crit chance into crit damage.
-				 * Adds Mana Cost to your weapon.
-				- Mana Sickness will now reduce all damage.
-				''' */
-			/* HermitsBoxofOneHundredMedicines:
-				'''
-				- Press Pet Ability Keybind (<keybind>) to heal.
-				- Deal less damage while this ability is on cooldown.
-				''' */
+ForgottenDragonEgg:
+  '''
+  - Pressionar a tecla de habilidade do mascote (<keybind>) faz com que seu próximo ataque exploda.
+    * A explosão incendeia os inimigos atingidos, e inimigos com pouca vida serão executados.
+      * O ataque que desencadeia, os danos da explosão e as execuções concedem acúmulos.
+    * Os acúmulos aumentam a eficácia deste mascote; são permanentes e podem acumular infinitamente.
+  '''
+Astrophage:
+  '''
+  - Inimigos muito próximos a você serão infectados com Infecção Astral.
+  - Inimigos próximos a você que já estão com Infecção Astral ficam mais lentos.
+    * Se morrerem enquanto estiverem lentos, espalharão a infecção.
+  '''
+BearsEye:
+  '''
+  - Quando sua vida estiver baixa, concede um escudo.
+  - Aumenta o dano de Ladino, o dano de ataques furtivos e os ganhos de furtividade.
+  '''
+CharredRelic:
+  '''
+  - Quando sua vida estiver baixa, concede redução de dano.
+  - Ao receber dano, reflete-o de volta ao atacante e gera bolas de fogo.
+  '''
+CosmicPlushie:
+  '''
+  [c/<color>:Emocionalmente] <classe>
+  - Causa dano muito acolhedor a todas as criaturas ao seu redor.
+    * Quando você morre.
+    * Apenas quando seu personagem está no modo hardcore.
+    * Sim, este é um mascote troll, tinha que ser feito.
+  '''
+TrashmanTrashcan:
+  '''
+  - Pressione a tecla de habilidade do mascote (<keybind>) para lançar uma lata de lixo.
+    * Causa dano e faz o inimigo sangrar.
+    * Ao impactar, desacelera e confunde inimigos em um raio.
+  '''
+TheEtomer:
+  '''
+  - Pressione (<abilitySwitch>) para alternar habilidades e (<abilityUse>) para iniciá-las.
+  - Elas ativam sobre o inimigo do seu próximo ataque.
+  - [c/FFFF00:Onda de Trovão desacelera inimigos.]
+  - [c/0f5e9c:Jato de Água causa dano a um único alvo e aplica o debuff Molhado.]
+  - [c/ff5a00:Superaquecimento causa dano em área e aplica o debuff Em Chamas.]
+  - [c/3fd0d4:Nevasca causa dano contínuo em área, desacelera e aplica o debuff Estado Glacial.]
+  - [c/34a203:Tempestade de Folhas dispara folhas em círculo, causando dano amplo.]
+  - [c/cfecf7:Corte de Ar causa dano em área e aplica forte recuo.]
+  '''
+AbyssShellFossil:
+  '''
+  - Dependendo do quanto de Agressividade você possui, ganha atributos defensivos ou ofensivos.
+    * Ganha Defesa, Vida, Redução de Dano e perde Velocidade de Movimento se a agressividade for positiva.
+    * Ganha Dano, Chance Crítica, Penetração de Armadura e Velocidade de Movimento se a agressividade for negativa.
+  '''
+GeyserShell:
+  '''
+  - Aumenta a recuperação de furtividade parado e a furtividade máxima.
+  - Aumenta o dano de ataques furtivos.
+  - Ataques furtivos desencadeiam um ataque ácido em área ao seu redor e do alvo.
+  '''
+FoxDrive:
+  '''
+  - Pressione a tecla de habilidade do mascote (<keybind>) para remover todos os debuffs.
+    * Após remover todos os debuffs, por um curto período você não poderá usar itens.
+  '''
+PrimroseKeepsake:
+  '''
+  - Quando sua vida estiver baixa, concede um escudo.
+  - Aumenta o ganho de furtividade de Ladino.
+  - Matar um inimigo absorve seu poder para seu próximo ataque de Ladino.
+    * Ativar esse dano bônus concede um escudo.
+  '''
+RomajedaOrchid: - Matar um inimigo absorve seu poder para seu próximo ataque de Ladino.
+JoyfulHeart:
+  '''
+  - Você recebe menos dano e causa menos dano.
+  - Pressione a tecla de habilidade do mascote (<keybind>) para curar todas as entidades próximas.
+  '''
+Levi:
+  '''
+  - Dependendo do seu poder de pesca, ganha dano e defesa.
+  - Peças de armadura de Pescador ganham defesa bônus e chance crítica.
+  '''
+RottingEyeball:
+  '''
+  - Causa mais dano a inimigos da Corrupção.
+  - Recebe mais dano, exceto de inimigos da Corrupção.
+  - Mortes de inimigos da Corrupção são contadas permanentemente,
+    e dependendo da contagem, ganha atributos ofensivos.
+  '''
+BloodyVein:
+  '''
+  - Recebe menos dano de inimigos do Carmim.
+  - Causa menos dano, exceto a inimigos do Carmim.
+  - Mortes de inimigos do Carmim são contadas permanentemente,
+    e dependendo da contagem, ganha atributos defensivos.
+  '''
+PineapplePet:
+  '''
+  - Aumenta o estágio de Bem Alimentado de alimentos consumidos, mas reduz a duração.
+  - Aumenta a eficácia dos buffs de Bem Alimentado.
+  '''
+PlagueCaller:
+  '''
+  - Ataques de Ladino armazenam uma porcentagem do dano causado no alvo principal e em inimigos ao redor.
+  - Pressione a tecla de habilidade do mascote (<keybind>) para detonar todo o dano armazenado.
+  '''
+McNuggets:
+  '''
+  - Pressione a tecla de habilidade do mascote (<keybind>) para usar a Habilidade de Renascimento.
+    * Ganha Dano, Defesa e Velocidade de Movimento.
+    * Ataques aplicam o debuff Fogo de Dragão.
+    * Todos os efeitos escalam com a vida perdida.
+    * Concede um escudo igual à sua vida perdida.
+      Mas recebe esse escudo como dano ao final da duração.
+  - Se você receber dano letal, sua morte será adiada por um tempo.
+  '''
+BrimstoneJewel:
+  '''
+  - Modifica armas que não são de canalização nem de invocação.
+    * Todos os seus ataques agora serão críticos.
+    * Perde um pouco de dano crítico, mas converte sua chance crítica em dano crítico.
+    * Adiciona custo de Mana à sua arma.
+  - A Doença de Mana agora reduzirá todo o dano.
+  '''
+HermitsBoxofOneHundredMedicines:
+  '''
+  - Pressione a tecla de habilidade do mascote (<keybind>) para curar.
+  - Causa menos dano enquanto essa habilidade estiver em recarga.
+  '''
 		}
 
 		Buffs: {

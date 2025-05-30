@@ -58,6 +58,6 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                 .Replace("<slowDuration>", Math.Round(dannyDevito.slowDuration / 60f, 2).ToString())
                 .Replace("<confuseChance>", dannyDevito.confusionChance.ToString())
                 .Replace("<confuseDuration>", Math.Round(dannyDevito.confusionDuration / 60f, 2).ToString());
-        public override string SimpleTooltip => Compatibility.LocVal("SimpleTooltips.TrashmanTrashcan");
+        public override string SimpleTooltip => Compatibility.LocVal("SimpleTooltips.TrashmanTrashcan").Replace("<keybind>", PetTextsColors.KeybindText(PetKeybinds.UsePetAbility));
     }
 }

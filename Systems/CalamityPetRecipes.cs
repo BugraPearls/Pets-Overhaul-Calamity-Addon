@@ -1,4 +1,5 @@
-﻿using CalamityMod.Items.Armor.Demonshade;
+﻿using CalamityMod.Items.Accessories;
+using CalamityMod.Items.Armor.Demonshade;
 using CalamityMod.Items.Fishing.AstralCatches;
 using CalamityMod.Items.Materials;
 using CalamityMod.Items.Mounts;
@@ -23,7 +24,7 @@ namespace PetsOverhaulCalamityAddon.Systems
             PetRecipes.PetRecipe(Recipe.Create(CalamityPetIDs.Astrophage).AddIngredient<ProcyonidPrawn>().AddIngredient(ItemID.WaterStrider).AddIngredient<StarblightSoot>(300).AddIngredient<AstralMonolith>(650), 1500);
             PetRecipes.PetRecipe(Recipe.Create(CalamityPetIDs.Bear).AddIngredient(ItemID.WhitePearl, 2).AddIngredient(ItemID.AngelStatue).AddCondition(Condition.DownedSkeletron), 9999);
             PetRecipes.MasterModePetRecipe(Recipe.Create(CalamityPetIDs.Brimling).AddIngredient<InfernalSuevite>(30).AddIngredient<ScorchedRemains>(100).AddIngredient<ScorchedBone>(120).AddIngredient<EssenceofHavoc>(12), 2000);
-            PetRecipes.MasterModePetRecipe(Recipe.Create(CalamityPetIDs.ChibiiDevourer).AddIngredient<Fabsol>().AddIngredient<CosmiliteBar>(9999).AddIngredient<FabsolsVodka>(9999).AddIngredient(ItemID.PlatinumCoin, 9999).AddIngredient(ItemID.GoldCoin, 99).AddIngredient(ItemID.SilverCoin, 99).AddIngredient(ItemID.CopperCoin, 99).AddCondition(Condition.InSpace), 99999, 9);
+            PetRecipes.MasterModePetRecipe(Recipe.Create(CalamityPetIDs.ChibiiDevourer).AddIngredient<NebulousCore>().AddIngredient<CosmiliteBar>(9999).AddIngredient<PurpleHaze>(9999).AddIngredient(ItemID.PlatinumCoin, 9999).AddIngredient(ItemID.GoldCoin, 99).AddIngredient(ItemID.SilverCoin, 99).AddIngredient(ItemID.CopperCoin, 99).AddCondition(Condition.InSpace), 99999, 9);
             PetRecipes.PetRecipe(Recipe.Create(CalamityPetIDs.DannyDevito).AddIngredient(ItemID.TrashCan, 10).AddIngredient(ItemID.FishingSeaweed, 5).AddIngredient(ItemID.OldShoe, 5).AddIngredient(ItemID.TinCan, 5).AddIngredient(ItemID.Goggles).AddIngredient<SulphuricScale>(3), 25);
             PetRecipes.PetRecipe(Recipe.Create(CalamityPetIDs.ElectricTroublemaker).AddIngredient(ItemID.FallenStar).AddIngredient(ItemID.Glass, 10).AddIngredient<PrismShard>(5).AddIngredient<DemonicBoneAsh>().AddRecipeGroup(RecipeGroupsForPets.IceBlocks, 10).AddIngredient(ItemID.JungleSpores, 3).AddIngredient(ItemID.Cloud, 10));
             PetRecipes.PetRecipe(Recipe.Create(CalamityPetIDs.EscargidolonSnail).AddIngredient(ItemID.TurtleShell, 3).AddIngredient(ItemID.JunoniaShell).AddIngredient(ItemID.LightningWhelkShell, 5).AddIngredient(ItemID.TulipShell, 5).AddIngredient(ItemID.Seashell, 200).AddIngredient(ItemID.Seashell, 200).AddIngredient<Voidstone>(100).AddIngredient<AnechoicCoating>(5).AddRecipeGroup(RecipeGroupID.Snails).AddIngredient<ReaperTooth>(6), 9000);

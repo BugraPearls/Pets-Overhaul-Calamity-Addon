@@ -255,14 +255,12 @@ Mods: {
 				- 击杀敌人会为你的下次盗贼攻击吸收它们的能量
 				 * 你的下次盗贼攻击增加它们基础伤害的<percAbsorb>%
 				 * 触发后获得<procShield>护盾值<procShieldDuration>秒
-				 * 当前储存的下次攻击伤害：<storedDmg>
 				'''
 			RomajedaOrchid:
 				'''
 				- 击杀敌人会为你的下次盗贼攻击吸收它们的能量
 				 * 你的下次盗贼攻击增加它们基础伤害的<percAbsorb>%
 				 * 潜伏攻击会将其乘以<stealthMult>
-				 * 当前储存的下次攻击伤害：<storedDmg>
 				'''
 			RomajedaOrchidStack: 盗贼下一击伤害加成
 			JoyfulHeart:

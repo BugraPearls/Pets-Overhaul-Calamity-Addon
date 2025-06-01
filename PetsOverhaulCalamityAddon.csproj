@@ -16,7 +16,7 @@
 	</ItemGroup>
 	<ItemGroup>
 	  <Reference Include="CalamityMod">
-	    <HintPath>..\ModAssemblies\CalamityMod_v2.0.4.3.dll</HintPath>
+	    <HintPath>..\ModAssemblies\CalamityMod_v2.0.5.dll</HintPath>
 	  </Reference>
 	  <Reference Include="PetsOverhaul">
 	    <HintPath>..\PetsOverhaul\bin\Debug\net8.0\PetsOverhaul.dll</HintPath>

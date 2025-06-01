@@ -266,14 +266,12 @@ Mods: {
 				- Killing an enemy absorbs their power for your next Rogue hit.
 				 * Adding <percAbsorb>% of their base damage value to your next Rogue hit.
 				 * Proccing this bonus damage grants <procShield> shield for <procShieldDuration> seconds.
-				 * Currently stored damage to be added to your next hit: <storedDmg>
 				'''
 			RomajedaOrchid:
 				'''
 				- Killing an enemy absorbs their power for your next Rogue hit.
 				 * Adding <percAbsorb>% of their base damage value to your next Rogue hit.
 				 * Stealth Strikes multiplies this damage by <stealthMult>x.
-				 * Currently stored damage to be added to your next hit: <storedDmg>
 				'''
 			RomajedaOrchidStack: bonus damage for next rogue hit
 			JoyfulHeart:

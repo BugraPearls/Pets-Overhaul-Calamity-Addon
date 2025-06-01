@@ -23,7 +23,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         public int cooldown = 3000;
         private int lifeguardMultTimer = 0;
 
-        public float absorbPercent = 1.5f;
+        public float absorbPercent = 0.9f;
         public float lifeguardMult = 1.15f;
         public int currentNextDamage = 0;
         public int procShield = 3;
@@ -98,7 +98,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         {
             if (currentNextDamage > 0 && PetIsEquipped() && GlobalPet.LifestealCheck(target) && modifiers.DamageType is RogueDamageClass)
             {
-                modifiers.FlatBonusDamage += Player.GetTotalDamage<RogueDamageClass>().ApplyTo(currentNextDamage * (lifeguardMultTimer > 0 ? lifeguardMult : 1f));
+                modifiers.FlatBonusDamage += currentNextDamage * (lifeguardMultTimer > 0 ? lifeguardMult : 1f);
                 currentNextDamage = 0;
                 Pet.AddShield(procShield, procShieldDuration);
             }
@@ -128,7 +128,6 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
 
                 .Replace("<percAbsorb>", Math.Round(duo.absorbPercent * 100, 2).ToString())
                 .Replace("<lifeguardMult>", duo.lifeguardMult.ToString())
-                .Replace("<storedDmg>", duo.currentNextDamage.ToString())
                 .Replace("<procShield>", duo.procShield.ToString())
                 .Replace("<procShieldDuration>", Math.Round(duo.procShieldDuration / 60f, 2).ToString());
         public override string SimpleTooltip => Compatibility.LocVal("SimpleTooltips.PrimroseKeepsake");

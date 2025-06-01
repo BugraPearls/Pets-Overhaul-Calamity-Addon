@@ -265,14 +265,12 @@ Mods: {
 				- Desferir o golpe final em um inimigo com ataques do Ladino absorve seu poder.
 				 * Adicionando <percAbsorb>% do valor de dano base deles ao seu próximo golpe.
 				 * Ativar esse dano bônus concede <procShield> de escudo por <procShieldDuration> segundos.
-				 * Dano armazenado atual a ser adicionado ao seu próximo golpe: <storedDmg>
 				'''
 			RomajedaOrchid:
 				'''
 				- Desferir o golpe final em um inimigo com ataques do Ladino absorve seu poder.
 				 * Adicionando <percAbsorb>% do valor de dano base deles ao seu próximo golpe.
 				 * Golpes Furtivos multiplicam esse dano por <stealthMult>x.
-				 * Dano armazenado atual a ser adicionado ao seu próximo golpe: <storedDmg>
 				'''
 			RomajedaOrchidStack: bônus de dano para o próximo golpe do ladino
 			JoyfulHeart:

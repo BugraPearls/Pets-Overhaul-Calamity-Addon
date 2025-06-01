@@ -11,7 +11,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
     {
         public override int PetItemID => CalamityPetIDs.Kendra;
         public override PetClasses PetClassPrimary => PetClasses.Rogue;
-        public float absorbPercent = 1.70f;
+        public float absorbPercent = 1.1f;
         public float stealthMult = 1.3f;
         public int currentNextDamage = 0;
         public override int PetStackCurrent => currentNextDamage;
@@ -21,7 +21,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         {
             if (currentNextDamage > 0 && PetIsEquipped() && GlobalPet.LifestealCheck(target) && modifiers.DamageType is RogueDamageClass)
             {
-                modifiers.FlatBonusDamage += Player.GetTotalDamage<RogueDamageClass>().ApplyTo(currentNextDamage * (proj.Calamity().stealthStrike ? stealthMult : 1f));
+                modifiers.FlatBonusDamage += currentNextDamage * (proj.Calamity().stealthStrike ? stealthMult : 1f);
                 currentNextDamage = 0;
             }
         }
@@ -59,8 +59,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         }
         public override string PetsTooltip => Compatibility.LocVal("PetTooltips.RomajedaOrchid")
                 .Replace("<percAbsorb>", Math.Round(kendra.absorbPercent * 100, 2).ToString())
-                .Replace("<stealthMult>", kendra.stealthMult.ToString())
-                .Replace("<storedDmg>", kendra.currentNextDamage.ToString());
+                .Replace("<stealthMult>", kendra.stealthMult.ToString());
         public override string SimpleTooltip => Compatibility.LocVal("SimpleTooltips.RomajedaOrchid");
     }
 }

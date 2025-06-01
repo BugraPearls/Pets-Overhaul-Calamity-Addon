@@ -1,4 +1,4 @@
-modReferences = PetsOverhaul@3.5, CalamityMod@2.0.4.6
+modReferences = PetsOverhaul@3.6.0.1, CalamityMod@2.0.5
 displayName = Pets Overhaul: Calamity Addon
 author = Pearlie
 version = 1.4.1.2

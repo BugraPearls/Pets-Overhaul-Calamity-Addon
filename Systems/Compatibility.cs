@@ -33,6 +33,7 @@ using CalamityMod.Items.Weapons.Melee;
 using CalamityMod.Items.Weapons.Ranged;
 using CalamityMod.Items.Weapons.Rogue;
 using CalamityMod.Items.Weapons.Summon;
+using CalamityMod.NPCs.DevourerofGods;
 using CalamityMod.NPCs.HiveMind;
 using CalamityMod.NPCs.NormalNPCs;
 using CalamityMod.NPCs.OldDuke;
@@ -156,7 +157,7 @@ namespace PetsOverhaulCalamityAddon.Systems
             Junimo.FishingXpPerKill.Add((100000, [ModContent.NPCType<OldDuke>()]));
         }
 
-        public static List<int> CalamityNonBossTrueBosses = [ModContent.NPCType<EbonianPaladin>(), ModContent.NPCType<CrimulanPaladin>(), ModContent.NPCType<SplitEbonianPaladin>(), ModContent.NPCType<SplitCrimulanPaladin>()];
+        public static List<int> CalamityNonBossTrueBosses = [ModContent.NPCType<DevourerofGodsHead>(), ModContent.NPCType<DevourerofGodsBody>(), ModContent.NPCType<DevourerofGodsTail>(), ModContent.NPCType<EbonianPaladin>(), ModContent.NPCType<CrimulanPaladin>(), ModContent.NPCType<SplitEbonianPaladin>(), ModContent.NPCType<SplitCrimulanPaladin>()];
         public static void AddCalamityNonBossTrueBosses()
         {
             NpcPet.NonBossTrueBosses.AddRange(CalamityNonBossTrueBosses);

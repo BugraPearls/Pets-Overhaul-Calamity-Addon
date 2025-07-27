@@ -264,7 +264,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                 }
             }
         }
-        public override void ProcessTriggers(TriggersSet triggersSet)
+        public override void ExtraProcessTriggers(TriggersSet triggersSet)
         {
             if (PetKeybinds.PetAbilitySwitch.JustPressed && PetIsEquipped(false))
             {

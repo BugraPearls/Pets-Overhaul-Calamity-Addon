@@ -26,7 +26,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                 Player.GetDamage<GenericDamageClass>() *= damageMult;
             }
         }
-        public override void ProcessTriggers(TriggersSet triggersSet)
+        public override void ExtraProcessTriggers(TriggersSet triggersSet)
         {
             if (Pet.AbilityPressCheck() && PetIsEquipped())
             {

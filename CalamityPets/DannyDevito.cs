@@ -24,7 +24,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         public int confusionChance = 40; //out of 100
         public int confusionDuration = 150;
         public int cooldown = 420;
-        public override void ProcessTriggers(TriggersSet triggersSet)
+        public override void ExtraProcessTriggers(TriggersSet triggersSet)
         {
             if (Pet.AbilityPressCheck() && PetIsEquipped())
             {

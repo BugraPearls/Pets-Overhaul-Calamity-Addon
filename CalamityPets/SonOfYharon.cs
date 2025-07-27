@@ -93,7 +93,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                 target.AddBuff(ModContent.BuffType<Dragonfire>(), (int)Math.Ceiling(fireTime * (deadTimer > 0 ? 1f : healthToMult)));
             }
         }
-        public override void ProcessTriggers(TriggersSet triggersSet)
+        public override void ExtraProcessTriggers(TriggersSet triggersSet)
         {
             if (Pet.AbilityPressCheck() && PetIsEquipped())
             {

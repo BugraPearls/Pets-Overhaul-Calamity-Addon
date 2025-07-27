@@ -43,7 +43,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         public override string PetStackText => Compatibility.LocVal("PetTooltips.PlagueCallerStack");
         public override int PetStackMax => 0;
         public override int PetStackCurrent => CurrentCanDetonate;
-        public override void ProcessTriggers(TriggersSet triggersSet)
+        public override void ExtraProcessTriggers(TriggersSet triggersSet)
         {
             if (Pet.AbilityPressCheck() && PetIsEquipped())
             {

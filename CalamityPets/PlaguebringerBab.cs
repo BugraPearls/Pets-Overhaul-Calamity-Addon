@@ -26,6 +26,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         public int cooldown = 510;
         public int plagueAndSlowDuration = 150;
         public float slowAmount = 0.25f;
+        private bool hitThisFrame = false;
         public int CurrentCanDetonate { get 
             {
                 int current = 0;
@@ -72,13 +73,14 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         }
         public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
-            if (PetIsEquipped() && hit.DamageType is RogueDamageClass && target.TryGetGlobalNPC(out PlaguebringerBabStacks victim))
+            if (PetIsEquipped() && hit.DamageType is RogueDamageClass && target.TryGetGlobalNPC(out PlaguebringerBabStacks victim) && hitThisFrame == false)
             {
+                hitThisFrame = true;
                 GlobalPet.CircularDustEffect(target.Center, DustID.JungleTorch, surroundRadius, 12);
                 if (target.active)
                 {
                     victim.timer = timeToAdd;
-                    victim.stacks += Math.Max(GlobalPet.Randomizer((int)(hit.SourceDamage * mainTargetMult * 100)), 1);
+                    victim.stacks += Math.Max(GlobalPet.Randomizer((int)(damageDone * mainTargetMult * 100)), 1);
                 }
                 foreach (var npc in Main.ActiveNPCs)
                 {
@@ -88,10 +90,14 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                     if (target.Distance(npc.Center) < surroundRadius && npc.TryGetGlobalNPC(out PlaguebringerBabStacks surrounder))
                     {
                         surrounder.timer = timeToAdd;
-                        surrounder.stacks += Math.Max(GlobalPet.Randomizer((int)(hit.SourceDamage * surroundingMult * 100)), 1);
+                        surrounder.stacks += Math.Max(GlobalPet.Randomizer((int)(damageDone * surroundingMult * 100)), 1);
                     }
                 }
             }
+        }
+        public override void ExtraPreUpdate()
+        {
+            hitThisFrame = false;
         }
     }
     public sealed class PlaguebringerBabStacks : GlobalNPC

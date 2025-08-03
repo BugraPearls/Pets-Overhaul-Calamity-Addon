@@ -107,6 +107,7 @@ Mods: {
 				 * Se um inimigo morrer enquanto estiver sob este efeito, o inimigo mais próximo em um raio de <spreadRadius> blocos receberá
 				Infecção Astral com a duração restante e será desacelerado em <spreadSlow>% por <spreadSlowDuration> segundos.
 				'''
+			// AstrophageStack: nearby infected enemies
 			BearsEye:
 				'''
 				- Receber dano que o coloca abaixo de <belowHealth>% de vida concede um Escudo
@@ -348,6 +349,7 @@ Mods: {
 				 * O jogador [c/f8baba:será morto imediatamente] após os efeitos acabarem. (O Filho de Yharon fica muito exausto, pois faz isso por você!)
 				'''
 			McNuggetsStack: duração restante do renascimento
+			// McNuggetsDelayStack: remaining time before death
 			YharonReborn: RENASCIDO!!
 			YharonDelay: O Filho de Yharon está adiando sua morte!
 			YharonDeath1: <name> não tem mais suas chamas, e apenas cinzas restaram

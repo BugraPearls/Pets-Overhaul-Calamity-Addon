@@ -19,10 +19,11 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         public int defRebirth = 15;
         public float msRebirth = 0.1f;
         public int fireTime = 90;
-        public int rebirthDuration = 900;
+        public int rebirthDuration = 600;
         public int rebirthCooldown = 7200;
         private int timer = 0;
         private int deadTimer = 0;
+        public int deathDelayDuration = 600;
         private float healthToMult = 1f;
         private int damageToTakeAfterReborn = 0;
         public override PetClasses PetClassPrimary => PetClasses.Defensive;
@@ -31,7 +32,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         public override int PetStackCurrent => timer + deadTimer + 2; //One or the other will be shown, and neither should be different than 0 at anytime when another is active, so should be fine. And a +2 because both default to -1 every frame.
         public override int PetStackMax => 0;
         public override string PetStackSpecial => PetTextsColors.SecondsOutOfText(timer + deadTimer + 2, 0);
-        public override string PetStackText => Compatibility.LocVal("PetTooltips.McNuggetsStack");
+        public override string PetStackText => deadTimer > 0 ? Compatibility.LocVal("PetTooltips.McNuggetsDelayStack") : Compatibility.LocVal("PetTooltips.McNuggetsStack");
         public override void PostUpdateMiscEffects()
         {
             if (PetIsEquipped())
@@ -56,15 +57,9 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                             3 => Compatibility.LocVal("PetTooltips.YharonDeath4"),
                             _ => Compatibility.LocVal("PetTooltips.YharonDeath1"),
                         };
-                        Player.KillMe(PlayerDeathReason.ByCustomReason(reason.Replace("<name>", Player.name)), Player.statLifeMax2, 0);
+                        Player.KillMe(PlayerDeathReason.ByCustomReason(reason.Replace("<name>", Player.name)), Player.statLifeMax2 * 100, 0);
                     }
                     deadTimer = -1;
-                }
-                if (deadTimer > 0)
-                {
-                    Player.GetDamage<GenericDamageClass>() += dmgRebirth;
-                    Player.statDefense += defRebirth;
-                    Player.moveSpeed += msRebirth;
                 }
                 if (timer <= 0)
                 {
@@ -88,7 +83,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         }
         public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
-            if (PetIsEquipped() && (timer > 0 || deadTimer > 0))
+            if (PetIsEquipped() && (timer > 0))
             {
                 target.AddBuff(ModContent.BuffType<Dragonfire>(), (int)Math.Ceiling(fireTime * (deadTimer > 0 ? 1f : healthToMult)));
             }
@@ -107,7 +102,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                 {
                     playerCurrentHp = Player.statLifeMax2 / 4;
                 }
-                healthToMult = Player.statLifeMax2 / playerCurrentHp / 2;
+                healthToMult = Player.statLifeMax2 / playerCurrentHp;
                 int missingHp = Player.statLifeMax2 - Player.statLife;
                 damageToTakeAfterReborn = missingHp;
                 Pet.AddShield(missingHp, (int)Math.Ceiling(rebirthDuration * healthToMult));
@@ -117,21 +112,28 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         }
         public override bool PreKill(double damage, int hitDirection, bool pvp, ref bool playSound, ref bool genDust, ref PlayerDeathReason damageSource)
         {
-            timer = 0;
-            if (PetIsEquipped() && Pet.timer <= 0)
+            if (PetIsEquipped() && deadTimer == -1)
             {
                 if (ModContent.GetInstance<PetPersonalization>().AbilitySoundEnabled)
                 {
                     SoundEngine.PlaySound(new SoundStyle("CalamityMod/Sounds/Custom/Yharon/YharonRoarShort") with { PitchVariance = 0.3f }, Player.Center);
                 }
                 PopupText.NewText(new AdvancedPopupRequest() with { Text = Compatibility.LocVal("PetTooltips.YharonDelay"), DurationInFrames = 150, Velocity = new Vector2(0, -10), Color = new Color(209, 107, 75) }, Player.Center);
-                Pet.PetRecovery(Player.statLifeMax2, 1f, isLifesteal: false);
-                deadTimer = rebirthDuration;
+                Player.statLife = Player.statLifeMax2;
+                deadTimer = deathDelayDuration;
                 Pet.timer = Pet.timerMax;
                 return false;
             }
             else
                 return base.PreKill(damage, hitDirection, pvp, ref playSound, ref genDust, ref damageSource);
+        }
+        public override void Kill(double damage, int hitDirection, bool pvp, PlayerDeathReason damageSource)
+        {
+            if (PetIsEquipped())
+            {
+                deadTimer = -1;
+                timer = -1;
+            }
         }
     }
     public sealed class McNuggetsTooltip : PetTooltip
@@ -154,7 +156,8 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                         .Replace("<msRebirth>", Math.Round(yharon.msRebirth * 100, 2).ToString())
                         .Replace("<fireTime>", Math.Round(yharon.fireTime / 60f, 2).ToString())
                         .Replace("<rebornDuration>", Math.Round(yharon.rebirthDuration / 60f, 2).ToString())
-                        .Replace("<cooldown>", Math.Round(yharon.rebirthCooldown / 3600f, 2).ToString());
+                        .Replace("<cooldown>", Math.Round(yharon.rebirthCooldown / 3600f, 2).ToString())
+                        .Replace("<delaySec>", Math.Round(yharon.deathDelayDuration / 60f, 2).ToString());
         public override string SimpleTooltip => Compatibility.LocVal("SimpleTooltips.McNuggets").Replace("<keybind>", PetTextsColors.KeybindText(PetKeybinds.UsePetAbility));
     }
 }

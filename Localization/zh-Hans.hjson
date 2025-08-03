@@ -105,6 +105,7 @@ Mods: {
 				- 对<slowRadius>格范围内受幻星感染影响的敌人造成<slowAmount>%减速
 				 - 带有幻星感染和减速效果的敌人死亡时会将幻星感染减益转移给<spreadRadius>格范围内最近的敌人，并造成<spreadSlow>%减速<spreadSlowDuration>秒
 				'''
+			// AstrophageStack: nearby infected enemies
 			BearsEye:
 				'''
 				- 受伤后低于<belowHealth>%生命值时会获得一个护盾<shieldDuration>秒，护盾值为<baseShield>%基础最大生命值 + <bonusShield>%额外最大生命值
@@ -337,6 +338,7 @@ Mods: {
 				 * 玩家在效果结束时会[c/f8baba:立即死亡]（犽戎之子为你倾尽了全力！）
 				'''
 			McNuggetsStack: 剩余重生冷却
+			// McNuggetsDelayStack: remaining time before death
 			YharonReborn: 重生！！！
 			YharonDelay: 犽戎之子延缓了你的死亡！
 			YharonDeath1: <name>燃尽了火焰，剩下的只有灰烬。

@@ -108,7 +108,7 @@ Mods: {
 				 * If an enemy dies while under this effect, the nearest enemy in <spreadRadius> blocks of them will get
 				   Astral Infection with its remaining duration, and be slowed by <spreadSlow>% for <spreadSlowDuration> seconds.
 				'''
-				AstrophageStack: nearby infected enemies
+			AstrophageStack: nearby infected enemies
 			BearsEye:
 				'''
 				- Taking damage that puts you below <belowHealth>% health gives you a Shield
@@ -348,11 +348,11 @@ Mods: {
 				 * Effect amplifier is way more useful the lesser health you have, reaching maximum potential at 25% hp.
 				 * You will take damage for the exact amount of initial shield after effects wear off, the shield can tank the damage.
 				 * Rebirth ability has a <cooldown> minute cooldown.
-				- If the Player dies while the ability isn't on cooldown, but wasn't used manually, it will save the player with the following:
-				 * The player gains the base effects, with no amplifiers, and no shielding but you will be healed to maximum health.
-				 * Player [c/f8baba:will be killed immediately] after the effects wear off. (Son of Yharon gets too exhausted since he does it for you!)
+				- If you die at any time, your death will be delayed for <delaySec> seconds.
+				 * Although this will heal you to full, you will die afterwards no matter what.
 				'''
 			McNuggetsStack: remaining rebirth duration
+			McNuggetsDelayStack: remaining time before death
 			YharonReborn: REBORN!!
 			YharonDelay: Son of Yharon is delaying your death!
 			YharonDeath1: <name> ran out of flames, and all that is left is ashes.

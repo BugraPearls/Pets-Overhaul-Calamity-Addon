@@ -18,15 +18,21 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         public int infectRadius = 80;
         public int slowRadius = 600;
         public int infectDuration = 300;
-
+        public float dmgBoostPerInfected = 0.03f;
+        public int dmgInfectCap = 10;
+        public int infectCount = 0;
         public float slowAmount = 0.4f;
         public float infectionHeavySlow = 2.2f;
+        public override int PetStackMax => dmgInfectCap;
+        public override int PetStackCurrent => infectCount;
+        public override string PetStackText => Compatibility.LocVal("PetTooltips.AstrophageStack");
         public override void PostUpdateMiscEffects()
         {
             if (PetIsEquipped())
             {
                 GlobalPet.CircularDustEffect(Player.Center, DustID.CoralTorch, infectRadius, 8);
                 GlobalPet.CircularDustEffect(Player.Center, DustID.Granite, slowRadius, 30, scale: 0.8f);
+                infectCount = 0;
                 foreach (var npc in Main.ActiveNPCs)
                 {
                     if (Player.Distance(npc.Center) < infectRadius)
@@ -40,6 +46,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                         {
                             astro.infectedVal = infectionHeavySlow;
                             NpcPet.AddSlow(new NpcPet.PetSlow(slowAmount, 1, CalSlows.AstrophageSlow), npc);
+                            infectCount++;
                         }
                         else
                         {
@@ -47,6 +54,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                         }
                     }
                 }
+                Player.GetDamage<GenericDamageClass>() += Math.Min(dmgInfectCap, infectCount) * dmgBoostPerInfected;
             }
         }
     }
@@ -99,6 +107,8 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                 .Replace("<infectDuration>", Math.Round(astro.infectDuration / 60f, 2).ToString())
                 .Replace("<slowRadius>", Math.Round(astro.slowRadius / 16f, 2).ToString())
                 .Replace("<slowAmount>", Math.Round(astro.slowAmount * 100, 2).ToString())
+                .Replace("<dmg>", Math.Round(astro.dmgBoostPerInfected * 100, 2).ToString())
+                .Replace("<cap>", astro.dmgInfectCap.ToString())
                 .Replace("<spreadRadius>", Math.Round(AstrophageInfection.deathSpreadRange / 16f, 2).ToString())
                 .Replace("<spreadSlow>", Math.Round(astro.infectionHeavySlow * 100, 2).ToString())
                 .Replace("<spreadSlowDuration>", Math.Round(AstrophageInfection.deathSpreadSlowDur / 60f, 2).ToString());

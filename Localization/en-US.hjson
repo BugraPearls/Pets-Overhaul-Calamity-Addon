@@ -104,9 +104,11 @@ Mods: {
 				'''
 				- Inflicts enemies in <infectRadius> blocks with Astral Infection for <infectDuration> seconds.
 				- Enemies in <slowRadius> blocks gets slowed for <slowAmount>% if they have Astral Infection debuff.
+				 * Every enemy in this radius grants you <dmg>% damage, up to <cap> enemies.
 				 * If an enemy dies while under this effect, the nearest enemy in <spreadRadius> blocks of them will get
 				   Astral Infection with its remaining duration, and be slowed by <spreadSlow>% for <spreadSlowDuration> seconds.
 				'''
+				AstrophageStack: nearby infected enemies
 			BearsEye:
 				'''
 				- Taking damage that puts you below <belowHealth>% health gives you a Shield
@@ -225,7 +227,7 @@ Mods: {
 				 * 1 defense per <aggroDef> aggro value. Current: <def>
 				 * 1 maximum health per <aggroHealth> aggro value. Current: <hp>
 				 * 1% damage reduction per <aggroDr> aggro value. Current: <dr>%
-				 * -1% movement speed per <aggroMsLower> aggro value. Current: <msLower>%
+				 * 1% knockback per <aggroKb> aggro value. Current: <kb>%
 				'''
 			SnailNegativeAggro:
 				'''

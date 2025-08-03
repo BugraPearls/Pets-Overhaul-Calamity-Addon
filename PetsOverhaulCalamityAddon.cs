@@ -5,7 +5,7 @@ namespace PetsOverhaulCalamityAddon
 {
     public class PetsOverhaulCalamityAddon : Mod
     {
-        public override void Load()
+        public override void PostSetupContent()
         {
             Compatibility.AddPetItemNames();
             Compatibility.AddCalamityItemsToGatheringLists();

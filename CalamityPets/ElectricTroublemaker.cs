@@ -52,10 +52,10 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         public int blizzardDmg = 9;
         public int blizzardRadius = 160;
         public int blizzardDuration = 210;
-        public float coldSlow = 0.1f;
+        public float coldSlow = 0.2f;
         public int freezeDuration = 20;
         public int freezeRequirement = 180;
-        public float blizzardCooldown = 0.8f;
+        public float blizzardCooldown = 0.5f;
 
         public const int leafStorm = 4;
         public int leafStormDmg = 20;

@@ -22,8 +22,8 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         public int aggroToHp = 15;
         public float CurrentDr => Player.aggro / aggroToDr;
         public float aggroToDr = 150;
-        public float CurrentNegativeMs => Player.aggro / aggroToNegativeMs * -1;
-        public float aggroToNegativeMs = 350;
+        public float CurrentKnockback => Player.aggro / aggroToKnockback;
+        public float aggroToKnockback = 12;
 
         public float CurrentDmg => Player.aggro / aggroToDmg * -1;
         public float aggroToDmg = 100;
@@ -42,7 +42,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                     Player.statDefense += CurrentDef;
                     Player.statLifeMax2 += CurrentHp;
                     Player.endurance += CurrentDr / 100;
-                    Player.moveSpeed += CurrentNegativeMs / 100;
+                    Player.GetKnockback<GenericDamageClass>() += CurrentKnockback / 100;
                 }
                 else
                 {
@@ -87,11 +87,11 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                             .Replace("<aggroDef>", snail.aggroToDef.ToString())
                             .Replace("<aggroHealth>", snail.aggroToHp.ToString())
                             .Replace("<aggroDr>", snail.aggroToDr.ToString())
-                            .Replace("<aggroMsLower>", snail.aggroToNegativeMs.ToString())
+                            .Replace("<aggroKb>", snail.aggroToKnockback.ToString())
                             .Replace("<def>", snail.CurrentDef.ToString())
                             .Replace("<hp>", snail.CurrentHp.ToString())
                             .Replace("<dr>", Math.Round(snail.CurrentDr, 2).ToString())
-                            .Replace("<msLower>", Math.Round(snail.CurrentNegativeMs, 2).ToString());
+                            .Replace("<kb>", Math.Round(snail.CurrentKnockback, 2).ToString());
                         break;
                     case false:
                         Tooltip = Compatibility.LocVal("PetTooltips.SnailNegativeAggro")

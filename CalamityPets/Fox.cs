@@ -1,8 +1,10 @@
+using CalamityMod;
 using Microsoft.Xna.Framework;
 using PetsOverhaul.Config;
 using PetsOverhaul.Systems;
 using PetsOverhaulCalamityAddon.Systems;
 using System;
+using System.Collections.Generic;
 using Terraria;
 using Terraria.Audio;
 using Terraria.GameInput;
@@ -33,21 +35,25 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         {
             if (Pet.AbilityPressCheck() && PetIsEquipped())
             {
-                int amountOfDebuffs = 0;
+                List<int> idsToRemove = new(Player.MaxBuffs);
                 for (int i = 0; i < Player.MaxBuffs; i++)
                 {
-                    if (Main.debuff[Player.buffType[i]] && BuffID.Sets.NurseCannotRemoveDebuff[Player.buffType[i]] == false)
+                    int buffId = Player.buffType[i];
+                    if (Main.debuff[buffId] && BuffID.Sets.NurseCannotRemoveDebuff[buffId] == false)
                     {
-                        Player.DelBuff(i);
-                        amountOfDebuffs++;
+                        idsToRemove.Add(buffId);
                     }
                 }
-                if (amountOfDebuffs > 0)
+                if (idsToRemove.Count > 0)
                 {
                     if (ModContent.GetInstance<PetPersonalization>().AbilitySoundEnabled)
                         SoundEngine.PlaySound(SoundID.Item35 with { Pitch = 0.75f, PitchVariance = 0.1f }, Player.Center);
-                    cleansePenalty = baseTime + perTime * (amountOfDebuffs - 1);
-                    CombatText.NewText(Player.getRect(), Color.Orange, Compatibility.LocVal("PetTooltips.FoxCleansedText") + amountOfDebuffs.ToString(), dramatic: true);
+                    cleansePenalty = baseTime + perTime * (idsToRemove.Count - 1);
+                    CombatText.NewText(Player.getRect(), Color.Orange, Compatibility.LocVal("PetTooltips.FoxCleansedText") + idsToRemove.Count.ToString(), dramatic: true);
+                    foreach (var item in idsToRemove)
+                    {
+                        Player.ClearBuff(item);
+                    }
                     Pet.timer = Pet.timerMax;
                 }
             }

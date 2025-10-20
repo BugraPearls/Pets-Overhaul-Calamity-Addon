@@ -14,12 +14,12 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         public override int PetItemID => CalamityPetIDs.Levi;
         public override PetClasses PetClassPrimary => PetClasses.Offensive;
         public override PetClasses PetClassSecondary => PetClasses.Defensive;
-        public float dmgPerFish = 0.005f;
-        public float oneDefPerFishPower = 2.5f;
-        public float crit = 5f;
-        public int helm = 9;
-        public int chest = 13;
-        public int leg = 9;
+        public float dmgPerFish = 0.0017f;
+        public float oneDefPerFishPower = 5f;
+        public float crit = 10f;
+        public int helm = 15;
+        public int chest = 22;
+        public int leg = 18;
         public int actFishPow => Player.GetFishingConditions().FinalFishingLevel;
         public override void PostUpdateMiscEffects()
         {

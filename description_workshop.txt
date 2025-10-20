@@ -18,6 +18,9 @@ Join our [url=https://discord.gg/KubSpqvDGE]Discord server![/url]
 
 Check out our [url=https://github.com/BugraPearls/Pets-Overhaul-Calamity-Addon]GitHub Page[/url] to check the code, contribute & submit issues!
 
+Check out the [url=https://terrariamods.wiki.gg/wiki/Pets_Overhaul]Wiki Page[/url] to get information regarding the Mod!
+
+
 Check out our [url=https://www.patreon.com/pearlying]Patreon Page[/url] if you'd like to support the Mod!
 
 The Calamity Addon currently supports following for Localization;

@@ -1,6 +1,6 @@
 modReferences = PetsOverhaul@3.6.3.1, CalamityMod@2.0.5
 displayName = Pets Overhaul: Calamity Addon
 author = Pearlie
-version = 1.4.2.1
+version = 1.4.2.2
 buildIgnore = icon_workshop.png
-homepage = https://discord.gg/KubSpqvDGE
+homepage = https://terrariamods.wiki.gg/wiki/Pets_Overhaul

@@ -57,8 +57,29 @@ namespace PetsOverhaulCalamityAddon.Systems
     /// <summary>
     /// Class mostly for making already existing systems in Pets Overhaul work with Calamity's added content aswell. Also a few util stuff.
     /// </summary>
-    public class Compatibility //All initiated in PetsOverhaulCalamityAddon.cs
+    public class Compatibility : ModSystem
     {
+        public override void PostSetupContent()
+        {
+            AddPetItemNames();
+            AddCalamityItemsToGatheringLists();
+            AddCalamityNonBossTrueBosses();
+            AddCalamityCorruptEnemies();
+            AddCalamityCrimsonEnemies();
+            AddCalamityHallowEnemies();
+            AddCalamitySoundEffects();
+            AddCalamityItemLists();
+            AddCalamityRecipeGroups();
+            AddCalamityNPCsToIgnoreForMiscEffects();
+        }
+        public override void Load()
+        {
+            AddCalamityPetSlowIDs();
+        }
+        public override void ResizeArrays()
+        {
+            AddCalamityPetSlowSets();
+        }
         /// <summary>
         /// Same as PetUtils.LocVal for Calamity Addon. Shortened version of GetTextValue.
         /// </summary>
@@ -326,13 +347,29 @@ namespace PetsOverhaulCalamityAddon.Systems
             PetSounds.PetItemIdToAmbientSound.AddRange(CalamityPetAmbientSounds);
             PetSounds.PetItemidToKillSound.AddRange(CalamityPetKillSounds);
         }
-        public static void AddCalamityPetSlows()
+        public class CalSlows
         {
-            PetSlowID.SicknessBasedSlows.Add(CalSlows.AstrophageSlow);
-            PetSlowID.SicknessBasedSlows.Add(CalSlows.PlagueSlow);
-            PetSlowID.SicknessBasedSlows.Add(CalSlows.trashmanSignatureMove);
-            PetSlowID.ElectricBasedSlows.Add(CalSlows.rotomThunderWave);
-            PetSlowID.ColdBasedSlows.Add(CalSlows.rotomBlizzard);
+            internal static int PlagueSlow;
+            internal static int AstrophageSlow;
+            internal static int TrashmanSignatureMove;
+            internal static int RotomThunderWave;
+            internal static int RotomBlizzard;
+        }
+        public static void AddCalamityPetSlowIDs() //This runs in Load()
+        {
+            PetSlowID.RegisterSlowID(nameof(CalSlows.AstrophageSlow), ref CalSlows.AstrophageSlow);
+            PetSlowID.RegisterSlowID(nameof(CalSlows.PlagueSlow), ref CalSlows.PlagueSlow);
+            PetSlowID.RegisterSlowID(nameof(CalSlows.TrashmanSignatureMove), ref CalSlows.TrashmanSignatureMove);
+            PetSlowID.RegisterSlowID(nameof(CalSlows.RotomThunderWave), ref CalSlows.RotomThunderWave);
+            PetSlowID.RegisterSlowID(nameof(CalSlows.RotomBlizzard), ref CalSlows.RotomBlizzard);
+        }
+        public static void AddCalamityPetSlowSets() //This runs in ResizeArrays()
+        {
+            PetSlowID.Sets.SicknessBasedSlows[CalSlows.AstrophageSlow] = true;
+            PetSlowID.Sets.SicknessBasedSlows[CalSlows.PlagueSlow] = true;
+            PetSlowID.Sets.SicknessBasedSlows[CalSlows.TrashmanSignatureMove] = true;
+            PetSlowID.Sets.ElectricBasedSlows[CalSlows.RotomThunderWave] = true;
+            PetSlowID.Sets.ColdBasedSlows[CalSlows.RotomBlizzard] = true;
         }
         /// <summary>
         /// All Items listed under 'soil blocks' in Calamities official Wiki.

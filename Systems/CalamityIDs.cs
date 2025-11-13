@@ -46,15 +46,5 @@ namespace PetsOverhaulCalamityAddon.Systems
         public static int Sparks => ModContent.ItemType<EnchantedButterfly>();
         public static int Yuu => ModContent.ItemType<ChromaticOrb>();
     }
-    /// <summary>
-    /// CalamitySlows starts from 20 just in case.
-    /// </summary>
-    public class CalSlows
-    {
-        public static int AstrophageSlow = 20;
-        public const int PlagueSlow = 21;
-        public const int trashmanSignatureMove = 22;
-        public const int rotomThunderWave = 23;
-        public const int rotomBlizzard = 24;
-    }
+
 }

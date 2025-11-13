@@ -143,7 +143,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
             if (PetIsEquipped())
             {
                 modifiers.CritDamage += critDmg;
-                if (GlobalPet.CorruptEnemies.Contains(target.type))
+                if (PetModPlayer.CorruptEnemies.Contains(target.type))
                 {
                     modifiers.FinalDamage *= 1f + dmgIncrIfCorrupt;
                 }
@@ -151,22 +151,22 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         }
         public override void ModifyHurt(ref Player.HurtModifiers modifiers)
         {
-            if (PetIsEquipped() && modifiers.DamageSource.TryGetCausingEntity(out Entity entity) && ((entity is Projectile proj && proj.TryGetGlobalProjectile(out ProjectileSourceChecks source) && GlobalPet.CorruptEnemies.Contains(Main.npc[source.sourceNpcId].type) == false) || (entity is NPC npc && GlobalPet.CorruptEnemies.Contains(npc.type)) == false))
+            if (PetIsEquipped() && modifiers.DamageSource.TryGetCausingEntity(out Entity entity) && ((entity is Projectile proj && proj.TryGetGlobalProjectile(out PetGlobalProjectile source) && PetModPlayer.CorruptEnemies.Contains(Main.npc[source.sourceNpcId].type) == false) || (entity is NPC npc && PetModPlayer.CorruptEnemies.Contains(npc.type)) == false))
             {
                 modifiers.FinalDamage *= 1f + takenPenalty;
             }
         }
         public override void Load()
         {
-            GlobalPet.OnEnemyDeath += EnemyKillEffect;
+            PetModPlayer.OnEnemyDeath += EnemyKillEffect;
         }
         public override void Unload()
         {
-            GlobalPet.OnEnemyDeath -= EnemyKillEffect;
+            PetModPlayer.OnEnemyDeath -= EnemyKillEffect;
         }
         public static void EnemyKillEffect(NPC npc, Player player)
         {
-            if (player.TryGetModPlayer(out MiniHiveMindEffect hive) && hive.PetIsEquipped() && GlobalPet.CorruptEnemies.Contains(npc.type) && npc.SpawnedFromStatue == false)
+            if (player.TryGetModPlayer(out MiniHiveMindEffect hive) && hive.PetIsEquipped() && PetModPlayer.CorruptEnemies.Contains(npc.type) && npc.SpawnedFromStatue == false)
             {
                 hive.evilKills++;
             }

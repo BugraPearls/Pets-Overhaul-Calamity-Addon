@@ -31,7 +31,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         public override int PetAbilityCooldown => rebirthCooldown;
         public override int PetStackCurrent => timer + deadTimer + 2; //One or the other will be shown, and neither should be different than 0 at anytime when another is active, so should be fine. And a +2 because both default to -1 every frame.
         public override int PetStackMax => 0;
-        public override string PetStackSpecial => PetTextsColors.SecondsOutOfText(timer + deadTimer + 2, 0);
+        public override string PetStackSpecial => PetUtils.SecondsOutOfText(timer + deadTimer + 2, 0);
         public override string PetStackText => deadTimer > 0 ? Compatibility.LocVal("PetTooltips.McNuggetsDelayStack") : Compatibility.LocVal("PetTooltips.McNuggetsStack");
         public override void PostUpdateMiscEffects()
         {
@@ -150,7 +150,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
             }
         }
         public override string PetsTooltip => Compatibility.LocVal("PetTooltips.McNuggets")
-                        .Replace("<keybind>", PetTextsColors.KeybindText(PetKeybinds.UsePetAbility))
+                        .Replace("<keybind>", PetUtils.KeybindText(PetKeybinds.UsePetAbility))
                         .Replace("<dmgRebirth>", Math.Round(yharon.dmgRebirth * 100, 2).ToString())
                         .Replace("<defRebirth>", yharon.defRebirth.ToString())
                         .Replace("<msRebirth>", Math.Round(yharon.msRebirth * 100, 2).ToString())
@@ -158,6 +158,6 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                         .Replace("<rebornDuration>", Math.Round(yharon.rebirthDuration / 60f, 2).ToString())
                         .Replace("<cooldown>", Math.Round(yharon.rebirthCooldown / 3600f, 2).ToString())
                         .Replace("<delaySec>", Math.Round(yharon.deathDelayDuration / 60f, 2).ToString());
-        public override string SimpleTooltip => Compatibility.LocVal("SimpleTooltips.McNuggets").Replace("<keybind>", PetTextsColors.KeybindText(PetKeybinds.UsePetAbility));
+        public override string SimpleTooltip => Compatibility.LocVal("SimpleTooltips.McNuggets").Replace("<keybind>", PetUtils.KeybindText(PetKeybinds.UsePetAbility));
     }
 }

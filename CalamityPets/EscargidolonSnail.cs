@@ -108,7 +108,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                     default:
                 }
                 return Compatibility.LocVal("PetTooltips.AbyssShellFossil")
-                    .Replace("<switchKeybind>", PetTextsColors.KeybindText(PetKeybinds.PetAbilitySwitch))
+                    .Replace("<switchKeybind>", PetUtils.KeybindText(PetKeybinds.PetAbilitySwitch))
                     .Replace("<tooltip>", Tooltip);
             }
         }

@@ -51,11 +51,11 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
             }
         }
         public override string PetsTooltip => Compatibility.LocVal("PetTooltips.HermitsBoxofOneHundredMedicines")
-                    .Replace("<keybind>", PetTextsColors.KeybindText(PetKeybinds.UsePetAbility))
+                    .Replace("<keybind>", PetUtils.KeybindText(PetKeybinds.UsePetAbility))
                     .Replace("<flatHeal>", sage.flatHealing.ToString())
                     .Replace("<percHeal>", Math.Round(sage.percHealing * 100, 2).ToString())
                     .Replace("<cooldown>", Math.Round(sage.cooldown / 60f, 2).ToString())
                     .Replace("<damageMult>", Math.Round(sage.damageMult, 2).ToString());
-        public override string SimpleTooltip => Compatibility.LocVal("SimpleTooltips.HermitsBoxofOneHundredMedicines").Replace("<keybind>", PetTextsColors.KeybindText(PetKeybinds.UsePetAbility));
+        public override string SimpleTooltip => Compatibility.LocVal("SimpleTooltips.HermitsBoxofOneHundredMedicines").Replace("<keybind>", PetUtils.KeybindText(PetKeybinds.UsePetAbility));
     }
 }

@@ -49,7 +49,7 @@ namespace PetsOverhaulCalamityAddon.Projectiles
             {
                 if (Projectile.Distance(npc.Center) < Trashman.radius)
                 {
-                    NpcPet.AddSlow(new NpcPet.PetSlow(Trashman.slow * SickWeakness(npc), Trashman.slowDuration, CalSlows.trashmanSignatureMove), npc);
+                    PetGlobalNPC.AddSlow(new PetGlobalNPC.PetSlow(Trashman.slow * SickWeakness(npc), Trashman.slowDuration, CalSlows.trashmanSignatureMove), npc);
 
                     if (Main.rand.NextBool(Math.Min((int)(Trashman.confusionChance * SickWeakness(npc)), 100), 100))
                     {

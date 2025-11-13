@@ -57,7 +57,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         }
         public override void ModifyHitNPCWithProj(Projectile proj, NPC target, ref NPC.HitModifiers modifiers)
         {
-            if (PetIsEquipped() && modifiers.DamageType is not SummonDamageClass && proj.TryGetGlobalProjectile(out ProjectileSourceChecks source) && source.itemProjIsFrom is not null &&
+            if (PetIsEquipped() && modifiers.DamageType is not SummonDamageClass && proj.TryGetGlobalProjectile(out PetGlobalProjectile source) && source.itemProjIsFrom is not null &&
                 source.itemProjIsFrom.channel == false && ItemIsATool(source.itemProjIsFrom) == false)
             {
                 SetCritDmgModifs(ref modifiers);

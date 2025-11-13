@@ -23,7 +23,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
             if (DiffCheck)
             {
                 SoundEngine.PlaySound(SoundID.Meowmere, Player.Center);
-                GlobalPet.CircularDustEffect(Player.Center, DustID.PinkFairy, block, 30);
+                PetModPlayer.CircularDustEffect(Player.Center, DustID.PinkFairy, block, 30);
                 foreach (var npc in Main.ActiveNPCs)
                 {
                     if (Player.Distance(npc.Center) < block && npc.dontTakeDamage == false)
@@ -63,9 +63,9 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
             }
         }
         public override string PetsTooltip => Compatibility.LocVal("PetTooltips.CosmicPlushie")
-                .Replace("<color>", PetTextsColors.SupportiveClass.Hex3())
+                .Replace("<color>", PetUtils.SupportiveClass.Hex3())
                 .Replace("<damage>", chibiiDevourer.dmg.ToString())
                 .Replace("<block>", Math.Round(chibiiDevourer.block / 16f, 2).ToString());
-        public override string SimpleTooltip => Compatibility.LocVal("SimpleTooltips.CosmicPlushie").Replace("<color>", PetTextsColors.SupportiveClass.Hex3());
+        public override string SimpleTooltip => Compatibility.LocVal("SimpleTooltips.CosmicPlushie").Replace("<color>", PetUtils.SupportiveClass.Hex3());
     }
 }

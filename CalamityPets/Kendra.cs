@@ -19,7 +19,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         public override string PetStackText => Compatibility.LocVal("PetTooltips.RomajedaOrchidStack");
         public override void ModifyHitNPCWithProj(Projectile proj, NPC target, ref NPC.HitModifiers modifiers)
         {
-            if (currentNextDamage > 0 && PetIsEquipped() && GlobalPet.LifestealCheck(target) && modifiers.DamageType is RogueDamageClass)
+            if (currentNextDamage > 0 && PetIsEquipped() && PetModPlayer.LifestealCheck(target) && modifiers.DamageType is RogueDamageClass)
             {
                 modifiers.FlatBonusDamage += currentNextDamage * (proj.Calamity().stealthStrike ? stealthMult : 1f);
                 currentNextDamage = 0;
@@ -27,11 +27,11 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         }
         public override void Load()
         {
-            GlobalPet.OnEnemyDeath += OnKillEffect;
+            PetModPlayer.OnEnemyDeath += OnKillEffect;
         }
         public override void Unload()
         {
-            GlobalPet.OnEnemyDeath -= OnKillEffect;
+            PetModPlayer.OnEnemyDeath -= OnKillEffect;
         }
         public static void OnKillEffect(NPC npc, Player player)
         {

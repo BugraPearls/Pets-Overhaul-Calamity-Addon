@@ -293,10 +293,10 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                             {
                                 if (target.Distance(npc.Center) < tWaveRadius)
                                 {
-                                    NpcPet.AddSlow(new NpcPet.PetSlow(tWaveSlow * GetTypeEffectiveness(npc, thunderWave), tWaveDuration, CalSlows.rotomThunderWave), npc);
+                                    PetGlobalNPC.AddSlow(new PetGlobalNPC.PetSlow(tWaveSlow * GetTypeEffectiveness(npc, thunderWave), tWaveDuration, CalSlows.rotomThunderWave), npc);
                                 }
                             }
-                            GlobalPet.CircularDustEffect(target.Center, DustID.Electric, tWaveRadius, 10);
+                            PetModPlayer.CircularDustEffect(target.Center, DustID.Electric, tWaveRadius, 10);
                             if (ModContent.GetInstance<PetPersonalization>().AbilitySoundEnabled)
                                 SoundEngine.PlaySound(new SoundStyle("PetsOverhaulCalamityAddon/Sounds/ElectricTroublemaker/ThunderWave") with { PitchVariance = 0.6f }, target.Center);
                             Pet.timer += (int)(Pet.timerMax * tWaveCooldown);
@@ -319,7 +319,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                     case overheat:
                         if (Pet.timer + Pet.timerMax * overheatCooldown < Pet.timerMax)
                         {
-                            Projectile petProjectile = Projectile.NewProjectileDirect(GlobalPet.GetSource_Pet(EntitySourcePetIDs.PetProjectile), target.Center, Vector2.Zero, ModContent.ProjectileType<PetExplosion>(), Pet.PetDamage(overheatDmg * GetTypeEffectiveness(target, overheat), hit.DamageType), 0, Player.whoAmI, overheatRadius);
+                            Projectile petProjectile = Projectile.NewProjectileDirect(PetModPlayer.GetSource_Pet(EntitySourcePetIDs.PetProjectile), target.Center, Vector2.Zero, ModContent.ProjectileType<PetExplosion>(), Pet.PetDamage(overheatDmg * GetTypeEffectiveness(target, overheat), hit.DamageType), 0, Player.whoAmI, overheatRadius);
                             petProjectile.DamageType = hit.DamageType;
                             petProjectile.CritChance = (int)Player.GetTotalCritChance(hit.DamageType);
                             if (target.active)
@@ -331,7 +331,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                                 Dust.NewDustPerfect(target.Center + Main.rand.NextVector2Circular(overheatRadius, overheatRadius), DustID.SolarFlare);
                             }
 
-                            Projectile petProj = Projectile.NewProjectileDirect(GlobalPet.GetSource_Pet(EntitySourcePetIDs.PetProjectile), Player.Center, Vector2.Zero, ModContent.ProjectileType<PetExplosion>(), Pet.PetDamage(overheatDmg * GetTypeEffectiveness(target, overheat), hit.DamageType), 0, Player.whoAmI, overheatRadius);
+                            Projectile petProj = Projectile.NewProjectileDirect(PetModPlayer.GetSource_Pet(EntitySourcePetIDs.PetProjectile), Player.Center, Vector2.Zero, ModContent.ProjectileType<PetExplosion>(), Pet.PetDamage(overheatDmg * GetTypeEffectiveness(target, overheat), hit.DamageType), 0, Player.whoAmI, overheatRadius);
                             petProj.DamageType = hit.DamageType;
                             petProj.CritChance = (int)Player.GetTotalCritChance(hit.DamageType);
                             for (int i = 0; i < 10; i++)
@@ -347,7 +347,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                     case blizzard:
                         if (Pet.timer + Pet.timerMax * leafStormCooldown < Pet.timerMax)
                         {
-                            Projectile petProjectile = Projectile.NewProjectileDirect(GlobalPet.GetSource_Pet(EntitySourcePetIDs.PetProjectile), target.Center, Vector2.Zero, ModContent.ProjectileType<RotomBlizzard>(), Pet.PetDamage(blizzardDmg, hit.DamageType), 0, Player.whoAmI, blizzardRadius, blizzardDuration); //does its type effectiveness in Projectile code
+                            Projectile petProjectile = Projectile.NewProjectileDirect(PetModPlayer.GetSource_Pet(EntitySourcePetIDs.PetProjectile), target.Center, Vector2.Zero, ModContent.ProjectileType<RotomBlizzard>(), Pet.PetDamage(blizzardDmg, hit.DamageType), 0, Player.whoAmI, blizzardRadius, blizzardDuration); //does its type effectiveness in Projectile code
                             petProjectile.DamageType = hit.DamageType;
                             petProjectile.CritChance = (int)Player.GetTotalCritChance(hit.DamageType);
                             if (ModContent.GetInstance<PetPersonalization>().AbilitySoundEnabled)
@@ -360,7 +360,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                         {
                             for (int i = 0; i < Main.rand.Next(minimumLeaf, maxLeaf); i++)
                             {
-                                Projectile petProjectile = Projectile.NewProjectileDirect(GlobalPet.GetSource_Pet(EntitySourcePetIDs.PetProjectile), target.Center + Main.rand.NextVector2CircularEdge(target.width, target.height), Main.rand.NextVector2CircularEdge(10, 10), ProjectileID.Leaf, Pet.PetDamage(leafStormDmg * GetTypeEffectiveness(target, leafStorm), hit.DamageType), 0, Player.whoAmI);
+                                Projectile petProjectile = Projectile.NewProjectileDirect(PetModPlayer.GetSource_Pet(EntitySourcePetIDs.PetProjectile), target.Center + Main.rand.NextVector2CircularEdge(target.width, target.height), Main.rand.NextVector2CircularEdge(10, 10), ProjectileID.Leaf, Pet.PetDamage(leafStormDmg * GetTypeEffectiveness(target, leafStorm), hit.DamageType), 0, Player.whoAmI);
                                 petProjectile.DamageType = hit.DamageType;
                                 petProjectile.CritChance = (int)Player.GetTotalCritChance(hit.DamageType);
                             }
@@ -384,7 +384,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                             {
                                 Dust.NewDustPerfect(target.Center + Main.rand.NextVector2Circular(airSlashRadius / 2.5f, airSlashRadius / 2.5f), DustID.Cloud, new Vector2(hit.HitDirection * 6, -3)).noGravity = true;
                             }
-                            GlobalPet.CircularDustEffect(target.Center, DustID.Snow, airSlashRadius, 10);
+                            PetModPlayer.CircularDustEffect(target.Center, DustID.Snow, airSlashRadius, 10);
                             if (ModContent.GetInstance<PetPersonalization>().AbilitySoundEnabled)
                                 SoundEngine.PlaySound(new SoundStyle("PetsOverhaulCalamityAddon/Sounds/ElectricTroublemaker/AirSlash") with { PitchVariance = 0.5f }, target.Center);
                             Pet.timer += (int)(Pet.timerMax * airSlashCooldown);
@@ -492,8 +492,8 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                 }
                 ;
                 return Compatibility.LocVal("PetTooltips.TheEtomer")
-                       .Replace("<abilitySwitch>", PetTextsColors.KeybindText(PetKeybinds.PetAbilitySwitch))
-                       .Replace("<abilityUse>", PetTextsColors.KeybindText(PetKeybinds.UsePetAbility))
+                       .Replace("<abilitySwitch>", PetUtils.KeybindText(PetKeybinds.PetAbilitySwitch))
+                       .Replace("<abilityUse>", PetUtils.KeybindText(PetKeybinds.UsePetAbility))
                        .Replace("<dexMult>", ElectricTroublemakerEffect.dexMult.ToString())
                        .Replace("<STABMult>", ElectricTroublemakerEffect.STABMult.ToString())
                        .Replace("<baseCooldown>", Math.Round(rotom.baseCooldown / 60f, 2).ToString())
@@ -501,6 +501,6 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
             }
         }
         public override string SimpleTooltip => Compatibility.LocVal("SimpleTooltips.TheEtomer")
-            .Replace("<abilitySwitch>", PetTextsColors.KeybindText(PetKeybinds.PetAbilitySwitch)).Replace("<abilityUse>", PetTextsColors.KeybindText(PetKeybinds.UsePetAbility));
+            .Replace("<abilitySwitch>", PetUtils.KeybindText(PetKeybinds.PetAbilitySwitch)).Replace("<abilityUse>", PetUtils.KeybindText(PetKeybinds.UsePetAbility));
     }
 }

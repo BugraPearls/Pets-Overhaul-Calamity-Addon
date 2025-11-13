@@ -59,7 +59,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                 if (ModContent.GetInstance<PetPersonalization>().AbilitySoundEnabled)
                     SoundEngine.PlaySound(SoundID.DD2_DarkMageCastHeal with { PitchVariance = 0.4f }, Player.Center);
 
-                GlobalPet.CircularDustEffect(Player.Center, DustID.HealingPlus, radius, 30, scale: 2f);
+                PetModPlayer.CircularDustEffect(Player.Center, DustID.HealingPlus, radius, 30, scale: 2f);
 
                 foreach (var npc in Main.ActiveNPCs)
                 {
@@ -131,10 +131,10 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         public override string PetsTooltip => Compatibility.LocVal("PetTooltips.JoyfulHeart")
                 .Replace("<selfDmg>", shark.selfDmg.ToString())
                 .Replace("<takenDmg>", shark.enemyDmg.ToString())
-                .Replace("<keybind>", PetTextsColors.KeybindText(PetKeybinds.UsePetAbility).ToString())
+                .Replace("<keybind>", PetUtils.KeybindText(PetKeybinds.UsePetAbility).ToString())
                 .Replace("<radius>", Math.Round(shark.radius / 16f, 2).ToString())
                 .Replace("<perSecRegen>", shark.grantRegen.ToString())
                 .Replace("<duration>", Math.Round(shark.regenDuration / 60f, 2).ToString());
-        public override string SimpleTooltip => Compatibility.LocVal("SimpleTooltips.JoyfulHeart").Replace("<keybind>", PetTextsColors.KeybindText(PetKeybinds.UsePetAbility).ToString());
+        public override string SimpleTooltip => Compatibility.LocVal("SimpleTooltips.JoyfulHeart").Replace("<keybind>", PetUtils.KeybindText(PetKeybinds.UsePetAbility).ToString());
     }
 }

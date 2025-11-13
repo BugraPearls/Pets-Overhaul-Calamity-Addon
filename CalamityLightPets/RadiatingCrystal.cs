@@ -16,7 +16,7 @@ namespace PetsOverhaulCalamityAddon.CalamityLightPets
         {
             if (Player.miscEquips[1].TryGetGlobalItem(out RadiatingCrystalPet crystal))
             {
-                GlobalPet.CircularDustEffect(Player.Center, DustID.CursedTorch, crystal.PoisonRadius.CurrentStatInt, crystal.PoisonRadius.CurrentStatInt / 20);
+                PetModPlayer.CircularDustEffect(Player.Center, DustID.CursedTorch, crystal.PoisonRadius.CurrentStatInt, crystal.PoisonRadius.CurrentStatInt / 20);
                 Player.GetKnockback<GenericDamageClass>() += crystal.Knockback.CurrentStatFloat;
                 for (int i = 0; i < Player.MaxBuffs; i++)
                 {

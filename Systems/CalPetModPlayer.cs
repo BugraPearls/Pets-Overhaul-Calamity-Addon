@@ -49,7 +49,7 @@ namespace PetsOverhaulCalamityAddon.Systems
         {
             if (Player.Calamity().fungalSymbiote && TileBeforeSymbiote == false && CalamityUtils.ParanoidTileRetrieval(X, Y).HasTile)
             {
-                TilePlacement.AddToList(X, Y);
+                PetGlobalTile.AddToList(X, Y);
             }
         }
         public override void PostUpdateEquips()

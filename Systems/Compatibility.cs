@@ -60,13 +60,13 @@ namespace PetsOverhaulCalamityAddon.Systems
     public class Compatibility //All initiated in PetsOverhaulCalamityAddon.cs
     {
         /// <summary>
-        /// Same as PetTextsColors.LocVal for Calamity Addon. Shortened version of GetTextValue.
+        /// Same as PetUtils.LocVal for Calamity Addon. Shortened version of GetTextValue.
         /// </summary>
         public static string LocVal(string localizationKeyValue)
         {
             return Language.GetTextValue("Mods.PetsOverhaulCalamityAddon." + localizationKeyValue);
         }
-        public static Dictionary<string, int> CalamityLightPetItemIDs = new()
+        public static Dictionary<string, int> CalamityLightPetIDs = new()
         {
             { "RustedJingleBell", CalamityLightPetIDs.BabyGhostBell },
             { "ThiefsDime", CalamityLightPetIDs.Goldie },
@@ -77,7 +77,7 @@ namespace PetsOverhaulCalamityAddon.Systems
             { "EnchantedButterfly", CalamityLightPetIDs.Sparks },
             { "ChromaticOrb", CalamityLightPetIDs.Yuu },
         };
-        public static Dictionary<string, int> CalamityPetItemIDs = new()
+        public static Dictionary<string, int> CalamityPetIDs = new()
         {
             { "ForgottenDragonEgg",CalamityPetIDs.Akato },
             { "AstrophageItem", CalamityPetIDs.Astrophage },
@@ -106,8 +106,8 @@ namespace PetsOverhaulCalamityAddon.Systems
         /// </summary>
         public static void AddPetItemNames()
         {
-            PetItemIDs.PetNamesAndItems.AddRange(CalamityPetItemIDs);
-            PetItemIDs.LightPetNamesAndItems.AddRange(CalamityLightPetItemIDs);
+            PetIDs.PetNamesAndItems.AddRange(CalamityPetIDs);
+            PetIDs.LightPetNamesAndItems.AddRange(CalamityLightPetIDs);
         }
 
         public static List<(int, int[])> CalamityHarvestingItems = new()
@@ -160,25 +160,25 @@ namespace PetsOverhaulCalamityAddon.Systems
         public static List<int> CalamityNonBossTrueBosses = [ModContent.NPCType<DevourerofGodsHead>(), ModContent.NPCType<DevourerofGodsBody>(), ModContent.NPCType<DevourerofGodsTail>(), ModContent.NPCType<EbonianPaladin>(), ModContent.NPCType<CrimulanPaladin>(), ModContent.NPCType<SplitEbonianPaladin>(), ModContent.NPCType<SplitCrimulanPaladin>()];
         public static void AddCalamityNonBossTrueBosses()
         {
-            NpcPet.NonBossTrueBosses.AddRange(CalamityNonBossTrueBosses);
+            PetGlobalNPC.NonBossTrueBosses.AddRange(CalamityNonBossTrueBosses);
         }
 
         public static List<int> CalamityCorruptEnemies = [ModContent.NPCType<HiveTumor>(), ModContent.NPCType<EbonianBlightSlime>(), ModContent.NPCType<HiveMind>(), ModContent.NPCType<DankCreeper>(), ModContent.NPCType<DarkHeart>(), ModContent.NPCType<HiveBlob>(), ModContent.NPCType<HiveBlob2>(), ModContent.NPCType<EbonianPaladin>(), ModContent.NPCType<SplitEbonianPaladin>(), ModContent.NPCType<CorruptSlimeSpawn>(), ModContent.NPCType<CorruptSlimeSpawn2>()];
         public static void AddCalamityCorruptEnemies()
         {
-            GlobalPet.CorruptEnemies.AddRange(CalamityCorruptEnemies);
+            PetModPlayer.CorruptEnemies.AddRange(CalamityCorruptEnemies);
         }
 
         public static List<int> CalamityCrimsonEnemies = [ModContent.NPCType<PerforatorCyst>(), ModContent.NPCType<CrimulanBlightSlime>(), ModContent.NPCType<PerforatorBodyLarge>(), ModContent.NPCType<PerforatorBodyMedium>(), ModContent.NPCType<PerforatorBodySmall>(), ModContent.NPCType<PerforatorHeadLarge>(), ModContent.NPCType<PerforatorHeadMedium>(), ModContent.NPCType<PerforatorHeadSmall>(), ModContent.NPCType<PerforatorHive>(), ModContent.NPCType<PerforatorTailLarge>(), ModContent.NPCType<PerforatorTailMedium>(), ModContent.NPCType<PerforatorTailSmall>(), ModContent.NPCType<CrimulanPaladin>(), ModContent.NPCType<SplitCrimulanPaladin>(), ModContent.NPCType<CrimsonSlimeSpawn>(), ModContent.NPCType<CrimsonSlimeSpawn2>()];
         public static void AddCalamityCrimsonEnemies()
         {
-            GlobalPet.CrimsonEnemies.AddRange(CalamityCrimsonEnemies);
+            PetModPlayer.CrimsonEnemies.AddRange(CalamityCrimsonEnemies);
         }
 
         public static List<int> CalamityHallowEnemies = [ModContent.NPCType<CrawlerCrystal>(), ModContent.NPCType<ImpiousImmolator>(), ModContent.NPCType<ProfanedEnergyLantern>(), ModContent.NPCType<ProfanedEnergyBody>(), ModContent.NPCType<ScornEater>(), ModContent.NPCType<ProfanedGuardianCommander>(), ModContent.NPCType<ProfanedGuardianDefender>(), ModContent.NPCType<ProfanedGuardianHealer>(), ModContent.NPCType<ProfanedRocks>(), ModContent.NPCType<ProvSpawnDefense>(), ModContent.NPCType<ProvSpawnHealer>(), ModContent.NPCType<ProvSpawnOffense>(), ModContent.NPCType<Providence>()];
         public static void AddCalamityHallowEnemies()
         {
-            GlobalPet.HallowEnemies.AddRange(CalamityHallowEnemies);
+            PetModPlayer.HallowEnemies.AddRange(CalamityHallowEnemies);
         }
 
         public static Dictionary<int, SoundStyle[]> CalamityPetHurtSounds = new()
@@ -328,11 +328,11 @@ namespace PetsOverhaulCalamityAddon.Systems
         }
         public static void AddCalamityPetSlows()
         {
-            PetSlowIDs.SicknessBasedSlows.Add(CalSlows.AstrophageSlow);
-            PetSlowIDs.SicknessBasedSlows.Add(CalSlows.PlagueSlow);
-            PetSlowIDs.SicknessBasedSlows.Add(CalSlows.trashmanSignatureMove);
-            PetSlowIDs.ElectricBasedSlows.Add(CalSlows.rotomThunderWave);
-            PetSlowIDs.ColdBasedSlows.Add(CalSlows.rotomBlizzard);
+            PetSlowID.SicknessBasedSlows.Add(CalSlows.AstrophageSlow);
+            PetSlowID.SicknessBasedSlows.Add(CalSlows.PlagueSlow);
+            PetSlowID.SicknessBasedSlows.Add(CalSlows.trashmanSignatureMove);
+            PetSlowID.ElectricBasedSlows.Add(CalSlows.rotomThunderWave);
+            PetSlowID.ColdBasedSlows.Add(CalSlows.rotomBlizzard);
         }
         /// <summary>
         /// All Items listed under 'soil blocks' in Calamities official Wiki.
@@ -376,7 +376,7 @@ namespace PetsOverhaulCalamityAddon.Systems
         }
         public static void AddCalamityNPCsToIgnoreForMiscEffects()
         {
-            GlobalPet.EnemiesForLifestealToIgnore.Add(ModContent.NPCType<SuperDummyNPC>());
+            PetModPlayer.EnemiesForLifestealToIgnore.Add(ModContent.NPCType<SuperDummyNPC>());
         }
     }
 }

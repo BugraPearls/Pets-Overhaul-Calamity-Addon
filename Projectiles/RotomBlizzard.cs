@@ -1,6 +1,7 @@
 ﻿using CalamityMod.Buffs.StatDebuffs;
 using Microsoft.Xna.Framework;
 using PetsOverhaul.NPCs;
+using PetsOverhaul.Systems;
 using PetsOverhaulCalamityAddon.CalamityPets;
 using PetsOverhaulCalamityAddon.Systems;
 using Terraria;
@@ -34,7 +35,7 @@ namespace PetsOverhaulCalamityAddon.Projectiles
             {
                 if (Projectile.getRect().Intersects(npc.getRect()))
                 {
-                    PetGlobalNPC.AddSlow(new PetGlobalNPC.PetSlow(Rotom.coldSlow * Rotom.GetTypeEffectiveness(npc, ElectricTroublemakerEffect.blizzard), 1, CalSlows.rotomBlizzard), npc);
+                    PetGlobalNPC.AddSlow(new PetSlow(Rotom.coldSlow * Rotom.GetTypeEffectiveness(npc, ElectricTroublemakerEffect.blizzard), 1, CalSlows.rotomBlizzard), npc);
                     if (npc.TryGetGlobalNPC(out RotomBlizzardFreeze blizzard))
                     {
                         blizzard.cooldownToResetFreeze = 60;

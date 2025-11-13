@@ -35,7 +35,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                     float dmg = (info.SourceDamage / 2 + Player.statDefense) * (1f + Player.endurance);
                     for (int i = 0; i < 5; i++)
                     {
-                        Projectile proj = Projectile.NewProjectileDirect(PetModPlayer.GetSource_Pet(EntitySourcePetIDs.PetProjectile), Player.Center, Main.rand.NextVector2CircularEdge(4f, 4f), ModContent.ProjectileType<BrimstoneFireballMinion>(), Pet.PetDamage(dmg, DamageClass.Generic), 0f, Player.whoAmI);
+                        Projectile proj = Projectile.NewProjectileDirect(PetUtils.GetSource_Pet(EntitySourcePetIDs.PetProjectile), Player.Center, Main.rand.NextVector2CircularEdge(4f, 4f), ModContent.ProjectileType<BrimstoneFireballMinion>(), Pet.PetDamage(dmg, DamageClass.Generic), 0f, Player.whoAmI);
                         proj.tileCollide = false;
                         proj.DamageType = DamageClass.Generic;
                         proj.CritChance = (int)Player.GetCritChance(DamageClass.Generic);

@@ -59,7 +59,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                 if (ModContent.GetInstance<PetPersonalization>().AbilitySoundEnabled)
                     SoundEngine.PlaySound(SoundID.DD2_DarkMageCastHeal with { PitchVariance = 0.4f }, Player.Center);
 
-                PetModPlayer.CircularDustEffect(Player.Center, DustID.HealingPlus, radius, 30, scale: 2f);
+                PetUtils.CircularDustEffect(Player.Center, DustID.HealingPlus, radius, 30, scale: 2f);
 
                 foreach (var npc in Main.ActiveNPCs)
                 {

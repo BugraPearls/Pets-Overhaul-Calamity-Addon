@@ -96,7 +96,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         }
         public override void ModifyHitNPCWithProj(Projectile proj, NPC target, ref NPC.HitModifiers modifiers)
         {
-            if (currentNextDamage > 0 && PetIsEquipped() && PetModPlayer.LifestealCheck(target) && modifiers.DamageType is RogueDamageClass)
+            if (currentNextDamage > 0 && PetIsEquipped() && PetUtils.LifestealCheck(target) && modifiers.DamageType is RogueDamageClass)
             {
                 modifiers.FlatBonusDamage += currentNextDamage * (lifeguardMultTimer > 0 ? lifeguardMult : 1f);
                 currentNextDamage = 0;

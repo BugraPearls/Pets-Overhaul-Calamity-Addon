@@ -60,13 +60,13 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                     if (npc.dontTakeDamage == false && Player.Distance(npc.Center) < detonateRadius && npc.TryGetGlobalNPC(out PlaguebringerBabStacks boom) && boom.stacks > 0)
                     {
                         npc.AddBuff(ModContent.BuffType<Plague>(), plagueAndSlowDuration);
-                        PetGlobalNPC.AddSlow(new PetGlobalNPC.PetSlow(slowAmount, plagueAndSlowDuration, CalSlows.PlagueSlow), npc);
+                        PetGlobalNPC.AddSlow(new PetSlow(slowAmount, plagueAndSlowDuration, CalSlows.PlagueSlow), npc);
                         npc.SimpleStrikeNPC(Pet.PetDamage(boom.stacks, DamageClass.Throwing), npc.direction, Main.rand.NextBool((int)Math.Min(Player.GetTotalCritChance<RogueDamageClass>(), 100), 100), 0, DamageClass.Throwing, true, Player.luck);
                         boom.stacks = 0;
                         boom.timer = 0;
                     }
                 }
-                PetModPlayer.CircularDustEffect(Player.Center, DustID.JungleTorch, detonateRadius, 200, scale: 2f);
+                PetUtils.CircularDustEffect(Player.Center, DustID.JungleTorch, detonateRadius, 200, scale: 2f);
                 Pet.timer = Pet.timerMax;
             }
 
@@ -76,11 +76,11 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
             if (PetIsEquipped() && hit.DamageType is RogueDamageClass && target.TryGetGlobalNPC(out PlaguebringerBabStacks victim) && hitThisFrame == false)
             {
                 hitThisFrame = true;
-                PetModPlayer.CircularDustEffect(target.Center, DustID.JungleTorch, surroundRadius, 12);
+                PetUtils.CircularDustEffect(target.Center, DustID.JungleTorch, surroundRadius, 12);
                 if (target.active)
                 {
                     victim.timer = timeToAdd;
-                    victim.stacks += Math.Max(PetModPlayer.Randomizer((int)(damageDone * mainTargetMult * 100)), 1);
+                    victim.stacks += Math.Max(PetUtils.Randomizer((int)(damageDone * mainTargetMult * 100)), 1);
                 }
                 foreach (var npc in Main.ActiveNPCs)
                 {
@@ -90,7 +90,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                     if (target.Distance(npc.Center) < surroundRadius && npc.TryGetGlobalNPC(out PlaguebringerBabStacks surrounder))
                     {
                         surrounder.timer = timeToAdd;
-                        surrounder.stacks += Math.Max(PetModPlayer.Randomizer((int)(damageDone * surroundingMult * 100)), 1);
+                        surrounder.stacks += Math.Max(PetUtils.Randomizer((int)(damageDone * surroundingMult * 100)), 1);
                     }
                 }
             }

@@ -153,7 +153,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         }
         public static void EnemyKillEffect(NPC npc, Player player)
         {
-            if (player.TryGetModPlayer(out MiniPerforatorEffect perf) && perf.PetIsEquipped() && PetModPlayer.CrimsonEnemies.Contains(npc.type) && npc.SpawnedFromStatue == false)
+            if (player.TryGetModPlayer(out MiniPerforatorEffect perf) && perf.PetIsEquipped() && PetIDs.CrimsonEnemies.Contains(npc.type) && npc.SpawnedFromStatue == false)
             {
                 perf.evilKills++;
             }
@@ -162,7 +162,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         {
             if (PetIsEquipped())
             {
-                if (PetModPlayer.CrimsonEnemies.Contains(target.type) == false)
+                if (PetIDs.CrimsonEnemies.Contains(target.type) == false)
                 {
                     modifiers.FinalDamage *= 1f - dmgPenalty;
                 }
@@ -170,7 +170,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         }
         public override void ModifyHurt(ref Player.HurtModifiers modifiers)
         {
-            if (PetIsEquipped() && modifiers.DamageSource.TryGetCausingEntity(out Entity entity) && ((entity is Projectile proj && proj.TryGetGlobalProjectile(out PetGlobalProjectile source) && PetModPlayer.CrimsonEnemies.Contains(Main.npc[source.sourceNpcId].type)) || (entity is NPC npc && PetModPlayer.CrimsonEnemies.Contains(npc.type))))
+            if (PetIsEquipped() && modifiers.DamageSource.TryGetCausingEntity(out Entity entity) && ((entity is Projectile proj && proj.TryGetGlobalProjectile(out PetGlobalProjectile source) && PetIDs.CrimsonEnemies.Contains(Main.npc[source.sourceNpcId].type)) || (entity is NPC npc && PetIDs.CrimsonEnemies.Contains(npc.type))))
             {
                 modifiers.FinalDamage *= 1f - drIfHurtByCrimson;
             }

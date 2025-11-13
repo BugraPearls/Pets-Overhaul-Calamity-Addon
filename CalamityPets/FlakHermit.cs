@@ -40,7 +40,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
             {
                 Dust.NewDustPerfect(center + Main.rand.NextVector2Circular(radius, radius), DustID.CursedTorch, Scale: 2f);
             }
-            PetModPlayer.CircularDustEffect(Player.Center, DustID.CursedTorch, radius, 20, scale: 2f);
+            PetUtils.CircularDustEffect(Player.Center, DustID.CursedTorch, radius, 20, scale: 2f);
         }
         public override int PetAbilityCooldown => cooldown;
         public override void PostUpdate()

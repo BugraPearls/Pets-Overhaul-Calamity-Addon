@@ -158,7 +158,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         }
         public static int CalculateStacks(NPC npc, int stackToAdd)
         {
-            if (npc.boss || PetGlobalNPC.NonBossTrueBosses.Contains(npc.type))
+            if (npc.boss || PetIDs.NonBossTrueBosses.Contains(npc.type))
             {
                 stackToAdd *= bossMult;
             }
@@ -202,7 +202,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         {
             if (PetIsEquipped() && beginOnHit > 0)
             {
-                Projectile petProjectile = Projectile.NewProjectileDirect(PetModPlayer.GetSource_Pet(EntitySourcePetIDs.PetProjectile), target.Center, Vector2.Zero, ModContent.ProjectileType<PetExplosion>(), Pet.PetDamage(hit.SourceDamage * (explosionMult + StackExplosionBonus), hit.DamageType), 0, Player.whoAmI, explosionSize + StackExplosionSize);
+                Projectile petProjectile = Projectile.NewProjectileDirect(PetUtils.GetSource_Pet(EntitySourcePetIDs.PetProjectile), target.Center, Vector2.Zero, ModContent.ProjectileType<PetExplosion>(), Pet.PetDamage(hit.SourceDamage * (explosionMult + StackExplosionBonus), hit.DamageType), 0, Player.whoAmI, explosionSize + StackExplosionSize);
                 petProjectile.DamageType = hit.DamageType;
                 petProjectile.CritChance = (int)Player.GetTotalCritChance(hit.DamageType);
                 if (ModContent.GetInstance<PetPersonalization>().AbilitySoundEnabled)
@@ -217,7 +217,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                     SoundEngine.PlaySound(new SoundStyle(path) with { PitchVariance = 0.6f, Identifier = "akatoExplosion", MaxInstances = 2, SoundLimitBehavior = SoundLimitBehavior.ReplaceOldest, Type = SoundType.Sound, Volume = 0.8f }, target.Center); //See disclaimer.txt in Sounds/Akato folder for further info regarding sounds origin
                 }
                 beginOnHit = 0;
-                if (PetModPlayer.LifestealCheck(target))
+                if (PetUtils.LifestealCheck(target))
                 {
                     dragonPracticeStacks += CalculateStacks(target, stackPerHit);
                 }
@@ -225,7 +225,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         }
         public override void OnHitNPCWithProj(Projectile proj, NPC target, NPC.HitInfo hit, int damageDone)
         {
-            if (PetIsEquipped() && PetModPlayer.LifestealCheck(target) && proj.TryGetGlobalProjectile(out PetGlobalProjectile petProj) && petProj.petProj)
+            if (PetIsEquipped() && PetUtils.LifestealCheck(target) && proj.TryGetGlobalProjectile(out PetGlobalProjectile petProj) && petProj.petProj)
             {
                 dragonPracticeStacks += CalculateStacks(target, stackPerHit);
                 if (target.active && target.TryGetGlobalNPC(out SuperScorcherBreath scorch))
@@ -266,7 +266,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                 Smoldering highestExecute = Burns.MaxBy(x => x.ExecuteTreshold);
                 if (npc.life <= npc.lifeMax * highestExecute.ExecuteTreshold)
                 {
-                    PetModPlayer.RemoveOldestCombatText();
+                    PetUtils.RemoveOldestCombatText();
 
                     CombatText.NewText(npc.getRect(), Color.GhostWhite, (int)(npc.lifeMax * highestExecute.ExecuteTreshold), true);
 

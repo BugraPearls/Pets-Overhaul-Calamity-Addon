@@ -51,7 +51,7 @@ namespace PetsOverhaulCalamityAddon.Systems
     /// </summary>
     public class CalSlows
     {
-        public const int AstrophageSlow = 20;
+        public static int AstrophageSlow = 20;
         public const int PlagueSlow = 21;
         public const int trashmanSignatureMove = 22;
         public const int rotomThunderWave = 23;

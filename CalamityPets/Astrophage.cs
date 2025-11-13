@@ -30,8 +30,8 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         {
             if (PetIsEquipped())
             {
-                PetModPlayer.CircularDustEffect(Player.Center, DustID.CoralTorch, infectRadius, 8);
-                PetModPlayer.CircularDustEffect(Player.Center, DustID.Granite, slowRadius, 30, scale: 0.8f);
+                PetUtils.CircularDustEffect(Player.Center, DustID.CoralTorch, infectRadius, 8);
+                PetUtils.CircularDustEffect(Player.Center, DustID.Granite, slowRadius, 30, scale: 0.8f);
                 infectCount = 0;
                 foreach (var npc in Main.ActiveNPCs)
                 {
@@ -45,7 +45,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                         if (Player.Distance(npc.Center) < slowRadius && npc.Calamity().astralInfection > 0)
                         {
                             astro.infectedVal = infectionHeavySlow;
-                            PetGlobalNPC.AddSlow(new PetGlobalNPC.PetSlow(slowAmount, 1, CalSlows.AstrophageSlow), npc);
+                            PetGlobalNPC.AddSlow(new PetSlow(slowAmount, 1, CalSlows.AstrophageSlow), npc);
                             infectCount++;
                         }
                         else
@@ -70,7 +70,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         {
             if (infectedVal > 0 && npc.Calamity().astralInfection > 0)
             {
-                PetModPlayer.CircularDustEffect(npc.Center, DustID.DarkCelestial, deathSpreadRange, 40);
+                PetUtils.CircularDustEffect(npc.Center, DustID.DarkCelestial, deathSpreadRange, 40);
                 foreach (var target in Main.ActiveNPCs)
                 {
                     if (target == npc)
@@ -84,7 +84,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                 if (closestWhoAmI != -1)
                 {
                     Main.npc[closestWhoAmI].AddBuff(ModContent.BuffType<AstralInfectionDebuff>(), npc.Calamity().astralInfection);
-                    PetGlobalNPC.AddSlow(new PetGlobalNPC.PetSlow(infectedVal, deathSpreadSlowDur, CalSlows.AstrophageSlow), Main.npc[closestWhoAmI]);
+                    PetGlobalNPC.AddSlow(new PetSlow(infectedVal, deathSpreadSlowDur, CalSlows.AstrophageSlow), Main.npc[closestWhoAmI]);
                 }
             }
         }

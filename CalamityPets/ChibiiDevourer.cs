@@ -23,7 +23,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
             if (DiffCheck)
             {
                 SoundEngine.PlaySound(SoundID.Meowmere, Player.Center);
-                PetModPlayer.CircularDustEffect(Player.Center, DustID.PinkFairy, block, 30);
+                PetUtils.CircularDustEffect(Player.Center, DustID.PinkFairy, block, 30);
                 foreach (var npc in Main.ActiveNPCs)
                 {
                     if (Player.Distance(npc.Center) < block && npc.dontTakeDamage == false)

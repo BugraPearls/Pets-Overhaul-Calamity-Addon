@@ -2,7 +2,6 @@
 using CalamityMod.Items.Armor.Demonshade;
 using CalamityMod.Items.Fishing.AstralCatches;
 using CalamityMod.Items.Materials;
-using CalamityMod.Items.Mounts;
 using CalamityMod.Items.Placeables;
 using CalamityMod.Items.Placeables.Ores;
 using CalamityMod.Items.Potions;

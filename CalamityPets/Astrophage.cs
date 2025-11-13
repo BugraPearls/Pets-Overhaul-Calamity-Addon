@@ -1,6 +1,5 @@
 using CalamityMod;
 using CalamityMod.Buffs.DamageOverTime;
-using PetsOverhaul.NPCs;
 using PetsOverhaul.Systems;
 using PetsOverhaulCalamityAddon.Systems;
 using System;

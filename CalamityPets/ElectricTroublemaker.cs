@@ -1,9 +1,7 @@
 using CalamityMod;
 using CalamityMod.CalPlayer;
-using CalamityMod.NPCs.NormalNPCs;
 using Microsoft.Xna.Framework;
 using PetsOverhaul.Config;
-using PetsOverhaul.NPCs;
 using PetsOverhaul.Projectiles;
 using PetsOverhaul.Systems;
 using PetsOverhaulCalamityAddon.Projectiles;

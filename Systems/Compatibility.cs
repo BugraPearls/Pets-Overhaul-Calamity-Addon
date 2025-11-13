@@ -43,7 +43,6 @@ using CalamityMod.NPCs.Providence;
 using CalamityMod.NPCs.SlimeGod;
 using CalamityMod.Sounds;
 using MonoMod.Utils;
-using PetsOverhaul.NPCs;
 using PetsOverhaul.PetEffects;
 using PetsOverhaul.Systems;
 using System.Collections.Generic;

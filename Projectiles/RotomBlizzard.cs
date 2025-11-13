@@ -1,9 +1,7 @@
 ﻿using CalamityMod.Buffs.StatDebuffs;
 using Microsoft.Xna.Framework;
-using PetsOverhaul.NPCs;
 using PetsOverhaul.Systems;
 using PetsOverhaulCalamityAddon.CalamityPets;
-using PetsOverhaulCalamityAddon.Systems;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;

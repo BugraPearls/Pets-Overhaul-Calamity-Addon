@@ -1,4 +1,3 @@
-using PetsOverhaul.Projectiles;
 using PetsOverhaul.Systems;
 using PetsOverhaulCalamityAddon.Systems;
 using System;

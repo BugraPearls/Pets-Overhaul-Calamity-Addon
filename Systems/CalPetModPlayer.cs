@@ -56,7 +56,7 @@ namespace PetsOverhaulCalamityAddon.Systems
         {
             if (Player.TryGetModPlayer(out Moonling moonling))
             {
-                moonling.ExternalTooltips.Add(new Moonling.ClassAndItsTooltip(PetClasses.Rogue,RogueClassText));
+                moonling.ExternalTooltips.Add(new Moonling.ClassAndItsTooltip(PetClasses.Rogue, RogueClassText));
                 if (moonling.PetIsEquipped() && moonling.currentClass == moonling.Tooltips.FindIndex(x => x.Class == PetClasses.Rogue))
                 {
                     Player.Calamity().rogueVelocity += rogueVelo;

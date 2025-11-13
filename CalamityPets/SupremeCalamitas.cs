@@ -1,5 +1,4 @@
 ﻿using PetsOverhaul.Buffs;
-using PetsOverhaul.Projectiles;
 using PetsOverhaul.Systems;
 using PetsOverhaulCalamityAddon.Systems;
 using System;
@@ -17,7 +16,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         public float critDmgReduce = 0.5f;
         public float critChanceToDmg = 1.1f;
         public float magicExtraCost = 0.9f;
-        public override string PetStackSpecial => Math.Round((Player.GetTotalCritChance(Player.HeldItem.DamageType)+Player.HeldItem.crit) * critChanceToDmg - critDmgReduce * 100, 2).ToString() + "%";
+        public override string PetStackSpecial => Math.Round((Player.GetTotalCritChance(Player.HeldItem.DamageType) + Player.HeldItem.crit) * critChanceToDmg - critDmgReduce * 100, 2).ToString() + "%";
         public override string PetStackText => Compatibility.LocVal("PetTooltips.BrimstoneJewelStack");
         public static bool ItemIsATool(Item item)
         {

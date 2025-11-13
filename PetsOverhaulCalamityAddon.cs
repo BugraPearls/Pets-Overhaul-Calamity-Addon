@@ -4,6 +4,6 @@ namespace PetsOverhaulCalamityAddon
 {
     public class PetsOverhaulCalamityAddon : Mod
     {
-       
+
     }
 }

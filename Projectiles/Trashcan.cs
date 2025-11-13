@@ -1,11 +1,9 @@
 ﻿using CalamityMod;
 using Microsoft.Xna.Framework;
 using PetsOverhaul.Config;
-using PetsOverhaul.NPCs;
 using PetsOverhaul.Systems;
 using PetsOverhaulCalamityAddon.Buffs;
 using PetsOverhaulCalamityAddon.CalamityPets;
-using PetsOverhaulCalamityAddon.Systems;
 using System;
 using Terraria;
 using Terraria.Audio;

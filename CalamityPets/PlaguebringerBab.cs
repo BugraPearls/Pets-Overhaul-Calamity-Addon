@@ -2,7 +2,6 @@ using CalamityMod;
 using CalamityMod.Buffs.DamageOverTime;
 using Microsoft.Xna.Framework;
 using PetsOverhaul.Config;
-using PetsOverhaul.NPCs;
 using PetsOverhaul.Systems;
 using PetsOverhaulCalamityAddon.Systems;
 using System;
@@ -27,7 +26,9 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         public int plagueAndSlowDuration = 150;
         public float slowAmount = 0.25f;
         private bool hitThisFrame = false;
-        public int CurrentCanDetonate { get 
+        public int CurrentCanDetonate
+        {
+            get
             {
                 int current = 0;
                 foreach (var npc in Main.ActiveNPCs)

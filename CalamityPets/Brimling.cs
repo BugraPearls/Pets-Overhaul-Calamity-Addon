@@ -1,5 +1,4 @@
 using CalamityMod.Projectiles.Summon;
-using PetsOverhaul.Projectiles;
 using PetsOverhaul.Systems;
 using PetsOverhaulCalamityAddon.Systems;
 using System;

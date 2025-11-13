@@ -2,11 +2,11 @@ Mods: {
 	PetsOverhaulCalamityAddon: {
 		MoonlingRogueTooltip:
 			'''
-			- 盗贼加成：
-			 - 增加<rogueStealthMax>点最大潜行值
-			 - 增加<rogueStealthGain>%潜行值恢复速度
-			 - 增加<rogueDmg>%盗贼伤害
-			 - 增加<rogueVelocity>%盗贼弹幕速度
+			盗贼加成：
+			  - 增加<rogueStealthMax>点最大潜行值
+			  - 增加<rogueStealthGain>%潜行值恢复速度
+			  - 增加<rogueDmg>%盗贼伤害
+			  - 增加<rogueVelocity>%盗贼弹幕速度
 			'''
 		JunimoExtraBosses: ，亵渎天神，神明吞噬者
 
@@ -86,52 +86,52 @@ Mods: {
 		PetTooltips: {
 			ForgottenDragonEgg:
 				'''
-				- [i:<stackIcon>] 当前层数：<dragonPractice>。以下方式可以叠加层数：
-				 * 充能攻击直接击中和爆炸命中的所有敌人都会叠加<hitStack>层
-				 * 爆炸燃烧杀死的敌人会叠加<killStack>层
-				 * 如果目标是Boss，获得的层数变为<bossMultiply>倍，否则变为（其稀有度 + 1）倍
-				- 按下宠物技能键（<keybind>）以充能超级灼热龙息，使你的下一次攻击命中时爆炸
-				 * 爆炸击中的敌人会燃烧并给予你永久层数，此效果有<cooldown>秒冷却
-				 * 在不攻击<expire>秒后，超级灼热龙息需要重新充能
-				 * 爆炸会造成攻击伤害的<baseMult>% + [i:<stackIcon>] <stackMult>%，并具有<baseSize> + [i:<stackIcon>] <stackSize>格半径
-				 * 爆炸会燃烧敌人<burnDuration> + [i:<stackIcon>] <stackBurnDuration>秒，每秒造成<baseBurn> + [i:<stackIcon>] <stackBurn>伤害
-				 * 燃烧敌人的生命值低于<baseExecute>% + [i:<stackIcon>] <stackExecute>%时，立即处决它们
-				 * 爆炸和层数叠加对傀儡等无效，层数越高，层数提供的加成越少
+				[i:<stackIcon>] 当前层数：<dragonPractice>。以下方式可以叠加层数：
+				  - 充能攻击直接击中和爆炸命中的所有敌人都会叠加<hitStack>层
+				  - 爆炸燃烧杀死的敌人会叠加<killStack>层
+				  - 如果目标是Boss，获得的层数变为<bossMultiply>倍，否则变为（其稀有度 + 1）倍
+				按下宠物技能键（<keybind>）以充能超级灼热龙息，使你的下一次攻击命中时爆炸
+				  - 爆炸击中的敌人会燃烧并给予你永久层数，此效果有<cooldown>秒冷却
+				  - 在不攻击<expire>秒后，超级灼热龙息需要重新充能
+				  - 爆炸会造成攻击伤害的<baseMult>% + [i:<stackIcon>] <stackMult>%，并具有<baseSize> + [i:<stackIcon>] <stackSize>格半径
+				  - 爆炸会燃烧敌人<burnDuration> + [i:<stackIcon>] <stackBurnDuration>秒，每秒造成<baseBurn> + [i:<stackIcon>] <stackBurn>伤害
+				  - 燃烧敌人的生命值低于<baseExecute>% + [i:<stackIcon>] <stackExecute>%时，立即处决它们
+				  - 爆炸和层数叠加对傀儡等无效，层数越高，层数提供的加成越少
 				'''
 			ForgottenDragonEggStack: "[i:<stackIcon>]阿卡托层数"
 			Astrophage:
 				'''
-				- 对<infectRadius>格范围内的敌人造成<infectDuration>秒幻星感染
-				- 对<slowRadius>格范围内受幻星感染影响的敌人造成<slowAmount>%减速
-				 - 带有幻星感染和减速效果的敌人死亡时会将幻星感染减益转移给<spreadRadius>格范围内最近的敌人，并造成<spreadSlow>%减速<spreadSlowDuration>秒
+				对<infectRadius>格范围内的敌人造成<infectDuration>秒幻星感染
+				对<slowRadius>格范围内受幻星感染影响的敌人造成<slowAmount>%减速
+				  - 带有幻星感染和减速效果的敌人死亡时会将幻星感染减益转移给<spreadRadius>格范围内最近的敌人，并造成<spreadSlow>%减速<spreadSlowDuration>秒
 				'''
 			// AstrophageStack: nearby infected enemies
 			BearsEye:
 				'''
-				- 受伤后低于<belowHealth>%生命值时会获得一个护盾<shieldDuration>秒，护盾值为<baseShield>%基础最大生命值 + <bonusShield>%额外最大生命值
-				 - 根据护盾值减少此次伤害
-				 - 此效果有<cooldown>秒冷却
-				- 增加<rogueDmg>%盗贼伤害，增加<stealthDmg>%潜伏攻击伤害
-				- 增加<stealthMoving>%移动时潜伏值恢复速度，不移动时增加<stealthNotMoving>%
+				受伤后低于<belowHealth>%生命值时会获得一个护盾<shieldDuration>秒，护盾值为<baseShield>%基础最大生命值 + <bonusShield>%额外最大生命值
+				  - 根据护盾值减少此次伤害
+				  - 此效果有<cooldown>秒冷却
+				增加<rogueDmg>%盗贼伤害，增加<stealthDmg>%潜伏攻击伤害
+				增加<stealthMoving>%移动时潜伏值恢复速度，不移动时增加<stealthNotMoving>%
 				'''
 			CharredRelic:
 				'''
-				- 生命值低于<treshold>%时增加<dr>%伤害减免
-				- 受伤会反弹伤害，并发射5个硫磺火球
-				 - 反弹原伤害的<reflectAmount>%
-				 - 你的生命值低于<treshold>%时，反弹伤害翻倍
-				 - 硫磺火球会造成（原伤害一半+你的防御）x伤害减免的伤害，并造成硫磺火减益
-				 - 硫磺火球会向随机方向发射
-				 - 受伤生成硫磺火球有<cooldown>秒冷却时间
+				生命值低于<treshold>%时增加<dr>%伤害减免
+				受伤会反弹伤害，并发射5个硫磺火球
+				  - 反弹原伤害的<reflectAmount>%
+				  - 你的生命值低于<treshold>%时，反弹伤害翻倍
+				  - 硫磺火球会造成（原伤害一半+你的防御）x伤害减免的伤害，并造成硫磺火减益
+				  - 硫磺火球会向随机方向发射
+				  - 受伤生成硫磺火球有<cooldown>秒冷却时间
 				'''
 			CosmicPlushie:
 				'''
 				[c/<color>:情感] <class>
-				- 死亡会对半径<block>格内的所有敌人造成<damage>伤害！
-				 - 仅在硬核模式有效！
-				 - 多么好的暴击机会啊！
-				 - 也也也会伤害其他玩家……
-				 - :3
+				死亡会对半径<block>格内的所有敌人造成<damage>伤害！
+				  - 仅在硬核模式有效！
+				  - 多么好的暴击机会啊！
+				  - 也也也会伤害其他玩家……
+				  - :3
 				'''
 			CosmicDeath1: <name>开了个小玩笑
 			CosmicDeath2: <name>正在做鬼脸:P
@@ -139,19 +139,19 @@ Mods: {
 			CosmicDeath4: <name>说道歉的话肯定在说谎
 			TrashmanTrashcan:
 				'''
-				- 按下宠物技能键（<keybind>）来扔出垃圾罐
-				 - 垃圾罐会造成<damage>伤害并造成流血<bleedDuration>秒
-				 - 使目标周围的敌人减速<slow>% <slowDuration>秒
-				 - 有<confuseChance>%几率造成困惑<confuseDuration>秒
-				 - 伤害，减速效果和困惑几率受敌人的疾病系弱性影响
+				按下宠物技能键（<keybind>）来扔出垃圾罐
+				  - 垃圾罐会造成<damage>伤害并造成流血<bleedDuration>秒
+				  - 使目标周围的敌人减速<slow>% <slowDuration>秒
+				  - 有<confuseChance>%几率造成困惑<confuseDuration>秒
+				  - 伤害，减速效果和困惑几率受敌人的疾病系弱性影响
 				'''
 			TheEtomer:
 				'''
-				- 按下（<abilitySwitch>）键切换招式，按下（<abilityUse>）键来启用命中招式
-				- 可以在6种命中招式之间切换。重新按下技能键以取消
-				- 受当前宠物形态和敌人减益弱性加成
-				 * 灵巧形态会使所有效果的伤害变为<dexMult>倍，其他形态会使对应招式伤害变为<STABMult>倍
-				- 拥有<baseCooldown>秒基础冷却时间
+				按下（<abilitySwitch>）键切换招式，按下（<abilityUse>）键来启用命中招式
+				可以在6种命中招式之间切换。重新按下技能键以取消
+				受当前宠物形态和敌人减益弱性加成
+				  - 灵巧形态会使所有效果的伤害变为<dexMult>倍，其他形态会使对应招式伤害变为<STABMult>倍
+				拥有<baseCooldown>秒基础冷却时间
 				<abilityTooltip>
 				'''
 			TheEtomerStack: 已选招式
@@ -160,52 +160,52 @@ Mods: {
 			RotomThunderWaveName: "[c/FFFF00:电磁波]"
 			RotomThunderWave:
 				'''
-				 - 受电性抗性和弱性影响，在电鬼形态获得加强
-				 - 你的下次攻击会麻痹<radius>格范围内的敌人，造成<slow>%减速<slowDuration>秒
-				 - <percentOfCd>%当前宠物技能冷却时间（<percentToSeconds>秒）
+				  - 受电性抗性和弱性影响，在电鬼形态获得加强
+				  - 你的下次攻击会麻痹<radius>格范围内的敌人，造成<slow>%减速<slowDuration>秒
+				  - <percentOfCd>%当前宠物技能冷却时间（<percentToSeconds>秒）
 				'''
 			RotomHydroPumpName: "[c/0f5e9c:水炮]"
 			RotomHydroPump:
 				'''
-				 - 受水系抗性和弱性影响，在波浪形态获得加强
-				 - 你的下次攻击会造成额外<dmg>点伤害并造成潮湿减益<wetDuration>秒
-				 - <percentOfCd>%当前宠物技能冷却时间（<percentToSeconds>秒）
+				  - 受水系抗性和弱性影响，在波浪形态获得加强
+				  - 你的下次攻击会造成额外<dmg>点伤害并造成潮湿减益<wetDuration>秒
+				  - <percentOfCd>%当前宠物技能冷却时间（<percentToSeconds>秒）
 				'''
 			RotomOverheatName: "[c/ff5a00:过热]"
 			RotomOverheat:
 				'''
-				 - 受火系抗性和弱性影响，在高温形态获得加强
-				 - 你的下次攻击会对<radius>格范围内的目标产生爆炸，造成<dmg>点伤害
-				 - 对命中的第一个目标造成着火了减益<burnDuration>秒
-				 - <percentOfCd>%当前宠物技能冷却时间（<percentToSeconds>秒）
+				  - 受火系抗性和弱性影响，在高温形态获得加强
+				  - 你的下次攻击会对<radius>格范围内的目标产生爆炸，造成<dmg>点伤害
+				  - 对命中的第一个目标造成着火了减益<burnDuration>秒
+				  - <percentOfCd>%当前宠物技能冷却时间（<percentToSeconds>秒）
 				'''
 			RotomBlizzardName: "[c/3fd0d4:暴风雪]"
 			RotomBlizzard:
 				'''
-				 - 受冷系抗性和弱性影响，在霜冻形态获得加强
-				 - 你的下次攻击会在目标上方生成迷你暴风雪，对其中的敌人持续造成<dmg>伤害<blizzardDuration>秒
-				 - 暴风雪中的敌人会持续减速<slow>%
-				 - 对在暴风雪中停留超过<freezeRequirement>秒的敌人造成冰河时代减益<freezeDuration>秒
-				 - <percentOfCd>%当前宠物技能冷却时间（<percentToSeconds>秒）
+				  - 受冷系抗性和弱性影响，在霜冻形态获得加强
+				  - 你的下次攻击会在目标上方生成迷你暴风雪，对其中的敌人持续造成<dmg>伤害<blizzardDuration>秒
+				  - 暴风雪中的敌人会持续减速<slow>%
+				  - 对在暴风雪中停留超过<freezeRequirement>秒的敌人造成冰河时代减益<freezeDuration>秒
+				  - <percentOfCd>%当前宠物技能冷却时间（<percentToSeconds>秒）
 				'''
 			RotomLeafStormName: "[c/34a203:飞叶风暴]"
 			RotomLeafStorm:
 				'''
-				 * 受疾病系抗性和弱性影响，在草堆形态获得加强
-				 * 你的下次攻击会生成伤害性叶子，造成<dmg>伤害，生成<lowLeaf>~<highLeaf>个叶子
-				 * <percentOfCd>%当前宠物技能冷却时间（<percentToSeconds>秒）
+				  - 受疾病系抗性和弱性影响，在草堆形态获得加强
+				  - 你的下次攻击会生成伤害性叶子，造成<dmg>伤害，生成<lowLeaf>~<highLeaf>个叶子
+				  - <percentOfCd>%当前宠物技能冷却时间（<percentToSeconds>秒）
 				'''
 			RotomAirSlashName: "[c/cfecf7:空气斩]"
 			RotomAirSlash:
 				'''
-				 * 对地面敌人效果拔群（受重力影响的），对半空中的地面敌人效果一般，对空中敌人效果较弱，在风扇形态获得加强
-				 * 你的下次攻击会对<radius>格范围内的敌人造成<dmg>点伤害并造成<knockback>击退
-				 * <percentOfCd>%当前宠物技能冷却时间（<percentToSeconds>秒）
+				  - 对地面敌人效果拔群（受重力影响的），对半空中的地面敌人效果一般，对空中敌人效果较弱，在风扇形态获得加强
+				  - 你的下次攻击会对<radius>格范围内的敌人造成<dmg>点伤害并造成<knockback>击退
+				  - <percentOfCd>%当前宠物技能冷却时间（<percentToSeconds>秒）
 				'''
 			AbyssShellFossil:
 				'''
-				- 根据你的仇恨值获得防御或攻击属性
-				- 按下切换宠物技能键（<switchKeybind>）以切换负数/正数工具提示
+				根据你的仇恨值获得防御或攻击属性
+				按下切换宠物技能键（<switchKeybind>）以切换负数/正数工具提示
 				<tooltip>
 				'''
 			AbyssShellFossilStack: 仇恨值
@@ -213,129 +213,129 @@ Mods: {
 			SnailInactive: 未激活！
 			SnailPositiveAggro:
 				'''
-				- 如果你的仇恨值大于0，获得以下效果：（<active>）
-				 * 每<aggroDef>点仇恨值+1点防御。当前加成：<def>
-				 * 每<aggroHealth>点仇恨值+1最大生命值。当前加成：<hp>
-				 * 每<aggroDr>点仇恨值+1%伤害减免。当前加成：<dr>%
-				 * 每<aggroMsLower>点仇恨值-1%移动速度。当前加成：<msLower>%
+				如果你的仇恨值大于0，获得以下效果：（<active>）
+				  - 每<aggroDef>点仇恨值+1点防御。当前加成：<def>
+				  - 每<aggroHealth>点仇恨值+1最大生命值。当前加成：<hp>
+				  - 每<aggroDr>点仇恨值+1%伤害减免。当前加成：<dr>%
+				  - 每<aggroMsLower>点仇恨值-1%移动速度。当前加成：<msLower>%
 				'''
 			SnailNegativeAggro:
 				'''
-				- 如果你的仇恨值小于0，获得以下效果：（<active>）
-				 * 每<aggroDamage>点仇恨值+1%伤害。当前加成：<dmg>%
-				 * 每<aggroCrit>点仇恨值+1%暴击率。当前加成：<crit>%
-				 * 每<aggroPen>点仇恨值+1护甲穿透。当前加成：<pen>
-				 * 每<aggroMs>点仇恨值+1%移动速度。当前加成：<ms>%
+				如果你的仇恨值小于0，获得以下效果：（<active>）
+				  - 每<aggroDamage>点仇恨值+1%伤害。当前加成：<dmg>%
+				  - 每<aggroCrit>点仇恨值+1%暴击率。当前加成：<crit>%
+				  - 每<aggroPen>点仇恨值+1护甲穿透。当前加成：<pen>
+				  - 每<aggroMs>点仇恨值+1%移动速度。当前加成：<ms>%
 				'''
 			GeyserShell:
 				'''
-				- 增加<stealth>%不移动时的潜行值恢复速度
-				- 增加<maxStealth>最大潜行值
-				- 增加<stealthDmg>%潜伏攻击伤害
-				- 潜伏攻击会在你和目标周围生成酸液
-				 * 造成<damage>点伤害，并施加辐射减益<irradiateDuration>秒
-				 * 此效果有<cooldown>秒冷却时间
+				增加<stealth>%不移动时的潜行值恢复速度
+				增加<maxStealth>最大潜行值
+				增加<stealthDmg>%潜伏攻击伤害
+				潜伏攻击会在你和目标周围生成酸液
+				  - 造成<damage>点伤害，并施加辐射减益<irradiateDuration>秒
+				  - 此效果有<cooldown>秒冷却时间
 				'''
 			FoxDrive:
 				'''
-				- 按下宠物技能键（<keybind>）以格式化（清除）你身上的所有减益
-				 * 成功清除会过载，你在<baseCurse> + <perCurse> x 清除减益数 秒内无法使用任何物品
-				 * 包括半减益（有利有弊的减益！）
-				 * 无法清除护士无法清除的减益
-				 * 成功清除任意减益后，有<cooldown>秒冷却时间
-				 * 会造成瞬间的诅咒减益
+				按下宠物技能键（<keybind>）以格式化（清除）你身上的所有减益
+				  - 成功清除会过载，你在<baseCurse> + <perCurse> x 清除减益数 秒内无法使用任何物品
+				  - 包括半减益（有利有弊的减益！）
+				  - 无法清除护士无法清除的减益
+				  - 成功清除任意减益后，有<cooldown>秒冷却时间
+				  - 会造成瞬间的诅咒减益
 				'''
 			FoxCleansedText: “清除的减益：”
 			PrimroseKeepsake:
 				'''
-				- 受伤后低于<belowHealth>%生命值时会获得护盾<shieldDuration>秒，护盾值为<baseShield>%基础最大生命值 + <bonusShield>%额外最大生命值
-				 * 根据护盾值减少此次伤害
-				 * 此效果有<cooldown>秒冷却
-				 * 期间能量吸收效果会造成<lifeguardMult>倍伤害
-				- 增加<stealthMoving>%移动时的潜伏值恢复速度，不移动时增加<stealthNotMoving>%
-				- 击杀敌人会为你的下次盗贼攻击吸收它们的能量
-				 * 你的下次盗贼攻击增加它们基础伤害的<percAbsorb>%
-				 * 触发后获得<procShield>护盾值<procShieldDuration>秒
+				受伤后低于<belowHealth>%生命值时会获得护盾<shieldDuration>秒，护盾值为<baseShield>%基础最大生命值 + <bonusShield>%额外最大生命值
+				  - 根据护盾值减少此次伤害
+				  - 此效果有<cooldown>秒冷却
+				  - 期间能量吸收效果会造成<lifeguardMult>倍伤害
+				增加<stealthMoving>%移动时的潜伏值恢复速度，不移动时增加<stealthNotMoving>%
+				击杀敌人会为你的下次盗贼攻击吸收它们的能量
+				  - 你的下次盗贼攻击增加它们基础伤害的<percAbsorb>%
+				  - 触发后获得<procShield>护盾值<procShieldDuration>秒
 				'''
 			RomajedaOrchid:
 				'''
-				- 击杀敌人会为你的下次盗贼攻击吸收它们的能量
-				 * 你的下次盗贼攻击增加它们基础伤害的<percAbsorb>%
-				 * 潜伏攻击会将其乘以<stealthMult>
+				击杀敌人会为你的下次盗贼攻击吸收它们的能量
+				  - 你的下次盗贼攻击增加它们基础伤害的<percAbsorb>%
+				  - 潜伏攻击会将其乘以<stealthMult>
 				'''
 			RomajedaOrchidStack: 盗贼下一击伤害加成
 			JoyfulHeart:
 				'''
-				- 你在传播爱与和平
-				 * 你的伤害乘以<selfDmg>
-				 * 你受到的伤害乘以<takenDmg>
-				- 按下宠物技能键（<keybind>）治疗<radius>格范围内的所 有 东 西，包括自己
-				 * 在<duration>秒内每秒治疗<perSecRegen>点生命值两次
-				 * 玩家和友好NPC获得的治疗翻倍
+				你在传播爱与和平
+				  - 你的伤害乘以<selfDmg>
+				  - 你受到的伤害乘以<takenDmg>
+				按下宠物技能键（<keybind>）治疗<radius>格范围内的所 有 东 西，包括自己
+				  - 在<duration>秒内每秒治疗<perSecRegen>点生命值两次
+				  - 玩家和友好NPC获得的治疗翻倍
 				'''
 			Levi:
 				'''
-				- 每有1点渔力，增加<dmgPer>%伤害，当前：<currentDmg>%
-				- 每有<defPer>点渔力，增加1点防御，当前：<currentDef>%
-				- 每件渔夫套装分别增加<helm>/<chest>/<leg>点防御
-				- 每件渔夫套装都会增加<critChance>%暴击率
+				每有1点渔力，增加<dmgPer>%伤害，当前：<currentDmg>%
+				每有<defPer>点渔力，增加1点防御，当前：<currentDef>%
+				每件渔夫套装分别增加<helm>/<chest>/<leg>点防御
+				每件渔夫套装都会增加<critChance>%暴击率
 				'''
 			LeviCrit: %暴击率增加
 			RottingEyeball:
 				'''
-				- 对腐化敌人造成额外<incrToCorrupt>%伤害
-				- 来自非腐化敌人的攻击对你造成额外<penalty>%伤害
-				- 装备此宠物击杀的腐化敌人数量：<killCount>
-				- 根据击杀数量获得以下加成：
-				 * +<dmg>%伤害，+<crit>%暴击率，+<luck>运气，+<pen>护甲穿透，+<critDmg>%暴击伤害
-				 * 在腐化环境时所有加成乘以<evilMult>
-				 * 升级到下一级所需击杀数量：<killReq>
+				对腐化敌人造成额外<incrToCorrupt>%伤害
+				来自非腐化敌人的攻击对你造成额外<penalty>%伤害
+				装备此宠物击杀的腐化敌人数量：<killCount>
+				根据击杀数量获得以下加成：
+				  - +<dmg>%伤害，+<crit>%暴击率，+<luck>运气，+<pen>护甲穿透，+<critDmg>%暴击伤害
+				  - 在腐化环境时所有加成乘以<evilMult>
+				  - 升级到下一级所需击杀数量：<killReq>
 				'''
 			RottingEyeballStack: 下一级所需腐化敌人击杀数
 			BloodyVein:
 				'''
-				- 受到猩红敌人的伤害降低<drFromCrimson>%
-				- 来自非猩红敌人的攻击对你造成额外<penalty>%伤害
-				- 装备此宠物击杀的猩红敌人数量：<killCount>
-				- 根据击杀数量获得以下加成：
-				 * +<def>防御，+<hp>最大生命值，+<luck>运气，+<dr>%伤害减免，+<regen>生命再生
-				 * 在猩红环境时所有加成乘以<evilMult>
-				 * 升级到下一级所需击杀数量：<killReq>
+				受到猩红敌人的伤害降低<drFromCrimson>%
+				来自非猩红敌人的攻击对你造成额外<penalty>%伤害
+				装备此宠物击杀的猩红敌人数量：<killCount>
+				根据击杀数量获得以下加成：
+				  - +<def>防御，+<hp>最大生命值，+<luck>运气，+<dr>%伤害减免，+<regen>生命再生
+				  - 在猩红环境时所有加成乘以<evilMult>
+				  - 升级到下一级所需击杀数量：<killReq>
 				'''
 			BloodyVeinStack: 下一级所需猩红敌人击杀数
 			PineapplePet:
 				'''
-				- 调整食物物品的饱食增益
-				 * 饱食增益等级+1
-				 * 增益时长减半
-				 * 酒足饭饱会变为至臻营养，进一步提升所有属性
-				 * +<def>防御，<crit>%暴击率，<dmg>%伤害，+<sumKb>击退，<moveSpd>%移动速度和<miningSpd>%挖掘速度
-				 * 至臻营养会覆盖所有其他饱食增益
-				- 装备此宠物时，饱食增益提供的属性值增加50%
+				调整食物物品的饱食增益
+				  - 饱食增益等级+1
+				  - 增益时长减半
+				  - 酒足饭饱会变为至臻营养，进一步提升所有属性
+				  - +<def>防御，<crit>%暴击率，<dmg>%伤害，+<sumKb>击退，<moveSpd>%移动速度和<miningSpd>%挖掘速度
+				  - 至臻营养会覆盖所有其他饱食增益
+				装备此宠物时，饱食增益提供的属性值增加50%
 				'''
 			PlagueCaller:
 				'''
-				- 受到盗贼攻击的敌人和周围敌人会叠加造成伤害一定值的层数
-				 * 受击目标叠加伤害量的<primaryPerc>%，其<hitAoE>格范围内的敌人叠加伤害量的<surroundingPerc>%
-				 * 层数会保留<stackDuration>秒，在叠加层数时重置计时器
-				- 按下宠物技能键（<keybind>）以引爆<detonateRadius>格范围内所有敌人的所有层数
-				 * 此效果有<cooldown>秒冷却，引爆会造成瘟疫减益和<slow>%减速<plagueDuration>秒
+				受到盗贼攻击的敌人和周围敌人会叠加造成伤害一定值的层数
+				  - 受击目标叠加伤害量的<primaryPerc>%，其<hitAoE>格范围内的敌人叠加伤害量的<surroundingPerc>%
+				  - 层数会保留<stackDuration>秒，在叠加层数时重置计时器
+				按下宠物技能键（<keybind>）以引爆<detonateRadius>格范围内所有敌人的所有层数
+				  - 此效果有<cooldown>秒冷却，引爆会造成瘟疫减益和<slow>%减速<plagueDuration>秒
 				'''
 			PlagueCallerStack: 附近可引爆伤害总量
 			McNuggets:
 				'''
-				- 按下宠物技能键（<keybind>）使用重生技能。重生时，获得以下效果：
-				 * 获得等同于已损失生命值的护盾
-				 * 增加<dmgRebirth>%伤害，<defRebirth>防御和<msRebirth>%移动速度
-				 * 你的攻击在<fireTime>秒内造成龙焰
-				 * 重生效果持续<rebornDuration>秒
-				 * 这些增益持续时间会受当前生命值影响，最高增加至300%  
-				 * 属性加成受当前生命值影响，生命值越低，加成越高，在25%生命值时最高
-				 * 效果结束时受到等同于获得的护盾值的伤害，护盾可以缓冲这个伤害
-				 * 重生有<cooldown>分钟冷却
-				- 如果玩家在技能就绪时死亡，而没有使用技能，它会以以下方式拯救玩家：
-				 * 获得所有基础效果，但属性加成不受影响，不获得护盾但恢复所有生命值
-				 * 玩家在效果结束时会[c/f8baba:立即死亡]（犽戎之子为你倾尽了全力！）
+				按下宠物技能键（<keybind>）使用重生技能。重生时，获得以下效果：
+				  - 获得等同于已损失生命值的护盾
+				  - 增加<dmgRebirth>%伤害，<defRebirth>防御和<msRebirth>%移动速度
+				  - 你的攻击在<fireTime>秒内造成龙焰
+				  - 重生效果持续<rebornDuration>秒
+				  - 这些增益持续时间会受当前生命值影响，最高增加至300%  
+				  - 属性加成受当前生命值影响，生命值越低，加成越高，在25%生命值时最高
+				  - 效果结束时受到等同于获得的护盾值的伤害，护盾可以缓冲这个伤害
+				  - 重生有<cooldown>分钟冷却
+				如果玩家在技能就绪时死亡，而没有使用技能，它会以以下方式拯救玩家：
+				  - 获得所有基础效果，但属性加成不受影响，不获得护盾但恢复所有生命值
+				  - 玩家在效果结束时会[c/f8baba:立即死亡]（犽戎之子为你倾尽了全力！）
 				'''
 			McNuggetsStack: 剩余重生冷却
 			// McNuggetsDelayStack: remaining time before death
@@ -351,14 +351,14 @@ Mods: {
 			YharonDeath8: <name>想吃鸡蛋？？？
 			BrimstoneJewel:
 				'''
-				- 你的攻击总是会暴击，无视暴击率
-				- 暴击伤害降低<critDmgReduce>%，但增加等同于暴击率的<chanceToDmg>%
-				 * 高于100%的暴击率会增加暴击伤害
-				- 所有武器都会消耗魔力，数值等同于武器的使用时间x2
-				 * 魔法武器改为增加<magicCost>%魔力消耗
-				 * 召唤师只有鞭子能受到上述加成
-				 * 不加成蓄力武器和工具
-				- 魔力疾病现在会降低所有受影响的伤害
+				你的攻击总是会暴击，无视暴击率
+				暴击伤害降低<critDmgReduce>%，但增加等同于暴击率的<chanceToDmg>%
+				  - 高于100%的暴击率会增加暴击伤害
+				所有武器都会消耗魔力，数值等同于武器的使用时间x2
+				  - 魔法武器改为增加<magicCost>%魔力消耗
+				  - 召唤师只有鞭子能受到上述加成
+				  - 不加成蓄力武器和工具
+				魔力疾病现在会降低所有受影响的伤害
 				'''
 			BrimstoneJewelStack: 暴击伤害乘数
 			ScalManaSicknessExtraText:
@@ -368,142 +368,142 @@ Mods: {
 				'''
 			HermitsBoxofOneHundredMedicines:
 				'''
-				- 按下宠物技能键（<keybind>）吃药
-				- 为你恢复<flatHeal> + <percHeal>%最大生命值的生命
-				 - 此效果有<cooldown>秒冷却
-				 - 冷却期间，你造成的所有伤害乘以<damageMult>
+				按下宠物技能键（<keybind>）吃药
+				为你恢复<flatHeal> + <percHeal>%最大生命值的生命
+				  - 此效果有<cooldown>秒冷却
+				  - 冷却期间，你造成的所有伤害乘以<damageMult>
 				'''
 		}
 
 		SimpleTooltips: {
 			ForgottenDragonEgg:
 				'''
-				- 按下宠物技能键（<keybind>）以使你下次攻击爆炸
-				 * 爆炸会施加燃烧，并处决低生命值敌人
-				  * 触发爆炸的攻击、爆炸和处决都会获得阿卡托层数
-				 * 阿卡托层数会提高此宠物的效果，层数叠加没有上限，也不会流失
+				按下宠物技能键（<keybind>）以使你下次攻击爆炸
+				  - 爆炸会施加燃烧，并处决低生命值敌人
+				   - 触发爆炸的攻击、爆炸和处决都会获得阿卡托层数
+				  - 阿卡托层数会提高此宠物的效果，层数叠加没有上限，也不会流失
 				'''
 			Astrophage:
 				'''
-				- 距离你很近的敌人会被施加幻星感染
-				- 距离你较近的幻星感染敌人会被减速
-				 * 受此减速效果影响的敌人死亡后会扩散感染给附近敌人
+				距离你很近的敌人会被施加幻星感染
+				距离你较近的幻星感染敌人会被减速
+				  - 受此减速效果影响的敌人死亡后会扩散感染给附近敌人
 				'''
 			BearsEye:
 				'''
-				- 生命值较低时获得护盾
-				- 增加盗贼伤害、潜伏攻击伤害和潜行值恢复速度
+				生命值较低时获得护盾
+				增加盗贼伤害、潜伏攻击伤害和潜行值恢复速度
 				'''
 			CharredRelic:
 				'''
-				- 生命值较低时获得伤害减免
-				- 受到伤害会反弹给攻击者并生成火球
+				生命值较低时获得伤害减免
+				受到伤害会反弹给攻击者并生成火球
 				'''
 			CosmicPlushie:
 				'''
 				[c/<color>:情感] <class>
-				- 对附近所有生物造成非常逆天的伤害
-				 * 当你死亡时
-				 * 当处于硬核模式时
-				 * 是，这是个整蛊宠物，可能会重置
+				对附近所有生物造成非常逆天的伤害
+				  - 当你死亡时
+				  - 当处于硬核模式时
+				  - 是，这是个整蛊宠物，可能会重置
 				'''
 			TrashmanTrashcan:
 				'''
-				- 按下宠物技能键（<keybind>）以扔出一个垃圾罐
-				 * 造成伤害并施加流血
-				 * 命中时减速并混乱一定范围内的敌人
+				按下宠物技能键（<keybind>）以扔出一个垃圾罐
+				  - 造成伤害并施加流血
+				  - 命中时减速并混乱一定范围内的敌人
 				'''
 			TheEtomer:
 				'''
-				- 按下（<abilitySwitch>）键来切换招式，按下（<abilityUse>）键来使用它们
-				- [c/FFFF00:电磁波会减速敌人]
-				- [c/0f5e9c:水炮会造成单体伤害并施加潮湿减益]
-				- [c/ff5a00:过热会造成范围伤害并施加着火减益]
-				- [c/3fd0d4:暴风雪会造成持续范围伤害，减速并施加冰河时代减益]
-				- [c/34a203:飞叶风暴会发射一圈叶子，造成大范围伤害]
-				- [c/cfecf7:空气斩会造成范围伤害并造成大幅击退]
+				按下（<abilitySwitch>）键来切换招式，按下（<abilityUse>）键来使用它们
+				[c/FFFF00:电磁波会减速敌人]
+				[c/0f5e9c:水炮会造成单体伤害并施加潮湿减益]
+				[c/ff5a00:过热会造成范围伤害并施加着火减益]
+				[c/3fd0d4:暴风雪会造成持续范围伤害，减速并施加冰河时代减益]
+				[c/34a203:飞叶风暴会发射一圈叶子，造成大范围伤害]
+				[c/cfecf7:空气斩会造成范围伤害并造成大幅击退]
 				'''
 			AbyssShellFossil:
 				'''
-				- 根据仇恨值获得防御或攻击属性
-				 * 正数仇恨时增加防御、最大生命值和伤害减免，降低移动速度
-				 * 负数仇恨时增加伤害、暴击率、护甲穿透和移动速度
+				根据仇恨值获得防御或攻击属性
+				  - 正数仇恨时增加防御、最大生命值和伤害减免，降低移动速度
+				  - 负数仇恨时增加伤害、暴击率、护甲穿透和移动速度
 				'''
 			GeyserShell:
 				'''
-				- 站定不动时增加潜行值恢复速度和最大潜行值
-				- 增加潜伏攻击伤害
-				- 潜伏攻击会在你和目标周围造成一次酸液爆炸
+				站定不动时增加潜行值恢复速度和最大潜行值
+				增加潜伏攻击伤害
+				潜伏攻击会在你和目标周围造成一次酸液爆炸
 				'''
 			FoxDrive:
 				'''
-				- 按下宠物技能键（<keybind>）以清除你身上的所有减益
-				 * 触发后短时间内无法使用物品
+				按下宠物技能键（<keybind>）以清除你身上的所有减益
+				  - 触发后短时间内无法使用物品
 				'''
 			PrimroseKeepsake:
 				'''
-				- 生命值较低时获得护盾
-				- 增加盗贼潜伏值恢复速度
-				- 击杀敌人会吸收它们的力量强化你的下一次盗贼命中
-				 * 触发后获得一个护盾
+				生命值较低时获得护盾
+				增加盗贼潜伏值恢复速度
+				击杀敌人会吸收它们的力量强化你的下一次盗贼命中
+				  - 触发后获得一个护盾
 				'''
-			RomajedaOrchid: - 击杀敌人会吸收它们的力量强化你的下一次盗贼命中
+			RomajedaOrchid: 击杀敌人会吸收它们的力量强化你的下一次盗贼命中
 			JoyfulHeart:
 				'''
-				- 降低你受到的伤害和造成的伤害
-				- 按下宠物技能键（<keybind>）以治疗附近所有生物
+				降低你受到的伤害和造成的伤害
+				按下宠物技能键（<keybind>）以治疗附近所有生物
 				'''
 			Levi:
 				'''
-				- 根据你的渔力增加伤害和防御
-				- 渔夫套装部件会增加额外防御和暴击率
+				根据你的渔力增加伤害和防御
+				渔夫套装部件会增加额外防御和暴击率
 				'''
 			RottingEyeball:
 				'''
-				- 对腐化敌人造成更多伤害
-				- 增加来自非腐化敌人的伤害
-				- 击杀腐化敌人会永久增加一个计数
-				 * 根据击杀计数增加攻击属性
+				对腐化敌人造成更多伤害
+				增加来自非腐化敌人的伤害
+				击杀腐化敌人会永久增加一个计数
+				  - 根据击杀计数增加攻击属性
 				'''
 			BloodyVein:
 				'''
-				- 减少来自猩红敌人的伤害
-				- 对非猩红敌人造成更少伤害
-				- 击杀猩红敌人会永久增加一个计数
-				 * 根据击杀计数增加防御属性
+				减少来自猩红敌人的伤害
+				对非猩红敌人造成更少伤害
+				击杀猩红敌人会永久增加一个计数
+				  - 根据击杀计数增加防御属性
 				'''
 			PineapplePet:
 				'''
-				- 提高食物的饱食度等级，但减少持续时间
-				- 强化饱食增益的效果
+				提高食物的饱食度等级，但减少持续时间
+				强化饱食增益的效果
 				'''
 			PlagueCaller:
 				'''
-				- 盗贼攻击命中敌人和附近敌人会叠加造成的伤害
-				- 按下宠物技能键（<keybind>）以引爆所有叠加的伤害
+				盗贼攻击命中敌人和附近敌人会叠加造成的伤害
+				按下宠物技能键（<keybind>）以引爆所有叠加的伤害
 				'''
 			McNuggets:
 				'''
-				- 按下宠物技能键（<keybind>）以使用重生技能
-				 * 增加伤害，防御和移动速度
-				 * 攻击施加龙焰减益
-				 * 所有效果受已损生命值加成
-				 * 获得等同于已损生命值的护盾
-				  * 但效果结束时受到等同于剩余护盾的伤害
-				- 如果你受到致命伤害，会推迟一段时间死亡
+				按下宠物技能键（<keybind>）以使用重生技能
+				  - 增加伤害，防御和移动速度
+				  - 攻击施加龙焰减益
+				  - 所有效果受已损生命值加成
+				  - 获得等同于已损生命值的护盾
+				   - 但效果结束时受到等同于剩余护盾的伤害
+				如果你受到致命伤害，会推迟一段时间死亡
 				'''
 			BrimstoneJewel:
 				'''
-				- 修改非吟唱和非召唤武器
-				 * 攻击必定暴击
-				 * 降低暴击伤害，但将暴击率转换为暴击伤害
-				 * 武器会消耗魔力
-				- 魔力疾病现在会降低所有伤害
+				修改非吟唱和非召唤武器
+				  - 攻击必定暴击
+				  - 降低暴击伤害，但将暴击率转换为暴击伤害
+				  - 武器会消耗魔力
+				魔力疾病现在会降低所有伤害
 				'''
 			HermitsBoxofOneHundredMedicines:
 				'''
-				- 按下宠物技能键（<keybind>）来治疗自身
-				- 此技能冷却期间，你造成的所有伤害降低
+				按下宠物技能键（<keybind>）来治疗自身
+				此技能冷却期间，你造成的所有伤害降低
 				'''
 		}
 

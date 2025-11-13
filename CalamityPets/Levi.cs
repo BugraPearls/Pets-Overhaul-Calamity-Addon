@@ -12,8 +12,8 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
     public sealed class LeviEffect : PetEffect
     {
         public override int PetItemID => CalamityPetIDs.Levi;
-        public override PetClasses PetClassPrimary => PetClasses.Offensive;
-        public override PetClasses PetClassSecondary => PetClasses.Defensive;
+        public override PetClass PetClassPrimary => PetClassID.Offensive;
+        public override PetClass PetClassSecondary => PetClassID.Defensive;
         public float dmgPerFish = 0.0017f;
         public float oneDefPerFishPower = 5f;
         public float crit = 10f;

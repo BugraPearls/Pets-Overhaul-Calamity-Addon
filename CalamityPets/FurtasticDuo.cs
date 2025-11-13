@@ -11,8 +11,8 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
     public sealed class FurtasticDuoEffect : PetEffect
     {
         public override int PetItemID => CalamityPetIDs.FurtasticDuo;
-        public override PetClasses PetClassPrimary => PetClasses.Rogue;
-        public override PetClasses PetClassSecondary => PetClasses.Defensive;
+        public override PetClass PetClassPrimary => RoguePetClass.Rogue;
+        public override PetClass PetClassSecondary => PetClassID.Defensive;
 
         public float stealthMoving = 0.16f;
         public float stealthNotMoving = 0.05f;

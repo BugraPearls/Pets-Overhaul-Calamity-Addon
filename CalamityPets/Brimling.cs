@@ -10,8 +10,8 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
     public sealed class BrimlingEffect : PetEffect
     {
         public override int PetItemID => CalamityPetIDs.Brimling;
-        public override PetClasses PetClassPrimary => PetClasses.Defensive;
-        public override PetClasses PetClassSecondary => PetClasses.Offensive;
+        public override PetClass PetClassPrimary => PetClassID.Defensive;
+        public override PetClass PetClassSecondary => PetClassID.Offensive;
         public float drTreshold = 0.25f;
         public float dr = 0.15f;
         public int cooldown = 210;

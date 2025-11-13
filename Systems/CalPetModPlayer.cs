@@ -13,11 +13,13 @@ namespace PetsOverhaulCalamityAddon.Systems
         public float rogueDmg = 0.2f;
         public float stealthGain = 0.15f;
         public float stealthMax = 0.2f;
+        public float hpReduce = 0.12f;
         public string RogueClassText => Compatibility.LocVal("MoonlingRogueTooltip")
                                             .Replace("<rogueVelocity>", Math.Round(rogueVelo * 100, 2).ToString())
                                             .Replace("<rogueDmg>", Math.Round(rogueDmg * 100, 2).ToString())
                                             .Replace("<rogueStealthGain>", Math.Round(stealthGain * 100, 2).ToString())
-                                            .Replace("<rogueStealthMax>", Math.Round(stealthMax * 100, 2).ToString());
+                                            .Replace("<rogueStealthMax>", Math.Round(stealthMax * 100, 2).ToString())
+            .Replace("<hp>", Math.Round(hpReduce * 100, 2).ToString());
         public StatModifier CalDamageClasses => Player.GetTotalDamage<RogueDamageClass>();
 
         internal bool TileBeforeSymbiote = false;
@@ -56,14 +58,15 @@ namespace PetsOverhaulCalamityAddon.Systems
         {
             if (Player.TryGetModPlayer(out Moonling moonling))
             {
-                moonling.ExternalTooltips.Add(new Moonling.ClassAndItsTooltip(PetClasses.Rogue, RogueClassText));
-                if (moonling.PetIsEquipped() && moonling.currentClass == moonling.Tooltips.FindIndex(x => x.Class == PetClasses.Rogue))
+                moonling.ExternalTooltips.Add(new Moonling.ClassAndItsTooltip(RoguePetClass.Rogue, RogueClassText));
+                if (moonling.PetIsEquipped() && moonling.currentClass == moonling.Tooltips.FindIndex(x => x.Class == RoguePetClass.Rogue))
                 {
                     Player.Calamity().rogueVelocity += rogueVelo;
                     Player.Calamity().rogueStealthMax += stealthMax;
                     Player.GetDamage<RogueDamageClass>() += rogueDmg;
                     Player.Calamity().stealthGenMoving += stealthGain;
                     Player.Calamity().stealthGenStandstill += stealthGain;
+                    Player.statLifeMax2 -= (int)(Player.statLifeMax2 * hpReduce);
                 }
             }
         }

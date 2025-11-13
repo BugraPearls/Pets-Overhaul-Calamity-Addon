@@ -7,8 +7,10 @@ Mods: {
 			  * Increases rogue stealth gain by <rogueStealthGain>%.
 			  * Increases rogue damage by <rogueDmg>%.
 			  * Increases rogue velocity by <rogueVelocity>%.
+			  * Reduces maximum health by <hp>%.
 			'''
 		JunimoExtraBosses: ", Providence, Devourer of Gods"
+		Rogue: Rogue
 
 		LightPetTooltips: {
 			RustedJingleBell:

@@ -7,8 +7,10 @@ Mods: {
 			  - 增加<rogueStealthGain>%潜行值恢复速度
 			  - 增加<rogueDmg>%盗贼伤害
 			  - 增加<rogueVelocity>%盗贼弹幕速度
+			  - 降低<hp>%最大生命值
 			'''
 		JunimoExtraBosses: ，亵渎天神，神明吞噬者
+		Rogue: 盗贼
 
 		LightPetTooltips: {
 			RustedJingleBell:

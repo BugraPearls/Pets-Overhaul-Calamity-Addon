@@ -21,8 +21,8 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         public float bonusHpShield = 0.2f;
         public int shieldDuration = 900;
         public int cooldown = 3000;
-        public override PetClasses PetClassPrimary => PetClasses.Rogue;
-        public override PetClasses PetClassSecondary => PetClasses.Defensive;
+        public override PetClass PetClassPrimary => RoguePetClass.Rogue;
+        public override PetClass PetClassSecondary => PetClassID.Defensive;
         public override int PetAbilityCooldown => cooldown;
         public override void PostUpdateEquips()
         {

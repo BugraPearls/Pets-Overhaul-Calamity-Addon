@@ -12,7 +12,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
     public sealed class SupremeCalamitasEffect : PetEffect
     {
         public override int PetItemID => CalamityPetIDs.SupremeCalamitas;
-        public override PetClasses PetClassPrimary => PetClasses.Offensive;
+        public override PetClass PetClassPrimary => PetClassID.Offensive;
         public float critDmgReduce = 0.5f;
         public float critChanceToDmg = 1.1f;
         public float magicExtraCost = 0.9f;

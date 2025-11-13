@@ -1,10 +1,21 @@
 ﻿using CalamityMod.Items.Fishing.AstralCatches;
 using CalamityMod.Items.Fishing.SunkenSeaCatches;
 using CalamityMod.Items.Pets;
+using Microsoft.Xna.Framework;
+using PetsOverhaul.Systems;
 using Terraria.ModLoader;
 
 namespace PetsOverhaulCalamityAddon.Systems
 {
+    public class RoguePetClass : ModSystem
+    {
+        public static Color RogueClass => new(255, 233, 36);
+        public static PetClass Rogue = new("Rogue", "Mods.PetsOverhaulCalamityAddon.Rogue", RogueClass);
+        public override void SetStaticDefaults()
+        {
+            PetClassID.RegisterPetClass(ref Rogue);
+        }
+    }
     /// <summary>
     /// Class that includes ItemIDs of Pets of Calamity, working with similar purpose of ItemID class.
     /// </summary>

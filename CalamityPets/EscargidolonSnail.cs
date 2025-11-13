@@ -10,8 +10,8 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
     public sealed class EscargidolonSnailEffect : PetEffect
     {
         public override int PetItemID => CalamityPetIDs.EscargidolonSnail;
-        public override PetClasses PetClassPrimary => PetClasses.Defensive;
-        public override PetClasses PetClassSecondary => PetClasses.Offensive;
+        public override PetClass PetClassPrimary => PetClassID.Defensive;
+        public override PetClass PetClassSecondary => PetClassID.Offensive;
         public override int PetStackCurrent => Player.aggro;
         public override int PetStackMax => 0;
         public override string PetStackText => Compatibility.LocVal("PetTooltips.AbyssShellFossilStack");

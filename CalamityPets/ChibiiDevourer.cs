@@ -12,7 +12,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
     public sealed class ChibiiDevourerEffect : PetEffect
     {
         public override int PetItemID => CalamityPetIDs.ChibiiDevourer;
-        public override PetClasses PetClassPrimary => PetClasses.Supportive;
+        public override PetClass PetClassPrimary => PetClassID.Supportive;
         public int dmg = 99999;
         public int block = 320;
         public float kb = 100f;

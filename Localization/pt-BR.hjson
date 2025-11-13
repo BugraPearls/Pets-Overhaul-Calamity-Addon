@@ -7,8 +7,10 @@ Mods: {
 			  * Aumenta o ganho de furtividade do ladino em <rogueStealthGain>%.
 			  * Aumenta o dano do ladino em <rogueDmg>%.
 			  * Aumenta a velocidade do ladino em <rogueVelocity>%.
+			  * Reduz a saúde máxima em <hp>%.
 			'''
 		JunimoExtraBosses: ", Providência, Devoradora de Deuses"
+		Rogue: Ladino
 
 		LightPetTooltips: {
 			RustedJingleBell:

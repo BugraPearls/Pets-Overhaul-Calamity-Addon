@@ -20,7 +20,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
     public sealed class AkatoEffect : PetEffect
     {
         public override int PetItemID => CalamityPetIDs.Akato;
-        public override PetClasses PetClassPrimary => PetClasses.Offensive;
+        public override PetClass PetClassPrimary => PetClassID.Offensive;
         public long dragonPracticeStacks = 0;
         public const long maxStacks = 1000000000000; //1 trillion, 1.000.000.000.000
         public const int bossMult = 10;

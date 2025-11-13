@@ -12,7 +12,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
     public sealed class MiniPerforatorEffect : PetEffect
     {
         public override int PetItemID => CalamityPetIDs.MiniPerforator;
-        public override PetClasses PetClassPrimary => PetClasses.Defensive;
+        public override PetClass PetClassPrimary => PetClassID.Defensive;
         public int evilKills = 0;
         public int Level = 0;
         public List<int> expTresholds = [0, 10, 50, 150, 400, 900, 1700, 3000, 5000, 10000, 25000];

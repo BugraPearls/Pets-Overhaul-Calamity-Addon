@@ -26,8 +26,8 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         public int deathDelayDuration = 600;
         private float healthToMult = 1f;
         private int damageToTakeAfterReborn = 0;
-        public override PetClasses PetClassPrimary => PetClasses.Defensive;
-        public override PetClasses PetClassSecondary => PetClasses.Utility;
+        public override PetClass PetClassPrimary => PetClassID.Defensive;
+        public override PetClass PetClassSecondary => PetClassID.Utility;
         public override int PetAbilityCooldown => rebirthCooldown;
         public override int PetStackCurrent => timer + deadTimer + 2; //One or the other will be shown, and neither should be different than 0 at anytime when another is active, so should be fine. And a +2 because both default to -1 every frame.
         public override int PetStackMax => 0;

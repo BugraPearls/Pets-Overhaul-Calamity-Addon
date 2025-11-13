@@ -7,8 +7,10 @@ Mods: {
 			  * Увеличивает прирост скрытности разбойника на <rogueStealthGain>%.  
 			  * Увеличивает урон разбойника на <rogueDmg>%.  
 			  * Увеличивает скорость разбойника на <rogueVelocity>%.  
+			  * Уменьшает максимальное здоровье на <hp>%.
 			'''
 		JunimoExtraBosses: ", Провидение, Поглотитель Богов"
+		Rogue: Разбойничий
 
 		LightPetTooltips: {
 			RustedJingleBell:

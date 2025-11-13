@@ -14,8 +14,8 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
     public sealed class DannyDevitoEffect : PetEffect
     {
         public override int PetItemID => CalamityPetIDs.DannyDevito;
-        public override PetClasses PetClassPrimary => PetClasses.Utility;
-        public override PetClasses PetClassSecondary => PetClasses.Offensive;
+        public override PetClass PetClassPrimary => PetClassID.Utility;
+        public override PetClass PetClassSecondary => PetClassID.Offensive;
         public int radius = 150;
         public int damage = 25;
         public int bleedDuration = 780;

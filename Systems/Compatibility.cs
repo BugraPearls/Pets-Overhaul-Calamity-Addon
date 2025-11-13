@@ -42,6 +42,7 @@ using CalamityMod.NPCs.ProfanedGuardians;
 using CalamityMod.NPCs.Providence;
 using CalamityMod.NPCs.SlimeGod;
 using CalamityMod.Sounds;
+using Microsoft.Xna.Framework;
 using MonoMod.Utils;
 using PetsOverhaul.PetEffects;
 using PetsOverhaul.Systems;
@@ -61,6 +62,7 @@ namespace PetsOverhaulCalamityAddon.Systems
         internal static int RotomThunderWave;
         internal static int RotomBlizzard;
     }
+
     /// <summary>
     /// Class mostly for making already existing systems in Pets Overhaul work with Calamity's added content aswell. Also a few util stuff.
     /// </summary>
@@ -92,8 +94,13 @@ namespace PetsOverhaulCalamityAddon.Systems
         /// </summary>
         public static string LocVal(string localizationKeyValue)
         {
+            if (localizationKeyValue.Contains("Mods.PetsOverhaulCalamityAddon."))
+            {
+                return Language.GetTextValue(localizationKeyValue);
+            }
             return Language.GetTextValue("Mods.PetsOverhaulCalamityAddon." + localizationKeyValue);
         }
+
         public static Dictionary<string, int> CalamityLightPets = new()
         {
             { "RustedJingleBell", CalamityLightPetIDs.BabyGhostBell },

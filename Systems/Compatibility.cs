@@ -53,6 +53,14 @@ using Terraria.ModLoader;
 
 namespace PetsOverhaulCalamityAddon.Systems
 {
+    public class CalSlows
+    {
+        internal static int PlagueSlow;
+        internal static int AstrophageSlow;
+        internal static int TrashmanSignatureMove;
+        internal static int RotomThunderWave;
+        internal static int RotomBlizzard;
+    }
     /// <summary>
     /// Class mostly for making already existing systems in Pets Overhaul work with Calamity's added content aswell. Also a few util stuff.
     /// </summary>
@@ -345,14 +353,6 @@ namespace PetsOverhaulCalamityAddon.Systems
             PetSounds.PetItemIdToHurtSound.AddRange(CalamityPetHurtSounds);
             PetSounds.PetItemIdToAmbientSound.AddRange(CalamityPetAmbientSounds);
             PetSounds.PetItemidToKillSound.AddRange(CalamityPetKillSounds);
-        }
-        public class CalSlows
-        {
-            internal static int PlagueSlow;
-            internal static int AstrophageSlow;
-            internal static int TrashmanSignatureMove;
-            internal static int RotomThunderWave;
-            internal static int RotomBlizzard;
         }
         public static void AddCalamityPetSlowIDs() //This runs in Load()
         {

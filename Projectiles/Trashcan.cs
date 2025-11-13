@@ -4,6 +4,7 @@ using PetsOverhaul.Config;
 using PetsOverhaul.Systems;
 using PetsOverhaulCalamityAddon.Buffs;
 using PetsOverhaulCalamityAddon.CalamityPets;
+using PetsOverhaulCalamityAddon.Systems;
 using System;
 using Terraria;
 using Terraria.Audio;
@@ -48,7 +49,7 @@ namespace PetsOverhaulCalamityAddon.Projectiles
             {
                 if (Projectile.Distance(npc.Center) < Trashman.radius)
                 {
-                    PetGlobalNPC.AddSlow(new PetSlow(Trashman.slow * SickWeakness(npc), Trashman.slowDuration, CalSlows.trashmanSignatureMove), npc);
+                    PetGlobalNPC.AddSlow(new PetSlow(Trashman.slow * SickWeakness(npc), Trashman.slowDuration, CalSlows.TrashmanSignatureMove), npc);
 
                     if (Main.rand.NextBool(Math.Min((int)(Trashman.confusionChance * SickWeakness(npc)), 100), 100))
                     {

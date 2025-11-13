@@ -291,7 +291,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                             {
                                 if (target.Distance(npc.Center) < tWaveRadius)
                                 {
-                                    PetGlobalNPC.AddSlow(new PetSlow(tWaveSlow * GetTypeEffectiveness(npc, thunderWave), tWaveDuration, CalSlows.rotomThunderWave), npc);
+                                    PetGlobalNPC.AddSlow(new PetSlow(tWaveSlow * GetTypeEffectiveness(npc, thunderWave), tWaveDuration, CalSlows.RotomThunderWave), npc);
                                 }
                             }
                             PetUtils.CircularDustEffect(target.Center, DustID.Electric, tWaveRadius, 10);

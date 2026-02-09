@@ -46,8 +46,8 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
     }
     public sealed class RomajedaOrchidTooltip : PetTooltip
     {
-        public override PetEffect PetsEffect => kendra;
-        public static KendraEffect kendra
+        public override PetEffect PetsEffect => Kendra;
+        public static KendraEffect Kendra
         {
             get
             {
@@ -58,8 +58,8 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
             }
         }
         public override string PetsTooltip => Compatibility.LocVal("PetTooltips.RomajedaOrchid")
-                .Replace("<percAbsorb>", Math.Round(kendra.absorbPercent * 100, 2).ToString())
-                .Replace("<stealthMult>", kendra.stealthMult.ToString());
+                .Replace("<percAbsorb>", Math.Round(Kendra.absorbPercent * 100, 2).ToString())
+                .Replace("<stealthMult>", Kendra.stealthMult.ToString());
         public override string SimpleTooltip => Compatibility.LocVal("SimpleTooltips.RomajedaOrchid");
     }
 }

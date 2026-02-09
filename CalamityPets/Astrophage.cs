@@ -41,7 +41,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
 
                     if (npc.TryGetGlobalNPC(out AstrophageInfection astro))
                     {
-                        if (Player.Distance(npc.Center) < slowRadius && npc.Calamity().astralInfection > 0)
+                        if (Player.Distance(npc.Center) < slowRadius && npc.Calamity().astralInfection)
                         {
                             astro.infectedVal = infectionHeavySlow;
                             PetGlobalNPC.AddSlow(new PetSlow(slowAmount, 1, CalSlows.AstrophageSlow), npc);
@@ -67,7 +67,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         private float closestRange = 400;
         public override void OnKill(NPC npc)
         {
-            if (infectedVal > 0 && npc.Calamity().astralInfection > 0)
+            if (infectedVal > 0 && npc.Calamity().astralInfection)
             {
                 PetUtils.CircularDustEffect(npc.Center, DustID.DarkCelestial, deathSpreadRange, 40);
                 foreach (var target in Main.ActiveNPCs)
@@ -82,7 +82,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                 }
                 if (closestWhoAmI != -1)
                 {
-                    Main.npc[closestWhoAmI].AddBuff(ModContent.BuffType<AstralInfectionDebuff>(), npc.Calamity().astralInfection);
+                    Main.npc[closestWhoAmI].AddBuff(ModContent.BuffType<AstralInfectionDebuff>(), 300);
                     PetGlobalNPC.AddSlow(new PetSlow(infectedVal, deathSpreadSlowDur, CalSlows.AstrophageSlow), Main.npc[closestWhoAmI]);
                 }
             }

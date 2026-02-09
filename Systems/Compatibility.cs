@@ -8,6 +8,9 @@ using CalamityMod.Items.Fishing.SulphurCatches;
 using CalamityMod.Items.Fishing.SunkenSeaCatches;
 using CalamityMod.Items.Materials;
 using CalamityMod.Items.Placeables;
+using CalamityMod.Items.Placeables.Abyss;
+using CalamityMod.Items.Placeables.Astral;
+using CalamityMod.Items.Placeables.Crags;
 using CalamityMod.Items.Placeables.DraedonStructures;
 using CalamityMod.Items.Placeables.Furniture;
 using CalamityMod.Items.Placeables.FurnitureAbyss;
@@ -15,9 +18,9 @@ using CalamityMod.Items.Placeables.FurnitureAcidwood;
 using CalamityMod.Items.Placeables.FurnitureAshen;
 using CalamityMod.Items.Placeables.FurnitureBotanic;
 using CalamityMod.Items.Placeables.FurnitureCosmilite;
-using CalamityMod.Items.Placeables.FurnitureEutrophic;
 using CalamityMod.Items.Placeables.FurnitureExo;
 using CalamityMod.Items.Placeables.FurnitureMonolith;
+using CalamityMod.Items.Placeables.FurnitureNavystone.FurnitureAncientNavystone;
 using CalamityMod.Items.Placeables.FurnitureOtherworldly;
 using CalamityMod.Items.Placeables.FurniturePlagued;
 using CalamityMod.Items.Placeables.FurnitureProfaned;
@@ -27,6 +30,7 @@ using CalamityMod.Items.Placeables.FurnitureStatigel;
 using CalamityMod.Items.Placeables.FurnitureStratus;
 using CalamityMod.Items.Placeables.FurnitureVoid;
 using CalamityMod.Items.Placeables.Ores;
+using CalamityMod.Items.Placeables.SunkenSea;
 using CalamityMod.Items.SummonItems;
 using CalamityMod.Items.Weapons.Magic;
 using CalamityMod.Items.Weapons.Melee;
@@ -173,13 +177,13 @@ namespace PetsOverhaulCalamityAddon.Systems
             (150, [ModContent.ItemType<PrismaticGuppy>()]),
             (350, [ModContent.ItemType<CragBullhead>(), ModContent.ItemType<TwinklingPollox>(), ModContent.ItemType<PlantyMush>()]),
             (450, [ModContent.ItemType<CoastalDemonfish>(),ModContent.ItemType<Shadowfish>(),ModContent.ItemType<SunkenSailfish>()]),
-            (500, [ModContent.ItemType<EnchantedStarfish>(),ModContent.ItemType<FishofEleum>(),ModContent.ItemType<FishofNight>(),ModContent.ItemType<FishofLight>(),ModContent.ItemType<FishofFlight>(),ModContent.ItemType<GlimmeringGemfish>(),ModContent.ItemType<Gorecodile>(),ModContent.ItemType<Havocfish>(),ModContent.ItemType<StuffedFish>(),ModContent.ItemType<SunbeamFish>()]),
+            (500, [ModContent.ItemType<EnchantedStarfish>(),ModContent.ItemType<FishofEleum>(),ModContent.ItemType<FishofFlight>(),ModContent.ItemType<GlimmeringGemfish>(),ModContent.ItemType<Gorecodile>(),ModContent.ItemType<Havocfish>(),ModContent.ItemType<StuffedFish>(),ModContent.ItemType<SunbeamFish>()]),
             (550, [ModContent.ItemType<AldebaranAlewife>(),ModContent.ItemType<ArcturusAstroidean>(),ModContent.ItemType<ProcyonidPrawn>()]),
             (600, [ModContent.ItemType<CharredLasher>(),ModContent.ItemType<GreenwaveLoach>()]),
             (650, [ModContent.ItemType<Bloodfin>(), ModContent.ItemType<Spadefish>()]),
             (700, [ModContent.ItemType<BrimstoneCrate>(),ModContent.ItemType<SlagCrate>(), ModContent.ItemType<PrismCrate>(), ModContent.ItemType<EutrophicCrate>(),ModContent.ItemType<HydrothermalCrate>(),ModContent.ItemType<SulphurousCrate>()]),
             (850, [ModContent.ItemType<AstralCrate>(),ModContent.ItemType<MonolithCrate>()]),
-            (1350, [ModContent.ItemType<AbyssalAmulet>(), ModContent.ItemType<AlluringBait>(), ModContent.ItemType<RustedJingleBell>()]),
+            (1350, [ModContent.ItemType<SeaSpiritAmulet>(), ModContent.ItemType<AlluringBait>(), ModContent.ItemType<RustedJingleBell>()]),
             (1500, [ModContent.ItemType<SparklingEmpress>(), ModContent.ItemType<DragoonDrizzlefish>()]),
             (2000, [ModContent.ItemType<SerpentsBite>()]),
             (2500, [ModContent.ItemType<Floodtide>(), ModContent.ItemType<GacruxianMollusk>(),ModContent.ItemType<PolarisParrotfish>(),ModContent.ItemType<UrsaSergeant>()])
@@ -198,7 +202,7 @@ namespace PetsOverhaulCalamityAddon.Systems
             PetIDs.NonBossTrueBosses.AddRange(CalamityNonBossTrueBosses);
         }
 
-        public static List<int> CalamityCorruptEnemies = [ModContent.NPCType<HiveTumor>(), ModContent.NPCType<EbonianBlightSlime>(), ModContent.NPCType<HiveMind>(), ModContent.NPCType<DankCreeper>(), ModContent.NPCType<DarkHeart>(), ModContent.NPCType<HiveBlob>(), ModContent.NPCType<HiveBlob2>(), ModContent.NPCType<EbonianPaladin>(), ModContent.NPCType<SplitEbonianPaladin>(), ModContent.NPCType<CorruptSlimeSpawn>(), ModContent.NPCType<CorruptSlimeSpawn2>()];
+        public static List<int> CalamityCorruptEnemies = [ModContent.NPCType<HiveTumor>(), ModContent.NPCType<EbonianBlightSlime>(), ModContent.NPCType<HiveMind>(), ModContent.NPCType<DankCreeper>(), ModContent.NPCType<DarkHeart>(), ModContent.NPCType<HiveBlob>(), ModContent.NPCType<EbonianPaladin>(), ModContent.NPCType<SplitEbonianPaladin>(), ModContent.NPCType<CorruptSlimeSpawn>(), ModContent.NPCType<CorruptSlimeSpawn2>()];
         public static void AddCalamityCorruptEnemies()
         {
             PetIDs.CorruptEnemies.AddRange(CalamityCorruptEnemies);
@@ -390,7 +394,7 @@ namespace PetsOverhaulCalamityAddon.Systems
         /// <summary>
         /// All weapons crafted with Nightmare Fuel.
         /// </summary>
-        public static List<int> CalNightmareWeapons = [ModContent.ItemType<LightGodsBrilliance>(), ModContent.ItemType<RecitationoftheBeast>(), ModContent.ItemType<Ataraxia>(), ModContent.ItemType<CorvidHarbringerStaff>(), ModContent.ItemType<DevilsDevastation>(), ModContent.ItemType<FaceMelter>(), ModContent.ItemType<Karasawa>(), ModContent.ItemType<Penumbra>(), ModContent.ItemType<Phangasm>(), ModContent.ItemType<RubicoPrime>()];
+        public static List<int> CalNightmareWeapons = [ModContent.ItemType<LightGodsBrilliance>(), ModContent.ItemType<RecitationoftheBeast>(), ModContent.ItemType<Ataraxia>(), ModContent.ItemType<CorvidHarbringerStaff>(), ModContent.ItemType<DevilsDevastation>(), ModContent.ItemType<FaceMelter>(), ModContent.ItemType<Karasawa>(), ModContent.ItemType<Penumbra>(), ModContent.ItemType<Riftburst>(), ModContent.ItemType<RubicoPrime>()];
         /// <summary>
         /// All weapons crafted with Endothermic Energy.
         /// </summary>
@@ -405,7 +409,7 @@ namespace PetsOverhaulCalamityAddon.Systems
         }
 
         public static int[] calChests = [ModContent.ItemType<AbyssTreasureChest>(), ModContent.ItemType<AshenChest>(), ModContent.ItemType<AstralChest>(), ModContent.ItemType<RustyChest>(), ModContent.ItemType<SecurityChest>(), ModContent.ItemType<SacrilegiousChest>(), ModContent.ItemType<OtherworldlyChest>(), ModContent.ItemType<StratusChest>(), ModContent.ItemType<BotanicChest>(),
-            ModContent.ItemType<CosmiliteChest>(), ModContent.ItemType<ExoChest>(), ModContent.ItemType<SilvaChest>(), ModContent.ItemType<EutrophicChest>(), ModContent.ItemType<AgedSecurityChest>(), ModContent.ItemType<RustyChest>(), ModContent.ItemType<MonolithChest>(), ModContent.ItemType<PlaguedPlateChest>(), ModContent.ItemType<ProfanedChest>(),
+            ModContent.ItemType<CosmiliteChest>(), ModContent.ItemType<ExoChest>(), ModContent.ItemType<SilvaChest>(), ModContent.ItemType<AncientNavystoneChest>(), ModContent.ItemType<AgedSecurityChest>(), ModContent.ItemType<RustyChest>(), ModContent.ItemType<MonolithChest>(), ModContent.ItemType<PlaguedPlateChest>(), ModContent.ItemType<ProfanedChest>(),
             ModContent.ItemType<StatigelChest>(), ModContent.ItemType<AbyssChest>(), ModContent.ItemType<VoidChest>(), ModContent.ItemType<AcidwoodChest>()];
         public static int[] calBugs = [ModContent.ItemType<BabyFlakCrabItem>(), ModContent.ItemType<TwinklerItem>()];
         public static int[] calAnimals = [ModContent.ItemType<BabyFlakCrabItem>(), ModContent.ItemType<TwinklerItem>(), ModContent.ItemType<BloodwormItem>(), ModContent.ItemType<PiggyItem>(), ModContent.ItemType<BabyCannonballJellyfishItem>(), ModContent.ItemType<BabyGhostBellItem>(), ModContent.ItemType<SeaMinnowItem>()];

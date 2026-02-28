@@ -27,7 +27,7 @@ namespace PetsOverhaulCalamityAddon.CalamityLightPets
                 }
                 foreach (NPC npc in Main.ActiveNPCs)
                 {
-                    if (Player.Distance(npc.Center) < crystal.PoisonRadius.CurrentStatInt)
+                    if (PetUtils.LifestealCheck(npc) && Player.Distance(npc.Center) < crystal.PoisonRadius.CurrentStatInt)
                     {
                         npc.AddBuff(BuffID.Poisoned, 60);
                     }

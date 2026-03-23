@@ -390,15 +390,15 @@ namespace PetsOverhaulCalamityAddon.Systems
         /// <summary>
         /// All weapons crafted with Living Shard + Blossom Flux.
         /// </summary>
-        public static List<int> CalPlanteraWeapons = [ItemID.TerraBlade, ModContent.ItemType<BlossomFlux>(), ModContent.ItemType<BotanicPiercer>(), ModContent.ItemType<Photosynthesis>(), ModContent.ItemType<PlantationStaff>(), ModContent.ItemType<SamsaraSlicer>(), ModContent.ItemType<StygianShield>(), ModContent.ItemType<VernalBolter>(), ModContent.ItemType<WildfireBloom>()];
+        public static List<int> CalPlanteraWeapons = [ItemID.TerraBlade, ModContent.ItemType<BlossomFlux>(), ModContent.ItemType<BotanicPiercer>(), ModContent.ItemType<Photosynthesis>(), ModContent.ItemType<PlantationStaff>(), ModContent.ItemType<SamsaraSlicer>(), ModContent.ItemType<StygianShield>(), ModContent.ItemType<VernalBolter>(), ModContent.ItemType<WildfireBloom>(), ModContent.ItemType<Terratomere>(), ModContent.ItemType<AmphibiansGuitar>()];
         /// <summary>
         /// All weapons crafted with Nightmare Fuel.
         /// </summary>
-        public static List<int> CalNightmareWeapons = [ModContent.ItemType<LightGodsBrilliance>(), ModContent.ItemType<RecitationoftheBeast>(), ModContent.ItemType<Ataraxia>(), ModContent.ItemType<CorvidHarbringerStaff>(), ModContent.ItemType<DevilsDevastation>(), ModContent.ItemType<FaceMelter>(), ModContent.ItemType<Karasawa>(), ModContent.ItemType<Penumbra>(), ModContent.ItemType<Riftburst>(), ModContent.ItemType<RubicoPrime>()];
+        public static List<int> CalNightmareWeapons = [ModContent.ItemType<LightGodsBrilliance>(), ModContent.ItemType<Ataraxia>(), ModContent.ItemType<CorvidHarbringerStaff>(), ModContent.ItemType<DevilsDevastation>(), ModContent.ItemType<FaceMelter>(), ModContent.ItemType<Karasawa>(), ModContent.ItemType<Penumbra>(), ModContent.ItemType<Riftburst>(), ModContent.ItemType<AntiMaterielRifle>(), ModContent.ItemType<NebulousCataclysm>(), ModContent.ItemType<Infinity>()];
         /// <summary>
         /// All weapons crafted with Endothermic Energy.
         /// </summary>
-        public static List<int> CalEndothermicWeapons = [ModContent.ItemType<PrimordialAncient>(), ModContent.ItemType<Alluvion>(), ModContent.ItemType<EndoHydraStaff>(), ModContent.ItemType<Hypothermia>(), ModContent.ItemType<Orderbringer>(), ModContent.ItemType<PrismaticBreaker>(), ModContent.ItemType<SDFMG>(), ModContent.ItemType<ThePack>(), ModContent.ItemType<Endogenesis>(), ModContent.ItemType<NanoblackReaper>(), ModContent.ItemType<IceBarrage>()];
+        public static List<int> CalEndothermicWeapons = [ModContent.ItemType<PrimordialAncient>(), ModContent.ItemType<Alluvion>(), ModContent.ItemType<EndoHydraStaff>(), ModContent.ItemType<Hypothermia>(), ModContent.ItemType<PrismaticBreaker>(), ModContent.ItemType<SDFMG>(), ModContent.ItemType<ThePack>(), ModContent.ItemType<Endogenesis>(), ModContent.ItemType<NanoblackReaper>(), ModContent.ItemType<IceBarrage>()];
         public static void AddCalamityItemLists()
         {
             BabyPenguin.IceFishingDrops.Add(ModContent.ItemType<FishofEleum>());

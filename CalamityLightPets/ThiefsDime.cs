@@ -13,7 +13,7 @@ namespace PetsOverhaulCalamityAddon.CalamityLightPets
         public override int LightPetItemID => CalamityLightPetIDs.Goldie;
         public override void PostUpdateEquips()
         {
-            if (Player.miscEquips[1].TryGetGlobalItem(out ThiefsDimePet dime))
+            if (TryGetLightPet(out ThiefsDimePet dime))
             {
                 Player.Calamity().rogueVelocity += dime.RogueVelocity.CurrentStatFloat;
                 Player.Calamity().stealthGenStandstill += dime.StealthGain.CurrentStatFloat;
@@ -23,7 +23,7 @@ namespace PetsOverhaulCalamityAddon.CalamityLightPets
         }
         public override void ModifyLuck(ref float luck)
         {
-            if (Player.miscEquips[1].TryGetGlobalItem(out ThiefsDimePet dime))
+            if (TryGetLightPet(out ThiefsDimePet dime))
             {
                 luck += dime.Luck.CurrentStatFloat;
             }

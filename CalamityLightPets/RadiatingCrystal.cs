@@ -14,7 +14,7 @@ namespace PetsOverhaulCalamityAddon.CalamityLightPets
         public override int LightPetItemID => CalamityLightPetIDs.Radiator;
         public override void PostUpdateEquips()
         {
-            if (Player.miscEquips[1].TryGetGlobalItem(out RadiatingCrystalPet crystal))
+            if (TryGetLightPet(out RadiatingCrystalPet crystal))
             {
                 PetUtils.CircularDustEffect(Player.Center, DustID.CursedTorch, crystal.PoisonRadius.CurrentStatInt, crystal.PoisonRadius.CurrentStatInt / 20);
                 Player.GetKnockback<GenericDamageClass>() += crystal.Knockback.CurrentStatFloat;

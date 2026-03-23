@@ -11,7 +11,7 @@ namespace PetsOverhaulCalamityAddon.CalamityLightPets
         public override int LightPetItemID => CalamityLightPetIDs.LittleLight;
         public override void PostUpdateEquips()
         {
-            if (Player.miscEquips[1].TryGetGlobalItem(out LittleLightPet light))
+            if (TryGetLightPet(out LittleLightPet light))
             {
                 Player.aggro += light.Aggro.CurrentStatInt;
                 Pet.petShieldMultiplier += light.ShieldIncrease.CurrentStatFloat;
@@ -20,7 +20,7 @@ namespace PetsOverhaulCalamityAddon.CalamityLightPets
         }
         public override void ModifyHurt(ref Player.HurtModifiers modifiers)
         {
-            if (Player.miscEquips[1].TryGetGlobalItem(out LittleLightPet light))
+            if (TryGetLightPet(out LittleLightPet light))
             {
                 modifiers.Knockback *= 1f - light.KnockbackResist.CurrentStatFloat;
             }

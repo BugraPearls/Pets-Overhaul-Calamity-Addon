@@ -12,7 +12,7 @@ namespace PetsOverhaulCalamityAddon.CalamityLightPets
         public override int LightPetItemID => CalamityLightPetIDs.Yuu;
         public override void PostUpdateEquips()
         {
-            if (Player.miscEquips[1].TryGetGlobalItem(out ChromaticOrbPet orb))
+            if (TryGetLightPet(out ChromaticOrbPet orb))
             {
                 Pet.abilityHaste += orb.AbilityHaste.CurrentStatFloat;
                 Player.GetCritChance<GenericDamageClass>() += orb.CritChance.CurrentStatFloat * 100;

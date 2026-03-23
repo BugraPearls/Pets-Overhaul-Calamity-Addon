@@ -11,7 +11,7 @@ namespace PetsOverhaulCalamityAddon.CalamityLightPets
         public override int LightPetItemID => CalamityLightPetIDs.Sparks;
         public override void PostUpdateEquips()
         {
-            if (Player.miscEquips[1].TryGetGlobalItem(out EnchantedButterflyPet butter))
+            if (TryGetLightPet(out EnchantedButterflyPet butter))
             {
                 Pet.petHealMultiplier += butter.PetHealPower.CurrentStatInt;
                 Pet.globalFortune += butter.GlobalFortune.CurrentStatInt;

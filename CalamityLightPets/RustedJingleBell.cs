@@ -12,7 +12,7 @@ namespace PetsOverhaulCalamityAddon.CalamityLightPets
         public override int LightPetItemID => CalamityLightPetIDs.BabyGhostBell;
         public override void PostUpdateEquips()
         {
-            if (Player.miscEquips[1].TryGetGlobalItem(out RustedJingleBellPet bell))
+            if (TryGetLightPet(out RustedJingleBellPet bell))
             {
                 Player.breathMax += bell.Breathe.CurrentStatInt / 7; //In vanilla how long Player can breathe by default is breathMax * 7 due to it ticking down every 7 frame.
                 Pet.abilityHaste += bell.Haste.CurrentStatFloat;

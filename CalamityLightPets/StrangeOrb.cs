@@ -11,7 +11,7 @@ namespace PetsOverhaulCalamityAddon.CalamityLightPets
         public override int LightPetItemID => CalamityLightPetIDs.OceanSpirit;
         public override void PostUpdateEquips()
         {
-            if (Player.miscEquips[1].TryGetGlobalItem(out StrangeOrbPet orb))
+            if (TryGetLightPet(out StrangeOrbPet orb))
             {
                 Player.fishingSkill += orb.FishingPower.CurrentStatInt;
                 Pet.fishingFortune += orb.FishingFortune.CurrentStatInt;

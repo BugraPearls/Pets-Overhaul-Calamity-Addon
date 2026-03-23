@@ -14,7 +14,7 @@ namespace PetsOverhaulCalamityAddon.CalamityLightPets
         public override int LightPetItemID => CalamityLightPetIDs.Lilorde;
         public override void PostUpdateEquips()
         {
-            if (Player.miscEquips[1].TryGetGlobalItem(out SuspiciousLookingNOUPet sus))
+            if (TryGetLightPet(out SuspiciousLookingNOUPet sus))
             {
                 Player.extraFall += sus.FallBlocks.CurrentStatInt;
                 Player.GetDamage<GenericDamageClass>() += sus.Damage.CurrentStatFloat;
@@ -22,14 +22,14 @@ namespace PetsOverhaulCalamityAddon.CalamityLightPets
         }
         public override void ModifyLuck(ref float luck)
         {
-            if (Player.miscEquips[1].TryGetGlobalItem(out SuspiciousLookingNOUPet sus))
+            if (TryGetLightPet(out SuspiciousLookingNOUPet sus))
             {
                 luck += sus.Luck.CurrentStatFloat;
             }
         }
         public override void DrawEffects(PlayerDrawSet drawInfo, ref float r, ref float g, ref float b, ref float a, ref bool fullBright)
         {
-            if (Player.miscEquips[1].TryGetGlobalItem(out SuspiciousLookingNOUPet sus))
+            if (TryGetLightPet(out SuspiciousLookingNOUPet sus))
             {
                 g -= sus.Sus.CurrentStatFloat * 0.5f;
                 b -= sus.Sus.CurrentStatFloat * 0.5f;

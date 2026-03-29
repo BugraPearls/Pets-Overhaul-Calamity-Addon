@@ -214,7 +214,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                     SoundEngine.PlaySound(new SoundStyle(path) with { PitchVariance = 0.6f, Identifier = "akatoExplosion", MaxInstances = 2, SoundLimitBehavior = SoundLimitBehavior.ReplaceOldest, Type = SoundType.Sound, Volume = 0.8f }, target.Center); //See disclaimer.txt in Sounds/Akato folder for further info regarding sounds origin
                 }
                 beginOnHit = 0;
-                if (PetUtils.LifestealCheck(target))
+                if (PetUtils.ValidTargetCheck(target))
                 {
                     dragonPracticeStacks += CalculateStacks(target, stackPerHit);
                 }
@@ -222,7 +222,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         }
         public override void OnHitNPCWithProj(Projectile proj, NPC target, NPC.HitInfo hit, int damageDone)
         {
-            if (PetIsEquipped() && PetUtils.LifestealCheck(target) && proj.TryGetGlobalProjectile(out PetGlobalProjectile petProj) && petProj.petProj)
+            if (PetIsEquipped() && PetUtils.ValidTargetCheck(target) && proj.TryGetGlobalProjectile(out PetGlobalProjectile petProj) && petProj.petProj)
             {
                 dragonPracticeStacks += CalculateStacks(target, stackPerHit);
                 if (target.active && target.TryGetGlobalNPC(out SuperScorcherBreath scorch))

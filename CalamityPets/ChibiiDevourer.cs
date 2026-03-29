@@ -27,7 +27,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                 {
                     if (Player.Distance(npc.Center) < block && npc.dontTakeDamage == false)
                     {
-                        npc.SimpleStrikeNPC(Pet.PetDamage(dmg, DamageClass.Generic), Player.direction, true, kb, DamageClass.Generic, true, Player.luck);
+                        Pet.PetStrike(npc,dmg,2, true, kb, DamageClass.Generic);
                     }
                 }
                 foreach (var player in Main.ActivePlayers)

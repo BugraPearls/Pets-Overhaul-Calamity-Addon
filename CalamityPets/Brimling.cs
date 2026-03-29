@@ -34,26 +34,23 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                     float dmg = (info.SourceDamage / 2 + Player.statDefense) * (1f + Player.endurance);
                     for (int i = 0; i < 5; i++)
                     {
-                        Projectile proj = Projectile.NewProjectileDirect(PetUtils.GetSource_Pet(EntitySourcePetIDs.PetProjectile), Player.Center, Main.rand.NextVector2CircularEdge(4f, 4f), ModContent.ProjectileType<BrimstoneFireballMinion>(), Pet.PetDamage(dmg, DamageClass.Generic), 0f, Player.whoAmI);
+                        Projectile proj = Pet.NewPetSourcedProjectile(PetUtils.GetSource_Pet(EntitySourcePetIDs.PetProjectile), Player.Center, Main.rand.NextVector2CircularEdge(4f, 4f), ModContent.ProjectileType<BrimstoneFireballMinion>(), dmg, 0f, Player.whoAmI, damageClass: DamageClass.Generic);
                         proj.tileCollide = false;
-                        proj.DamageType = DamageClass.Generic;
-                        proj.CritChance = (int)Player.GetCritChance(DamageClass.Generic);
-                        proj.netUpdate = true;
                     }
                     Pet.timer = Pet.timerMax;
                 }
 
                 if (info.DamageSource.TryGetCausingEntity(out Entity entity))
                 {
-                    int damageTaken = Math.Min(info.SourceDamage, Player.statLife);
-                    damageTaken = Main.DamageVar(Pet.PetDamage(damageTaken * reflectAmount, DamageClass.Generic), Player.luck); //Caps the Reflect's base damage to Player's current HP.
+                    float damageTaken = Math.Min(info.SourceDamage, Player.statLife) * reflectAmount; //Caps the Reflect's base damage to Player's current HP.
                     if (entity is Projectile projectile && projectile.TryGetGlobalProjectile(out PetGlobalProjectile proj) && Main.npc[proj.sourceNpcId].active && Main.npc[proj.sourceNpcId].dontTakeDamage == false)
                     {
-                        Main.npc[proj.sourceNpcId].SimpleStrikeNPC(damageTaken, info.HitDirection, Main.rand.NextBool((int)Math.Min(Player.GetTotalCritChance<GenericDamageClass>(), 100), 100), kbFromReflect, DamageClass.Generic);
+                        Pet.PetStrike(Main.npc[proj.sourceNpcId], damageTaken, info.HitDirection, Main.rand.NextBool((int)Math.Min(Player.GetTotalCritChance<GenericDamageClass>(), 100), 100), kbFromReflect, DamageClass.Generic);
                     }
                     else if (entity is NPC npc && npc.active == true && npc.dontTakeDamage == false)
                     {
-                        npc.SimpleStrikeNPC(damageTaken, info.HitDirection, Main.rand.NextBool((int)Math.Min(Player.GetTotalCritChance<GenericDamageClass>(), 100), 100), kbFromReflect, DamageClass.Generic);
+                        Pet.PetStrike(npc, damageTaken, info.HitDirection, Main.rand.NextBool((int)Math.Min(Player.GetTotalCritChance<GenericDamageClass>(), 100), 100), kbFromReflect, DamageClass.Generic);
+
                     }
                 }
             }

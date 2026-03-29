@@ -201,9 +201,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         {
             if (PetIsEquipped() && beginOnHit > 0)
             {
-                Projectile petProjectile = Projectile.NewProjectileDirect(PetUtils.GetSource_Pet(EntitySourcePetIDs.PetProjectile), target.Center, Vector2.Zero, ModContent.ProjectileType<PetExplosion>(), Pet.PetDamage(hit.SourceDamage * (explosionMult + StackExplosionBonus), hit.DamageType), 0, Player.whoAmI, explosionSize + StackExplosionSize);
-                petProjectile.DamageType = hit.DamageType;
-                petProjectile.CritChance = (int)Player.GetTotalCritChance(hit.DamageType);
+                Pet.NewPetSourcedProjectile(PetUtils.GetSource_Pet(EntitySourcePetIDs.PetProjectile), target.Center, Vector2.Zero, ModContent.ProjectileType<PetExplosion>(), hit.SourceDamage * (explosionMult + StackExplosionBonus), 0, Player.whoAmI, explosionSize + StackExplosionSize, damageClass: hit.DamageType);
                 if (ModContent.GetInstance<PetPersonalization>().AbilitySoundEnabled)
                 {
                     string path = Main.rand.Next(3) switch

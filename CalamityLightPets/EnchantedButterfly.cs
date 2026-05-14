@@ -22,73 +22,12 @@ namespace PetsOverhaulCalamityAddon.CalamityLightPets
     }
     public sealed class EnchantedButterflyPet : LightPetItem
     {
-        public LightPetStat PetHealPower = new(30, 0.006f, 0.07f);
-        public LightPetStat GlobalFortune = new(16, 1, 6);
-        public LightPetStat Aggro = new(20, -5, -40);
-        public LightPetStat PetDamage = new(10, 0.01f, 0.05f);
+        public LightPetStat PetHealPower = new(30, 0.006f,"Heal", 0.07f, LegacyKeysToInherit: ("Stat1", 30));
+        public LightPetStat GlobalFortune = new(16, 1, "Fortune", 6, LegacyKeysToInherit: ("Stat2", 16));
+        public LightPetStat Aggro = new(20, -5, "Aggro", -40, LegacyKeysToInherit: ("Stat3", 20));
+        public LightPetStat PetDamage = new(10, 0.01f, "Damage", 0.05f, LegacyKeysToInherit: ("Stat4", 10));
         public override int LightPetItemID => CalamityLightPetIDs.Sparks;
-        public override void UpdateInventory(Item item, Player player)
-        {
-            PetHealPower.SetRoll(player.luck);
-            GlobalFortune.SetRoll(player.luck);
-            Aggro.SetRoll(player.luck);
-            PetDamage.SetRoll(player.luck);
-        }
-        public override void NetSend(Item item, BinaryWriter writer)
-        {
-            writer.Write((byte)PetHealPower.CurrentRoll);
-            writer.Write((byte)GlobalFortune.CurrentRoll);
-            writer.Write((byte)Aggro.CurrentRoll);
-            writer.Write((byte)PetDamage.CurrentRoll);
-        }
-        public override void NetReceive(Item item, BinaryReader reader)
-        {
-            PetHealPower.CurrentRoll = reader.ReadByte();
-            GlobalFortune.CurrentRoll = reader.ReadByte();
-            Aggro.CurrentRoll = reader.ReadByte();
-            PetDamage.CurrentRoll = reader.ReadByte();
-        }
-        public override void SaveData(Item item, TagCompound tag)
-        {
-            tag.Add("Stat1", PetHealPower.CurrentRoll);
-            tag.Add("Stat2", GlobalFortune.CurrentRoll);
-            tag.Add("Stat3", Aggro.CurrentRoll);
-            tag.Add("Stat4", PetDamage.CurrentRoll);
-        }
-        public override void LoadData(Item item, TagCompound tag)
-        {
-            if (tag.TryGet("Stat1", out int heal))
-            {
-                PetHealPower.CurrentRoll = heal;
-            }
-
-            if (tag.TryGet("Stat2", out int fortune))
-            {
-                GlobalFortune.CurrentRoll = fortune;
-            }
-
-            if (tag.TryGet("Stat3", out int aggro))
-            {
-                Aggro.CurrentRoll = aggro;
-            }
-
-            if (tag.TryGet("Stat4", out int mana))
-            {
-                PetDamage.CurrentRoll = mana;
-            }
-        }
-        public override int GetRoll() => Aggro.CurrentRoll;
-        public override string PetsTooltip => Compatibility.LocVal("LightPetTooltips.EnchantedButterfly")
-
-                        .Replace("<heal>", PetHealPower.BaseAndPerQuality())
-                        .Replace("<fortune>", GlobalFortune.BaseAndPerQuality())
-                        .Replace("<aggro>", Aggro.BaseAndPerQuality())
-                        .Replace("<damage>", PetDamage.BaseAndPerQuality())
-
-                        .Replace("<healLine>", PetHealPower.StatSummaryLine())
-                        .Replace("<fortuneLine>", GlobalFortune.StatSummaryLine())
-                        .Replace("<aggroLine>", Aggro.StatSummaryLine(Aggro.CurrentStatInt.ToString())) //Using overload so the + doesn't appear on tooltip
-                        .Replace("<damageLine>", PetDamage.StatSummaryLine());
+        public override string BaseTooltip => Compatibility.LocVal("LightPetTooltips.EnchantedButterfly");
 
     }
 }

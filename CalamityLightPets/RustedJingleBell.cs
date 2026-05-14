@@ -25,60 +25,10 @@ namespace PetsOverhaulCalamityAddon.CalamityLightPets
     }
     public sealed class RustedJingleBellPet : LightPetItem
     {
-        public LightPetStat Breathe = new(30, 14, 90);
-        public LightPetStat Haste = new(25, 0.002f, 0.03f);
-        public LightPetStat MiningFortuneInWater = new(10, 2, 10);
+        public LightPetStat Breathe = new(30, 14,"Breathe", 90, LegacyKeysToInherit: ("Stat1", 30));
+        public LightPetStat Haste = new(25, 0.002f, "Haste", 0.03f, LegacyKeysToInherit: ("Stat2", 25));
+        public LightPetStat MiningFortuneInWater = new(10, 2, "Fortune", 10, LegacyKeysToInherit: ("Stat3", 10));
         public override int LightPetItemID => CalamityLightPetIDs.BabyGhostBell;
-        public override void UpdateInventory(Item item, Player player)
-        {
-            Breathe.SetRoll(player.luck);
-            Haste.SetRoll(player.luck);
-            MiningFortuneInWater.SetRoll(player.luck);
-        }
-        public override void NetSend(Item item, BinaryWriter writer)
-        {
-            writer.Write((byte)Breathe.CurrentRoll);
-            writer.Write((byte)Haste.CurrentRoll);
-            writer.Write((byte)MiningFortuneInWater.CurrentRoll);
-        }
-        public override void NetReceive(Item item, BinaryReader reader)
-        {
-            Breathe.CurrentRoll = reader.ReadByte();
-            Haste.CurrentRoll = reader.ReadByte();
-            MiningFortuneInWater.CurrentRoll = reader.ReadByte();
-        }
-        public override void SaveData(Item item, TagCompound tag)
-        {
-            tag.Add("Stat1", Breathe.CurrentRoll);
-            tag.Add("Stat2", Haste.CurrentRoll);
-            tag.Add("Stat3", MiningFortuneInWater.CurrentRoll);
-        }
-        public override void LoadData(Item item, TagCompound tag)
-        {
-            if (tag.TryGet("Stat1", out int breathe))
-            {
-                Breathe.CurrentRoll = breathe;
-            }
-
-            if (tag.TryGet("Stat2", out int haste))
-            {
-                Haste.CurrentRoll = haste;
-            }
-
-            if (tag.TryGet("Stat3", out int fortune))
-            {
-                MiningFortuneInWater.CurrentRoll = fortune;
-            }
-        }
-        public override int GetRoll() => Breathe.CurrentRoll;
-        public override string PetsTooltip => Compatibility.LocVal("LightPetTooltips.RustedJingleBell")
-
-                        .Replace("<breathe>", Breathe.BaseAndPerQuality(Math.Round(Breathe.StatPerRoll / 60f, 2).ToString(), Math.Round(Breathe.BaseStat / 60f, 2).ToString()))
-                        .Replace("<haste>", Haste.BaseAndPerQuality())
-                        .Replace("<fortune>", MiningFortuneInWater.BaseAndPerQuality())
-
-                        .Replace("<breatheLine>", Breathe.StatSummaryLine(Math.Round(Breathe.CurrentStatInt / 60f, 2).ToString()))
-                        .Replace("<hasteLine>", Haste.StatSummaryLine())
-                        .Replace("<fortuneLine>", MiningFortuneInWater.StatSummaryLine());
+        public override string BaseTooltip => Compatibility.LocVal("LightPetTooltips.RustedJingleBell");
     }
 }

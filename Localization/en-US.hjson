@@ -15,74 +15,59 @@ Mods: {
 		LightPetTooltips: {
 			RustedJingleBell:
 				'''
-				Increases your maximum breathing time underwater
-				by <breathe> seconds, Pet Ability Haste by <haste>,
-				and Mining fortune by <fortune> while touching a liquid.
-				Breathe Seconds Bonus: <breatheLine>
-				Pet Ability Haste Bonus: <hasteLine>
-				Mining Fortune Bonus In Liquid: <fortuneLine>
+				- Increases breathing time by <Breathe>
+				- Increases Pet ability haste by <Haste>
+				- Increases mining fortune by <Fortune> 
+				[c/828282:  • Only while touching a liquid.]
 				'''
 			ThiefsDime:
 				'''
-				Increases Luck by <luck>, Rogue damage by <rogue>,
-				Rogue velocity by <velocity> and stealth gain by <stealth>.
-				Luck Bonus: <luckLine>
-				Rogue Damage Bonus: <rogueLine>
-				Rogue Velocity Bonus: <velocityLine>
-				Rogue Stealth Gain Bonus: <stealthLine>
+				- Increases luck by <Luck>
+				- Increases rogue damage by <Damage>
+				- Increases rogue velocity by <Velocity>
+				- Increases rogue stealth gain by <Stealth>
 				'''
 			SuspiciousLookingNOU:
 				'''
-				Increases luck by <luck>, decreases your damage by <damage>,
-				and increases blocks where fall damage begins by <fall>.
-				Also increases how sus you are by <sus>.
-				Luck Bonus: <luckLine>
-				Lowered Damage: <damageLine>
-				Blocks till Fall Begin: <fallLine>
-				sus meter: <susLine>
+				- Increases luck by <NoGamblingPls>
+				- Decreases your damage by <BrainDamage>
+				- Increases fall damage resistance by <TheHarderYouFallFurtherYouClimb>
+				- sus meter <RedWasNotTheImpostor>
 				'''
 			LittleLight:
 				'''
-				Increases your aggro by <aggro>, knockback resist by <kbResist>,
-				Shields gained by Pets by <shield> and Maximum health by <health>.
-				Aggro Bonus: <aggroLine>
-				Knockback Resistance Bonus: <kbResistLine>
-				Pet Shield Increase Bonus: <shieldLine>
-				Health Bonus: <healthLine>
+				- Increases your aggro by <Aggro>
+				- Increases knockback resist by <KbResist>
+				- Increases shields gained by Pets by <Shield> 
+				- Increases maximum health by <Health>
 				'''
 			StrangeOrb:
 				'''
-				Increases fishing power by <power>, fishing fortune by <fortune>
-				and increases Pet Healing by <heal> if you're touching a liquid.
-				Fishing Power Bonus: <powerLine>
-				Fishing Fortune Bonus: <fortuneLine>
-				Pet Healing Bonus in Liquid: <healLine>
+				- Increases fishing power by <Fishing>
+				- Increases fishing fortune by <Fortune>
+				- Increases Pet healing by <Healing>
+				[c/828282:  • Only while touching a liquid.]
 				'''
 			RadiatingCrystal:
 				'''
-				Increases defense by <def> while under any debuff,
-				except debuffs that can't be healed by Nurse or Mana Sickness,
-				Knockback by <knockback> and poisons enemies in <radius> blocks.
-				Defense Under Debuff Bonus: <defLine>
-				Knockback Bonus: <knockbackLine>
-				Poison Radius: <radiusLine>
+				- Increases knockback by <Knockback>
+				- Increases defense by <Defense>
+				[c/828282:  • Only while under a debuff.]
+				[c/828282:  • Excludes Mana Sickness and debuffs unhealable by Nurse.]
+				- Poisons enemies in <Poison> blocks.
 				'''
 			EnchantedButterfly:
 				'''
-				Increases healing from Pets by <heal>, global fortune by <fortune>,
-				and Pet sourced damage by <damage>. Reduces Aggro by <aggro>.
-				Pet Healing Bonus: <healLine>
-				Global Fortune Bonus: <fortuneLine>
-				Aggro Reduction Bonus: <aggroLine>
-				Pet Sourced Damage Bonus: <damageLine>
+				- Increases healing from Pets by <Heal>
+				- Increases global fortune by <Fortune>
+				- Increases Pet sourced damage by <Damage>
+				- Reduces aggro by <Aggro>
 				'''
 			ChromaticOrb:
 				'''
-				Increases Pet Ability Haste by <haste>, Crit Chance by <crit>,
-				and Jump speed by <jump>.
-				Pet Ability Haste Bonus: <hasteLine>
-				Crit Chance Bonus: <critLine>
-				Jump Speed Bonus: <jumpLine>
+				- Increases Pet ability haste by <Haste>
+				- Increases crit chance by <Crit>
+				- Increases jump speed by <Jump>
 				'''
 		}
 

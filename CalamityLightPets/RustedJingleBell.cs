@@ -25,10 +25,14 @@ namespace PetsOverhaulCalamityAddon.CalamityLightPets
     }
     public sealed class RustedJingleBellPet : LightPetItem
     {
-        public LightPetStat Breathe = new(30, 14,"Breathe", 90, LegacyKeysToInherit: ("Stat1", 30));
-        public LightPetStat Haste = new(25, 0.002f, "Haste", 0.03f, LegacyKeysToInherit: ("Stat2", 25));
-        public LightPetStat MiningFortuneInWater = new(10, 2, "Fortune", 10, LegacyKeysToInherit: ("Stat3", 10));
+        public LightPetStat Breathe = new(30, 14,"Breathe", 90, true, LegacyKeysToInherit: ("Stat1", 30));
+        public LightPetStat Haste = new(25, 0.002f, "Haste", 0.04f, LegacyKeysToInherit: ("Stat2", 25));
+        public LightPetStat MiningFortuneInWater = new(10, 3, "Fortune", 5, LegacyKeysToInherit: ("Stat3", 10));
         public override int LightPetItemID => CalamityLightPetIDs.BabyGhostBell;
         public override string BaseTooltip => Compatibility.LocVal("LightPetTooltips.RustedJingleBell");
+        public override void ModifyLightPetTooltip(ref string tooltip)
+        {
+            tooltip = tooltip.Replace("<0Breathe>", PetUtils.Secondize(Breathe.CurrentStatInt)).Replace("<1Breathe>", PetUtils.Secondize((int)Breathe.BaseStat)).Replace("<2Breathe>", PetUtils.Secondize((int)Breathe.StatPerRoll));
+        }
     }
 }

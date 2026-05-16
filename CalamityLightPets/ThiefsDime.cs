@@ -15,27 +15,30 @@ namespace PetsOverhaulCalamityAddon.CalamityLightPets
         {
             if (TryGetLightPet(out ThiefsDimePet dime))
             {
-                Player.Calamity().rogueVelocity += dime.RogueVelocity.CurrentStatFloat;
-                Player.Calamity().stealthGenStandstill += dime.StealthGain.CurrentStatFloat;
-                Player.Calamity().stealthGenMoving += dime.StealthGain.CurrentStatFloat;
-                Player.GetDamage<RogueDamageClass>() += dime.RogueDamage.CurrentStatFloat;
+                Player.Calamity().rogueVelocity += dime.RogueVelocity;
+                Player.GetDamage<RogueDamageClass>() += dime.RogueDamage;
+                Pet.globalFortune += dime.GlobalFortune;
             }
         }
         public override void ModifyLuck(ref float luck)
         {
             if (TryGetLightPet(out ThiefsDimePet dime))
             {
-                luck += dime.Luck.CurrentStatFloat;
+                luck += dime.Luck;
             }
         }
     }
     public sealed class ThiefsDimePet : LightPetItem
     {
-        public LightPetStat Luck = new(16, 0.005f, "Luck", LegacyKeysToInherit: ("Stat1", 16));
-        public LightPetStat RogueDamage = new(20, 0.0025f, "Damage", 0.05f, LegacyKeysToInherit: ("Stat2", 20));
-        public LightPetStat RogueVelocity = new(40, 0.004f, "Velocity", 0.04f, LegacyKeysToInherit: ("Stat3", 40));
-        public LightPetStat StealthGain = new(30, 0.002f, "Stealth", 0.03f, LegacyKeysToInherit: ("Stat4", 30));
+        public LightPetStat Luck = new(16, 0.005f, "Luck", customStatDisplay: true, LegacyKeysToInherit: ("Stat1", 16));
+        public LightPetStat RogueDamage = new(20, 0.002f, "Damage", 0.03f, LegacyKeysToInherit: ("Stat2", 20));
+        public LightPetStat RogueVelocity = new(40, 0.003f, "Velocity", 0.043f, LegacyKeysToInherit: ("Stat3", 40));
+        public LightPetStat GlobalFortune = new(15, 1, "Fortune", LegacyKeysToInherit: ("Stat4", 30));
         public override int LightPetItemID => CalamityLightPetIDs.Goldie;
         public override string BaseTooltip => Compatibility.LocVal("LightPetTooltips.ThiefsDime");
+        public override void ModifyLightPetTooltip(ref string tooltip)
+        {
+            tooltip = tooltip.Replace("<0Luck>", Math.Round(Luck.CurrentStatFloat, 2).ToString()).Replace("<1Luck>", Luck.BaseStat.ToString()).Replace("<2Luck>", Luck.StatPerRoll.ToString());
+        }
     }
 }

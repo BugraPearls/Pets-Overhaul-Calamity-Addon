@@ -83,6 +83,26 @@ Mods: {
 				暴击率加成：<critLine>
 				跳跃速度加成：<jumpLine>
 				'''
+			/* BurrowerBeacon:
+				'''
+				- Increases mining speed by <MiningSpeed>
+				- Increases mining fortune by <Fortune>
+				- Upon being hurt, increases movement speed by <MovementSpeed>
+				[c/828282:  � Movement speed buff lasts 0.5 second.]
+				''' */
+			/* ToastyBatBottle:
+				'''
+				- Increases Rage duration by <Rage> second.
+				- Increases Pet sourced damage by <PetDamage>
+				- While dashing, burn nearby enemies for <BurnOnDash> seconds.
+				''' */
+			/* FrostyBatBottle:
+				'''
+				- Increases Pet slow potency by <SlowPotency>
+				- Increases Knockback resistance by <KnockbackResist>
+				- While dashing, applies a <SlowOnDash> slow on nearby enemies.
+				[c/828282:  � Slow lasts 3 seconds.]
+				''' */
 		}
 
 		PetTooltips: {

@@ -1,4 +1,4 @@
-Mods: {
+﻿Mods: {
 	PetsOverhaulCalamityAddon: {
 		MoonlingRogueTooltip:
 			'''
@@ -18,7 +18,7 @@ Mods: {
 				- Increases breathing time by <Breathe> seconds.
 				- Increases Pet ability haste by <Haste>
 				- Increases mining fortune by <Fortune> 
-				[c/828282:  � Only while touching a liquid.]
+				[c/828282:  • Only while touching a liquid.]
 				'''
 			ThiefsDime:
 				'''
@@ -46,7 +46,7 @@ Mods: {
 				- Increases fishing power by <Fishing>
 				- Increases fishing fortune by <Fortune>
 				- Increases Pet healing by <Healing>
-				[c/828282:  � Only while touching a liquid.]
+				[c/828282:  • Only while touching a liquid.]
 				'''
 			RadiatingCrystal:
 				'''
@@ -67,6 +67,26 @@ Mods: {
 				- Increases Pet ability haste by <Haste>
 				- Increases crit chance by <Crit>
 				- Increases jump speed by <Jump>
+				'''
+			BurrowerBeacon:
+				'''
+				- Increases mining speed by <MiningSpeed>
+				- Increases mining fortune by <Fortune>
+				- Upon being hurt, increases movement speed by <MovementSpeed>
+				[c/828282:  • Movement speed buff lasts <msDuration> second.]
+				'''
+			ToastyBatBottle:
+				'''
+				- Increases Rage duration by <Rage> second.
+				- Increases Pet sourced damage by <PetDamage>
+				- While dashing, burn nearby enemies for <BurnOnDash> seconds.
+				'''
+			FrostyBatBottle:
+				'''
+				- Increases Pet slow potency by <SlowPotency>
+				- Increases Knockback resistance by <KnockbackResist>
+				- While dashing, applies a <SlowOnDash> slow on nearby enemies.
+				[c/828282:  • Slow lasts <slowDuration> seconds.]
 				'''
 		}
 

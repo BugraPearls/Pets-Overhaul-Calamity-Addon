@@ -9,8 +9,8 @@ namespace PetsOverhaulCalamityAddon.Systems
 {
     public class RoguePetClass : ModSystem
     {
-        public static Color RogueClass => new(255, 233, 36);
-        public static PetClass Rogue = new("Rogue", "Mods.PetsOverhaulCalamityAddon.Rogue", RogueClass);
+        public static Color RogueClassColor => new(255, 233, 36);
+        public static PetClass Rogue = new("Rogue", "Mods.PetsOverhaulCalamityAddon.Rogue", RogueClassColor);
         public override void SetStaticDefaults()
         {
             PetClassID.RegisterPetClass(ref Rogue);
@@ -19,7 +19,7 @@ namespace PetsOverhaulCalamityAddon.Systems
     /// <summary>
     /// Class that includes ItemIDs of Pets of Calamity, working with similar purpose of ItemID class.
     /// </summary>
-    public class CalamityPetIDs
+    public static class CalamityPetIDs
     {
         public static int Akato => ModContent.ItemType<ForgottenDragonEgg>();
         public static int Astrophage => ModContent.ItemType<AstrophageItem>();
@@ -46,7 +46,7 @@ namespace PetsOverhaulCalamityAddon.Systems
     /// <summary>
     /// Class that includes ItemIDs of Light Pets of Calamity, working with similar purpose of ItemID class.
     /// </summary>
-    public class CalamityLightPetIDs
+    public static class CalamityLightPetIDs
     {
         public static int BabyGhostBell => ModContent.ItemType<RustedJingleBell>();
         public static int Goldie => ModContent.ItemType<ThiefsDime>();
@@ -56,6 +56,9 @@ namespace PetsOverhaulCalamityAddon.Systems
         public static int Radiator => ModContent.ItemType<RadiatingCrystal>();
         public static int Sparks => ModContent.ItemType<EnchantedButterfly>();
         public static int Yuu => ModContent.ItemType<ChromaticOrb>();
+        public static int Burrower => ModContent.ItemType<BurrowerController>();
+        public static int ToastyBat => ModContent.ItemType<ToastyBatBottle>();
+        public static int FrostyBat => ModContent.ItemType<FrostyBatBottle>();
     }
 
 }

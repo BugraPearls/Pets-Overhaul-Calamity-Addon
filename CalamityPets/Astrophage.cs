@@ -44,7 +44,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                         if (Player.Distance(npc.Center) < slowRadius && npc.Calamity().astralInfection)
                         {
                             astro.infectedVal = infectionHeavySlow;
-                            PetGlobalNPC.AddSlow(new PetSlow(slowAmount, 1, CalSlows.AstrophageSlow), npc);
+                            PetGlobalNPC.AddSlow(new PetSlow(slowAmount, 1, CalSlows.AstrophageSlow), npc,Player);
                             infectCount++;
                         }
                         else
@@ -83,7 +83,9 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                 if (closestWhoAmI != -1)
                 {
                     Main.npc[closestWhoAmI].AddBuff(ModContent.BuffType<AstralInfectionDebuff>(), 300);
-                    PetGlobalNPC.AddSlow(new PetSlow(infectedVal, deathSpreadSlowDur, CalSlows.AstrophageSlow), Main.npc[closestWhoAmI]);
+#pragma warning disable CS0618
+                    PetGlobalNPC.AddSlow(new PetSlow(infectedVal, deathSpreadSlowDur, CalSlows.AstrophageSlow), Main.npc[closestWhoAmI]); //This one is fine to not be benefitting from SlowPotency, otherwise would be a double-scale scenario.
+#pragma warning restore CS0618
                 }
             }
         }

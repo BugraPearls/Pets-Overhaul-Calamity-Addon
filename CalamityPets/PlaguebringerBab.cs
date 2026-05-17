@@ -61,7 +61,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                     if (npc.dontTakeDamage == false && Player.Distance(npc.Center) < detonateRadius && npc.TryGetGlobalNPC(out PlaguebringerBabStacks boom) && boom.stacks > 0)
                     {
                         npc.AddBuff(ModContent.BuffType<Plague>(), plagueAndSlowDuration);
-                        PetGlobalNPC.AddSlow(new PetSlow(slowAmount, plagueAndSlowDuration, CalSlows.PlagueSlow), npc);
+                        PetGlobalNPC.AddSlow(new PetSlow(slowAmount, plagueAndSlowDuration, CalSlows.PlagueSlow), npc, Player);
                         Pet.PetStrike(npc, boom.stacks, 2, Main.rand.NextBool((int)Math.Min(Player.GetTotalCritChance<RogueDamageClass>(), 100), 100), 0, new RogueDamageClass());
                         boom.stacks = 0;
                         boom.timer = 0;

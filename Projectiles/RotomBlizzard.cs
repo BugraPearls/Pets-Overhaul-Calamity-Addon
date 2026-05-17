@@ -34,7 +34,7 @@ namespace PetsOverhaulCalamityAddon.Projectiles
             {
                 if (Projectile.getRect().Intersects(npc.getRect()))
                 {
-                    PetGlobalNPC.AddSlow(new PetSlow(Rotom.coldSlow * Rotom.GetTypeEffectiveness(npc, ElectricTroublemakerEffect.blizzard), 1, CalSlows.RotomBlizzard), npc);
+                    PetGlobalNPC.AddSlow(new PetSlow(Rotom.coldSlow * Rotom.GetTypeEffectiveness(npc, ElectricTroublemakerEffect.blizzard), 1, CalSlows.RotomBlizzard), npc, Main.player[Projectile.owner]);
                     if (npc.TryGetGlobalNPC(out RotomBlizzardFreeze blizzard))
                     {
                         blizzard.cooldownToResetFreeze = 60;

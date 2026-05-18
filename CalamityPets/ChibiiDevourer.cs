@@ -62,9 +62,9 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
             }
         }
         public override string PetsTooltip => Compatibility.LocVal("PetTooltips.CosmicPlushie")
-                .Replace("<color>", PetUtils.SupportiveClass.Hex3())
+                .Replace("<color>", PetUtils.SupportiveClassColor.Hex3())
                 .Replace("<damage>", chibiiDevourer.dmg.ToString())
                 .Replace("<block>", Math.Round(chibiiDevourer.block / 16f, 2).ToString());
-        public override string SimpleTooltip => Compatibility.LocVal("SimpleTooltips.CosmicPlushie").Replace("<color>", PetUtils.SupportiveClass.Hex3());
+        public override string SimpleTooltip => Compatibility.LocVal("SimpleTooltips.CosmicPlushie").Replace("<color>", PetUtils.SupportiveClassColor.Hex3());
     }
 }

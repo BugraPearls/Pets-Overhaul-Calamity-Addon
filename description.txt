@@ -1,30 +1,24 @@
-This mod is Calamity Addon of Pets Overhaul mod, which adds multiple new effects to existing Pets, adding them more personality!
+This mod is Calamity Addon of Pets Overhaul mod, which adds multiple new effects to existing Pets & integration of Calamity content to Pets Overhaul!
 
-Your Pets can improve many aspects of your game with unique effects, including Light Pets, whom has a 'stat roll' system, making almost all Light Pets stats distinct from one another.
+Weekly Updates!
 
-Check out Pets Overhaul's description or our Discord server for further more info!
-Recommended to use /pet pets or /pet class [arg] command in-game to access all up to date Pet Effects!
+Features this addon adds:
+21 More Unique Pet Effects
+11 More Light Pet Effects
+Compatibility systems to integrate Calamity content with existing systems of Pets Overhaul
 
-Additions
-+20 More Unique Pet Effects on top of Base mod's +65 Pet Effects!
-With their unique Quality Rolling system, 8 More Light Pet Effects, on top of Base mod's 10 Light Pet Effects!
+Use /pet command to see all Pets Overhaul commands in-game. ("/pet" = help command)
 
-Q: Will X Mod get Pet Effects?
-A: Only one I can confidently say I will personally work on is Thorium. Other mods mostly is falling in hands of the community. Pets Overhaul's code library is easy to use & has lots of tools & has lots of changeable stuff, so if interested, go for it!
+We have:
+Pets Overhaul Wiki Page (Credits to Th3Moo5e for their works on wiki)
+Pets Overhaul Discord Server
+GitHub Page
+Patreon Page
 
-Join our Discord server! https://discord.gg/KubSpqvDGE
-
-Check out our GitHub Page to check the code, contribute & submit issues!
-https://github.com/BugraPearls/Pets-Overhaul-Calamity-Addon
-
-Check out the Wiki Page to get information regarding the Mod!
-https://terrariamods.wiki.gg/wiki/Pets_Overhaul
-
-Check out our Patreon Page (patreon.com/pearlying) if you'd like to support the Mod!
+Community Work
 
 The Calamity Addon currently supports following for Localization;
 Chinese localization (By: ROH)
 Brazillian Portuguese localization (By: Erstarisk)
 Russian localization (By: Teokai)
-
 Icon and all artwork done by: Furqi

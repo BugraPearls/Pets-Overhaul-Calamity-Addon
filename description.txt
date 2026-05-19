@@ -4,7 +4,7 @@ Weekly Updates!
 
 Features this addon adds:
 21 More Unique Pet Effects
-11 More Light Pet Effects
+11 More Unique Light Pet Effects
 Compatibility systems to integrate Calamity content with existing systems of Pets Overhaul
 
 Use /pet command to see all Pets Overhaul commands in-game. ("/pet" = help command)

@@ -5,14 +5,14 @@
 [h3]Features this addon adds[/h3]
 [list]
 [*] 21 More Unique Pet Effects
-[*] 11 More Light Pet Effects
+[*] 11 More Unique Light Pet Effects
 [*] Compatibility systems to integrate Calamity content with existing systems of Pets Overhaul
 [/list]
 
 Use /pet command to see all Pets Overhaul commands in-game. ("/pet" = help command)
 
 [h3]Official Links[/h3]
-[b][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2982195397]Pets Overhaul (You need this mod, for this mod to function!)[/url][/b]
+[b][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2982195397]Pets Overhaul (You need this mod for this mod to function)[/url][/b]
 [url=https://terrariamods.wiki.gg/wiki/Pets_Overhaul]Pets Overhaul Wiki Page[/url] (Credits to Th3Moo5e for their works on wiki)
 [url=https://discord.gg/KubSpqvDGE]Pets Overhaul Discord Server[/url]
 [url=https://github.com/BugraPearls/Pets-Overhaul-Calamity-Addon]GitHub Page[/url]

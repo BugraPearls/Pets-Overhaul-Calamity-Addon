@@ -5,8 +5,6 @@ using System.IO;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ModLoader;
-using Terraria.ModLoader.IO;
-using static CalamityMod.Projectiles.Melee.BladecrestOathswordThrownBlade;
 
 namespace PetsOverhaulCalamityAddon.CalamityLightPets
 {
@@ -39,7 +37,7 @@ namespace PetsOverhaulCalamityAddon.CalamityLightPets
     }
     public sealed class SuspiciousLookingNOUPet : LightPetItem
     {
-        public LightPetStat Luck = new(69, 0.01f,"NoGamblingPls", customStatDisplay: true,LegacyKeysToInherit: ("Stat1", 69));
+        public LightPetStat Luck = new(69, 0.01f, "NoGamblingPls", customStatDisplay: true, LegacyKeysToInherit: ("Stat1", 69));
         public LightPetStat Damage = new(67, -0.00067f, "BrainDamage", LegacyKeysToInherit: ("Stat2", 31));
         public LightPetStat FallBlocks = new(420, 1, "TheHarderYouFallFurtherYouClimb", LegacyKeysToInherit: ("Stat3", 420));
         public LightPetStat Sus = new(100, 0.01f, "RedWasNotTheImpostor", 0.01f, LegacyKeysToInherit: ("Stat4", 100));

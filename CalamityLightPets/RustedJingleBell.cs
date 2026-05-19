@@ -1,9 +1,6 @@
 ﻿using PetsOverhaul.Systems;
 using PetsOverhaulCalamityAddon.Systems;
-using System;
-using System.IO;
 using Terraria;
-using Terraria.ModLoader.IO;
 
 namespace PetsOverhaulCalamityAddon.CalamityLightPets
 {
@@ -25,7 +22,7 @@ namespace PetsOverhaulCalamityAddon.CalamityLightPets
     }
     public sealed class RustedJingleBellPet : LightPetItem
     {
-        public LightPetStat Breathe = new(30, 14,"Breathe", 90, true, LegacyKeysToInherit: ("Stat1", 30));
+        public LightPetStat Breathe = new(30, 14, "Breathe", 90, true, LegacyKeysToInherit: ("Stat1", 30));
         public LightPetStat Haste = new(25, 0.002f, "Haste", 0.04f, LegacyKeysToInherit: ("Stat2", 25));
         public LightPetStat MiningFortuneInWater = new(10, 3, "Fortune", 5, LegacyKeysToInherit: ("Stat3", 10));
         public override int LightPetItemID => CalamityLightPetIDs.BabyGhostBell;

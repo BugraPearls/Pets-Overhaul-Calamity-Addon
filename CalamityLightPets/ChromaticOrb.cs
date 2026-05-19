@@ -1,9 +1,7 @@
 ﻿using PetsOverhaul.Systems;
 using PetsOverhaulCalamityAddon.Systems;
-using System.IO;
 using Terraria;
 using Terraria.ModLoader;
-using Terraria.ModLoader.IO;
 
 namespace PetsOverhaulCalamityAddon.CalamityLightPets
 {

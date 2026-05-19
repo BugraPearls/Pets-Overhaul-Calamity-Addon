@@ -46,7 +46,6 @@ using CalamityMod.NPCs.ProfanedGuardians;
 using CalamityMod.NPCs.Providence;
 using CalamityMod.NPCs.SlimeGod;
 using CalamityMod.Sounds;
-using Microsoft.Xna.Framework;
 using MonoMod.Utils;
 using PetsOverhaul.PetEffects;
 using PetsOverhaul.Systems;

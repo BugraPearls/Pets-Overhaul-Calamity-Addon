@@ -341,7 +341,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                     case blizzard:
                         if (Pet.timer + Pet.timerMax * leafStormCooldown < Pet.timerMax)
                         {
-                            Pet.NewPetSourcedProjectile(PetUtils.GetSource_Pet(EntitySourcePetIDs.PetProjectile), target.Center, Vector2.Zero, ModContent.ProjectileType<RotomBlizzard>(), blizzardDmg, 0, Player.whoAmI, blizzardRadius, blizzardDuration,damageClass: hit.DamageType); //does its type effectiveness in Projectile code
+                            Pet.NewPetSourcedProjectile(PetUtils.GetSource_Pet(EntitySourcePetIDs.PetProjectile), target.Center, Vector2.Zero, ModContent.ProjectileType<RotomBlizzard>(), blizzardDmg, 0, Player.whoAmI, blizzardRadius, blizzardDuration, damageClass: hit.DamageType); //does its type effectiveness in Projectile code
                             if (ModContent.GetInstance<PetPersonalization>().AbilitySoundEnabled)
                                 SoundEngine.PlaySound(new SoundStyle("PetsOverhaulCalamityAddon/Sounds/ElectricTroublemaker/Blizzard") with { PitchVariance = 0.8f }, target.Center);
                             Pet.timer += (int)(Pet.timerMax * leafStormCooldown);

@@ -2,7 +2,6 @@
 using CalamityMod.Items.Armor.Demonshade;
 using CalamityMod.Items.Fishing.AstralCatches;
 using CalamityMod.Items.Materials;
-using CalamityMod.Items.Placeables;
 using CalamityMod.Items.Placeables.Abyss;
 using CalamityMod.Items.Placeables.Crags;
 using CalamityMod.Items.Placeables.FurnitureAcidwood;

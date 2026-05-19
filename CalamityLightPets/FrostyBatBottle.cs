@@ -1,11 +1,7 @@
-﻿using CalamityMod;
-using PetsOverhaul.Systems;
+﻿using PetsOverhaul.Systems;
 using PetsOverhaulCalamityAddon.Systems;
-using System.IO;
 using Terraria;
 using Terraria.ID;
-using Terraria.ModLoader;
-using Terraria.ModLoader.IO;
 
 namespace PetsOverhaulCalamityAddon.CalamityLightPets
 {
@@ -23,7 +19,7 @@ namespace PetsOverhaulCalamityAddon.CalamityLightPets
 
                 if (Player.dashDelay == -1)
                 {
-                    PetUtils.CircularDustEffect(Player.Center, DustID.HallowSpray, 60,6);
+                    PetUtils.CircularDustEffect(Player.Center, DustID.HallowSpray, 60, 6);
                     foreach (var npc in Main.ActiveNPCs)
                     {
                         if (Player.Distance(npc.Center) <= 60)
@@ -38,8 +34,8 @@ namespace PetsOverhaulCalamityAddon.CalamityLightPets
     }
     public sealed class FrostyBatBottlePet : LightPetItem
     {
-        public LightPetStat SlowPotency = new(30,0.008f,"SlowPotency",0.20f);
-        public LightPetStat KnockbackResist = new(15,0.005f,"KnockbackResist",0.1f);
+        public LightPetStat SlowPotency = new(30, 0.008f, "SlowPotency", 0.20f);
+        public LightPetStat KnockbackResist = new(15, 0.005f, "KnockbackResist", 0.1f);
         public LightPetStat SlowOnDash = new(25, 0.0125f, "SlowOnDash", 0.1f);
         public override int LightPetItemID => CalamityLightPetIDs.FrostyBat;
         public override string BaseTooltip => Compatibility.LocVal("LightPetTooltips.FrostyBatBottle");

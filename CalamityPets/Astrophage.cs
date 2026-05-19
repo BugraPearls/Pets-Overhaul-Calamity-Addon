@@ -44,7 +44,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                         if (Player.Distance(npc.Center) < slowRadius && npc.Calamity().astralInfection)
                         {
                             astro.infectedVal = infectionHeavySlow;
-                            PetGlobalNPC.AddSlow(new PetSlow(slowAmount, 1, CalSlows.AstrophageSlow), npc,Player);
+                            PetGlobalNPC.AddSlow(new PetSlow(slowAmount, 1, CalSlows.AstrophageSlow), npc, Player);
                             infectCount++;
                         }
                         else

@@ -1,11 +1,8 @@
 ﻿using CalamityMod;
 using PetsOverhaul.Systems;
 using PetsOverhaulCalamityAddon.Systems;
-using System.IO;
 using Terraria;
 using Terraria.ID;
-using Terraria.ModLoader;
-using Terraria.ModLoader.IO;
 
 namespace PetsOverhaulCalamityAddon.CalamityLightPets
 {
@@ -37,7 +34,7 @@ namespace PetsOverhaulCalamityAddon.CalamityLightPets
     }
     public sealed class ToastyBatBottlePet : LightPetItem
     {
-        public LightPetStat RageDuration = new(20, 3, "Rage",30, true);
+        public LightPetStat RageDuration = new(20, 3, "Rage", 30, true);
         public LightPetStat PetDamage = new(10, 0.015f, "PetDamage", 0.07f);
         public LightPetStat BurnOnDash = new(15, 18, "BurnOnDash", 120, true);
         public override int LightPetItemID => CalamityLightPetIDs.ToastyBat;

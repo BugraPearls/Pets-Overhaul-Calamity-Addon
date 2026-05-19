@@ -115,6 +115,9 @@ namespace PetsOverhaulCalamityAddon.Systems
             { "RadiatingCrystal", CalamityLightPetIDs.Radiator },
             { "EnchantedButterfly", CalamityLightPetIDs.Sparks },
             { "ChromaticOrb", CalamityLightPetIDs.Yuu },
+            { "BurrowerBeacon", CalamityLightPetIDs.Burrower },
+            { "FrostyBatBottle", CalamityLightPetIDs.FrostyBat },
+            { "ToastyBatBottle", CalamityLightPetIDs.ToastyBat },
         };
         public static Dictionary<string, int> CalamityPets = new()
         {

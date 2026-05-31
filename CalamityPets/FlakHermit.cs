@@ -23,7 +23,8 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         public int irradiateDuration = 240;
         public int cooldown = 300;
         public int radius = 140;
-        private bool nextHitIsExplosive = false;
+        internal int internalExplosiveCd = 0;
+        internal const int internalExplosiveCdDuration = 180; //Needs to hit in 3 seconds
         public void AcidExplosion(Vector2 center)
         {
             foreach (NPC npc in Main.ActiveNPCs)
@@ -43,21 +44,27 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
             PetUtils.CircularDustEffect(Player.Center, DustID.CursedTorch, radius, 20, scale: 2f);
         }
         public override int PetAbilityCooldown => cooldown;
+        public override void ExtraPreUpdateNoCheck()
+        {
+            if (internalExplosiveCd > -1)
+                internalExplosiveCd--;
+        }
         public override void PostUpdate()
         {
             if (PetIsEquipped() && Player.Calamity().stealthStrikeThisFrame && Pet.timer <= 0)
             {
                 AcidExplosion(Player.Center);
                 Pet.timer = Pet.timerMax;
-                nextHitIsExplosive = true;
+                internalExplosiveCd = internalExplosiveCdDuration;
             }
         }
         public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
-            if (PetIsEquipped() && hit.DamageType is RogueDamageClass && nextHitIsExplosive)
+            if (PetIsEquipped() && hit.DamageType is RogueDamageClass && internalExplosiveCd > 0)
             {
+                internalExplosiveCd = 0;
+                Main.NewText(internalExplosiveCd);
                 AcidExplosion(target.Center);
-                nextHitIsExplosive = false;
             }
         }
         public override void PostUpdateEquips() //seems like Calamity runs rogueStealthMax checks at MiscEffects, which causes it to not work properly

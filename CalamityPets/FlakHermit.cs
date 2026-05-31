@@ -63,7 +63,6 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
             if (PetIsEquipped() && hit.DamageType is RogueDamageClass && internalExplosiveCd > 0)
             {
                 internalExplosiveCd = 0;
-                Main.NewText(internalExplosiveCd);
                 AcidExplosion(target.Center);
             }
         }

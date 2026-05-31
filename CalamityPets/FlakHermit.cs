@@ -23,8 +23,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         public int irradiateDuration = 240;
         public int cooldown = 300;
         public int radius = 140;
-        internal int internalExplosiveCd = 0;
-        internal const int internalExplosiveCdDuration = 180; //Needs to hit in 3 seconds
+        private bool nextHitIsExplosive = false;
         public void AcidExplosion(Vector2 center)
         {
             foreach (NPC npc in Main.ActiveNPCs)
@@ -44,25 +43,20 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
             PetUtils.CircularDustEffect(Player.Center, DustID.CursedTorch, radius, 20, scale: 2f);
         }
         public override int PetAbilityCooldown => cooldown;
-        public override void ExtraPreUpdateNoCheck()
-        {
-            if (internalExplosiveCd > -1)
-                internalExplosiveCd--;
-        }
         public override void PostUpdate()
         {
             if (PetIsEquipped() && Player.Calamity().stealthStrikeThisFrame && Pet.timer <= 0)
             {
                 AcidExplosion(Player.Center);
                 Pet.timer = Pet.timerMax;
-                internalExplosiveCd = internalExplosiveCdDuration;
+                nextHitIsExplosive = true;
             }
         }
         public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
-            if (PetIsEquipped() && hit.DamageType is RogueDamageClass && internalExplosiveCd > 0)
+            if (PetIsEquipped() && hit.DamageType is RogueDamageClass && nextHitIsExplosive)
             {
-                internalExplosiveCd = 0;
+                nextHitIsExplosive = false;
                 AcidExplosion(target.Center);
             }
         }

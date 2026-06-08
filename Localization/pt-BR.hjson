@@ -3,313 +3,299 @@ Mods: {
 		MoonlingRogueTooltip:
 			'''
 			- Bônus de Ladino:
-			  * Aumenta a furtividade máxima do ladino em <rogueStealthMax>.
-			  * Aumenta o ganho de furtividade do ladino em <rogueStealthGain>%.
-			  * Aumenta o dano do ladino em <rogueDmg>%.
-			  * Aumenta a velocidade do ladino em <rogueVelocity>%.
-			  * Reduz a saúde máxima em <hp>%.
+			  • Aumenta a furtividade máxima do ladino em <rogueStealthMax>.
+			  • Aumenta o ganho de furtividade do ladino em <rogueStealthGain>%.
+			  • Aumenta o dano do ladino em <rogueDmg>%.
+			  • Aumenta a velocidade do ladino em <rogueVelocity>%.
+			  • Reduz a saúde máxima em <hp>%.
 			'''
-		JunimoExtraBosses: ", Providência, Devoradora de Deuses"
+		JunimoExtraBosses: ", Providência, Devorador de Deuses"
 		Rogue: Ladino
 
 		LightPetTooltips: {
 			RustedJingleBell:
 				'''
-				Aumenta seu tempo máximo de respiração debaixo d'água
-				em <breathe> segundos, Aceleração de Habilidade de PET em <haste> segundos,
-				e Fortuna de Mineração em <fortune> enquanto tocar em algum líquido.
-				Segundos de Respiração Bônus: <breatheLine>
-				Aceleração de Habilidade de PET: <hasteLine>
-				Bonus de Fortuna de Mineração em liquidos: <fortuneLine>
+				- Aumenta seu tempo de respiração em <Breathe> segundos.
+				- Aumenta a aceleração de habilidade de PET em <Haste>
+				- Aumenta a fortuna de mineração em <Fortune> 
+				[c/828282:  • Apenas enquanto estiver tocando em um líquido.]
 				'''
 			ThiefsDime:
 				'''
-				Aumenta a Sorte em <luck>, o dano de Ladino em <rogue>,
-				a velocidade de Ladino em <velocity> e o ganho de furtividade em <stealth>.
-				Bônus de Sorte: <luckLine>
-				Bônus de Dano de Ladino: <rogueLine>
-				Bônus de Velocidade de Ladino: <velocityLine>
-				Bônus de Ganho de Furtividade de Ladino: <stealthLine>
+				- Aumenta a sorte em <Luck>
+				- Aumenta o dano de Ladino em <Damage>
+				- Aumenta a velocidade de Ladino em <Velocity>
+				- Aumenta a fortuna global em <Fortune>
 				'''
 			SuspiciousLookingNOU:
 				'''
-				Aumenta a sorte em <luck>, diminui seu dano em <damage>
-				e aumenta a quantidade de blocos onde o dano de queda começa em <fall>.
-				Além disso, aumenta o quão sus você é em <sus>.
-				Bônus de Sorte: <luckLine>
-				Dano Reduzido: <damageLine>
-				Blocos até o Dano de Queda Começar: <fallLine>
-				medidor de sus: <susLine>
+				- Aumenta a sorte em <NoGamblingPls>
+				- Diminui seu dano em <BrainDamage>
+				- Aumenta a resistência a dano de queda em <TheHarderYouFallFurtherYouClimb>
+				- medidor de sus <RedWasNotTheImpostor>
 				'''
 			LittleLight:
 				'''
-				Aumenta Agressividade inimiga em <aggro>, resistência a recuo em <kbResist>,
-				Escudos ganhos por PET's em <shield> e saúde máxima em <health>.
-				Bônus de Agressividade: <aggroLine>
-				Bônus de Resistência a Recuo: <kbResistLine>
-				Bônus de Aumento de Escudo de PET's: <shieldLine>
-				Bônus de Saúde: <healthLine>
+				- Aumenta a sua agressividade em <Aggro>
+				- Aumenta a resistência a recuo em <KbResist>
+				- Aumenta os escudos ganhos por PETs em <Shield> 
+				- Aumenta a saúde máxima em <Health>
 				'''
 			StrangeOrb:
 				'''
-				Aumenta o poder de pesca em <power>, a fortuna de pesca em <fortune>
-				e aumenta a cura de PET's em <heal> quando toca em um líquido.
-				Poder de Pesca: <powerLine>
-				Fortuna de Pesca: <fortuneLine>
-				Bonus de Cura de PET's em líquidos: <healLine>
+				- Aumenta o poder de pesca em <Fishing>
+				- Aumenta a fortuna de pesca em <Fortune>
+				- Aumenta a cura de PETs em <Healing>
+				[c/828282:  • Apenas enquanto estiver tocando em um líquido.]
 				'''
 			RadiatingCrystal:
 				'''
-				Aumenta a defesa em <def> enquanto estiver sob qualquer debuff,
-				exceto debuffs que não podem ser curados pela Enfermeira ou Enjoo de mana,
-				Recuo em <knockback> e envenena inimigos em um raio de <radius> blocos.
-				Bônus de Defesa Sob Debuff: <defLine>
-				Bônus de Recuo: <knockbackLine>
-				Raio de Envenenamento: <radiusLine>
+				- Aumenta o recuo em <Knockback>
+				- Aumenta a potência de lentidão de PETs em <Slow>
+				- Envenena inimigos em um raio de <Poison> blocos.
+				- O envenenamento por água sulfurosa diminui <SulphurResist> mais devagar.
 				'''
 			EnchantedButterfly:
 				'''
-				Aumenta a cura de PET's em <heal>, a fortuna global em <fortune>,
-				Dano causado pelo pet por <damage>. Reduz a Agressividade inimiga em <aggro>.
-				Bônus de Cura de PET's: <healLine>
-				Bônus de Fortuna Global: <fortuneLine>
-				Bônus de Redução de Agressividade: <aggroLine>
-				Bônus de dano de PET's: <damageLine>
+				- Aumenta a cura de PETs em <Heal>
+				- Aumenta a fortuna de colheita em <Fortune>
+				- Aumenta o dano causado por PETs em <Damage>
+				- Reduz a agressividade em <Aggro>
 				'''
 			ChromaticOrb:
 				'''
-				Aumenta a Pressa de Habilidade de PET's em <haste>, a Chance Crítica em <crit>,
-				e a velocidade de pulo em <jump>.
-				Bônus de Pressa de Habilidade de PET's: <hasteLine>
-				Bônus de Chance Crítica: <critLine>
-				Bônus de Velocidade de Pulo: <jumpLine>
+				- Aumenta a aceleração de habilidade de PET em <Haste>
+				- Aumenta a chance crítica em <Crit>
+				- Aumenta a velocidade de pulo em <Jump>
 				'''
-			/* BurrowerBeacon:
+			BurrowerBeacon:
 				'''
-				- Increases mining speed by <MiningSpeed>
-				- Increases mining fortune by <Fortune>
-				- Upon being hurt, increases movement speed by <MovementSpeed>
-				[c/828282:  • Movement speed buff lasts <msDuration> second.]
-				''' */
-			/* ToastyBatBottle:
+				- Aumenta a velocidade de mineração em <MiningSpeed>
+				- Aumenta a fortuna de mineração em <Fortune>
+				- Ao receber dano, aumenta a velocidade de movimento em <MovementSpeed>
+				[c/828282:  • O buff de velocidade de movimento dura <msDuration> segundo(s).]
 				'''
-				- Increases Rage duration by <Rage> second.
-				- Increases Pet sourced damage by <PetDamage>
-				- While dashing, burn nearby enemies for <BurnOnDash> seconds.
-				''' */
-			/* FrostyBatBottle:
+			ToastyBatBottle:
 				'''
-				- Increases Pet slow potency by <SlowPotency>
-				- Increases Knockback resistance by <KnockbackResist>
-				- While dashing, applies a <SlowOnDash> slow on nearby enemies.
-				[c/828282:  • Slow lasts <slowDuration> seconds.]
-				''' */
+				- Aumenta a duração de Fúria em <Rage> segundo(s).
+				- Aumenta o dano causado por PETs em <PetDamage>
+				- Durante a investida, queima os inimigos próximos por <BurnOnDash> segundos.
+				'''
+			FrostyBatBottle:
+				'''
+				- Aumenta a potência de lentidão de PETs em <SlowPotency>
+				- Aumenta a resistência a recuo em <KnockbackResist>
+				- Durante a investida, aplica uma lentidão de <SlowOnDash> aos inimigos próximos.
+				[c/828282:  • A lentidão dura <slowDuration> segundos.]
+				'''
 		}
 
 		PetTooltips: {
 			ForgottenDragonEgg:
 				'''
 				- [i:<stackIcon>] Stacks atuais: <dragonPractice>. As fontes de ganho de stacks são as seguintes:
-				  * Acertos diretos no alvo primário e todos os inimigos atingidos pela explosão concedem <hitStack>.
-				  * Mortes diretas no alvo primário e todos os inimigos mortos por explosão e execução concedem <killStack>.
-				  * Stacks ganhos são multiplicados por <bossMultiply> se o alvo for um Boss, ou multiplicados pelo valor de raridade + 1.
-				- Pressione o a tecla de Habilidade do PET (<keybind>) para carregar um Super Sopro Escaldante para seu próximo ataque, explodindo no impacto,
-				inimigos atingidos pela explosão ficam queimados e concedem stacks permanentes, com tempo de recarga de <cooldown> segundos.
-				  * O ataque do Super Sopro Escaldante expira após <expire> segundos sem usá-lo.
-				  * A explosão causa <baseMult>% + [i:<stackIcon>] <stackMult>% do seu dano inicial, em um raio de <baseSize> + [i:<stackIcon>] <stackSize> blocos.
-				  * A explosão queima inimigos por <burnDuration> + [i:<stackIcon>] <stackBurnDuration> segundos e causa <baseBurn> + [i:<stackIcon>] <stackBurn> de dano por segundo.
-				  * Enquanto os inimigos estão queimando, ao ficarem abaixo de <baseExecute>% + [i:<stackIcon>] <stackExecute>% de vida, são instantaneamente executados.
-				  * Explosão e ganho de stacks são desativados para Bonecos de Treinamento, etc, e os status por 1 stack pioram conforme os stacks aumentam.
+				  • Acertos diretos no alvo primário e em todos os inimigos atingidos pela explosão concedem <hitStack>.
+				  • Inimigos que morrem enquanto estão sob o efeito da Queimadura da Explosão concedem <killStack>.
+				  • Stacks ganhos são multiplicados por <bossMultiply> se o alvo for um Boss, ou multiplicados pelo seu valor de raridade + 1.
+				- Pressione a tecla de Habilidade do PET (<keybind>) para carregar o Super Sopro Escaldante para seu próximo ataque, explodindo no impacto.
+				  Inimigos atingidos pela explosão ficam queimados e concedem stacks permanentes a você, com um tempo de recarga de <cooldown> segundos.
+				  • O ataque do Super Sopro Escaldante expira após <expire> segundos se não for usado.
+				  • A explosão causa <baseMult>% + [i:<stackIcon>] <stackMult>% do seu dano inicial, com <baseSize> + [i:<stackIcon>] <stackSize> blocos de raio.
+				  • A explosão queima os inimigos por <burnDuration> + [i:<stackIcon>] <stackBurnDuration> segundos e causa <baseBurn> + [i:<stackIcon>] <stackBurn> de dano por segundo.
+				  • Enquanto os inimigos estão queimando, ficar abaixo de <baseExecute>% + [i:<stackIcon>] <stackExecute>% da vida deles os executa instantaneamente.
+				  • A explosão e o ganho de stacks são desativados para Bonecos de Treinamento, etc., e os status por 1 stack pioram conforme os stacks ficam mais altos.
 				'''
-			ForgottenDragonEggStack: "[i:<stackIcon>] Pilhas de Akato"
+			ForgottenDragonEggStack: "[i:<stackIcon>] Stacks de Akato"
 			Astrophage:
 				'''
 				- Inflige inimigos em um raio de <infectRadius> blocos com Infecção Astral por <infectDuration> segundos.
 				- Inimigos em um raio de <slowRadius> blocos são desacelerados em <slowAmount>% se tiverem o debuff de Infecção Astral.
-				  * Se um inimigo morrer enquanto estiver sob este efeito, o inimigo mais próximo em um raio de <spreadRadius> blocos receberá
-				Infecção Astral com a duração restante e será desacelerado em <spreadSlow>% por <spreadSlowDuration> segundos.
+				  • Cada inimigo neste raio concede a você <dmg>% de dano, até o limite de <cap> inimigos.
+				  • Se um inimigo morrer enquanto estiver sob este efeito, o inimigo mais próximo em um raio de <spreadRadius> blocos receberá
+				   Infecção Astral com a duração restante e será desacelerado em <spreadSlow>% por <spreadSlowDuration> segundos.
 				'''
-			// AstrophageStack: nearby infected enemies
+			AstrophageStack: inimigos infectados próximos
 			BearsEye:
 				'''
 				- Receber dano que o coloca abaixo de <belowHealth>% de vida concede um Escudo
-				igual a <baseShield>% da vida base + <bonusShield>% de escudo de vida bônus por <shieldDuration> segundos.
-				  * O dano que o coloca abaixo de <belowHealth>% de vida será reduzido de acordo com o Escudo.
-				  * O Escudo Salva-Vidas tem um tempo de recarga de <cooldown> segundos.
-				- Aumenta o dano de Ladino em <rogueDmg>%, o dano de Golpe Furtivo em <stealthDmg>%.
-				- Aumenta o ganho de furtividade de Ladino em <stealthMoving>% enquanto se move e <stealthNotMoving>% enquanto parado.
+				  igual a <baseShield>% da vida base + <bonusShield>% de escudo de vida bônus por <shieldDuration> segundos.
+				  • O dano que o coloca abaixo de <belowHealth>% de vida será reduzido de acordo com o Escudo.
+				  • O Escudo Salva-Vidas tem um tempo de recarga de <cooldown> segundos.
+				- Aumenta o dano de Ladino em <rogueDmg>%, e o dano de Golpe Furtivo em <stealthDmg>%.
+				- Aumenta o ganho de furtividade de Ladino em <stealthMoving>% enquanto se move, e <stealthNotMoving>% enquanto não se move.
 				'''
 			CharredRelic:
 				'''
 				- Ficar abaixo de <treshold>% de vida concede <dr>% de redução de dano.
 				- Receber dano reflete o dano e gera bolas de fogo.
-				  * O dano refletido é <reflectAmount>% do dano antes da mitigação.
-				  * O dano refletido é dobrado se você estiver abaixo de <treshold>% de vida.
-				  * Bolas de fogo causam metade do dano recebido antes da mitigação + sua defesa,
-				 escalando com sua redução de dano, e aplicando Chamas de Brimstone ao acertar.
-				  * As bolas de fogo viajam aleatoriamente e são geradas em 5 ao ser atingido.
-				  * As bolas de fogo têm um tempo de recarga de <cooldown> segundos para serem geradas novamente ao ser atingido.
+				  • O dano refletido é <reflectAmount>% do dano antes da mitigação.
+				  • O dano refletido é dobrado se você estiver abaixo de <treshold>% de vida.
+				  • Bolas de fogo causam metade do dano recebido antes da mitigação + sua defesa,
+				   escalando com sua redução de dano, e aplicam Chamas de Enxofre ao acertar.
+				  • As bolas de fogo viajam aleatoriamente e são geradas em quantidade de 5 ao ser atingido.
+				  • As bolas de fogo têm um tempo de recarga de <cooldown> segundos para serem conjuradas novamente ao ser atingido.
 				'''
 			CosmicPlushie:
 				'''
 				[c/<color>:Emocionalmente] <class>
-				- morrer causa <damage> de dano a todos os inimigos em um raio de <block> blocos ao seu redor
-				  * sem efeito com personagens não-hardcore
-				  * sempre acerta críticos!
-				  * talveeeeeezzz pode acabar devorando outros jogadores também.....
-				  * :3
+				- morrer causa <damage> de dano a todos os inimigos em um raio de <block> blocos ao seu redor!
+				  • sem efeito em personagens não-hardcore!
+				  • uma chance incrível de acerto crítico!
+				  • eeeeeela pooooode acabar devorando outros jogadores também.....
+				  • :3
 				'''
 			CosmicDeath1: <name> fez uma pequenininha dose de tolices.
 			CosmicDeath2: <name> está fazendo um pouquinho de trollagem. :tf:
 			CosmicDeath3: <name> está com dedos de cheetos
-			CosmicDeath4: <name> está mentindo 100% se ele dizer 'foi mal'
+			CosmicDeath4: <name> está mentindo 100% se disser 'foi mal'
 			TrashmanTrashcan:
 				'''
-				- Pressione a tecla de habilidade do PET (<keybind>) para usar o movimento característico do Homem do Lixo.
-				  * A Lata de Lixo causa <damage> de dano e aplica sangramento por <bleedDuration> segundos.
-				  * Inimigos ao redor do alvo são desacelerados em <slow>% por <slowDuration> segundos.
-				  * Com <confuseChance>% de chance, os inimigos também podem ficar confusos por <confuseDuration> segundos.
+				- Pressione a tecla de Habilidade do PET (<keybind>) para usar o movimento característico do Homem do Lixo.
+				  • A Lata de Lixo causa <damage> de dano e aplica sangramento por <bleedDuration> segundos.
+				  • Inimigos ao redor do alvo são desacelerados em <slow>% por <slowDuration> segundos.
+				  • Com <confuseChance>% de chance, os inimigos também podem ficar confusos por <confuseDuration> segundos.
+				  • Dano, lentidão e chance de confusão são afetados pela Vulnerabilidade a Doenças.
 				'''
 			TheEtomer:
 				'''
-				- Pressione (<abilitySwitch>) para alternar habilidades e (<abilityUse>) para iniciar efeitos ao acertar.
-				- Permite escolher entre 6 habilidades que funcionam ao acertar. Reutilize a habilidade para cancelar.
-				- Elas se beneficiam da sua forma atual do Encrenqueiro e da vulnerabilidade do inimigo.
-				  * A forma Dex aplicará <dexMult>x a todas as habilidades, enquanto outras terão <STABMult>x de eficácia.
-				- Possui um tempo de recarga de <baseCooldown> segundos, mas todas as habilidades custam % da sua recarga.
+				- Pressione (<abilitySwitch>) para alternar habilidades e (<abilityUse>) para iniciar os efeitos ao acertar.
+				- Permite que você escolha entre 6 habilidades que funcionam ao acertar. Reutilize a habilidade para cancelar.
+				- Elas se beneficiam da sua forma atual de Encrenqueiro e da vulnerabilidade do inimigo.
+				  • A forma Dex aplicará <dexMult>x a todas as habilidades, enquanto outras terão eficácia de <STABMult>x.
+				- Possui um tempo de recarga base de <baseCooldown> segundos, mas todas as habilidades custam % da sua recarga.
 				<abilityTooltip>
 				'''
-			TheEtomerStack: mover selecionado
+			TheEtomerStack: movimento selecionado
 			RotomCurrent: "Habilidade Atual: "
 			RotomActive: "[c/a2a2a2: pronto para ser usado]"
 			RotomThunderWaveName: "[c/FFFF00:Onda de Trovão]"
 			RotomThunderWave:
 				'''
-				  * Usa resistência e vulnerabilidade ao Eletricidade, e é fortalecida pela forma Elétrica.
-				  * Seu próximo golpe paralisa todos os inimigos em um raio de <radius> blocos, desacelerando-os em <slow>% por <slowDuration> segundos.
-				  * Custa <percentOfCd>% da sua recarga atual de Habilidade do PET. (<percentToSeconds> segundos)
+				  • Usa resistência e vulnerabilidade a Eletricidade, e é fortalecida pela forma Elétrica.
+				  • Seu próximo golpe paralisa todos os inimigos em um raio de <radius> blocos, desacelerando-os em <slow>% por <slowDuration> segundos.
+				  • Custa <percentOfCd>% da recarga atual da Habilidade do seu PET. (<percentToSeconds> segundos)
 				'''
 			RotomHydroPumpName: "[c/0f5e9c:Jato d'Água]"
 			RotomHydroPump:
 				'''
-				  * Usa resistência e vulnerabilidade ao Água, e é fortalecida pela forma de Lavagem.
-				  * Seu próximo golpe causa <dmg> de dano extra e aplica o debuff Molhado ao alvo por <wetDuration> segundos.
-				  * Custa <percentOfCd>% da sua recarga atual de Habilidade do PET. (<percentToSeconds> segundos)
+				  • Usa resistência e vulnerabilidade a Água, e é fortalecida pela forma de Lavagem.
+				  • Seu próximo golpe causa <dmg> de dano extra e aplica o debuff Molhado ao alvo por <wetDuration> segundos.
+				  • Custa <percentOfCd>% da recarga atual da Habilidade do seu PET. (<percentToSeconds> segundos)
 				'''
 			RotomOverheatName: "[c/ff5a00:Superaquecimento]"
 			RotomOverheat:
 				'''
-				  * Usa resistência e vulnerabilidade ao Calor, e é fortalecida pela forma de Calor.
-				  * Seu próximo golpe explode ao seu redor e no seu alvo em um raio de <radius> blocos, causando <dmg> de dano.
-				  * O alvo principal pega fogo com o debuff Em Chamas! por <burnDuration> segundos.
-				  * Custa <percentOfCd>% da sua recarga atual de Habilidade do PET. (<percentToSeconds> segundos)
+				  • Usa resistência e vulnerabilidade a Calor, e é fortalecida pela forma de Calor.
+				  • Seu próximo golpe explode ao redor de você e do seu alvo em um raio de <radius> blocos, causando <dmg> de dano.
+				  • O alvo principal pega fogo com o debuff Em Chamas! por <burnDuration> segundos.
+				  • Custa <percentOfCd>% da recarga atual da Habilidade do seu PET. (<percentToSeconds> segundos)
 				'''
 			RotomBlizzardName: "[c/3fd0d4:Nevasca]"
 			RotomBlizzard:
 				'''
-				  * Usa resistência e vulnerabilidade ao Frio, e é fortalecida pela forma de Gelo.
-				  * Seu próximo golpe cria uma mini Nevasca na localização do alvo,
-				causando constantemente <dmg> de dano a todos os inimigos dentro dela por <blizzardDuration> segundos.
-				  * Inimigos dentro da Nevasca são constantemente desacelerados em <slow>%.
-				  * Inimigos atingidos por <freezeRequirement> segundos recebem o estado Glacial por <freezeDuration> segundos.
-				  * Custa <percentOfCd>% da sua recarga atual de Habilidade do PET. (<percentToSeconds> segundos)
+				  • Usa resistência e vulnerabilidade a Frio, e é fortalecida pela forma de Gelo.
+				  • Seu próximo golpe cria uma mini Nevasca na localização do alvo,
+				   causando constantemente <dmg> de dano a todos os inimigos dentro dela por <blizzardDuration> segundos.
+				  • Inimigos dentro da Nevasca são constantemente desacelerados em <slow>%.
+				  • Inimigos atingidos por <freezeRequirement> segundos recebem o estado Glacial por <freezeDuration> segundos.
+				  • Custa <percentOfCd>% da recarga atual da Habilidade do seu PET. (<percentToSeconds> segundos)
 				'''
 			RotomLeafStormName: "[c/34a203:Tempestade de Folhas]"
 			RotomLeafStorm:
 				'''
-				  * Usa resistência e vulnerabilidade a Doenças, e é fortalecida pela forma de Corte.
-				  * Seu próximo golpe gera folhas danosas do seu alvo,
-				causando <dmg> de dano e gerando entre <lowLeaf> a <highLeaf> folhas.
-				  * Custa <percentOfCd>% da sua recarga atual de Habilidade do PET. (<percentToSeconds> segundos)
+				  • Usa resistência e vulnerabilidade a Doenças, e é fortalecida pela forma de Corte.
+				  • Seu próximo golpe gera folhas danosas a partir do seu alvo,
+				   causando <dmg> de dano e gerando entre <lowLeaf> a <highLeaf> folhas.
+				  • Custa <percentOfCd>% da recarga atual da Habilidade do seu PET. (<percentToSeconds> segundos)
 				'''
 			RotomAirSlashName: "[c/cfecf7:Corte de Ar]"
 			RotomAirSlash:
 				'''
-				  * É mais eficaz se o inimigo estiver no chão (se for afetado pela gravidade),
-				eficácia normal se o inimigo de chão estiver no ar, e
-				não é muito eficaz se não for afetado pela gravidade. Fortalecida pela forma de Ventoinha.
-				  * Seu próximo golpe atinge todos os inimigos em um raio de <radius> blocos, causando <dmg> de dano,
-				enquanto os empurra para longe de você com <knockback> de recuo.
-				  * Custa <percentOfCd>% da sua recarga atual de Habilidade do PET. (<percentToSeconds> segundos)
+				  • É mais eficaz se o inimigo estiver no chão (se for afetado pela gravidade),
+				   eficácia normal se o inimigo que deveria estar no chão estiver no ar, e
+				   não é muito eficaz se não for afetado pela gravidade. Fortalecida pela forma de Ventoinha.
+				  • Seu próximo golpe atinge todos os inimigos em um raio de <radius> blocos, causando <dmg> de dano,
+				   enquanto os empurra para longe de você com <knockback> de recuo.
+				  • Custa <percentOfCd>% da recarga atual da Habilidade do seu PET. (<percentToSeconds> segundos)
 				'''
 			AbyssShellFossil:
 				'''
-				- Dependendo de quanta Agressividade inimiga você tem, ganhe estatísticas defensivas ou ofensivas.
-				- Pressione (<switchKeybind>) para alternar entre dicas -/+.
+				- Dependendo de quanta Agressividade você tem, ganhe estatísticas defensivas ou ofensivas.
+				- Pressione Alternar Habilidade do PET (<switchKeybind>) para alternar entre as dicas.
 				<tooltip>
 				'''
-			AbyssShellFossilStack: valor agressivo
+			AbyssShellFossilStack: valor de agressividade
 			SnailActive: ATIVO!
 			SnailInactive: INATIVO!
 			SnailPositiveAggro:
 				'''
 				- Enquanto seu valor de agressividade for positivo, concede o seguinte: (<active>)
-				  * 1 defesa por <aggroDef> de valor de agressividade. Atual: <def>
-				  * 1 saúde máxima por <aggroHealth> de valor de agressividade. Atual: <hp>
-				  * 1% de redução de dano por <aggroDr> de valor de agressividade. Atual: <dr>%
-				  * -1% de velocidade de movimento por <aggroMsLower> de valor de agressividade. Atual: <msLower>%
+				  • 1 de defesa por <aggroDef> de valor de agressividade. Atual: <def>
+				  • 1 de saúde máxima por <aggroHealth> de valor de agressividade. Atual: <hp>
+				  • 1% de redução de dano por <aggroDr> de valor de agressividade. Atual: <dr>%
+				  • 1% de recuo por <aggroKb> de valor de agressividade. Atual: <kb>%
 				'''
 			SnailNegativeAggro:
 				'''
 				- Enquanto seu valor de agressividade for negativo, concede o seguinte: (<active>)
-				  * 1% de dano por <aggroDamage> de valor de agressividade. Atual: <dmg>%
-				  * 1% de chance crítica por <aggroCrit> de valor de agressividade. Atual: <crit>%
-				  * 1 penetração de armadura por <aggroPen> de valor de agressividade. Atual: <pen>
-				  * 1% de velocidade de movimento por <aggroMs> de valor de agressividade. Atual: <ms>%
+				  • 1% de dano por <aggroDamage> de valor de agressividade. Atual: <dmg>%
+				  • 1% de chance crítica por <aggroCrit> de valor de agressividade. Atual: <crit>%
+				  • 1 de penetração de armadura por <aggroPen> de valor de agressividade. Atual: <pen>
+				  • 1% de velocidade de movimento por <aggroMs> de valor de agressividade. Atual: <ms>%
 				'''
 			GeyserShell:
 				'''
-				- Aumenta a recuperação de furtividade em pé em <stealth>%.
+				- Aumenta a sua recuperação de furtividade quando parado em <stealth>%.
 				- Aumenta a furtividade máxima em <maxStealth>.
-				- Aumenta o dano de ataque furtivo em <stealthDmg>%.
-				- Ataques furtivos fazem com que ácido apareça ao seu redor e ao redor do alvo ao acertar.
-				  * Causa <damage> de dano e aplica Irradiado por <irradiateDuration> segundos.
-				  * Tem um tempo de recarga de <cooldown> segundos.
+				- Aumenta o dano do ataque furtivo em <stealthDmg>%.
+				- Ataques furtivos geram ácido ao seu redor e no alvo ao acertar.
+				  • Causa <damage> de dano e aplica Irradiado por <irradiateDuration> segundos.
+				  • Possui um tempo de recarga de <cooldown> segundos.
 				'''
 			FoxDrive:
 				'''
-				- Pressione a tecla de Habilidade do PET (<keybind>) para formatar (limpar) TODOS os debuffs em você.
-				  * Fazer isso com sucesso causa uma sobrecarga; você não pode usar nada pelos próximos
-				 <baseCurse> segundos base + <perCurse> segundo por debuff limpo.
-				  * Isso inclui semi-debuffs. (debuffs que têm tanto efeitos positivos quanto negativos!)
-				  * Limpar não remove o Enjoo por Poção e Mana.
-				  * Tem um tempo de recarga de <cooldown> segundos.
-				  * Essencialmente aplica o debuff Amaldiçoado, embora ignore imunidades.
+				- Pressione a Tecla de Habilidade do PET (<keybind>) para formatar (limpar) TODOS os debuffs em você.
+				  • Fazer isso com sucesso causa uma sobrecarga; você não poderá usar nada pelos próximos
+				   <baseCurse> segundos base + <perCurse> segundo por debuff limpo.
+				  • Essencialmente aplica o debuff Amaldiçoado, embora ignore imunidades.
+				  • Isso inclui semi-debuffs (debuffs que têm tanto efeitos positivos quanto negativos!).
+				  • A limpeza não remove debuffs que não podem ser curados pela Enfermeira.
+				  • Seu tempo de recarga de <cooldown> segundos começa se um debuff for limpo com sucesso.
 				'''
-			FoxCleansedText: "Debuffs Formatados: "
+			FoxCleansedText: "Debuffs Limpos: "
 			PrimroseKeepsake:
 				'''
 				- Receber dano que o coloca abaixo de <belowHealth>% de vida concede um Escudo
-				igual a <baseShield>% base + <bonusShield>% de escudo de vida bônus por <shieldDuration> segundos.
-				  * O dano que o coloca abaixo de <belowHealth>% de vida será reduzido de acordo com o Escudo.
-				  * O Escudo de Salva-vidas tem um tempo de recarga de <cooldown> segundos.
-				  * Quando ativado, durante a mesma duração, a absorção de poder causa <lifeguardMult>x dano.
-				- Aumenta o ganho de furtividade do Ladino em <stealthMoving>% enquanto se move, e <stealthNotMoving>% enquanto não se move.
-				- Desferir o golpe final em um inimigo com ataques do Ladino absorve seu poder.
-				  * Adicionando <percAbsorb>% do valor de dano base deles ao seu próximo golpe.
-				  * Ativar esse dano bônus concede <procShield> de escudo por <procShieldDuration> segundos.
+				  igual a <baseShield>% da vida base + <bonusShield>% de escudo de vida bônus por <shieldDuration> segundos.
+				  • O dano que o coloca abaixo de <belowHealth>% de vida será reduzido de acordo com o Escudo.
+				  • O Escudo Salva-Vidas tem um tempo de recarga de <cooldown> segundos.
+				  • Quando ativado, pela mesma duração, a absorção de poder causa <lifeguardMult>x de dano.
+				- Aumenta o ganho de furtividade de Ladino em <stealthMoving>% enquanto se move, e <stealthNotMoving>% enquanto não se move.
+				- Matar um inimigo absorve seu poder para o seu próximo golpe de Ladino.
+				  • Adicionando <percAbsorb>% do valor de dano base deles ao seu próximo golpe de Ladino.
+				  • Ativar esse dano bônus concede <procShield> de escudo por <procShieldDuration> segundos.
 				'''
 			RomajedaOrchid:
 				'''
-				- Desferir o golpe final em um inimigo com ataques do Ladino absorve seu poder.
-				  * Adicionando <percAbsorb>% do valor de dano base deles ao seu próximo golpe.
-				  * Golpes Furtivos multiplicam esse dano por <stealthMult>x.
+				- Matar um inimigo absorve seu poder para o seu próximo golpe de Ladino.
+				  • Adicionando <percAbsorb>% do valor de dano base deles ao seu próximo golpe de Ladino.
+				  • Golpes Furtivos multiplicam esse dano por <stealthMult>x.
 				'''
-			RomajedaOrchidStack: bônus de dano para o próximo golpe do ladino
+			RomajedaOrchidStack: bônus de dano para o próximo golpe de ladino
 			JoyfulHeart:
 				'''
 				- Você está espalhando amor e paz.
-				  * Seu dano é multiplicado por <selfDmg>x.
-				  * O dano recebido é multiplicado por <takenDmg>x.
+				  • Seu dano é multiplicado por <selfDmg>x.
+				  • O dano recebido é multiplicado por <takenDmg>x.
 				- Pressione a tecla de Habilidade do PET (<keybind>) para conceder cura a
-				TUDO em um raio de <radius> blocos, incluindo um pouco de amor próprio.
-				  * Cura <perSecRegen> duas vezes por segundo por <duration> segundos.
-				  * A regeneração é dobrada para Jogadores e NPCs Amigáveis.
+				  TUDO em um raio de <radius> blocos, incluindo um pouco de amor próprio.
+				  • Cura <perSecRegen> duas vezes por segundo por <duration> segundos.
+				  • A regeneração é dobrada para Jogadores e NPCs Amigáveis.
 				'''
 			Levi:
 				'''
-				- Para cada 1 poder de pesca, ganhe <dmgPer>% de dano.
-				- Para cada <defPer> poder de pesca, ganhe 1 de defesa.
+				- Para cada 1 de poder de pesca, ganhe <dmgPer>% de dano. Atual: <currentDmg>%
+				- Para cada <defPer> de poder de pesca, ganhe 1 de defesa. Atual: <currentDef>
 				- As peças da Armadura de Pescador ganham <helm>/<chest>/<leg> de defesa, respectivamente.
 				- Todas as suas peças da Armadura de Pescador ganham <critChance>% de chance crítica.
 				'''
@@ -317,94 +303,95 @@ Mods: {
 			RottingEyeball:
 				'''
 				- Cause <incrToCorrupt>% mais dano a inimigos da Corrupção.
+				- Receba <penalty>% mais dano, exceto de inimigos da Corrupção.
 				- Suas mortes de inimigos da Corrupção com este PET: <killCount>
 				- Ganhe os seguintes bônus dependendo das suas mortes.
-				  * +<dmg>% de dano, +<crit>% de chance crítica, +<luck> de sorte,
-				+<pen> de penetração de armadura e +<critDmg>% de dano crítico.
-				  * Multiplica as estatísticas por <evilMult>x enquanto estiver no bioma da Corrupção.
-				  * Mortes necessárias para as próximas melhorias de estatísticas: <killReq>
+				  • +<dmg>% de dano, +<crit>% de chance crítica, +<luck> de sorte,
+				   +<pen> de penetração de armadura e +<critDmg>% de dano crítico.
+				  • Multiplica as estatísticas por <evilMult>x enquanto estiver no bioma da Corrupção.
+				  • Mortes necessárias para as próximas melhorias de estatísticas: <killReq>
 				'''
-			RottingEyeballStack: corrupção mata até o próximo nível
+			RottingEyeballStack: mortes da Corrupção até o próximo nível
 			BloodyVein:
 				'''
 				- Receba <drFromCrimson>% menos dano de inimigos do Carmesim.
+				- Cause <penalty>% menos dano, exceto contra inimigos do Carmesim.
 				- Suas mortes de inimigos do Carmesim com este PET: <killCount>
 				- Ganhe os seguintes bônus dependendo das suas mortes.
-				  * +<def> de defesa, +<hp> de saúde máxima, +<luck> de sorte,
-				+<dr>% de redução de dano e +<regen> de regeneração de saúde.
-				  * Multiplica as estatísticas por <evilMult>x enquanto estiver no bioma do Carmesim.
-				  * Mortes necessárias para as próximas melhorias de estatísticas: <killReq>
+				  • +<def> de defesa, +<hp> de saúde máxima, +<luck> de sorte,
+				   +<dr>% de redução de dano e +<regen> de regeneração de saúde.
+				  • Multiplica as estatísticas por <evilMult>x enquanto estiver no bioma do Carmesim.
+				  • Mortes necessárias para as próximas melhorias de estatísticas: <killReq>
 				'''
-			BloodyVeinStack: carmesim mata até o próximo nível
+			BloodyVeinStack: mortes do Carmesim até o próximo nível
 			PineapplePet:
 				'''
 				- Modifica as propriedades de Bem Alimentado dos seus itens de comida.
-				  * Aumenta o estágio de Bem Alimentado em +1.
-				  * A duração dos buffs de Bem Alimentado será metade do valor base.
-				  * Extremamente satisfeito se tornará O Grande Banquete, melhorando ainda mais os efeitos.
-				  * +<def> de Def, <crit>% de Crítico, <dmg>% de Dano, +<sumKb> de Soma. Kb, %<moveSpd> de Velocidade de Movimento, %<miningSpd> de Velocidade de Mineração.
-				  * Qualquer nível inferior de Bem Alimentado não pode substituir O Grande Banquete.
+				  • Aumenta o estágio de Bem Alimentado em +1.
+				  • A duração dos buffs de Bem Alimentado será metade do valor base.
+				  • Extremamente satisfeito se tornará O Grande Banquete, melhorando ainda mais os efeitos.
+				  • +<def> de Def, <crit>% de Crítico, <dmg>% de Dano, +<sumKb> de Soma. Kb, %<moveSpd> de Velocidade de Movimento, %<miningSpd> de Velocidade de Mineração.
+				  • Qualquer nível inferior de Bem Alimentado não pode substituir O Grande Banquete.
 				- Concede 50% extras dos benefícios de Bem Alimentado enquanto o PET estiver ativo.
 				'''
 			PlagueCaller:
 				'''
-				- Ao atingir inimigos com ataques Furtivos, eles mantêm stacks de porcentagem do dano causado ao alvo e aos arredores.
-				  * O alvo principal stacka até <primaryPerc>%, enquanto inimigos em um raio de <hitAoE> blocos acumulam <surroundingPerc>% do dano causado.
-				  * Os stacks permanecem no alvo por <stackDuration> segundos e o tempo é renovado ao receber um novo stack.
+				- Ao atingir inimigos com ataques de Ladino, eles mantêm stacks de porcentagem do dano causado ao alvo e aos arredores.
+				  • O alvo principal stacka até <primaryPerc>%, enquanto inimigos em um raio de <hitAoE> blocos acumulam <surroundingPerc>% do dano causado.
+				  • Os stacks permanecem no alvo por <stackDuration> segundos e o tempo é renovado ao receber um novo stack.
 				- Pressione a tecla de Habilidade do PET (<keybind>) para detonar todos os stacks de todos os inimigos em um raio de <detonateRadius> blocos.
-				  * Tempo de recarga de <cooldown> segundos, detonando inimigos aplica Praga e uma desaceleração de <slow>% por <plagueDuration> segundos.
+				  • Tempo de recarga de <cooldown> segundos, detonar inimigos aplica Praga e uma desaceleração de <slow>% por <plagueDuration> segundos.
 				'''
 			PlagueCallerStack: dano total detonável próximo
 			McNuggets:
 				'''
 				- Pressione a tecla de Habilidade do PET (<keybind>) para usar a Habilidade de Renascimento. Enquanto Renascido, ganhe os seguintes efeitos:
-				  * Você ganhará um escudo com a quantidade exata de sua saúde perdida.
-				  * Ganhe <dmgRebirth>% de dano, <defRebirth> de defesa e <msRebirth>% de velocidade de movimento.
-				  * Seus ataques causam Fogo do Dragão por <fireTime> segundos.
-				  * Os efeitos de Renascimento duram <rebornDuration> segundos.
-				  * Todos os valores de buff e durações podem aumentar em até 300% dependendo da saúde na qual a habilidade foi utilizada. 
-				  * O amplificador de efeito é muito mais útil quanto menor for sua saúde, alcançando seu potencial máximo a 25% de hp.
-				  * Você receberá dano equivalente à quantidade exata do escudo inicial após os efeitos acabarem; o escudo pode absorver o dano.
-				  * A habilidade de Renascimento tem um tempo de recarga de <cooldown> minutos.
-				- Se o Jogador morrer enquanto a habilidade não estiver em tempo de recarga, mas não foi usada manualmente, ele será salvo com o seguinte:
-				  * O jogador ganha os efeitos básicos, sem amplificadores, sem escudo, mas será curado para a saúde máxima.
-				  * O jogador [c/f8baba:será morto imediatamente] após os efeitos acabarem. (O Filho de Yharon fica muito exausto, pois faz isso por você!)
+				  • Você ganhará um escudo com a quantidade exata de sua saúde perdida.
+				  • Ganhe <dmgRebirth>% de dano, <defRebirth> de defesa e <msRebirth>% de velocidade de movimento.
+				  • Seus ataques causam Fogo do Dragão por <fireTime> segundos.
+				  • Os efeitos de Renascimento duram <rebornDuration> segundos.
+				  • Todos os valores de buff e durações podem aumentar em até 300% dependendo da saúde na qual a habilidade foi utilizada.
+				  • O amplificador de efeito é muito mais útil quanto menor for sua saúde, alcançando seu potencial máximo a 25% de hp.
+				  • Você receberá dano equivalente à quantidade exata do escudo inicial após os efeitos acabarem; o escudo pode absorver o dano.
+				  • A habilidade de Renascimento tem um tempo de recarga de <cooldown> minuto(s).
+				- Se você morrer a qualquer momento, sua morte será adiada por <delaySec> segundos.
+				  • Embora isso o cure completamente, você morrerá depois, não importa o que aconteça.
 				'''
 			McNuggetsStack: duração restante do renascimento
-			// McNuggetsDelayStack: remaining time before death
+			McNuggetsDelayStack: tempo restante antes da morte
 			YharonReborn: RENASCIDO!!
 			YharonDelay: O Filho de Yharon está adiando sua morte!
-			YharonDeath1: <name> não tem mais suas chamas, e apenas cinzas restaram
+			YharonDeath1: <name> não tem mais suas chamas, e apenas cinzas restaram.
 			YharonDeath2: <name> foi punido pelo Yharon por abusar de seu filho.
-			YharonDeath3: o Filho de Yharon parece não ser capaz o suficiente, e não pôde adiar a morte de <name> por mais tempo.
-			YharonDeath4: <name> deveria ter aprendido a Renascer antes que fosse tarde de mais.
-			YharonDeath5: <name> não conseguiu conter a energia temporaria que foi lhe dado por Yharon.
+			YharonDeath3: O Filho de Yharon parece não ser capaz o suficiente, e não pôde adiar a morte de <name> por mais tempo.
+			YharonDeath4: <name> deveria ter aprendido a Renascer antes que fosse tarde demais.
+			YharonDeath5: <name> não conseguiu conter a energia temporária que lhe foi dada por Yharon.
 			YharonDeath6: O Filho de Yharon sente muito por <name>.
-			YharonDeath7: Os poderes do Renascimento deveriam ser manuseados apenas pelas Fênixes Eternas, <name> não poderia ser capaz de aguentar.
+			YharonDeath7: Os poderes do Renascimento deveriam ser manuseados apenas pelas Fênixes Eternas, <name> não foi capaz de aguentar.
 			YharonDeath8: <name> tentou comer os nuggets???
 			BrimstoneJewel:
 				'''
 				- Seus ataques sempre causarão acertos críticos, independentemente da chance.
 				- Reduz seu Dano Crítico em <critDmgReduce>%, mas também o aumenta em <chanceToDmg>% da sua chance de crítico.
-				  * Chances de crítico que ultrapassam 100% também aumentam o dano crítico.
+				  • Chances de crítico que ultrapassam 100% também aumentam o dano crítico.
 				- Adiciona um Custo de Mana a TODAS as suas armas, igual ao tempo de uso da arma x2.
-				  * Armas Mágicas têm seu custo de mana aumentado em <magicCost>%.
-				  * Apenas as chibatas do invocador se beneficiam de todos os efeitos acima.
-				  * Qualquer arma que canaliza algo ou é uma ferramenta também não se beneficia.
+				  • Armas Mágicas têm seu custo de mana aumentado em <magicCost>%.
+				  • Apenas as chibatas do invocador se beneficiam de todos os efeitos acima.
+				  • Qualquer arma que canaliza algo ou é uma ferramenta também não se beneficia.
 				- O Enjoo de Mana agora reduzirá TODOS os danos afetados, em vez de apenas o Mágico.
 				'''
 			BrimstoneJewelStack: modificador de dano crítico pelo Pet
 			ScalManaSicknessExtraText:
 				'''
-				Também reduz todo os outros tipos de dano, exceto
-				Lacaios e armas canalizadas pela mesma quantidade.
+				Também reduz todos os outros danos, exceto;
+				Lacaios e armas de canalização na mesma quantidade.
 				'''
 			HermitsBoxofOneHundredMedicines:
 				'''
 				- Pressione a tecla de Habilidade do PET (<keybind>) para consumir um remédio.
 				- Você recuperará <flatHeal> + <percHeal>% da sua saúde máxima, no entanto;
-				  * Isso tem um tempo de recarga de <cooldown> segundos.
-				  * Enquanto estiver em recarga, multiplica todo o seu dano causado por <damageMult>x.
+				  • Isso tem um tempo de recarga de <cooldown> segundos.
+				  • Enquanto estiver em recarga, multiplica todo o seu dano causado por <damageMult>x.
 				'''
 		}
 
@@ -412,15 +399,15 @@ Mods: {
 			ForgottenDragonEgg:
 				'''
 				- Pressionar a tecla de habilidade do mascote (<keybind>) faz com que seu próximo ataque exploda.
-				  * A explosão incendeia os inimigos atingidos, e inimigos com pouca vida serão executados.
-				    * O ataque que desencadeia, os danos da explosão e as execuções concedem acúmulos.
-				  * Os acúmulos aumentam a eficácia deste mascote; são permanentes e podem acumular infinitamente.
+				  • A explosão incendeia os inimigos atingidos, e inimigos com pouca vida serão executados.
+				     • O ataque que desencadeia, os danos da explosão e as execuções concedem acúmulos.
+				  • Os acúmulos aumentam a eficácia deste mascote; são permanentes e podem acumular infinitamente.
 				'''
 			Astrophage:
 				'''
 				- Inimigos muito próximos a você serão infectados com Infecção Astral.
 				- Inimigos próximos a você que já estão com Infecção Astral ficam mais lentos.
-				  * Se morrerem enquanto estiverem lentos, espalharão a infecção.
+				  • Se morrerem enquanto estiverem lentos, espalharão a infecção.
 				'''
 			BearsEye:
 				'''
@@ -434,24 +421,24 @@ Mods: {
 				'''
 			CosmicPlushie:
 				'''
-				[c/<color>:Emocionalmente] <classe>
+				[c/<color>:Emocionalmente] <class>
 				- Causa dano muito acolhedor a todas as criaturas ao seu redor.
-				  * Quando você morre.
-				  * Apenas quando seu personagem está no modo hardcore.
-				  * Sim, este é um mascote troll, tinha que ser feito.
+				  • Quando você morre.
+				  • Apenas quando seu personagem está no modo hardcore.
+				  • Sim, este é um mascote troll, tinha que ser feito.
 				'''
 			TrashmanTrashcan:
 				'''
-				- Pressione a tecla de habilidade do mascote (<keybind>) para lançar uma lata de lixo.
-				  * Causa dano e faz o inimigo sangrar.
-				  * Ao impactar, desacelera e confunde inimigos em um raio.
+				- Pressione a tecla de habilidade do mascote (<keybind>) para lançar uma Lata de Lixo.
+				  • Causa dano e faz o inimigo sangrar.
+				  • Ao impactar, desacelera e confunde inimigos em um raio.
 				'''
 			TheEtomer:
 				'''
 				- Pressione (<abilitySwitch>) para alternar habilidades e (<abilityUse>) para iniciá-las.
 				- Elas ativam sobre o inimigo do seu próximo ataque.
 				- [c/FFFF00:Onda de Trovão desacelera inimigos.]
-				- [c/0f5e9c:Jato de Água causa dano a um único alvo e aplica o debuff Molhado.]
+				- [c/0f5e9c:Jato d'Água causa dano a um único alvo e aplica o debuff Molhado.]
 				- [c/ff5a00:Superaquecimento causa dano em área e aplica o debuff Em Chamas.]
 				- [c/3fd0d4:Nevasca causa dano contínuo em área, desacelera e aplica o debuff Estado Glacial.]
 				- [c/34a203:Tempestade de Folhas dispara folhas em círculo, causando dano amplo.]
@@ -460,8 +447,8 @@ Mods: {
 			AbyssShellFossil:
 				'''
 				- Dependendo do quanto de Agressividade você possui, ganha atributos defensivos ou ofensivos.
-				  * Ganha Defesa, Vida, Redução de Dano e perde Velocidade de Movimento se a agressividade for positiva.
-				  * Ganha Dano, Chance Crítica, Penetração de Armadura e Velocidade de Movimento se a agressividade for negativa.
+				  • Ganha Defesa, Vida, Redução de Dano e perde Velocidade de Movimento se a agressividade for positiva.
+				  • Ganha Dano, Chance Crítica, Penetração de Armadura e Velocidade de Movimento se a agressividade for negativa.
 				'''
 			GeyserShell:
 				'''
@@ -472,14 +459,14 @@ Mods: {
 			FoxDrive:
 				'''
 				- Pressione a tecla de habilidade do mascote (<keybind>) para remover todos os debuffs.
-				  * Após remover todos os debuffs, por um curto período você não poderá usar itens.
+				  • Após remover todos os debuffs, por um curto período você não poderá usar itens.
 				'''
 			PrimroseKeepsake:
 				'''
 				- Quando sua vida estiver baixa, concede um escudo.
 				- Aumenta o ganho de furtividade de Ladino.
 				- Matar um inimigo absorve seu poder para seu próximo ataque de Ladino.
-				  * Ativar esse dano bônus concede um escudo.
+				  • Ativar esse dano bônus concede um escudo.
 				'''
 			RomajedaOrchid: - Matar um inimigo absorve seu poder para seu próximo ataque de Ladino.
 			JoyfulHeart:
@@ -501,9 +488,9 @@ Mods: {
 				'''
 			BloodyVein:
 				'''
-				- Recebe menos dano de inimigos do Carmim.
-				- Causa menos dano, exceto a inimigos do Carmim.
-				- Mortes de inimigos do Carmim são contadas permanentemente,
+				- Recebe menos dano de inimigos do Carmesim.
+				- Causa menos dano, exceto a inimigos do Carmesim.
+				- Mortes de inimigos do Carmesim são contadas permanentemente,
 				  e dependendo da contagem, ganha atributos defensivos.
 				'''
 			PineapplePet:
@@ -519,19 +506,19 @@ Mods: {
 			McNuggets:
 				'''
 				- Pressione a tecla de habilidade do mascote (<keybind>) para usar a Habilidade de Renascimento.
-				  * Ganha Dano, Defesa e Velocidade de Movimento.
-				  * Ataques aplicam o debuff Fogo de Dragão.
-				  * Todos os efeitos escalam com a vida perdida.
-				  * Concede um escudo igual à sua vida perdida.
-				    Mas recebe esse escudo como dano ao final da duração.
+				  • Ganha Dano, Defesa e Velocidade de Movimento.
+				  • Ataques aplicam o debuff Fogo de Dragão.
+				  • Todos os efeitos escalam com a vida perdida.
+				  • Concede um escudo igual à sua vida perdida.
+				   Mas recebe esse escudo como dano ao final da duração.
 				- Se você receber dano letal, sua morte será adiada por um tempo.
 				'''
 			BrimstoneJewel:
 				'''
 				- Modifica armas que não são de canalização nem de invocação.
-				  * Todos os seus ataques agora serão críticos.
-				  * Perde um pouco de dano crítico, mas converte sua chance crítica em dano crítico.
-				  * Adiciona custo de Mana à sua arma.
+				  • Todos os seus ataques agora serão críticos.
+				  • Perde um pouco de dano crítico, mas converte sua chance crítica em dano crítico.
+				  • Adiciona custo de Mana à sua arma.
 				- A Doença de Mana agora reduzirá todo o dano.
 				'''
 			HermitsBoxofOneHundredMedicines:
@@ -542,7 +529,7 @@ Mods: {
 		}
 
 		Buffs: {
-			TheGrandNourishmentTooltip: Aumento gigante para todas as estatísticas
+			TheGrandNourishmentTooltip: Aumento gigante para todas as estatísticas!
 			TheGrandNourishmentDisplayName: O Grande Banquete
 			BleedOutTooltip: Você está sangrando!
 			BleedOutDisplayName: Sangramento

@@ -41,7 +41,7 @@ namespace PetsOverhaulCalamityAddon.Projectiles
                         blizzard.FreezeVal++;
                         if (blizzard.FreezeVal >= Rotom.freezeRequirement)
                         {
-                            npc.AddBuff(ModContent.BuffType<GlacialState>(), Rotom.freezeDuration);
+                            npc.AddBuff(BuffID.Frozen, Rotom.freezeDuration);
                         }
                     }
                 }

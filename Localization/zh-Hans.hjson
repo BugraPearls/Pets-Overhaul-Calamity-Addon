@@ -9,7 +9,7 @@ Mods: {
 			  • 增加<rogueVelocity>%的盗贼弹幕速度。
 			  • 降低<hp>%的最大生命值。
 			'''
-		JunimoExtraBosses: "，亵渎天神，神明吞噬者"
+		JunimoExtraBosses: ，亵渎天神，神明吞噬者
 		Rogue: 盗贼
 
 		LightPetTooltips: {
@@ -166,7 +166,7 @@ Mods: {
 				<abilityTooltip>
 				'''
 			TheEtomerStack: 已选招式
-			RotomCurrent: "当前招式："
+			RotomCurrent: 当前招式：
 			RotomActive: "[c/a2a2a2: 准备就绪]"
 			RotomThunderWaveName: "[c/FFFF00:电磁波]"
 			RotomThunderWave:
@@ -262,7 +262,7 @@ Mods: {
 				  • 清除无法移除护士无法治愈的减益。
 				  • 成功清除减益后，将开始<cooldown>秒的冷却时间。
 				'''
-			FoxCleansedText: "已清除的减益："
+			FoxCleansedText: 已清除的减益：
 			PrimroseKeepsake:
 				'''
 				- 受到使你的生命值降至<belowHealth>%以下的伤害时，为你提供一个护盾，

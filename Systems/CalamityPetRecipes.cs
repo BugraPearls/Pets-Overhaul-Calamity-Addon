@@ -52,7 +52,7 @@ namespace PetsOverhaulCalamityAddon.Systems
             PetRecipes.PetRecipe(Recipe.Create(CalamityLightPetIDs.OceanSpirit).AddIngredient(ItemID.WhitePearl).AddIngredient<AbyssGravel>(10).AddIngredient<Voidstone>(2).AddIngredient<PearlShard>(3).AddCondition(Condition.DownedSkeletron), 40);
             PetRecipes.PetRecipe(Recipe.Create(CalamityLightPetIDs.Radiator).AddIngredient<SulphuricScale>(12).AddIngredient<Acidwood>(25).AddIngredient<SulphurousSand>(10), 50);
             PetRecipes.PetRecipe(Recipe.Create(CalamityLightPetIDs.Sparks).AddIngredient(ItemID.ButterflyWings), 100);
-            PetRecipes.PetRecipe(Recipe.Create(CalamityLightPetIDs.Yuu).AddIngredient<AstralBar>(6).AddIngredient<GalacticaSingularity>(4).AddIngredient<MeldConstruct>(2).AddIngredient<LifeAlloy>(5).AddIngredient<EssenceofHavoc>().AddIngredient<EssenceofEleum>().AddIngredient<EssenceofSunlight>().AddIngredient<CoreofCalamity>(), 200);
+            PetRecipes.PetRecipe(Recipe.Create(CalamityLightPetIDs.Yuu).AddIngredient<AstralBar>(6).AddIngredient(ItemID.FragmentNebula,4).AddIngredient(ItemID.FragmentStardust, 4).AddIngredient(ItemID.FragmentVortex, 4).AddIngredient(ItemID.FragmentSolar, 4).AddIngredient<MeldBlob>(4).AddIngredient<LifeAlloy>(5).AddIngredient<EssenceofHavoc>().AddIngredient<EssenceofEleum>().AddIngredient<EssenceofSunlight>().AddIngredient<CoreofCalamity>(), 200);
         }
     }
 }

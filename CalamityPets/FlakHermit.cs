@@ -24,6 +24,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
         public int cooldown = 300;
         public int radius = 140;
         private bool nextHitIsExplosive = false;
+        private float previousStealth = 0f;
         public void AcidExplosion(Vector2 center)
         {
             foreach (NPC npc in Main.ActiveNPCs)
@@ -43,14 +44,38 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
             PetUtils.CircularDustEffect(Player.Center, DustID.CursedTorch, radius, 20, scale: 2f);
         }
         public override int PetAbilityCooldown => cooldown;
+        public bool StealthStrikeConsumed()
+        {
+            if (Player.Calamity().rogueStealthMax <= 0f)
+            {
+                return false;
+            }
+
+            float num = 1f;
+            if (Player.Calamity().stealthStrikeHalfCost)
+            {
+                num = 0.5f;
+            }
+            else if (Player.Calamity().stealthStrike75Cost)
+            {
+                num = 0.75f;
+            }
+            else if (Player.Calamity().stealthStrike90Cost)
+            {
+                num = 0.9f;
+            }
+
+            return previousStealth - Player.Calamity().rogueStealth >= Player.Calamity().rogueStealthMax * num;
+        }
         public override void PostUpdate()
         {
-            if (PetIsEquipped() && Player.Calamity().stealthStrikeThisFrame && Pet.timer <= 0)
+            if (PetIsEquipped() && StealthStrikeConsumed() && Pet.timer <= 0)
             {
                 AcidExplosion(Player.Center);
                 Pet.timer = Pet.timerMax;
                 nextHitIsExplosive = true;
             }
+            previousStealth = Player.Calamity().rogueStealth;
         }
         public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {

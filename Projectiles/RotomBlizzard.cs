@@ -1,5 +1,4 @@
-﻿using CalamityMod.Buffs.StatDebuffs;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using PetsOverhaul.Systems;
 using PetsOverhaulCalamityAddon.CalamityPets;
 using PetsOverhaulCalamityAddon.Systems;

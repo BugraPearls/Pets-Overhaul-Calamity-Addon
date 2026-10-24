@@ -144,10 +144,10 @@ Mods: {
 				  • 它可可可可能也会吞噬其他玩家……
 				  • :3
 				'''
-			CosmicDeath1: <name>开了个小玩笑。
-			CosmicDeath2: <name>稍微调皮了一下。:tf:
-			CosmicDeath3: <name>手滑了。
-			CosmicDeath4: 如果<name>说“我的错”，那他百分百在撒谎。
+			CosmicDeath1: "{0}开了个小玩笑。"
+			CosmicDeath2: "{0}稍微调皮了一下。:tf:"
+			CosmicDeath3: "{0}手滑了。"
+			CosmicDeath4: "如果{0}说“我的错”，那他百分百在撒谎。"
 			TrashmanTrashcan:
 				'''
 				- 按下宠物技能键（<keybind>）以使用垃圾人的招牌动作。
@@ -361,14 +361,14 @@ Mods: {
 			McNuggetsDelayStack: 死亡前剩余时间
 			YharonReborn: 重生！！
 			YharonDelay: 犽戎之子正在延迟你的死亡！
-			YharonDeath1: <name>耗尽了火焰，只剩下了灰烬。
-			YharonDeath2: <name>因为虐待犽戎的孩子而受到了惩罚。
-			YharonDeath3: 犽戎之子似乎能力不足，无法再延迟<name>的死亡了。
-			YharonDeath4: <name>应该在一切太迟之前学会重生。
-			YharonDeath5: <name>无法控制犽戎赋予的临时力量。
-			YharonDeath6: 犽戎之子为<name>感到难过。
-			YharonDeath7: 重生的力量本应只由永恒凤凰掌握，而<name>并不是那个人。
-			YharonDeath8: <name>想吃鸡块？？？
+			YharonDeath1: "{0}耗尽了火焰，只剩下了灰烬。"
+			YharonDeath2: "{0}因为虐待犽戎的孩子而受到了惩罚。"
+			YharonDeath3: "犽戎之子似乎能力不足，无法再延迟{0}的死亡了。"
+			YharonDeath4: "{0}应该在一切太迟之前学会重生。"
+			YharonDeath5: "{0}无法控制犽戎赋予的临时力量。"
+			YharonDeath6: "犽戎之子为{0}感到难过。"
+			YharonDeath7: "重生的力量本应只由永恒凤凰掌握，而{0}并不是那个人。"
+			YharonDeath8: "{0}想吃鸡块？？？"
 			BrimstoneJewel:
 				'''
 				- 你的攻击现在将必定暴击，无视几率。

@@ -8,6 +8,7 @@ using Terraria;
 using Terraria.Audio;
 using Terraria.DataStructures;
 using Terraria.GameInput;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace PetsOverhaulCalamityAddon.CalamityPets
@@ -57,7 +58,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                             3 => Compatibility.LocVal("PetTooltips.YharonDeath4"),
                             _ => Compatibility.LocVal("PetTooltips.YharonDeath1"),
                         };
-                        Player.KillMe(PlayerDeathReason.ByCustomReason(reason.Replace("<name>", Player.name)), Player.statLifeMax2 * 100, 0);
+                        Player.KillMe(PlayerDeathReason.ByCustomReason(Language.GetOrRegister(reason).ToNetworkText(Player.name)), Player.statLifeMax2 * 100, 0);
                     }
                     deadTimer = -1;
                 }
@@ -73,7 +74,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                             3 => Compatibility.LocVal("PetTooltips.YharonDeath8"),
                             _ => Compatibility.LocVal("PetTooltips.YharonDeath5"),
                         };
-                        Player.Hurt(PlayerDeathReason.ByCustomReason(reason.Replace("<name>", Player.name)), damageToTakeAfterReborn, 0, dodgeable: true, knockback: 0);
+                        Player.Hurt(PlayerDeathReason.ByCustomReason(Language.GetOrRegister(reason).ToNetworkText(Player.name)), damageToTakeAfterReborn, 0, dodgeable: true, knockback: 0);
                         damageToTakeAfterReborn = 0;
                     }
                     timer = -1;

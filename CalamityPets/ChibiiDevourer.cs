@@ -5,6 +5,7 @@ using Terraria;
 using Terraria.Audio;
 using Terraria.DataStructures;
 using Terraria.ID;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace PetsOverhaulCalamityAddon.CalamityPets
@@ -42,7 +43,7 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                             3 => Compatibility.LocVal("PetTooltips.CosmicDeath4"),
                             _ => Compatibility.LocVal("PetTooltips.CosmicDeath1"),
                         };
-                        player.Hurt(PlayerDeathReason.ByCustomReason(reason.Replace("<name>", Player.name)), dmg, Player.direction, true, dodgeable: false, scalingArmorPenetration: 1f, knockback: kb);
+                        player.Hurt(PlayerDeathReason.ByCustomReason(Language.GetOrRegister(reason).ToNetworkText(Player.name)), dmg, Player.direction, true, dodgeable: false, scalingArmorPenetration: 1f, knockback: kb);
                     }
                 }
             }

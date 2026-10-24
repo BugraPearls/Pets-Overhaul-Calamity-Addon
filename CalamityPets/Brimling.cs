@@ -45,11 +45,11 @@ namespace PetsOverhaulCalamityAddon.CalamityPets
                     float damageTaken = Math.Min(info.SourceDamage, Player.statLife) * reflectAmount; //Caps the Reflect's base damage to Player's current HP.
                     if (entity is Projectile projectile && projectile.TryGetGlobalProjectile(out PetGlobalProjectile proj) && Main.npc[proj.sourceNpcId].active && Main.npc[proj.sourceNpcId].dontTakeDamage == false)
                     {
-                        Pet.PetStrike(Main.npc[proj.sourceNpcId], damageTaken, info.HitDirection, Main.rand.NextBool((int)Math.Min(Player.GetTotalCritChance<GenericDamageClass>(), 100), 100), kbFromReflect, DamageClass.Generic);
+                        Pet.PetStrike(Main.npc[proj.sourceNpcId], damageTaken, info.HitDirection, false, kbFromReflect, DamageClass.Generic);
                     }
                     else if (entity is NPC npc && npc.active == true && npc.dontTakeDamage == false)
                     {
-                        Pet.PetStrike(npc, damageTaken, info.HitDirection, Main.rand.NextBool((int)Math.Min(Player.GetTotalCritChance<GenericDamageClass>(), 100), 100), kbFromReflect, DamageClass.Generic);
+                        Pet.PetStrike(npc, damageTaken, info.HitDirection, false, kbFromReflect, DamageClass.Generic);
 
                     }
                 }

@@ -1,6 +1,6 @@
 [b]This mod is Calamity Addon of Pets Overhaul mod, which adds multiple new effects to existing Pets & integration of Calamity content to Pets Overhaul![/b]
 
-[h3]Weekly Updates![/h3]
+[h3]Due to closing of Calamity Mod, this addon will not receive extra updates to its content, only fixes & minor changes.[/h3]
 
 [h3]Features this addon adds[/h3]
 [list]

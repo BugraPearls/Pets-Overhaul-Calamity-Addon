@@ -1,4 +1,4 @@
-﻿Mods: {
+Mods: {
 	PetsOverhaulCalamityAddon: {
 		MoonlingRogueTooltip:
 			'''
@@ -363,11 +363,11 @@
 			YharonDelay: Son of Yharon is delaying your death!
 			YharonDeath1: "{0} ran out of flames, and all that is left is ashes."
 			YharonDeath2: "{0} was punished by Yharon for abusing his kid."
-			YharonDeath3: "The Son of Yharon seems like isn't capable enough, and couldn't delay {0}'s death any longer."
+			YharonDeath3: The Son of Yharon seems like isn't capable enough, and couldn't delay {0}'s death any longer.
 			YharonDeath4: "{0} should've learned to Reborn before it was too late."
 			YharonDeath5: "{0} could not contain temporary power given by Yharon."
-			YharonDeath6: "Yharon's son is sad for {0}."
-			YharonDeath7: "Powers of Rebirth should've been handled only by the Eternal Phoenixes, {0}, was not the one to handle it."
+			YharonDeath6: Yharon's son is sad for {0}.
+			YharonDeath7: Powers of Rebirth should've been handled only by the Eternal Phoenixes, {0}, was not the one to handle it.
 			YharonDeath8: "{0} tried to eat the nuggies???"
 			BrimstoneJewel:
 				'''

@@ -363,11 +363,11 @@ Mods: {
 			YharonDelay: O Filho de Yharon está adiando sua morte!
 			YharonDeath1: "{0} não tem mais suas chamas, e apenas cinzas restaram."
 			YharonDeath2: "{0} foi punido pelo Yharon por abusar de seu filho."
-			YharonDeath3: "O Filho de Yharon parece não ser capaz o suficiente, e não pôde adiar a morte de {0} por mais tempo."
+			YharonDeath3: O Filho de Yharon parece não ser capaz o suficiente, e não pôde adiar a morte de {0} por mais tempo.
 			YharonDeath4: "{0} deveria ter aprendido a Renascer antes que fosse tarde demais."
 			YharonDeath5: "{0} não conseguiu conter a energia temporária que lhe foi dada por Yharon."
-			YharonDeath6: "O Filho de Yharon sente muito por {0}."
-			YharonDeath7: "Os poderes do Renascimento deveriam ser manuseados apenas pelas Fênixes Eternas, {0} não foi capaz de aguentar."
+			YharonDeath6: O Filho de Yharon sente muito por {0}.
+			YharonDeath7: Os poderes do Renascimento deveriam ser manuseados apenas pelas Fênixes Eternas, {0} não foi capaz de aguentar.
 			YharonDeath8: "{0} tentou comer os nuggets???"
 			BrimstoneJewel:
 				'''
